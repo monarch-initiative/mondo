@@ -26,6 +26,13 @@ intersection_of: RO:0002211 GO:0006310 ! regulates DNA recombination
 relationship: RO:0002211 GO:0006310 ! regulates DNA recombination
 
 [Term]
+id: GO:0000035
+name: acyl binding
+def: "Binding to an acyl group, any group formally derived by removal of the hydroxyl group from the acid function of a carboxylic acid." []
+synonym: "acyl-CoA or acyl binding" BROAD []
+is_a: GO:0005488 ! binding
+
+[Term]
 id: GO:0000041
 name: transition metal ion transport
 def: "The directed movement of transition metal ions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. A transition metal is an element whose atom has an incomplete d-subshell of extranuclear electrons, or which gives rise to a cation or cations with an incomplete d-subshell. Transition metals often have more than one valency state. Biologically relevant transition metals include vanadium, manganese, iron, copper, cobalt, nickel, molybdenum and silver." []
@@ -1444,6 +1451,14 @@ is_a: GO:0010464 ! regulation of mesenchymal cell proliferation
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0010463 ! positively regulates mesenchymal cell proliferation
 relationship: RO:0002213 GO:0010463 ! positively regulates mesenchymal cell proliferation
+
+[Term]
+id: GO:0002054
+name: nucleobase binding
+def: "Binding to a nucleobase, any of a class of pyrmidines or purines, organic nitrogenous bases." []
+is_a: GO:0036094 ! small molecule binding
+is_a: GO:0097159 ! organic cyclic compound binding
+is_a: GO:1901363 ! heterocyclic compound binding
 
 [Term]
 id: GO:0002082
@@ -5876,6 +5891,16 @@ is_obsolete: true
 replaced_by: GO:0044042
 
 [Term]
+id: GO:0006081
+name: cellular aldehyde metabolic process
+def: "The chemical reactions and pathways involving aldehydes, any organic compound with the formula R-CH=O, as carried out by individual cells." []
+synonym: "aldehyde metabolism" EXACT []
+synonym: "alkanal metabolic process" EXACT []
+synonym: "alkanal metabolism" EXACT []
+is_a: GO:0044237 ! cellular metabolic process
+is_a: GO:0071704 ! organic substance metabolic process
+
+[Term]
 id: GO:0006082
 name: organic acid metabolic process
 def: "The chemical reactions and pathways involving organic acids, any acidic compound containing carbon in covalent linkage." []
@@ -5883,6 +5908,14 @@ synonym: "organic acid metabolism" EXACT []
 is_a: GO:0044237 ! cellular metabolic process
 is_a: GO:0044281 ! small molecule metabolic process
 is_a: GO:0071704 ! organic substance metabolic process
+
+[Term]
+id: GO:0006083
+name: acetate metabolic process
+def: "The chemical reactions and pathways involving acetate, the anion of acetic acid." []
+synonym: "acetate metabolism" EXACT []
+is_a: GO:0006807 ! nitrogen compound metabolic process
+is_a: GO:0032787 ! monocarboxylic acid metabolic process
 
 [Term]
 id: GO:0006090
@@ -7536,6 +7569,16 @@ synonym: "nucleus organization and biogenesis" RELATED []
 is_a: GO:0006996 ! organelle organization
 
 [Term]
+id: GO:0006998
+name: nuclear envelope organization
+def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of the nuclear envelope." []
+synonym: "nuclear envelope organisation" EXACT []
+synonym: "nuclear envelope organization and biogenesis" RELATED []
+is_a: GO:0061024 ! membrane organization
+relationship: BFO:0000050 GO:0006997 ! part of nucleus organization
+relationship: BFO:0000050 GO:0010256 ! part of endomembrane system organization
+
+[Term]
 id: GO:0007005
 name: mitochondrion organization
 def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of a mitochondrion; includes mitochondrial morphogenesis and distribution, and replication of the mitochondrial genome as well as synthesis of new mitochondrial components." []
@@ -7588,6 +7631,24 @@ def: "A microtubule-based process that results in the movement of organelles, ot
 is_a: GO:0007017 ! microtubule-based process
 
 [Term]
+id: GO:0007028
+name: cytoplasm organization
+def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of the cytoplasm. The cytoplasm is all of the contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures." []
+synonym: "cytoplasm organisation" EXACT []
+synonym: "cytoplasm organization and biogenesis" RELATED []
+is_a: GO:0016043 ! cellular component organization
+
+[Term]
+id: GO:0007033
+name: vacuole organization
+def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of a vacuole." []
+synonym: "vacuolar assembly" NARROW []
+synonym: "vacuole biogenesis" RELATED []
+synonym: "vacuole organisation" EXACT []
+synonym: "vacuole organization and biogenesis" RELATED []
+is_a: GO:0006996 ! organelle organization
+
+[Term]
 id: GO:0007034
 name: vacuolar transport
 def: "The directed movement of substances into, out of or within a vacuole." []
@@ -7632,6 +7693,22 @@ is_a: GO:1903047 ! mitotic cell cycle process
 intersection_of: GO:0030261 ! chromosome condensation
 intersection_of: BFO:0000050 GO:0000278 ! part of mitotic cell cycle
 relationship: BFO:0000050 GO:0000070 ! part of mitotic sister chromatid segregation
+
+[Term]
+id: GO:0007077
+name: mitotic nuclear membrane disassembly
+def: "The mitotic cell cycle process in which the controlled partial or complete breakdown of the nuclear membranes during occurs during mitosis." []
+synonym: "local NEB" BROAD []
+synonym: "mitotic nuclear envelope breakdown" EXACT []
+synonym: "mitotic nuclear envelope catabolism" RELATED []
+synonym: "mitotic nuclear envelope degradation" RELATED []
+synonym: "mitotic nuclear envelope disassembly" RELATED []
+synonym: "NEB" BROAD []
+synonym: "nuclear envelope breakdown" BROAD []
+is_a: GO:0051081 ! nuclear membrane disassembly
+is_a: GO:1903047 ! mitotic cell cycle process
+intersection_of: GO:0051081 ! nuclear membrane disassembly
+intersection_of: BFO:0000050 GO:0000278 ! part of mitotic cell cycle
 
 [Term]
 id: GO:0007088
@@ -10119,6 +10196,15 @@ intersection_of: RO:0002213 GO:0006661 ! positively regulates phosphatidylinosit
 relationship: RO:0002213 GO:0006661 ! positively regulates phosphatidylinositol biosynthetic process
 
 [Term]
+id: GO:0010549
+name: regulation of membrane disassembly
+def: "Any process that modulates the frequency, rate or extent of membrane disassembly." []
+is_a: GO:0051128 ! regulation of cellular component organization
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002211 GO:0030397 ! regulates membrane disassembly
+relationship: RO:0002211 GO:0030397 ! regulates membrane disassembly
+
+[Term]
 id: GO:0010556
 name: regulation of macromolecule biosynthetic process
 def: "Any process that modulates the rate, frequency or extent of the chemical reactions and pathways resulting in the formation of a macromolecule, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." []
@@ -11793,6 +11879,27 @@ def: "Catalysis of the cleavage of hexosamine or N-acetylhexosamine residues (e.
 is_a: GO:0004553 ! hydrolase activity, hydrolyzing O-glycosyl compounds
 
 [Term]
+id: GO:0015942
+name: formate metabolic process
+def: "The chemical reactions and pathways involving formate, also known as methanoate, the anion HCOO- derived from methanoic (formic) acid." []
+synonym: "formate metabolism" EXACT []
+is_a: GO:0006807 ! nitrogen compound metabolic process
+is_a: GO:0032787 ! monocarboxylic acid metabolic process
+
+[Term]
+id: GO:0015943
+name: formate biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of formate, also known as methanoate, the anion HCOO- derived from methanoic (formic) acid." []
+synonym: "formate anabolism" EXACT []
+synonym: "formate biosynthesis" EXACT []
+synonym: "formate formation" EXACT []
+synonym: "formate synthesis" EXACT []
+synonym: "formic acid biosynthesis" EXACT []
+synonym: "formic acid biosynthetic process" EXACT []
+is_a: GO:0015942 ! formate metabolic process
+is_a: GO:0072330 ! monocarboxylic acid biosynthetic process
+
+[Term]
 id: GO:0015980
 name: energy derivation by oxidation of organic compounds
 def: "The chemical reactions and pathways by which a cell derives energy from organic compounds; results in the oxidation of the compounds from which energy is released." []
@@ -13157,6 +13264,17 @@ is_a: GO:0005975 ! carbohydrate metabolic process
 is_a: GO:0019751 ! polyol metabolic process
 
 [Term]
+id: GO:0019413
+name: acetate biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of acetate, the anion of acetic acid." []
+synonym: "acetate anabolism" EXACT []
+synonym: "acetate biosynthesis" EXACT []
+synonym: "acetate formation" EXACT []
+synonym: "acetate synthesis" EXACT []
+is_a: GO:0006083 ! acetate metabolic process
+is_a: GO:0072330 ! monocarboxylic acid biosynthetic process
+
+[Term]
 id: GO:0019438
 name: aromatic compound biosynthetic process
 def: "The chemical reactions and pathways resulting in the formation of aromatic compounds, any substance containing an aromatic carbon ring." []
@@ -13301,6 +13419,14 @@ synonym: "BCR complex" EXACT []
 synonym: "immunoglobulin complex, membrane bound" EXACT []
 is_a: GO:0019814 ! immunoglobulin complex
 is_a: GO:0098802 ! plasma membrane signaling receptor complex
+
+[Term]
+id: GO:0019825
+name: oxygen binding
+def: "Binding to oxygen (O2)." []
+synonym: "cytochrome P450" NARROW []
+synonym: "cytochrome P450 activity" RELATED []
+is_a: GO:0036094 ! small molecule binding
 
 [Term]
 id: GO:0019842
@@ -14277,6 +14403,18 @@ is_a: GO:0030261 ! chromosome condensation
 relationship: BFO:0000050 GO:0030262 ! part of apoptotic nuclear changes
 
 [Term]
+id: GO:0030264
+name: nuclear fragmentation involved in apoptotic nuclear change
+def: "The breakdown of the nucleus into small membrane-bounded compartments, or blebs, each of which contain compacted DNA." []
+synonym: "apoptotic nuclear fragmentation" EXACT []
+synonym: "nuclear fragmentation during apoptosis" RELATED []
+synonym: "nucleus fragmentation" EXACT []
+is_a: GO:0071763 ! nuclear membrane organization
+intersection_of: GO:0071763 ! nuclear membrane organization
+intersection_of: BFO:0000050 GO:0030262 ! part of apoptotic nuclear changes
+relationship: BFO:0000050 GO:0030262 ! part of apoptotic nuclear changes
+
+[Term]
 id: GO:0030278
 name: regulation of ossification
 def: "Any process that modulates the frequency, rate or extent of ossification, the formation of bone or of a bony substance or the conversion of fibrous tissue or of cartilage into bone or a bony substance." []
@@ -14389,6 +14527,16 @@ def: "Catalysis of the reaction: vitamin D3 + NADPH + H+ + O2 = calcidiol + NADP
 synonym: "cholecalciferol 25-hydroxylase activity" EXACT []
 is_a: GO:0070643 ! vitamin D 25-hydroxylase activity
 relationship: BFO:0000050 GO:0036378 ! part of calcitriol biosynthetic process from calciol
+
+[Term]
+id: GO:0030397
+name: membrane disassembly
+def: "The controlled breakdown of any cell membrane in the context of a normal process such as autophagy." []
+synonym: "membrane breakdown" EXACT []
+synonym: "membrane catabolism" EXACT []
+synonym: "membrane degradation" EXACT []
+is_a: GO:0022411 ! cellular component disassembly
+is_a: GO:0061024 ! membrane organization
 
 [Term]
 id: GO:0030414
@@ -14885,6 +15033,13 @@ def: "A structure lying external to one or more cells, which provides structural
 synonym: "matrisome" NARROW []
 synonym: "proteinaceous extracellular matrix" EXACT []
 is_a: GO:0030312 ! external encapsulating structure
+
+[Term]
+id: GO:0031045
+name: dense core granule
+def: "Electron-dense organelle with a granular internal matrix; contains proteins destined to be secreted." []
+synonym: "dense core vesicle" EXACT []
+is_a: GO:0030141 ! secretory granule
 
 [Term]
 id: GO:0031090
@@ -16896,6 +17051,16 @@ is_a: GO:0032984 ! protein-containing complex disassembly
 is_a: GO:0071825 ! protein-lipid complex organization
 
 [Term]
+id: GO:0032988
+name: protein-RNA complex disassembly
+def: "The disaggregation of a protein-RNA complex into its constituent components." []
+synonym: "ribonucleoprotein complex disassembly" EXACT []
+synonym: "RNA-protein complex disassembly" EXACT []
+synonym: "RNP complex disassembly" EXACT []
+is_a: GO:0032984 ! protein-containing complex disassembly
+is_a: GO:0071826 ! protein-RNA complex organization
+
+[Term]
 id: GO:0032989
 name: cellular component morphogenesis
 def: "The process in which cellular structures, including whole cells or cell parts, are generated and organized." []
@@ -17302,6 +17467,12 @@ is_a: GO:0014070 ! response to organic cyclic compound
 is_a: GO:0033273 ! response to vitamin
 is_a: GO:0033993 ! response to lipid
 is_a: GO:1901700 ! response to oxygen-containing compound
+
+[Term]
+id: GO:0033293
+name: monocarboxylic acid binding
+def: "Binding to a monocarboxylic acid, any organic acid containing one carboxyl (COOH) group or anion (COO-)." []
+is_a: GO:0031406 ! carboxylic acid binding
 
 [Term]
 id: GO:0033341
@@ -18922,6 +19093,12 @@ is_a: GO:0031099 ! regeneration
 is_a: GO:0048589 ! developmental growth
 
 [Term]
+id: GO:0042277
+name: peptide binding
+def: "Binding to a peptide, an organic compound comprising two or more amino acids linked by peptide bonds." []
+is_a: GO:0033218 ! amide binding
+
+[Term]
 id: GO:0042303
 name: molting cycle
 def: "The periodic casting off and regeneration of an outer covering of cuticle, feathers, hair, horns, skin, etc." []
@@ -19770,6 +19947,15 @@ is_a: GO:0098797 ! plasma membrane protein complex
 is_a: GO:1990204 ! oxidoreductase complex
 
 [Term]
+id: GO:0043021
+name: ribonucleoprotein complex binding
+def: "Binding to a complex of RNA and protein." []
+synonym: "protein-RNA complex binding" EXACT []
+synonym: "ribonucleoprotein binding" EXACT []
+synonym: "RNP binding" EXACT []
+is_a: GO:0044877 ! protein-containing complex binding
+
+[Term]
 id: GO:0043025
 name: neuronal cell body
 def: "The portion of a neuron that includes the nucleus, but excludes cell projections such as axons and dendrites." []
@@ -20046,6 +20232,12 @@ def: "Binding to an anion, a charged atom or group of atoms with a net negative 
 is_a: GO:0043167 ! ion binding
 
 [Term]
+id: GO:0043169
+name: cation binding
+def: "Binding to a cation, a charged atom or group of atoms with a net positive charge." []
+is_a: GO:0043167 ! ion binding
+
+[Term]
 id: GO:0043170
 name: macromolecule metabolic process
 def: "The chemical reactions and pathways involving macromolecules, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." []
@@ -20059,6 +20251,12 @@ is_a: GO:0071704 ! organic substance metabolic process
 id: GO:0043177
 name: organic acid binding
 def: "Binding to an organic acid, any acidic compound containing carbon in covalent linkage." []
+is_a: GO:0036094 ! small molecule binding
+
+[Term]
+id: GO:0043178
+name: alcohol binding
+def: "Binding to an alcohol, any of a class of alkyl compounds containing a hydroxyl group." []
 is_a: GO:0036094 ! small molecule binding
 
 [Term]
@@ -20748,6 +20946,17 @@ intersection_of: RO:0002211 GO:0044085 ! regulates cellular component biogenesis
 relationship: RO:0002211 GO:0044085 ! regulates cellular component biogenesis
 
 [Term]
+id: GO:0044088
+name: regulation of vacuole organization
+def: "Any process that modulates the frequency, rate or extent of a process involved in the formation, arrangement of constituent parts, or disassembly of a vacuole." []
+synonym: "regulation of vacuole biogenesis" RELATED []
+synonym: "regulation of vacuole organisation" EXACT []
+is_a: GO:0033043 ! regulation of organelle organization
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002211 GO:0007033 ! regulates vacuole organization
+relationship: RO:0002211 GO:0007033 ! regulates vacuole organization
+
+[Term]
 id: GO:0044089
 name: positive regulation of cellular component biogenesis
 def: "Any process that activates or increases the frequency, rate or extent of cellular component biogenesis, a process that results in the biosynthesis of constituent macromolecules, assembly, and arrangement of constituent parts of a cellular component." []
@@ -20756,6 +20965,24 @@ is_a: GO:0048522 ! positive regulation of cellular process
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0044085 ! positively regulates cellular component biogenesis
 relationship: RO:0002213 GO:0044085 ! positively regulates cellular component biogenesis
+
+[Term]
+id: GO:0044090
+name: positive regulation of vacuole organization
+def: "Any process that activates or increases the frequency, rate or extent of a process involved in the formation, arrangement of constituent parts, or disassembly of a vacuole." []
+synonym: "positive regulation of vacuole biogenesis" RELATED []
+synonym: "positive regulation of vacuole organisation" EXACT []
+is_a: GO:0010638 ! positive regulation of organelle organization
+is_a: GO:0044088 ! regulation of vacuole organization
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002213 GO:0007033 ! positively regulates vacuole organization
+relationship: RO:0002213 GO:0007033 ! positively regulates vacuole organization
+
+[Term]
+id: GO:0044091
+name: membrane biogenesis
+def: "A cellular process that results in the biosynthesis of constituent macromolecules, assembly, and arrangement of constituent parts of a membrane." []
+is_a: GO:0044085 ! cellular component biogenesis
 
 [Term]
 id: GO:0044092
@@ -20840,6 +21067,15 @@ is_a: GO:0048518 ! positive regulation of biological process
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0044111 ! positively regulates formation of structure involved in a symbiotic process
 relationship: RO:0002213 GO:0044111 ! positively regulates formation of structure involved in a symbiotic process
+
+[Term]
+id: GO:0044207
+name: translation initiation ternary complex
+def: "A ribonucleoprotein complex that contains aminoacylated initiator methionine tRNA, GTP, and initiation factor 2 (either eIF2 in eukaryotes, or IF2 in prokaryotes). In prokaryotes, fMet-tRNA (initiator) is used rather than Met-tRNA (initiator)." []
+synonym: "Met-tRNA/eIF2.GTP ternary complex" NARROW []
+synonym: "translation initiation (ternary) complex" EXACT []
+is_a: GO:1990904 ! ribonucleoprotein complex
+relationship: BFO:0000050 GO:0005737 ! part of cytoplasm
 
 [Term]
 id: GO:0044212
@@ -24178,6 +24414,19 @@ synonym: "xanthine metabolism" EXACT []
 is_a: GO:0006144 ! purine nucleobase metabolic process
 
 [Term]
+id: GO:0046112
+name: nucleobase biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of a nucleobase, a nitrogenous base that is a constituent of a nucleic acid." []
+synonym: "nucleobase anabolism" EXACT []
+synonym: "nucleobase biosynthesis" EXACT []
+synonym: "nucleobase formation" EXACT []
+synonym: "nucleobase synthesis" EXACT []
+is_a: GO:0009112 ! nucleobase metabolic process
+is_a: GO:0018130 ! heterocycle biosynthetic process
+is_a: GO:1901362 ! organic cyclic compound biosynthetic process
+is_a: GO:1901566 ! organonitrogen compound biosynthetic process
+
+[Term]
 id: GO:0046136
 name: positive regulation of vitamin metabolic process
 def: "Any process that activates or increases the frequency, rate or extent of the chemical reactions and pathways involving a vitamin, one of a number of unrelated organic substances that occur in many foods in small amounts and that are necessary in trace amounts for the normal metabolic functioning of the body." []
@@ -24251,6 +24500,18 @@ synonym: "polyol formation" EXACT []
 synonym: "polyol synthesis" EXACT []
 is_a: GO:0019751 ! polyol metabolic process
 is_a: GO:0046165 ! alcohol biosynthetic process
+
+[Term]
+id: GO:0046184
+name: aldehyde biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of aldehydes, any organic compound with the formula R-CH=O." []
+synonym: "aldehyde anabolism" EXACT []
+synonym: "aldehyde biosynthesis" EXACT []
+synonym: "aldehyde formation" EXACT []
+synonym: "aldehyde synthesis" EXACT []
+is_a: GO:0006081 ! cellular aldehyde metabolic process
+is_a: GO:0044249 ! cellular biosynthetic process
+is_a: GO:1901576 ! organic substance biosynthetic process
 
 [Term]
 id: GO:0046189
@@ -24650,6 +24911,14 @@ is_a: GO:0046850 ! regulation of bone remodeling
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0046849 ! positively regulates bone remodeling
 relationship: RO:0002213 GO:0046849 ! positively regulates bone remodeling
+
+[Term]
+id: GO:0046872
+name: metal ion binding
+def: "Binding to a metal ion." []
+synonym: "heavy metal binding" NARROW []
+synonym: "metal binding" EXACT []
+is_a: GO:0043169 ! cation binding
 
 [Term]
 id: GO:0046873
@@ -27216,6 +27485,43 @@ is_a: GO:1902532 ! negative regulation of intracellular signal transduction
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002212 GO:0007264 ! negatively regulates small GTPase mediated signal transduction
 relationship: RO:0002212 GO:0007264 ! negatively regulates small GTPase mediated signal transduction
+
+[Term]
+id: GO:0051078
+name: meiotic nuclear membrane disassembly
+def: "The cell cycle process in which the controlled breakdown of the nuclear membranes during meiotic cell division occurs." []
+synonym: "meiotic nuclear envelope breakdown" RELATED []
+synonym: "meiotic nuclear envelope catabolism" RELATED []
+synonym: "meiotic nuclear envelope degradation" RELATED []
+synonym: "meiotic nuclear envelope disassembly" RELATED []
+is_a: GO:0051081 ! nuclear membrane disassembly
+is_a: GO:1903046 ! meiotic cell cycle process
+intersection_of: GO:0051081 ! nuclear membrane disassembly
+intersection_of: BFO:0000050 GO:0051321 ! part of meiotic cell cycle
+
+[Term]
+id: GO:0051080
+name: meiosis II nuclear membrane disassembly
+def: "The controlled breakdown of the nuclear membranes during the second division of meiosis." []
+synonym: "meiosis II nuclear envelope breakdown" RELATED []
+synonym: "meiosis II nuclear envelope catabolism" RELATED []
+synonym: "meiosis II nuclear envelope degradation" RELATED []
+synonym: "meiosis II nuclear envelope disassembly" RELATED []
+is_a: GO:0051078 ! meiotic nuclear membrane disassembly
+intersection_of: GO:0051081 ! nuclear membrane disassembly
+intersection_of: BFO:0000050 GO:0007135 ! part of meiosis II
+relationship: BFO:0000050 GO:0007135 ! part of meiosis II
+
+[Term]
+id: GO:0051081
+name: nuclear membrane disassembly
+def: "The controlled breakdown of the nuclear membranes, for example during cellular division." []
+synonym: "nuclear envelope breakdown" RELATED []
+synonym: "nuclear envelope catabolism" RELATED []
+synonym: "nuclear envelope degradation" RELATED []
+synonym: "nuclear envelope disassembly" RELATED []
+is_a: GO:0030397 ! membrane disassembly
+is_a: GO:0071763 ! nuclear membrane organization
 
 [Term]
 id: GO:0051090
@@ -30517,6 +30823,12 @@ is_a: GO:0048844 ! artery morphogenesis
 relationship: BFO:0000050 GO:0060037 ! part of pharyngeal system development
 
 [Term]
+id: GO:0061695
+name: transferase complex, transferring phosphorus-containing groups
+def: "A transferase complex capable of catalysis of the transfer of a phosphorus-containing group from one compound (donor) to another (acceptor)." []
+is_a: GO:1990234 ! transferase complex
+
+[Term]
 id: GO:0061702
 name: canonical inflammasome complex
 def: "A cytosolic protein complex that is capable of activating caspase-1." []
@@ -31001,6 +31313,13 @@ name: aromatase activity
 def: "Catalysis of the reduction of an aliphatic ring to yield an aromatic ring." []
 synonym: "estrogen synthetase activity" NARROW []
 is_a: GO:0016712 ! oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, reduced flavin or flavoprotein as one donor, and incorporation of one atom of oxygen
+
+[Term]
+id: GO:0070405
+name: ammonium ion binding
+def: "Binding to ammonium ions (NH4+)." []
+synonym: "ammonium binding" RELATED []
+is_a: GO:0043169 ! cation binding
 
 [Term]
 id: GO:0070459
@@ -31615,6 +31934,14 @@ synonym: "immunoglobulin V-J joining" EXACT []
 is_a: GO:0033152 ! immunoglobulin V(D)J recombination
 
 [Term]
+id: GO:0071709
+name: membrane assembly
+def: "The aggregation, arrangement and bonding together of a set of components to form a membrane." []
+is_a: GO:0022607 ! cellular component assembly
+is_a: GO:0061024 ! membrane organization
+relationship: BFO:0000050 GO:0044091 ! part of membrane biogenesis
+
+[Term]
 id: GO:0071735
 name: IgG immunoglobulin complex
 def: "A protein complex composed of two identical immunoglobulin heavy chains of an IgG isotype and two identical immunoglobulin light chains, held together by disulfide bonds. An IgG immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph." []
@@ -31652,6 +31979,15 @@ id: GO:0071753
 name: IgM immunoglobulin complex
 def: "A protein complex composed of two identical immunoglobulin heavy chains of the IgM isotype and two identical immunoglobulin light chains, held together by disulfide bonds, and in its circulating form complexed with J chain in polymeric forms. An IgM immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph." []
 is_a: GO:0019814 ! immunoglobulin complex
+
+[Term]
+id: GO:0071763
+name: nuclear membrane organization
+def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of the nuclear inner or outer membrane." []
+synonym: "nuclear membrane organisation" EXACT []
+synonym: "nuclear membrane organization and biogenesis" RELATED []
+is_a: GO:0061024 ! membrane organization
+relationship: BFO:0000050 GO:0006998 ! part of nuclear envelope organization
 
 [Term]
 id: GO:0071825
@@ -31983,6 +32319,14 @@ is_a: GO:0034641 ! cellular nitrogen compound metabolic process
 is_a: GO:0046483 ! heterocycle metabolic process
 is_a: GO:1901360 ! organic cyclic compound metabolic process
 is_a: GO:1901564 ! organonitrogen compound metabolic process
+
+[Term]
+id: GO:0072592
+name: oxygen metabolic process
+def: "The chemical reactions and pathways involving diatomic oxygen (O2)." []
+synonym: "diatomic oxygen metabolic process" EXACT []
+synonym: "oxygen metabolism" EXACT []
+is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
 id: GO:0080090
@@ -32543,6 +32887,14 @@ def: "Binding to an organic cyclic compound, any molecular entity that contains 
 is_a: GO:0005488 ! binding
 
 [Term]
+id: GO:0097164
+name: ammonium ion metabolic process
+def: "The chemical reactions and pathways involving the ammonium ion." []
+synonym: "ammonium ion metabolism" EXACT []
+synonym: "ammonium metabolic process" RELATED []
+is_a: GO:0006807 ! nitrogen compound metabolic process
+
+[Term]
 id: GO:0097186
 name: amelogenesis
 def: "The process whose specific outcome is the formation of tooth enamel, occurring in two stages: secretory stage and maturation stage." []
@@ -32581,6 +32933,13 @@ name: cellular response to toxic substance
 def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a toxic stimulus." []
 is_a: GO:0009636 ! response to toxic substance
 is_a: GO:0070887 ! cellular response to chemical stimulus
+
+[Term]
+id: GO:0097254
+name: renal tubular secretion
+def: "The elimination of substances from peritubular capillaries (or surrounding hemolymph in invertebrates) into the renal tubules to be incorporated subsequently into the urine. Substances that are secreted include organic anions, ammonia, potassium and drugs." []
+is_a: GO:0003014 ! renal system process
+is_a: GO:0007588 ! excretion
 
 [Term]
 id: GO:0097325
@@ -33636,6 +33995,24 @@ def: "OBSOLETE. Any transcription from RNA polymerase II promoter process that r
 is_obsolete: true
 
 [Term]
+id: GO:0101024
+name: mitotic nuclear membrane organization
+def: "A mitotic cell cycle process which results in the assembly, arrangement, or disassembly of the nuclear inner or outer membrane during mitosis." []
+synonym: "nuclear membrane organization involved in mitotic nuclear division" EXACT []
+is_a: GO:0071763 ! nuclear membrane organization
+is_a: GO:1903047 ! mitotic cell cycle process
+intersection_of: GO:0071763 ! nuclear membrane organization
+intersection_of: BFO:0000050 GO:0140014 ! part of mitotic nuclear division
+relationship: BFO:0000050 GO:0140014 ! part of mitotic nuclear division
+
+[Term]
+id: GO:0101025
+name: nuclear membrane biogenesis
+def: "The process in which a nuclear membrane is synthesized, aggregates, and bonds together." []
+is_a: GO:0044091 ! membrane biogenesis
+relationship: BFO:0000050 GO:0071763 ! part of nuclear membrane organization
+
+[Term]
 id: GO:0102175
 name: 3-beta-hydroxysteroid dehydrogenase/C4-decarboxylase activity
 def: "Catalysis of the reaction: a 3beta-hydroxysteroid-4alpha-carboxylate + NAD+ = a 3-oxosteroid + CO2 + NADH." []
@@ -33898,6 +34275,24 @@ intersection_of: RO:0002212 GO:0032782 ! negatively regulates bile acid secretio
 relationship: RO:0002212 GO:0032782 ! negatively regulates bile acid secretion
 
 [Term]
+id: GO:0120251
+name: hydrocarbon biosynthetic process
+def: "The chemical reactions and pathways resulting in the formation of a hydrocarbon, a compound consisting of carbon and hydrogen only." []
+synonym: "hydrocarbon anabolism" EXACT []
+synonym: "hydrocarbon biosynthesis" EXACT []
+synonym: "hydrocarbon formation" EXACT []
+synonym: "hydrocarbon synthesis" EXACT []
+is_a: GO:0120252 ! hydrocarbon metabolic process
+is_a: GO:1901576 ! organic substance biosynthetic process
+
+[Term]
+id: GO:0120252
+name: hydrocarbon metabolic process
+def: "The chemical reactions and pathways involving a hydrocarbon, a compound consisting of carbon and hydrogen only." []
+synonym: "hydrocarbon metabolism" EXACT []
+is_a: GO:0071704 ! organic substance metabolic process
+
+[Term]
 id: GO:0120254
 name: olefinic compound metabolic process
 def: "The chemical reactions and pathways involving an olefinic compound, any compound which contains a carbon-carbon double bond (aka C=C)." []
@@ -33995,6 +34390,12 @@ id: GO:0140096
 name: catalytic activity, acting on a protein
 def: "Catalytic activity that acts to modify a protein." []
 is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0140098
+name: catalytic activity, acting on RNA
+def: "Catalytic activity that acts to modify RNA, driven by ATP hydrolysis." []
+is_a: GO:0140640 ! catalytic activity, acting on a nucleic acid
 
 [Term]
 id: GO:0140110
@@ -34160,6 +34561,12 @@ def: "Binds to and stops, prevents or reduces the activity of aldehyde dehydroge
 is_a: GO:0004857 ! enzyme inhibitor activity
 
 [Term]
+id: GO:0140640
+name: catalytic activity, acting on a nucleic acid
+def: "Catalytic activity that acts to modify a nucleic acid." []
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
 id: GO:0140657
 name: ATP-dependent activity
 def: "A molecular function characterized by the coupling of ATP hydrolysis to other steps of a reaction mechanism to make the reaction energetically favorable, for example to catalyze a reaction or drive transport against a concentration gradient." []
@@ -34192,6 +34599,12 @@ synonym: "multicellular organism level chemical homeostasis" EXACT []
 synonym: "organismal level chemical homeostasis" EXACT []
 is_a: GO:0048871 ! multicellular organismal-level homeostasis
 is_a: GO:0048878 ! chemical homeostasis
+
+[Term]
+id: GO:0150005
+name: enzyme activator complex
+def: "A protein complex capable of activating an enzyme. Activating subunits may dissociate from the catalytic unit before the enzyme is active." []
+is_a: GO:0032991 ! protein-containing complex
 
 [Term]
 id: GO:0150063
@@ -36882,6 +37295,13 @@ intersection_of: RO:0002213 GO:0007411 ! positively regulates axon guidance
 relationship: RO:0002213 GO:0007411 ! positively regulates axon guidance
 
 [Term]
+id: GO:1902670
+name: carbon dioxide binding
+def: "Binding to carbon dioxide." []
+synonym: "CO2 binding" EXACT []
+is_a: GO:0005488 ! binding
+
+[Term]
 id: GO:1902679
 name: negative regulation of RNA biosynthetic process
 def: "Any process that stops, prevents or reduces the frequency, rate or extent of RNA biosynthetic process." []
@@ -37114,6 +37534,14 @@ is_a: GO:1902930 ! regulation of alcohol biosynthetic process
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0046165 ! positively regulates alcohol biosynthetic process
 relationship: RO:0002213 GO:0046165 ! positively regulates alcohol biosynthetic process
+
+[Term]
+id: GO:1903008
+name: organelle disassembly
+def: "The disaggregation of an organelle into its constituent components." []
+synonym: "organelle degradation" EXACT []
+is_a: GO:0006996 ! organelle organization
+is_a: GO:0022411 ! cellular component disassembly
 
 [Term]
 id: GO:1903010
@@ -41406,6 +41834,79 @@ intersection_of: RO:0002213 GO:0001569 ! positively regulates branching involved
 relationship: RO:0002213 GO:0001569 ! positively regulates branching involved in blood vessel morphogenesis
 
 [Term]
+id: GO:1905557
+name: regulation of mitotic nuclear envelope disassembly
+def: "Any process that modulates the frequency, rate or extent of mitotic nuclear envelope disassembly." []
+synonym: "regulation of mitotic nuclear envelope breakdown" EXACT []
+synonym: "regulation of mitotic nuclear envelope catabolism" EXACT []
+synonym: "regulation of mitotic nuclear envelope degradation" EXACT []
+is_a: GO:0010549 ! regulation of membrane disassembly
+is_a: GO:0010564 ! regulation of cell cycle process
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002211 GO:0007077 ! regulates mitotic nuclear membrane disassembly
+relationship: RO:0002211 GO:0007077 ! regulates mitotic nuclear membrane disassembly
+
+[Term]
+id: GO:1905558
+name: negative regulation of mitotic nuclear envelope disassembly
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of mitotic nuclear envelope disassembly." []
+synonym: "down regulation of mitotic nuclear envelope breakdown" EXACT []
+synonym: "down regulation of mitotic nuclear envelope catabolism" EXACT []
+synonym: "down regulation of mitotic nuclear envelope degradation" EXACT []
+synonym: "down regulation of mitotic nuclear envelope disassembly" EXACT []
+synonym: "down-regulation of mitotic nuclear envelope breakdown" EXACT []
+synonym: "down-regulation of mitotic nuclear envelope catabolism" EXACT []
+synonym: "down-regulation of mitotic nuclear envelope degradation" EXACT []
+synonym: "down-regulation of mitotic nuclear envelope disassembly" EXACT []
+synonym: "downregulation of mitotic nuclear envelope breakdown" EXACT []
+synonym: "downregulation of mitotic nuclear envelope catabolism" EXACT []
+synonym: "downregulation of mitotic nuclear envelope degradation" EXACT []
+synonym: "downregulation of mitotic nuclear envelope disassembly" EXACT []
+synonym: "inhibition of mitotic nuclear envelope breakdown" NARROW []
+synonym: "inhibition of mitotic nuclear envelope catabolism" NARROW []
+synonym: "inhibition of mitotic nuclear envelope degradation" NARROW []
+synonym: "inhibition of mitotic nuclear envelope disassembly" NARROW []
+synonym: "negative regulation of mitotic nuclear envelope breakdown" EXACT []
+synonym: "negative regulation of mitotic nuclear envelope catabolism" EXACT []
+synonym: "negative regulation of mitotic nuclear envelope degradation" EXACT []
+is_a: GO:0010948 ! negative regulation of cell cycle process
+is_a: GO:0051129 ! negative regulation of cellular component organization
+is_a: GO:1905557 ! regulation of mitotic nuclear envelope disassembly
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002212 GO:0007077 ! negatively regulates mitotic nuclear membrane disassembly
+relationship: RO:0002212 GO:0007077 ! negatively regulates mitotic nuclear membrane disassembly
+
+[Term]
+id: GO:1905559
+name: positive regulation of mitotic nuclear envelope disassembly
+def: "Any process that activates or increases the frequency, rate or extent of mitotic nuclear envelope disassembly." []
+synonym: "activation of mitotic nuclear envelope breakdown" NARROW []
+synonym: "activation of mitotic nuclear envelope catabolism" NARROW []
+synonym: "activation of mitotic nuclear envelope degradation" NARROW []
+synonym: "activation of mitotic nuclear envelope disassembly" NARROW []
+synonym: "positive regulation of mitotic nuclear envelope breakdown" EXACT []
+synonym: "positive regulation of mitotic nuclear envelope catabolism" EXACT []
+synonym: "positive regulation of mitotic nuclear envelope degradation" EXACT []
+synonym: "up regulation of mitotic nuclear envelope breakdown" EXACT []
+synonym: "up regulation of mitotic nuclear envelope catabolism" EXACT []
+synonym: "up regulation of mitotic nuclear envelope degradation" EXACT []
+synonym: "up regulation of mitotic nuclear envelope disassembly" EXACT []
+synonym: "up-regulation of mitotic nuclear envelope breakdown" EXACT []
+synonym: "up-regulation of mitotic nuclear envelope catabolism" EXACT []
+synonym: "up-regulation of mitotic nuclear envelope degradation" EXACT []
+synonym: "up-regulation of mitotic nuclear envelope disassembly" EXACT []
+synonym: "upregulation of mitotic nuclear envelope breakdown" EXACT []
+synonym: "upregulation of mitotic nuclear envelope catabolism" EXACT []
+synonym: "upregulation of mitotic nuclear envelope degradation" EXACT []
+synonym: "upregulation of mitotic nuclear envelope disassembly" EXACT []
+is_a: GO:0051130 ! positive regulation of cellular component organization
+is_a: GO:0090068 ! positive regulation of cell cycle process
+is_a: GO:1905557 ! regulation of mitotic nuclear envelope disassembly
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002213 GO:0007077 ! positively regulates mitotic nuclear membrane disassembly
+relationship: RO:0002213 GO:0007077 ! positively regulates mitotic nuclear membrane disassembly
+
+[Term]
 id: GO:1905636
 name: positive regulation of RNA polymerase II regulatory region sequence-specific DNA binding
 def: "Any process that activates or increases the frequency, rate or extent of RNA polymerase II regulatory region sequence-specific DNA binding." []
@@ -41477,6 +41978,14 @@ is_a: GO:1905651 ! regulation of artery morphogenesis
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0048844 ! positively regulates artery morphogenesis
 relationship: RO:0002213 GO:0048844 ! positively regulates artery morphogenesis
+
+[Term]
+id: GO:1905690
+name: nucleus disassembly
+def: "The disaggregation of a nucleus into its constituent components." []
+synonym: "cell nucleus disassembly" EXACT []
+is_a: GO:0006997 ! nucleus organization
+is_a: GO:1903008 ! organelle disassembly
 
 [Term]
 id: GO:1905706
@@ -41856,6 +42365,19 @@ def: "Any protein complex that possesses oxidoreductase activity." []
 synonym: "oxidation-reduction complex" EXACT []
 synonym: "redox complex" EXACT []
 is_a: GO:1902494 ! catalytic complex
+
+[Term]
+id: GO:1990234
+name: transferase complex
+def: "A protein complex capable of catalyzing the transfer of a group, e.g. a methyl group, glycosyl group, acyl group, phosphorus-containing, or other groups, from one compound (generally regarded as the donor) to another compound (generally regarded as the acceptor)." []
+is_a: GO:1902494 ! catalytic complex
+
+[Term]
+id: GO:1990239
+name: steroid hormone binding
+def: "Binding to a steroid hormone." []
+is_a: GO:0005496 ! steroid binding
+is_a: GO:0042562 ! hormone binding
 
 [Term]
 id: GO:1990266
@@ -42513,6 +43035,41 @@ is_a: GO:2000348 ! regulation of CD40 signaling pathway
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: RO:0002213 GO:0023035 ! positively regulates CD40 signaling pathway
 relationship: RO:0002213 GO:0023035 ! positively regulates CD40 signaling pathway
+
+[Term]
+id: GO:2000374
+name: regulation of oxygen metabolic process
+def: "Any process that modulates the frequency, rate or extent of oxygen metabolic process." []
+synonym: "regulation of diatomic oxygen metabolic process" EXACT []
+synonym: "regulation of oxygen metabolism" EXACT []
+is_a: GO:0031323 ! regulation of cellular metabolic process
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002211 GO:0072592 ! regulates oxygen metabolic process
+relationship: RO:0002211 GO:0072592 ! regulates oxygen metabolic process
+
+[Term]
+id: GO:2000375
+name: negative regulation of oxygen metabolic process
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of oxygen metabolic process." []
+synonym: "negative regulation of diatomic oxygen metabolic process" EXACT []
+synonym: "negative regulation of oxygen metabolism" EXACT []
+is_a: GO:0031324 ! negative regulation of cellular metabolic process
+is_a: GO:2000374 ! regulation of oxygen metabolic process
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002212 GO:0072592 ! negatively regulates oxygen metabolic process
+relationship: RO:0002212 GO:0072592 ! negatively regulates oxygen metabolic process
+
+[Term]
+id: GO:2000376
+name: positive regulation of oxygen metabolic process
+def: "Any process that activates or increases the frequency, rate or extent of oxygen metabolic process." []
+synonym: "positive regulation of diatomic oxygen metabolic process" EXACT []
+synonym: "positive regulation of oxygen metabolism" EXACT []
+is_a: GO:0031325 ! positive regulation of cellular metabolic process
+is_a: GO:2000374 ! regulation of oxygen metabolic process
+intersection_of: GO:0065007 ! biological regulation
+intersection_of: RO:0002213 GO:0072592 ! positively regulates oxygen metabolic process
+relationship: RO:0002213 GO:0072592 ! positively regulates oxygen metabolic process
 
 [Term]
 id: GO:2000380

@@ -6781,6 +6781,7 @@ relationship: RO:0002433 UBERON:0003902 ! retinal neural layer
 id: UBERON:0001790
 name: outer plexiform layer of retina
 is_a: UBERON:0001781 ! layer of retina
+disjoint_from: UBERON:0005376 ! olfactory bulb external plexiform layer
 relationship: BFO:0000050 UBERON:0003902 ! retinal neural layer
 relationship: RO:0002220 UBERON:0001791 ! inner nuclear layer of retina
 relationship: RO:0002433 UBERON:0003902 ! retinal neural layer
@@ -10325,6 +10326,14 @@ relationship: RO:0002170 UBERON:0000981 ! femur
 relationship: RO:0002220 UBERON:0001485 ! knee joint
 
 [Term]
+id: UBERON:0002450
+name: decidua
+is_a: UBERON:0000478 ! extraembryonic structure
+relationship: BFO:0000050 UBERON:0001987 ! placenta
+relationship: RO:0002202 UBERON:0000459 ! uterine wall
+relationship: RO:0002433 UBERON:0001987 ! placenta
+
+[Term]
 id: UBERON:0002451
 name: endometrial gland
 is_a: UBERON:0000414 ! mucous gland
@@ -11586,6 +11595,14 @@ is_a: UBERON:0003037 ! septum
 intersection_of: UBERON:0003037 ! septum
 intersection_of: BFO:0000050 UBERON:0000992 ! ovary
 relationship: BFO:0000050 UBERON:0000992 ! ovary
+
+[Term]
+id: UBERON:0003219
+name: shell septum
+is_a: UBERON:0003037 ! septum
+intersection_of: UBERON:0003037 ! septum
+intersection_of: BFO:0000050 UBERON:0006612 ! shell
+relationship: BFO:0000050 UBERON:0006612 ! shell
 
 [Term]
 id: UBERON:0003220
@@ -16105,6 +16122,11 @@ is_a: UBERON:0004921 ! subdivision of digestive tract
 intersection_of: UBERON:0004921 ! subdivision of digestive tract
 intersection_of: BFO:0000050 UBERON:0001555 ! digestive tract
 intersection_of: RO:0002202 UBERON:0000925 ! endoderm
+
+[Term]
+id: UBERON:0004186
+name: olfactory bulb mitral cell layer
+is_a: UBERON:0004001 ! olfactory bulb layer
 
 [Term]
 id: UBERON:0004188
@@ -21627,6 +21649,16 @@ relationship: BFO:0000050 UBERON:0002180 ! ventral funiculus of spinal cord
 relationship: RO:0002433 UBERON:0002318 ! white matter of spinal cord
 
 [Term]
+id: UBERON:0005376
+name: olfactory bulb external plexiform layer
+is_a: UBERON:0009950 ! olfactory bulb plexiform layer
+
+[Term]
+id: UBERON:0005378
+name: olfactory bulb granule cell layer
+is_a: UBERON:0004001 ! olfactory bulb layer
+
+[Term]
 id: UBERON:0005381
 name: dentate gyrus granule cell layer
 is_a: UBERON:0002304 ! layer of dentate gyrus
@@ -24617,6 +24649,13 @@ intersection_of: UBERON:0002213 ! cartilaginous joint
 intersection_of: RO:0002176 UBERON:0004742 {cardinality="2"} ! dentary
 relationship: BFO:0000050 UBERON:0001710 ! lower jaw region
 relationship: RO:0002176 UBERON:0004742 ! dentary
+
+[Term]
+id: UBERON:0006612
+name: shell
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: BFO:0000050 UBERON:0002416 ! integumental system
+relationship: RO:0002160 NCBITaxon:6072
 
 [Term]
 id: UBERON:0006614
@@ -29104,6 +29143,14 @@ relationship: BFO:0000051 UBERON:0002402 ! pleural cavity
 relationship: BSPO:0000126 UBERON:0001004 ! respiratory system
 
 [Term]
+id: UBERON:0009841
+name: upper rhombic lip
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: BFO:0000050 UBERON:0005499 ! rhombomere 1
+relationship: BFO:0000050 UBERON:0006215 ! rhombic lip
+relationship: RO:0002220 UBERON:0003052 ! midbrain-hindbrain boundary
+
+[Term]
 id: UBERON:0009842
 name: glandular acinus
 is_a: UBERON:0034922 ! cell cluster
@@ -29383,6 +29430,11 @@ id: UBERON:0009920
 name: optic neural crest
 is_a: UBERON:0007530 ! migrating mesenchyme population
 relationship: BFO:0000050 UBERON:0007213 ! mesenchyme derived from head neural crest
+
+[Term]
+id: UBERON:0009950
+name: olfactory bulb plexiform layer
+is_a: UBERON:0004001 ! olfactory bulb layer
 
 [Term]
 id: UBERON:0009953
@@ -42164,6 +42216,35 @@ is_a: UBERON:0012375 ! subserosa
 intersection_of: UBERON:0012375 ! subserosa
 intersection_of: BFO:0000050 UBERON:0003889 ! fallopian tube
 relationship: BFO:0000050 UBERON:0003889 ! fallopian tube
+
+[Term]
+id: UBERON:8600000
+name: lobular bronchiole
+is_a: UBERON:0002186 ! bronchiole
+
+[Term]
+id: UBERON:8600001
+name: epithelium of lobular bronchiole
+is_a: UBERON:0002051 ! epithelium of bronchiole
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:8600000 ! lobular bronchiole
+relationship: BFO:0000050 UBERON:8600000 ! lobular bronchiole
+
+[Term]
+id: UBERON:8600002
+name: mucosa of lobular bronchiole
+is_a: UBERON:0005039 ! mucosa of bronchiole
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: BFO:0000050 UBERON:8600000 ! lobular bronchiole
+relationship: BFO:0000050 UBERON:8600000 ! lobular bronchiole
+
+[Term]
+id: UBERON:8600003
+name: smooth muscle tissue of lobular bronchiole
+is_a: UBERON:0004515 ! smooth muscle tissue of bronchiole
+intersection_of: UBERON:0001135 ! smooth muscle tissue
+intersection_of: BFO:0000050 UBERON:8600000 ! lobular bronchiole
+relationship: BFO:0000050 UBERON:8600000 ! lobular bronchiole
 
 [Term]
 id: UBERON:8600004

@@ -9684,12 +9684,41 @@ is_a: NCBITaxon:1648030 ! Triticinae
 property_value: has_rank NCBITaxon:genus
 
 [Term]
+id: NCBITaxon:4618
+name: Zingiberales
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:40513
+synonym: "Scitamineae" RELATED synonym []
+synonym: "Zingiberiflorae" RELATED in_part []
+xref: GC_ID:1
+xref: PMID:26350789
+is_a: NCBITaxon:4734 ! commelinids
+property_value: has_rank NCBITaxon:order
+
+[Term]
 id: NCBITaxon:464095
 name: Picornavirales
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:2732506 ! Pisoniviricetes
 property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:4642
+name: Zingiberaceae
+namespace: ncbi_taxonomy
+synonym: "ginger family" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:4618 ! Zingiberales
+property_value: has_rank NCBITaxon:family
+
+[Term]
+id: NCBITaxon:4650
+name: Zingiber
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:4642 ! Zingiberaceae
+property_value: has_rank NCBITaxon:genus
 
 [Term]
 id: NCBITaxon:46580
@@ -14612,6 +14641,15 @@ xref: PMID:11414267
 xref: PMID:11760958
 is_a: NCBITaxon:942 ! Anaplasmataceae
 property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:94328
+name: Zingiber officinale
+namespace: ncbi_taxonomy
+synonym: "ginger" EXACT common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:4650 ! Zingiber
+property_value: has_rank NCBITaxon:species
 
 [Term]
 id: NCBITaxon:9443

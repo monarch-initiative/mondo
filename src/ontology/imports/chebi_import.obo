@@ -730,6 +730,16 @@ relationship: RO:0000087 CHEBI:75771 ! mouse metabolite
 relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
 
 [Term]
+id: CHEBI:15986
+name: polynucleotide
+def: "A nucleobase-containing molecular entity with a polymeric structure comprised of a linear sequence of 13 or more nucleotide residues." []
+synonym: "Polynucleotide" EXACT []
+synonym: "polynucleotides" RELATED []
+is_a: CHEBI:33695 ! information biomacromolecule
+is_a: CHEBI:61120 ! nucleobase-containing molecular entity
+relationship: BFO:0000051 CHEBI:50319 ! nucleotide residue
+
+[Term]
 id: CHEBI:16015
 name: L-glutamic acid
 def: "An optically active form of glutamic acid having L-configuration." []
@@ -1135,6 +1145,17 @@ is_a: CHEBI:33842 ! aromatic annulene
 relationship: RO:0000087 CHEBI:48355 ! non-polar solvent
 relationship: RO:0000087 CHEBI:50903 ! carcinogenic agent
 relationship: RO:0000087 CHEBI:78298 ! environmental contaminant
+
+[Term]
+id: CHEBI:167164
+name: mineral nutrient
+def: "A mineral that is an inorganic nutrient which must be ingested and absorbed in adequate amounts to satisfy a wide range of essential metabolic and/or structural functions in the human body." []
+synonym: "mineral nutrient" EXACT []
+synonym: "mineral nutrients" RELATED []
+synonym: "nutrient mineral" RELATED []
+synonym: "nutrient minerals" RELATED []
+is_a: CHEBI:46662 ! mineral
+relationship: RO:0000087 CHEBI:33284 ! nutrient
 
 [Term]
 id: CHEBI:16733
@@ -1978,6 +1999,14 @@ synonym: "iron" RELATED []
 is_a: CHEBI:33356 ! iron group element atom
 relationship: RO:0000087 CHEBI:27027 ! micronutrient
 relationship: RO:0000087 CHEBI:76971 ! Escherichia coli metabolite
+
+[Term]
+id: CHEBI:18282
+name: nucleobase
+def: "That part of DNA or RNA that may be involved in pairing." []
+synonym: "Base" RELATED []
+synonym: "nucleobases" RELATED []
+is_a: CHEBI:38101 ! organonitrogen heterocyclic compound
 
 [Term]
 id: CHEBI:18291
@@ -5914,6 +5943,39 @@ synonym: "information macromolecules" RELATED []
 is_a: CHEBI:33694 ! biomacromolecule
 
 [Term]
+id: CHEBI:33696
+name: nucleic acid
+def: "A macromolecule made up of nucleotide units and hydrolysable into certain pyrimidine or purine bases (usually adenine, cytosine, guanine, thymine, uracil), D-ribose or 2-deoxy-D-ribose and phosphoric acid." []
+synonym: "acide nucleique" RELATED []
+synonym: "acides nucleiques" RELATED []
+synonym: "acido nucleico" RELATED []
+synonym: "acidos nucleicos" RELATED []
+synonym: "NA" RELATED []
+synonym: "nucleic acids" EXACT []
+synonym: "Nukleinsaeure" RELATED []
+synonym: "Nukleinsaeuren" RELATED []
+is_a: CHEBI:15986 ! polynucleotide
+relationship: BFO:0000051 CHEBI:33791 ! canonical nucleoside residue
+relationship: BFO:0000051 CHEBI:50297 ! canonical nucleotide residue
+
+[Term]
+id: CHEBI:33697
+name: ribonucleic acid
+def: "High molecular weight, linear polymers, composed of nucleotides containing ribose and linked by phosphodiester bonds; RNA is central to the synthesis of proteins." []
+synonym: "pentosenucleic acids" RELATED []
+synonym: "ribonucleic acid" EXACT []
+synonym: "ribonucleic acids" EXACT []
+synonym: "ribonucleic acids" RELATED []
+synonym: "Ribonukleinsaeure" RELATED []
+synonym: "ribose nucleic acid" RELATED []
+synonym: "RNA" RELATED []
+synonym: "RNS" RELATED []
+synonym: "yeast nucleic acid" RELATED []
+is_a: CHEBI:33696 ! nucleic acid
+relationship: BFO:0000051 CHEBI:33792 ! canonical ribonucleoside residue
+relationship: BFO:0000051 CHEBI:50299 ! canonical ribonucleotide residue
+
+[Term]
 id: CHEBI:33700
 name: proteinogenic amino-acid residue
 synonym: "canonical amino-acid residue" RELATED []
@@ -6055,6 +6117,26 @@ synonym: "beryllium compounds" RELATED []
 synonym: "beryllium molecular entities" RELATED []
 is_a: CHEBI:33299 ! alkaline earth molecular entity
 relationship: BFO:0000051 CHEBI:30501 ! beryllium atom
+
+[Term]
+id: CHEBI:33791
+name: canonical nucleoside residue
+synonym: "canonical nucleoside residues" RELATED []
+synonym: "common nucleoside residues" RELATED []
+synonym: "nucleoside residue" RELATED []
+synonym: "standard nucleoside residues" RELATED []
+is_a: CHEBI:50320 ! nucleoside residue
+
+[Term]
+id: CHEBI:33792
+name: canonical ribonucleoside residue
+synonym: "canonical ribonucleoside residues" RELATED []
+synonym: "common ribonucleoside residue" RELATED []
+synonym: "common ribonucleoside residues" RELATED []
+synonym: "N" RELATED []
+synonym: "Nuc" RELATED []
+synonym: "standard ribonucleoside residues" RELATED []
+is_a: CHEBI:33791 ! canonical nucleoside residue
 
 [Term]
 id: CHEBI:33822
@@ -8999,6 +9081,18 @@ is_a: CHEBI:38632 ! membrane transport modulator
 is_a: CHEBI:51374 ! GABA agent
 
 [Term]
+id: CHEBI:50297
+name: canonical nucleotide residue
+synonym: "canonical nucleotide residues" RELATED []
+is_a: CHEBI:50319 ! nucleotide residue
+
+[Term]
+id: CHEBI:50299
+name: canonical ribonucleotide residue
+synonym: "canonical ribonucleotide residues" RELATED []
+is_a: CHEBI:50297 ! canonical nucleotide residue
+
+[Term]
 id: CHEBI:50312
 name: onium compound
 is_a: CHEBI:37577 ! heteroatomic molecular entity
@@ -9022,6 +9116,18 @@ synonym: "chloronium" EXACT []
 synonym: "H2Cl(+)" RELATED []
 is_a: CHEBI:50313 ! onium cation
 relationship: is_conjugate_acid_of CHEBI:17883 ! hydrogen chloride
+
+[Term]
+id: CHEBI:50319
+name: nucleotide residue
+synonym: "nucleotide residues" RELATED []
+is_a: CHEBI:33247 ! organic group
+
+[Term]
+id: CHEBI:50320
+name: nucleoside residue
+synonym: "nucleoside residues" RELATED []
+is_a: CHEBI:33247 ! organic group
 
 [Term]
 id: CHEBI:50325
@@ -10174,6 +10280,17 @@ is_a: CHEBI:37395 ! mucopolysaccharide
 relationship: has_functional_parent CHEBI:29057 ! keratan
 
 [Term]
+id: CHEBI:61120
+name: nucleobase-containing molecular entity
+def: "Any compound that has a nucleobase as a part." []
+synonym: "nucleobase-containing compound" RELATED []
+synonym: "nucleobase-containing compounds" RELATED []
+synonym: "nucleobase-containing molecular entities" RELATED []
+is_a: CHEBI:33833 ! heteroarene
+is_a: CHEBI:51143 ! nitrogen molecular entity
+relationship: has_functional_parent CHEBI:18282 ! nucleobase
+
+[Term]
 id: CHEBI:6121
 name: ketamine
 def: "A member of the class of cyclohexanones in which one of the hydrogens at position 2 is substituted by a 2-chlorophenyl group, while the other is substituted by a methylamino group." []
@@ -10730,6 +10847,14 @@ synonym: "tetracycline anion" RELATED []
 is_a: CHEBI:25696 ! organic anion
 relationship: is_conjugate_base_of CHEBI:27902 ! tetracycline
 relationship: is_conjugate_base_of CHEBI:77932 ! tetracycline zwitterion
+
+[Term]
+id: CHEBI:72544
+name: flavonoids
+def: "Any organic molecular entity whose stucture is based on derivatives of a phenyl-substituted 1-phenylpropane possessing a C15 or C16 skeleton, or such a structure which is condensed with a C6-C3 lignan precursors. The term is a 'superclass' comprising all members of the classes of flavonoid, isoflavonoid, neoflavonoid, chalcones, dihydrochalcones, aurones, pterocarpan, coumestans, rotenoid, flavonolignan, homoflavonoid and flavonoid oligomers. Originally restricted to natural products, the term is also applied to synthetic compounds related to them." []
+synonym: "flavonoid" RELATED []
+is_a: CHEBI:25806 ! oxygen molecular entity
+is_a: CHEBI:50860 ! organic molecular entity
 
 [Term]
 id: CHEBI:72695

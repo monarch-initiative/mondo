@@ -15161,6 +15161,126 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0001061 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0001061">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000460"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000460"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A cell found in an organism or derived from an organism exhibiting a phenotype that deviates from the expected phenotype of any native cell type of that organism. Abnormal cells are typically found in disease states or disease models.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0001-9990-8331"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-01-30T18:53:32Z</terms:date>
+        <oboInOwl:hasDbXref>https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&amp;code=C12913</oboInOwl:hasDbXref>
+        <rdfs:comment>https://github.com/obophenotype/cell-ontology/issues/448</rdfs:comment>
+        <rdfs:label>abnormal cell</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001061"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A cell found in an organism or derived from an organism exhibiting a phenotype that deviates from the expected phenotype of any native cell type of that organism. Abnormal cells are typically found in disease states or disease models.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:cg</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:wdd</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001063 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0001063">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0001061"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0002011"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001061"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0002011"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An abnormal cell exhibiting dysregulation of cell proliferation or programmed cell death and capable of forming a neoplasm, an aggregate of cells in the form of a tumor mass or an excess number of abnormal cells (liquid tumor) within an organism.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0001-9990-8331"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-01-30T19:16:26Z</terms:date>
+        <oboInOwl:hasDbXref>https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&amp;code=C12922</oboInOwl:hasDbXref>
+        <oboInOwl:hasRelatedSynonym>tumor cell</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>tumour cell</oboInOwl:hasRelatedSynonym>
+        <rdfs:comment>https://github.com/obophenotype/cell-ontology/issues/448</rdfs:comment>
+        <rdfs:label>neoplastic cell</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001063"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An abnormal cell exhibiting dysregulation of cell proliferation or programmed cell death and capable of forming a neoplasm, an aggregate of cells in the form of a tumor mass or an excess number of abnormal cells (liquid tumor) within an organism.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:cg</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:wdd</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001064 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0001064">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0001063"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0002097"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001063"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0002097"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A neoplastic cell that is capable of entering a surrounding tissue</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0001-9990-8331"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-01-30T19:39:12Z</terms:date>
+        <oboInOwl:hasDbXref>https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&amp;code=C12917</oboInOwl:hasDbXref>
+        <oboInOwl:hasRelatedSynonym>cancer cell</oboInOwl:hasRelatedSynonym>
+        <rdfs:comment>https://github.com/obophenotype/cell-ontology/issues/448</rdfs:comment>
+        <rdfs:label>malignant cell</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001064"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A neoplastic cell that is capable of entering a surrounding tissue</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:cg</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:wdd</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0001065 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0001065">
@@ -17061,6 +17181,39 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <owl:annotatedTarget>The myoendocrine cellis a specialized myocyte localized mainly in the right and left atrial appendages, and also scattered within other areas of the atria and along the conductive system in the ventricular septum. The most conspicuous feature distinguishing myoendocrine cells from other atrial myoctyes is the presence of membane-bounded secretory granules (these granules contain precursor of cardiodilatins or atrial natriuretic polypeptides).</owl:annotatedTarget>
         <oboInOwl:hasDbXref>FMA:67111</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0002075 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002075">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002204"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007196"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002202"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002204"/>
+        <obo:IAO_0000115>Infrequent type of columnar epithelial cell. This cell is characterized by the presence of a tuft of blunt, squat microvilli (approximately 120-140/cell) on the cell surface. The microvilli contain filaments that stretch into the underlying cytoplasm. They have a distinctive pear shape with a wide base and a narrow microvillous apex. Function not known.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
+        <oboInOwl:creation_date>2010-06-29T03:22:46Z</oboInOwl:creation_date>
+        <oboInOwl:hasRelatedSynonym>pulmonary brush cell</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>brush cell of trachebronchial tree</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002075"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Infrequent type of columnar epithelial cell. This cell is characterized by the presence of a tuft of blunt, squat microvilli (approximately 120-140/cell) on the cell surface. The microvilli contain filaments that stretch into the underlying cytoplasm. They have a distinctive pear shape with a wide base and a narrow microvillous apex. Function not known.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>ISBN:0517223651</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:15817800</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -19419,6 +19572,245 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0002203 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002203">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002204"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000059"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002253"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0019032"/>
+        <obo:IAO_0000115>Brush cell found in the epithelial layer of the colon.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
+        <oboInOwl:creation_date>2010-09-02T02:20:50Z</oboInOwl:creation_date>
+        <oboInOwl:hasDbXref>FMA:263222</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>brush cell of large intestine</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tuft cell of epithelium of large intestine</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tuft cell of large intestine</oboInOwl:hasExactSynonym>
+        <rdfs:comment>Brush cells are a distinct cell type from brush border cell-types.</rdfs:comment>
+        <rdfs:label>brush cell of epithelium proper of large intestine</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002203"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Brush cell found in the epithelial layer of the colon.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002203"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>brush cell of large intestine</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://orcid.org/0000-0003-4183-8865</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002203"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>tuft cell of epithelium of large intestine</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://orcid.org/0000-0003-4183-8865</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002203"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>tuft cell of large intestine</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://orcid.org/0000-0003-4183-8865</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0002204 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002204">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002076"/>
+        <obo:IAO_0000115>A cell type found in the gastrointestinal and respiratory tracts that is characterized by the presence of a tuft of blunt, squat microvilli (120-140 per cell). Function of this cell type is not known.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
+        <oboInOwl:creation_date>2010-09-02T02:28:53Z</oboInOwl:creation_date>
+        <oboInOwl:hasDbXref>FMA:67978</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>caveolated cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>fibrillovesicular cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>multivesicular cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tuft cell</oboInOwl:hasExactSynonym>
+        <rdfs:label>brush cell</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002204"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A cell type found in the gastrointestinal and respiratory tracts that is characterized by the presence of a tuft of blunt, squat microvilli (120-140 per cell). Function of this cell type is not known.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>ISBN:0517223651</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:15817800</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0002205 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002205">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002204"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_8600001"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002204"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_8600001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A brush cell found in the epithelium of lobular bronchiole.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
+        <oboInOwl:creation_date>2010-09-02T02:38:34Z</oboInOwl:creation_date>
+        <oboInOwl:hasDbXref>FMA:263220</oboInOwl:hasDbXref>
+        <rdfs:label>brush cell of lobular bronchiole</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002205"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A brush cell found in the epithelium of lobular bronchiole.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0002206 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002206">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002204"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001958"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002204"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001958"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A brush cell of the epithelium in the terminal bronchiole.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
+        <oboInOwl:creation_date>2010-09-02T02:38:36Z</oboInOwl:creation_date>
+        <oboInOwl:hasDbXref>FMA:263228</oboInOwl:hasDbXref>
+        <rdfs:label>brush cell of terminal bronchiole</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002206"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A brush cell of the epithelium in the terminal bronchiole.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0002207 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002207">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002204"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001901"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000307"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002075"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001901"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Brush cell of the epithelium in the trachea.</obo:IAO_0000115>
+        <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
+        <oboInOwl:creation_date>2010-09-02T02:38:37Z</oboInOwl:creation_date>
+        <oboInOwl:hasDbXref>FMA:263224</oboInOwl:hasDbXref>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
+        <rdfs:label>brush cell of trachea</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002207"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/CL_0000307"/>
+        <oboInOwl:is_inferred>true</oboInOwl:is_inferred>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002207"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/CL_0002075"/>
+        <oboInOwl:is_inferred>true</oboInOwl:is_inferred>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002207"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Brush cell of the epithelium in the trachea.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0002208 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002208">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002204"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002031"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002204"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002031"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A brush cell found in the epithelium of bronchus.</obo:IAO_0000115>
+        <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
+        <oboInOwl:creation_date>2010-09-02T02:38:42Z</oboInOwl:creation_date>
+        <oboInOwl:hasDbXref>FMA:263226</oboInOwl:hasDbXref>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
+        <rdfs:label>brush cell of bronchus</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002208"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A brush cell found in the epithelium of bronchus.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0002209 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002209">
@@ -21145,6 +21537,26 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002328"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An epithelial cell of the bronchus.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0002329 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002329">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002202"/>
+        <obo:IAO_0000115>An epithelial cell type that lacks the columnar shape typical for other respiratory epithelial cells. This cell type is able to differentiate into other respiratory epithelial cells in response to injury.</obo:IAO_0000115>
+        <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
+        <oboInOwl:creation_date>2010-09-20T02:10:36Z</oboInOwl:creation_date>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
+        <rdfs:label>basal epithelial cell of tracheobronchial tree</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002329"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An epithelial cell type that lacks the columnar shape typical for other respiratory epithelial cells. This cell type is able to differentiate into other respiratory epithelial cells in response to injury.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -26586,6 +26998,24 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0005006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0005006">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000066"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002371"/>
+        <obo:IAO_0000115>Specialized epithelial cells involved in the maintenance of osmotic homeostasis. They are characterized by abundant mitochondria and ion transporters. In amniotes, they are present in the renal system. In freshwater fish, ionocytes in the skin and gills help maintain osmotic homeostasis by absorbing salt from the external environment.</obo:IAO_0000115>
+        <rdfs:label>ionocyte</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0005006"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Specialized epithelial cells involved in the maintenance of osmotic homeostasis. They are characterized by abundant mitochondria and ion transporters. In amniotes, they are present in the renal system. In freshwater fish, ionocytes in the skin and gills help maintain osmotic homeostasis by absorbing salt from the external environment.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:17555741</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:19268451</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0005009 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0005009">
@@ -27606,6 +28036,39 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0009020 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009020">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0019032"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001154"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0019032"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1000405"/>
+        <obo:IAO_0000115>An intestinal tuft cell that is a part of a vermiform appendix.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
+        <oboInOwl:hasExactSynonym>appendix tuft cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tuft cell of appendix vermiformis</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tuft cell of vermiform appendix</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/pato#location_grouping"/>
+        <rdfs:label>tuft cell of appendix</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0009020"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An intestinal tuft cell that is a part of a vermiform appendix.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://orcid.org/0000-0003-3440-1876</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0009021 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009021">
@@ -28113,6 +28576,37 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0009041 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009041">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0019032"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001155"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011108"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0019032"/>
+        <obo:IAO_0000115>A tuft cell that is a part of the colon.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
+        <oboInOwl:hasExactSynonym>colon tuft cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/pato#location_grouping"/>
+        <rdfs:label>tuft cell of colon</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0009041"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A tuft cell that is a part of the colon.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://orcid.org/0000-0003-3440-1876</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0009042 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009042">
@@ -28220,6 +28714,47 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A stratified squamous epithelial cell that is part of the anal canal.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>http://orcid.org/0000-0003-3440-1876</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0009080 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009080">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0019032"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002108"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0019032"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002108"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A tuft cell located in the small intestine.</obo:IAO_0000115>
+        <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
+        <oboInOwl:hasExactSynonym>brush cell of epithelium of small intestine</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>brush cell of epithelium proper of small intestine</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>brush cell of small intestine</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tuft cell of epithelium of small intestine</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
+        <rdfs:label>tuft cell of small intestine</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0009080"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A tuft cell located in the small intestine.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://orcid.org/0000-0003-3440-1876</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://orcid.org/0000-0003-4183-8865</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -29434,6 +29969,27 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0017000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0017000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000082"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0005006"/>
+        <obo:IAO_0000115>An ionocyte that is part of the lung epithelium. The cells from this type are major sources of the CFTR protein in human and mice.</obo:IAO_0000115>
+        <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-2473-2313"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
+        <rdfs:label>pulmonary ionocyte</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0017000"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An ionocyte that is part of the lung epithelium. The cells from this type are major sources of the CFTR protein in human and mice.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:30069044</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:30069046</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0017500 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0017500">
@@ -29914,6 +30470,50 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>intestinal goblet cell</owl:annotatedTarget>
         <oboInOwl:hasDbXref>PMID:1996606</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0019032 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0019032">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002204"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001277"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002204"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001277"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Any brush cell that is part of the intestinal epithelium.</obo:IAO_0000115>
+        <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0003-2034-601X"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-10-15T12:47:46Z</terms:date>
+        <oboInOwl:hasExactSynonym>intestinal brush cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
+        <rdfs:label xml:lang="en">intestinal tuft cell</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0019032"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Any brush cell that is part of the intestinal epithelium.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:22527717</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0019032"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>intestinal brush cell</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:22527717</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -41092,6 +41692,51 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_4033017 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4033017">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000192"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002186"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000192"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002186"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004515"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A smooth muscle cell that is part of a bronchiole.</obo:IAO_0000115>
+        <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0001-6677-8489"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-9185-3994"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-03-16T09:38:17Z</terms:date>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
+        <rdfs:label>bronchiolar smooth muscle cell</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4033017"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A smooth muscle cell that is part of a bronchiole.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>ISBN:9781260462982</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:15347627</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_4033054 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4033054">
@@ -42128,6 +42773,12 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0000460 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000460"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0000586 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000586"/>
@@ -42212,6 +42863,12 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0002011 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002011"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0002039 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002039"/>
@@ -42221,6 +42878,12 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/PATO_0002094 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002094"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002097 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002097"/>
     
 
 
@@ -43604,6 +44267,12 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0002186 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002186"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0002190 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002190"/>
@@ -44021,6 +44690,12 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/UBERON_0004294 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004294"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0004515 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004515"/>
     
 
 
@@ -44594,14 +45269,14 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
-                <rdfs:subClassOf rdf:nodeID="genid5754"/>
+                <rdfs:subClassOf rdf:nodeID="genid5845"/>
             </owl:Class>
         </owl:annotatedSource>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5754"/>
+        <owl:annotatedTarget rdf:nodeID="genid5845"/>
         <oboInOwl:hasDbXref rdf:resource="https://github.com/obophenotype/cell-ontology/issues/757"/>
     </owl:Axiom>
-    <owl:Restriction rdf:nodeID="genid5754">
+    <owl:Restriction rdf:nodeID="genid5845">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000031"/>
     </owl:Restriction>

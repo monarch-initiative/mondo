@@ -4980,6 +4980,48 @@ property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003
 creation_date: 2010-01-06T03:43:27Z
 
 [Term]
+id: CL:0001061
+name: abnormal cell
+def: "A cell found in an organism or derived from an organism exhibiting a phenotype that deviates from the expected phenotype of any native cell type of that organism. Abnormal cells are typically found in disease states or disease models." [GOC:add, GOC:cg, GOC:wdd]
+comment: https://github.com/obophenotype/cell-ontology/issues/448
+xref: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=C12913
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
+intersection_of: RO:0000053 PATO:0000460
+relationship: RO:0000053 PATO:0000460
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-9990-8331
+property_value: http://purl.org/dc/terms/date 2017-01-30T18:53:32Z xsd:dateTime
+
+[Term]
+id: CL:0001063
+name: neoplastic cell
+def: "An abnormal cell exhibiting dysregulation of cell proliferation or programmed cell death and capable of forming a neoplasm, an aggregate of cells in the form of a tumor mass or an excess number of abnormal cells (liquid tumor) within an organism." [GOC:add, GOC:cg, GOC:wdd]
+comment: https://github.com/obophenotype/cell-ontology/issues/448
+synonym: "tumor cell" RELATED []
+synonym: "tumour cell" RELATED []
+xref: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=C12922
+is_a: CL:0001061 ! abnormal cell
+intersection_of: CL:0001061 ! abnormal cell
+intersection_of: RO:0000053 PATO:0002011
+relationship: RO:0000053 PATO:0002011
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-9990-8331
+property_value: http://purl.org/dc/terms/date 2017-01-30T19:16:26Z xsd:dateTime
+
+[Term]
+id: CL:0001064
+name: malignant cell
+def: "A neoplastic cell that is capable of entering a surrounding tissue" [GOC:add, GOC:cg, GOC:wdd]
+comment: https://github.com/obophenotype/cell-ontology/issues/448
+synonym: "cancer cell" RELATED []
+xref: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=C12917
+is_a: CL:0001063 ! neoplastic cell
+intersection_of: CL:0001063 ! neoplastic cell
+intersection_of: RO:0000053 PATO:0002097
+relationship: RO:0000053 PATO:0002097
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-9990-8331
+property_value: http://purl.org/dc/terms/date 2017-01-30T19:39:12Z xsd:dateTime
+
+[Term]
 id: CL:0001065
 name: innate lymphoid cell
 def: "A lymphocyte that lacks characteristic T cell, B cell, myeloid cell, and dendritic cell markers, that functions as part of the innate immune response to produce cytokines and other effector responses." [GOC:add, GOC:dsd, PMID:23292121, PMID:23348417]
@@ -5619,6 +5661,18 @@ is_a: CL:0000163 ! endocrine cell
 is_a: CL:0002086 ! specialized cardiac myocyte
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
 creation_date: 2010-06-29T11:50:47Z
+
+[Term]
+id: CL:0002075
+name: brush cell of trachebronchial tree
+def: "Infrequent type of columnar epithelial cell. This cell is characterized by the presence of a tuft of blunt, squat microvilli (approximately 120-140/cell) on the cell surface. The microvilli contain filaments that stretch into the underlying cytoplasm. They have a distinctive pear shape with a wide base and a narrow microvillous apex. Function not known." [GOC:tfm, ISBN:0517223651, PMID:15817800]
+synonym: "pulmonary brush cell" RELATED []
+is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
+is_a: CL:0002204 ! brush cell
+intersection_of: CL:0002204 ! brush cell
+intersection_of: BFO:0000050 UBERON:0007196
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
+creation_date: 2010-06-29T03:22:46Z
 
 [Term]
 id: CL:0002076
@@ -6420,6 +6474,88 @@ property_value: RO:0002175 NCBITaxon:9606
 creation_date: 2010-09-02T02:09:14Z
 
 [Term]
+id: CL:0002203
+name: brush cell of epithelium proper of large intestine
+def: "Brush cell found in the epithelial layer of the colon." [GOC:tfm]
+comment: Brush cells are a distinct cell type from brush border cell-types.
+synonym: "brush cell of large intestine" EXACT [http://orcid.org/0000-0003-4183-8865]
+synonym: "tuft cell of epithelium of large intestine" EXACT [http://orcid.org/0000-0003-4183-8865]
+synonym: "tuft cell of large intestine" EXACT [http://orcid.org/0000-0003-4183-8865]
+xref: FMA:263222
+is_a: CL:0002253 ! epithelial cell of large intestine
+is_a: CL:0019032 ! intestinal tuft cell
+intersection_of: CL:0002204 ! brush cell
+intersection_of: BFO:0000050 UBERON:0000059
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
+creation_date: 2010-09-02T02:20:50Z
+
+[Term]
+id: CL:0002204
+name: brush cell
+def: "A cell type found in the gastrointestinal and respiratory tracts that is characterized by the presence of a tuft of blunt, squat microvilli (120-140 per cell). Function of this cell type is not known." [GOC:tfm, ISBN:0517223651, PMID:15817800]
+synonym: "caveolated cell" EXACT []
+synonym: "fibrillovesicular cell" EXACT []
+synonym: "multivesicular cell" EXACT []
+synonym: "tuft cell" EXACT []
+xref: FMA:67978
+is_a: CL:0002076 ! endo-epithelial cell
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
+creation_date: 2010-09-02T02:28:53Z
+
+[Term]
+id: CL:0002205
+name: brush cell of lobular bronchiole
+def: "A brush cell found in the epithelium of lobular bronchiole." [GOC:tfm]
+xref: FMA:263220
+is_a: CL:0002204 ! brush cell
+intersection_of: CL:0002204 ! brush cell
+intersection_of: BFO:0000050 UBERON:8600001
+relationship: BFO:0000050 UBERON:8600001
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
+creation_date: 2010-09-02T02:38:34Z
+
+[Term]
+id: CL:0002206
+name: brush cell of terminal bronchiole
+def: "A brush cell of the epithelium in the terminal bronchiole." [GOC:tfm]
+xref: FMA:263228
+is_a: CL:0002204 ! brush cell
+intersection_of: CL:0002204 ! brush cell
+intersection_of: BFO:0000050 UBERON:0001958
+relationship: BFO:0000050 UBERON:0001958
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
+creation_date: 2010-09-02T02:38:36Z
+
+[Term]
+id: CL:0002207
+name: brush cell of trachea
+def: "Brush cell of the epithelium in the trachea." [GOC:tfm]
+subset: human_reference_atlas
+xref: FMA:263224
+is_a: CL:0000307 {is_inferred="true"} ! tracheal epithelial cell
+is_a: CL:0002075 {is_inferred="true"} ! brush cell of trachebronchial tree
+intersection_of: CL:0002204 ! brush cell
+intersection_of: BFO:0000050 UBERON:0001901
+relationship: BFO:0000050 UBERON:0001901
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
+property_value: RO:0002175 NCBITaxon:9606
+creation_date: 2010-09-02T02:38:37Z
+
+[Term]
+id: CL:0002208
+name: brush cell of bronchus
+def: "A brush cell found in the epithelium of bronchus." [GOC:tfm]
+subset: human_reference_atlas
+xref: FMA:263226
+is_a: CL:0002204 ! brush cell
+intersection_of: CL:0002204 ! brush cell
+intersection_of: BFO:0000050 UBERON:0002031
+relationship: BFO:0000050 UBERON:0002031
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
+property_value: RO:0002175 NCBITaxon:9606
+creation_date: 2010-09-02T02:38:42Z
+
+[Term]
 id: CL:0002209
 name: intermediate epitheliocyte
 def: "An epithelial cell present in the trachea and bronchi; columnar in shape; generally lack cilia; immature forms of ciliated or secretory cells which have been formed from stem cells." [GOC:tfm, ISBN:0517223651]
@@ -7048,6 +7184,16 @@ relationship: BFO:0000050 UBERON:0002031
 relationship: BFO:0000050 UBERON:0002185
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
 creation_date: 2010-09-20T02:00:00Z
+
+[Term]
+id: CL:0002329
+name: basal epithelial cell of tracheobronchial tree
+def: "An epithelial cell type that lacks the columnar shape typical for other respiratory epithelial cells. This cell type is able to differentiate into other respiratory epithelial cells in response to injury." [GOC:tfm]
+subset: human_reference_atlas
+is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
+property_value: RO:0002175 NCBITaxon:9606
+creation_date: 2010-09-20T02:10:36Z
 
 [Term]
 id: CL:0002332
@@ -8692,6 +8838,13 @@ intersection_of: RO:0002100 UBERON:0002240
 relationship: RO:0002100 UBERON:0002240
 
 [Term]
+id: CL:0005006
+name: ionocyte
+def: "Specialized epithelial cells involved in the maintenance of osmotic homeostasis. They are characterized by abundant mitochondria and ion transporters. In amniotes, they are present in the renal system. In freshwater fish, ionocytes in the skin and gills help maintain osmotic homeostasis by absorbing salt from the external environment." [PMID:17555741, PMID:19268451]
+is_a: CL:0000066 ! epithelial cell
+is_a: CL:0002371 ! somatic cell
+
+[Term]
 id: CL:0005009
 name: renal principal cell
 def: "A cuboidal epithelial cell of the kidney which regulates sodium and potassium balance. The activity of sodium and potassium channels on the apical membrane of the cell is regulated by aldosterone and vasopressin. In mammals this cell type is located in the renal collecting duct system." [CL:CVS]
@@ -9043,6 +9196,20 @@ relationship: BFO:0000050 UBERON:0009871
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2825-0621
 
 [Term]
+id: CL:0009020
+name: tuft cell of appendix
+def: "An intestinal tuft cell that is a part of a vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "appendix tuft cell" EXACT []
+synonym: "tuft cell of appendix vermiformis" EXACT []
+synonym: "tuft cell of vermiform appendix" EXACT []
+is_a: CL:0019032 ! intestinal tuft cell
+is_a: CL:1000405 ! epithelial cell of appendix
+intersection_of: CL:0019032 ! intestinal tuft cell
+intersection_of: BFO:0000050 UBERON:0001154
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: CL:0009021
 name: stromal cell of lamina propria of large intestine
 def: "A stromal cell found in the lamina propria of the large intestine." [http://orcid.org/0000-0003-4183-8865]
@@ -9230,6 +9397,18 @@ intersection_of: BFO:0000050 UBERON:0001155
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2825-0621
 
 [Term]
+id: CL:0009041
+name: tuft cell of colon
+def: "A tuft cell that is a part of the colon." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "colon tuft cell" EXACT []
+is_a: CL:0011108 ! colon epithelial cell
+is_a: CL:0019032 ! intestinal tuft cell
+intersection_of: CL:0019032 ! intestinal tuft cell
+intersection_of: BFO:0000050 UBERON:0001155
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: CL:0009042
 name: enteroendocrine cell of colon
 def: "An enteroendocrine cell that is located in the colon." [http://orcid.org/0000-0003-3440-1876]
@@ -9271,6 +9450,22 @@ intersection_of: CL:0000240 ! stratified squamous epithelial cell
 intersection_of: BFO:0000050 UBERON:0000159
 relationship: BFO:0000050 UBERON:0000159
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009080
+name: tuft cell of small intestine
+def: "A tuft cell located in the small intestine." [http://orcid.org/0000-0003-3440-1876, http://orcid.org/0000-0003-4183-8865]
+subset: human_reference_atlas
+synonym: "brush cell of epithelium of small intestine" EXACT []
+synonym: "brush cell of epithelium proper of small intestine" EXACT []
+synonym: "brush cell of small intestine" EXACT []
+synonym: "tuft cell of epithelium of small intestine" EXACT []
+is_a: CL:0019032 ! intestinal tuft cell
+intersection_of: CL:0019032 ! intestinal tuft cell
+intersection_of: BFO:0000050 UBERON:0002108
+relationship: BFO:0000050 UBERON:0002108
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2825-0621
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:0009089
@@ -9693,6 +9888,16 @@ intersection_of: BFO:0000050 UBERON:0001890
 relationship: BFO:0000050 UBERON:0001890
 
 [Term]
+id: CL:0017000
+name: pulmonary ionocyte
+def: "An ionocyte that is part of the lung epithelium. The cells from this type are major sources of the CFTR protein in human and mice." [PMID:30069044, PMID:30069046]
+subset: human_reference_atlas
+is_a: CL:0000082 ! epithelial cell of lung
+is_a: CL:0005006 ! ionocyte
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-2473-2313
+property_value: RO:0002175 NCBITaxon:9606
+
+[Term]
 id: CL:0017500
 name: neutrophillic cytoplasm
 def: "Cytoplasm that exhibits a characteristic staining and color, pale-pink, with Wright-Giemsa stain." [GOC:add]
@@ -9863,6 +10068,20 @@ intersection_of: BFO:0000050 UBERON:0001277
 relationship: BFO:0000050 UBERON:0001277
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-2034-601X
 property_value: http://purl.org/dc/terms/date 2020-10-14T14:59:07Z xsd:dateTime
+
+[Term]
+id: CL:0019032
+name: intestinal tuft cell
+def: "Any brush cell that is part of the intestinal epithelium." [PMID:22527717]
+subset: human_reference_atlas
+synonym: "intestinal brush cell" EXACT [PMID:22527717]
+is_a: CL:0002204 ! brush cell
+intersection_of: CL:0002204 ! brush cell
+intersection_of: BFO:0000050 UBERON:0001277
+relationship: BFO:0000050 UBERON:0001277
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/terms/date 2020-10-15T12:47:46Z xsd:dateTime
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:1000042
@@ -13038,6 +13257,21 @@ intersection_of: BFO:0000050 UBERON:0000966
 relationship: BFO:0000050 UBERON:0000966
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-6677-8489
 property_value: http://purl.org/dc/terms/date 2023-03-02T14:38:32Z xsd:dateTime
+
+[Term]
+id: CL:4033017
+name: bronchiolar smooth muscle cell
+def: "A smooth muscle cell that is part of a bronchiole." [ISBN:9781260462982, PMID:15347627]
+subset: human_reference_atlas
+is_a: CL:0000192 ! smooth muscle cell
+intersection_of: CL:0000192 ! smooth muscle cell
+intersection_of: BFO:0000050 UBERON:0002186
+relationship: BFO:0000050 UBERON:0002186
+relationship: BFO:0000050 UBERON:0004515
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-6677-8489
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-9185-3994
+property_value: http://purl.org/dc/terms/date 2023-03-16T09:38:17Z xsd:dateTime
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:4033054

@@ -1098,6 +1098,25 @@ def: "inverse of positively regulates" []
 is_a: RO:0002334 ! regulated by
 
 [Typedef]
+id: RO:0002337
+name: related via localization to
+def: "A relationship that holds via some process of localization" []
+domain: BFO:0000015 ! process
+range: BFO:0000002 ! continuant
+
+[Typedef]
+id: RO:0002339
+name: has target end location
+def: "This relationship holds between p and l when p is a transport or localization process in which the outcome is to move some cargo c from a an initial location to some destination l." []
+is_a: RO:0002344 ! results in transport to from or in
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002344
+name: results in transport to from or in
+is_a: RO:0002337 ! related via localization to
+
+[Typedef]
 id: RO:0002350
 name: member of
 def: "is member of is a mereological relation between a item and a collection." []
@@ -1611,6 +1630,14 @@ is_a: BFO:0000051 ! has part
 is_a: RO:0002375 ! in branching relationship with
 
 [Typedef]
+id: RO:0002570
+name: conduit for
+def: "x is a conduit for y iff y overlaps through the lumen_of of x, and y has parts on either side of the lumen of x." []
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+is_a: RO:0002131 ! overlaps
+
+[Typedef]
 id: RO:0002571
 name: lumen of
 def: "x lumen_of y iff x is the space or substance that is part of y and does not cross any of the inner membranes or boundaries of y that is maximal with respect to the volume of the convex hull." []
@@ -1653,6 +1680,30 @@ def: "s 'has part structure that is capable of' p if and only if there exists so
 holds_over_chain: BFO:0000051 RO:0002215
 is_a: RO:0002328 ! functionally related to
 is_a: RO:0002595 ! causal relation between material entity and a process
+
+[Typedef]
+id: RO:0002586
+name: results in breakdown of
+def: "p results in breakdown of c if and only if the execution of p leads to c no longer being present at the end of p" []
+is_a: RO:0002233 ! has input
+
+[Typedef]
+id: RO:0002588
+name: results in assembly of
+is_a: RO:0002297 ! results in formation of
+is_a: RO:0002592 ! results in organization of
+
+[Typedef]
+id: RO:0002590
+name: results in disassembly of
+is_a: RO:0002586 ! results in breakdown of
+is_a: RO:0002592 ! results in organization of
+
+[Typedef]
+id: RO:0002592
+name: results in organization of
+def: "p results in organization of c iff p results in the assembly, arrangement of constituent parts, or disassembly of c" []
+is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: RO:0002595
@@ -1754,6 +1805,19 @@ id: RO:0004004
 name: has material basis in somatic mutation in
 is_a: RO:0004000 ! condition has genetic basis in
 inverse_of: RO:0004014 ! is causal somatic mutation in
+
+[Typedef]
+id: RO:0004007
+name: has primary input or output
+def: "p 'has primary input ot output' c iff either (a) p 'has primary input' c or (b) p 'has primary output' c." []
+is_a: RO:0000057 ! has participant
+
+[Typedef]
+id: RO:0004008
+name: has primary output
+def: "p has primary output c if (a) p has output c and (b) the goal of process is to modify, produce, or transform c." []
+is_a: RO:0002234 ! has output
+is_a: RO:0004007 ! has primary input or output
 
 [Typedef]
 id: RO:0004010
@@ -1977,6 +2041,53 @@ def: "A relationship between a disease and an infectious agent where the materia
 is_a: RO:0004019 ! disease has basis in
 
 [Typedef]
+id: RO:0015006
+name: different in magnitude relative to
+def: "q1 different_in_magnitude_relative_to q2 if and only if magnitude(q1) NOT =~ magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." []
+domain: PATO:0000001 ! quality
+range: PATO:0000001 ! quality
+
+[Typedef]
+id: RO:0015007
+name: increased in magnitude relative to
+def: "q1 increased_in_magnitude_relative_to q2 if and only if magnitude(q1) > magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." []
+domain: PATO:0000001 ! quality
+range: PATO:0000001 ! quality
+is_a: RO:0015006 ! different in magnitude relative to
+
+[Typedef]
+id: RO:0015008
+name: decreased in magnitude relative to
+def: "q1 decreased_in_magnitude_relative_to q2 if and only if magnitude(q1) < magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." []
+domain: PATO:0000001 ! quality
+range: PATO:0000001 ! quality
+is_a: RO:0015006 ! different in magnitude relative to
+
+[Typedef]
+id: RO:0015011
+name: has cross section
+def: "s3 has_cross_section s3 if and only if : there exists some 2d plane that intersects the bearer of s3, and the impression of s3 upon that plane has shape quality s2." []
+
+[Typedef]
+id: RO:0015012
+name: reciprocal of
+def: "q1 reciprocal_of q2 if and only if : q1 and q2 are relational qualities and a phenotype e q1 e2 mutually implies a phenotype e2 q2 e." []
+
+[Typedef]
+id: RO:0015015
+name: has high plasma membrane amount
+def: "A relation between a cell and molecule or complex such that every instance of the cell has a high number of instances of that molecule expressed on the cell surface." []
+domain: CL:0000000 ! cell
+is_a: RO:0002104 ! has plasma membrane part
+
+[Typedef]
+id: RO:0015016
+name: has low plasma membrane amount
+def: "A relation between a cell and molecule or complex such that every instance of the cell has a low number of instances of that molecule expressed on the cell surface." []
+domain: CL:0000000 ! cell
+is_a: RO:0002104 ! has plasma membrane part
+
+[Typedef]
 id: RO:0016001
 name: has phenotype or disease
 
@@ -2015,4 +2126,10 @@ is_a: RO:0019000 ! regulates characteristic
 id: RO:0040035
 name: disease relationship
 def: "This relation groups  relations between diseases and any other kind of entity." []
+
+[Typedef]
+id: RO:0040036
+name: results in changes to anatomical or cellular structure
+def: "p has anatomical participant c iff p has participant c, and c is an anatomical entity" []
+is_a: RO:0000057 ! has participant
 

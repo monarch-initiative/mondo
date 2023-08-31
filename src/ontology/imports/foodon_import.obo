@@ -133,6 +133,14 @@ is_a: FOODON:00001107 ! bovine dairy food product
 relationship: RO:0001000 FOODON:03411201 ! derives from dairy cow
 
 [Term]
+id: FOODON:00001133
+name: condiment food product
+def: "A relish, sauce, or seasoning  added to food to impart a particular flavour or to complement the dish." []
+synonym: "condiment" EXACT []
+is_a: FOODON:00001714 ! food product component
+relationship: RO:0002350 FOODON:03400179 ! member of condiment or relish (us cfr)
+
+[Term]
 id: FOODON:00001141
 name: wheat food product
 is_a: FOODON:00001093 ! cereal grain food product
@@ -193,6 +201,16 @@ is_a: FOODON:00002381 ! food product by organism
 intersection_of: FOODON:00002381 ! food product by organism
 intersection_of: RO:0001000 FOODON:03411301 ! derives from algae
 relationship: RO:0001000 FOODON:03411301 ! derives from algae
+
+[Term]
+id: FOODON:00001242
+name: spice or herb
+def: "A vegetable product such as leaves, flowers, seeds and roots that is rich in essential oils and aromatic principles. Used mainly a a condiment." []
+synonym: "herb and spice" EXACT []
+synonym: "herb or spice" EXACT []
+is_a: FOODON:00001015 ! plant food product
+is_a: FOODON:00001133 ! condiment food product
+relationship: RO:0002350 FOODON:03400113 ! member of spice or herb (us cfr)
 
 [Term]
 id: FOODON:00001248
@@ -311,6 +329,13 @@ is_a: FOODON:00001002 ! food product
 id: FOODON:00001882
 name: fruit based alcoholic beverage
 is_a: FOODON:00001579 ! alcoholic beverage
+
+[Term]
+id: FOODON:00001901
+name: ginger food product
+synonym: "ginger" EXACT []
+is_a: FOODON:00001242 ! spice or herb
+relationship: RO:0001000 FOODON:03309840 ! derives from ginger root (raw)
 
 [Term]
 id: FOODON:00001907
@@ -475,6 +500,12 @@ intersection_of: RO:0002353 FOODON:03000001 ! output of food peeling process
 relationship: RO:0002353 FOODON:03000001 ! output of food peeling process
 
 [Term]
+id: FOODON:00002718
+name: obsolete: ginger root
+is_obsolete: true
+replaced_by: FOODON:00003717
+
+[Term]
 id: FOODON:00003004
 name: animal
 def: "A multicellular eukaryotic heterotrophic organism within the kingdom Animalia." []
@@ -515,6 +546,20 @@ id: FOODON:00003402
 name: pre-harvest food material
 def: "Organism food material which has not reached harvestable maturity." []
 is_a: FOODON:00002403 ! food material
+
+[Term]
+id: FOODON:00003717
+name: ginger root
+def: "A root of a ginger plant (Zingiber officinale)" []
+synonym: "elephant ginger" EXACT []
+synonym: "elephant ginger root" EXACT []
+synonym: "ginger" EXACT []
+synonym: "ginger root" EXACT []
+is_a: FOODON:00001901 ! ginger food product
+is_a: PO:0009005 ! root
+intersection_of: PO:0009005 ! root
+intersection_of: RO:0002162 NCBITaxon:94328 ! in taxon Zingiber officinale
+relationship: RO:0002162 NCBITaxon:94328 ! in taxon Zingiber officinale
 
 [Term]
 id: FOODON:00004242
@@ -565,6 +610,14 @@ id: FOODON:03000005
 name: obsolete: Indian prawn
 is_obsolete: true
 replaced_by: NCBITaxon:29960
+
+[Term]
+id: FOODON:03000220
+name: ginger root (whole or pieces)
+def: "A whole ginger root or some substance made from a processed ginger root." []
+synonym: "ginger" EXACT []
+synonym: "ginger root" EXACT []
+is_a: FOODON:00001901 ! ginger food product
 
 [Term]
 id: FOODON:03301977
@@ -640,6 +693,11 @@ intersection_of: FOODON:00001054 ! fermented fish or seafood food product
 intersection_of: FOODON:00002239 ! shrimp food product
 
 [Term]
+id: FOODON:03309840
+name: ginger root (raw)
+is_a: FOODON:00003717 ! ginger root
+
+[Term]
 id: FOODON:03311737
 name: processed food product
 is_a: FOODON:00001002 ! food product
@@ -667,9 +725,27 @@ is_obsolete: true
 replaced_by: http://purl.obolibrary.org/obo/FOODON_00001002
 
 [Term]
+id: FOODON:03400105
+name: dressing, condiment, gravy or sauce (us cfr)
+def: "Seasoned product that contains multiple ingredients and that is used in limited amounts to accompany other foods; excludes flavors, spices and herbs." []
+is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
+
+[Term]
+id: FOODON:03400113
+name: spice or herb (us cfr)
+def: "Aromatic or pungent plant product used whole or ground as a seasoning in food products." []
+is_a: FOODON:03400133 ! flavoring or seasoning (us cfr)
+
+[Term]
 id: FOODON:03400129
 name: refined or partially-refined food product (us cfr)
 def: "Extract, concentrate or isolate derived from a food source through one or more refining steps (see *EXTRACT, CONCENTRATE OR ISOLATE OF PLANT OR ANIMAL*) and marketed as such. [FDA CFSAN 1995]" []
+is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
+
+[Term]
+id: FOODON:03400133
+name: flavoring or seasoning (us cfr)
+def: "Product that imparts or helps to impart a taste or aroma in food (21 CFR.170.3(n)(26). [FDA CFSAN 1995]" []
 is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
 
 [Term]
@@ -695,6 +771,12 @@ id: FOODON:03400172
 name: prepared food product (us cfr)
 def: "Food product that is 1) ready or nearly ready for consumption; 2) usually a composite of several foods or ingredients that often belong to distinct product types; 3) usually formulated, mixed and partially or fully cooked. Prepared foods often undergo several of the processes listed in *F. EXTENT OF HEAT TREATMENT* and *H. TREATMENT APPLIED*; these factors should be carefully considered in indexing. The classification of prepared food products emphasizes consumption characteristics. [FDA CFSAN 1995]" []
 is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
+
+[Term]
+id: FOODON:03400179
+name: condiment or relish (us cfr)
+def: "Food product that is usually pungent, tart, salty, or spicy and is used to enhance the flavors of other foods; includes catsup, relish, prepared mustard, prepared horseradish, and condiment sauces." []
+is_a: FOODON:03400105 ! dressing, condiment, gravy or sauce (us cfr)
 
 [Term]
 id: FOODON:03400217
@@ -1301,6 +1383,16 @@ name: Boreoeutheria
 is_a: NCBITaxon:9347 ! Eutheria
 
 [Term]
+id: NCBITaxon:1437183
+name: Mesangiospermae
+is_a: NCBITaxon:3398 ! Magnoliopsida
+
+[Term]
+id: NCBITaxon:1437197
+name: Petrosaviidae
+is_a: NCBITaxon:4447 ! Liliopsida
+
+[Term]
 id: NCBITaxon:207598
 name: Homininae
 is_a: NCBITaxon:9526 ! Catarrhini
@@ -1351,6 +1443,14 @@ synonym: "Theria" EXACT []
 is_a: NCBITaxon:40674 ! Mammalia
 
 [Term]
+id: NCBITaxon:33090
+name: Viridiplantae
+synonym: "Chlorophyta/Embryophyta group" EXACT []
+synonym: "chlorophyte/embryophyte group" EXACT []
+synonym: "green plants" EXACT []
+is_a: NCBITaxon:2759 ! Eukaryota
+
+[Term]
 id: NCBITaxon:33154
 name: Opisthokonta
 is_a: NCBITaxon:2759 ! Eukaryota
@@ -1367,6 +1467,14 @@ synonym: "deuterostomes" EXACT []
 is_a: NCBITaxon:33213 ! Bilateria
 
 [Term]
+id: NCBITaxon:3398
+name: Magnoliophyta
+name: Magnoliopsida
+synonym: "angiosperms" EXACT []
+synonym: "flowering plants" EXACT []
+is_a: NCBITaxon:58024 ! Spermatophyta
+
+[Term]
 id: NCBITaxon:35500
 name: Pecora
 is_a: NCBITaxon:91561 ! Artiodactyla
@@ -1376,6 +1484,46 @@ id: NCBITaxon:40674
 name: Mammalia
 synonym: "mammals" EXACT []
 is_a: NCBITaxon:32524 ! Amniota
+
+[Term]
+id: NCBITaxon:4447
+name: Liliopsida
+synonym: "monocots" EXACT []
+synonym: "monocotyledons" EXACT []
+is_a: NCBITaxon:1437183 ! Mesangiospermae
+
+[Term]
+id: NCBITaxon:4618
+name: Zingiberales
+is_a: NCBITaxon:4734 ! commelinids
+
+[Term]
+id: NCBITaxon:4642
+name: Zingiberaceae
+synonym: "ginger family" EXACT []
+is_a: NCBITaxon:4618 ! Zingiberales
+
+[Term]
+id: NCBITaxon:4650
+name: Zingiber
+is_a: NCBITaxon:4642 ! Zingiberaceae
+
+[Term]
+id: NCBITaxon:4734
+name: commelinids
+is_a: NCBITaxon:1437197 ! Petrosaviidae
+
+[Term]
+id: NCBITaxon:58023
+name: Tracheophyta
+synonym: "vascular plants" EXACT []
+is_a: NCBITaxon:33090 ! Viridiplantae
+
+[Term]
+id: NCBITaxon:58024
+name: Spermatophyta
+synonym: "seed plants" EXACT []
+is_a: NCBITaxon:78536 ! Euphyllophyta
 
 [Term]
 id: NCBITaxon:6072
@@ -1403,6 +1551,12 @@ synonym: "jawed vertebrates" EXACT []
 is_a: NCBITaxon:7742 ! Vertebrata <vertebrates>
 
 [Term]
+id: NCBITaxon:78536
+name: Euphyllophyta
+synonym: "euphyllophytes" EXACT []
+is_a: NCBITaxon:58023 ! Tracheophyta
+
+[Term]
 id: NCBITaxon:91561
 name: Artiodactyla
 synonym: "whales, hippos, ruminants, pigs, camels etc." EXACT []
@@ -1415,6 +1569,12 @@ synonym: "eutherian mammals" EXACT []
 synonym: "placental mammals" EXACT []
 synonym: "placentals" EXACT []
 is_a: NCBITaxon:32525 ! Theria <mammals>
+
+[Term]
+id: NCBITaxon:94328
+name: Zingiber officinale
+synonym: "ginger" EXACT []
+is_a: NCBITaxon:4650 ! Zingiber
 
 [Term]
 id: NCBITaxon:9443
@@ -1597,6 +1757,17 @@ synonym: "分裂組織細胞 (Japanese, exact)" EXACT []
 is_a: PO:0025606 ! native plant cell
 
 [Term]
+id: PO:0005029
+name: root primordium
+def: "A primordium (PO:0025127) that develops from a root anlagen (PO:0025433) and is committed to the development of a root (PO:0009005)." []
+synonym: "portion of root primordium tissue (exact)" EXACT []
+synonym: "primordio de ra&#237z (Spanish, exact)" EXACT []
+synonym: "root primordia (exact, plural)" EXACT []
+synonym: "根原基（可視的）  (Japanese, exact)" EXACT []
+is_a: PO:0025127 ! primordium
+relationship: RO:0002202 PO:0025433 ! develops from root anlagen
+
+[Term]
 id: PO:0006079
 name: shoot system meristem
 def: "A portion of meristem tissue (PO:0009013) that is part of a shoot system (PO:0009006)." []
@@ -1614,6 +1785,20 @@ synonym: "portion of protoderm tissue (exact)" EXACT []
 synonym: "protodermis (Spanish, exact)" EXACT []
 synonym: "前表皮、原表皮 (Japanese, exact)" EXACT []
 is_a: PO:0009013 ! portion of meristem tissue
+
+[Term]
+id: PO:0007033
+name: whole plant development stage
+def: "A plant structure development stage (PO:0009012) that has as primary participant a whole plant (PO:0000003)." []
+synonym: "cereal plant growth stage ontology (GRO:0007199) (related)" RELATED []
+synonym: "maize growth stage (GRO:0007002) (related)" RELATED []
+synonym: "plant growth stages in Arabidopsis (TAIR:0000021) (related)" RELATED []
+synonym: "rice growth stage (GRO:0007040) (related)" RELATED []
+synonym: "Solanaceae whole plant growth stages (SGN:0000001) (related)" RELATED []
+synonym: "sorghum growth stage (GRO:0007124) (related)" RELATED []
+synonym: "wheat, barley and oat growth stage (GRO:0007156) (related)" RELATED []
+is_a: PO:0009012 ! plant structure development stage
+relationship: RO:0000057 PO:0000003 ! has_participant whole plant
 
 [Term]
 id: PO:0008028
@@ -1651,6 +1836,20 @@ synonym: "c&#233lula vegetal (Spanish, exact)" EXACT []
 synonym: "cell (broad)" BROAD []
 synonym: "植物細胞 (Japanese, exact)" EXACT []
 is_a: PO:0009011 ! plant structure
+
+[Term]
+id: PO:0009005
+name: root
+def: "A plant axis (PO:0025004) that lacks shoot axis nodes (PO:0005004) and usually grows indeterminately." []
+synonym: "aerial root (narrow)" NARROW []
+synonym: "climbing root (narrow)" NARROW []
+synonym: "ra&#237z (Spanish, exact)" EXACT []
+synonym: "radices (exact, plural)" EXACT []
+synonym: "radix (exact)" EXACT []
+synonym: "根 (Japanese, exact)" EXACT []
+is_a: PO:0025004 ! plant axis
+relationship: BFO:0000050 PO:0025025 ! part of root system
+relationship: RO:0002202 PO:0005029 ! develops from root primordium
 
 [Term]
 id: PO:0009006
@@ -1910,6 +2109,16 @@ synonym: "葉的器官が集まった構造 (Japanese, exact)" EXACT []
 is_a: PO:0025007 ! collective plant organ structure
 
 [Term]
+id: PO:0025025
+name: root system
+def: "A collective plant organ structure (PO:0025007) that produces root meristems (PO:0006085), the plant structures (PO:0009011) that arise from them and the parts thereof." []
+synonym: "root (broad)" BROAD []
+synonym: "sistema de ra&#237z (Spanish, exact)" EXACT []
+synonym: "根系 (Japanese, exact)" EXACT []
+is_a: PO:0025007 ! collective plant organ structure
+relationship: RO:0000056 PO:0028002 ! participates in sporophyte development stage
+
+[Term]
 id: PO:0025029
 name: shoot axis
 def: "A plant axis (PO:0025004) that is part of a shoot system (PO:0009006)." []
@@ -1982,6 +2191,14 @@ intersection_of: PO:0009007 ! portion of plant tissue
 intersection_of: BFO:0000050 PO:0009009 ! part of plant embryo
 
 [Term]
+id: PO:0025337
+name: life of whole plant stage
+def: "A maximal whole plant development stage." []
+synonym: "vida de la planta entera (Spanish, exact)" EXACT []
+synonym: "植物体の一生 (Japanese, exact)" EXACT []
+is_a: PO:0007033 ! whole plant development stage
+
+[Term]
 id: PO:0025338
 name: collective plant organ structure development stage
 def: "A plant structure development stage (PO:0009012) that has as primary participant a collective plant structure (PO:0025497)." []
@@ -2001,6 +2218,14 @@ is_a: PO:0009008 ! plant organ
 intersection_of: PO:0009008 ! plant organ
 intersection_of: BFO:0000050 PO:0009046 ! part of flower
 relationship: BFO:0000050 PO:0009046 ! part of flower
+
+[Term]
+id: PO:0025433
+name: root anlagen
+def: "A portion of meristem tissue (PO:0009013) that is committed to the development of a root primordium (PO:0005029)." []
+synonym: "precursor de ra&#237 (Spanish, exact)" EXACT []
+synonym: "根原基 (Japanese, exact)" EXACT []
+is_a: PO:0009013 ! portion of meristem tissue
 
 [Term]
 id: PO:0025477
@@ -2047,6 +2272,18 @@ id: PO:0025606
 name: native plant cell
 def: "A plant cell (PO:0009002) that is either part of a multicellular whole plant (PO:0000003) 'in vivo' or a unicellular organism 'in natura' (i.e. part of a natural environment)." []
 is_a: PO:0009002 ! plant cell
+
+[Term]
+id: PO:0028002
+name: sporophyte development stage
+def: "A whole plant development stage (PO:0007033) that has as primary participant a whole plant (PO:0000003) during the interval between fertilization (or apogamy) and death." []
+synonym: "fase esporof&#237tica (Spanish, exact)" EXACT []
+synonym: "sporophytic development stage (exact)" EXACT []
+synonym: "sporophytic phase (exact)" EXACT []
+synonym: "sporphyte phase (exact)" EXACT []
+synonym: "胞子体発生過程 (Japanese, exact)" EXACT []
+is_a: PO:0007033 ! whole plant development stage
+relationship: BFO:0000050 PO:0025337 ! part of life of whole plant stage
 
 [Term]
 id: PO:0030108
