@@ -11,8 +11,9 @@
 # See README-editors.md for more details.
 
 docker pull obolibrary/odkfull:dev
+docker pull obolibrary/odkfull:latest
 
-IMAGE=${IMAGE:-odkfull:dev}
+IMAGE=${IMAGE:-odkfull:latest}
 MEMORY_GB=${MEMORY_GB:-8}
 MEMORY_JAVA="-Xmx${MEMORY_GB}G"
 ODK_DEBUG=${ODK_DEBUG:-no}
