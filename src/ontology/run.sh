@@ -10,7 +10,6 @@
 #
 # See README-editors.md for more details.
 
-docker pull obolibrary/odkfull:dev
 docker pull obolibrary/odkfull:latest
 
 IMAGE=${IMAGE:-odkfull:latest}
