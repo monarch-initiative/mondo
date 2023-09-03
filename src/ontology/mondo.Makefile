@@ -288,6 +288,9 @@ tmp/mondo-edit.obo.tmp.diff: mondo-edit.obo.tmp
 tmp/report-qc-medgen-conflicts-update-diff.tsv: tmp/mondo-edit.obo.tmp.diff
 	python ../scripts/medgen_conflicts_removals_diff_analysis.py -i tmp/mondo-edit.obo.tmp.diff -o $@
 
+tmp/report-qc-medgen-conflicts-adds-diff.tsv: $(TEMPLATES_DIR)/ROBOT_addMedGen_fromConflictResolution.tsv $(TEMPLATES_DIR)/ROBOT_addMedGen_fromIngest.tsv
+	python ../scripts/medgen_conflicts_add_xrefs_diff_analysis.py -c $(TEMPLATES_DIR)/ROBOT_addMedGen_fromConflictResolution.tsv -i $(TEMPLATES_DIR)/ROBOT_addMedGen_fromIngest.tsv -o $@
+
 # - MedGen conflicts: deletes
 .PHONY: address-medgen-conflicts-aug2023-deletes
 address-medgen-conflicts-aug2023-deletes: mondo-edit.obo.tmp
@@ -298,7 +301,7 @@ mondo-edit.obo.tmp: tmp/July2023_CUIReports_FromMedGentoMondo.xlsx mondo-edit.ob
 
 # - MedGen conflicts: adds
 .PHONY: address-medgen-conflicts-aug2023-adds
-address-medgen-conflicts-aug2023-adds: $(TEMPLATES_DIR)/ROBOT_addMedGen_fromConflictResolution.tsv $(TEMPLATES_DIR)/ROBOT_addMedGen_fromIngest.tsv
+address-medgen-conflicts-aug2023-adds: tmp/report-qc-medgen-conflicts-adds-diff.tsv
 
 $(TEMPLATES_DIR)/ROBOT_addMedGen_fromConflictResolution.tsv: tmp/July2023_CUIReports_FromMedGentoMondo.xlsx
 	python ../scripts/medgen_conflicts_add_xrefs.py -i tmp/July2023_CUIReports_FromMedGentoMondo.xlsx -o $@

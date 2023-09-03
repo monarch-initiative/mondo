@@ -1,4 +1,4 @@
-"""MedGen conflicts: updates QC analysis
+"""MedGen conflicts: Removals analysis
 
 QC analysis for updates to mondo-edit.obo concerning removal of xrefs due to MedGen conflicts.
 
@@ -69,7 +69,7 @@ def run(input_file: str = INPUT_FILE, output_file: str = OUTPUT_FILE):
 def cli():
     """Command line interface."""
     parser = ArgumentParser(
-        prog='MedGen conflicts: updates QC analysis',
+        prog='MedGen conflicts: Removals analysis',
         description='QC analysis for updates to mondo-edit.obo concerning removal of xrefs due to MedGen conflicts')
     parser.add_argument(
         '-i', '--input-file', default=INPUT_FILE, help='Diff of mondo-edit.obo and mondo-edit.obo.tmp')
