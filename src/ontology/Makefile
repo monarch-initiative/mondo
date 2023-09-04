@@ -909,7 +909,7 @@ testcombo-%: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl mirror/%
 
 
 debug_inference_check.owl: debug.owl explain_unsat.owl
-	$(ROBOT) reason -i $< --equivalent-classes-allowed none -o $@
+	$(ROBOT) remove -i $< --term http://purl.obolibrary.org/obo/CHEBI_50906 reason --equivalent-classes-allowed none -o $@
 
 explain_unsat.owl: debug.owl
 	$(ROBOT) explain -i $< -M unsatisfiability --unsatisfiable random:10 --explanation mondo_explain_debug.md \
