@@ -907,7 +907,8 @@ disjoint_sibs.owl: $(SRC)
 testcombo-%: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl mirror/%.owl disjoint_sibs.owl
 	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m compare/bad-$*.owl
 
-
+# FIXME remove --term http://purl.obolibrary.org/obo/CHEBI_50906 was added out of desparation because we 
+# Do not use base merging yet in Mondo. This can be removed once base-merging is in place.
 debug_inference_check.owl: debug.owl explain_unsat.owl
 	$(ROBOT) remove -i $< --term http://purl.obolibrary.org/obo/CHEBI_50906 reason --equivalent-classes-allowed none -o $@
 
