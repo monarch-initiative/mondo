@@ -1,0 +1,18 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
+
+SELECT distinct ?cls ?label ?comment WHERE
+  {
+	?cls a owl:Class; 
+  		rdfs:comment ?comment ;
+  		rdfs:label ?label .
+  	FILTER(regex(str(?comment),"Editor note"))
+    FILTER NOT EXISTS {
+    	?cls owl:deprecated "true"^^xsd:boolean
+  	}
+    FILTER( !isBlank(?cls) && regex(str(?cls), "^http://purl.obolibrary.org/obo/MONDO_"))
+  }
+  	

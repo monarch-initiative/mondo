@@ -1,0 +1,23 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+#description: Deprecated class employs equivalentTo
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+    ?entity oboInOwl:hasDbXref ?xref .
+        
+    ?xref_anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref ;
+           oboInOwl:source ?source .
+    
+    ?entity owl:deprecated true 
+
+    FILTER ((str(?source)="MONDO:equivalentTo") || (str(?source)="MONDO:equivalentObsolete"))
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(?xref as ?property)
+    BIND(?source as ?value)
+}
+ORDER BY ?entity

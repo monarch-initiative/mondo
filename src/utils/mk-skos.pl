@@ -14,37 +14,30 @@ while (<>) {
     if (m@^xref: (\S+):(\S+) (.*)@) {
         my ($prefix, $x, $anns) = ($1,$2,$3);
         my $rel = 'closeMatch';
+        
         if ($anns =~ m@equivalentTo@) {
             $rel = 'exactMatch';
         }
         elsif ($anns =~ m@equivalentObsolete@) {
-            $rel = 'exactMatch';
+            next;
         }
         elsif ($anns =~ m@obsoleteEquivalent@) {
             $rel = 'exactMatch';
         }
-        elsif ($anns =~ m@otherHierarchy@) {
-            $rel = 'exactMatch';
+        elsif ($anns =~ m@relatedTo@) {
+            $rel = 'relatedMatch';
         }
-        elsif ($anns =~ m@subClassOf@) {
+        elsif ($anns =~ m@includedEntryInOMIM@) {
+            $rel = 'relatedMatch';
+        }
+        elsif ($anns =~ m@mondoIsNarrowerThanSource@) {
             $rel = 'broadMatch';
         }
         elsif ($anns =~ m@directSiblingOf@) {
             $rel = 'closeMatch';
         }
-        elsif ($anns =~ m@superClassOf@) {
+        elsif ($anns =~ m@mondoIsBroaderThanSource@) {
             $rel = 'narrowMatch';
-        }
-        elsif ($anns =~ m@ntbt@) {
-            # 6396
-            $rel = 'narrowMatch';
-        }
-        elsif ($anns =~ m@btnt@) {
-            # 1017
-            $rel = 'broadMatch';
-        }
-        elsif ($anns =~ m@/e@) {
-            $rel = 'exactMatch';
         }
         $rel = "http://www.w3.org/2004/02/skos/core#".$rel;
         my $uri;
@@ -69,11 +62,20 @@ while (<>) {
         elsif ($prefix eq 'MEDGEN') {
             $uri = 'http://identifiers.org/medgen/';
         }
+        elsif ($prefix eq 'OMIMPS') {
+            $uri = 'https://omim.org/phenotypicSeries/PS';
+        }
         elsif ($prefix eq 'OMIM') {
-            $uri = 'http://identifiers.org/omim/';
+            $uri = 'https://omim.org/entry/';
         }
         elsif ($prefix eq 'MedDRA') {
             $uri = 'http://identifiers.org/meddra/';
+        }
+        elsif ($prefix eq 'ICD10WHO') {
+            $uri = 'https://icd.who.int/browse10/2019/en#/';
+        }
+        elsif ($prefix eq 'ICD10CM') {
+            $uri = 'http://purl.bioontology.org/ontology/ICD10CM/';
         }
 
         if ($uri) {

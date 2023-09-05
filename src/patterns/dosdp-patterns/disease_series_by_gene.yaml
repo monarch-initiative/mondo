@@ -4,7 +4,7 @@ pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gen
 
 description: 'This pattern is for diseases that are caused by a single variation or mutation in
   a single gene, that have gene-based names, such as new disease terms that are requested
-  by ClinGen, like MED12-related intellectual disability syndrome.  Examples: [MED12-related
+  by ClinGen, like MED12-related intellectual disability syndrome. See more details about [disease naming in Mondo here](https://mondo.monarchinitiative.org/pages/disease-naming/).  Examples: [MED12-related
   intellectual disability syndrome](http://purl.obolibrary.org/obo/MONDO_0100000),
   [TTN-related myopathy](http://purl.obolibrary.org/obo/MONDO_0100175), [MYPN-related
   myopathy](http://purl.obolibrary.org/obo/MONDO_0015023)'
@@ -18,7 +18,7 @@ classes:
   gene: SO:0001217
 
 relations:
-  disease has basis in dysfunction of: RO:0004020
+  has material basis in germline mutation in: RO:0004003
 
 annotationProperties:
   exact_synonym: oio:hasExactSynonym
@@ -58,7 +58,7 @@ def:
   - gene
 
 equivalentTo:
-  text: '%s and ''disease has basis in dysfunction of'' some %s'
+  text: '%s and ''has material basis in germline mutation in'' some %s'
   vars:
   - disease
   - gene

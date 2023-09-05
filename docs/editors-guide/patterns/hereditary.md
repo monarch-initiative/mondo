@@ -23,15 +23,15 @@ An instance of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [hereditary](http://purl.obolibrary.org/obo/MONDO_0021152)
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [hereditary](http://purl.obolibrary.org/obo/MONDO_0021152)
 
 ## Data preview 
-| defined_class                                | defined_class_label                                         | disease                                      | disease_label                                    |
-|:---------------------------------------------|:------------------------------------------------------------|:---------------------------------------------|:-------------------------------------------------|
-| [MONDO:0003847](http://purl.obolibrary.org/obo/MONDO_0003847) | Mendelian disease                                           | [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001) | disease or disorder                              |
-| [MONDO:0007573](http://purl.obolibrary.org/obo/MONDO_0007573) | acute erythroleukemia, familial                             | [MONDO:0017858](http://purl.obolibrary.org/obo/MONDO_0017858) | acute erythroid leukemia                         |
-| [MONDO:0008734](http://purl.obolibrary.org/obo/MONDO_0008734) | adrenocortical carcinoma, hereditary                        | [MONDO:0006639](http://purl.obolibrary.org/obo/MONDO_0006639) | adrenal cortex carcinoma                         |
-| [MONDO:0016072](http://purl.obolibrary.org/obo/MONDO_0016072) | anomaly of puberty or/and menstrual cycle of genetic origin | [MONDO:0015860](http://purl.obolibrary.org/obo/MONDO_0015860) | anomaly of puberty or/and menstrual cycle        |
-| [MONDO:0009925](http://purl.obolibrary.org/obo/MONDO_0009925) | autosomal recessive inherited pseudoxanthoma elasticum      | [MONDO:0024308](http://purl.obolibrary.org/obo/MONDO_0024308) | pseudoxanthoma elasticum (inherited or acquired) |
+| defined_class                                | defined_class_label                                   | disease                                      | disease_label             |
+|:---------------------------------------------|:------------------------------------------------------|:---------------------------------------------|:--------------------------|
+| [MONDO:0003847](http://purl.obolibrary.org/obo/MONDO_0003847) | Mendelian disease                                     | [MONDO:0700096](http://purl.obolibrary.org/obo/MONDO_0700096) | human disease or disorder |
+| [MONDO:0008734](http://purl.obolibrary.org/obo/MONDO_0008734) | adrenocortical carcinoma, hereditary                  | [MONDO:0006639](http://purl.obolibrary.org/obo/MONDO_0006639) | adrenal cortex carcinoma  |
+| [MONDO:0013099](http://purl.obolibrary.org/obo/MONDO_0013099) | combined pituitary hormone deficiencies, genetic form | [MONDO:0005152](http://purl.obolibrary.org/obo/MONDO_0005152) | hypopituitarism           |
+| [MONDO:0006536](http://purl.obolibrary.org/obo/MONDO_0006536) | congenital generalized lipodystrophy                  | [MONDO:0027766](http://purl.obolibrary.org/obo/MONDO_0027766) | generalized lipodystrophy |
+| [MONDO:0018827](http://purl.obolibrary.org/obo/MONDO_0018827) | familial chilblain lupus                              | [MONDO:0019557](http://purl.obolibrary.org/obo/MONDO_0019557) | chilblain lupus           |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/hereditary.tsv) 

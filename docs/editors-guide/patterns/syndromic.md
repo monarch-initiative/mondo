@@ -25,15 +25,15 @@ A {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} that is part of a la
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has modifier](http://purl.obolibrary.org/obo/RO_0002573) some [syndromic](http://purl.obolibrary.org/obo/MONDO_0021127)
+{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [syndromic](http://purl.obolibrary.org/obo/MONDO_0021127)
 
 ## Data preview 
-| defined_class                                | defined_class_label                   | disease                                      | disease_label                 |
-|:---------------------------------------------|:--------------------------------------|:---------------------------------------------|:------------------------------|
-| [MONDO:0015150](http://purl.obolibrary.org/obo/MONDO_0015150) | complex hereditary spastic paraplegia | [MONDO:0019064](http://purl.obolibrary.org/obo/MONDO_0019064) | hereditary spastic paraplegia |
-| [MONDO:0017263](http://purl.obolibrary.org/obo/MONDO_0017263) | inherited ichthyosis syndromic form   | [MONDO:0015947](http://purl.obolibrary.org/obo/MONDO_0015947) | inherited ichthyosis          |
-| [MONDO:0016463](http://purl.obolibrary.org/obo/MONDO_0016463) | syndromic agammaglobulinemia          | [MONDO:0015977](http://purl.obolibrary.org/obo/MONDO_0015977) | agammaglobulinemia            |
-| [MONDO:0020148](http://purl.obolibrary.org/obo/MONDO_0020148) | syndromic aniridia                    | [MONDO:0019172](http://purl.obolibrary.org/obo/MONDO_0019172) | aniridia                      |
-| [MONDO:0015246](http://purl.obolibrary.org/obo/MONDO_0015246) | syndromic anorectal malformation      | [MONDO:0019938](http://purl.obolibrary.org/obo/MONDO_0019938) | anorectal malformation        |
+| defined_class                                | defined_class_label                 | disease                                      | disease_label                       |
+|:---------------------------------------------|:------------------------------------|:---------------------------------------------|:------------------------------------|
+| [MONDO:0017263](http://purl.obolibrary.org/obo/MONDO_0017263) | inherited ichthyosis syndromic form | [MONDO:0015947](http://purl.obolibrary.org/obo/MONDO_0015947) | inherited ichthyosis                |
+| [MONDO:0016463](http://purl.obolibrary.org/obo/MONDO_0016463) | syndromic agammaglobulinemia        | [MONDO:0015977](http://purl.obolibrary.org/obo/MONDO_0015977) | agammaglobulinemia                  |
+| [MONDO:0002254](http://purl.obolibrary.org/obo/MONDO_0002254) | syndromic disease                   | [MONDO:0700096](http://purl.obolibrary.org/obo/MONDO_0700096) | human disease or disorder           |
+| [MONDO:0015905](http://purl.obolibrary.org/obo/MONDO_0015905) | syndromic dyslipidemia              | [MONDO:0002525](http://purl.obolibrary.org/obo/MONDO_0002525) | inherited lipid metabolism disorder |
+| [MONDO:0016565](http://purl.obolibrary.org/obo/MONDO_0016565) | syndromic genetic obesity           | [MONDO:0019182](http://purl.obolibrary.org/obo/MONDO_0019182) | inherited obesity                   |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/syndromic.tsv) 

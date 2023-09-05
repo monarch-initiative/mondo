@@ -1,0 +1,548 @@
+format-version: 1.2
+data-version: mondo/releases/2021-10-07/imports/hsapdv_import.owl
+ontology: mondo/imports/hsapdv_import
+
+[Term]
+id: HsapDv:0000000
+name: human life cycle stage
+def: "A spatiotemporal region encompassing some part of the life cycle of an organism." []
+synonym: "developmental stage" EXACT []
+synonym: "stage" NARROW []
+
+[Term]
+id: HsapDv:0000001
+name: human life cycle
+def: "Temporal interval that defines human life from the prenatal stage until late adulthood." []
+is_a: HsapDv:0000000 ! human life cycle stage
+
+[Term]
+id: HsapDv:0000080
+name: immature stage
+def: "Human developmental stage that covers the period from birth until 12 years old." []
+synonym: "0-12 years" EXACT []
+synonym: "child" RELATED []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000001 ! part of human life cycle
+
+[Term]
+id: HsapDv:0000081
+name: child stage
+def: "Immature stage that refers to child who is over 2 and under 13 years old." []
+synonym: "2-12 years" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000080 ! part of immature stage
+relationship: RO:0002087 HsapDv:0000083 ! immediately_preceded_by infant stage
+
+[Term]
+id: HsapDv:0000082
+name: newborn human stage
+def: "Immature stage that refers to a newborn who is under 32 days old." []
+synonym: "0-1 month" EXACT []
+synonym: "neonatal stage" RELATED []
+synonym: "neonate" RELATED []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000080 ! part of immature stage
+
+[Term]
+id: HsapDv:0000083
+name: infant stage
+def: "Immature stage that refers to an infant who is over 31 days and is under 24 months old." []
+synonym: "1-23 months" EXACT []
+synonym: "infantile stage" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000080 ! part of immature stage
+relationship: RO:0002087 HsapDv:0000082 ! immediately_preceded_by newborn human stage
+
+[Term]
+id: HsapDv:0000084
+name: 2-5 year-old child stage
+def: "Child stage that refers to a child who is over 24 months and under 6 years old." []
+synonym: "preschool child" RELATED []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000081 ! part of child stage
+
+[Term]
+id: HsapDv:0000085
+name: 6-12 year-old child stage
+def: "Child stage that refers to a child who is over 6 and under 13 years old." []
+synonym: "prepubescent" RELATED []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000081 ! part of child stage
+relationship: RO:0002087 HsapDv:0000084 ! immediately_preceded_by 2-5 year-old child stage
+
+[Term]
+id: HsapDv:0000086
+name: adolescent stage
+def: "Mature stage that refers to an adolescent who is over 13 and under 19 years old." []
+synonym: "13-18 years" EXACT []
+synonym: "teen" RELATED []
+synonym: "teenager" RELATED []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000204 ! part of mature stage
+
+[Term]
+id: HsapDv:0000087
+name: human adult stage
+def: "Human developmental stage that refers to an adult who is over 19." []
+synonym: "19+ years" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000204 ! part of mature stage
+relationship: RO:0002087 HsapDv:0000086 ! immediately_preceded_by adolescent stage
+
+[Term]
+id: HsapDv:0000088
+name: human early adulthood stage
+def: "Adult stage that refers to an adult who is under 45." []
+synonym: "19-44 years" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000087 ! part of human adult stage
+
+[Term]
+id: HsapDv:0000089
+name: young adult stage
+def: "Early adulthood that refers to an adult who is under 25." []
+synonym: "19-24 years" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000088 ! part of human early adulthood stage
+
+[Term]
+id: HsapDv:0000090
+name: 25-44 year-old human stage
+def: "Early adulthood that refers to an adult who is over 25 and under 45." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000088 ! part of human early adulthood stage
+relationship: RO:0002087 HsapDv:0000089 ! immediately_preceded_by young adult stage
+
+[Term]
+id: HsapDv:0000091
+name: human late adulthood stage
+def: "Adult stage that refers to an adult who is over 45." []
+synonym: "45+ years" EXACT []
+synonym: "Middle Aged + Aged" RELATED []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000087 ! part of human adult stage
+relationship: RO:0002087 HsapDv:0000088 ! immediately_preceded_by human early adulthood stage
+
+[Term]
+id: HsapDv:0000092
+name: human middle aged stage
+def: "Late adulthood that refers to an adult who is over 45 and under 65." []
+synonym: "45-64 years" EXACT []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000091 ! part of human late adulthood stage
+
+[Term]
+id: HsapDv:0000096
+name: 2-year-old human stage
+def: "Child stage that refers to a child who is over 2 and under 3 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000084 ! part of 2-5 year-old child stage
+
+[Term]
+id: HsapDv:0000097
+name: 3-year-old human stage
+def: "Child stage that refers to a child who is over 3 and under 4 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000084 ! part of 2-5 year-old child stage
+relationship: RO:0002087 HsapDv:0000096 ! immediately_preceded_by 2-year-old human stage
+
+[Term]
+id: HsapDv:0000098
+name: 4-year-old human stage
+def: "Child stage that refers to a child who is over 4 and under 5 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000084 ! part of 2-5 year-old child stage
+relationship: RO:0002087 HsapDv:0000097 ! immediately_preceded_by 3-year-old human stage
+
+[Term]
+id: HsapDv:0000099
+name: 5-year-old human stage
+def: "Child stage that refers to a child who is over 5 and under 6 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000084 ! part of 2-5 year-old child stage
+relationship: RO:0002087 HsapDv:0000098 ! immediately_preceded_by 4-year-old human stage
+
+[Term]
+id: HsapDv:0000100
+name: 6-year-old human stage
+def: "Child stage that refers to a child who is over 6 and under 7 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000085 ! part of 6-12 year-old child stage
+relationship: RO:0002087 HsapDv:0000099 ! immediately_preceded_by 5-year-old human stage
+
+[Term]
+id: HsapDv:0000101
+name: 7-year-old human stage
+def: "Child stage that refers to a child who is over 7 and under 8 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000085 ! part of 6-12 year-old child stage
+relationship: RO:0002087 HsapDv:0000100 ! immediately_preceded_by 6-year-old human stage
+
+[Term]
+id: HsapDv:0000102
+name: 8-year-old human stage
+def: "Child stage that refers to a child who is over 8 and under 9 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000085 ! part of 6-12 year-old child stage
+relationship: RO:0002087 HsapDv:0000101 ! immediately_preceded_by 7-year-old human stage
+
+[Term]
+id: HsapDv:0000103
+name: 9-year-old human stage
+def: "Child stage that refers to a child who is over 9 and under 10 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000085 ! part of 6-12 year-old child stage
+relationship: RO:0002087 HsapDv:0000102 ! immediately_preceded_by 8-year-old human stage
+
+[Term]
+id: HsapDv:0000104
+name: 10-year-old human stage
+def: "Child stage that refers to a child who is over 10 and under 11 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000085 ! part of 6-12 year-old child stage
+relationship: RO:0002087 HsapDv:0000103 ! immediately_preceded_by 9-year-old human stage
+
+[Term]
+id: HsapDv:0000105
+name: 11-year-old human stage
+def: "Child stage that refers to a child who is over 11 and under 12 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000085 ! part of 6-12 year-old child stage
+relationship: RO:0002087 HsapDv:0000104 ! immediately_preceded_by 10-year-old human stage
+
+[Term]
+id: HsapDv:0000106
+name: 12-year-old human stage
+def: "Child stage that refers to a child who is over 12 and under 13 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000085 ! part of 6-12 year-old child stage
+relationship: RO:0002087 HsapDv:0000105 ! immediately_preceded_by 11-year-old human stage
+
+[Term]
+id: HsapDv:0000107
+name: 13-year-old human stage
+def: "Adolescent stage that refers to an adolescent who is over 13 and under 14 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000086 ! part of adolescent stage
+relationship: RO:0002087 HsapDv:0000106 ! immediately_preceded_by 12-year-old human stage
+
+[Term]
+id: HsapDv:0000108
+name: 14-year-old human stage
+def: "Adolescent stage that refers to an adolescent who is over 14 and under 15 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000086 ! part of adolescent stage
+relationship: RO:0002087 HsapDv:0000107 ! immediately_preceded_by 13-year-old human stage
+
+[Term]
+id: HsapDv:0000109
+name: 15-year-old human stage
+def: "Adolescent stage that refers to an adolescent who is over 15 and under 16 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000086 ! part of adolescent stage
+relationship: RO:0002087 HsapDv:0000108 ! immediately_preceded_by 14-year-old human stage
+
+[Term]
+id: HsapDv:0000110
+name: 16-year-old human stage
+def: "Adolescent stage that refers to an adolescent who is over 16 and under 17 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000086 ! part of adolescent stage
+relationship: RO:0002087 HsapDv:0000109 ! immediately_preceded_by 15-year-old human stage
+
+[Term]
+id: HsapDv:0000111
+name: 17-year-old human stage
+def: "Adolescent stage that refers to an adolescent who is over 17 and under 18 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000086 ! part of adolescent stage
+relationship: RO:0002087 HsapDv:0000110 ! immediately_preceded_by 16-year-old human stage
+
+[Term]
+id: HsapDv:0000112
+name: 18-year-old human stage
+def: "Adolescent stage that refers to an adolescent who is over 18 and under 19 years old." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000086 ! part of adolescent stage
+relationship: RO:0002087 HsapDv:0000111 ! immediately_preceded_by 17-year-old human stage
+
+[Term]
+id: HsapDv:0000113
+name: 19-year-old human stage
+def: "Young adult stage that refers to an adult who is under 20." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000089 ! part of young adult stage
+relationship: RO:0002087 HsapDv:0000112 ! immediately_preceded_by 18-year-old human stage
+
+[Term]
+id: HsapDv:0000114
+name: 20-year-old human stage
+def: "Young adult stage that refers to an adult who is over 20 and under 21." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000089 ! part of young adult stage
+relationship: RO:0002087 HsapDv:0000113 ! immediately_preceded_by 19-year-old human stage
+
+[Term]
+id: HsapDv:0000115
+name: 21-year-old human stage
+def: "Young adult stage that refers to an adult who is over 21 and under 22." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000089 ! part of young adult stage
+relationship: RO:0002087 HsapDv:0000114 ! immediately_preceded_by 20-year-old human stage
+
+[Term]
+id: HsapDv:0000116
+name: 22-year-old human stage
+def: "Young adult stage that refers to an adult who is over 22 and under 23." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000089 ! part of young adult stage
+relationship: RO:0002087 HsapDv:0000115 ! immediately_preceded_by 21-year-old human stage
+
+[Term]
+id: HsapDv:0000117
+name: 23-year-old human stage
+def: "Young adult stage that refers to an adult who is over 23 and under 24." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000089 ! part of young adult stage
+relationship: RO:0002087 HsapDv:0000116 ! immediately_preceded_by 22-year-old human stage
+
+[Term]
+id: HsapDv:0000118
+name: 24-year-old human stage
+def: "Young adult stage that refers to an adult who is over 24 and under 25." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000089 ! part of young adult stage
+relationship: RO:0002087 HsapDv:0000117 ! immediately_preceded_by 23-year-old human stage
+
+[Term]
+id: HsapDv:0000119
+name: 25-year-old human stage
+def: "Adult stage that refers to an adult who is over 25 and under 26." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000118 ! immediately_preceded_by 24-year-old human stage
+
+[Term]
+id: HsapDv:0000120
+name: 26-year-old human stage
+def: "Adult stage that refers to an adultwho is over 26 and under 27." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000119 ! immediately_preceded_by 25-year-old human stage
+
+[Term]
+id: HsapDv:0000121
+name: 27-year-old human stage
+def: "Adult stage that refers to an adult who is over 27 and under 28." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000120 ! immediately_preceded_by 26-year-old human stage
+
+[Term]
+id: HsapDv:0000122
+name: 28-year-old human stage
+def: "Adult stage that refers to an adult who is over 28 and under 29." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000121 ! immediately_preceded_by 27-year-old human stage
+
+[Term]
+id: HsapDv:0000123
+name: 29-year-old human stage
+def: "Adult stage that refers to an adult who is over 29 and under 30." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000122 ! immediately_preceded_by 28-year-old human stage
+
+[Term]
+id: HsapDv:0000124
+name: 30-year-old human stage
+def: "Adult stage that refers to an adult who is over 30 and under 31." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000123 ! immediately_preceded_by 29-year-old human stage
+
+[Term]
+id: HsapDv:0000125
+name: 31-year-old human stage
+def: "Adult stage that refers to an adult who is over 31 and under 32." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000124 ! immediately_preceded_by 30-year-old human stage
+
+[Term]
+id: HsapDv:0000126
+name: 32-year-old human stage
+def: "Adult stage that refers to an adult who is over 32 and under 33." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000125 ! immediately_preceded_by 31-year-old human stage
+
+[Term]
+id: HsapDv:0000127
+name: 33-year-old human stage
+def: "Adult stage that refers to an adult who is over 33 and under 34." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000126 ! immediately_preceded_by 32-year-old human stage
+
+[Term]
+id: HsapDv:0000128
+name: 34-year-old human stage
+def: "Adult stage that refers to an adult who is over 34 and under 35." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000127 ! immediately_preceded_by 33-year-old human stage
+
+[Term]
+id: HsapDv:0000129
+name: 35-year-old human stage
+def: "Adult stage that refers to an adult who is over 35 and under 36." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000128 ! immediately_preceded_by 34-year-old human stage
+
+[Term]
+id: HsapDv:0000130
+name: 36-year-old human stage
+def: "Adult stage that refers to an adult who is over 36 and under 37." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000129 ! immediately_preceded_by 35-year-old human stage
+
+[Term]
+id: HsapDv:0000131
+name: 37-year-old human stage
+def: "Adult stage that refers to an adult who is over 37 and under 38." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000130 ! immediately_preceded_by 36-year-old human stage
+
+[Term]
+id: HsapDv:0000132
+name: 38-year-old human stage
+def: "Adult stage that refers to an adult who is over 38 and under 39." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000131 ! immediately_preceded_by 37-year-old human stage
+
+[Term]
+id: HsapDv:0000133
+name: 39-year-old human stage
+def: "Adult stage that refers to an adult who is over 39 and under 40." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000132 ! immediately_preceded_by 38-year-old human stage
+
+[Term]
+id: HsapDv:0000134
+name: 40-year-old human stage
+def: "Adult stage that refers to an adult who is over 40 and under 41." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000133 ! immediately_preceded_by 39-year-old human stage
+
+[Term]
+id: HsapDv:0000135
+name: 41-year-old human stage
+def: "Adult stage that refers to an adult who is over 41 and under 42." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000134 ! immediately_preceded_by 40-year-old human stage
+
+[Term]
+id: HsapDv:0000136
+name: 42-year-old human stage
+def: "Adult stage that refers to an adult who is over 42 and under 43." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000135 ! immediately_preceded_by 41-year-old human stage
+
+[Term]
+id: HsapDv:0000137
+name: 43-year-old human stage
+def: "Adult stage that refers to an adult who is over 43 and under 44." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000136 ! immediately_preceded_by 42-year-old human stage
+
+[Term]
+id: HsapDv:0000138
+name: 44-year-old human stage
+def: "Adult stage that refers to an adult who is over 44 and under 45." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000090 ! part of 25-44 year-old human stage
+relationship: RO:0002087 HsapDv:0000137 ! immediately_preceded_by 43-year-old human stage
+
+[Term]
+id: HsapDv:0000139
+name: 45-year-old human stage
+def: "Middle aged stage that refers to an adult who is over 45 and under 46." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000092 ! part of human middle aged stage
+relationship: RO:0002087 HsapDv:0000138 ! immediately_preceded_by 44-year-old human stage
+
+[Term]
+id: HsapDv:0000140
+name: 46-year-old human stage
+def: "Middle aged stage that refers to an adult who is over 46 and under 47." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000092 ! part of human middle aged stage
+relationship: RO:0002087 HsapDv:0000139 ! immediately_preceded_by 45-year-old human stage
+
+[Term]
+id: HsapDv:0000141
+name: 47-year-old human stage
+def: "Middle aged stage that refers to an adult who is over 47 and under 48." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000092 ! part of human middle aged stage
+relationship: RO:0002087 HsapDv:0000140 ! immediately_preceded_by 46-year-old human stage
+
+[Term]
+id: HsapDv:0000142
+name: 48-year-old human stage
+def: "Middle aged stage that refers to an adult who is over 48 and under 49." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000092 ! part of human middle aged stage
+relationship: RO:0002087 HsapDv:0000141 ! immediately_preceded_by 47-year-old human stage
+
+[Term]
+id: HsapDv:0000143
+name: 49-year-old human stage
+def: "Middle aged stage that refers to an adult who is over 49 and under 50." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000092 ! part of human middle aged stage
+relationship: RO:0002087 HsapDv:0000142 ! immediately_preceded_by 48-year-old human stage
+
+[Term]
+id: HsapDv:0000144
+name: 50-year-old human stage
+def: "Middle aged stage that refers to an adult who is over 50 and under 51." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000092 ! part of human middle aged stage
+relationship: RO:0002087 HsapDv:0000143 ! immediately_preceded_by 49-year-old human stage
+
+[Term]
+id: HsapDv:0000204
+name: mature stage
+def: "Human developmental stage that refers to a sexually mature human." []
+is_a: HsapDv:0000000 ! human life cycle stage
+relationship: BFO:0000050 HsapDv:0000001 ! part of human life cycle
+
+[Typedef]
+id: BFO:0000050
+name: part of
+is_transitive: true
+
+[Typedef]
+id: BFO:0000062
+name: preceded_by
+def: "X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)" []
+is_transitive: true
+
+[Typedef]
+id: RO:0002087
+name: immediately_preceded_by
+def: "X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)" []
+is_a: BFO:0000062 ! preceded_by
+

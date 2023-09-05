@@ -25,12 +25,12 @@ A melanoma that involves the {[location](http://www.w3.org/2002/07/owl#Thing)}.
 [melanoma](http://purl.obolibrary.org/obo/MONDO_0005105) and ([disease has location](http://purl.obolibrary.org/obo/RO_0004026) some {[location](http://www.w3.org/2002/07/owl#Thing)})
 
 ## Data preview 
-| defined_class                                | defined_class_label          | location                                      | location_label   |
-|:---------------------------------------------|:-----------------------------|:----------------------------------------------|:-----------------|
-| [MONDO:0006081](http://purl.obolibrary.org/obo/MONDO_0006081) | anal melanoma                | [UBERON:0001245](http://purl.obolibrary.org/obo/UBERON_0001245) | anus             |
-| [MONDO:0005012](http://purl.obolibrary.org/obo/MONDO_0005012) | cutaneous melanoma (disease) | [UBERON:0000014](http://purl.obolibrary.org/obo/UBERON_0000014) | zone of skin     |
-| [MONDO:0045070](http://purl.obolibrary.org/obo/MONDO_0045070) | digestive system melanoma    | [UBERON:0001007](http://purl.obolibrary.org/obo/UBERON_0001007) | digestive system |
-| [MONDO:0001192](http://purl.obolibrary.org/obo/MONDO_0001192) | esophageal melanoma          | [UBERON:0001043](http://purl.obolibrary.org/obo/UBERON_0001043) | esophagus        |
-| [MONDO:0000928](http://purl.obolibrary.org/obo/MONDO_0000928) | eyelid melanoma              | [UBERON:0001711](http://purl.obolibrary.org/obo/UBERON_0001711) | eyelid           |
+| defined_class                                | defined_class_label       | location                                      | location_label   |
+|:---------------------------------------------|:--------------------------|:----------------------------------------------|:-----------------|
+| [MONDO:0006081](http://purl.obolibrary.org/obo/MONDO_0006081) | anal melanoma             | [UBERON:0001245](http://purl.obolibrary.org/obo/UBERON_0001245) | anus             |
+| [MONDO:0005012](http://purl.obolibrary.org/obo/MONDO_0005012) | cutaneous melanoma        | [UBERON:0000014](http://purl.obolibrary.org/obo/UBERON_0000014) | zone of skin     |
+| [MONDO:0045070](http://purl.obolibrary.org/obo/MONDO_0045070) | digestive system melanoma | [UBERON:0001007](http://purl.obolibrary.org/obo/UBERON_0001007) | digestive system |
+| [MONDO:0001192](http://purl.obolibrary.org/obo/MONDO_0001192) | esophageal melanoma       | [UBERON:0001043](http://purl.obolibrary.org/obo/UBERON_0001043) | esophagus        |
+| [MONDO:0000928](http://purl.obolibrary.org/obo/MONDO_0000928) | eyelid melanoma           | [UBERON:0001711](http://purl.obolibrary.org/obo/UBERON_0001711) | eyelid           |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/melanoma.tsv) 

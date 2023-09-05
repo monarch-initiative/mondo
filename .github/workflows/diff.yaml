@@ -1,0 +1,28 @@
+name: Create ongoing diffs
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 13 * * 1"
+jobs:
+  diff:
+    # Do not run on forks. https://github.com/monarch-initiative/mondo/issues/5255
+    if: github.repository_owner == 'monarch-initiative'
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.3.0
+    strategy:
+      max-parallel: 1
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+      - name: Run diff
+        run: cd src/ontology/ && make IMP=false PAT=false MIR=false GITHUB_ACTION=true all_release_reports
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Update Mondo diff reports
+          title: 'Mondo Diff reports'
+          body: |
+            Updates Mondo diff reports, including
+            - Current changes to labels in Mondo
+            - New terms that are about to be added as part of the next release
+          assignees: sabrinatoro

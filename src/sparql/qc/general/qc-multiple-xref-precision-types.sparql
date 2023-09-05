@@ -1,0 +1,24 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# description: This checks that no xref has more than one kinds of precisions
+# , for example "related" and "equivalent" at the same time.
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+    ?entity oboInOwl:hasDbXref ?xref .
+        
+    ?xref_anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref ;
+           oboInOwl:source ?source1 ;
+  			oboInOwl:source ?source2 .
+
+  	FILTER (?source1!=?source2)
+  	FILTER ((str(?source1)="MONDO:obsoleteEquivalent") || (str(?source1)="MONDO:equivalentObsolete") || (str(?source1)="MONDO:obsoleteEquivalentObsolete") || (str(?source1)="MONDO:equivalentTo") || (str(?source1)="MONDO:relatedTo") || (str(?source1)="MONDO:mondoIsNarrowerThanSource") || (str(?source1)="MONDO:mondoIsBroaderThanSource") || (str(?source1)="MONDO:includedEntryInOMIM"))
+  FILTER ((str(?source2)="MONDO:obsoleteEquivalent") || (str(?source2)="MONDO:equivalentObsolete") || (str(?source2)="MONDO:obsoleteEquivalentObsolete") || (str(?source2)="MONDO:equivalentTo") || (str(?source2)="MONDO:relatedTo") || (str(?source2)="MONDO:mondoIsNarrowerThanSource") || (str(?source2)="MONDO:mondoIsBroaderThanSource") || (str(?source2)="MONDO:includedEntryInOMIM"))
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(?xref as ?value)
+  BIND(CONCAT(CONCAT(STR(?source1),"-"),STR(?source2)) as ?property)
+}

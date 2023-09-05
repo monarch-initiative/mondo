@@ -1,0 +1,32 @@
+name: Update pattern and SPARQL docs
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - 'src/patterns/dosdp-patterns/**'
+      - 'src/sparql/**'
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.3.0
+    strategy:
+      max-parallel: 1
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+      - name: Run diff
+        run: cd src/ontology/ && make pattern_docs -B
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Update DOSDP template and SPARQL qc documentation
+          title: 'Update DOSDP and SPARQL docs'
+          body: |
+            Updates DOSDP template and SPARQL qc documentation, including
+            - Update the dosdp pattern docs overview
+            - Update the README.md in the DOSDP directory
+            - Update pattern.owl
+            - Update SPARQL QC check documenation
+          assignees: nicolevasilevsky

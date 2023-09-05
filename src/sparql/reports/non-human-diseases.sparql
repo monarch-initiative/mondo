@@ -1,0 +1,23 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
+SELECT distinct ?nonHumanDisease ?nonHumanDiseaselabel  (GROUP_CONCAT(DISTINCT ?humanDisease;SEPARATOR="|") AS ?parents_ids) (GROUP_CONCAT(DISTINCT ?humanDiseaselabel;SEPARATOR="|") AS ?parents) WHERE {
+  
+   ?nonHumanDisease rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0005583> .
+   ?nonHumanDisease rdfs:label ?nonHumanDiseaselabel .
+   
+  ?nonHumanDisease rdfs:subClassOf ?humanDisease .
+  ?humanDisease rdfs:label ?humanDiseaselabel .
+    
+  
+    FILTER NOT EXISTS {
+        ?humanDisease rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0005583> .
+    }
+
+  FILTER( strstarts(str(?nonHumanDisease), 'http://purl.obolibrary.org/obo/MONDO_')) 
+  FILTER( strstarts(str(?humanDisease), 'http://purl.obolibrary.org/obo/MONDO_')) 
+  FILTER(?humanDiseaselabel != 'disease or disorder' )
+  
+}  GROUP BY ?nonHumanDisease ?nonHumanDiseaselabel

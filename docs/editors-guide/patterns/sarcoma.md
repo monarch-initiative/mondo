@@ -32,7 +32,7 @@ A sarcoma involving a {[location](http://www.w3.org/2002/07/owl#Thing)}.
 | defined_class                                | defined_class_label     | location                                      | location_label   |
 |:---------------------------------------------|:------------------------|:----------------------------------------------|:-----------------|
 | [MONDO:0019480](http://purl.obolibrary.org/obo/MONDO_0019480) | Langerhans cell sarcoma | [CL:0000453](http://purl.obolibrary.org/obo/CL_0000453)     | Langerhans cell  |
-| [MONDO:0016982](http://purl.obolibrary.org/obo/MONDO_0016982) | angiosarcoma (disease)  | [UBERON:0001981](http://purl.obolibrary.org/obo/UBERON_0001981) | blood vessel     |
+| [MONDO:0016982](http://purl.obolibrary.org/obo/MONDO_0016982) | angiosarcoma            | [UBERON:0001981](http://purl.obolibrary.org/obo/UBERON_0001981) | blood vessel     |
 | [MONDO:0002865](http://purl.obolibrary.org/obo/MONDO_0002865) | anus sarcoma            | [UBERON:0001245](http://purl.obolibrary.org/obo/UBERON_0001245) | anus             |
 | [MONDO:0002862](http://purl.obolibrary.org/obo/MONDO_0002862) | bile duct sarcoma       | [UBERON:0002394](http://purl.obolibrary.org/obo/UBERON_0002394) | bile duct        |
 | [MONDO:0001374](http://purl.obolibrary.org/obo/MONDO_0001374) | bladder sarcoma         | [UBERON:0001255](http://purl.obolibrary.org/obo/UBERON_0001255) | urinary bladder  |

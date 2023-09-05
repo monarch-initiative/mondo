@@ -4,7 +4,7 @@ pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gen
 
 description: '
 
-  This pattern is meant to be used for OMIM Mendelian diseases (ie unitary genetic diseases, as described in 
+  This pattern is meant to be used for OMIM Mendelian diseases (ie unitary genetic diseases, as described in
   [PMID:33417889](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7820621/)), including children of OMIM phenotypic
   series (OMIMPS), which are represented as grouping classes in Mondo. Notes about
   the OMIMPS (see also OMIM_phenotypic_series.yaml):  - every instance of the OMIMPS
@@ -29,7 +29,7 @@ classes:
   gene: SO:0000704
 
 relations:
-  disease has basis in dysfunction of: RO:0004020
+  has material basis in germline mutation in: RO:0004003
 
 annotationProperties:
   exact_synonym: oio:hasExactSynonym
@@ -40,7 +40,7 @@ vars:
   gene: '''gene'''
 
 name:
-  text: '%s caused by mutation in %s'
+  text: '%s caused by variation in %s'
   vars:
   - disease
   - gene
@@ -53,13 +53,13 @@ annotations:
   - disease
 
 def:
-  text: Any %s in which the cause of the disease is a mutation in the %s gene.
+  text: Any %s in which the cause of the disease is a variation in the %s gene.
   vars:
   - disease
   - gene
 
 equivalentTo:
-  text: '%s and ''disease has basis in dysfunction of'' some %s'
+  text: '%s and ''has material basis in germline mutation in'' some %s'
   vars:
   - disease
   - gene

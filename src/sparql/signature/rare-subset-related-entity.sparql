@@ -1,0 +1,18 @@
+prefix RO: <http://purl.obolibrary.org/obo/RO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Get all classes related to diseases that 
+SELECT DISTINCT ?entity WHERE
+{
+  VALUES ?property { RO:0004003 }
+  ?cls rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> .
+  ?cls rdfs:subClassOf+ [
+               owl:onProperty ?property ;
+               owl:someValuesFrom ?entity ] 
+
+ FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+}
