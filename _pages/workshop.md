@@ -33,6 +33,8 @@ July 28 | 9 AM PT/12 PM ET | Megan Kane ([MedGen](https://www.ncbi.nlm.nih.gov/m
 Aug 25 | 9 AM PT/12 PM ET | Courtney Thaxton ([ClinGen](https://clinicalgenome.org/)) | ClinGen Variant Curation
 Sept 22 | 9 AM PT/12 PM ET | Daniel Himmelstein ([Related Sciences](https://www.related.vc/)), Eric Czech ([Related Sciences](https://www.related.vc/)), and Daniel Korn ([Every Cure](https://everycure.org/)) | Classifying EFO/MONDO diseases as areas, roots, or subtypes
 Oct 20 | 9 AM PT/12 PM ET | TBD
+Nov 17 | 9 AM PT/12 PM ET | TBD
+Dec 15 | 9 AM PT/12 PM ET | TBD
 
 <a name="feb-2023"></a> 
 ## Mondo Workshops
