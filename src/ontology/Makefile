@@ -595,9 +595,8 @@ mirror-omo: | $(TMPDIR)
 .PHONY: mirror-chr
 .PRECIOUS: $(MIRRORDIR)/chr.owl
 mirror-chr: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/chr/chr-base.owl --create-dirs -o $(MIRRORDIR)/chr.owl --retry 4 --max-time 400 &&\
-		$(ROBOT) convert -i $(MIRRORDIR)/chr.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
-
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I https://raw.githubusercontent.com/monarch-initiative/monochrom/master/chr-base.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
 ## ONTOLOGY: hsapdv
 .PHONY: mirror-hsapdv
