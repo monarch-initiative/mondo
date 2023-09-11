@@ -11,7 +11,7 @@ CONFIG=$OID"-odk.yaml"
 
 rm -rf target
 mkdir target
-/tools/odk.py seed -c -g False -C $CONFIG
+/tools/odk.py seed -c -g -C $CONFIG
 ls -l target/$OID/src
 ls -l $SRCDIR/
 cp target/$OID/src/scripts/update_repo.sh $SRCDIR/scripts/
@@ -24,5 +24,7 @@ mkdir -p $ROOTDIR/.github/workflows
 cp -n target/$OID/.github/workflows/qc.yml $ROOTDIR/.github/workflows/qc.yml
 
 
+
 echo "WARNING: These files should be manually migrated: mkdocs.yaml, .gitignore, src/ontology/catalog.xml (if you added a new import or component)"
-echo "Update successfully completed."
+echo "WARNING: Your QC workflows have not been updated automatically. Please update the ODK version number(s) in .github/workflows/qc.yml."
+echo "Ontology repository update successfully completed."
