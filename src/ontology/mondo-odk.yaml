@@ -5,6 +5,7 @@ repo: mondo
 #report_fail_on: ERROR
 report_fail_on: None
 use_dosdps: TRUE
+git_main_branch: master
 export_formats:
   - owl
   - obo
@@ -17,6 +18,19 @@ release_artefacts:
   - full
   - custom-mondo-with-equivalents
 import_group:
+  use_base_merging: TRUE
+  exclude_iri_patterns:
+    - <http://purl.obolibrary.org/obo/GOCHE_*>
+    - <http://purl.obolibrary.org/obo/NCBITaxon_Union_*>
+    - <http://purl.obolibrary.org/obo/NCBITaxon_*>
+    - <http://www.informatics.jax.org/marker/MGI:*>
+    - <http://purl.obolibrary.org/obo/OBI_*>
+    - <http://purl.obolibrary.org/obo/CARO_*>
+    - <http://purl.obolibrary.org/obo/ENVO_*>
+    - <http://purl.obolibrary.org/obo/SO_*>
+  slme_individuals: exclude
+  edit_format: obo
+  mirror_max_time_download: 400
   products:
     - id: uberon
       is_large: TRUE
@@ -40,3 +54,4 @@ import_group:
     - id: ecto
     - id: omo
 robot_java_args: '-Xmx8G'
+create_obo_metadata: FALSE
