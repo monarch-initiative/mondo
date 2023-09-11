@@ -7,6 +7,7 @@ EFO=http://www.ebi.ac.uk/efo
 ONT=mondo
 ONTURI=$(OBO)/$(ONT)
 ONTBASE=$(OBO)/$(ONT)
+MIRRORDIR=mirror
 
 
 SRC=$(ONT)-edit.obo
@@ -375,6 +376,9 @@ modules/%.owl: modules/%.tsv
 	dosdp-tools  --obo-prefixes --ontology=../ontology/mondo-edit.obo  --template=../patterns/$*.yaml --outfile=$@ generate --infile=$<
 
 ###### BEGIN PARTIAL ODK MIGRATION ##############
+$(TMPDIR) $(REPORTDIR) $(MIRRORDIR) $(IMPORTDIR) $(COMPONENTSDIR) $(SUBSETDIR):
+	mkdir -p $@
+
 # ----------------------------------------
 # Import modules
 # ----------------------------------------
@@ -638,14 +642,15 @@ $(MIRRORDIR)/%.owl: mirror-% | $(MIRRORDIR)
 		cp $(TMPDIR)/mirror-$*.owl $@; fi; fi
 ###### END PARTIAL ODK MIGRATION ##############
 ###### BEGIN CUSTOM IMPORTS ###################
-mirror/dipper-%.ttl:
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget --no-check-certificate https://archive.monarchinitiative.org/latest/rdf/$*.ttl -O $@.tmp && perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@; fi
+mirror/dipper-%.ttl: | $(MIRRORDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget --no-check-certificate https://archive.monarchinitiative.org/latest/rdf/$*.ttl -O $@.tmp &&\
+		perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@; fi
 
 mirror-hgnc: mirror/dipper-hgnc.ttl | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) query -i $< --format ttl --query ../sparql/construct/construct-hgnc.sparql $@.tmp.ttl &&\
-	$(ROBOT) annotate -i $@.tmp.ttl --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
-		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
-		--output $@.tmp.owl && mv $@.tmp.owl $@ && rm $@.tmp.ttl; fi	
+	if [ $(MIR) = true ] && [ $(IMP) = true ] && [ -f $(TMPDIR)/mirror-$*.owl ]; then $(ROBOT) merge -i $< \
+		query --format ttl --query ../sparql/construct/construct-hgnc.sparql $(TMPDIR)/$@.tmp.ttl &&\
+	$(ROBOT) convert -i $(TMPDIR)/$@.tmp.ttl -o $@.tmp.owl && mv $@.tmp.owl $(MIRRORDIR)/hgnc.owl &&\
+	$(ROBOT) convert -i $(MIRRORDIR)/hgnc.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 ###### END CUSTOM IMPORTS ###################
 
 edit-merged.owl: $(SRC)
