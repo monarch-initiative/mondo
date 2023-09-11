@@ -1,4 +1,8 @@
 OBOBASE=                    http://purl.obolibrary.org/obo
+VERSION=                    $(TODAY)
+ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
+ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
+
 OBO=http://purl.obolibrary.org/obo
 OIO=http://www.geneontology.org/formats/oboInOwl\#
 RDFS=http://www.w3.org/2000/01/rdf-schema#
@@ -893,61 +897,9 @@ mirror/%-labels.owl: mirror/%.owl
 mirror/%-raw.owl: mirror/%.owl
 	$(OWLTOOLS) $< --remove-axioms-about -v
 
-
-# You could trigger this upstream to get the very latest results:
-# https://ci.monarchinitiative.org/view/dipper/job/build-omim
-
-
-
-trigger-mirror:
-	touch $@
-
-# clone remote ontology locally, perfoming some excision of relations and annotations
-mirror/%.owl:
-	$(OWLTOOLS) $(OBO)/$*.owl --remove-annotation-assertions -l -s -d -r --remove-dangling-annotations --remove-axiom-annotations  -o $@
-.PRECIOUS: mirror/%.owl
-
-mirror/ecto.owl:
-	$(OWLTOOLS) $(OBO)/ecto.owl --remove-annotation-assertions -l -s -d -r --remove-dangling-annotations --remove-axiom-annotations  -o $@ &&\
-	$(ROBOT) remove -i $@ --select "<http://purl.obolibrary.org/obo/ENVO_*>" -o $@
-.PRECIOUS: mirror/ecto.owl
-
-mirror/ncbitaxon.owl:
-	wget --no-check-certificate http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl -O $@
-.PRECIOUS: mirror/ncbitaxon.owl
-
-# hp.owl currently contains many stray root classes
-mirror/hp.obo:
-	wget --no-check-certificate $(OBO)/hp.obo -O $@.tmp && mv $@.tmp $@ && touch $@
-.PRECIOUS: mirror/hp.obo
-mirror/hp.owl:  mirror/hp.obo
-	$(OWLTOOLS) $< -o $@.tmp && mv $@.tmp $@
-.PRECIOUS: mirror/hp.owl
-
-CHEBI_URL=https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl
-
-mirror/chebi.owl:
-	wget --no-check-certificate $(CHEBI_URL) -O $@.tmp.obo && owltools $@.tmp.obo --remove-annotation-assertions -l -s -d --remove-dangling-annotations --remove-axiom-annotations  -o $@ && touch $@
-.PRECIOUS: mirror/chebi.owl
-
-mirror/mfoem.owl:
-	$(OWLTOOLS) $(OBO)/mfoem.owl --remove-annotation-assertions -l -s -d --make-subset-by-properties -f BFO:0000050 // --remove-dangling-annotations  -o $@
-.PRECIOUS: mirror/mfoem.owl
-
-# we have to roundtrip some ontologies through obo for obscure reasons see https://github.com/monarch-initiative/mondo/issues/237
-mirror/doid.owl:
-	wget --no-check-certificate $(OBO)/doid.owl -O doid1.owl && owltools doid1.owl -o -f obo doid1.obo && owltools doid1.obo -o $@
-
-# TODO: change this when monochrom is on OBO
-mirror/chr.owl:
-	wget --no-check-certificate https://raw.githubusercontent.com/monarch-initiative/monochrom/master/chr-base.owl -O $@
-
-
 mirror/neoplasm-core.owl:
 	wget --no-check-certificate $(OBO)/ncit/neoplasm-core.owl -O $@ && touch $@
 
-mirror/ncit.owl:
-	wget --no-check-certificate $(OBO)/ncit.owl -O $@ && touch $@
 
 # It looks odd to reason relax reduce the base, but its necessary until we have base plus
 mirror/cl.owl:
@@ -957,9 +909,6 @@ mirror/uberon.owl:
 	$(ROBOT) merge -I $(OBO)/uberon/uberon-base.owl reason relax reduce \
 		remove --base-iri $(OBO)/UBERON --base-iri $(OBO)/UBPROP_ --axioms external --preserve-structure false --trim false \
 		remove --term rdfs:label --select complement --select "annotation-properties" -o $@ && touch $@
-
-mirror/omo.owl:
-	wget --no-check-certificate $(OBO)/omo.owl -O $@ && touch $@
 
 mirror/ncit-disease.uris: mirror/ncit.owl
 	$(ROBOT) query -i $< -s ../sparql/signature/ncit-subclass-of-disease.sparql $@
