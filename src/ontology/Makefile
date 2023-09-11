@@ -1,22 +1,4 @@
-# ----------------------------------------
-# Instructions
-# ----------------------------------------
-#
-# This needs to be simplified!
-#
-# ```
-# make all
-# rm mondo-lastbuild.obo
-# make mondo-diff.txt
-# ./get-new-classes.sh
-# [manually edit ../../Changes.md using output of previous command and "git log mondo-edit.obo"]
-# ```
-
-# ----------------------------------------
-# Standard Constants
-# ----------------------------------------
-# these can be overwritten on the command line
-
+OBOBASE=                    http://purl.obolibrary.org/obo
 OBO=http://purl.obolibrary.org/obo
 OIO=http://www.geneontology.org/formats/oboInOwl\#
 RDFS=http://www.w3.org/2000/01/rdf-schema#
