@@ -80,10 +80,17 @@ all: test all_artefacts mappings
 # ----------------------------------------
 # Artefacts
 # ----------------------------------------
-ONTOLOGY_IMPORTS = uberon cl go pato ro hp mf ncbitaxon chebi envo ncit hgnc foodon so ecto omo chr hsapdv nbo maxo mfomd
-IMPORT_ROOTS = $(patsubst %, imports/%_import, $(ONTOLOGY_IMPORTS)) imports/equivalencies
-IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)  imports/axioms.owl
-IMPORT_FILES_OWL = $(foreach n,$(IMPORT_ROOTS), $(n).owl)  imports/axioms.owl
+
+IMPORTS =  uberon cl go pato envo ro hp mf ncbitaxon chebi ncit hgnc foodon so ecto omo chr hsapdv nbo maxo mfomd
+
+IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
+IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
+IMPORT_FILES = $(IMPORT_OWL_FILES)
+
+
+.PHONY: all_imports
+all_imports: $(IMPORT_FILES)
+
 
 COMPONENTS = mondo-tags mondo-subsets
 COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
@@ -385,54 +392,270 @@ modules/%.tsv: modules/%.csv
 modules/%.owl: modules/%.tsv
 	dosdp-tools  --obo-prefixes --ontology=../ontology/mondo-edit.obo  --template=../patterns/$*.yaml --outfile=$@ generate --infile=$<
 
+###### BEGIN PARTIAL ODK MIGRATION ##############
 # ----------------------------------------
 # Import modules
 # ----------------------------------------
 # Most ontologies are modularly constructed using portions of other ontologies
 # These live in the imports/ folder
-# These can be regenerated with make all_imports
+# This pattern uses ROBOT to generate an import module
 
-ONTOLOGY_IMPORTS_OWL = $(patsubst %, imports/%_import.owl, $(ONTOLOGY_IMPORTS))
-ONTOLOGY_IMPORTS_OBO = $(patsubst %, imports/%_import.obo, $(ONTOLOGY_IMPORTS))
-ONTOLOGY_IMPORTS_OWL_ROOTS = $(patsubst %, imports/%_import.owl-roots.tsv, $(ONTOLOGY_IMPORTS))
+# Should be able to drop this if robot can just take a big messy list of terms as input.
+$(IMPORTDIR)/%_terms_combined.txt: $(IMPORTSEED) $(IMPORTDIR)/%_terms.txt
+	if [ $(IMP) = true ]; then cat $^ | grep -v ^# | sort | uniq >  $@; fi
 
-# Make this target to regenerate ALL
-all_imports: all_imports_owl all_imports_obo  all_imports_owl_roots
-all_imports_owl: $(ONTOLOGY_IMPORTS_OWL)
-all_imports_owl_roots: $(ONTOLOGY_IMPORTS_OWL_ROOTS)
-all_imports_obo: $(ONTOLOGY_IMPORTS_OBO)
 
-# Use ROBOT, driven entirely by terms lists NOT from source ontology
-IMP=true
+ALL_TERMS_COMBINED = $(patsubst %, $(IMPORTDIR)/%_terms_combined.txt, $(IMPORTS))
+$(IMPORTDIR)/merged_terms_combined.txt: $(ALL_TERMS_COMBINED)
+	if [ $(IMP) = true ]; then cat $^ | grep -v ^# | sort | uniq >  $@; fi
 
-imports/%_import.owl: mirror/%.owl imports/%_terms.txt
-	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms.txt --force true --individuals definitions --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		remove -T imports/removeseed.txt \
-		remove --select "<http://purl.obolibrary.org/obo/PR_*>" \
-		reason --exclude-tautologies structural \
-		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/%_import.owl
 
-# we use owltools for making the obo file until: https://github.com/ontodev/robot/issues/64
-imports/%_import.obo: imports/%_import.owl
-	if [ $(IMP) = true ]; then $(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@; fi
+$(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/merged_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
+		remove  --select "<http://purl.obolibrary.org/obo/GOCHE_*>" remove  --select "<http://purl.obolibrary.org/obo/NCBITaxon_Union_*>" remove  --select "<http://purl.obolibrary.org/obo/NCBITaxon_*>" remove  --select "<http://www.informatics.jax.org/marker/MGI:*>" remove  --select "<http://purl.obolibrary.org/obo/OBI_*>" remove  --select "<http://purl.obolibrary.org/obo/CARO_*>" remove  --select "<http://purl.obolibrary.org/obo/ENVO_*>" remove  --select "<http://purl.obolibrary.org/obo/SO_*>"  \
+		extract -T $(IMPORTDIR)/merged_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
+		$(ANNOTATE_CONVERT_FILE); fi
 
-imports/omo_import.owl: mirror/omo.owl imports/omo_terms.txt
-	@if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
-		remove --term IAO:0000227 \
-		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/omo_import.owl
 
-imports/so_import.owl: mirror/so.owl imports/so_terms.txt
-	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/so_terms.txt --force true --individuals definitions --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru \
-		remove -T imports/removeseed.txt \
-		remove --select object-properties \
-		reason --exclude-tautologies structural \
-		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
-.PRECIOUS: imports/omo_import.owl
+
+$(IMPORTDIR)/%_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/%_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
+		extract -T $(IMPORTDIR)/$*_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
+		$(ANNOTATE_CONVERT_FILE); fi
+
+.PRECIOUS: $(IMPORTDIR)/%_import.owl
+
+
+.PHONY: refresh-imports
+refresh-imports:
+	$(MAKE) IMP=true MIR=true PAT=false IMP_LARGE=true all_imports -B
+
+.PHONY: no-mirror-refresh-imports
+no-mirror-refresh-imports:
+	$(MAKE) IMP=true MIR=false PAT=false IMP_LARGE=true all_imports -B
+
+.PHONY: refresh-imports-excluding-large
+refresh-imports-excluding-large:
+	$(MAKE) IMP=true MIR=true PAT=false IMP_LARGE=false all_imports -B
+
+.PHONY: refresh-%
+refresh-%:
+	$(MAKE) IMP=true IMP_LARGE=true MIR=true PAT=false $(IMPORTDIR)/$*_import.owl -B
+
+.PHONY: no-mirror-refresh-%
+no-mirror-refresh-%:
+	$(MAKE) IMP=true IMP_LARGE=true MIR=false PAT=false $(IMPORTDIR)/$*_import.owl -B
+
+# ----------------------------------------
+# Mirroring upstream ontologies
+# ----------------------------------------
+
+IMP=true # Global parameter to bypass import generation
+MIR=true # Global parameter to bypass mirror generation
+IMP_LARGE=true # Global parameter to bypass handling of large imports
+
+
+
+## ONTOLOGY: uberon
+.PHONY: mirror-uberon
+.PRECIOUS: $(MIRRORDIR)/uberon.owl
+mirror-uberon: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/uberon/uberon-base.owl --create-dirs -o $(MIRRORDIR)/uberon.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/uberon.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: cl
+.PHONY: mirror-cl
+.PRECIOUS: $(MIRRORDIR)/cl.owl
+mirror-cl: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/cl/cl-base.owl --create-dirs -o $(MIRRORDIR)/cl.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/cl.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: go
+.PHONY: mirror-go
+.PRECIOUS: $(MIRRORDIR)/go.owl
+mirror-go: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/go.owl --create-dirs -o $(MIRRORDIR)/go.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/go.owl -o $@.tmp.owl && \
+		$(ROBOT) remove -i $@.tmp.owl --base-iri $(URIBASE)/GO --axioms external --preserve-structure false --trim false -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: pato
+.PHONY: mirror-pato
+.PRECIOUS: $(MIRRORDIR)/pato.owl
+mirror-pato: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/pato/pato-base.owl --create-dirs -o $(MIRRORDIR)/pato.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/pato.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: envo
+.PHONY: mirror-envo
+.PRECIOUS: $(MIRRORDIR)/envo.owl
+mirror-envo: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/envo.owl --create-dirs -o $(MIRRORDIR)/envo.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/envo.owl -o $@.tmp.owl && \
+		$(ROBOT) remove -i $@.tmp.owl --base-iri $(URIBASE)/ENVO --axioms external --preserve-structure false --trim false -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: ro
+.PHONY: mirror-ro
+.PRECIOUS: $(MIRRORDIR)/ro.owl
+mirror-ro: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/ro/ro-base.owl --create-dirs -o $(MIRRORDIR)/ro.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/ro.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: hp
+.PHONY: mirror-hp
+.PRECIOUS: $(MIRRORDIR)/hp.owl
+mirror-hp: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/hp/hp-base.owl --create-dirs -o $(MIRRORDIR)/hp.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/hp.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: mf
+.PHONY: mirror-mf
+.PRECIOUS: $(MIRRORDIR)/mf.owl
+mirror-mf: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/mf.owl --create-dirs -o $(MIRRORDIR)/mf.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/mf.owl -o $@.tmp.owl && \
+		$(ROBOT) remove -i $@.tmp.owl --base-iri $(URIBASE)/MF --axioms external --preserve-structure false --trim false -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: ncbitaxon
+.PHONY: mirror-ncbitaxon
+.PRECIOUS: $(MIRRORDIR)/ncbitaxon.owl
+mirror-ncbitaxon: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: chebi
+.PHONY: mirror-chebi
+.PRECIOUS: $(MIRRORDIR)/chebi.owl
+mirror-chebi: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl -o $@.tmp.owl && \
+		$(ROBOT) remove -i $@.tmp.owl --base-iri $(URIBASE)/CHEBI --axioms external --preserve-structure false --trim false -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: ncit
+.PHONY: mirror-ncit
+.PRECIOUS: $(MIRRORDIR)/ncit.owl
+mirror-ncit: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/ncit.owl --create-dirs -o $(MIRRORDIR)/ncit.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/ncit.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: hgnc
+.PHONY: mirror-hgnc
+.PRECIOUS: $(MIRRORDIR)/hgnc.owl
+mirror-hgnc: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/hgnc.owl --create-dirs -o $(MIRRORDIR)/hgnc.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/hgnc.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: foodon
+.PHONY: mirror-foodon
+.PRECIOUS: $(MIRRORDIR)/foodon.owl
+mirror-foodon: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/foodon.owl --create-dirs -o $(MIRRORDIR)/foodon.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/foodon.owl -o $@.tmp.owl && \
+		$(ROBOT) remove -i $@.tmp.owl --base-iri $(URIBASE)/FOODON --axioms external --preserve-structure false --trim false -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: so
+.PHONY: mirror-so
+.PRECIOUS: $(MIRRORDIR)/so.owl
+mirror-so: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/so.owl --create-dirs -o $(MIRRORDIR)/so.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/so.owl -o $@.tmp.owl && \
+		$(ROBOT) remove -i $@.tmp.owl --base-iri $(URIBASE)/SO --axioms external --preserve-structure false --trim false -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: ecto
+.PHONY: mirror-ecto
+.PRECIOUS: $(MIRRORDIR)/ecto.owl
+mirror-ecto: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/ecto/ecto-base.owl --create-dirs -o $(MIRRORDIR)/ecto.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/ecto.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: omo
+.PHONY: mirror-omo
+.PRECIOUS: $(MIRRORDIR)/omo.owl
+mirror-omo: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/omo.owl --create-dirs -o $(MIRRORDIR)/omo.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/omo.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: chr
+.PHONY: mirror-chr
+.PRECIOUS: $(MIRRORDIR)/chr.owl
+mirror-chr: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/chr/chr-base.owl --create-dirs -o $(MIRRORDIR)/chr.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/chr.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: hsapdv
+.PHONY: mirror-hsapdv
+.PRECIOUS: $(MIRRORDIR)/hsapdv.owl
+mirror-hsapdv: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/hsapdv.owl --create-dirs -o $(MIRRORDIR)/hsapdv.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/hsapdv.owl -o $@.tmp.owl && \
+		$(ROBOT) remove -i $@.tmp.owl --base-iri http://purl.obolibrary.org/obo/HsapDv_ --axioms external --preserve-structure false --trim false -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: nbo
+.PHONY: mirror-nbo
+.PRECIOUS: $(MIRRORDIR)/nbo.owl
+mirror-nbo: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/nbo/nbo-base.owl --create-dirs -o $(MIRRORDIR)/nbo.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/nbo.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: maxo
+.PHONY: mirror-maxo
+.PRECIOUS: $(MIRRORDIR)/maxo.owl
+mirror-maxo: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/maxo/maxo-base.owl --create-dirs -o $(MIRRORDIR)/maxo.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/maxo.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: mfomd
+.PHONY: mirror-mfomd
+.PRECIOUS: $(MIRRORDIR)/mfomd.owl
+mirror-mfomd: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/mfomd.owl --create-dirs -o $(MIRRORDIR)/mfomd.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/mfomd.owl -o $@.tmp.owl && \
+		$(ROBOT) remove -i $@.tmp.owl --base-iri $(URIBASE)/MFOMD --axioms external --preserve-structure false --trim false -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+ALL_MIRRORS = $(patsubst %, $(MIRRORDIR)/%.owl, $(IMPORTS))
+MERGE_MIRRORS = true
+
+$(MIRRORDIR)/merged.owl: $(ALL_MIRRORS)
+	if [ $(IMP) = true ] && [ $(MERGE_MIRRORS) = true ]; then $(ROBOT) merge $(patsubst %, -i %, $^) -o $@; fi
+.PRECIOUS: $(MIRRORDIR)/merged.owl
+
+
+$(MIRRORDIR)/%.owl: mirror-% | $(MIRRORDIR)
+	if [ $(IMP) = true ] && [ $(MIR) = true ] && [ -f $(TMPDIR)/mirror-$*.owl ]; then if cmp -s $(TMPDIR)/mirror-$*.owl $@ ; then echo "Mirror identical, ignoring."; else echo "Mirrors different, updating." &&\
+		cp $(TMPDIR)/mirror-$*.owl $@; fi; fi
+###### END PARTIAL ODK MIGRATION ##############
 
 edit-merged.owl: $(SRC)
 	$(ROBOT) merge -c true -i $< -o $@
