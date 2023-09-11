@@ -545,7 +545,6 @@ mirror-hgnc: | $(TMPDIR)
 		$(ROBOT) convert -i $(MIRRORDIR)/hgnc.owl -o $@.tmp.owl &&\
 		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
-
 ## ONTOLOGY: foodon
 .PHONY: mirror-foodon
 .PRECIOUS: $(MIRRORDIR)/foodon.owl
@@ -638,6 +637,16 @@ $(MIRRORDIR)/%.owl: mirror-% | $(MIRRORDIR)
 	if [ $(IMP) = true ] && [ $(MIR) = true ] && [ -f $(TMPDIR)/mirror-$*.owl ]; then if cmp -s $(TMPDIR)/mirror-$*.owl $@ ; then echo "Mirror identical, ignoring."; else echo "Mirrors different, updating." &&\
 		cp $(TMPDIR)/mirror-$*.owl $@; fi; fi
 ###### END PARTIAL ODK MIGRATION ##############
+###### BEGIN CUSTOM IMPORTS ###################
+mirror/dipper-%.ttl:
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget --no-check-certificate https://archive.monarchinitiative.org/latest/rdf/$*.ttl -O $@.tmp && perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@; fi
+
+mirror-hgnc: mirror/dipper-hgnc.ttl | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) query -i $< --format ttl --query ../sparql/construct/construct-hgnc.sparql $@.tmp.ttl &&\
+	$(ROBOT) annotate -i $@.tmp.ttl --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
+		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+		--output $@.tmp.owl && mv $@.tmp.owl $@ && rm $@.tmp.ttl; fi	
+###### END CUSTOM IMPORTS ###################
 
 edit-merged.owl: $(SRC)
 	$(ROBOT) merge -c true -i $< -o $@
