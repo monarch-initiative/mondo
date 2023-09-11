@@ -8,6 +8,7 @@ ONT=mondo
 ONTURI=$(OBO)/$(ONT)
 ONTBASE=$(OBO)/$(ONT)
 MIRRORDIR=mirror
+IMPORTDIR=imports
 
 
 SRC=$(ONT)-edit.obo
@@ -640,6 +641,7 @@ $(MIRRORDIR)/merged.owl: $(ALL_MIRRORS)
 $(MIRRORDIR)/%.owl: mirror-% | $(MIRRORDIR)
 	if [ $(IMP) = true ] && [ $(MIR) = true ] && [ -f $(TMPDIR)/mirror-$*.owl ]; then if cmp -s $(TMPDIR)/mirror-$*.owl $@ ; then echo "Mirror identical, ignoring."; else echo "Mirrors different, updating." &&\
 		cp $(TMPDIR)/mirror-$*.owl $@; fi; fi
+
 ###### END PARTIAL ODK MIGRATION ##############
 ###### BEGIN CUSTOM IMPORTS ###################
 mirror/dipper-%.ttl: | $(MIRRORDIR)
