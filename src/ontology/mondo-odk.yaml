@@ -20,6 +20,12 @@ release_artefacts:
   - custom-mondo-with-equivalents
 import_group:
   use_base_merging: TRUE
+  annotation_properties:
+    - rdfs:label
+    - IAO:0000115
+    - IAO:0000116
+    - IAO:0100001
+    - owl:deprecated
   exclude_iri_patterns:
     - <http://purl.obolibrary.org/obo/GOCHE_*>
     - <http://purl.obolibrary.org/obo/NCBITaxon_Union_*>
@@ -35,6 +41,7 @@ import_group:
     - <http://purl.obolibrary.org/obo/COB_*>
     - <http://purl.obolibrary.org/obo/MPATH_*>
     - <http://purl.obolibrary.org/obo/PO_*>
+    # https://github.com/EnvironmentOntology/envo/issues/1435
     - <http://purl.obolibrary.org/obo/ENVO_01001055*>
   slme_individuals: exclude
   mirror_max_time_download: 400
