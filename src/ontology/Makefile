@@ -457,7 +457,7 @@ IMP_LARGE=true # Global parameter to bypass handling of large imports
 mirror-uberon: | $(TMPDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/uberon.owl --create-dirs -o $(MIRRORDIR)/uberon.owl --retry 4 --max-time 400 &&\
 		$(ROBOT) convert -i $(MIRRORDIR)/uberon.owl -o $@.tmp.owl && \
-		$(ROBOT) remove -i $@.tmp.owl --base-iri $(URIBASE)/UBERON --axioms external --preserve-structure false --trim false -o $@.tmp.owl &&\
+		$(ROBOT) remove -i $@.tmp.owl --base-iri http://purl.obolibrary.org/obo/UBERON_ --base-iri http://purl.obolibrary.org/obo/UBPROP_ --axioms external --preserve-structure false --trim false -o $@.tmp.owl &&\
 		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
 
