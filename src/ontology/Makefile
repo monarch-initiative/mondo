@@ -669,6 +669,7 @@ $(MIRRORDIR)/%.owl: mirror-% | $(MIRRORDIR)
 mirror/dipper-%.ttl: | $(MIRRORDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget --no-check-certificate https://archive.monarchinitiative.org/latest/rdf/$*.ttl -O $@.tmp &&\
 		perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@; fi
+.PRECIOUS: mirror/dipper-%.ttl
 
 mirror-hgnc: mirror/dipper-hgnc.ttl | $(TMPDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ] && [ -f $(TMPDIR)/mirror-$*.owl ]; then $(ROBOT) merge -i $< \
@@ -945,18 +946,6 @@ mirror/rdo.obo:
 
 mirror/medgen-disease-extract.owl: mirror/medgen-disease-extract.obo
 	owltools $< -o $@.tmp && perl -npe $(FIX_URI_EXPR) $@.tmp > $@
-
-mirror/dipper-%.ttl:
-	wget --no-check-certificate https://archive.monarchinitiative.org/latest/rdf/$*.ttl -O $@.tmp && perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@
-
-mirror/dipper-%.obo: mirror/dipper-%.ttl
-	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@
-
-mirror/hgnc.owl: mirror/dipper-hgnc.ttl
-	$(ROBOT) query -i $< --format ttl --query ../sparql/construct/construct-hgnc.sparql $@.tmp.ttl &&\
-	$(ROBOT) annotate -i $@.tmp.ttl --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
-		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
-		--output $@.tmp.owl && mv $@.tmp.owl $@ && rm $@.tmp.ttl
 
 #	$(ROBOT) query construct
 #	owltools $< --remove-axioms -t EquivalentClasses -o $@
