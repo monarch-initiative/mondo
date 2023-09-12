@@ -1,7 +1,7 @@
 OBOBASE=                    http://purl.obolibrary.org/obo
 URIBASE=                    http://purl.obolibrary.org/obo
 VERSION=                    $(TODAY)
-ANNOTATION_PROPERTIES = 	rdfs:label IAO:0000115
+ANNOTATION_PROPERTIES=		rdfs:label IAO:0000115 IAO:0000116 IAO:0100001 owl:deprecated 
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
 
