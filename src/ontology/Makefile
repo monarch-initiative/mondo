@@ -925,11 +925,6 @@ mirror/neoplasm-core.owl:
 mirror/cl.owl:
 	$(ROBOT) merge -I $(OBO)/cl/cl-base.owl reason relax reduce -o $@ && touch $@
 
-mirror/uberon.owl:
-	$(ROBOT) merge -I $(OBO)/uberon/uberon-base.owl reason relax reduce \
-		remove --base-iri $(OBO)/UBERON --base-iri $(OBO)/UBPROP_ --axioms external --preserve-structure false --trim false \
-		remove --term rdfs:label --select complement --select "annotation-properties" -o $@ && touch $@
-
 mirror/ncit-disease.uris: mirror/ncit.owl
 	$(ROBOT) query -i $< -s ../sparql/signature/ncit-subclass-of-disease.sparql $@
 
@@ -961,10 +956,6 @@ mirror/dipper-%.ttl:
 
 mirror/dipper-%.obo: mirror/dipper-%.ttl
 	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@
-
-
-#mirror/hgnc.owl:
-#	echo "WARNING: HGNC MIRROR TEMPORARILY SKIPPED (KINDA AN ERROR)!"
 
 mirror/hgnc.owl: mirror/dipper-hgnc.ttl
 	$(ROBOT) query -i $< --format ttl --query ../sparql/construct/construct-hgnc.sparql $@.tmp.ttl &&\
