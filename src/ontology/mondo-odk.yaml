@@ -5,6 +5,7 @@ repo: mondo
 #report_fail_on: ERROR
 report_fail_on: None
 use_dosdps: TRUE
+edit_format: obo
 git_main_branch: master
 export_formats:
   - owl
@@ -22,56 +23,62 @@ import_group:
   exclude_iri_patterns:
     - <http://purl.obolibrary.org/obo/GOCHE_*>
     - <http://purl.obolibrary.org/obo/NCBITaxon_Union_*>
-    - <http://purl.obolibrary.org/obo/NCBITaxon_*>
     - <http://www.informatics.jax.org/marker/MGI:*>
     - <http://purl.obolibrary.org/obo/OBI_*>
     - <http://purl.obolibrary.org/obo/CARO_*>
-    - <http://purl.obolibrary.org/obo/ENVO_*>
-    - <http://purl.obolibrary.org/obo/SO_*>
+    - <http://purl.obolibrary.org/obo/RnorDv_*>
+    - <http://purl.obolibrary.org/obo/PR_*>
+    - <http://purl.obolibrary.org/obo/UPHENO_*>
+    - <http://purl.obolibrary.org/obo/COB_*>
+    - <http://purl.obolibrary.org/obo/MPATH_*>
+    - <http://purl.obolibrary.org/obo/PO_*>
   slme_individuals: exclude
-  edit_format: obo
   mirror_max_time_download: 400
   products:
     - id: uberon
-      use_base: TRUE
+      make_base: TRUE
     - id: cl
-      use_base: TRUE
+      make_base: TRUE
     - id: go
       make_base: TRUE
     - id: pato
-      use_base: TRUE
+      make_base: TRUE
     - id: envo
       make_base: TRUE
     - id: ro
       use_base: TRUE
     - id: hp
-      use_base: TRUE
+      make_base: TRUE
     - id: mf
       make_base: TRUE
     - id: ncbitaxon
       mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
+      make_base: TRUE
+      base_iris:
+        - http://purl.obolibrary.org/obo/NCBITaxon_
     - id: chebi
       make_base: TRUE
       mirror_from: https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl
     - id: ncit
+      make_base: TRUE
     - id: hgnc
     - id: foodon
       make_base: TRUE
     - id: so
       make_base: TRUE
     - id: ecto
-      use_base: TRUE
+      make_base: TRUE
     - id: omo
     - id: chr
-      use_base: TRUE
+      mirror_from: https://raw.githubusercontent.com/monarch-initiative/monochrom/master/chr-base.owl
     - id: hsapdv
       make_base: TRUE
       base_iris:
         - http://purl.obolibrary.org/obo/HsapDv_
     - id: nbo
-      use_base: TRUE
+      make_base: TRUE
     - id: maxo
-      use_base: TRUE
+      make_base: TRUE
     - id: mfomd
       make_base: TRUE
 robot_java_args: '-Xmx16G'
