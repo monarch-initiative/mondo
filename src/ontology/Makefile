@@ -1,6 +1,7 @@
 OBOBASE=                    http://purl.obolibrary.org/obo
 URIBASE=                    http://purl.obolibrary.org/obo
 VERSION=                    $(TODAY)
+ANNOTATION_PROPERTIES = 	rdfs:label IAO:0000115
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
 
@@ -406,6 +407,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/merged_term
 	if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
 		remove  --select "<http://purl.obolibrary.org/obo/GOCHE_*>" remove  --select "<http://purl.obolibrary.org/obo/NCBITaxon_Union_*>" remove  --select "<http://www.informatics.jax.org/marker/MGI:*>" remove  --select "<http://purl.obolibrary.org/obo/OBI_*>" remove  --select "<http://purl.obolibrary.org/obo/CARO_*>" remove  --select "<http://purl.obolibrary.org/obo/RnorDv_*>" remove  --select "<http://purl.obolibrary.org/obo/PR_*>" remove  --select "<http://purl.obolibrary.org/obo/PCO_*>" remove  --select "<http://purl.obolibrary.org/obo/ExO_*>" remove  --select "<http://purl.obolibrary.org/obo/FAO_*>" remove  --select "<http://purl.obolibrary.org/obo/UPHENO_*>" remove  --select "<http://purl.obolibrary.org/obo/COB_*>" remove  --select "<http://purl.obolibrary.org/obo/MPATH_*>" remove  --select "<http://purl.obolibrary.org/obo/PO_*>" remove  --select "<http://purl.obolibrary.org/obo/ENVO_01001055*>"  \
 		extract -T $(IMPORTDIR)/merged_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
+		remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T $(IMPORTDIR)/merged_terms_combined.txt --select complement \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
 		$(ANNOTATE_CONVERT_FILE); fi
 
