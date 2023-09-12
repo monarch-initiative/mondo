@@ -920,11 +920,6 @@ mirror/%-raw.owl: mirror/%.owl
 mirror/neoplasm-core.owl:
 	wget --no-check-certificate $(OBO)/ncit/neoplasm-core.owl -O $@ && touch $@
 
-
-# It looks odd to reason relax reduce the base, but its necessary until we have base plus
-mirror/cl.owl:
-	$(ROBOT) merge -I $(OBO)/cl/cl-base.owl reason relax reduce -o $@ && touch $@
-
 mirror/ncit-disease.uris: mirror/ncit.owl
 	$(ROBOT) query -i $< -s ../sparql/signature/ncit-subclass-of-disease.sparql $@
 
