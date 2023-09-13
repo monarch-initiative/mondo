@@ -1,0 +1,24 @@
+PREFIX prefix: <http://prefix.cc/>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix obo: <http://purl.obolibrary.org/obo/>
+
+SELECT distinct ?term ?term_label ?xref ?property ?value ?vxref
+WHERE 
+{ 
+  VALUES ?property { obo:IAO_0000115 oboInOwl:hasRelatedSynonym oboInOwl:hasExactSynonym oboInOwl:hasBroadSynonym oboInOwl:hasNarrowSynonym }
+    ?term rdfs:label ?term_label ;
+    		oboInOwl:hasDbXref ?xref;
+           ?property ?value .
+      [
+         a owl:Axiom ;
+           owl:annotatedSource ?term ;
+           owl:annotatedProperty ?property ;
+           owl:annotatedTarget ?value ;
+           oboInOwl:hasDbXref ?vxref 
+      ] .
+    FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
+  	FILTER (STRSTARTS(?vxref,"https://clinicalgenome.org/"))
+
+}

@@ -1,0 +1,100 @@
+id: mondo
+title: "Mondo Disease Ontology"
+github_org: monarch-initiative
+repo: mondo
+#report_fail_on: ERROR
+report_fail_on: None
+use_dosdps: TRUE
+edit_format: obo
+git_main_branch: master
+export_formats:
+  - owl
+  - obo
+  - json
+namespaces: 
+  - http://purl.obolibrary.org/obo/MONDO_
+  - http://purl.obolibrary.org/obo/mondo#
+release_artefacts: 
+  - base
+  - full
+  - custom-mondo-with-equivalents
+import_group:
+  use_base_merging: TRUE
+  base_merge_drop_equivalent_class_axioms: TRUE
+  annotation_properties:
+    - rdfs:label
+    - IAO:0000115
+    - IAO:0000116
+    - IAO:0100001
+    - owl:deprecated
+  exclude_iri_patterns:
+    - <http://purl.obolibrary.org/obo/GOCHE_*>
+    - <http://purl.obolibrary.org/obo/NCBITaxon_Union_*>
+    - <http://www.informatics.jax.org/marker/MGI:*>
+    - <http://purl.obolibrary.org/obo/OBI_*>
+    - <http://purl.obolibrary.org/obo/CARO_*>
+    - <http://purl.obolibrary.org/obo/RnorDv_*>
+    - <http://purl.obolibrary.org/obo/PR_*>
+    - <http://purl.obolibrary.org/obo/PCO_*>
+    - <http://purl.obolibrary.org/obo/ExO_*>
+    - <http://purl.obolibrary.org/obo/FAO_*>
+    - <http://purl.obolibrary.org/obo/UPHENO_*>
+    - <http://purl.obolibrary.org/obo/COB_*>
+    - <http://purl.obolibrary.org/obo/MPATH_*>
+    - <http://purl.obolibrary.org/obo/PO_*>
+    # https://github.com/EnvironmentOntology/envo/issues/1435
+    - <http://purl.obolibrary.org/obo/ENVO_01001055*>
+  slme_individuals: exclude
+  mirror_max_time_download: 400
+  products:
+    - id: uberon
+      make_base: TRUE
+      base_iris:
+        - http://purl.obolibrary.org/obo/UBERON_
+        - http://purl.obolibrary.org/obo/UBPROP_
+    - id: cl
+      make_base: TRUE
+    - id: go
+      make_base: TRUE
+    - id: pato
+      make_base: TRUE
+    - id: envo
+      make_base: TRUE
+    - id: ro
+      use_base: TRUE
+    - id: hp
+      make_base: TRUE
+    - id: mf
+      make_base: TRUE
+    - id: ncbitaxon
+      mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
+      make_base: TRUE
+      base_iris:
+        - http://purl.obolibrary.org/obo/NCBITaxon_
+    - id: chebi
+      make_base: TRUE
+      mirror_from: https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl
+    - id: ncit
+      make_base: TRUE
+    - id: hgnc
+    - id: foodon
+      make_base: TRUE
+    - id: so
+      make_base: TRUE
+    - id: ecto
+      make_base: TRUE
+    - id: omo
+    - id: chr
+      mirror_from: https://raw.githubusercontent.com/monarch-initiative/monochrom/master/chr-base.owl
+    - id: hsapdv
+      make_base: TRUE
+      base_iris:
+        - http://purl.obolibrary.org/obo/HsapDv_
+    - id: nbo
+      make_base: TRUE
+    - id: maxo
+      make_base: TRUE
+    - id: mfomd
+      make_base: TRUE
+robot_java_args: '-Xmx16G'
+create_obo_metadata: FALSE

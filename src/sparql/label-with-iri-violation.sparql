@@ -1,0 +1,9 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?term ?value
+WHERE {
+  ?term rdfs:label ?value .
+  FILTER (REGEX(?value, "http[s]?[:]"))
+  FILTER(isIRI(?term) && (STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/MONDO_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/mondo#")))
+}
+
