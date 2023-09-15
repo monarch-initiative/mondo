@@ -32,9 +32,9 @@ June 30 | 9 AM PT/12 PM ET | Eric Sid and Qian Zhu ([NCATS](https://rarediseases
 July 28 | 9 AM PT/12 PM ET | Megan Kane ([MedGen](https://www.ncbi.nlm.nih.gov/medgen/)) | MedGen curation workflows
 Aug 25 | 9 AM PT/12 PM ET | Courtney Thaxton ([ClinGen](https://clinicalgenome.org/)) | ClinGen Variant Curation
 Sept 22 | 9 AM PT/12 PM ET | Daniel Himmelstein ([Related Sciences](https://www.related.vc/)), Eric Czech ([Related Sciences](https://www.related.vc/)), and Daniel Korn ([Every Cure](https://everycure.org/)) | Classifying EFO/MONDO diseases as areas, roots, or subtypes
-Oct 20 | 9 AM PT/12 PM ET | TBD
+Oct 20 | 9 AM PT/12 PM ET | Emily Hartley, Ian Braun [Critical Path Institute]([https://c-path.org/) | RDCA-DAP: Ontology Applications in Rare Diseases | 
 Nov 17 | 9 AM PT/12 PM ET | TBD
-Dec 15 | 9 AM PT/12 PM ET | TBD
+Dec 15 | 9 AM PT/12 PM ET | Tim Putman, [Monarch Initiative](https://monarchinitiative.org/) | Use of Mondo in Monarch
 
 <a name="feb-2023"></a> 
 ## Mondo Workshops
