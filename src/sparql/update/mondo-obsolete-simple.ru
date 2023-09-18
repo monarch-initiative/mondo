@@ -18,7 +18,7 @@ INSERT {
   ?xref_anno oboInOwl:source ?new_source . #this adds MONDO:obsoleteEquivalent (where the annotation was previously MONDO:equivalentTo)
   ?entity rdfs:label ?new_label . #this adds the new label obsolete label 
   ?entity owl:deprecated true .
-  ?entity <http://purl.obolibrary.org/obo/IAO_0000231> "out of scope" .
+  ?entity <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/OMO_0001000> .
   ?entity <http://purl.obolibrary.org/obo/IAO_0000115> ?obsolete_definition .
   ?def_anno owl:annotatedTarget ?obsolete_definition.
 }
