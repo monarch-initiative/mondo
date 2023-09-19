@@ -503,7 +503,7 @@ mass_obsolete2: tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
 	echo "Make sure you have updated config/obsolete_me.txt before running this script.."
 	make mass_obsolete_warning
 	$(ROBOT) query -i $(SRC) --use-graphs true --update tmp/mass_obsolete.ru \
-		remove -T tmp/mass_obsolete_me.txt --axioms logical convert -f obo --check false -o $(SRC).obo
+		remove --preserve-structure false -T tmp/mass_obsolete_me.txt --axioms logical convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC)
 	make NORM
 	mv NORM $(SRC)
