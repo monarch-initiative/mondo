@@ -513,7 +513,7 @@ mass_obsolete2: tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
 	mv NORM $(SRC)
 
 tmp/mondo-obsolete-labels.obo: tmp/mondo-rename-effected-classes.ru
-	$(ROBOT) merge -i $(SRC) --collapse-import-closure false query --update tmp/tag_obsolete.ru  \
+	$(ROBOT) merge -i $(SRC) --collapse-import-closure false query --update tmp/mondo-rename-effected-classes.ru  \
 		convert -f obo --check false -o $@
 
 
