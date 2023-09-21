@@ -485,6 +485,9 @@ mass_obsolete:
 tmp/mass_obsolete.sparql: ../sparql/reports/mondo-obsolete-simple.sparql config/obsolete_me.txt
 	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
+tmp/mondo-rename-effected-classes.ru: ../sparql/reports/mondo-rename-effected-classes.ru config/obsolete_me.txt
+	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+
 tmp/mass_obsolete_warning.sparql: ../sparql/reports/mondo-obsolete-warning.sparql config/obsolete_me.txt
 	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
@@ -503,12 +506,19 @@ mass_obsolete_warning: tmp/mass_obsolete_warning.sparql
 
 mass_obsolete2: tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
 	echo "Make sure you have updated config/obsolete_me.txt before running this script.."
-	make mass_obsolete_warning
+	$(MAKE) tmp/mondo-obsolete-labels.obo
+	$(MAKE) mass_obsolete_warning
 	$(ROBOT) query -i $(SRC) --use-graphs true --update tmp/mass_obsolete.ru \
 		remove --preserve-structure false -T tmp/mass_obsolete_me.txt --axioms logical convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC)
-	make NORM
+	$(MAKE) NORM
 	mv NORM $(SRC)
+
+tmp/mondo-obsolete-labels.obo: tmp/mondo-rename-effected-classes.ru
+	$(ROBOT) merge -i $(SRC) --collapse-import-closure false query --update tmp/mondo-rename-effected-classes.ru  \
+		convert -f obo --check false -o $@
+
+
 
 MAPPINGSDIR=mappings
 METADATADIR=metadata
@@ -849,6 +859,7 @@ update-gard-mappings:
 	mv TT mondo-edit.obo
 	# make NORM
 	# mv NORM $(SRC)
+
 
 #######################################
 ### New Pattern merge pipeline ########

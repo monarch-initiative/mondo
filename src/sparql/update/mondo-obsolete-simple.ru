@@ -7,6 +7,7 @@ prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
 DELETE {
   ?entity <http://purl.obolibrary.org/obo/IAO_0006012> ?date .
   ?entity oboInOwl:inSubset ?subset . #this does not delete nested subsets (ie subsets with dbxrefs)
+  ?entity rdfs:comment ?comment .
   ?entity oboInOwl:inSubset <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate> .
   ?xsubset a owl:Axiom ;
          owl:annotatedSource ?entity ;
@@ -26,6 +27,11 @@ INSERT {
   ?entity <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/OMO_0001000> .
   ?entity <http://purl.obolibrary.org/obo/IAO_0000115> ?obsolete_definition .
   ?def_anno owl:annotatedTarget ?obsolete_definition.
+  [] rdf:type owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000231> ;
+           owl:annotatedTarget <http://purl.obolibrary.org/obo/OMO_0001000> ;
+           oboInOwl:source "MONDO:excludeGrouping" .
 }
 
 WHERE {
@@ -58,6 +64,10 @@ WHERE {
     
   	OPTIONAL {
   		?entity <http://purl.obolibrary.org/obo/IAO_0006012> ?date .
+  	}
+
+    OPTIONAL {
+  		?entity rdfs:comment ?comment .
   	}
     
     OPTIONAL {
