@@ -63,10 +63,11 @@ Please make sure you have some kind of git client installed on your Machine. If 
 1. In terminal: `git clone` https://github.com/monarch-initiative/mondo.git
 1. Create mirror directory: `sh run.sh make dirs`
 
-*Alternative cloning*
-1. go to the [Mondo repository](https://github.com/monarch-initiative/mondo)
-1. click on "code", then "Open with GitHub Desktop"
-      1. ![Screenshot 2023-09-13 at 11 55 35](https://github.com/monarch-initiative/mondo/assets/12737987/c7dd9684-9eb4-4e5c-b16a-63def104081c)
-1. This will open a window in GitHub desktop and give you option for where to clone the repository on your machine.
-![Screenshot 2023-09-13 at 12 04 45](https://github.com/monarch-initiative/mondo/assets/12737987/041d2402-d220-4157-84ae-9e9af084a36a)
-1. Click "clone"
+*Alternative cloning*  
+
+1. go to the [Mondo repository](https://github.com/monarch-initiative/mondo)  
+1. click on "code", then "Open with GitHub Desktop"  
+      1. ![Screenshot 2023-09-13 at 11 55 35](https://github.com/monarch-initiative/mondo/assets/12737987/c7dd9684-9eb4-4e5c-b16a-63def104081c)  
+1. This will open a window in GitHub desktop and give you option for where to clone the repository on your machine.  
+![Screenshot 2023-09-13 at 12 04 45](https://github.com/monarch-initiative/mondo/assets/12737987/041d2402-d220-4157-84ae-9e9af084a36a)  
+1. Click "clone"  
