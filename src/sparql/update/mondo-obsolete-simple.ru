@@ -8,6 +8,11 @@ DELETE {
   ?entity <http://purl.obolibrary.org/obo/IAO_0006012> ?date .
   ?entity oboInOwl:inSubset ?subset . #this does not delete nested subsets (ie subsets with dbxrefs)
   ?entity oboInOwl:inSubset <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate> .
+  ?xsubset a owl:Axiom ;
+         owl:annotatedSource ?entity ;
+         owl:annotatedProperty oboInOwl:inSubset ;
+         owl:annotatedTarget ?subset ;
+         oboInOwl:source ?subsetsource .
   ?xref_anno oboInOwl:source ?source . #this deletes MONDO:equivalentTo 
   ?entity rdfs:label ?label . #this deletes the old label and adds the new label
   ?entity <http://purl.obolibrary.org/obo/IAO_0000115> ?definition . #This deletes the definition
@@ -38,6 +43,18 @@ WHERE {
   		?entity oboInOwl:inSubset ?subset .
     	FILTER(?subset != <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate> )
   	}
+    
+    OPTIONAL {
+      ?entity oboInOwl:inSubset ?subset .
+      
+      ?xsubset a owl:Axiom ;
+             owl:annotatedSource ?entity ;
+             owl:annotatedProperty oboInOwl:inSubset ;
+             owl:annotatedTarget ?subset ;
+             oboInOwl:source ?subsetsource .
+             
+      FILTER(?subset != <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate> )
+    }
     
   	OPTIONAL {
   		?entity <http://purl.obolibrary.org/obo/IAO_0006012> ?date .
