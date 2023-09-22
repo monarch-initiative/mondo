@@ -902,8 +902,11 @@ all: config/exclusion_reasons.tsv
 tmp/mondo-curation-inferred.ttl:
 	$(ROBOT) convert -I $(OBOBASE)/mondo/mondo-base.owl -f ttl -o $@
 
+# reports/mondo-curation-branch-review.tsv:
+# 	$(ROBOT) query -i tmp/mondo-curation-inferred.ttl --query ../sparql/curation/curate-branch-review.sparql $@
+
 reports/mondo-curation-branch-review.tsv:
-	$(ROBOT) query -i tmp/mondo-curation-inferred.ttl --query ../sparql/curation/curate-branch-review.sparql $@
+	python src/scripts/branch_review.py create-review-table -o $@ -f obsoletion_terms.tsv -B branch_ids.tsv 
 
 ##################################
 ##### Scheduled GH Actions #######
