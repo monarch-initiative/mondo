@@ -71,6 +71,11 @@ def create_review_table(branch_id, branch_id_file, obsoletion_candidates_file, o
         )
         for id in branch_ids
     }
+    obsoletion_cadidates_relationships = list(
+                        OI.relationships(
+                            subjects=obsoletion_candidates, predicates=[IS_A, PART_OF]
+                        )
+                    )
     column_names = [
         "BranchID",
         "ObsoletionCandidate",
@@ -88,11 +93,7 @@ def create_review_table(branch_id, branch_id_file, obsoletion_candidates_file, o
             for obsoletion_candidate in obsoletion_candidates:
                 parent_of_obsolete_candidate = get_parent_from_relations(
                     obsoletion_candidate,
-                    list(
-                        OI.relationships(
-                            subjects=obsoletion_candidates, predicates=[IS_A, PART_OF]
-                        )
-                    ),
+                    obsoletion_cadidates_relationships,
                 )
                 filtered_parent_of_obsolete_candidate = [
                     x
