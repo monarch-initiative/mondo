@@ -906,7 +906,7 @@ tmp/mondo-curation-inferred.ttl:
 # 	$(ROBOT) query -i tmp/mondo-curation-inferred.ttl --query ../sparql/curation/curate-branch-review.sparql $@
 
 reports/mondo-curation-branch-review.tsv:
-	python src/scripts/branch_review.py create-review-table -o $@ -f obsoletion_terms.tsv -B branch_ids.tsv 
+	python ../scripts/branch_review.py create-review-table -o $@ -f ../../obsoletion_terms.tsv -B ../../branch_ids.tsv 
 
 ##################################
 ##### Scheduled GH Actions #######
