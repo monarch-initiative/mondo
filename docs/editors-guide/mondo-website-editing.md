@@ -3,6 +3,7 @@
 _Updated 2019-08-19 by Nicole Vasilevsky_
 
 ## Instructions:
+TODO: These instructions are out-of-date
 1. In the terminal, navigate to your local directory, such as `cd git/mondo`
 2. `git checkout gh-pages`
 3. `git pull`
