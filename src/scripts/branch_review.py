@@ -2,7 +2,6 @@ import logging
 from typing import Dict, List, Tuple
 from oaklib import get_adapter
 from oaklib.datamodels.vocabulary import IS_A, PART_OF
-from oaklib.utilities.obograph_utils import ancestors_with_stats
 from pathlib import Path
 import csv
 import click
@@ -49,7 +48,9 @@ def main(verbose: int, quiet: bool):
     help="TSV with one column of obsoletion CURIEs",
 )
 @click.option("-o", "--output-file", help="Path to report file")
-def create_review_table(branch_id, branch_id_file, obsoletion_candidates_file, output_file):
+def create_review_table(
+    branch_id, branch_id_file, obsoletion_candidates_file, output_file
+):
     # Open the TSV file and read it into a list
     with open(obsoletion_candidates_file, "r") as f:
         reader = csv.reader(f, delimiter="\t")
@@ -61,21 +62,21 @@ def create_review_table(branch_id, branch_id_file, obsoletion_candidates_file, o
                 reader = csv.reader(f, delimiter="\t")
                 branch_ids = [row[0] for row in reader]
         else:
-            raise (ValueError("Please provide either `--branch-id` OR `--branch-id-file` to get results."))
+            raise (
+                ValueError(
+                    "Please provide either `--branch-id` OR `--branch-id-file` to get results."
+                )
+            )
     else:
         branch_ids = [branch_id]
 
     branch_descendants_dict = {
-        id: list(
-            OI.descendants(start_curies=id, predicates=[IS_A, PART_OF])
-        )
+        id: list(OI.descendants(start_curies=id, predicates=[IS_A, PART_OF]))
         for id in branch_ids
     }
     obsoletion_cadidates_relationships = list(
-                        OI.relationships(
-                            subjects=obsoletion_candidates, predicates=[IS_A, PART_OF]
-                        )
-                    )
+        OI.relationships(subjects=obsoletion_candidates, predicates=[IS_A, PART_OF])
+    )
     column_names = [
         "BranchID",
         "ObsoletionCandidate",
@@ -111,7 +112,8 @@ def create_review_table(branch_id, branch_id_file, obsoletion_candidates_file, o
                 ]
 
                 parents_inside_branch = list(
-                    set(filtered_parent_of_obsolete_candidate) & set(branch_descendants_dict[branch_id])
+                    set(filtered_parent_of_obsolete_candidate)
+                    & set(branch_descendants_dict[branch_id])
                 )
                 parents_outside_branch = [
                     x
@@ -120,7 +122,8 @@ def create_review_table(branch_id, branch_id_file, obsoletion_candidates_file, o
                 ]
 
                 ancestors_inside_branch = list(
-                    set(filtered_ancestor_of_obsolete_candidate) & set(branch_descendants_dict[branch_id])
+                    set(filtered_ancestor_of_obsolete_candidate)
+                    & set(branch_descendants_dict[branch_id])
                 )
                 ancestors_outside_branch = [
                     x
@@ -137,7 +140,7 @@ def create_review_table(branch_id, branch_id_file, obsoletion_candidates_file, o
                     affected_status = RETAINS_PARENT
                 elif len(ancestors_outside_branch) > 0:
                     pass
-                
+
                 parents_inside_branch_list = stringify(parents_inside_branch)
                 parents_outside_branch_list = stringify(parents_outside_branch)
                 ancestors_inside_branch_list = stringify(ancestors_inside_branch)
@@ -166,8 +169,8 @@ def get_parent_from_relations(curie: str, relationships: List[Tuple[str]]):
 
 def stringify(item: List[Tuple]):
     if OI.labels(item) is not None:
-        result = ' | '.join('->'.join(map(str, t)) for t in OI.labels(item))
-    
+        result = " | ".join("->".join(map(str, t)) for t in OI.labels(item))
+
     else:
         result = ""
     return result
