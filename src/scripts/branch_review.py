@@ -137,14 +137,19 @@ def create_review_table(branch_id, branch_id_file, obsoletion_candidates_file, o
                     affected_status = RETAINS_PARENT
                 elif len(ancestors_outside_branch) > 0:
                     pass
+                
+                parents_inside_branch_list = stringify(parents_inside_branch)
+                parents_outside_branch_list = stringify(parents_outside_branch)
+                ancestors_inside_branch_list = stringify(ancestors_inside_branch)
+                ancestors_outside_branch_list = stringify(ancestors_outside_branch)
 
                 data = [
                     branch_id,
                     obsoletion_candidate,
-                    list(OI.labels(parents_inside_branch)),
-                    list(OI.labels(parents_outside_branch)),
-                    list(OI.labels(ancestors_inside_branch)),
-                    list(OI.labels(ancestors_outside_branch)),
+                    parents_inside_branch_list,
+                    parents_outside_branch_list,
+                    ancestors_inside_branch_list,
+                    ancestors_outside_branch_list,
                     affected_status,
                 ]
 
@@ -157,6 +162,15 @@ def get_children_from_relations(curie: str, relationships: List[Tuple[str]]):
 
 def get_parent_from_relations(curie: str, relationships: List[Tuple[str]]):
     return [t[2] for t in relationships if t[0] == curie and t[1] in [IS_A, PART_OF]]
+
+
+def stringify(item: List[Tuple]):
+    if OI.labels(item) is not None:
+        result = ' | '.join('->'.join(map(str, t)) for t in OI.labels(item))
+    
+    else:
+        result = ""
+    return result
 
 
 if __name__ == "__main__":
