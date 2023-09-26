@@ -140,7 +140,7 @@ def create_review_table(
                         & set(branch_descendants_dict[branch_id])
                     )
                     parents_inside_branch = [
-                        i for i in parents_inside_branch if i != obsoletion_candidate
+                        i for i in parents_inside_branch if i not in obsoletion_candidates
                     ]
 
                     parents_outside_branch = [
@@ -149,7 +149,7 @@ def create_review_table(
                         if x not in parents_inside_branch
                     ]
                     parents_outside_branch = [
-                        i for i in parents_outside_branch if i != obsoletion_candidate
+                        i for i in parents_outside_branch if i not in obsoletion_candidates
                     ]
 
                     ancestors_inside_branch = list(
@@ -157,7 +157,7 @@ def create_review_table(
                         & set(branch_descendants_dict[branch_id])
                     )
                     ancestors_inside_branch = [
-                        i for i in ancestors_inside_branch if i != obsoletion_candidate
+                        i for i in ancestors_inside_branch if i not in obsoletion_candidates
                     ]
 
                     ancestors_outside_branch = [
@@ -166,7 +166,7 @@ def create_review_table(
                         if x not in ancestors_inside_branch
                     ]
                     ancestors_outside_branch = [
-                        i for i in ancestors_outside_branch if i != obsoletion_candidate
+                        i for i in ancestors_outside_branch if i not in obsoletion_candidates
                     ]
 
                     affected_status = RETAINS_ANCESTOR
