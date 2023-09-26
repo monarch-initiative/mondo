@@ -71,10 +71,10 @@ def create_review_table(
         branch_ids = [branch_id]
 
     branch_descendants_dict = {
-        id: list(OI.descendants(start_curies=id, predicates=[IS_A, PART_OF]))
+        id: set(OI.descendants(start_curies=id, predicates=[IS_A, PART_OF]))
         for id in branch_ids
     }
-    obsoletion_candidates_relationships = list(
+    affected_ids_relationships = list(
         OI.relationships(subjects=obsoletion_candidates, predicates=[IS_A, PART_OF])
     )
     column_names = [
@@ -93,18 +93,19 @@ def create_review_table(
         writer = csv.writer(csvfile, delimiter="\t")
         writer.writerow(column_names)  # writing the headers
 
+        obsoletion_candidates_set = set(obsoletion_candidates)
+
         for branch_id in branch_ids:
-            # all classes of obsoletion_candidate_list that are descendants of branch_id
-            obsoletion_candidates_branch = set(
-                branch_descendants_dict[branch_id]
-            ).intersection(set(obsoletion_candidates))
+            obsoletion_candidates_branch = (
+                branch_descendants_dict[branch_id] & obsoletion_candidates_set
+            )
             obsoletion_candidates_branch_relationships = list(
                 OI.relationships(
                     subjects=obsoletion_candidates_branch, predicates=[IS_A, PART_OF]
                 )
             )
 
-            affected_mondo_ids = list(
+            affected_mondo_ids = set(
                 chain.from_iterable(
                     get_children_from_relations(
                         curie=id,
@@ -114,75 +115,49 @@ def create_review_table(
                 )
             )
 
-            if len(affected_mondo_ids) > 0:
-                for obsoletion_candidate in affected_mondo_ids:
-                    parent_of_obsolete_candidate = get_parent_from_relations(
-                        obsoletion_candidate,
-                        obsoletion_candidates_relationships,
+            if affected_mondo_ids:
+                for affected_mondo_id in affected_mondo_ids:
+                    parents_of_affected_mondo_ids = set(
+                        get_parent_from_relations(
+                            affected_mondo_id,
+                            affected_ids_relationships,
+                        )
                     )
 
-                    filtered_parent_of_obsolete_candidate = [
-                        x
-                        for x in parent_of_obsolete_candidate
-                        if x not in affected_mondo_ids
-                    ]
-                    filtered_parent_of_obsolete_candidate = [
-                        i
-                        for i in filtered_parent_of_obsolete_candidate
-                        if i not in obsoletion_candidates
-                    ]
-
-                    ancestors_of_obsolete_candidate = list(
-                        OI.ancestors([obsoletion_candidate], predicates=[IS_A, PART_OF])
+                    filtered_parents_of_obsolete_candidate = (
+                        parents_of_affected_mondo_ids
+                        - affected_mondo_ids
+                        - obsoletion_candidates_set
                     )
-                    filtered_ancestor_of_obsolete_candidate = [
+
+                    ancestors_of_obsolete_candidate = set(
+                        OI.ancestors([affected_mondo_id], predicates=[IS_A, PART_OF])
+                    )
+                    filtered_ancestor_of_obsolete_candidate = {
                         x
                         for x in ancestors_of_obsolete_candidate
                         if x not in affected_mondo_ids and x.startswith("MONDO:")
-                    ]
+                    }
 
-                    parents_inside_branch = list(
-                        set(filtered_parent_of_obsolete_candidate)
-                        & set(branch_descendants_dict[branch_id])
+                    branch_descendants_set = branch_descendants_dict[branch_id]
+                    parents_inside_branch = (
+                        filtered_parents_of_obsolete_candidate
+                        & branch_descendants_set
                     )
-                    parents_inside_branch = [
-                        i
-                        for i in parents_inside_branch
-                        if i not in filtered_parent_of_obsolete_candidate
-                    ]
-
-                    parents_outside_branch = [
-                        x
-                        for x in filtered_parent_of_obsolete_candidate
-                        if x not in parents_inside_branch
-                    ]
-                    parents_outside_branch = [
-                        i
-                        for i in parents_outside_branch
-                        if i not in filtered_parent_of_obsolete_candidate
-                    ]
-
-                    ancestors_inside_branch = list(
-                        set(filtered_ancestor_of_obsolete_candidate)
-                        & set(branch_descendants_dict[branch_id])
+                    parents_outside_branch = (
+                        filtered_parents_of_obsolete_candidate
+                        - parents_inside_branch
                     )
-                    ancestors_inside_branch = [
-                        i
-                        for i in ancestors_inside_branch
-                        if i not in filtered_parent_of_obsolete_candidate
-                    ]
 
-                    ancestors_outside_branch = [
-                        x
-                        for x in filtered_ancestor_of_obsolete_candidate
-                        if x not in ancestors_inside_branch
-                    ]
+                    ancestors_inside_branch = (
+                        filtered_ancestor_of_obsolete_candidate
+                        & branch_descendants_set
 
-                    ancestors_outside_branch = [
-                        i
-                        for i in ancestors_outside_branch
-                        if i not in filtered_parent_of_obsolete_candidate
-                    ]
+                    )
+                    ancestors_outside_branch = (
+                        filtered_ancestor_of_obsolete_candidate
+                        - ancestors_inside_branch
+                    )
 
                     affected_status = RETAINS_ANCESTOR
                     if len(filtered_ancestor_of_obsolete_candidate) == 0:
@@ -198,16 +173,16 @@ def create_review_table(
                     parents_outside_branch_list = stringify(parents_outside_branch)
                     ancestors_inside_branch_list = stringify(ancestors_inside_branch)
                     ancestors_outside_branch_list = stringify(ancestors_outside_branch)
-                    filtered_parent_of_obsolete_candidate_list = stringify(
-                        filtered_parent_of_obsolete_candidate
+                    filtered_parents_of_obsolete_candidate_list = stringify(
+                        filtered_parents_of_obsolete_candidate
                     )
 
                     data = [
                         branch_id,
-                        obsoletion_candidate,
-                        OI.label(obsoletion_candidate),
-                        OI.definition(obsoletion_candidate),
-                        filtered_parent_of_obsolete_candidate_list,
+                        affected_mondo_id,
+                        OI.label(affected_mondo_id),
+                        OI.definition(affected_mondo_id),
+                        filtered_parents_of_obsolete_candidate_list,
                         parents_inside_branch_list,
                         parents_outside_branch_list,
                         ancestors_inside_branch_list,
