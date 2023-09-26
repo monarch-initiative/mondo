@@ -120,10 +120,14 @@ def create_review_table(
                         obsoletion_candidate,
                         obsoletion_candidates_relationships,
                     )
+
                     filtered_parent_of_obsolete_candidate = [
                         x
                         for x in parent_of_obsolete_candidate
                         if x not in affected_mondo_ids
+                    ]
+                    filtered_parent_of_obsolete_candidate = [
+                        i for i in filtered_parent_of_obsolete_candidate if i not in obsoletion_candidates
                     ]
 
                     ancestors_of_obsolete_candidate = list(
@@ -165,6 +169,7 @@ def create_review_table(
                         for x in filtered_ancestor_of_obsolete_candidate
                         if x not in ancestors_inside_branch
                     ]
+
                     ancestors_outside_branch = [
                         i for i in ancestors_outside_branch if i not in obsoletion_candidates
                     ]
