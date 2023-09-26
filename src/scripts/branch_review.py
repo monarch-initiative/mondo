@@ -1,5 +1,5 @@
 import logging
-from typing import Dict, List, Tuple
+from typing import List, Tuple
 from oaklib import get_adapter
 from oaklib.datamodels.vocabulary import IS_A, PART_OF
 from pathlib import Path
