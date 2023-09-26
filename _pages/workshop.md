@@ -25,13 +25,13 @@ The goal of the **Mondo Outreach Calls** is to bring together stakeholders and c
 Notes are available [here](https://docs.google.com/document/d/16eMB-x3iANHfiTxw7vUXFoTHtdxscjnfVQ_OrRsnzvE/edit).
 
 
-Date | Time | Presenter (Organization)| Topic | Recording
+Date | Time | Presenter (Organization)| Topic | Recording 
 -- | -- | -- | -- | -- 
 June 02 | 9 AM PT/12 PM ET | Gioconda Alyea, Sean Roberts, and Marybeth McAfee ([NORD](https://rarediseases.org/)) | Rare Diseases in NORD | [Here](https://drive.google.com/file/d/1wJzqU6ruAGuzsk7xZLzIu9G_UH8SI8ta/view?usp=sharing)
 June 30 | 9 AM PT/12 PM ET | Eric Sid and Qian Zhu ([NCATS](https://rarediseases.info.nih.gov/about)) | Use of Disease Ontologies and Knowledge in Addressing Translation Science in Rare Diseases | [Here](https://drive.google.com/drive/folders/1qsqteFng74C7Kvm2BdIoDASWOaWaqEjN)
 July 28 | 9 AM PT/12 PM ET | Megan Kane ([MedGen](https://www.ncbi.nlm.nih.gov/medgen/)) | MedGen curation workflows | [Here](https://drive.google.com/file/d/1xla8WjcOuhocYc-DB7U17pMn7TvhR5Vk/view?usp=sharing)
 Aug 25 | 9 AM PT/12 PM ET | Courtney Thaxton ([ClinGen](https://clinicalgenome.org/)) | ClinGen Variant Curation | [Here](https://drive.google.com/file/d/1vNqUOQY9wtgGegNpRRP0nEVuZYcKrDJa/view?usp=sharing)
-Sept 22 | 9 AM PT/12 PM ET | Daniel Himmelstein ([Related Sciences](https://www.related.vc/)), Eric Czech ([Related Sciences](https://www.related.vc/)), and Daniel Korn ([Every Cure](https://everycure.org/)) | Classifying EFO/MONDO diseases as areas, roots, or subtypes
+Sept 22 | 9 AM PT/12 PM ET | Daniel Himmelstein ([Related Sciences](https://www.related.vc/)), Eric Czech ([Related Sciences](https://www.related.vc/)), and Daniel Korn ([Every Cure](https://everycure.org/)) | Classifying EFO/MONDO diseases as areas, roots, or subtypes;  [Slides are here](https://slides.com/dhimmel/efo-disease-precision#/cover) | _Coming soon_ |
 Oct 20 | 9 AM PT/12 PM ET | Emily Hartley, Ian Braun ([Critical Path Institute]([https://c-path.org/)) | RDCA-DAP: Ontology Applications in Rare Diseases | 
 Nov 17 | 9 AM PT/12 PM ET | _Tentative_: Sabrina Toro and Nicole Vasilevsky  ([Monarch Initiative](https://monarchinitiative.org/)) | Overview of Mondo reclassification efforts
 Dec 15 | 9 AM PT/12 PM ET | Tim Putman ([Monarch Initiative](https://monarchinitiative.org/)) | Use of Mondo in Monarch
