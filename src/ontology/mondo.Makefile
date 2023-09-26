@@ -477,6 +477,8 @@ r2e:
 GH_ISSUE=none
 OBS_REASON=outOfScope
 
+.PRECIOUS: config/obsolete_me.txt
+
 mass_obsolete:
 	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/$(GH_ISSUE) --obsoletionReason MONDO:$(OBS_REASON)  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo
 
