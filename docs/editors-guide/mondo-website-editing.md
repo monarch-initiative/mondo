@@ -32,3 +32,17 @@ TODO: These instructions are out-of-date
 8. Control c to end session
 9. Commit changes to github:
 `git add -A;git commit -m "update webpage";git push`
+
+
+## Docker based instructions
+
+- Checkout the gh-pages branch and cd to it
+- Run `docker run --name mondo-docs -p "4000:4000" -p "35729:35729" --volume="$(pwd):/srv/jekyll:Z" -it jekyll/jekyll bash`
+  - This will put you in a ternminal inside the Docker container in the working directory
+  - `ls` should show you the Mondo doc files
+- Run `jekyll build` if you want a one time build
+- Run `jekyll serve -l` if you want a continuous build and the site served at localhost:4000 on your local machine.  Try to edit a doc file and you'll see the build update happening in the terminal. Once you see something like `...done in 3.704351825 seconds.` in the terminal, the browser should refresh automatically.
+- Use `CTRL+C` to exid from the `jekyll serve` mode.
+- Use `exit` to exit the Docker container. This will cause Docker to stop/exit the container but the container is still available for a later quicker start (as opposed to the initial startup with the docker run ... above). If you want to do another editing session later, and you've already done the above `docker run ....` before, you can use `docker start `docker start -ai mondo-docs` to get back into the already setup container and run the Jekyll commands above, or run anything else you can [see here](https://jekyllrb.com/docs/usage/)
+- If you're all done with editing and do not want to keep the Docker container around, you can run `docker rm mondo-docs`. After doing this, you'll need to restart from `docker run ...` above next time.
+
