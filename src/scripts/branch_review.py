@@ -145,8 +145,8 @@ def create_review_table(
                 )
             )
             
-            if child == "MONDO:0008727":
-                import pdb; pdb.set_trace()
+            # if child == "MONDO:0008727":
+            #     import pdb; pdb.set_trace()
 
             # These are parents that need to be obsoleted and hence NOT in Branch
             relevant_obsoletion_parents_in_branch = (
