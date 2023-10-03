@@ -51,6 +51,8 @@ def main(verbose: int, quiet: bool):
 def create_review_table(
     branch_id, branch_id_file, obsoletion_candidates_file, output_file
 ):
+    all_obsoletes = set(OI.obsoletes())
+
     # Open the TSV file and read it into a list
     with open(obsoletion_candidates_file, "r") as f:
         reader = csv.reader(f, delimiter="\t")
@@ -143,18 +145,14 @@ def create_review_table(
                     curie=child,
                     relationships=children_of_obsoletion_candidate_parents_relationship,
                 )
-            )
-            
-            # if child == "MONDO:0008727":
-            #     import pdb; pdb.set_trace()
+            ) - all_obsoletes
 
             # These are parents that need to be obsoleted and hence NOT in Branch
             relevant_obsoletion_parents_in_branch = (
                 parents_of_child & obsoletion_candidate_child_of_branch
             )
 
-            parents_of_child.discard(obsoletion_candidate_child_of_branch)
-
+            # parents_of_child.difference_update(obsoletion_candidate_child_of_branch)
 
             # Column F: Other direct parents in Branch = other_parents_in_branch
             other_parents_in_branch = parents_of_child & branch_descendants_set
@@ -173,7 +171,7 @@ def create_review_table(
                 anc for anc in all_ancestors if str(anc).startswith("MONDO:")
             }
 
-            all_ancestors.discard(obsoletion_candidate_child_of_branch)
+            # all_ancestors.difference_update(obsoletion_candidate_child_of_branch)
 
             # Column H: Ancestor inside the branch = all_mondo_ancestors_in_branch
             all_ancestors_in_branch = (
@@ -184,6 +182,9 @@ def create_review_table(
             all_ancestors_outside_branch = (
                 all_ancestors - all_ancestors_in_branch
             )
+
+            if child == "MONDO:0011722":
+                import pdb; pdb.set_trace()
 
             other_parents_in_branch = add_obsoleted_label(other_parents_in_branch, obsoletion_candidates_set)
             other_parents_not_in_branch = add_obsoleted_label(other_parents_not_in_branch, obsoletion_candidates_set)
