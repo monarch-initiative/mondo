@@ -5,15 +5,16 @@ from oaklib.datamodels.vocabulary import IS_A, PART_OF
 from pathlib import Path
 import csv
 import click
-from itertools import chain
 
 ONT_DIR = Path(__file__).resolve().parents[1] / "ontology"
 RESOURCE = Path.joinpath(ONT_DIR, "mondo.db")
 OI = get_adapter(f"sqlite:///{RESOURCE}")
 RETAINS_ANCESTOR = "RETAINS_ANCESTOR"
 RETAINS_PARENT = "RETAINS_PARENT"
-LEFT_THIS_BRANCH = "LEFT_THIS_BRANCH"
-ORPHANED = "ORPHANED"
+LEAVES_THE_BRANCH = "Leaves the branch"
+ORPHANED = "Orphaned"
+STAYS_IN_THE_BRANCH = "Stays in branch"
+UNDEFINED = "Undefined"
 
 
 logger = logging.getLogger(__name__)
@@ -138,6 +139,8 @@ def create_review_table(
             )
         )
 
+        children_also_obsoletion_candidates = children_of_obsoletion_candidate & obsoletion_candidate_child_of_branch
+
         for child in children_of_obsoletion_candidate:
             # Column B: Children of ObsoleteCandidate == child
             parents_of_child = set(
@@ -163,7 +166,7 @@ def create_review_table(
             )
 
             all_ancestors = (
-                set(OI.ancestors([child], predicates=[IS_A, PART_OF]))
+                set(OI.ancestors([child], predicates=[IS_A, PART_OF], method="ENTAILMENT"))
                 - parents_of_child
                 - {child}
             )
@@ -183,13 +186,14 @@ def create_review_table(
                 all_ancestors - all_ancestors_in_branch
             )
 
-            # if child == "MONDO:0011722":
+            # if child == "MONDO:0013310":
             #     import pdb; pdb.set_trace()
 
             other_parents_in_branch = add_obsoleted_label(other_parents_in_branch, obsoletion_candidates_set)
             other_parents_not_in_branch = add_obsoleted_label(other_parents_not_in_branch, obsoletion_candidates_set)
             all_ancestors_in_branch = add_obsoleted_label(all_ancestors_in_branch, obsoletion_candidates_set)
             all_ancestors_outside_branch = add_obsoleted_label(all_ancestors_outside_branch, obsoletion_candidates_set)
+            relevant_obsoletion_parents_in_branch = add_obsoleted_label(relevant_obsoletion_parents_in_branch, obsoletion_candidates_set)
 
             # Column J: Affected Status = status
             status = ""
@@ -197,18 +201,18 @@ def create_review_table(
                 " - TO_BE_OBSOLETED" not in parent
                 for parent in other_parents_in_branch
             ):
-                status = "Stays in branch"
+                status = STAYS_IN_THE_BRANCH
             elif (
                 len(other_parents_in_branch) == 0
                 or all(
                     " - TO_BE_OBSOLETED" in parent
                     for parent in other_parents_in_branch
                 )
-            ) and all(
+            ) and len(other_parents_not_in_branch) > 0 and all(
                 " - TO_BE_OBSOLETED" not in parent
                 for parent in other_parents_not_in_branch
             ):
-                status = "Leaves the branch"
+                status = LEAVES_THE_BRANCH
             elif (
                 len(other_parents_in_branch) == 0
                 or all(
@@ -222,9 +226,9 @@ def create_review_table(
                     for parent in other_parents_not_in_branch
                 )
             ):
-                status = "Orphaned"
+                status = ORPHANED
             else:
-                status = "Undefined"
+                status = UNDEFINED
 
             # Convert the sets to strings for writing to the output file
             other_parents_in_branch_list = stringify(other_parents_in_branch)
@@ -238,12 +242,18 @@ def create_review_table(
                 all_ancestors_outside_branch
             )
             relevant_obsoletion_parents_list = stringify(relevant_obsoletion_parents_in_branch)
+            # parents_of_child_list = stringify(parents_of_child)
+
+            child_label = OI.label(child)
+            child_defn = OI.definition(child)
+            if child in children_also_obsoletion_candidates:
+                child = add_obsoleted_label({child}, obsoletion_candidates_set).pop()
 
             data = [
                 branch_id,
                 child,
-                OI.label(child),
-                OI.definition(child),
+                child_label,
+                child_defn,
                 relevant_obsoletion_parents_list,
                 other_parents_in_branch_list,
                 other_parents_not_in_branch_list,
