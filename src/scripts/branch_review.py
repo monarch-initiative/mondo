@@ -152,7 +152,7 @@ def create_review_table(
                 parents_of_child & obsoletion_candidate_child_of_branch
             )
 
-            # parents_of_child.difference_update(obsoletion_candidate_child_of_branch)
+            parents_of_child.difference_update(obsoletion_candidate_child_of_branch)
 
             # Column F: Other direct parents in Branch = other_parents_in_branch
             other_parents_in_branch = parents_of_child & branch_descendants_set
@@ -171,7 +171,7 @@ def create_review_table(
                 anc for anc in all_ancestors if str(anc).startswith("MONDO:")
             }
 
-            # all_ancestors.difference_update(obsoletion_candidate_child_of_branch)
+            all_ancestors.difference_update(obsoletion_candidate_child_of_branch)
 
             # Column H: Ancestor inside the branch = all_mondo_ancestors_in_branch
             all_ancestors_in_branch = (
@@ -183,8 +183,8 @@ def create_review_table(
                 all_ancestors - all_ancestors_in_branch
             )
 
-            if child == "MONDO:0011722":
-                import pdb; pdb.set_trace()
+            # if child == "MONDO:0011722":
+            #     import pdb; pdb.set_trace()
 
             other_parents_in_branch = add_obsoleted_label(other_parents_in_branch, obsoletion_candidates_set)
             other_parents_not_in_branch = add_obsoleted_label(other_parents_not_in_branch, obsoletion_candidates_set)
