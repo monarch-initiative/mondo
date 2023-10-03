@@ -82,19 +82,13 @@ def create_review_table(
         for id in branch_ids
     }
 
-    # Get the relationships of the obsoletion candidates
-    affected_ids_relationships = list(
-        OI.relationships(subjects=obsoletion_candidates, predicates=[IS_A, PART_OF])
-    )
-
     # Define the column names for the output file
     column_names = [
         "Branch reviewed ID",
         "Children of the obsoletion candidate ID",
         "Children of the obsoletion candidate label",
         "Children of the obsoletion candidate Definition",
-        "Parent to be obsoleted ID",
-        "Parent to be obsoleted label",
+        "Parent to be obsoleted",
         "Other direct parents in Branch",
         "Other direct parents NOT in Branch",
         "Ancestor inside the branch",
@@ -122,135 +116,142 @@ def create_review_table(
         for branch_id in branch_ids:
             # Get the descendants of the current branch_id
             branch_descendants_set = branch_descendants_dict[branch_id]
-            for obsoletion_candidate in obsoletion_candidates_set:
+            obsoletion_candidate_child_of_branch = branch_descendants_set & obsoletion_candidates_set
+
+            children_of_obsoletion_candidate = set()
+
+            for obsoletion_candidate in obsoletion_candidate_child_of_branch:
                 # Column E: Parent to be obsoleted == obsoletion_candidate
-                children_of_obsoletion_candidate = set(
+                children_of_obsoletion_candidate.update(set(
                     get_immediate_children(
                         curie=obsoletion_candidate,
                         relationships=obsoletion_candidates_children_relationships,
                     )
+                ))
+
+        children_of_obsoletion_candidate_parents_relationship = set(
+            OI.relationships(
+                subjects=children_of_obsoletion_candidate,
+                predicates=[IS_A, PART_OF],
+            )
+        )
+
+        for child in children_of_obsoletion_candidate:
+            # Column B: Children of ObsoleteCandidate == child
+            parents_of_child = set(
+                get_immediate_parent(
+                    curie=child,
+                    relationships=children_of_obsoletion_candidate_parents_relationship,
                 )
+            )
+            
+            if child == "MONDO:0008727":
+                import pdb; pdb.set_trace()
 
-                children_of_obsoletion_candidate_parents_relationship = list(
-                    OI.relationships(
-                        subjects=children_of_obsoletion_candidate,
-                        predicates=[IS_A, PART_OF],
-                    )
+            # These are parents that need to be obsoleted and hence NOT in Branch
+            relevant_obsoletion_parents_in_branch = (
+                parents_of_child & obsoletion_candidate_child_of_branch
+            )
+
+            parents_of_child.discard(obsoletion_candidate_child_of_branch)
+
+
+            # Column F: Other direct parents in Branch = other_parents_in_branch
+            other_parents_in_branch = parents_of_child & branch_descendants_set
+
+            # Column G: Other direct parents NOT in Branch = other_parents_not_in_branch
+            other_parents_not_in_branch = (
+                parents_of_child - other_parents_in_branch
+            )
+
+            all_ancestors = (
+                set(OI.ancestors([child], predicates=[IS_A, PART_OF]))
+                - parents_of_child
+                - {child}
+            )
+            all_ancestors = {
+                anc for anc in all_ancestors if str(anc).startswith("MONDO:")
+            }
+
+            all_ancestors.discard(obsoletion_candidate_child_of_branch)
+
+            # Column H: Ancestor inside the branch = all_mondo_ancestors_in_branch
+            all_ancestors_in_branch = (
+                all_ancestors & branch_descendants_set
+            )
+
+            # Column I: Ancestor outside the branch = all_mondo_ancestors_outside_branch
+            all_ancestors_outside_branch = (
+                all_ancestors - all_ancestors_in_branch
+            )
+
+            other_parents_in_branch = add_obsoleted_label(other_parents_in_branch, obsoletion_candidates_set)
+            other_parents_not_in_branch = add_obsoleted_label(other_parents_not_in_branch, obsoletion_candidates_set)
+            all_ancestors_in_branch = add_obsoleted_label(all_ancestors_in_branch, obsoletion_candidates_set)
+            all_ancestors_outside_branch = add_obsoleted_label(all_ancestors_outside_branch, obsoletion_candidates_set)
+
+            # Column J: Affected Status = status
+            status = ""
+            if len(other_parents_in_branch) > 0 and all(
+                " - TO_BE_OBSOLETED" not in parent
+                for parent in other_parents_in_branch
+            ):
+                status = "Stays in branch"
+            elif (
+                len(other_parents_in_branch) == 0
+                or all(
+                    " - TO_BE_OBSOLETED" in parent
+                    for parent in other_parents_in_branch
                 )
+            ) and all(
+                " - TO_BE_OBSOLETED" not in parent
+                for parent in other_parents_not_in_branch
+            ):
+                status = "Leaves the branch"
+            elif (
+                len(other_parents_in_branch) == 0
+                or all(
+                    " - TO_BE_OBSOLETED" in parent
+                    for parent in other_parents_in_branch
+                )
+            ) and (
+                len(other_parents_not_in_branch) == 0
+                or all(
+                    " - TO_BE_OBSOLETED" in parent
+                    for parent in other_parents_not_in_branch
+                )
+            ):
+                status = "Orphaned"
+            else:
+                status = "Undefined"
 
-                for child in children_of_obsoletion_candidate:
-                    # Column B: Children of ObsoleteCandidate == child
-                    parents_of_child = set(
-                        get_immediate_parent(
-                            curie=child,
-                            relationships=children_of_obsoletion_candidate_parents_relationship,
-                        )
-                    )
-                    parents_of_child.discard(obsoletion_candidate)
-                    # These are parents that need to be soleted and hence NOT in Branch
-                    other_parents_to_be_obsoleted = (
-                        parents_of_child & obsoletion_candidates_set
-                    )
-                    # Column F: Other direct parents in Branch = other_parents_in_branch
-                    other_parents_in_branch = parents_of_child & branch_descendants_set
-                    other_parents_in_branch = {
-                        parent + " - TO_BE_OBSOLETED"
-                        if parent in other_parents_to_be_obsoleted
-                        else parent
-                        for parent in other_parents_in_branch
-                    }
-                    # Column G: Other direct parents NOT in Branch = other_parents_not_in_branch
-                    other_parents_not_in_branch = (
-                        parents_of_child - other_parents_in_branch
-                    )
-                    other_parents_not_in_branch = {
-                        parent + " - TO_BE_OBSOLETED"
-                        if parent in other_parents_to_be_obsoleted
-                        else parent
-                        for parent in other_parents_not_in_branch
-                    }
+            # Convert the sets to strings for writing to the output file
+            other_parents_in_branch_list = stringify(other_parents_in_branch)
+            other_parents_not_in_branch_list = stringify(
+                other_parents_not_in_branch
+            )
+            all_mondo_ancestors_in_branch_list = stringify(
+                all_ancestors_in_branch
+            )
+            all_mondo_ancestors_outside_branch_list = stringify(
+                all_ancestors_outside_branch
+            )
+            relevant_obsoletion_parents_list = stringify(relevant_obsoletion_parents_in_branch)
 
-                    all_ancestors = (
-                        set(OI.ancestors([child], predicates=[IS_A, PART_OF]))
-                        - parents_of_child
-                    )
-                    all_ancestors = {
-                        anc for anc in all_ancestors if str(anc).startswith("MONDO:")
-                    }
+            data = [
+                branch_id,
+                child,
+                OI.label(child),
+                OI.definition(child),
+                relevant_obsoletion_parents_list,
+                other_parents_in_branch_list,
+                other_parents_not_in_branch_list,
+                all_mondo_ancestors_in_branch_list,
+                all_mondo_ancestors_outside_branch_list,
+                status,
+            ]
 
-                    # Column H: Ancestor inside the branch = all_mondo_ancestors_in_branch
-                    all_ancestors_in_branch = (
-                        all_ancestors & branch_descendants_set
-                    )
-                    # Column I: Ancestor outside the branch = all_mondo_ancestors_outside_branch
-                    all_mondo_ancestors_outside_branch = (
-                        all_ancestors - all_ancestors_in_branch
-                    )
-                    # if child == "MONDO:0008728" and obsoletion_candidate == "MONDO:0019593":
-                    #     import pdb; pdb.set_trace()
-
-                    # Column J: Affected Status = status
-                    status = ""
-                    if len(other_parents_in_branch) > 0 and all(
-                        " - TO_BE_OBSOLETED" not in parent
-                        for parent in other_parents_in_branch
-                    ):
-                        status = "Stay in branch"
-                    elif (
-                        len(other_parents_in_branch) == 0
-                        or all(
-                            " - TO_BE_OBSOLETED" in parent
-                            for parent in other_parents_in_branch
-                        )
-                    ) and all(
-                        " - TO_BE_OBSOLETED" not in parent
-                        for parent in other_parents_not_in_branch
-                    ):
-                        status = "Leave the branch"
-                    elif (
-                        len(other_parents_in_branch) == 0
-                        or all(
-                            " - TO_BE_OBSOLETED" in parent
-                            for parent in other_parents_in_branch
-                        )
-                    ) and (
-                        len(other_parents_not_in_branch) == 0
-                        or all(
-                            " - TO_BE_OBSOLETED" in parent
-                            for parent in other_parents_not_in_branch
-                        )
-                    ):
-                        status = "Orphan"
-                    else:
-                        status = "Undefined"
-
-                    # Convert the sets to strings for writing to the output file
-                    other_parents_in_branch_list = stringify(other_parents_in_branch)
-                    other_parents_not_in_branch_list = stringify(
-                        other_parents_not_in_branch
-                    )
-                    all_mondo_ancestors_in_branch_list = stringify(
-                        all_ancestors_in_branch
-                    )
-                    all_mondo_ancestors_outside_branch_list = stringify(
-                        all_mondo_ancestors_outside_branch
-                    )
-
-                    data = [
-                        branch_id,
-                        child,
-                        OI.label(child),
-                        OI.definition(child),
-                        obsoletion_candidate,
-                        OI.label(obsoletion_candidate),
-                        other_parents_in_branch_list,
-                        other_parents_not_in_branch_list,
-                        all_mondo_ancestors_in_branch_list,
-                        all_mondo_ancestors_outside_branch_list,
-                        status,
-                    ]
-
-                    writer.writerow(data)  # writing the data
+            writer.writerow(data)  # writing the data
 
 
 def get_immediate_parent(curie: str, relationships: List[Tuple[str]]):
@@ -259,6 +260,15 @@ def get_immediate_parent(curie: str, relationships: List[Tuple[str]]):
 
 def get_immediate_children(curie: str, relationships: List[Tuple[str]]):
     return [t[0] for t in relationships if t[2] == curie and t[1] in [IS_A, PART_OF]]
+
+
+def add_obsoleted_label(all_ancestors, obsoletion_candidates_set):
+    return {
+        ancestor + " - TO_BE_OBSOLETED"
+        if ancestor in obsoletion_candidates_set
+        else ancestor
+        for ancestor in all_ancestors
+    }
 
 
 def stringify(item: List[Tuple]):
