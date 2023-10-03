@@ -918,6 +918,8 @@ tmp/mondo-curation-inferred.ttl:
 # reports/mondo-curation-branch-review.tsv:
 # 	$(ROBOT) query -i tmp/mondo-curation-inferred.ttl --query ../sparql/curation/curate-branch-review.sparql $@
 
+mondo.db: mondo.owl
+	semsql make $@
 reports/mondo-curation-branch-review.tsv:
 	python ../scripts/branch_review.py create-review-table -o $@ -f ../../obsoletion_terms.tsv -b MONDO:0005151 
 #	python ../scripts/branch_review.py create-review-table -o $@ -f ../../obsoletion_terms.tsv -B ../../branch_ids.tsv 
