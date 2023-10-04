@@ -912,9 +912,6 @@ all: config/exclusion_reasons.tsv
 #### SPARQL Curation pipeline ####
 ##################################
 
-tmp/mondo-curation-inferred.ttl:
-	$(ROBOT) convert -I $(OBOBASE)/mondo/mondo-base.owl -f ttl -o $@
-
 # reports/mondo-curation-branch-review.tsv:
 # 	$(ROBOT) query -i tmp/mondo-curation-inferred.ttl --query ../sparql/curation/curate-branch-review.sparql $@
 
