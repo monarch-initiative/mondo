@@ -197,7 +197,7 @@ def create_review_table(
 
             # Column J: Affected Status = status
             status = ""
-            if len(other_parents_in_branch) > 0 and all(
+            if len(other_parents_in_branch) > 0 and any(
                 " - TO_BE_OBSOLETED" not in parent
                 for parent in other_parents_in_branch
             ):
@@ -208,7 +208,7 @@ def create_review_table(
                     " - TO_BE_OBSOLETED" in parent
                     for parent in other_parents_in_branch
                 )
-            ) and len(other_parents_not_in_branch) > 0 and all(
+            ) and len(other_parents_not_in_branch) > 0 and any(
                 " - TO_BE_OBSOLETED" not in parent
                 for parent in other_parents_not_in_branch
             ):
