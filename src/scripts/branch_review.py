@@ -160,7 +160,7 @@ def create_review_table(
                 - all_obsoletes
             )
 
-            # These are parents that need to be obsoleted and hence NOT in Branch
+            # These are parents that need to be obsoleted
             relevant_obsoletion_parents_in_branch = (
                 parents_of_child & obsoletion_candidate_child_of_branch
             )
