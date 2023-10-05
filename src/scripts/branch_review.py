@@ -7,7 +7,8 @@ import csv
 import click
 
 ONT_DIR = Path(__file__).resolve().parents[1] / "ontology"
-RESOURCE = Path.joinpath(ONT_DIR, "mondo.db")
+TMP_DIR = Path.joinpath(ONT_DIR, "tmp")
+RESOURCE = Path.joinpath(TMP_DIR, "mondo-branchreview.db")
 OI = get_adapter(f"sqlite:///{RESOURCE}")
 RETAINS_ANCESTOR = "RETAINS_ANCESTOR"
 RETAINS_PARENT = "RETAINS_PARENT"
