@@ -915,24 +915,28 @@ all: config/exclusion_reasons.tsv
 # reports/mondo-curation-branch-review.tsv:
 # 	$(ROBOT) query -i tmp/mondo-curation-inferred.ttl --query ../sparql/curation/curate-branch-review.sparql $@
 
-tmp/mondo-edit-branchreview.owl: $(SRC)
-	$(ROBOT) merge -i $(SRC) -i $< -o $@
+# tmp/mondo-edit-branchreview.owl: $(SRC)
+# 	$(ROBOT) merge -i $(SRC) -i $< -o $@
 
 tmp/mondo-relaxed-branchreview.owl: $(SRC)
 	$(ROBOT) merge -i $(SRC) -i $< relax -o $@
 
-tmp/mondo-final-branchreview.owl: $(SRC)
-	$(ROBOT) merge -i $(SRC) -i $< reason relax -o $@
+tmp/mondo-reasoned-branchreview.owl: $(SRC)
+	$(ROBOT) merge -i $(SRC) -i $< reason -o $@
+
 
 tmp/mondo-%.db: tmp/mondo-%.owl
 	semsql make $@
 
 
-obsoletion_tables: tmp/mondo-final-branchreview.db tmp/mondo-relaxed-branchreview.db  tmp/mondo-edit-branchreview.db 
-	python ../scripts/branch_review.py create-review-table -i tmp/mondo-final-branchreview.db -o reports/mondo-final-branch-review.tsv -f ../../obsoletion_terms.tsv -b MONDO:0005151
+obsoletion_tables: tmp/mondo-relaxed-branchreview.db  tmp/mondo-reasoned-branchreview.db  
+	python ../scripts/branch_review.py create-review-table -i tmp/mondo-reasoned-branchreview.db -o reports/mondo-reasoned-branch-review.tsv -f ../../obsoletion_terms.tsv -b MONDO:0005151
 	python ../scripts/branch_review.py create-review-table -i tmp/mondo-relaxed-branchreview.db -o reports/mondo-relaxed-branch-review.tsv -f ../../obsoletion_terms.tsv -b MONDO:0005151
-	python ../scripts/branch_review.py create-review-table -i tmp/mondo-edit-branchreview.db -o reports/mondo-edit-branch-review.tsv -f ../../obsoletion_terms.tsv -b MONDO:0005151 
+
 #	python ../scripts/branch_review.py create-review-table -o $@ -f ../../obsoletion_terms.tsv -B ../../branch_ids.tsv 
+
+reason_and_relax: obsoletion_tables
+	python ../scripts/branch_review.py relax-and-reason -i reports/mondo-reasoned-branch-review.tsv -i reports/mondo-relaxed-branch-review.tsv -o reports/mondo-combined-branch-review.tsv
 
 ##################################
 ##### Scheduled GH Actions #######
