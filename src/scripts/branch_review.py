@@ -438,6 +438,14 @@ def relax_and_reason(input, output_file, relaxed_resource):
 
 
 def add_status_and_update_parents(df: pd.DataFrame, resource: str) -> pd.DataFrame:
+    """
+    The Dataframe that is passed here are rows present from the reasoned table
+    and that are absent in the relaxed table. The 2 ancestor columns had CURIEs
+    missing and thus we get them from oaklib eithout obsoletion terms inolved.
+
+    Spreadsheet explaining this:
+    https://docs.google.com/spreadsheets/d/1fbHJAbrq4gDbUX3wg92AuLyqTWKPr_IR-ew6LHuWoMc/edit#gid=0
+    """
     OI = get_adapter(f"sqlite:{resource}")
     branch_ids = df[COLUMN_NAMES[0]].unique().tolist()
     child_ids = set(df[COLUMN_NAMES[1]].unique().tolist())
