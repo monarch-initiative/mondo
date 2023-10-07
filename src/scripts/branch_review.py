@@ -425,7 +425,9 @@ def relax_and_reason(input, output_file, relaxed_resource):
 
     df_reasoned_no_status = df_reasoned[df_reasoned[COLUMN_NAMES[9]] == ""]
     # ! Call add_status on rows that were in df_reasoned but not in df_relaxed
-    df_reasoned_added_status = add_status_and_update_parents(df_reasoned_no_status, relaxed_resource)
+    df_reasoned_added_status = add_status_and_update_parents(
+        df_reasoned_no_status, relaxed_resource
+    )
     df_reasoned_with_status = df_reasoned[df_reasoned[COLUMN_NAMES[9]] != ""]
 
     result_df = pd.concat(
@@ -456,11 +458,11 @@ def add_status_and_update_parents(df: pd.DataFrame, resource: str) -> pd.DataFra
     }
 
     parents_relationship_of_children = set(
-            OI.relationships(
-                subjects=child_ids,
-                predicates=[IS_A, PART_OF],
-            )
+        OI.relationships(
+            subjects=child_ids,
+            predicates=[IS_A, PART_OF],
         )
+    )
 
     for idx, row in df.iterrows():
         (
@@ -473,25 +475,47 @@ def add_status_and_update_parents(df: pd.DataFrame, resource: str) -> pd.DataFra
         branch_id = row[COLUMN_NAMES[0]]
         child_id = row[COLUMN_NAMES[1]]
         parents_of_child = set(
-                    get_immediate_parent(
-                        curie=child_id,
-                        relationships=parents_relationship_of_children,
-                    )
-                )
+            get_immediate_parent(
+                curie=child_id,
+                relationships=parents_relationship_of_children,
+            )
+        )
         branch_descendants_set = branch_descendants_dict[branch_id]
         parents_in_branch = branch_descendants_set & parents_of_child
         parents_not_in_branch = parents_of_child - parents_in_branch
 
-        parents_in_branch_absent = {parent for parent in parents_in_branch if all(parent not in other_parent for other_parent in other_parents_in_branch)}
-        parents_not_in_branch_absent = {parent for parent in parents_not_in_branch if all(parent not in other_parent for other_parent in other_parents_not_in_branch)}
+        parents_in_branch_absent = {
+            parent
+            for parent in parents_in_branch
+            if all(
+                parent not in other_parent for other_parent in other_parents_in_branch
+            )
+        }
+        parents_not_in_branch_absent = {
+            parent
+            for parent in parents_not_in_branch
+            if all(
+                parent not in other_parent
+                for other_parent in other_parents_not_in_branch
+            )
+        }
 
-        new_column_5 = f"{row[COLUMN_NAMES[5]]} | {stringify(parents_in_branch_absent, OI)}".strip(" | ")
-        new_column_6 = f"{row[COLUMN_NAMES[6]]} | {stringify(parents_not_in_branch_absent, OI)}".strip(" | ")
+        new_column_5 = (
+            f"{row[COLUMN_NAMES[5]]} | {stringify(parents_in_branch_absent, OI)}".strip(
+                " | "
+            )
+        )
+        new_column_6 = f"{row[COLUMN_NAMES[6]]} | {stringify(parents_not_in_branch_absent, OI)}".strip(
+            " | "
+        )
 
         df.loc[idx, [COLUMN_NAMES[5], COLUMN_NAMES[6], COLUMN_NAMES[9]]] = [
             new_column_5,
             new_column_6,
-            get_status(other_parents_in_branch, other_parents_not_in_branch)
+            get_status(
+                (other_parents_in_branch | parents_in_branch_absent),
+                (other_parents_not_in_branch | parents_not_in_branch_absent),
+            ),
         ]
 
     return df
