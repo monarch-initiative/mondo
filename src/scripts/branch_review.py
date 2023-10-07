@@ -10,7 +10,6 @@ import numpy as np
 
 ONT_DIR = Path(__file__).resolve().parents[1] / "ontology"
 TMP_DIR = Path.joinpath(ONT_DIR, "tmp")
-RESOURCE = Path.joinpath(TMP_DIR, "mondo-branchreview.db")
 RETAINS_ANCESTOR = "RETAINS_ANCESTOR"
 RETAINS_PARENT = "RETAINS_PARENT"
 LEAVES_THE_BRANCH = "Leaves the branch"
@@ -56,7 +55,7 @@ def main(verbose: int, quiet: bool):
 
 
 @main.command()
-@click.option("-i", "--input", default=RESOURCE, help="DB source file.")
+@click.option("-i", "--input", help="DB source file.")
 @click.option("-b", "--branch-id", help="Branch ID")
 @click.option("-B", "--branch-id-file", help="TSV with one column of obsoletion CURIEs")
 @click.option(
@@ -66,7 +65,7 @@ def main(verbose: int, quiet: bool):
 )
 @click.option("-o", "--output-file", help="Path to report file")
 def create_review_table(
-    branch_id, branch_id_file, obsoletion_candidates_file, output_file, input=RESOURCE
+    branch_id, branch_id_file, obsoletion_candidates_file, output_file, input
 ):
     OI = get_adapter(f"sqlite:{input}")
     all_obsoletes = set(OI.obsoletes())
@@ -102,8 +101,6 @@ def create_review_table(
         for id in branch_ids
     }
 
-    
-
     # Open the output file in write mode
     with open(output_file, "w", newline="") as csvfile:
         writer = csv.writer(csvfile, delimiter="\t")
@@ -120,6 +117,7 @@ def create_review_table(
             )
         )
 
+        children_of_obsoletion_candidate = set()
         # For each branch_id
         for branch_id in branch_ids:
             # Get the descendants of the current branch_id
@@ -127,8 +125,6 @@ def create_review_table(
             obsoletion_candidate_child_of_branch = (
                 branch_descendants_set & obsoletion_candidates_set
             )
-
-            children_of_obsoletion_candidate = set()
 
             for obsoletion_candidate in obsoletion_candidate_child_of_branch:
                 # Column E: Parent to be obsoleted == obsoletion_candidate
@@ -219,44 +215,11 @@ def create_review_table(
                 relevant_obsoletion_parents_in_branch, obsoletion_candidates_set
             )
 
-            # # Column J: Affected Status = status
-            # status = ""
-            # if len(other_parents_in_branch) > 0 and any(
-            #     " - TO_BE_OBSOLETED" not in parent for parent in other_parents_in_branch
-            # ):
-            #     status = STAYS_IN_THE_BRANCH
-            # elif (
-            #     len(other_parents_in_branch) == 0
-            #     or all(
-            #         " - TO_BE_OBSOLETED" in parent for parent in other_parents_in_branch
-            #     )
-            # ) and (
-            #     len(other_parents_not_in_branch) > 0
-            #     and any(
-            #         " - TO_BE_OBSOLETED" not in parent
-            #         for parent in other_parents_not_in_branch
-            #     )
-            # ):
-            #     status = LEAVES_THE_BRANCH
-            # elif (
-            #     len(other_parents_in_branch) == 0
-            #     or all(
-            #         " - TO_BE_OBSOLETED" in parent for parent in other_parents_in_branch
-            #     )
-            # ) and (
-            #     len(other_parents_not_in_branch) == 0
-            #     or all(
-            #         " - TO_BE_OBSOLETED" in parent
-            #         for parent in other_parents_not_in_branch
-            #     )
-            # ):
-            #     status = ORPHANED
-            # else:
-            #     status = UNDEFINED
-
             # Convert the sets to strings for writing to the output file
             other_parents_in_branch_list = stringify(other_parents_in_branch, OI)
-            other_parents_not_in_branch_list = stringify(other_parents_not_in_branch, OI)
+            other_parents_not_in_branch_list = stringify(
+                other_parents_not_in_branch, OI
+            )
             all_mondo_ancestors_in_branch_list = stringify(all_ancestors_in_branch, OI)
             all_mondo_ancestors_outside_branch_list = stringify(
                 all_ancestors_outside_branch, OI
@@ -306,9 +269,11 @@ def add_obsoleted_label(all_ancestors, obsoletion_candidates_set):
 
 def stringify(item: List[Tuple], OI):
     obsoletion_string = " - TO_BE_OBSOLETED"
-    
+
     # Create a dictionary with obsolete items as keys and normalized items as values
-    normalized_obsolete_items_dict = {i: i.replace(obsoletion_string, "") for i in item if obsoletion_string in i}
+    normalized_obsolete_items_dict = {
+        i: i.replace(obsoletion_string, "") for i in item if obsoletion_string in i
+    }
 
     # Update item list by replacing obsolete items with their normalized versions
     item = [normalized_obsolete_items_dict.get(i, i) for i in item]
@@ -330,99 +295,282 @@ def stringify(item: List[Tuple], OI):
     result = " | ".join("->".join(map(str, t)) for t in obsolete_added_label_terms)
     return result
 
+
 @main.command()
-@click.option("-i", "--input", help="branch review files to be combined.", multiple=True)
+@click.option(
+    "-i", "--input", help="branch review files to be combined.", multiple=True
+)
 @click.option("-o", "--output-file", help="Path to report file")
-def relax_and_reason(input, output_file):
-    df1 = pd.read_csv(input[0], sep="\t", low_memory=False)
-    df2 = pd.read_csv(input[1], sep="\t", low_memory=False)
-    if len(df1) > len(df2):
-        df_larger = df1
-        df_smaller = df2
-    elif len(df1) < len(df2):
-        df_larger = df2
-        df_smaller = df1
-    else:
-        df_larger = df1
-        df_smaller = df2
+@click.option("-r", "--relaxed-resource", help="DB source file.")
+def relax_and_reason(input, output_file, relaxed_resource):
+    df_reasoned = pd.read_csv(input[0], sep="\t", low_memory=False).fillna("")
+    df_relaxed = pd.read_csv(input[1], sep="\t", low_memory=False).fillna("")
+    df_uncommon: pd.DataFrame = pd.DataFrame(columns=COLUMN_NAMES)
 
-    df_uncommon:pd.DataFrame = pd.DataFrame(columns=COLUMN_NAMES)
-
-    for row in df_smaller.iterrows():
+    for row in df_relaxed.iterrows():
         branch_id = row[1][COLUMN_NAMES[0]]
         child_id = row[1][COLUMN_NAMES[1]]
-        relevant_obsoletion_parents_list_1 = {x.strip() for x in str(row[1][COLUMN_NAMES[4]]).split("|")}
-        other_parents_in_branch_list_1 = {x.strip() for x in str(row[1][COLUMN_NAMES[5]]).split("|")}
-        other_parents_not_in_branch_list_1 = {x.strip() for x in str(row[1][COLUMN_NAMES[6]]).split("|")}
-        all_mondo_ancestors_in_branch_list_1 = {x.strip() for x in str(row[1][COLUMN_NAMES[7]]).split("|")}
-        all_mondo_ancestors_outside_branch_list_1 = {x.strip() for x in str(row[1][COLUMN_NAMES[8]]).split("|")}
 
-        condition_1 = df_larger[COLUMN_NAMES[0]] == branch_id
-        condition_2 = df_larger[COLUMN_NAMES[1]] == child_id
-        corresp_row_df_larger = df_larger.loc[condition_1 & condition_2]
-        if not corresp_row_df_larger.empty:
-            relevant_obsoletion_parents_list_2 = {x.strip() for x in str(corresp_row_df_larger[COLUMN_NAMES[4]].values[0]).split("|")}
-            other_parents_in_branch_list_2 = {x.strip() for x in str(corresp_row_df_larger[COLUMN_NAMES[5]].values[0]).split("|")}
-            other_parents_not_in_branch_list_2 = {x.strip() for x in str(corresp_row_df_larger[COLUMN_NAMES[6]].values[0]).split("|")}
-            all_mondo_ancestors_in_branch_list_2 = {x.strip() for x in str(corresp_row_df_larger[COLUMN_NAMES[7]].values[0]).split("|")}
-            all_mondo_ancestors_outside_branch_list_2 = {x.strip() for x in str(corresp_row_df_larger[COLUMN_NAMES[8]].values[0]).split("|")}
+        (
+            relevant_obsoletion_parents_list_1,
+            other_parents_in_branch_list_1,
+            other_parents_not_in_branch_list_1,
+            all_mondo_ancestors_in_branch_list_1,
+            all_mondo_ancestors_outside_branch_list_1,
+        ) = get_columns_as_sets(row[1])
 
-            relevant_obsoletion_parents_list_merged = relevant_obsoletion_parents_list_1 | relevant_obsoletion_parents_list_2
-            other_parents_in_branch_list_merged = other_parents_in_branch_list_1 | other_parents_in_branch_list_2
-            other_parents_not_in_branch_list_merged = other_parents_not_in_branch_list_1 | other_parents_not_in_branch_list_2
-            all_mondo_ancestors_in_branch_list_merged = all_mondo_ancestors_in_branch_list_1 | all_mondo_ancestors_in_branch_list_2
-            all_mondo_ancestors_outside_branch_list_merged = all_mondo_ancestors_outside_branch_list_1 | all_mondo_ancestors_outside_branch_list_2
-            df_larger.loc[corresp_row_df_larger.index, [COLUMN_NAMES[4], COLUMN_NAMES[5], COLUMN_NAMES[6], COLUMN_NAMES[7], COLUMN_NAMES[8]]] = [
+        condition_1 = df_reasoned[COLUMN_NAMES[0]] == branch_id
+        condition_2 = df_reasoned[COLUMN_NAMES[1]] == child_id
+        corresp_row_df_reasoned = df_reasoned.loc[condition_1 & condition_2]
+        if not corresp_row_df_reasoned.empty:
+            relevant_obsoletion_parents_list_2 = (
+                {
+                    x.strip()
+                    for x in str(
+                        corresp_row_df_reasoned[COLUMN_NAMES[4]].values[0]
+                    ).split("|")
+                }
+                if row[1][COLUMN_NAMES[4]] != np.NAN
+                else set()
+            )
+
+            other_parents_in_branch_list_2 = (
+                {
+                    x.strip()
+                    for x in str(
+                        corresp_row_df_reasoned[COLUMN_NAMES[5]].values[0]
+                    ).split("|")
+                }
+                if row[1][COLUMN_NAMES[5]] != np.NAN
+                else set()
+            )
+
+            other_parents_not_in_branch_list_2 = (
+                {
+                    x.strip()
+                    for x in str(
+                        corresp_row_df_reasoned[COLUMN_NAMES[6]].values[0]
+                    ).split("|")
+                }
+                if row[1][COLUMN_NAMES[6]] != np.NAN
+                else set()
+            )
+
+            all_mondo_ancestors_in_branch_list_2 = (
+                {
+                    x.strip()
+                    for x in str(
+                        corresp_row_df_reasoned[COLUMN_NAMES[7]].values[0]
+                    ).split("|")
+                }
+                if row[1][COLUMN_NAMES[7]] != np.NAN
+                else set()
+            )
+
+            all_mondo_ancestors_outside_branch_list_2 = (
+                {
+                    x.strip()
+                    for x in str(
+                        corresp_row_df_reasoned[COLUMN_NAMES[8]].values[0]
+                    ).split("|")
+                }
+                if row[1][COLUMN_NAMES[8]] != np.NAN
+                else set()
+            )
+
+            relevant_obsoletion_parents_list_merged = (
+                relevant_obsoletion_parents_list_1 or set()
+            ) | (relevant_obsoletion_parents_list_2 or set())
+
+            other_parents_in_branch_list_merged = (
+                other_parents_in_branch_list_1 or set()
+            ) | (other_parents_in_branch_list_2 or set())
+            other_parents_not_in_branch_list_merged = (
+                other_parents_not_in_branch_list_1 or set()
+            ) | (other_parents_not_in_branch_list_2 or set())
+            all_mondo_ancestors_in_branch_list_merged = (
+                all_mondo_ancestors_in_branch_list_1 or set()
+            ) | (all_mondo_ancestors_in_branch_list_2 or set())
+            all_mondo_ancestors_outside_branch_list_merged = (
+                all_mondo_ancestors_outside_branch_list_1 or set()
+            ) | (all_mondo_ancestors_outside_branch_list_2 or set())
+            df_reasoned.loc[
+                corresp_row_df_reasoned.index,
+                [
+                    COLUMN_NAMES[4],
+                    COLUMN_NAMES[5],
+                    COLUMN_NAMES[6],
+                    COLUMN_NAMES[7],
+                    COLUMN_NAMES[8],
+                ],
+            ] = [
                 " | ".join(relevant_obsoletion_parents_list_merged),
                 " | ".join(other_parents_in_branch_list_merged),
                 " | ".join(other_parents_not_in_branch_list_merged),
                 " | ".join(all_mondo_ancestors_in_branch_list_merged),
-                " | ".join(all_mondo_ancestors_outside_branch_list_merged)
-                ]
+                " | ".join(all_mondo_ancestors_outside_branch_list_merged),
+            ]
 
-            # Column J: Affected Status = status
-            status = ""
-            if len(other_parents_in_branch_list_merged) > 0 and any(
-                " - TO_BE_OBSOLETED" not in parent for parent in other_parents_in_branch_list_merged
-            ):
-                status = STAYS_IN_THE_BRANCH
-            elif (
-                len(other_parents_in_branch_list_merged) == 0
-                or all(
-                    " - TO_BE_OBSOLETED" in parent for parent in other_parents_in_branch_list_merged
-                )
-            ) and (
-                len(other_parents_not_in_branch_list_merged) > 0
-                and any(
-                    " - TO_BE_OBSOLETED" not in parent
-                    for parent in other_parents_not_in_branch_list_merged
-                )
-            ):
-                status = LEAVES_THE_BRANCH
-            elif (
-                len(other_parents_in_branch_list_merged) == 0
-                or all(
-                    " - TO_BE_OBSOLETED" in parent for parent in other_parents_in_branch_list_merged
-                )
-            ) and (
-                len(other_parents_not_in_branch_list_merged) == 0
-                or all(
-                    " - TO_BE_OBSOLETED" in parent
-                    for parent in other_parents_not_in_branch_list_merged
-                )
-            ):
-                status = ORPHANED
-            else:
-                status = UNDEFINED
-
-            df_larger.loc[corresp_row_df_larger.index, [COLUMN_NAMES[9]]] = [status]
+            status = get_status(
+                other_parents_in_branch_list_merged,
+                other_parents_not_in_branch_list_merged,
+            )
+            df_reasoned.loc[corresp_row_df_reasoned.index, COLUMN_NAMES[9]] = status
         else:
+            row_df = row[1].to_frame().T
+            row_df[COLUMN_NAMES[9]] = get_status(
+                other_parents_in_branch_list_1, other_parents_not_in_branch_list_1
+            )
+            df_uncommon = df_uncommon._append(row_df, ignore_index=True)
 
-            df_uncommon = df_uncommon._append(row[1].to_frame().T, ignore_index=True)
+    df_reasoned_no_status = df_reasoned[df_reasoned[COLUMN_NAMES[9]] == ""]
+    # ! Call add_status on rows that were in df_reasoned but not in df_relaxed
+    df_reasoned_added_status = add_status_and_update_parents(df_reasoned_no_status, relaxed_resource)
+    df_reasoned_with_status = df_reasoned[df_reasoned[COLUMN_NAMES[9]] != ""]
 
-    df_larger = df_larger._append(df_uncommon, ignore_index=True)
-    df_larger = df_larger.drop_duplicates().fillna("")
-    df_larger.to_csv(output_file, sep="\t", index=False)
+    result_df = pd.concat(
+        [df_reasoned_added_status, df_reasoned_with_status, df_uncommon],
+        axis=0,
+        ignore_index=True,
+    ).reset_index(drop=True)
+    result_df = result_df.drop_duplicates().fillna("")
+    result_df.to_csv(output_file, sep="\t", index=False)
+
+
+def add_status_and_update_parents(df: pd.DataFrame, resource: str) -> pd.DataFrame:
+    OI = get_adapter(f"sqlite:{resource}")
+    branch_ids = df[COLUMN_NAMES[0]].unique().tolist()
+    child_ids = set(df[COLUMN_NAMES[1]].unique().tolist())
+    # Create a dictionary where each key is a branch_id and the value is a set of its descendants
+    branch_descendants_dict = {
+        id: set(OI.descendants(start_curies=id, predicates=[IS_A, PART_OF]))
+        for id in branch_ids
+    }
+
+    parents_relationship_of_children = set(
+            OI.relationships(
+                subjects=child_ids,
+                predicates=[IS_A, PART_OF],
+            )
+        )
+
+    for idx, row in df.iterrows():
+        (
+            _,
+            other_parents_in_branch,
+            other_parents_not_in_branch,
+            _,
+            _,
+        ) = get_columns_as_sets(row)
+        branch_id = row[COLUMN_NAMES[0]]
+        child_id = row[COLUMN_NAMES[1]]
+        parents_of_child = set(
+                    get_immediate_parent(
+                        curie=child_id,
+                        relationships=parents_relationship_of_children,
+                    )
+                )
+        branch_descendants_set = branch_descendants_dict[branch_id]
+        parents_in_branch = branch_descendants_set & parents_of_child
+        parents_not_in_branch = parents_of_child - parents_in_branch
+
+        parents_in_branch_absent = {parent for parent in parents_in_branch if all(parent not in other_parent for other_parent in other_parents_in_branch)}
+        parents_not_in_branch_absent = {parent for parent in parents_not_in_branch if all(parent not in other_parent for other_parent in other_parents_not_in_branch)}
+
+        new_column_5 = f"{row[COLUMN_NAMES[5]]} | {stringify(parents_in_branch_absent, OI)}".strip(" | ")
+        new_column_6 = f"{row[COLUMN_NAMES[6]]} | {stringify(parents_not_in_branch_absent, OI)}".strip(" | ")
+
+        df.loc[idx, [COLUMN_NAMES[5], COLUMN_NAMES[6], COLUMN_NAMES[9]]] = [
+            new_column_5,
+            new_column_6,
+            get_status(other_parents_in_branch, other_parents_not_in_branch)
+        ]
+
+    return df
+
+
+def get_columns_as_sets(row):
+    relevant_obsoletion_parents_list_1 = (
+        {x.strip() for x in str(row[COLUMN_NAMES[4]]).split("|")}
+        if row[COLUMN_NAMES[4]] != np.NAN
+        else set()
+    )
+
+    other_parents_in_branch_list_1 = (
+        {x.strip() for x in str(row[COLUMN_NAMES[5]]).split("|")}
+        if row[COLUMN_NAMES[5]] != np.NAN
+        else set()
+    )
+
+    other_parents_not_in_branch_list_1 = (
+        {x.strip() for x in str(row[COLUMN_NAMES[6]]).split("|")}
+        if row[COLUMN_NAMES[6]] != np.NAN
+        else set()
+    )
+    all_mondo_ancestors_in_branch_list_1 = (
+        {x.strip() for x in str(row[COLUMN_NAMES[7]]).split("|")}
+        if row[COLUMN_NAMES[7]] != np.NAN
+        else set()
+    )
+    all_mondo_ancestors_outside_branch_list_1 = (
+        {x.strip() for x in str(row[COLUMN_NAMES[8]]).split("|")}
+        if row[COLUMN_NAMES[8]] != np.NAN
+        else set()
+    )
+
+    return (
+        relevant_obsoletion_parents_list_1,
+        other_parents_in_branch_list_1,
+        other_parents_not_in_branch_list_1,
+        all_mondo_ancestors_in_branch_list_1,
+        all_mondo_ancestors_outside_branch_list_1,
+    )
+
+
+def get_status(
+    other_parents_in_branch_list_merged,
+    other_parents_not_in_branch_list_merged,
+):
+    # Column J: Affected Status = status
+    status = ""
+
+    if len(other_parents_in_branch_list_merged) > 0 and any(
+        " - TO_BE_OBSOLETED" not in parent
+        for parent in other_parents_in_branch_list_merged
+    ):
+        status = STAYS_IN_THE_BRANCH
+    elif (
+        len(other_parents_in_branch_list_merged) == 0
+        or all(
+            " - TO_BE_OBSOLETED" in parent
+            for parent in other_parents_in_branch_list_merged
+        )
+    ) and (
+        len(other_parents_not_in_branch_list_merged) > 0
+        and any(
+            " - TO_BE_OBSOLETED" not in parent
+            for parent in other_parents_not_in_branch_list_merged
+        )
+    ):
+        status = LEAVES_THE_BRANCH
+    elif (
+        len(other_parents_in_branch_list_merged) == 0
+        or all(
+            " - TO_BE_OBSOLETED" in parent
+            for parent in other_parents_in_branch_list_merged
+        )
+    ) and (
+        len(other_parents_not_in_branch_list_merged) == 0
+        or all(
+            " - TO_BE_OBSOLETED" in parent
+            for parent in other_parents_not_in_branch_list_merged
+        )
+    ):
+        status = ORPHANED
+    else:
+        status = UNDEFINED
+
+    return status
 
 
 if __name__ == "__main__":
