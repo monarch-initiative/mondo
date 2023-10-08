@@ -939,7 +939,7 @@ obsoletion_tables: tmp/mondo-relaxed-branchreview.db  tmp/mondo-reasoned-branchr
 #	python ../scripts/branch_review.py create-review-table -o $@ -f ../../obsoletion_terms.tsv -B ../../branch_ids.tsv 
 
 reason_and_relax: obsoletion_tables
-	python ../scripts/branch_review.py relax-and-reason -i reports/mondo-reasoned-branch-review.tsv -i reports/mondo-relaxed-branch-review.tsv -r tmp/mondo-relaxed-branchreview.db  -o reports/mondo-combined-branch-review.tsv
+	python ../scripts/branch_review.py relax-and-reason -i reports/mondo-reasoned-branch-review.tsv -i reports/mondo-relaxed-branch-review.tsv -r tmp/mondo-relaxed-branchreview.db   -f ../../obsoletion_terms.tsv -o reports/mondo-combined-branch-review.tsv
 
 ##################################
 ##### Scheduled GH Actions #######

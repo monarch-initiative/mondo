@@ -300,9 +300,14 @@ def stringify(item: List[Tuple], OI):
 @click.option(
     "-i", "--input", help="branch review files to be combined.", multiple=True
 )
+@click.option(
+    "-f",
+    "--obsoletion-candidates-file",
+    help="TSV with one column of obsoletion CURIEs",
+)
 @click.option("-o", "--output-file", help="Path to report file")
 @click.option("-r", "--relaxed-resource", help="DB source file.")
-def relax_and_reason(input, output_file, relaxed_resource):
+def relax_and_reason(input, obsoletion_candidates_file, output_file, relaxed_resource):
     df_reasoned = pd.read_csv(input[0], sep="\t", low_memory=False).fillna("")
     df_relaxed = pd.read_csv(input[1], sep="\t", low_memory=False).fillna("")
     df_uncommon: pd.DataFrame = pd.DataFrame(columns=COLUMN_NAMES)
@@ -426,7 +431,7 @@ def relax_and_reason(input, output_file, relaxed_resource):
     df_reasoned_no_status = df_reasoned[df_reasoned[COLUMN_NAMES[9]] == ""]
     # ! Call add_status on rows that were in df_reasoned but not in df_relaxed
     df_reasoned_added_status = add_status_and_update_parents(
-        df_reasoned_no_status, relaxed_resource
+        df_reasoned_no_status, relaxed_resource, obsoletion_candidates_file
     )
     df_reasoned_with_status = df_reasoned[df_reasoned[COLUMN_NAMES[9]] != ""]
 
@@ -439,7 +444,7 @@ def relax_and_reason(input, output_file, relaxed_resource):
     result_df.to_csv(output_file, sep="\t", index=False)
 
 
-def add_status_and_update_parents(df: pd.DataFrame, resource: str) -> pd.DataFrame:
+def add_status_and_update_parents(df: pd.DataFrame, resource: str, obsoletion_candidates_file: str) -> pd.DataFrame:
     """
     The Dataframe that is passed here are rows present from the reasoned table
     and that are absent in the relaxed table. The 2 ancestor columns had CURIEs
@@ -456,6 +461,12 @@ def add_status_and_update_parents(df: pd.DataFrame, resource: str) -> pd.DataFra
         id: set(OI.descendants(start_curies=id, predicates=[IS_A, PART_OF]))
         for id in branch_ids
     }
+
+    # Open the TSV file and read it into a list
+    with open(obsoletion_candidates_file, "r") as f:
+        reader = csv.reader(f, delimiter="\t")
+        # Store the first element of each row in the obsoletion_candidates list
+        obsoletion_candidates_set = set([row[0] for row in reader])
 
     parents_relationship_of_children = set(
         OI.relationships(
@@ -500,11 +511,20 @@ def add_status_and_update_parents(df: pd.DataFrame, resource: str) -> pd.DataFra
             )
         }
 
+        parents_in_branch_absent = add_obsoleted_label(
+                parents_in_branch_absent, obsoletion_candidates_set
+            )
+
         new_column_5 = (
             f"{row[COLUMN_NAMES[5]]} | {stringify(parents_in_branch_absent, OI)}".strip(
                 " | "
             )
         )
+       
+        parents_not_in_branch_absent = add_obsoleted_label(
+                parents_not_in_branch_absent, obsoletion_candidates_set
+            )
+        
         new_column_6 = f"{row[COLUMN_NAMES[6]]} | {stringify(parents_not_in_branch_absent, OI)}".strip(
             " | "
         )
@@ -560,11 +580,13 @@ def get_columns_as_sets(row):
 
 
 def get_status(
-    other_parents_in_branch_list_merged,
-    other_parents_not_in_branch_list_merged,
+    other_parents_in_branch_list_merged: set,
+    other_parents_not_in_branch_list_merged: set,
 ):
     # Column J: Affected Status = status
     status = ""
+    other_parents_in_branch_list_merged.discard("")
+    other_parents_not_in_branch_list_merged.discard("")
 
     if len(other_parents_in_branch_list_merged) > 0 and any(
         " - TO_BE_OBSOLETED" not in parent
