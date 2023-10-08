@@ -494,9 +494,19 @@ def add_status_and_update_parents(
             )
         )
         branch_descendants_set = branch_descendants_dict[branch_id]
-        parents_in_branch = branch_descendants_set & parents_of_child
+        parents_in_branch = parents_of_child & branch_descendants_set
         parents_not_in_branch = parents_of_child - parents_in_branch
 
+        # ! Since this part of the code uses the relaxed resource,
+        # ! The branch descendants may not contain some parents.
+        # ! This extra hack is to avoid ambiguity and confusion in the results
+        # ! which shows parents in branch previously to also appear out of branch.
+        # Check each item in the set
+        for item in list(parents_not_in_branch):
+            # If the item is in the string, discard it from the set
+            if item in row[COLUMN_NAMES[5]]:
+                parents_not_in_branch.discard(item)
+            
         parents_in_branch_absent = {
             parent
             for parent in parents_in_branch
@@ -530,6 +540,7 @@ def add_status_and_update_parents(
         new_column_6 = f"{row[COLUMN_NAMES[6]]} | {stringify(parents_not_in_branch_absent, OI)}".strip(
             " | "
         )
+
 
         df.loc[idx, [COLUMN_NAMES[5], COLUMN_NAMES[6], COLUMN_NAMES[9]]] = [
             new_column_5,
