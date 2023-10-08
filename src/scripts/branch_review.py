@@ -444,7 +444,9 @@ def relax_and_reason(input, obsoletion_candidates_file, output_file, relaxed_res
     result_df.to_csv(output_file, sep="\t", index=False)
 
 
-def add_status_and_update_parents(df: pd.DataFrame, resource: str, obsoletion_candidates_file: str) -> pd.DataFrame:
+def add_status_and_update_parents(
+    df: pd.DataFrame, resource: str, obsoletion_candidates_file: str
+) -> pd.DataFrame:
     """
     The Dataframe that is passed here are rows present from the reasoned table
     and that are absent in the relaxed table. The 2 ancestor columns had CURIEs
@@ -512,19 +514,19 @@ def add_status_and_update_parents(df: pd.DataFrame, resource: str, obsoletion_ca
         }
 
         parents_in_branch_absent = add_obsoleted_label(
-                parents_in_branch_absent, obsoletion_candidates_set
-            )
+            parents_in_branch_absent, obsoletion_candidates_set
+        )
 
         new_column_5 = (
             f"{row[COLUMN_NAMES[5]]} | {stringify(parents_in_branch_absent, OI)}".strip(
                 " | "
             )
         )
-       
+
         parents_not_in_branch_absent = add_obsoleted_label(
-                parents_not_in_branch_absent, obsoletion_candidates_set
-            )
-        
+            parents_not_in_branch_absent, obsoletion_candidates_set
+        )
+
         new_column_6 = f"{row[COLUMN_NAMES[6]]} | {stringify(parents_not_in_branch_absent, OI)}".strip(
             " | "
         )
