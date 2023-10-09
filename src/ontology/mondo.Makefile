@@ -929,17 +929,20 @@ tmp/mondo-%.db: tmp/mondo-%.owl
 	semsql make $@
 
 
-obsoletion_tables: tmp/mondo-relaxed-branchreview.db  tmp/mondo-reasoned-branchreview.db  
+obsoletion_tables: tmp/mondo-relaxed-branchreview.db  tmp/mondo-reasoned-branchreview.db
+	for id in $(shell cat ../../branch_ids.tsv); do \
+        python ../scripts/branch_review.py create-review-table -i tmp/mondo-reasoned-branchreview.db -o tmp/mondo-reasoned-branch-$$id-review.tsv -f ../../obsoletion_terms.tsv -b $$id;\
+		python ../scripts/branch_review.py create-review-table -i tmp/mondo-relaxed-branchreview.db -o tmp/mondo-relaxed-branch-$$id-review.tsv -f ../../obsoletion_terms.tsv -b $$id;\
+		python ../scripts/branch_review.py relax-and-reason -i tmp/mondo-reasoned-branch-$$id-review.tsv -i tmp/mondo-relaxed-branch-$$id-review.tsv -r tmp/mondo-relaxed-branchreview.db   -f ../../obsoletion_terms.tsv -o reports/mondo-combined-branch-$$id-review.tsv;\
+    done
+
 #	python ../scripts/branch_review.py create-review-table -i tmp/mondo-reasoned-branchreview.db -o reports/mondo-reasoned-branch-review.tsv -f ../../obsoletion_terms.tsv -B ../../branch_ids.tsv
 #	python ../scripts/branch_review.py create-review-table -i tmp/mondo-relaxed-branchreview.db -o reports/mondo-relaxed-branch-review.tsv -f ../../obsoletion_terms.tsv -B ../../branch_ids.tsv
 
-	python ../scripts/branch_review.py create-review-table -i tmp/mondo-reasoned-branchreview.db -o reports/mondo-reasoned-branch-review.tsv -f ../../obsoletion_terms.tsv -b MONDO:0005151
-	python ../scripts/branch_review.py create-review-table -i tmp/mondo-relaxed-branchreview.db -o reports/mondo-relaxed-branch-review.tsv -f ../../obsoletion_terms.tsv -b MONDO:0005151
+#	python ../scripts/branch_review.py create-review-table -i tmp/mondo-reasoned-branchreview.db -o reports/mondo-reasoned-branch-review.tsv -f ../../obsoletion_terms.tsv -b MONDO:0005151
+#	python ../scripts/branch_review.py create-review-table -i tmp/mondo-relaxed-branchreview.db -o reports/mondo-relaxed-branch-review.tsv -f ../../obsoletion_terms.tsv -b MONDO:0005151
 
 #	python ../scripts/branch_review.py create-review-table -o $@ -f ../../obsoletion_terms.tsv -B ../../branch_ids.tsv 
-
-reason_and_relax: obsoletion_tables
-	python ../scripts/branch_review.py relax-and-reason -i reports/mondo-reasoned-branch-review.tsv -i reports/mondo-relaxed-branch-review.tsv -r tmp/mondo-relaxed-branchreview.db   -f ../../obsoletion_terms.tsv -o reports/mondo-combined-branch-review.tsv
 
 ##################################
 ##### Scheduled GH Actions #######
