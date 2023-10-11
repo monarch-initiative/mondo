@@ -10,7 +10,7 @@
 3. For each term that will be orphaned, create the following columns:
 
 Label for the parent	| parent class |	source |	PMID |	Curator confidence
--- | -- | -- | -- | -- |
+--- | --- | --- | --- | --- |
 |	SC % |	>A oboInOwl:source | |	| 
 
 
