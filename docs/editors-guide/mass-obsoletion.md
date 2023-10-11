@@ -47,9 +47,12 @@ Label for the parent	| parent class |	source |	PMID |	Curator confidence
 
 ##### 2b. Review changes in Protege
 
-1. Check the branch and review changes for obsoleted terms and orphaned terms. Spot check a few terms.
+1. Check the branch and review changes for obsoleted terms and orphaned terms:
+    - Spot check a few terms to ensure they were properly obsoleted and have the correct Annotations
+    - spot check a few terms to make sure they are assigned the correct parent (per the ROBOT template) and they have the correct source annotation(s)
+    - check the top level disease branch to ensure there are only two subclasses: 'human disease' and 'non-human disease' (if there are any other classes under there, assert new superclasses to that term. Note in the PR if you are uncertain abou the superclass assertion and would like additional review)
 2. Run the reasoner and make sure there are no unsatisfiable classes.
-3. Commit changes and creat a PR and assign another curator to review
+3. Commit changes and create a PR and assign another curator to review
 
 ## Review PR
 
