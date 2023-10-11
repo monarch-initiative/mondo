@@ -9,9 +9,9 @@
   - stay in the branch
 3. For each term that will be orphaned, create the following columns:
 
-Label for the parent	| parent class |	source |	PMID|	Curator confidence
+Label for the parent	| parent class |	source |	PMID |	Curator confidence
 -- | -- | -- | -- | -- |
-|	SC %|	>A oboInOwl:source	 | |	| 
+|	SC % |	>A oboInOwl:source | |	| 
 
 
 ### Review and reassign superclasses to orphaned terms
