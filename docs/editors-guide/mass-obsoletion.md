@@ -5,17 +5,17 @@
 1. In this [spreadsheet](https://docs.google.com/spreadsheets/d/1xTfYCOCGKx_svNT8PirgGDiCINV7IDqzhBk76DNe150/edit#gid=0), there are branches with children that are prioritized for obsoletion.
 2. Each branch has a corresponding GitHub ticket and an assigned curator (assigned in GitHub) and a corresponding spreadsheet that lists terms that will either be:
 
-  - orphaned
-  - leave the branch
-  - stay in the branch
+  2a. orphaned  
+  2b. leave the branch  
+  2c. stay in the branch  
   
-3. For each term that will be orphaned, create the following columns:
+3. For each term that will be orphaned, create the following columns in the spreadsheet (if it has not been done already):
 
 Label for the parent	| parent class |	source |	PMID |	Curator confidence
 --- | --- | --- | --- | ---
 |	SC % |	>A oboInOwl:source | | 
 
-### Review and reassign superclasses to orphaned terms
+### Review and reassign superclasses to Orphaned terms
 
 1. review terms that will become orphaned when the terms are mass obsoleted
 2. assign a new parent to each term
