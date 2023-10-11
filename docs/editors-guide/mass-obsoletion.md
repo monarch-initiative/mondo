@@ -28,7 +28,7 @@ Label for the parent	| parent class |	source |	PMID |	Curator confidence
 1. Add new parents via ROBOT template
 2. See example template [here](https://docs.google.com/spreadsheets/d/1KUYvnB1VVBV7KwbKipxvgNLX9FQC0aeaPn3kaxzz92g/edit#gid=834522600)
 
-#### 2. Mass obsolete TermsMerged
+#### 2. Mass obsolete Terms
 1. Go to relevant GitHub ticket (for example, [https://github.com/monarch-initiative/mondo/issues/6739](https://github.com/monarch-initiative/mondo/issues/6739))
 2. copy and paste the table into a new tab in the spreadsheet (for example, see [here](https://docs.google.com/spreadsheets/d/1KUYvnB1VVBV7KwbKipxvgNLX9FQC0aeaPn3kaxzz92g/edit#gid=36625823))
 3. Create a new column with the CURIES (see column C)
