@@ -19,6 +19,8 @@ Label for the parent	| parent class |	source |	PMID|	Curator confidence
 1. review terms that will become orphaned when the terms are mass obsoleted
 2. assign a new parent to each term
 3. See [video here]() for more detail_dystonias
+4. Share the spreadsheet with another curator for review, if needed
+5. Nicole, Trish or Sabrina should proceed with Mass obsoletion pipeline
 
 ### Mass obsoletion pipeline
 
