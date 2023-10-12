@@ -16,6 +16,8 @@ LEAVES_THE_BRANCH = "Leaves the branch"
 ORPHANED = "Orphaned"
 STAYS_IN_THE_BRANCH = "Stays in branch"
 UNDEFINED = "Undefined"
+DISEASE = "MONDO:0000001"
+HUMAN_DISEASE = "MONDO:0700096"
 # Define the column names for the output file
 COLUMN_NAMES = [
     "Branch reviewed ID",
@@ -605,38 +607,40 @@ def get_status(
     other_parents_in_branch_list_merged.discard("")
     other_parents_not_in_branch_list_merged.discard("")
 
-    if len(other_parents_in_branch_list_merged) > 0 and any(
+    # Pre-compute common conditions
+    other_parents_in_branch_empty = len(other_parents_in_branch_list_merged) == 0
+    other_parents_in_branch_all_obsoleted = all(
+        " - TO_BE_OBSOLETED" in parent for parent in other_parents_in_branch_list_merged
+    )
+    other_parents_not_in_branch_empty = len(other_parents_not_in_branch_list_merged) > 0
+    other_parents_not_in_branch_any_not_obsoleted = any(
         " - TO_BE_OBSOLETED" not in parent
-        for parent in other_parents_in_branch_list_merged
-    ):
+        for parent in other_parents_not_in_branch_list_merged
+    )
+    other_parents_not_in_branch_all_obsoleted = all(
+        " - TO_BE_OBSOLETED" in parent
+        for parent in other_parents_not_in_branch_list_merged
+    )
+    all_disease_ancestors = all(
+        parent in [DISEASE, HUMAN_DISEASE]
+        for parent in other_parents_not_in_branch_list_merged
+    )
+
+    if not other_parents_in_branch_empty and other_parents_not_in_branch_any_not_obsoleted:
         status = STAYS_IN_THE_BRANCH
     elif (
-        len(other_parents_in_branch_list_merged) == 0
-        or all(
-            " - TO_BE_OBSOLETED" in parent
-            for parent in other_parents_in_branch_list_merged
-        )
-    ) and (
-        len(other_parents_not_in_branch_list_merged) > 0
-        and any(
-            " - TO_BE_OBSOLETED" not in parent
-            for parent in other_parents_not_in_branch_list_merged
-        )
+        (other_parents_in_branch_empty or other_parents_in_branch_all_obsoleted)
+        and other_parents_not_in_branch_empty
+        and other_parents_not_in_branch_any_not_obsoleted
+        and DISEASE not in other_parents_not_in_branch_list_merged
+        and HUMAN_DISEASE not in other_parents_not_in_branch_list_merged
     ):
         status = LEAVES_THE_BRANCH
-    elif (
-        len(other_parents_in_branch_list_merged) == 0
-        or all(
-            " - TO_BE_OBSOLETED" in parent
-            for parent in other_parents_in_branch_list_merged
-        )
-    ) and (
-        len(other_parents_not_in_branch_list_merged) == 0
-        or all(
-            " - TO_BE_OBSOLETED" in parent
-            for parent in other_parents_not_in_branch_list_merged
-        )
+    elif (other_parents_in_branch_empty or other_parents_in_branch_all_obsoleted) and (
+        other_parents_not_in_branch_empty == False or other_parents_not_in_branch_all_obsoleted
     ):
+        status = ORPHANED
+    elif (other_parents_in_branch_empty or other_parents_in_branch_all_obsoleted) and all_disease_ancestors:
         status = ORPHANED
     else:
         status = UNDEFINED
