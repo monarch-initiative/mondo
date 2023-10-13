@@ -11,7 +11,7 @@ The goal of this project is to clean up the hierarchy in Mondo and remove Orphan
 1. [Review ORDO grouping classes for obsoletion](https://mondo.readthedocs.io/en/latest/editors-guide/mass-obsoletion/#review-ordo-grouping-classes-for-obsoletion)
 2. tag terms for obsoletion and share obsoletion candidates with community and wait at least two months for feedback
 3. [Generate tables for curator review](https://mondo.readthedocs.io/en/latest/editors-guide/mass-obsoletion/#generate-tables-for-curator-review)
-4. Curator review of proposed obsoletion candidates(../mass-obsoletion/#review-proposed-obsoletion-candidates)
+4. [Curator review of proposed obsoletion candidates](https://mondo.readthedocs.io/en/latest/editors-guide/mass-obsoletion/#curator-review-of-proposed-obsoletion-candidates)
 5. [Mass obsoletion pipeline](https://mondo.readthedocs.io/en/latest/editors-guide/mass-obsoletion/#mass-obsoletion-pipeline_1)
 
 ### Relevant tickets
@@ -27,7 +27,7 @@ The goal of this project is to clean up the hierarchy in Mondo and remove Orphan
 3. reasons for ‘rescuing’ a term varied and are noted in the column J
 4. Nicole and Sabrina both looked at all the terms and noted if we agreed or disagreed if a term should be obsoleted (and if we disagreed, we rescued it and we’ll revisit it later)
 5. Any term that was marked for obsoletion, we added obsoletion tags (see workflow [here](https://mondo.readthedocs.io/en/latest/editors-guide/merging-and-obsoleting/#workflow)) to obsolete those classes in 2 months from the date we added the tag (for this initial round, the obsoletion dates were either 2023-09-01 or 2023-10-01)
-6. When the work below is done (Curator review of proposed obsoletion candidates and [mass obsoletion pipeline](https://mondo.readthedocs.io/en/latest/editors-guide/mass-obsoletion/#mass-obsoletion-pipeline_1)), we need to go back and re-review all of the rescued terms and determine if they should be obsoleted and do this process again.
+6. When the work below is done ([Curator review of proposed obsoletion candidates](https://mondo.readthedocs.io/en/latest/editors-guide/mass-obsoletion/#curator-review-of-proposed-obsoletion-candidates) and [mass obsoletion pipeline](https://mondo.readthedocs.io/en/latest/editors-guide/mass-obsoletion/#mass-obsoletion-pipeline_1)), we need to go back and re-review all of the rescued terms and determine if they should be obsoleted and do this process again.
 
 ## Generate tables for curator review
 
