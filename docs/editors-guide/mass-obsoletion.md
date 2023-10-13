@@ -1,5 +1,25 @@
 # Mass obsoletion pipeline
 
+## Summary
+
+The goal of this project is to clean up the hierarchy in Mondo and remove Orphanet grouping classes that are causing unwanted classifications in Mondo.
+
+**Justification**: Orphanet takes a different approach to classification compared to Mondo, where many disease entities are grouped together based on phenotypic features. This is causing some incorrect inferences in Mondo. 
+
+**Approach**: The approach is to obsolete many of the Orphanet grouping classes and review the resulting hierarchy to ensure proper classification of the children. This will be an incremental and iterative approach. An overview of the approach is:
+
+1. review potential obsoletion candidates
+2. tag terms for obsoletion and share obsoletion candidates with community and wait at least two months for feedback
+3. Review proposed obsoletion candidates
+Mass obsoletion pipeline
+
+### Relevant tickets
+- [review ORDO grouping classes #5114](https://github.com/monarch-initiative/mondo/issues/5114)
+- [Remove all terms for which the single source of evidence is ORDO #5853](https://github.com/monarch-initiative/mondo/issues/5853)
+- [Remove unsupported associations #5857](https://github.com/monarch-initiative/mondo/issues/5857)
+
+## Review proposed obsoletion candidates
+
 ## Curator Branch Review
 
 1. In this [spreadsheet](https://docs.google.com/spreadsheets/d/1xTfYCOCGKx_svNT8PirgGDiCINV7IDqzhBk76DNe150/edit#gid=0), there are branches with children that are prioritized for obsoletion.
