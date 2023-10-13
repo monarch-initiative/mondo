@@ -10,7 +10,7 @@ The goal of this project is to clean up the hierarchy in Mondo and remove Orphan
 
 1. [Review ORDO grouping classes for obsoletion]
 2. tag terms for obsoletion and share obsoletion candidates with community and wait at least two months for feedback
-3. Review proposed obsoletion candidates(../editors-guide/mass-obsoletion/#review-proposed-obsoletion-candidates)
+3. Review proposed obsoletion candidates(../mass-obsoletion/#review-proposed-obsoletion-candidates)
 4. Mass obsoletion pipeline
 
 ### Relevant tickets
