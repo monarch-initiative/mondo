@@ -8,10 +8,10 @@ The goal of this project is to clean up the hierarchy in Mondo and remove Orphan
 
 **Approach**: The approach is to obsolete many of the Orphanet grouping classes and review the resulting hierarchy to ensure proper classification of the children. This will be an incremental and iterative approach. An overview of the approach is:
 
-1. review potential obsoletion candidates
+1. [review potential obsoletion candidates](../editors-guide/mass-obsoletion/#review-proposed-obsoletion-candidates)
 2. tag terms for obsoletion and share obsoletion candidates with community and wait at least two months for feedback
 3. Review proposed obsoletion candidates
-Mass obsoletion pipeline
+4. Mass obsoletion pipeline
 
 ### Relevant tickets
 - [review ORDO grouping classes #5114](https://github.com/monarch-initiative/mondo/issues/5114)
