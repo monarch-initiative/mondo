@@ -16,6 +16,7 @@ The goal of this project is to clean up the hierarchy in Mondo and remove Orphan
 ### Relevant tickets
 - [review ORDO grouping classes #5114](https://github.com/monarch-initiative/mondo/issues/5114)
 - [Remove all terms for which the single source of evidence is ORDO #5853](https://github.com/monarch-initiative/mondo/issues/5853)
+- [Mass obsoletion labeled tickets](https://github.com/monarch-initiative/mondo/issues?q=is%3Aissue+is%3Aopen+label%3A%22mass+obsoletion%22)
 - [Remove unsupported associations #5857](https://github.com/monarch-initiative/mondo/issues/5857)
 
 ## Review ORDO grouping classes for obsoletion
