@@ -10,8 +10,9 @@ The goal of this project is to clean up the hierarchy in Mondo and remove Orphan
 
 1. [Review ORDO grouping classes for obsoletion]
 2. tag terms for obsoletion and share obsoletion candidates with community and wait at least two months for feedback
-3. Review proposed obsoletion candidates(../mass-obsoletion/#review-proposed-obsoletion-candidates)
-4. Mass obsoletion pipeline
+3. Generate tables for curator review
+4. Curator review of proposed obsoletion candidates(../mass-obsoletion/#review-proposed-obsoletion-candidates)
+5. Mass obsoletion pipeline
 
 ### Relevant tickets
 - [review ORDO grouping classes #5114](https://github.com/monarch-initiative/mondo/issues/5114)
@@ -28,7 +29,11 @@ The goal of this project is to clean up the hierarchy in Mondo and remove Orphan
 5. Any term that was marked for obsoletion, we added obsoletion tags (see documentation [here](https://mondo.readthedocs.io/en/latest/editors-guide/merging-and-obsoleting/#workflow)) to obsolete those classes in 2 months from the date we added the tag (for this initial round, the obsoletion dates were either 2023-09-01 or 2023-10-01)
 6. When the work below is done ([review proposed obsoletion candidates](..editors-guide/mass-obsoletion/#review-proposed-obsoletion-candidates) and [mass obsoletion pipeline](..https://mondo.readthedocs.io/en/latest/editors-guide/mass-obsoletion/#mass-obsoletion-pipeline_1)), we need to go back and re-review all of the rescued terms and determine if they should be obsoleted and do this process again.
 
-## Review proposed obsoletion candidates
+## Generate tables for curator review
+
+_Content to be added_
+
+## Curator review proposed obsoletion candidates
 
 ## Curator Branch Review
 
