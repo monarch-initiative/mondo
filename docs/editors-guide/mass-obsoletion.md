@@ -26,7 +26,7 @@ The goal of this project is to clean up the hierarchy in Mondo and remove Orphan
 2. Mondo curators (Nicole and Sabrina) did a first pass at reviewing this list and made a call if it would be okay to obsolete the term or if it should be ‘rescued’ meaning that we should not obsolete it right now, but we should revisit it later and consider obsoleting it
 3. reasons for ‘rescuing’ a term varied and are noted in the column J
 4. Nicole and Sabrina both looked at all the terms and noted if we agreed or disagreed if a term should be obsoleted (and if we disagreed, we rescued it and we’ll revisit it later)
-5. Any term that was marked for obsoletion, we added obsoletion tags (see documentation [here](https://mondo.readthedocs.io/en/latest/editors-guide/merging-and-obsoleting/#workflow)) to obsolete those classes in 2 months from the date we added the tag (for this initial round, the obsoletion dates were either 2023-09-01 or 2023-10-01)
+5. Any term that was marked for obsoletion, we added obsoletion tags (see workflow [here](https://mondo.readthedocs.io/en/latest/editors-guide/merging-and-obsoleting/#workflow)) to obsolete those classes in 2 months from the date we added the tag (for this initial round, the obsoletion dates were either 2023-09-01 or 2023-10-01)
 6. When the work below is done ([review proposed obsoletion candidates](..mass-obsoletion/#review-proposed-obsoletion-candidates) and [mass obsoletion pipeline](https://mondo.readthedocs.io/en/latest/editors-guide/mass-obsoletion/#mass-obsoletion-pipeline_1)), we need to go back and re-review all of the rescued terms and determine if they should be obsoleted and do this process again.
 
 ## Generate tables for curator review
