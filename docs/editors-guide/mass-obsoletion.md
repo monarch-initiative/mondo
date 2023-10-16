@@ -78,7 +78,9 @@ Label for the parent	| parent class |	source |	PMID |	Curator confidence
 4. Create a new file in mondo/src/ontology/config/ named `obsolete_me.txt`
 5. Copy and paste the CURIES into `obsolete_me.txt` and save
 6. Run `sh run.sh make mass_obsolete2 -B`
-7. (Optional) Open in Protege and make sure everything looks okay
+7. Run 'sh run.sh make NORM`
+8. Run `mv NORM mondo-edit.obo`
+9. (Optional) Open in Protege and make sure everything looks okay
 
 
 ##### 2a. Add the term tracker item to the obsoleted terms
