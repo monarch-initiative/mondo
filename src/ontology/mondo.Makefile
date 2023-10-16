@@ -944,6 +944,9 @@ obsoletion_tables: tmp/mondo-relaxed-branchreview.db  tmp/mondo-reasoned-branchr
 
 #	python ../scripts/branch_review.py create-review-table -o $@ -f ../../obsoletion_terms.tsv -B ../../branch_ids.tsv 
 
+not-in-branch:
+	$(ROBOT) query -i tmp/mondo-reasoned-branchreview.owl --query ../sparql/signature/not-in-branch.sparql not_in_branch.csv
+
 ##################################
 ##### Scheduled GH Actions #######
 ##################################
