@@ -14,6 +14,8 @@ The goal of this project is to clean up the hierarchy in Mondo and remove Orphan
 4. [Curator review of proposed obsoletion candidates](https://mondo.readthedocs.io/en/latest/editors-guide/mass-obsoletion/#curator-review-of-proposed-obsoletion-candidates)
 5. [Mass obsoletion pipeline](https://mondo.readthedocs.io/en/latest/editors-guide/mass-obsoletion/#mass-obsoletion-pipeline_1)
 
+[Overview figure](https://docs.google.com/presentation/d/1zanI3YZTpY8iuCTJoAPv52QH6AGN_d3NUgq0fsJ2fHQ/edit#slide=id.p) (_under development_)
+
 ### Discussion board
 
 A [discussion board](https://github.com/monarch-initiative/mondo/discussions/6768) is available to ask questions about this process. Please tag specific curators/developers as needed.
