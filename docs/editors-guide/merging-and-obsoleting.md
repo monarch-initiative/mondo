@@ -177,7 +177,7 @@ Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:e
 
 If you only want to obsolete terms without taking another look, you can use the simple mass obsoletion pipeline:
 
-1. add all terms you wish to obsolete to config/obsolete_me.txt
+1. add all terms you wish to obsolete to config/obsolete_me.txt (note, this file may need to be created and saved in this folder). The changes will not show up in the git diff.
 1. run `sh run.sh make mass_obsolete2 -B`
 1. Very carefully review the diff. More carefully then usual!
 
