@@ -388,9 +388,9 @@ reports/mondo_unsats.md: mondo.obo
 		annotate --ontology-iri "http://purl.obolibrary.org/obo/$@" -o $@.owl
 
 # Mondo custom diff (class obsoletion)
-reports/mondo_custom_diff.md: tmp/mondo-currentbase.db tmp/mondo-main.db config/branches.tsv
+reports/mondo_custom_diff.md: tmp/mondo-currentbase.db tmp/mondo-mainbase.db config/branches.tsv
 	# Create a mondo-base.db and a mondo-main.db for OAK to work with 
-	python ../scripts/mondo_custom_diff.py create-custom-diff-table -i tmp/mondo-currentbase.owl -m tmp/mondo-main.owl -b config/branches.tsv -o $@
+	python ../scripts/mondo_custom_diff.py create-custom-diff-table -i tmp/mondo-currentbase.db -m tmp/mondo-mainbase.db -b config/branches.tsv -o $@
 
 .PHONY: mondo_feature_diff
 mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
