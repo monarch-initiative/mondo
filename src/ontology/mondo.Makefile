@@ -364,12 +364,23 @@ reports/robot_diff.md: mondo.obo mondo-lastbuild.obo
 tmp/mondo-lastbase.owl:
 	mkdir -p tmp && wget "http://purl.obolibrary.org/obo/mondo/mondo-base.owl" -O $@
 
+tmp/mondo-main.owl:
+	mkdir -p tmp && mkdir -p tmp/mondo-git && cd tmp/mondo-git &&\
+	git clone https://github.com/monarch-initiative/mondo.git --depth=1 &&\
+	cd mondo/src/ontology/ && $(MAKE) mondo-base.owl
+	cp tmp/mondo-git/mondo/src/ontology/mondo-base.owl $@ 
+
 reports/mondo_diff.md: mondo-base.owl tmp/mondo-lastbase.owl
 	$(ROBOT) diff --left tmp/mondo-lastbase.owl --right $< -f markdown -o $@
 
 reports/mondo_unsats.md: mondo.obo
 	$(ROBOT) explain -i $< --reasoner ELK -M unsatisfiability --unsatisfiable all --explanation $@ \
 		annotate --ontology-iri "http://purl.obolibrary.org/obo/$@" -o $@.owl
+
+# Mondo custom diff (class obsoletion)
+reports/mondo_custom_diff.md: mondo-base.owl tmp/mondo-main.owl
+	# Create a mondo-bsae.db and a mondo-main.db for OAK to work with 
+	python ../scripts/mondo_custom_diff.py #check Harshad's PR on how to set this up
 
 .PHONY: mondo_feature_diff
 mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
