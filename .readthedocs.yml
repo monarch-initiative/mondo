@@ -5,6 +5,7 @@
 # Required
 version: 2
 
+# See documentation here: https://blog.readthedocs.com/use-build-os-config/
 build:
   os: "ubuntu-22.04"
   tools:
@@ -19,6 +20,5 @@ formats: all
 
 # Optionally set the version of Python and requirements required to build your docs
 python:
-  version: 3.9
   install:
     - requirements: docs/requirements.txt
