@@ -478,19 +478,20 @@ GH_ISSUE=none
 OBS_REASON=outOfScope
 
 .PRECIOUS: config/obsolete_me.txt
+.PRECIOUS: config/filtered_obsolete_me.txt
 
 mass_obsolete:
 	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/$(GH_ISSUE) --obsoletionReason MONDO:$(OBS_REASON)  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo
 
-tmp/mass_obsolete.sparql: ../sparql/reports/mondo-obsolete-simple.sparql config/obsolete_me.txt
+tmp/mass_obsolete.sparql: ../sparql/reports/mondo-obsolete-simple.sparql config/filtered_obsolete_me.txt
 	@echo "\n** Run mondo-obsolete-simple.sparql **"
 	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
-tmp/mondo-rename-effected-classes.ru: ../sparql/reports/mondo-rename-effected-classes.ru config/obsolete_me.txt
+tmp/mondo-rename-effected-classes.ru: ../sparql/reports/mondo-rename-effected-classes.ru config/filtered_obsolete_me.txt
 	@echo "\n** Run mondo-rename-effected-classes.ru **"
 	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
-tmp/mass_obsolete_warning.sparql: ../sparql/reports/mondo-obsolete-warning.sparql config/obsolete_me.txt
+tmp/mass_obsolete_warning.sparql: ../sparql/reports/mondo-obsolete-warning.sparql config/filtered_obsolete_me.txt
 	@echo "\n** Run mondo-obsolete-warning.sparql **"
 	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
