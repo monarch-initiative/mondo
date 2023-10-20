@@ -32,7 +32,7 @@ June 30 | 9 AM PT/12 PM ET | Eric Sid and Qian Zhu ([NCATS](https://rarediseases
 July 28 | 9 AM PT/12 PM ET | Megan Kane ([MedGen](https://www.ncbi.nlm.nih.gov/medgen/)) | MedGen curation workflows | [Here](https://drive.google.com/file/d/1xla8WjcOuhocYc-DB7U17pMn7TvhR5Vk/view?usp=sharing)
 Aug 25 | 9 AM PT/12 PM ET | Courtney Thaxton ([ClinGen](https://clinicalgenome.org/)) | ClinGen Variant Curation | [Here](https://drive.google.com/file/d/1vNqUOQY9wtgGegNpRRP0nEVuZYcKrDJa/view?usp=sharing)
 Sept 22 | 9 AM PT/12 PM ET | Daniel Himmelstein ([Related Sciences](https://www.related.vc/)), Eric Czech ([Related Sciences](https://www.related.vc/)), and Daniel Korn ([Every Cure](https://everycure.org/)) | Classifying EFO/MONDO diseases as areas, roots, or subtypes;  [Slides are here](https://slides.com/dhimmel/efo-disease-precision#/cover) | [Here](https://drive.google.com/file/d/1AdRRiNdowZBVs_hJFXJfDTF7k63SoIi7/view?usp=sharing)|
-Oct 20 | 9 AM PT/12 PM ET | Emily Hartley, Ian Braun ([Critical Path Institute]([https://c-path.org/)) | RDCA-DAP: Ontology Applications in Rare Diseases | 
+Oct 20 | 9 AM PT/12 PM ET | Emily Hartley and Ian Braun ([Critical Path Institute]([https://c-path.org/)) | RDCA-DAP: Ontology Applications in Rare Diseases | 
 Nov 17 | 9 AM PT/12 PM ET | Sabrina Toro and Trish Whetzel  ([Monarch Initiative](https://monarchinitiative.org/)) | Overview of Mondo reclassification efforts
 Dec 15 | 9 AM PT/12 PM ET | Tim Putman ([Monarch Initiative](https://monarchinitiative.org/)) | Use of Mondo in Monarch
 
