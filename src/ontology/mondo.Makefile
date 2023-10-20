@@ -495,7 +495,7 @@ tmp/mass_obsolete_warning.sparql: ../sparql/reports/mondo-obsolete-warning.sparq
 	@echo "\n** Run mondo-obsolete-warning.sparql **"
 	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
-tmp/mass_obsolete.ru: ../sparql/update/mondo-obsolete-simple.ru config/obsolete_me.txt
+tmp/mass_obsolete.ru: ../sparql/update/mondo-obsolete-simple.ru tmp/identify_existing_obsoletes.txt config/obsolete_me.txt
 	@echo "\n** Run mondo-obsolete-simple.ru **"
 	# Remove ^M from tmp/identify_existing_obsoletes.txt
 	sed 's/\r//g' tmp/identify_existing_obsoletes.txt > tmp/filtered_identify_existing_obsoletes.txt
