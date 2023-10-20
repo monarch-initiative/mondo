@@ -520,7 +520,6 @@ tmp/identify_existing_obsoletes.ru: ../sparql/reports/check_obsoletes_from_list.
 	@echo "\n** Identify existing obsoletes in config/obsolete_me.txt **"
 	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
-.PHONY: identify_existing_obsoletes
 identify_existing_obsoletes: tmp/identify_existing_obsoletes.ru
 	@echo "\n** Write existing obsoletes to tmp/identify_existing_obsoletes.txt **"
 	$(ROBOT) query --format txt -i $(SRC) --queries $< --output-dir tmp/
