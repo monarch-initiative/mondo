@@ -478,21 +478,33 @@ GH_ISSUE=none
 OBS_REASON=outOfScope
 
 .PRECIOUS: config/obsolete_me.txt
+.PRECIOUS: config/filtered_obsolete_me.txt
 
 mass_obsolete:
 	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/$(GH_ISSUE) --obsoletionReason MONDO:$(OBS_REASON)  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo
 
-tmp/mass_obsolete.sparql: ../sparql/reports/mondo-obsolete-simple.sparql config/obsolete_me.txt
-	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+tmp/mass_obsolete.sparql: ../sparql/reports/mondo-obsolete-simple.sparql config/filtered_obsolete_me.txt
+	@echo "\n** Run mondo-obsolete-simple.sparql **"
+	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
-tmp/mondo-rename-effected-classes.ru: ../sparql/reports/mondo-rename-effected-classes.ru config/obsolete_me.txt
-	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+tmp/mondo-rename-effected-classes.ru: ../sparql/reports/mondo-rename-effected-classes.ru config/filtered_obsolete_me.txt
+	@echo "\n** Run mondo-rename-effected-classes.ru **"
+	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
-tmp/mass_obsolete_warning.sparql: ../sparql/reports/mondo-obsolete-warning.sparql config/obsolete_me.txt
-	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+tmp/mass_obsolete_warning.sparql: ../sparql/reports/mondo-obsolete-warning.sparql config/filtered_obsolete_me.txt
+	@echo "\n** Run mondo-obsolete-warning.sparql **"
+	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
-tmp/mass_obsolete.ru: ../sparql/update/mondo-obsolete-simple.ru config/obsolete_me.txt
-	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+tmp/mass_obsolete.ru: ../sparql/update/mondo-obsolete-simple.ru tmp/identify_existing_obsoletes.txt config/obsolete_me.txt
+	@echo "\n** Run mondo-obsolete-simple.ru **"
+	# Remove ^M from tmp/identify_existing_obsoletes.txt
+	sed 's/\r//g' tmp/identify_existing_obsoletes.txt > tmp/filtered_identify_existing_obsoletes.txt
+
+	# Filter out existing obsoletes
+	grep -v -w -i -f tmp/filtered_identify_existing_obsoletes.txt config/obsolete_me.txt > config/filtered_obsolete_me.txt
+
+	# Create input for query
+	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
 tmp/mass_obsolete_me.txt: tmp/mass_obsolete.sparql
 	$(ROBOT) query -i $(SRC) --use-graphs true -f tsv --query $< $@
@@ -504,8 +516,16 @@ tmp/mass_obsolete_me.txt: tmp/mass_obsolete.sparql
 mass_obsolete_warning: tmp/mass_obsolete_warning.sparql
 	$(ROBOT) verify -i $(SRC) --queries $< --output-dir reports/
 
-mass_obsolete2: tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
-	echo "Make sure you have updated config/obsolete_me.txt before running this script.."
+tmp/identify_existing_obsoletes.ru: ../sparql/reports/check_obsoletes_from_list.ru config/obsolete_me.txt
+	@echo "\n** Identify existing obsoletes in config/obsolete_me.txt **"
+	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+
+tmp/identify_existing_obsoletes.txt: tmp/identify_existing_obsoletes.ru
+	@echo "\n** Write existing obsoletes to tmp/identify_existing_obsoletes.txt **"
+	$(ROBOT) query --format txt -i $(SRC) --query $< $@
+
+mass_obsolete2: tmp/identify_existing_obsoletes.ru tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
+	@echo "Make sure you have updated config/obsolete_me.txt before running this script.."
 	$(MAKE) tmp/mondo-obsolete-labels.obo
 	$(MAKE) mass_obsolete_warning
 	$(ROBOT) query -i $(SRC) --use-graphs true --update tmp/mass_obsolete.ru \
@@ -515,6 +535,7 @@ mass_obsolete2: tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
 	mv NORM $(SRC)
 
 tmp/mondo-obsolete-labels.obo: tmp/mondo-rename-effected-classes.ru
+	@echo "\n** Re-name obsolete class labels **"
 	$(ROBOT) merge -i $(SRC) --collapse-import-closure false query --update tmp/mondo-rename-effected-classes.ru  \
 		convert -f obo --check false -o $@
 
