@@ -528,6 +528,7 @@ mass_obsolete2: tmp/identify_existing_obsoletes.ru tmp/mass_obsolete.ru tmp/mass
 	@echo "Make sure you have updated config/obsolete_me.txt before running this script.."
 	$(MAKE) tmp/mondo-obsolete-labels.obo
 	$(MAKE) mass_obsolete_warning
+	@echo "** Check above for violations\n"
 	$(ROBOT) query -i $(SRC) --use-graphs true --update tmp/mass_obsolete.ru \
 		remove --preserve-structure false -T tmp/mass_obsolete_me.txt --axioms logical convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC)

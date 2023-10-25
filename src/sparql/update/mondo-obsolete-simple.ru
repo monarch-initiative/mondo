@@ -21,7 +21,7 @@ DELETE {
 }
 
 INSERT {
-  ?xref_anno oboInOwl:source ?new_source . #this adds MONDO:obsoleteEquivalent (where the annotation was previously MONDO:equivalentTo)
+  ?xref_anno oboInOwl:source ?new_source . #adds MONDO:obsoleteEquivalent (where previously MONDO:equivalentTo) and adds MONDO:obsoleteEquivalentObsolete (where previously MONDO:equivalentObsolete)
   ?entity rdfs:label ?new_label . #this adds the new label obsolete label 
   ?entity owl:deprecated true .
   ?entity <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/OMO_0001000> .
@@ -87,6 +87,6 @@ WHERE {
 
    	FILTER NOT EXISTS { ?entity owl:deprecated true }
   	
-  	BIND(REPLACE(str(?source), "MONDO:equivalentTo", "MONDO:obsoleteEquivalent") as ?new_source)
-  	BIND(CONCAT("obsolete ",str(?label)) as ?new_label)
+  	BIND (REPLACE(REPLACE(?source, "MONDO:equivalentTo", "MONDO:obsoleteEquivalent"), "MONDO:equivalentObsolete", "MONDO:obsoleteEquivalentObsolete") AS ?new_source)
+    BIND(CONCAT("obsolete ",str(?label)) as ?new_label)
 }
