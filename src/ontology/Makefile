@@ -341,7 +341,7 @@ tmp/rare-seed-classes.txt: tmp/rare-subset-pre.owl
 # This gets us all the rare disease classes:
 tmp/rare-seed-parents.txt: tmp/rare-subset-pre.owl
 	$(ROBOT) merge -i $< query --query ../sparql/signature/rare-subset-parents.sparql $@
-.PRECIOUS: tmp/rare-seed-classes.txt
+.PRECIOUS: tmp/rare-seed-parents.txt
 
 # This gets us all the entities linked to the rare disease classes
 # Make sure you add the relationships you want to add to ../sparql/signature/rare-subset-related-entity.sparql
