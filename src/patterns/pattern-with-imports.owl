@@ -14,7 +14,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/mondo-pattern.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2023-09-21/mondo-pattern.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2023-10-21/mondo-pattern.owl"/>
     </owl:Ontology>
     
 
@@ -1605,8 +1605,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000115>A relationship that holds between two entities in which the processes executed by the two entities are causally connected.</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Considering relabeling as &apos;pairwise interacts with&apos;</obo:IAO_0000116>
         <obo:IAO_0000116>This relation and all sub-relations can be applied to either (1) pairs of entities that are interacting at any moment of time (2) populations or species of entity whose members have the disposition to interact (3) classes whose members have the disposition to interact.</obo:IAO_0000116>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Considering relabeling as &apos;pairwise interacts with&apos;</obo:IAO_0000116>
         <obo:IAO_0000117 rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
         <obo:IAO_0000232>Note that this relationship type, and sub-relationship types may be redundant with process terms from other ontologies. For example, the symbiotic relationship hierarchy parallels GO. The relations are provided as a convenient shortcut. Consider using the more expressive processual form to capture your data. In the future, these relations will be linked to their cognate processes through rules.</obo:IAO_0000232>
         <oboInOwl:hasExactSynonym>in pairwise interaction with</oboInOwl:hasExactSynonym>
@@ -3365,28 +3365,6 @@ Environmental exposures include those imposed by natural environments, experimen
     
 
 
-    <!-- http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MONDO_0000001"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004024"/>
-                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease&apos; that disrupts &apos;owl_thing&apos;</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X disease disrupts X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;owl_thing&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;owl_thing&apos; &apos;disease&apos;</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml">
@@ -3401,8 +3379,8 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OMIM_phenotypic_series</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos;</rdfs:label>
+        <terms:title>OMIM_phenotypic_series</terms:title>
+        <rdfs:label>&apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -3421,10 +3399,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An instance of &apos;disease&apos; that is acquired during the lifetime of the individual.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acquired</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acquired &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acquired &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>An instance of &apos;disease&apos; that is acquired during the lifetime of the individual.</obo:IAO_0000115>
+        <terms:title>acquired</terms:title>
+        <oboInOwl:hasExactSynonym>acquired &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>acquired &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -3443,10 +3421,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Acute form of &apos;disease&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acute</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos;, acute</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acute &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>Acute form of &apos;disease&apos;.</obo:IAO_0000115>
+        <terms:title>acute</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease&apos;, acute</oboInOwl:hasExactSynonym>
+        <rdfs:label>acute &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -3465,11 +3443,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A carcinoma that arises from glandular epithelial cells of the owl_thing</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adenocarcinoma disease has location X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing adenocarcinoma</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adenocarcinoma of owl_thing</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing adenocarcinoma</rdfs:label>
+        <obo:IAO_0000115>A carcinoma that arises from glandular epithelial cells of the owl_thing</obo:IAO_0000115>
+        <terms:title>adenocarcinoma disease has location X</terms:title>
+        <oboInOwl:hasExactSynonym>owl_thing adenocarcinoma</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>adenocarcinoma of owl_thing</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>owl_thing adenocarcinoma</rdfs:label>
     </owl:Class>
     
 
@@ -3488,11 +3466,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A adenoma that involves the owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adenoma disease has location X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing adenoma</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adenoma of owl_thing</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing adenoma</rdfs:label>
+        <obo:IAO_0000115>A adenoma that involves the owl_thing.</obo:IAO_0000115>
+        <terms:title>adenoma disease has location X</terms:title>
+        <oboInOwl:hasExactSynonym>owl_thing adenoma</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>adenoma of owl_thing</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>owl_thing adenoma</rdfs:label>
     </owl:Class>
     
 
@@ -3511,10 +3489,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any carcinoma that that involves the &apos;multicellular anatomical structure&apos; and is characterized by the presence of glandular and squamous malignant epithelial components.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adenosquamous carcinoma disease has location X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adenosquamous &apos;multicellular anatomical structure&apos; carcinoma</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;multicellular anatomical structure&apos; adenosquamous carcinoma</rdfs:label>
+        <obo:IAO_0000115>Any carcinoma that that involves the &apos;multicellular anatomical structure&apos; and is characterized by the presence of glandular and squamous malignant epithelial components.</obo:IAO_0000115>
+        <terms:title>adenosquamous carcinoma disease has location X</terms:title>
+        <oboInOwl:hasExactSynonym>adenosquamous &apos;multicellular anatomical structure&apos; carcinoma</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;multicellular anatomical structure&apos; adenosquamous carcinoma</rdfs:label>
     </owl:Class>
     
 
@@ -3533,10 +3511,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; that occurs in an adult.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adult</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; of adults</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adult &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>A &apos;disease&apos; that occurs in an adult.</obo:IAO_0000115>
+        <terms:title>adult</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease&apos; of adults</oboInOwl:hasExactSynonym>
+        <rdfs:label>adult &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -3555,10 +3533,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; with a basis in a pathological type I hypersensitivity reaction.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">allergic_form_of_disease</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">allergic form of &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">allergic &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>A &apos;disease&apos; with a basis in a pathological type I hypersensitivity reaction.</obo:IAO_0000115>
+        <terms:title>allergic_form_of_disease</terms:title>
+        <oboInOwl:hasExactSynonym>allergic form of &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>allergic &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -3577,10 +3555,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A allergic disease involving a owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">allergy</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">allergy of owl_thing</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing allergic disease</rdfs:label>
+        <obo:IAO_0000115>A allergic disease involving a owl_thing.</obo:IAO_0000115>
+        <terms:title>allergy</terms:title>
+        <oboInOwl:hasExactSynonym>allergy of owl_thing</oboInOwl:hasExactSynonym>
+        <rdfs:label>owl_thing allergic disease</rdfs:label>
     </owl:Class>
     
 
@@ -3599,9 +3577,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An autoimmune form of &apos;disease&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">autoimmune</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">autoimmune &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>An autoimmune form of &apos;disease&apos;.</obo:IAO_0000115>
+        <terms:title>autoimmune</terms:title>
+        <rdfs:label>autoimmune &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -3620,9 +3598,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An autoimmune inflammatory disease involving a pathogenic inflammatory response in the &apos;anatomical structure&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">autoimmune_inflammation</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">autoimmune &apos;anatomical structure&apos; inflammation</rdfs:label>
+        <obo:IAO_0000115>An autoimmune inflammatory disease involving a pathogenic inflammatory response in the &apos;anatomical structure&apos;.</obo:IAO_0000115>
+        <terms:title>autoimmune_inflammation</terms:title>
+        <rdfs:label>autoimmune &apos;anatomical structure&apos; inflammation</rdfs:label>
     </owl:Class>
     
 
@@ -3641,10 +3619,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Autosomal dominant form of &apos;disease&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">autosomal_dominant</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos;, autosomal dominant</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">autosomal dominant &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>Autosomal dominant form of &apos;disease&apos;.</obo:IAO_0000115>
+        <terms:title>autosomal_dominant</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease&apos;, autosomal dominant</oboInOwl:hasExactSynonym>
+        <rdfs:label>autosomal dominant &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -3663,10 +3641,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Autosomal recessive form of &apos;disease&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">autosomal_recessive</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos;, autosomal recessive</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">autosomal recessive &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>Autosomal recessive form of &apos;disease&apos;.</obo:IAO_0000115>
+        <terms:title>autosomal_recessive</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease&apos;, autosomal recessive</oboInOwl:hasExactSynonym>
+        <rdfs:label>autosomal recessive &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -3685,10 +3663,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disease that has its basis in the disruption of &apos;process&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basis_in_disruption_of_process</terms:title>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disorder of &apos;process&apos;</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;process&apos; disease</rdfs:label>
+        <obo:IAO_0000115>A disease that has its basis in the disruption of &apos;process&apos;.</obo:IAO_0000115>
+        <terms:title>basis_in_disruption_of_process</terms:title>
+        <oboInOwl:hasRelatedSynonym>disorder of &apos;process&apos;</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>&apos;process&apos; disease</rdfs:label>
     </owl:Class>
     
 
@@ -3707,10 +3685,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A form of &apos;neoplasm&apos; without malignant characteristics.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">benign</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;neoplasm&apos;, benign</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">benign &apos;neoplasm&apos;</rdfs:label>
+        <obo:IAO_0000115>A form of &apos;neoplasm&apos; without malignant characteristics.</obo:IAO_0000115>
+        <terms:title>benign</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;neoplasm&apos;, benign</oboInOwl:hasExactSynonym>
+        <rdfs:label>benign &apos;neoplasm&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -3729,14 +3707,14 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A benign neoplasm involving a owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">benign_neoplasm</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">benign neoplasm of owl_thing</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">benign owl_thing tumor</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing benign neoplasm</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing benign tumor</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing neoplasm, benign</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">benign owl_thing neoplasm</rdfs:label>
+        <obo:IAO_0000115>A benign neoplasm involving a owl_thing.</obo:IAO_0000115>
+        <terms:title>benign_neoplasm</terms:title>
+        <oboInOwl:hasExactSynonym>benign neoplasm of owl_thing</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>benign owl_thing tumor</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>owl_thing benign neoplasm</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>owl_thing benign tumor</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>owl_thing neoplasm, benign</oboInOwl:hasExactSynonym>
+        <rdfs:label>benign owl_thing neoplasm</rdfs:label>
     </owl:Class>
     
 
@@ -3755,12 +3733,12 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cancer involving a owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cancer</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cancer of owl_thing</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">malignant neoplasm of owl_thing</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">malignant owl_thing neoplasm</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing cancer</rdfs:label>
+        <obo:IAO_0000115>A cancer involving a owl_thing.</obo:IAO_0000115>
+        <terms:title>cancer</terms:title>
+        <oboInOwl:hasExactSynonym>cancer of owl_thing</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>malignant neoplasm of owl_thing</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>malignant owl_thing neoplasm</oboInOwl:hasExactSynonym>
+        <rdfs:label>owl_thing cancer</rdfs:label>
     </owl:Class>
     
 
@@ -3779,10 +3757,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A carcinoma involving a owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carcinoma</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carcinoma of owl_thing</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing carcinoma</rdfs:label>
+        <obo:IAO_0000115>A carcinoma involving a owl_thing.</obo:IAO_0000115>
+        <terms:title>carcinoma</terms:title>
+        <oboInOwl:hasExactSynonym>carcinoma of owl_thing</oboInOwl:hasExactSynonym>
+        <rdfs:label>owl_thing carcinoma</rdfs:label>
     </owl:Class>
     
 
@@ -3801,12 +3779,12 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A carcinoma in situ involving a owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carcinoma_in_situ</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carcinoma in situ of owl_thing</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">non-invasic owl_thing carcinoma</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stage 0 owl_thing carcinoma</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing carcinoma in situ</rdfs:label>
+        <obo:IAO_0000115>A carcinoma in situ involving a owl_thing.</obo:IAO_0000115>
+        <terms:title>carcinoma_in_situ</terms:title>
+        <oboInOwl:hasExactSynonym>carcinoma in situ of owl_thing</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>non-invasic owl_thing carcinoma</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>stage 0 owl_thing carcinoma</oboInOwl:hasExactSynonym>
+        <rdfs:label>owl_thing carcinoma in situ</rdfs:label>
     </owl:Class>
     
 
@@ -3825,11 +3803,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; that occurs during childhood.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">childhood</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; of childhood</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pediatric &apos;disease&apos;</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">childhood &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>A &apos;disease&apos; that occurs during childhood.</obo:IAO_0000115>
+        <terms:title>childhood</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease&apos; of childhood</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>pediatric &apos;disease&apos;</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>childhood &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -3848,10 +3826,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chromosomal disorder consisting of the deletion of &apos;chromosomal region&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chromosomal_region_deletion</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deletion of &apos;chromosomal region&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;chromosomal region&apos; deletion</rdfs:label>
+        <obo:IAO_0000115>A chromosomal disorder consisting of the deletion of &apos;chromosomal region&apos;.</obo:IAO_0000115>
+        <terms:title>chromosomal_region_deletion</terms:title>
+        <oboInOwl:hasExactSynonym>deletion of &apos;chromosomal region&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;chromosomal region&apos; deletion</rdfs:label>
     </owl:Class>
     
 
@@ -3870,9 +3848,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chromosomal disorder consisting of the duplication of &apos;chromosomal region&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chromosomal_region_duplication</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;chromosomal region&apos; duplication syndrome</rdfs:label>
+        <obo:IAO_0000115>A chromosomal disorder consisting of the duplication of &apos;chromosomal region&apos;.</obo:IAO_0000115>
+        <terms:title>chromosomal_region_duplication</terms:title>
+        <rdfs:label>&apos;chromosomal region&apos; duplication syndrome</rdfs:label>
     </owl:Class>
     
 
@@ -3891,9 +3869,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chromosomal disorder in which &apos;chromosome&apos; is affected.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chromosome_type</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;chromosome&apos; disorder</rdfs:label>
+        <obo:IAO_0000115>A chromosomal disorder in which &apos;chromosome&apos; is affected.</obo:IAO_0000115>
+        <terms:title>chromosome_type</terms:title>
+        <rdfs:label>&apos;chromosome&apos; disorder</rdfs:label>
     </owl:Class>
     
 
@@ -3912,10 +3890,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chronic form of &apos;disease&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chronic</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos;, chronic</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chronic &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>Chronic form of &apos;disease&apos;.</obo:IAO_0000115>
+        <terms:title>chronic</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease&apos;, chronic</oboInOwl:hasExactSynonym>
+        <rdfs:label>chronic &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -3934,10 +3912,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An instance of &apos;disease&apos; that is present from birth.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">congenital</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">congenital &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">congenital &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>An instance of &apos;disease&apos; that is present from birth.</obo:IAO_0000115>
+        <terms:title>congenital</terms:title>
+        <oboInOwl:hasExactSynonym>congenital &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>congenital &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -3956,9 +3934,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disease that arises as a consequence of &apos;infectious disease&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">consequence_of_infectious_disease</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;infectious disease&apos; disease</rdfs:label>
+        <obo:IAO_0000115>A disease that arises as a consequence of &apos;infectious disease&apos;.</obo:IAO_0000115>
+        <terms:title>consequence_of_infectious_disease</terms:title>
+        <rdfs:label>&apos;infectious disease&apos; disease</rdfs:label>
     </owl:Class>
     
 
@@ -3977,10 +3955,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A substance dependence on &apos;chemical&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dependence_on_substance</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;chemical&apos; dependence</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dependence on &apos;chemical&apos;</rdfs:label>
+        <obo:IAO_0000115>A substance dependence on &apos;chemical&apos;.</obo:IAO_0000115>
+        <terms:title>dependence_on_substance</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;chemical&apos; dependence</oboInOwl:hasExactSynonym>
+        <rdfs:label>dependence on &apos;chemical&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -3988,9 +3966,9 @@ Environmental exposures include those imposed by natural environments, experimen
     <!-- http://purl.obolibrary.org/obo/mondo/patterns/disease-or-disease-like.yaml -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/disease-or-disease-like.yaml">
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disease that presents as a &apos;disease&apos; or &apos;disease&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease or disease-like</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; or &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>A disease that presents as a &apos;disease&apos; or &apos;disease&apos;.</obo:IAO_0000115>
+        <terms:title>disease or disease-like</terms:title>
+        <rdfs:label>&apos;disease&apos; or &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4009,10 +3987,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any disease in which the causes of the disease is a perturbation of the &apos;anatomical structure&apos; leading to its dysfunction.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease_by_dysfunctional_structure</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease of &apos;anatomical structure&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical structure&apos; disease</rdfs:label>
+        <obo:IAO_0000115>Any disease in which the causes of the disease is a perturbation of the &apos;anatomical structure&apos; leading to its dysfunction.</obo:IAO_0000115>
+        <terms:title>disease_by_dysfunctional_structure</terms:title>
+        <oboInOwl:hasExactSynonym>disease of &apos;anatomical structure&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;anatomical structure&apos; disease</rdfs:label>
     </owl:Class>
     
 
@@ -4031,7 +4009,7 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease_has_phenotype</terms:title>
+        <terms:title>disease_has_phenotype</terms:title>
     </owl:Class>
     
 
@@ -4076,18 +4054,18 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease&apos; in which the cause of the disease is a mutation in the &apos;gene&apos; gene, and has &apos;mode of inheritance&apos;.</obo:IAO_0000115>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease&apos; in which the cause of the disease is a variation in the &apos;gene&apos; gene.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OMIM_disease_series_by_gene</terms:title>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease_series_by_gene</terms:title>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease_series_by_gene_and_inheritance</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; caused by mutation in &apos;gene&apos;</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;gene&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;gene&apos; &apos;disease&apos;, &apos;mode of inheritance&apos;</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;gene&apos; related &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;gene&apos; related &apos;disease&apos;, &apos;mode of inheritance&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; caused by mutation in &apos;gene&apos;, &apos;mode of inheritance&apos;</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; caused by variation in &apos;gene&apos;</rdfs:label>
+        <obo:IAO_0000115>Any &apos;disease&apos; in which the cause of the disease is a mutation in the &apos;gene&apos; gene, and has &apos;mode of inheritance&apos;.</obo:IAO_0000115>
+        <obo:IAO_0000115>Any &apos;disease&apos; in which the cause of the disease is a variation in the &apos;gene&apos; gene.</obo:IAO_0000115>
+        <terms:title>OMIM_disease_series_by_gene</terms:title>
+        <terms:title>disease_series_by_gene</terms:title>
+        <terms:title>disease_series_by_gene_and_inheritance</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease&apos; caused by mutation in &apos;gene&apos;</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>&apos;gene&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>&apos;gene&apos; &apos;disease&apos;, &apos;mode of inheritance&apos;</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>&apos;gene&apos; related &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>&apos;gene&apos; related &apos;disease&apos;, &apos;mode of inheritance&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;disease&apos; caused by mutation in &apos;gene&apos;, &apos;mode of inheritance&apos;</rdfs:label>
+        <rdfs:label>&apos;disease&apos; caused by variation in &apos;gene&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4106,10 +4084,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disease that has its basis in the disruption of owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease or disorder disease caused by disruption of X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disorder of owl_thing</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing disease</rdfs:label>
+        <obo:IAO_0000115>A disease that has its basis in the disruption of owl_thing.</obo:IAO_0000115>
+        <terms:title>disease or disorder disease caused by disruption of X</terms:title>
+        <oboInOwl:hasExactSynonym>disorder of owl_thing</oboInOwl:hasExactSynonym>
+        <rdfs:label>owl_thing disease</rdfs:label>
     </owl:Class>
     
 
@@ -4128,10 +4106,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; that is caused by exposure to &apos;material entity&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">environmental_stimulus</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;material entity&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; from &apos;material entity&apos;</rdfs:label>
+        <obo:IAO_0000115>A &apos;disease&apos; that is caused by exposure to &apos;material entity&apos;.</obo:IAO_0000115>
+        <terms:title>environmental_stimulus</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;material entity&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;disease&apos; from &apos;material entity&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4150,11 +4128,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hemangioma that involves the &apos;anatomical entity&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hemangioma disease has location X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical entity&apos; hemangioma</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angioma of &apos;anatomical entity&apos;</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hemangioma of &apos;anatomical entity&apos;</rdfs:label>
+        <obo:IAO_0000115>A hemangioma that involves the &apos;anatomical entity&apos;.</obo:IAO_0000115>
+        <terms:title>hemangioma disease has location X</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;anatomical entity&apos; hemangioma</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>angioma of &apos;anatomical entity&apos;</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>hemangioma of &apos;anatomical entity&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4173,10 +4151,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An instance of &apos;disease&apos; that is caused by an inherited genomic modification in an individual.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hereditary</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hereditary &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hereditary &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>An instance of &apos;disease&apos; that is caused by an inherited genomic modification in an individual.</obo:IAO_0000115>
+        <terms:title>hereditary</terms:title>
+        <oboInOwl:hasExactSynonym>hereditary &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>hereditary &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4195,9 +4173,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; that has an iatrogenic cause.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">iatrogenic</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">iatrogenic &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>A &apos;disease&apos; that has an iatrogenic cause.</obo:IAO_0000115>
+        <terms:title>iatrogenic</terms:title>
+        <rdfs:label>iatrogenic &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4216,10 +4194,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Idiopathic form of &apos;disease&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">idiopathic</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos;, idiopathic</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">idiopathic &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>Idiopathic form of &apos;disease&apos;.</obo:IAO_0000115>
+        <terms:title>idiopathic</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease&apos;, idiopathic</oboInOwl:hasExactSynonym>
+        <rdfs:label>idiopathic &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4238,11 +4216,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An inherited metabolic disease that is has its basis in the disruption of &apos;process&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inborn_metabolic</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inborn error of &apos;process&apos;</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rare inborn error of &apos;process&apos;</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inborn &apos;process&apos; disorder</rdfs:label>
+        <obo:IAO_0000115>An inherited metabolic disease that is has its basis in the disruption of &apos;process&apos;.</obo:IAO_0000115>
+        <terms:title>inborn_metabolic</terms:title>
+        <oboInOwl:hasExactSynonym>inborn error of &apos;process&apos;</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>rare inborn error of &apos;process&apos;</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>inborn &apos;process&apos; disorder</rdfs:label>
     </owl:Class>
     
 
@@ -4261,11 +4239,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An acquired metabolic disease that is has its basis in the disruption of &apos;owl_thing&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inborn errors of metabolism disease caused by disruption of X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inborn error of &apos;owl_thing&apos;</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rare inborn error of &apos;owl_thing&apos;</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inborn disorder of &apos;owl_thing&apos;</rdfs:label>
+        <obo:IAO_0000115>An acquired metabolic disease that is has its basis in the disruption of &apos;owl_thing&apos;.</obo:IAO_0000115>
+        <terms:title>inborn errors of metabolism disease caused by disruption of X</terms:title>
+        <oboInOwl:hasExactSynonym>inborn error of &apos;owl_thing&apos;</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>rare inborn error of &apos;owl_thing&apos;</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>inborn disorder of &apos;owl_thing&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4284,11 +4262,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; that occurs between 28 days to one year of life..</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">infantile</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; of infancy</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">infantile onset &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">infantile &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>A &apos;disease&apos; that occurs between 28 days to one year of life..</obo:IAO_0000115>
+        <terms:title>infantile</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease&apos; of infancy</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>infantile onset &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>infantile &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4307,11 +4285,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disease caused by infection with &apos;organism&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">infectious_disease_by_agent</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;organism&apos; infection</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">infection due to &apos;organism&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;organism&apos; infectious disease</rdfs:label>
+        <obo:IAO_0000115>A disease caused by infection with &apos;organism&apos;.</obo:IAO_0000115>
+        <terms:title>infectious_disease_by_agent</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;organism&apos; infection</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>infection due to &apos;organism&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;organism&apos; infectious disease</rdfs:label>
     </owl:Class>
     
 
@@ -4334,10 +4312,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An inflammatory disease involving a pathogenic inflammatory response in the &apos;anatomical structure&apos; caused by infection with &apos;organism&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">infectious_inflammation</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical structure&apos; &apos;organism&apos; inflammation</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inflammation of &apos;anatomical structure&apos; due to &apos;organism&apos;</rdfs:label>
+        <obo:IAO_0000115>An inflammatory disease involving a pathogenic inflammatory response in the &apos;anatomical structure&apos; caused by infection with &apos;organism&apos;.</obo:IAO_0000115>
+        <terms:title>infectious_inflammation</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;anatomical structure&apos; &apos;organism&apos; inflammation</oboInOwl:hasExactSynonym>
+        <rdfs:label>inflammation of &apos;anatomical structure&apos; due to &apos;organism&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4356,11 +4334,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An inflammatory disease involving a pathogenic inflammatory response in the &apos;anatomical structure&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inflammatory_disease_by_site</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical structure&apos; inflammation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical structure&apos;itis</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inflammation of &apos;anatomical structure&apos;</rdfs:label>
+        <obo:IAO_0000115>An inflammatory disease involving a pathogenic inflammatory response in the &apos;anatomical structure&apos;.</obo:IAO_0000115>
+        <terms:title>inflammatory_disease_by_site</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;anatomical structure&apos; inflammation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>&apos;anatomical structure&apos;itis</oboInOwl:hasExactSynonym>
+        <rdfs:label>inflammation of &apos;anatomical structure&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4379,11 +4357,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An inherited susceptibility or predisposition to developing &apos;disease or disorder&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inherited_susceptibility</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos;, susceptibility</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos;, susceptibility to</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos; susceptibility</rdfs:label>
+        <obo:IAO_0000115>An inherited susceptibility or predisposition to developing &apos;disease or disorder&apos;.</obo:IAO_0000115>
+        <terms:title>inherited_susceptibility</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease or disorder&apos;, susceptibility</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>&apos;disease or disorder&apos;, susceptibility to</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;disease or disorder&apos; susceptibility</rdfs:label>
     </owl:Class>
     
 
@@ -4402,10 +4380,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; that is not part of a larger syndrome.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isolated</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nonsyndromic &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isolated &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>A &apos;disease&apos; that is not part of a larger syndrome.</obo:IAO_0000115>
+        <terms:title>isolated</terms:title>
+        <oboInOwl:hasExactSynonym>nonsyndromic &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>isolated &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4424,10 +4402,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An instance of &apos;disease&apos; that has a juvenile onset.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">juvenile</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">juvenile &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">juvenile &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>An instance of &apos;disease&apos; that has a juvenile onset.</obo:IAO_0000115>
+        <terms:title>juvenile</terms:title>
+        <oboInOwl:hasExactSynonym>juvenile &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>juvenile &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4446,9 +4424,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A viral infection caused by the reactivation of &apos;virus&apos; from a latent phase.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">latent_virus_reactivation_disease</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disorder due to reactivation of &apos;virus&apos; from latent phase</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000115>A viral infection caused by the reactivation of &apos;virus&apos; from a latent phase.</obo:IAO_0000115>
+        <terms:title>latent_virus_reactivation_disease</terms:title>
+        <oboInOwl:hasExactSynonym>disorder due to reactivation of &apos;virus&apos; from latent phase</oboInOwl:hasExactSynonym>
     </owl:Class>
     
 
@@ -4467,10 +4445,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A benign smooth muscle neoplasm arising from the &apos;anatomical entity&apos;. It is characterized by the presence of spindle cells with cigar-shaped nuclei, interlacing fascicles, and a whorled pattern.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">leiomyoma disease has location X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical entity&apos; leiomyoma</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical entity&apos; leiomyoma</rdfs:label>
+        <obo:IAO_0000115>A benign smooth muscle neoplasm arising from the &apos;anatomical entity&apos;. It is characterized by the presence of spindle cells with cigar-shaped nuclei, interlacing fascicles, and a whorled pattern.</obo:IAO_0000115>
+        <terms:title>leiomyoma disease has location X</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;anatomical entity&apos; leiomyoma</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;anatomical entity&apos; leiomyoma</rdfs:label>
     </owl:Class>
     
 
@@ -4489,10 +4467,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An aggressive malignant smooth muscle neoplasm, arising from the owl_thing. It is characterized by a proliferation of neoplastic spindle cells.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">leiomyosarcoma disease has location X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing leiomyosarcoma</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing leiomyosarcoma</rdfs:label>
+        <obo:IAO_0000115>An aggressive malignant smooth muscle neoplasm, arising from the owl_thing. It is characterized by a proliferation of neoplastic spindle cells.</obo:IAO_0000115>
+        <terms:title>leiomyosarcoma disease has location X</terms:title>
+        <oboInOwl:hasExactSynonym>owl_thing leiomyosarcoma</oboInOwl:hasExactSynonym>
+        <rdfs:label>owl_thing leiomyosarcoma</rdfs:label>
     </owl:Class>
     
 
@@ -4511,10 +4489,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lesioned form of &apos;anatomical entity&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lesioned</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical entity&apos;, lesioned</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical entity&apos; lesion</rdfs:label>
+        <obo:IAO_0000115>Lesioned form of &apos;anatomical entity&apos;.</obo:IAO_0000115>
+        <terms:title>lesioned</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;anatomical entity&apos;, lesioned</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;anatomical entity&apos; lesion</rdfs:label>
     </owl:Class>
     
 
@@ -4533,10 +4511,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A benign adipose tissue neoplasm of the owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lipoma disease has location X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing lipoma</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing lipoma</rdfs:label>
+        <obo:IAO_0000115>A benign adipose tissue neoplasm of the owl_thing.</obo:IAO_0000115>
+        <terms:title>lipoma disease has location X</terms:title>
+        <oboInOwl:hasExactSynonym>owl_thing lipoma</oboInOwl:hasExactSynonym>
+        <rdfs:label>owl_thing lipoma</rdfs:label>
     </owl:Class>
     
 
@@ -4560,10 +4538,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:unionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; that involves the &apos;anatomical entity&apos; or &apos;cell&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">location</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical entity&apos; or &apos;cell&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; of &apos;anatomical entity&apos; or &apos;cell&apos;</rdfs:label>
+        <obo:IAO_0000115>A &apos;disease&apos; that involves the &apos;anatomical entity&apos; or &apos;cell&apos;.</obo:IAO_0000115>
+        <terms:title>location</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;anatomical entity&apos; or &apos;cell&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;disease&apos; of &apos;anatomical entity&apos; or &apos;cell&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4582,11 +4560,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disease involving the owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">location_top</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease of owl_thing</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disorder of owl_thing</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing disease</rdfs:label>
+        <obo:IAO_0000115>A disease involving the owl_thing.</obo:IAO_0000115>
+        <terms:title>location_top</terms:title>
+        <oboInOwl:hasExactSynonym>disease of owl_thing</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>disorder of owl_thing</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>owl_thing disease</rdfs:label>
     </owl:Class>
     
 
@@ -4605,10 +4583,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lymphoma that involves the owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymphoma disease has location X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing lymphoma</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing lymphoma</rdfs:label>
+        <obo:IAO_0000115>A lymphoma that involves the owl_thing.</obo:IAO_0000115>
+        <terms:title>lymphoma disease has location X</terms:title>
+        <oboInOwl:hasExactSynonym>owl_thing lymphoma</oboInOwl:hasExactSynonym>
+        <rdfs:label>owl_thing lymphoma</rdfs:label>
     </owl:Class>
     
 
@@ -4627,10 +4605,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A malignant form of owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">malignant</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing, malignant</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">malignant owl_thing</rdfs:label>
+        <obo:IAO_0000115>A malignant form of owl_thing.</obo:IAO_0000115>
+        <terms:title>malignant</terms:title>
+        <oboInOwl:hasExactSynonym>owl_thing, malignant</oboInOwl:hasExactSynonym>
+        <rdfs:label>malignant owl_thing</rdfs:label>
     </owl:Class>
     
 
@@ -4649,10 +4627,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A melanoma that involves the owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">melanoma disease has location X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing melanoma</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing melanoma</rdfs:label>
+        <obo:IAO_0000115>A melanoma that involves the owl_thing.</obo:IAO_0000115>
+        <terms:title>melanoma disease has location X</terms:title>
+        <oboInOwl:hasExactSynonym>owl_thing melanoma</oboInOwl:hasExactSynonym>
+        <rdfs:label>owl_thing melanoma</rdfs:label>
     </owl:Class>
     
 
@@ -4671,10 +4649,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A meningioma that affects the &apos;anatomical entity&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meningioma disease has location X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical entity&apos; meningioma</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical entity&apos; meningioma</rdfs:label>
+        <obo:IAO_0000115>A meningioma that affects the &apos;anatomical entity&apos;.</obo:IAO_0000115>
+        <terms:title>meningioma disease has location X</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;anatomical entity&apos; meningioma</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;anatomical entity&apos; meningioma</rdfs:label>
     </owl:Class>
     
 
@@ -4693,9 +4671,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An instance of &apos;disease&apos; in which the disease presentation is mild in severity.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mild</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mild &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>An instance of &apos;disease&apos; in which the disease presentation is mild in severity.</obo:IAO_0000115>
+        <terms:title>mild</terms:title>
+        <rdfs:label>mild &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4714,9 +4692,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; that has a defect in a mitochondrial gene.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mitochondriaal_subtype</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos;, mitochondrial type</rdfs:label>
+        <obo:IAO_0000115>A &apos;disease&apos; that has a defect in a mitochondrial gene.</obo:IAO_0000115>
+        <terms:title>mitochondriaal_subtype</terms:title>
+        <rdfs:label>&apos;disease&apos;, mitochondrial type</rdfs:label>
     </owl:Class>
     
 
@@ -4735,10 +4713,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chromosomal disorder consisting of the absence of one &apos;chromosome&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monosomy</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;chromosome&apos; deletion</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monosomy &apos;chromosome&apos;</rdfs:label>
+        <obo:IAO_0000115>A chromosomal disorder consisting of the absence of one &apos;chromosome&apos;.</obo:IAO_0000115>
+        <terms:title>monosomy</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;chromosome&apos; deletion</oboInOwl:hasExactSynonym>
+        <rdfs:label>monosomy &apos;chromosome&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4757,10 +4735,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mucoepidermoid carcinoma that involves the &apos;anatomical entity&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mucoepidermoid carcinoma disease has location X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical entity&apos; mucoepidermoid carcinoma</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical entity&apos; mucoepidermoid carcinoma</rdfs:label>
+        <obo:IAO_0000115>A mucoepidermoid carcinoma that involves the &apos;anatomical entity&apos;.</obo:IAO_0000115>
+        <terms:title>mucoepidermoid carcinoma disease has location X</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;anatomical entity&apos; mucoepidermoid carcinoma</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;anatomical entity&apos; mucoepidermoid carcinoma</rdfs:label>
     </owl:Class>
     
 
@@ -4779,12 +4757,12 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A neoplasm involving a owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neoplasm</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neoplasm of owl_thing</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing tumor</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tumor of owl_thing</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing neoplasm</rdfs:label>
+        <obo:IAO_0000115>A neoplasm involving a owl_thing.</obo:IAO_0000115>
+        <terms:title>neoplasm</terms:title>
+        <oboInOwl:hasExactSynonym>neoplasm of owl_thing</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>owl_thing tumor</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tumor of owl_thing</oboInOwl:hasExactSynonym>
+        <rdfs:label>owl_thing neoplasm</rdfs:label>
     </owl:Class>
     
 
@@ -4803,11 +4781,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A neoplasm involving a owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neoplasm</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">malignant owl_thing neoplasm</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neoplasm of owl_thing</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing neoplasm</rdfs:label>
+        <obo:IAO_0000115>A neoplasm involving a owl_thing.</obo:IAO_0000115>
+        <terms:title>neoplasm</terms:title>
+        <oboInOwl:hasExactSynonym>malignant owl_thing neoplasm</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>neoplasm of owl_thing</oboInOwl:hasExactSynonym>
+        <rdfs:label>owl_thing neoplasm</rdfs:label>
     </owl:Class>
     
 
@@ -4826,13 +4804,13 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A neuroendocrine neoplasm involving a owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neoendocrine_neoplasm</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuroendocrine neoplasm of owl_thing</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing NET</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing neuroendocrine tumor, well differentiated, low or intermediate grade</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing neuroendocrine tumor</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing neuroendocrine neoplasm</rdfs:label>
+        <obo:IAO_0000115>A neuroendocrine neoplasm involving a owl_thing.</obo:IAO_0000115>
+        <terms:title>neoendocrine_neoplasm</terms:title>
+        <oboInOwl:hasExactSynonym>neuroendocrine neoplasm of owl_thing</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>owl_thing NET</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>owl_thing neuroendocrine tumor, well differentiated, low or intermediate grade</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>owl_thing neuroendocrine tumor</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>owl_thing neuroendocrine neoplasm</rdfs:label>
     </owl:Class>
     
 
@@ -4855,13 +4833,13 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A well differentiated, low grade tumor with neuroendocrine differentiation that arises from the owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neoendocrine_neoplasm_grade1</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">grade 1 neuroendocrine neoplasm of owl_thing</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing NET G1</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing neuroendocrine tumor, well differentiated, low grade</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing carcinoid tumor</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing neuroendocrine neoplasm G1</rdfs:label>
+        <obo:IAO_0000115>A well differentiated, low grade tumor with neuroendocrine differentiation that arises from the owl_thing.</obo:IAO_0000115>
+        <terms:title>neoendocrine_neoplasm_grade1</terms:title>
+        <oboInOwl:hasExactSynonym>grade 1 neuroendocrine neoplasm of owl_thing</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>owl_thing NET G1</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>owl_thing neuroendocrine tumor, well differentiated, low grade</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>owl_thing carcinoid tumor</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>owl_thing neuroendocrine neoplasm G1</rdfs:label>
     </owl:Class>
     
 
@@ -4880,9 +4858,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;human disease or disorder&apos; that occurs in non-human animals</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nonhuman_disease</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;human disease or disorder&apos;, non-human animal</rdfs:label>
+        <obo:IAO_0000115>&apos;human disease or disorder&apos; that occurs in non-human animals</obo:IAO_0000115>
+        <terms:title>nonhuman_disease</terms:title>
+        <rdfs:label>&apos;human disease or disorder&apos;, non-human animal</rdfs:label>
     </owl:Class>
     
 
@@ -4905,9 +4883,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;human disease or disorder&apos; that occurs in &apos;taxon&apos;</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nonhuman_disease_taxon</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;human disease or disorder&apos;, &apos;taxon&apos;</rdfs:label>
+        <obo:IAO_0000115>&apos;human disease or disorder&apos; that occurs in &apos;taxon&apos;</obo:IAO_0000115>
+        <terms:title>nonhuman_disease_taxon</terms:title>
+        <rdfs:label>&apos;human disease or disorder&apos;, &apos;taxon&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4926,9 +4904,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; that has a defect in a nuclear gene.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nuclear_subtype</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos;, nuclear type</rdfs:label>
+        <obo:IAO_0000115>A &apos;disease&apos; that has a defect in a nuclear gene.</obo:IAO_0000115>
+        <terms:title>nuclear_subtype</terms:title>
+        <rdfs:label>&apos;disease&apos;, nuclear type</rdfs:label>
     </owl:Class>
     
 
@@ -4947,10 +4925,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chromosomal disorder consisting of the partial deletion of &apos;chromosome&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">partial_chromosomal_deletion</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deletion of part of &apos;chromosome&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">partial deletion of &apos;chromosome&apos;</rdfs:label>
+        <obo:IAO_0000115>A chromosomal disorder consisting of the partial deletion of &apos;chromosome&apos;.</obo:IAO_0000115>
+        <terms:title>partial_chromosomal_deletion</terms:title>
+        <oboInOwl:hasExactSynonym>deletion of part of &apos;chromosome&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>partial deletion of &apos;chromosome&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4969,9 +4947,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chromosomal disorder consisting of the presence of 3 extra chromosomes &apos;chromosome&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pentasomy</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pentasomy &apos;chromosome&apos;</rdfs:label>
+        <obo:IAO_0000115>A chromosomal disorder consisting of the presence of 3 extra chromosomes &apos;chromosome&apos;.</obo:IAO_0000115>
+        <terms:title>pentasomy</terms:title>
+        <rdfs:label>pentasomy &apos;chromosome&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -4990,10 +4968,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A poisoning that is caused by exposure to &apos;material entity&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">poisoning</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;material entity&apos; poisoning</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">poisoning from &apos;material entity&apos;</rdfs:label>
+        <obo:IAO_0000115>A poisoning that is caused by exposure to &apos;material entity&apos;.</obo:IAO_0000115>
+        <terms:title>poisoning</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;material entity&apos; poisoning</oboInOwl:hasExactSynonym>
+        <rdfs:label>poisoning from &apos;material entity&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5012,12 +4990,12 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease&apos; in which the cause of the disease is a variation in the &apos;gene&apos; gene.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polygenic_disorder</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; caused by mutation in &apos;gene&apos;</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;gene&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;gene&apos; related &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; caused by variation in &apos;gene&apos;</rdfs:label>
+        <obo:IAO_0000115>Any &apos;disease&apos; in which the cause of the disease is a variation in the &apos;gene&apos; gene.</obo:IAO_0000115>
+        <terms:title>polygenic_disorder</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease&apos; caused by mutation in &apos;gene&apos;</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>&apos;gene&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>&apos;gene&apos; related &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;disease&apos; caused by variation in &apos;gene&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5036,10 +5014,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disorder caused by the infection in &apos;infectious disease&apos; and manifesting after the original infection.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">post_infectious_disease</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disorder due to consequences of &apos;infectious disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">post-&apos;infectious disease&apos;</rdfs:label>
+        <obo:IAO_0000115>A disorder caused by the infection in &apos;infectious disease&apos; and manifesting after the original infection.</obo:IAO_0000115>
+        <terms:title>post_infectious_disease</terms:title>
+        <oboInOwl:hasExactSynonym>disorder due to consequences of &apos;infectious disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>post-&apos;infectious disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5058,11 +5036,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A post-infectious form of &apos;organism&apos; that arises as a result on an initial &apos;infectious disease&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">postinfectious_disease</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">post-&apos;infectious disease&apos; &apos;organism&apos;</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;organism&apos; secondary to &apos;infectious disease&apos;</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">postinfectious &apos;organism&apos; arising from &apos;infectious disease&apos;</rdfs:label>
+        <obo:IAO_0000115>A post-infectious form of &apos;organism&apos; that arises as a result on an initial &apos;infectious disease&apos;.</obo:IAO_0000115>
+        <terms:title>postinfectious_disease</terms:title>
+        <oboInOwl:hasExactSynonym>post-&apos;infectious disease&apos; &apos;organism&apos;</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>&apos;organism&apos; secondary to &apos;infectious disease&apos;</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>postinfectious &apos;organism&apos; arising from &apos;infectious disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5078,10 +5056,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any instance of &apos;disease&apos; that is associated with pregnancy.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pregnancy_form_of_disorder</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos;, pregnancy induced</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pregnancy associated &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>Any instance of &apos;disease&apos; that is associated with pregnancy.</obo:IAO_0000115>
+        <terms:title>pregnancy_form_of_disorder</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease&apos;, pregnancy induced</oboInOwl:hasExactSynonym>
+        <rdfs:label>pregnancy associated &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5100,9 +5078,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease&apos; that arises from infection in an immunologically normal host.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary infectious</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>A &apos;disease&apos; that arises from infection in an immunologically normal host.</obo:IAO_0000115>
+        <terms:title>primary infectious</terms:title>
+        <rdfs:label>primary &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5121,10 +5099,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any of the forms of &apos;disease&apos; that have a rare incidence.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rare</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rare &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rare &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>Any of the forms of &apos;disease&apos; that have a rare incidence.</obo:IAO_0000115>
+        <terms:title>rare</terms:title>
+        <oboInOwl:hasExactSynonym>rare &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>rare &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5147,11 +5125,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A form of &apos;disease&apos; that is both rare and genetic.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rare_genetic</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rare constitutional &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rare inborn &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rare genetic &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>A form of &apos;disease&apos; that is both rare and genetic.</obo:IAO_0000115>
+        <terms:title>rare_genetic</terms:title>
+        <oboInOwl:hasExactSynonym>rare constitutional &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>rare inborn &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>rare genetic &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5170,9 +5148,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease&apos; that is realized in response to a &apos;exposure event&apos;</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease realized in response to environmental exposure</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; realized in response to &apos;exposure event&apos;</rdfs:label>
+        <obo:IAO_0000115>Any &apos;disease&apos; that is realized in response to a &apos;exposure event&apos;</obo:IAO_0000115>
+        <terms:title>disease realized in response to environmental exposure</terms:title>
+        <rdfs:label>&apos;disease&apos; realized in response to &apos;exposure event&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5191,10 +5169,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disease that is difficult to treat or cure.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">refractory</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease, refractory</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">refractory disease</rdfs:label>
+        <obo:IAO_0000115>A disease that is difficult to treat or cure.</obo:IAO_0000115>
+        <terms:title>refractory</terms:title>
+        <oboInOwl:hasExactSynonym>disease, refractory</oboInOwl:hasExactSynonym>
+        <rdfs:label>refractory disease</rdfs:label>
     </owl:Class>
     
 
@@ -5213,11 +5191,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A malignant mesenchymal tumor with skeletal muscle differentiation affecting the owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rhabdomyosarcoma disease has location X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing rhabdomyosarcoma</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rhabdomyosarcoma of the owl_thing</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing rhabdomyosarcoma</rdfs:label>
+        <obo:IAO_0000115>A malignant mesenchymal tumor with skeletal muscle differentiation affecting the owl_thing.</obo:IAO_0000115>
+        <terms:title>rhabdomyosarcoma disease has location X</terms:title>
+        <oboInOwl:hasExactSynonym>owl_thing rhabdomyosarcoma</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>rhabdomyosarcoma of the owl_thing</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>owl_thing rhabdomyosarcoma</rdfs:label>
     </owl:Class>
     
 
@@ -5236,9 +5214,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chromosomal disorder consisting of the presence of ring chromosome &apos;chromosome&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ring_chromosome_anomaly</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ring chromosome &apos;chromosome&apos; disorder</rdfs:label>
+        <obo:IAO_0000115>A chromosomal disorder consisting of the presence of ring chromosome &apos;chromosome&apos;.</obo:IAO_0000115>
+        <terms:title>ring_chromosome_anomaly</terms:title>
+        <rdfs:label>ring chromosome &apos;chromosome&apos; disorder</rdfs:label>
     </owl:Class>
     
 
@@ -5257,10 +5235,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sarcoma involving a owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sarcoma</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sarcoma of owl_thing</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing sarcoma</rdfs:label>
+        <obo:IAO_0000115>A sarcoma involving a owl_thing.</obo:IAO_0000115>
+        <terms:title>sarcoma</terms:title>
+        <oboInOwl:hasExactSynonym>sarcoma of owl_thing</oboInOwl:hasExactSynonym>
+        <rdfs:label>owl_thing sarcoma</rdfs:label>
     </owl:Class>
     
 
@@ -5279,9 +5257,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An instance of &apos;disease&apos; in which the disease presentation is severe in severity.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">severe</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">severe &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>An instance of &apos;disease&apos; in which the disease presentation is severe in severity.</obo:IAO_0000115>
+        <terms:title>severe</terms:title>
+        <rdfs:label>severe &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5300,11 +5278,33 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An aggressive, high-grade and poorly differentiated carcinoma with neuroendocrine differentiation that arises from the owl_thing. It is characterized by the presence of malignant small cells.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small cell carcinoma disease has location X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing small cell carcinoma</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small cell cancer of the owl_thing</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing small cell carcinoma</rdfs:label>
+        <obo:IAO_0000115>An aggressive, high-grade and poorly differentiated carcinoma with neuroendocrine differentiation that arises from the owl_thing. It is characterized by the presence of malignant small cells.</obo:IAO_0000115>
+        <terms:title>small cell carcinoma disease has location X</terms:title>
+        <oboInOwl:hasExactSynonym>owl_thing small cell carcinoma</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>small cell cancer of the owl_thing</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>owl_thing small cell carcinoma</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MONDO_0000001"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004024"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>Any &apos;disease&apos; that disrupts &apos;owl_thing&apos;</obo:IAO_0000115>
+        <terms:title>X disease disrupts X</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;owl_thing&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;owl_thing&apos; &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5323,9 +5323,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease&apos; in which the causes of the disease is a perturbation of the &apos;owl_thing&apos; leading to its dysfunction.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X disease has basis in dysfunction of X</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;owl_thing&apos; &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>Any &apos;disease&apos; in which the causes of the disease is a perturbation of the &apos;owl_thing&apos; leading to its dysfunction.</obo:IAO_0000115>
+        <terms:title>X disease has basis in dysfunction of X</terms:title>
+        <rdfs:label>&apos;owl_thing&apos; &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5344,10 +5344,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An &apos;disease&apos; caused by infection with &apos;organism&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specific_inflammatory_disease_by_site</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;organism&apos; caused &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;organism&apos; &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>An &apos;disease&apos; caused by infection with &apos;organism&apos;.</obo:IAO_0000115>
+        <terms:title>specific_inflammatory_disease_by_site</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;organism&apos; caused &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;organism&apos; &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5366,9 +5366,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An &apos;disease&apos; involving a pathogenic inflammatory response in the &apos;anatomical structure&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specific_infectious_disease_by_location</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical structure&apos; &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>An &apos;disease&apos; involving a pathogenic inflammatory response in the &apos;anatomical structure&apos;.</obo:IAO_0000115>
+        <terms:title>specific_infectious_disease_by_location</terms:title>
+        <rdfs:label>&apos;anatomical structure&apos; &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5387,10 +5387,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An &apos;disease&apos; involving a pathogenic inflammatory response in the &apos;anatomical structure&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specific_inflammatory_disease_by_site</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; &apos;anatomical structure&apos;itis</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;anatomical structure&apos; &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>An &apos;disease&apos; involving a pathogenic inflammatory response in the &apos;anatomical structure&apos;.</obo:IAO_0000115>
+        <terms:title>specific_inflammatory_disease_by_site</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease&apos; &apos;anatomical structure&apos;itis</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;anatomical structure&apos; &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5409,10 +5409,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A squamous cell carcinoma that involves the owl_thing.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">squamous cell carcinoma disease has location X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing squamous cell carcinoma</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owl_thing squamous cell carcinoma</rdfs:label>
+        <obo:IAO_0000115>A squamous cell carcinoma that involves the owl_thing.</obo:IAO_0000115>
+        <terms:title>squamous cell carcinoma disease has location X</terms:title>
+        <oboInOwl:hasExactSynonym>owl_thing squamous cell carcinoma</oboInOwl:hasExactSynonym>
+        <rdfs:label>owl_thing squamous cell carcinoma</rdfs:label>
     </owl:Class>
     
 
@@ -5431,10 +5431,36 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The abuse or overuse of &apos;material entity&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">substance_abuse</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">abuse of &apos;material entity&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;material entity&apos; abuse</rdfs:label>
+        <obo:IAO_0000115>The abuse or overuse of &apos;material entity&apos;.</obo:IAO_0000115>
+        <terms:title>substance_abuse</terms:title>
+        <oboInOwl:hasExactSynonym>abuse of &apos;material entity&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;material entity&apos; abuse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MONDO_0020573"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004003"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/mondo#predisposes_towards"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MONDO_0000001"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115>A susceptibility or predisposition to &apos;disease or disorder&apos; in which the cause of the disease is a mutation in the &apos;gene&apos; gene.</obo:IAO_0000115>
+        <terms:title>susceptibility_by_gene</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease or disorder&apos; susceptibility caused by &apos;gene&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label>&apos;disease or disorder&apos; susceptibility, &apos;gene&apos; form</rdfs:label>
     </owl:Class>
     
 
@@ -5453,11 +5479,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A &apos;disease or disorder&apos; that is part of a larger syndrome.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">syndromic</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">syndromic &apos;disease or disorder&apos;</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">syndrome associated with &apos;disease or disorder&apos;</oboInOwl:hasRelatedSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">syndromic &apos;disease or disorder&apos;</rdfs:label>
+        <obo:IAO_0000115>A &apos;disease or disorder&apos; that is part of a larger syndrome.</obo:IAO_0000115>
+        <terms:title>syndromic</terms:title>
+        <oboInOwl:hasExactSynonym>syndromic &apos;disease or disorder&apos;</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>syndrome associated with &apos;disease or disorder&apos;</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>syndromic &apos;disease or disorder&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5476,9 +5502,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chromosomal disorder consisting of the presence of 2 extra chromosome &apos;chromosome&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tetrasomy</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tetrasomy &apos;chromosome&apos;</rdfs:label>
+        <obo:IAO_0000115>A chromosomal disorder consisting of the presence of 2 extra chromosome &apos;chromosome&apos;.</obo:IAO_0000115>
+        <terms:title>tetrasomy</terms:title>
+        <rdfs:label>tetrasomy &apos;chromosome&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5497,9 +5523,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chromosomal disorder consisting of the presence of an extra &apos;chromosome&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trisomy</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trisomy &apos;chromosome&apos;</rdfs:label>
+        <obo:IAO_0000115>A chromosomal disorder consisting of the presence of an extra &apos;chromosome&apos;.</obo:IAO_0000115>
+        <terms:title>trisomy</terms:title>
+        <rdfs:label>trisomy &apos;chromosome&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5518,9 +5544,9 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;organism&apos;-borne &apos;infectious disease&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vectorBorneDisease</terms:title>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;infectious disease&apos; transmitted by &apos;organism&apos;</rdfs:label>
+        <obo:IAO_0000115>&apos;organism&apos;-borne &apos;infectious disease&apos;.</obo:IAO_0000115>
+        <terms:title>vectorBorneDisease</terms:title>
+        <rdfs:label>&apos;infectious disease&apos; transmitted by &apos;organism&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5539,10 +5565,10 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X-linked form of &apos;disease&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x_linked</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos;, X-linked</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X-linked &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>X-linked form of &apos;disease&apos;.</obo:IAO_0000115>
+        <terms:title>x_linked</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease&apos;, X-linked</oboInOwl:hasExactSynonym>
+        <rdfs:label>X-linked &apos;disease&apos;</rdfs:label>
     </owl:Class>
     
 
@@ -5561,50 +5587,11 @@ Environmental exposures include those imposed by natural environments, experimen
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y-linked form of &apos;disease&apos;.</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">y_linked</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos;, Y-linked</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y-linked &apos;disease&apos;</rdfs:label>
+        <obo:IAO_0000115>Y-linked form of &apos;disease&apos;.</obo:IAO_0000115>
+        <terms:title>y_linked</terms:title>
+        <oboInOwl:hasExactSynonym>&apos;disease&apos;, Y-linked</oboInOwl:hasExactSynonym>
+        <rdfs:label>Y-linked &apos;disease&apos;</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- urn:dosdp:defined_class -->
-
-    <owl:Class rdf:about="urn:dosdp:defined_class">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MONDO_0020573"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004003"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/mondo#predisposes_towards"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MONDO_0000001"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A susceptibility or predisposition to &apos;disease or disorder&apos; in which the cause of the disease is a mutation in the &apos;gene&apos; gene.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos; susceptibility caused by &apos;gene&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos; susceptibility, &apos;gene&apos; form</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml Examples - [autism, susceptibility to, X-linked 5](http://purl.obolibrary.org/obo/MONDO_0010449), [bulimia nervosa, susceptibility to, 2](http://purl.obolibrary.org/obo/MONDO_0012461), [nephrolithiasis susceptibility caused by SLC26A1](http://purl.obolibrary.org/obo/MONDO_0020722)&apos;">
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">susceptibility_by_gene</terms:title>
-    </rdf:Description>
     
 
 
@@ -7009,5 +6996,5 @@ e.g.  if GP X enables ATPase coupled transporter activity&apos; and &apos;ATPase
 
 
 
-<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi -->
 
