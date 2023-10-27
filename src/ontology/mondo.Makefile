@@ -504,7 +504,9 @@ tmp/mass_obsolete.ru: ../sparql/update/mondo-obsolete-simple.ru tmp/identify_exi
 	grep -v -w -i -f tmp/filtered_identify_existing_obsoletes.txt config/obsolete_me.txt > config/filtered_obsolete_me.txt
 
 	# Create input for query
-	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; \
+	sed -e "s/MONDO:0000000/$$LISTT/g" -e "s|GITHUB_ISSUE_URL|$(GITHUB_ISSUE_URL)|g" $< > $@
+
 
 tmp/mass_obsolete_me.txt: tmp/mass_obsolete.sparql
 	$(ROBOT) query -i $(SRC) --use-graphs true -f tsv --query $< $@
