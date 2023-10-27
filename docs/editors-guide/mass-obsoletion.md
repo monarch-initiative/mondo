@@ -73,23 +73,14 @@ Label for the parent	| parent class |	source |	PMID |	Curator confidence
 
 #### 2. Mass obsolete Terms
 1. Go to relevant GitHub ticket (for example, [https://github.com/monarch-initiative/mondo/issues/6739](https://github.com/monarch-initiative/mondo/issues/6739))
-2. copy and paste the table into a new tab in the spreadsheet (for example, see [here](https://docs.google.com/spreadsheets/d/1KUYvnB1VVBV7KwbKipxvgNLX9FQC0aeaPn3kaxzz92g/edit#gid=36625823))
+2. Copy and paste the table into a new tab in the spreadsheet (for example, see [here](https://docs.google.com/spreadsheets/d/1KUYvnB1VVBV7KwbKipxvgNLX9FQC0aeaPn3kaxzz92g/edit#gid=36625823))
 3. Create a new column with the CURIES (see column C)
 4. Create a new file in mondo/src/ontology/config/ named `obsolete_me.txt`
 5. Copy and paste the CURIES into `obsolete_me.txt` and save
-6. Run `sh run.sh make mass_obsolete2 -B`
-7. Run 'sh run.sh make NORM`
-8. Run `mv NORM mondo-edit.obo`
-9. (Optional) Open in Protege and make sure everything looks okay
+6. Run `sh run.sh make mass_obsolete2 -B GITHUB_ISSUE_URL=GITHUB-ISSUE-URL`, where the value of `GITHUB-ISSUE-URL` is a value like `https://github.com/monarch-initiative/mondo/issues/6739` (this value does not need to be in quotes)
 
 
-##### 2a. Add the term tracker item to the obsoleted terms
-
-1. Create a ROBOT template to add the term tracker item to the obsoleted terms (see example [here](https://docs.google.com/spreadsheets/d/1KUYvnB1VVBV7KwbKipxvgNLX9FQC0aeaPn3kaxzz92g/edit#gid=36625823))
-2. Run ROBOT command to add term tracker intermediate
-
-##### 2b. Review changes in Protege
-
+##### 2. Review changes in Protege
 1. Check the branch and review changes for obsoleted terms and orphaned terms:
     - Spot check a few terms to ensure they were properly obsoleted and have the correct Annotations
     - spot check a few terms to make sure they are assigned the correct parent (per the ROBOT template) and they have the correct source annotation(s)
