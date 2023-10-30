@@ -368,6 +368,7 @@ tmp/mondo-currentbase.owl: mondo-base.owl
 	cp $< $@
 
 tmp/mondo-mainbase.owl:
+	# NOTE: This is cloning an Issue branch to use for comparison to find changes
 	rm -rf tmp/mondo-git && mkdir -p tmp && mkdir -p tmp/mondo-git && cd tmp/mondo-git &&\
 	git clone --branch issue-6739 https://github.com/monarch-initiative/mondo.git --depth=1 &&\
 	cd mondo/src/ontology/ && $(MAKE) mondo-base.owl
@@ -388,7 +389,9 @@ reports/mondo_unsats.md: mondo.obo
 		annotate --ontology-iri "http://purl.obolibrary.org/obo/$@" -o $@.owl
 
 # Mondo custom diff (class obsoletion)
-reports/mondo_custom_diff.md: tmp/mondo-currentbase.db tmp/mondo-mainbase.db config/branches.tsv # TODO: Extend to allow comparison on arbitrary branches
+reports/mondo_custom_diff.md: tmp/mondo-currentbase.db tmp/mondo-mainbase.db config/branches.tsv
+	@echo "Create custom diff of obsolete terms and their branch status."
+	# TODO: Extend to allow comparison on arbitrary branches
 	# Create a mondo-base.db and a mondo-main.db for OAK to work with 
 	python ../scripts/mondo_custom_diff.py create-custom-diff-table -i tmp/mondo-currentbase.db -m tmp/mondo-mainbase.db -b config/branches.tsv -o $@
 
