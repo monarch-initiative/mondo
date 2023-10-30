@@ -1,6 +1,6 @@
 # X disease disrupts X 
 
-[http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X](http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X)
+[http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml](http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml)
 ## Description 
 
 This is auto-generated. Add your description here
