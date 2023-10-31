@@ -70,6 +70,7 @@ def main(verbose: int, quiet: bool):
 @click.option("-o", "--output-file", help="Path to report file")
 def create_custom_mondo_diff(mainbase_db, currentbase_db, branch_id_file, output_file):
     logger = logging.getLogger("custom-mondo-diff")
+    logger.info("Connecting to local ontology sources...")
     
     # Create db adapters
     global OI_MAINBASE 
@@ -89,11 +90,11 @@ def create_custom_mondo_diff(mainbase_db, currentbase_db, branch_id_file, output
     
     # Get Obsoletes between ontology versions
     obsoletes_between_versions = get_obsoletes_between_versions(OI_MAINBASE, OI_CURRENTBASE)
-    logger.debug(f"Obsoletes between versions: {len(obsoletes_between_versions)}")
+    logger.debug(f"Number of Obsoletes between versions: {len(obsoletes_between_versions)}")
     
     # Get all children for each newly obsolete class as found in the OI_CURRENTBASE (last/previous ontology version)
     all_direct_children_of_newly_obsoleted_classes = get_all_direct_children(obsoletes_between_versions, OI_CURRENTBASE)
-    logger.debug(len(all_direct_children_of_newly_obsoleted_classes))
+    logger.debug(f"Number of all direct children of obsoletes between versions: {len(all_direct_children_of_newly_obsoleted_classes)}")
 
     # For each child class, get all it's direct parents (curie and label) from both OI_CURRENTBASE and OI_MAINBASE
     # and determine which branch(es) the child was in for each OI_CURRENTBASE and OI_MAINBASE ontology versions and therefore
@@ -101,7 +102,7 @@ def create_custom_mondo_diff(mainbase_db, currentbase_db, branch_id_file, output
     all_data = analyze_classes(all_direct_children_of_newly_obsoleted_classes)
 
     # TODO: Save class analysis data to file
-    
+    create_report_file(all_data, output_file)
 
 
 
@@ -140,11 +141,6 @@ def get_all_branch_descendants(curies: list, db_adapter: Type[SqlImplementation]
         id: set(db_adapter.descendants(start_curies=id, predicates=[IS_A, PART_OF]))
         for id in curies
     }
-
-    # for k,v in branch_descendants_dict.items():
-    #     if k == 'MONDO:0045024': # MONDO:0045024 (curie for 'cancer or benign tumor' branch)
-    #         print('\n--\n** PBDD: ')
-    #         print(len(v), next(iter(v)))
     #Debug --> convert to unit test
     # print(len(branch_descendants_dict.keys())) # Expect 39 branches
 
@@ -163,7 +159,7 @@ def get_obsoletes_between_versions(OI_MAINBASE, OI_CURRENTBASE) -> set:
 
     newly_obsoleted_classes = mainbase_obsoletes - comparebase_obsoletes
     #TODO: Convert to unit test
-    # logger.info(len(newly_obsoleted_classes)) # Expect 35 comparing main to changes in 'issue-6739'
+    # logger.debug(len(newly_obsoleted_classes)) # Expect 35 comparing main to changes in 'issue-6739'
     return newly_obsoleted_classes
     
 
@@ -171,10 +167,9 @@ def get_all_direct_parents(curie: str, db_adapter: Type[SqlImplementation] = Sql
     """
     Given a CURIE and a database adapter, get all direct parents for an ontology class.
 
-    :param curie: An ontology CURIE
+    :param curie: An ontology CURIE.
     :param db_adapter: A SQLite adapter.
     """
-    print("** CURIE: ", curie)
     direct_parents = set()
 
     parent_relationships = list(
@@ -189,20 +184,25 @@ def get_all_direct_parents(curie: str, db_adapter: Type[SqlImplementation] = Sql
                 )
             )
         )
-    # print('** DP: ', direct_parents)
-    # return direct_parents
     
-    # curies_labels_map = map(_get_labels, direct_parents)
-    # curies_labels_list = list(curies_labels_map)
-
-    # direct_parent_curies_labels = list(zip(direct_parents, curies_labels_list))
     direct_parent_curies_labels = map_labels_to_curies(direct_parents)
-    print("** DP: ", direct_parent_curies_labels)
     return direct_parent_curies_labels
 
 
 def _get_immediate_parent(curie: str, relationships: List[Tuple[str]]):
         return [t[2] for t in relationships if t[0] == curie and t[1] in [IS_A, PART_OF]]
+
+def map_labels_to_curies(curies):
+    """
+    Map a list of curies to their class labels.
+
+    :param curies: A list of curies.
+    """
+    curies_labels_map = map(_get_labels, curies)
+    curies_labels_list = list(curies_labels_map)
+    mapped_curies_labels = list(zip(curies, curies_labels_list))
+    
+    return mapped_curies_labels
 
 
 def _get_labels(curie):
@@ -224,8 +224,6 @@ def get_all_direct_children(obsolete_classes: set, db_adapter: Type[SqlImplement
     
     for obsolete_class in obsolete_classes:
         direct_children_of_obsolete_class = set()
-        # print("\n=-=-=\n")
-        # print(f"** ObsClass: {obsolete_class} -- {db_adapter.label(obsolete_class)}")
         
         direct_children_of_obsolete_class.update(
             set(
@@ -235,7 +233,6 @@ def get_all_direct_children(obsolete_classes: set, db_adapter: Type[SqlImplement
                 )
             )
         )
-        # print(f"** Children of Obsolete Class: {direct_children_of_obsolete_class}")
         all_children_of_newly_obsoleted_classes.update(direct_children_of_obsolete_class)
     return all_children_of_newly_obsoleted_classes
 
@@ -259,31 +256,13 @@ def get_branches(curie: str, branch_descendants_dict: dict) -> list[tuple]:
 
     :param curie: 
     """
-    print("\n** Getting branch IDs for: ", curie)
     branch_curies = []
     for k,v in branch_descendants_dict.items():
         if curie in v:
-            print("**BID: ",k)    
             branch_curies.append(k)
     
     branch_curies_labels = map_labels_to_curies(branch_curies)
-    print("**BC: ", branch_curies_labels)
     return branch_curies_labels
-
-
-def map_labels_to_curies(curies):
-    """
-    Map a list of curies to their class labels.
-
-    :param curies: A list of curies.
-    """
-    curies_labels_map = map(_get_labels, curies)
-    print("**CLM: ", curies_labels_map, type(curies_labels_map))
-    curies_labels_list = list(curies_labels_map)
-
-    mapped_curies_labels = list(zip(curies, curies_labels_list))
-    print("** MCL: ", mapped_curies_labels)
-    return mapped_curies_labels
 
 
 def analyze_classes(curies: set) -> list:
@@ -302,44 +281,49 @@ def analyze_classes(curies: set) -> list:
 
         branch_assignment_status = set(previous_branches).symmetric_difference(set(latest_branches))
 
-        #TODO: Get labels for previous_branches and latest_branches
-
         class_data = {
             "curie": curie, 
             "label": OI_CURRENTBASE.label(curie),
             "previous_parent_curies": previous_parent_curies,
             "latest_parent_curies": latest_parent_curies,
-            "new_parent_curies": list(set(latest_parent_curies) - set(previous_parent_curies)),
+            "added_parent_curies": set(latest_parent_curies) - set(previous_parent_curies),
             "removed_parent_curies": list(set(previous_parent_curies) - set(latest_parent_curies)),
             "previous_branches": previous_branches,
             "latest_branches": latest_branches,
             "is_branch_assignment_changed": bool(branch_assignment_status),
-            "new branches": str(set(latest_branches) - set(previous_branches)),
-            "removed_branches": str(set(previous_branches) - set(latest_branches)),
+            "added_branches": set(latest_branches) - set(previous_branches),
+            "removed_branches": set(previous_branches) - set(latest_branches),
         }
         all_class_data.append(class_data)
 
-    logger.debug(json.dumps(all_class_data))
-    
+    # logger.debug(json.dumps(all_class_data))
+    return all_class_data
+
+
+def create_report_file(data, output_file):
+    """
+    Print the data to a file.
+    :param data: The data object
+    :param output_file: The filename for the report data.
+    """    
+    # Extract the keys from the first dictionary to use as fieldnames
+    fieldnames = data[0].keys()
+
+    # Format list values for saving to file
+    for col_name in list(fieldnames - ["curie", "label", "is_branch_assignment_changed"]):
+        for item in data:
+            item[col_name] = ", ".join([f"{label}({curie})" for curie, label in item[col_name]])
+
+    # Write the data to the TSV file
+    with open(output_file, "w", newline='') as tsvfile:
+        writer = csv.DictWriter(tsvfile, fieldnames=fieldnames, delimiter='\t')
+        
+        # Write the header row
+        writer.writeheader()
+
+        # Write the data rows
+        writer.writerows(data)
 
 
 if __name__ == "__main__":
     main()
-
-
-# children_of_obsoletion_class = set()
-# children_of_obsoletion_candidate_parents_relationship = set(
-#     OI_CURRENTBASE.relationships(subjects=children_of_obsoletion_class,predicates=[IS_A, PART_OF],)
-# )
-
-# Get previous parents for MONDO:0018532, Note, the actual parent is also returned in the list (transitive closure)
-# parents_of_child = (
-#                 set(
-#                     get_immediate_parent(
-#                         curie='MONDO:0018532', # Replace this with iteration of "diff_obsoletes"
-#                         relationships=children_of_obsoletion_candidate_parents_relationship,
-#                     )
-#                 )
-#                 # - diff_obsoletes
-# ) 
-# logger.info(f"\n** Prev Parents for MONDO:0018532: {parents_of_child}")
