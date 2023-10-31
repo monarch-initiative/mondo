@@ -96,14 +96,11 @@ def create_custom_mondo_diff(mainbase_db, currentbase_db, branch_id_file, output
     all_direct_children_of_newly_obsoleted_classes = get_all_direct_children(obsoletes_between_versions, OI_CURRENTBASE)
     logger.debug(f"Number of all direct children of obsoletes between versions: {len(all_direct_children_of_newly_obsoleted_classes)}")
 
-    # For each child class, get all it's direct parents (curie and label) from both OI_CURRENTBASE and OI_MAINBASE
-    # and determine which branch(es) the child was in for each OI_CURRENTBASE and OI_MAINBASE ontology versions and therefore
-    # whether the child class left any of it's previous branches (those from OI_CURRENTBASE)
+    # Analze obsolete classes (latest and previous parents and branches)
     all_data = analyze_classes(all_direct_children_of_newly_obsoleted_classes)
 
-    # TODO: Save class analysis data to file
+    # Save file of branch analysis of obsolete classes
     create_report_file(all_data, output_file)
-
 
 
 def get_branch_ids(branch_id_filename: str) -> list[str]:
@@ -160,6 +157,8 @@ def get_obsoletes_between_versions(OI_MAINBASE, OI_CURRENTBASE) -> set:
     newly_obsoleted_classes = mainbase_obsoletes - comparebase_obsoletes
     #TODO: Convert to unit test
     # logger.debug(len(newly_obsoleted_classes)) # Expect 35 comparing main to changes in 'issue-6739'
+    logger.debug("** All Obsoletes between versions\n")
+    logger.debug(newly_obsoleted_classes)
     return newly_obsoleted_classes
     
 
