@@ -73,8 +73,9 @@ def create_custom_mondo_diff(mainbase_db, currentbase_db, branch_id_file, output
     
     # Create db adapters
     global OI_MAINBASE 
-    OI_MAINBASE = get_adapter(f"sqlite:{mainbase_db}") #mondo-mainbase.db, version from PR
     global OI_CURRENTBASE
+
+    OI_MAINBASE = get_adapter(f"sqlite:{mainbase_db}") #mondo-mainbase.db, version from PR
     OI_CURRENTBASE = get_adapter(f"sqlite:{currentbase_db}") #mondo-currentbase.db, last released version
 
     # Read file of branch IDs
@@ -190,10 +191,12 @@ def get_all_direct_parents(curie: str, db_adapter: Type[SqlImplementation] = Sql
         )
     # print('** DP: ', direct_parents)
     # return direct_parents
-    curies_labels_map = map(_get_labels, direct_parents)
-    curies_labels_list = list(curies_labels_map)
+    
+    # curies_labels_map = map(_get_labels, direct_parents)
+    # curies_labels_list = list(curies_labels_map)
 
-    direct_parent_curies_labels = list(zip(direct_parents, curies_labels_list))
+    # direct_parent_curies_labels = list(zip(direct_parents, curies_labels_list))
+    direct_parent_curies_labels = map_labels_to_curies(direct_parents)
     print("** DP: ", direct_parent_curies_labels)
     return direct_parent_curies_labels
 
@@ -250,7 +253,7 @@ def _get_immediate_children(curie: str, relationships: List[Tuple[str]]) -> List
     return [t[0] for t in relationships if t[2] == curie and t[1] in [IS_A, PART_OF]]
 
 
-def get_branches(curie: str, branch_descendants_dict: dict):
+def get_branches(curie: str, branch_descendants_dict: dict) -> list[tuple]:
     """
     Get branch curies and labels the curie belongs to.
 
@@ -262,9 +265,25 @@ def get_branches(curie: str, branch_descendants_dict: dict):
         if curie in v:
             print("**BID: ",k)    
             branch_curies.append(k)
-    # TODO: Get labels too!
-    print("**BC: ", branch_curies)
-    return branch_curies
+    
+    branch_curies_labels = map_labels_to_curies(branch_curies)
+    print("**BC: ", branch_curies_labels)
+    return branch_curies_labels
+
+
+def map_labels_to_curies(curies):
+    """
+    Map a list of curies to their class labels.
+
+    :param curies: A list of curies.
+    """
+    curies_labels_map = map(_get_labels, curies)
+    print("**CLM: ", curies_labels_map, type(curies_labels_map))
+    curies_labels_list = list(curies_labels_map)
+
+    mapped_curies_labels = list(zip(curies, curies_labels_list))
+    print("** MCL: ", mapped_curies_labels)
+    return mapped_curies_labels
 
 
 def analyze_classes(curies: set) -> list:
@@ -275,17 +294,28 @@ def analyze_classes(curies: set) -> list:
     all_class_data = []
     
     for curie in curies:
+        previous_parent_curies = get_all_direct_parents(curie, OI_CURRENTBASE)
+        latest_parent_curies = get_all_direct_parents(curie, OI_MAINBASE)
+        
+        previous_branches = get_branches(curie, previous_version_branch_descendants_dict)
+        latest_branches = get_branches(curie, latest_version_branch_descendants_dict)
+
+        branch_assignment_status = set(previous_branches).symmetric_difference(set(latest_branches))
+
+        #TODO: Get labels for previous_branches and latest_branches
+
         class_data = {
-            "child_curie": curie, 
-            "children_label": OI_CURRENTBASE.label(curie),
-            "previous_parent_curies": get_all_direct_parents(curie, OI_CURRENTBASE),
-            "previous_parent_labels": None,
-            "latest_parent_curies": get_all_direct_parents(curie, OI_MAINBASE),
-            "latest_parent_labels": None,
-            "previous_branches": get_branches(curie, previous_version_branch_descendants_dict),
-            "latest_branches": get_branches(curie, latest_version_branch_descendants_dict),
-            "parents_changed": None, #may be in same branches, but parents changed between versions
-            "branch_status": None
+            "curie": curie, 
+            "label": OI_CURRENTBASE.label(curie),
+            "previous_parent_curies": previous_parent_curies,
+            "latest_parent_curies": latest_parent_curies,
+            "new_parent_curies": list(set(latest_parent_curies) - set(previous_parent_curies)),
+            "removed_parent_curies": list(set(previous_parent_curies) - set(latest_parent_curies)),
+            "previous_branches": previous_branches,
+            "latest_branches": latest_branches,
+            "is_branch_assignment_changed": bool(branch_assignment_status),
+            "new branches": str(set(latest_branches) - set(previous_branches)),
+            "removed_branches": str(set(previous_branches) - set(latest_branches)),
         }
         all_class_data.append(class_data)
 
