@@ -50,7 +50,7 @@ _Content to be added_
     - leave the branch  
     - stay in the branch  
   
-3. For each term that will be orphaned, create the following columns in the spreadsheet (if it has not been done already):
+3. For each term that will be orphaned and "leave the branch", create the following columns in the spreadsheet (if it has not been done already):
 
 Label for the parent	| parent class |	source |	PMID |	Curator confidence
 --- | --- | --- | --- | ---
@@ -64,11 +64,18 @@ Label for the parent	| parent class |	source |	PMID |	Curator confidence
 4. Share the spreadsheet with another curator for review, if needed
 5. Nicole, Trish or Sabrina should proceed with Mass obsoletion pipeline
 
+### Review and reassign superclasses to "leave the branch" terms
+
+1. review terms that will leave the branch when the terms are mass obsoleted
+2. assign a new parent when appropriate, ie when the term leaving the branch should remain in the branch
+3. if you agree that a term should leave the branch, assign a "curator confidence to indicate that the term was reviewed
+
 ### Mass obsoletion pipeline
 
 #### 1. Add new parents to orphaned superclasses
 
 1. Add new parents via ROBOT template
+    1. make sure to add a column to add the GH issue related to the review
 2. See example template [here](https://docs.google.com/spreadsheets/d/1KUYvnB1VVBV7KwbKipxvgNLX9FQC0aeaPn3kaxzz92g/edit#gid=834522600)
 
 #### 2. Mass obsolete Terms
@@ -78,6 +85,9 @@ Label for the parent	| parent class |	source |	PMID |	Curator confidence
 4. Create a new file in mondo/src/ontology/config/ named `obsolete_me.txt`
 5. Copy and paste the CURIES into `obsolete_me.txt` and save
 6. Run `sh run.sh make mass_obsolete2 -B GITHUB_ISSUE_URL=GITHUB-ISSUE-URL`, where the value of `GITHUB-ISSUE-URL` is a value like `https://github.com/monarch-initiative/mondo/issues/6739` (this value does not need to be in quotes)
+7. Note: some terms were already obsoleted (eg because they were obsoleted in the context of another branch). These terms were skipped when the pipeline ran.
+    1. Determine the list of terms already obsoleted (you can do this by comparing the list in the file `obsolete_me.txt` (containing all the terms to obsolete), and the file `filtered_obsolete_me.txt` (in which the already obsoleted terms were removed)
+    1. Add the GH issue tracker to the terms that were already obsoleted (either manually, or by using a ROBOT template)
 
 
 ##### 2. Review changes in Protege
