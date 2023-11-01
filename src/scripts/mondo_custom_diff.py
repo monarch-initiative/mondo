@@ -72,20 +72,20 @@ def create_custom_mondo_diff(mainbase_db, currentbase_db, branch_id_file, output
     logger = logging.getLogger("custom-mondo-diff")
     logger.info("Connecting to local ontology sources...")
     
-    # Create db adapters
-    global OI_MAINBASE 
-    global OI_CURRENTBASE
+    # global OI_MAINBASE 
+    # global OI_CURRENTBASE
+    # global latest_version_branch_descendants_dict
+    # global previous_version_branch_descendants_dict
 
-    OI_MAINBASE = get_adapter(f"sqlite:{mainbase_db}") #mondo-mainbase.db, version from PR
-    OI_CURRENTBASE = get_adapter(f"sqlite:{currentbase_db}") #mondo-currentbase.db, last released version
+    # Create db adapters
+    OI_MAINBASE = get_adapter(f"sqlite:{mainbase_db}") #mondo-mainbase.db, version from PR (latest)
+    OI_CURRENTBASE = get_adapter(f"sqlite:{currentbase_db}") #mondo-currentbase.db, last released version (previous)
 
     # Read file of branch IDs
     branch_ids = get_branch_ids(branch_id_file)
 
     # Create dict of branch_id and descendants
-    global latest_version_branch_descendants_dict
     latest_version_branch_descendants_dict = get_all_branch_descendants(branch_ids, OI_MAINBASE)
-    global previous_version_branch_descendants_dict
     previous_version_branch_descendants_dict = get_all_branch_descendants(branch_ids, OI_CURRENTBASE)
     
     # Get Obsoletes between ontology versions
@@ -96,8 +96,11 @@ def create_custom_mondo_diff(mainbase_db, currentbase_db, branch_id_file, output
     all_direct_children_of_newly_obsoleted_classes = get_all_direct_children(obsoletes_between_versions, OI_CURRENTBASE)
     logger.debug(f"Number of all direct children of obsoletes between versions: {len(all_direct_children_of_newly_obsoleted_classes)}")
 
-    # Analze obsolete classes (latest and previous parents and branches)
-    all_data = analyze_classes(all_direct_children_of_newly_obsoleted_classes)
+    # Analyze obsolete classes (latest and previous parents and branches)
+    all_data = analyze_classes(all_direct_children_of_newly_obsoleted_classes,
+                               OI_CURRENTBASE, OI_MAINBASE,
+                               previous_version_branch_descendants_dict,
+                               latest_version_branch_descendants_dict)
 
     # Save file of branch analysis of obsolete classes
     create_report_file(all_data, output_file)
@@ -148,6 +151,7 @@ def get_obsoletes_between_versions(OI_MAINBASE, OI_CURRENTBASE) -> set:
     """
     Get a set of obsolete two between two versions on an ontology.
     For current testing, OI_MAINBASE this is from 'issue-6739' branch and expect 35 new obsoletes in comparison.
+    
     :param OI_MAINBASE: db from most recent version from PR branch
     :param OI_CURRENTBASE: db from last released version
     """
@@ -182,28 +186,29 @@ def get_all_direct_parents(curie: str, db_adapter: Type[SqlImplementation] = Sql
             )
         )
     
-    direct_parent_curies_labels = map_labels_to_curies(direct_parents)
+    direct_parent_curies_labels = map_labels_to_curies(direct_parents, db_adapter)
     return direct_parent_curies_labels
 
 
 def _get_immediate_parent(curie: str, relationships: List[Tuple[str]]):
         return [t[2] for t in relationships if t[0] == curie and t[1] in [IS_A, PART_OF]]
 
-def map_labels_to_curies(curies):
+def map_labels_to_curies(curies, db_adapter):
     """
     Map a list of curies to their class labels.
 
     :param curies: A list of curies.
     """
-    curies_labels_map = map(_get_labels, curies)
-    curies_labels_list = list(curies_labels_map)
+    # curies_labels_map = map(_get_labels, curies)
+    # curies_labels_list = list(curies_labels_map)
+    curies_labels_list = [db_adapter.label(x) for x in curies]
     mapped_curies_labels = list(zip(curies, curies_labels_list))
     
     return mapped_curies_labels
 
 
-def _get_labels(curie):
-    return OI_CURRENTBASE.label(curie)
+# def _get_labels(curie):
+#     return OI_CURRENTBASE.label(curie)
 
 
 def get_all_direct_children(obsolete_classes: set, db_adapter: Type[SqlImplementation] = SqlImplementation()) -> set:
@@ -247,24 +252,30 @@ def _get_immediate_children(curie: str, relationships: List[Tuple[str]]) -> List
     return [t[0] for t in relationships if t[2] == curie and t[1] in [IS_A, PART_OF]]
 
 
-def get_branches(curie: str, branch_descendants_dict: dict) -> list[tuple]:
+def get_branches(curie: str, branch_descendants_dict: dict) -> list[str]:
     """
-    Get branch curies and labels the curie belongs to.
+    Given a curie, find all branches (curies only) the given curie belongs to.
 
-    :param curie: 
+    :param curie: An ontology curie, e.g. MONDO:1234567.
+    :param branch_descendants_dict: A dictionary where the key is branch_id curie
+    and the value is a list of curies that are in the branch.
     """
     branch_curies = []
     for k,v in branch_descendants_dict.items():
         if curie in v:
             branch_curies.append(k)
     
-    branch_curies_labels = map_labels_to_curies(branch_curies)
-    return branch_curies_labels
+    # branch_curies_labels = map_labels_to_curies(branch_curies)
+    # return branch_curies_labels
+    return branch_curies
 
 
-def analyze_classes(curies: set) -> list:
+def analyze_classes(curies: set, OI_CURRENTBASE, OI_MAINBASE,
+                    previous_version_branch_descendants: dict,
+                    latest_version_branch_descendants: dict) -> list:
     """
     Get all report data, child class label, parents in currentbase and mainbase, branches.
+
     :param curies: A set of curies.
     """
     all_class_data = []
@@ -272,11 +283,13 @@ def analyze_classes(curies: set) -> list:
     for curie in curies:
         previous_parent_curies = get_all_direct_parents(curie, OI_CURRENTBASE)
         latest_parent_curies = get_all_direct_parents(curie, OI_MAINBASE)
-        
-        previous_branches = get_branches(curie, previous_version_branch_descendants_dict)
-        latest_branches = get_branches(curie, latest_version_branch_descendants_dict)
+
+        previous_branches = map_labels_to_curies(get_branches(curie, previous_version_branch_descendants), OI_CURRENTBASE)
+        latest_branches = map_labels_to_curies(get_branches(curie, latest_version_branch_descendants), OI_MAINBASE)
 
         branch_assignment_status = set(previous_branches).symmetric_difference(set(latest_branches))
+
+        # TODO: Add field for "obsoleted_curies"
 
         class_data = {
             "curie": curie, 
@@ -300,6 +313,7 @@ def analyze_classes(curies: set) -> list:
 def create_report_file(data, output_file):
     """
     Print the data to a file.
+
     :param data: The data object
     :param output_file: The filename for the report data.
     """    
