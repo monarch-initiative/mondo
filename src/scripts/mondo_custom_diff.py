@@ -157,8 +157,6 @@ def get_obsoletes_between_versions(OI_MAINBASE, OI_CURRENTBASE) -> set:
     newly_obsoleted_classes = mainbase_obsoletes - comparebase_obsoletes
     #TODO: Convert to unit test
     # logger.debug(len(newly_obsoleted_classes)) # Expect 35 comparing main to changes in 'issue-6739'
-    logger.debug("** All Obsoletes between versions\n")
-    logger.debug(newly_obsoleted_classes)
     return newly_obsoleted_classes
     
 
@@ -314,8 +312,8 @@ def create_report_file(data, output_file):
             item[col_name] = ", ".join([f"{label}({curie})" for curie, label in item[col_name]])
 
     # Write the data to the TSV file
-    with open(output_file, "w", newline='') as tsvfile:
-        writer = csv.DictWriter(tsvfile, fieldnames=fieldnames, delimiter='\t')
+    with open(output_file, "w", newline='') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, delimiter=',')
         
         # Write the header row
         writer.writeheader()
