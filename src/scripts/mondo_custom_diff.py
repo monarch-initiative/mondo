@@ -100,7 +100,8 @@ def create_custom_mondo_diff(mainbase_db, currentbase_db, branch_id_file, output
     all_data = analyze_classes(all_direct_children_of_newly_obsoleted_classes,
                                OI_CURRENTBASE, OI_MAINBASE,
                                previous_version_branch_descendants_dict,
-                               latest_version_branch_descendants_dict)
+                               latest_version_branch_descendants_dict,
+                               obsoletes_between_versions)
 
     # Save file of branch analysis of obsolete classes
     create_report_file(all_data, output_file)
@@ -137,6 +138,7 @@ def get_all_branch_descendants(curies: list, db_adapter: Type[SqlImplementation]
     :return branch_descendants_dict: A dictionary where the branch curie is the key and it's descendants are a list of curies. 
     Example: {"branch_1": ["1","2","3],"branch_2": ["4","5","1"]}
     """
+    #TODO: Consider returning data as a dict with key branch descendant class, value branch_id for O(1) lookups
     branch_descendants_dict = {
         id: set(db_adapter.descendants(start_curies=id, predicates=[IS_A, PART_OF]))
         for id in curies
@@ -270,9 +272,10 @@ def get_branches(curie: str, branch_descendants_dict: dict) -> list[str]:
     return branch_curies
 
 
-def analyze_classes(curies: set, OI_CURRENTBASE, OI_MAINBASE,
+def analyze_classes(curies: set, db_currentbase, db_mainbase,
                     previous_version_branch_descendants: dict,
-                    latest_version_branch_descendants: dict) -> list:
+                    latest_version_branch_descendants: dict,
+                    all_obsoleted_classes: set) -> list:
     """
     Get all report data, child class label, parents in currentbase and mainbase, branches.
 
@@ -281,23 +284,24 @@ def analyze_classes(curies: set, OI_CURRENTBASE, OI_MAINBASE,
     all_class_data = []
     
     for curie in curies:
-        previous_parent_curies = get_all_direct_parents(curie, OI_CURRENTBASE)
-        latest_parent_curies = get_all_direct_parents(curie, OI_MAINBASE)
+        previous_parent_curies = get_all_direct_parents(curie, db_currentbase)
+        latest_parent_curies = get_all_direct_parents(curie, db_mainbase)
 
-        previous_branches = map_labels_to_curies(get_branches(curie, previous_version_branch_descendants), OI_CURRENTBASE)
-        latest_branches = map_labels_to_curies(get_branches(curie, latest_version_branch_descendants), OI_MAINBASE)
+        previous_branches = map_labels_to_curies(get_branches(curie, previous_version_branch_descendants), db_currentbase)
+        latest_branches = map_labels_to_curies(get_branches(curie, latest_version_branch_descendants), db_mainbase)
 
         branch_assignment_status = set(previous_branches).symmetric_difference(set(latest_branches))
 
-        # TODO: Add field for "obsoleted_curies"
+        obsoleted_parent_curies = set(map_labels_to_curies(all_obsoleted_classes, db_currentbase)).intersection(set(previous_parent_curies))
 
         class_data = {
             "curie": curie, 
-            "label": OI_CURRENTBASE.label(curie),
-            "previous_parent_curies": previous_parent_curies,
-            "latest_parent_curies": latest_parent_curies,
-            "added_parent_curies": set(latest_parent_curies) - set(previous_parent_curies),
-            "removed_parent_curies": list(set(previous_parent_curies) - set(latest_parent_curies)),
+            "label": db_currentbase.label(curie),
+            "previous_parents": previous_parent_curies,
+            "latest_parents": latest_parent_curies,
+            "added_parents": set(latest_parent_curies) - set(previous_parent_curies),
+            "removed_parents": list(set(previous_parent_curies) - set(latest_parent_curies)),
+            "obsoleted_parents": obsoleted_parent_curies,
             "previous_branches": previous_branches,
             "latest_branches": latest_branches,
             "is_branch_assignment_changed": bool(branch_assignment_status),
@@ -306,7 +310,6 @@ def analyze_classes(curies: set, OI_CURRENTBASE, OI_MAINBASE,
         }
         all_class_data.append(class_data)
 
-    # logger.debug(json.dumps(all_class_data))
     return all_class_data
 
 
@@ -321,7 +324,7 @@ def create_report_file(data, output_file):
     fieldnames = data[0].keys()
 
     # Format list values for saving to file
-    for col_name in list(fieldnames - ["curie", "label", "is_branch_assignment_changed"]):
+    for col_name in list(fieldnames - ["curie", "label", "is_branch_assignment_changed"]): # exclude simple/single value fields
         for item in data:
             item[col_name] = ", ".join([f"{label}({curie})" for curie, label in item[col_name]])
 
