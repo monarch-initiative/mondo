@@ -495,17 +495,19 @@ tmp/mass_obsolete_warning.sparql: ../sparql/reports/mondo-obsolete-warning.sparq
 	@echo "\n** Run mondo-obsolete-warning.sparql **"
 	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
-tmp/mass_obsolete.ru: ../sparql/update/mondo-obsolete-simple.ru tmp/identify_existing_obsoletes.txt config/obsolete_me.txt
+tmp/mass_obsolete.ru: ../sparql/update/mondo-obsolete-simple.ru config/filtered_obsolete_me.txt
 	@echo "\n** Run mondo-obsolete-simple.ru **"
+	# Create input for query
+	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; \
+	sed -e "s/MONDO:0000000/$$LISTT/g" -e "s|GITHUB_ISSUE_URL|$(GITHUB_ISSUE_URL)|g" $< > $@
+
+
+config/filtered_obsolete_me.txt: tmp/identify_existing_obsoletes.txt config/obsolete_me.txt
 	# Remove ^M from tmp/identify_existing_obsoletes.txt
 	sed 's/\r//g' tmp/identify_existing_obsoletes.txt > tmp/filtered_identify_existing_obsoletes.txt
 
 	# Filter out existing obsoletes
-	grep -v -w -i -f tmp/filtered_identify_existing_obsoletes.txt config/obsolete_me.txt > config/filtered_obsolete_me.txt
-
-	# Create input for query
-	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; \
-	sed -e "s/MONDO:0000000/$$LISTT/g" -e "s|GITHUB_ISSUE_URL|$(GITHUB_ISSUE_URL)|g" $< > $@
+	grep -v -w -i -f tmp/filtered_identify_existing_obsoletes.txt config/obsolete_me.txt > $@
 
 
 tmp/mass_obsolete_me.txt: tmp/mass_obsolete.sparql
@@ -526,7 +528,7 @@ tmp/identify_existing_obsoletes.txt: tmp/identify_existing_obsoletes.ru
 	@echo "\n** Write existing obsoletes to tmp/identify_existing_obsoletes.txt **"
 	$(ROBOT) query --format txt -i $(SRC) --query $< $@
 
-mass_obsolete2: tmp/identify_existing_obsoletes.ru tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
+mass_obsolete2: tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
 	@echo "Make sure you have updated config/obsolete_me.txt before running this script.."
 	$(MAKE) tmp/mondo-obsolete-labels.obo
 	$(MAKE) mass_obsolete_warning
