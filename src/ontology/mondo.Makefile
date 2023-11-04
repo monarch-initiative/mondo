@@ -757,8 +757,10 @@ mondo_obo:
 tmp/mondo-ingest.owl:
 	curl https://github.com/monarch-initiative/mondo-ingest/releases/latest/download/mondo-ingest.owl -L --output $@
 
+tmp/mondo-release.owl:
+	wget "http://purl.obolibrary.org/obo/mondo.owl" -O $@
 
-tmp/mondo-ingest.db: tmp/mondo-ingest.owl
+tmp/mondo-%.db: tmp/mondo-%.owl
 	@rm -f .template.db
 	@rm -f .template.db.tmp
 	RUST_BACKTRACE=full semsql make $@ -P config/prefixes.csv
