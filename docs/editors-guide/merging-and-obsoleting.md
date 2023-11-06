@@ -46,6 +46,9 @@ See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/
     1. Mondo ID for the term that will replace the obsoleted terms
     1. Label for the term that will replace the obsoleted terms
     
+### Workflow video explanation
+See [here](https://drive.google.com/file/d/1pnf0BT1qJ9wxXKvykkWhjwvFLceI2U-2/view?usp=sharing)
+    
 #### If new obsoletion reasons are needed
 
 Request from the technical team if you need additional obsolescence reasons. This involves:
