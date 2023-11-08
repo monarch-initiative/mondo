@@ -1,6 +1,6 @@
 # Imports
 
-Updating imoprts is needed whenever logical axioms that reference external ontologies are added but the classes being referenced have no labels or other logical definitions. Updating an import for those classes will bring in the labels, annotations, and logical axioms into the import file, and therefore into the Mondo ontology.
+Updating imports is needed whenever logical axioms that reference external ontologies are added but the classes being referenced have no labels or other logical definitions. Updating an import for those classes will bring in the labels, annotations, and logical axioms into the import file, and therefore into the Mondo ontology.
 
 # Regenerate import file
 
