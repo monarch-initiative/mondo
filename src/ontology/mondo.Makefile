@@ -367,10 +367,10 @@ tmp/mondo-lastbase.owl:
 tmp/mondo-currentbase.owl: mondo-base.owl
 	cp $< $@
 
-tmp/mondo-mainbase.owl:
-	# NOTE: This is cloning an Issue branch to use for comparison to find changes
+tmp/mondo-%base.owl:
+	# NOTE: This will create a ".db" ontology sqlite file from any branch
 	rm -rf tmp/mondo-git && mkdir -p tmp && mkdir -p tmp/mondo-git && cd tmp/mondo-git &&\
-	git clone --branch issue-6739 https://github.com/monarch-initiative/mondo.git --depth=1 &&\
+	git clone --branch $* https://github.com/monarch-initiative/mondo.git --depth=1 &&\
 	cd mondo/src/ontology/ && $(MAKE) mondo-base.owl
 	cp tmp/mondo-git/mondo/src/ontology/mondo-base.owl $@ 
 
