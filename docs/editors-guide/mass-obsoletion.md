@@ -14,6 +14,12 @@ The goal of this project is to clean up the hierarchy in Mondo and remove Orphan
 4. [Curator review of proposed obsoletion candidates](https://mondo.readthedocs.io/en/latest/editors-guide/mass-obsoletion/#curator-review-of-proposed-obsoletion-candidates)
 5. [Mass obsoletion pipeline](https://mondo.readthedocs.io/en/latest/editors-guide/mass-obsoletion/#mass-obsoletion-pipeline_1)
 
+<img width="932" alt="image" src="https://github.com/monarch-initiative/mondo/assets/6722114/2d2bdce1-d0f3-4733-a202-18b2757a29d1">
+
+### Discussion board
+
+A [discussion board](https://github.com/monarch-initiative/mondo/discussions/6768) is available to ask questions about this process. Please tag specific curators/developers as needed.
+
 ### Relevant tickets
 - [review ORDO grouping classes #5114](https://github.com/monarch-initiative/mondo/issues/5114)
 - [Remove all terms for which the single source of evidence is ORDO #5853](https://github.com/monarch-initiative/mondo/issues/5853)
@@ -44,7 +50,7 @@ _Content to be added_
     - leave the branch  
     - stay in the branch  
   
-3. For each term that will be orphaned, create the following columns in the spreadsheet (if it has not been done already):
+3. For each term that will be orphaned and "leave the branch", create the following columns in the spreadsheet (if it has not been done already):
 
 Label for the parent	| parent class |	source |	PMID |	Curator confidence
 --- | --- | --- | --- | ---
@@ -58,30 +64,33 @@ Label for the parent	| parent class |	source |	PMID |	Curator confidence
 4. Share the spreadsheet with another curator for review, if needed
 5. Nicole, Trish or Sabrina should proceed with Mass obsoletion pipeline
 
+### Review and reassign superclasses to "leave the branch" terms
+
+1. review terms that will leave the branch when the terms are mass obsoleted
+2. assign a new parent when appropriate, ie when the term leaving the branch should remain in the branch
+3. if you agree that a term should leave the branch, assign a "curator confidence to indicate that the term was reviewed
+
 ### Mass obsoletion pipeline
 
 #### 1. Add new parents to orphaned superclasses
 
 1. Add new parents via ROBOT template
+    1. make sure to add a column to add the GH issue related to the review
 2. See example template [here](https://docs.google.com/spreadsheets/d/1KUYvnB1VVBV7KwbKipxvgNLX9FQC0aeaPn3kaxzz92g/edit#gid=834522600)
 
 #### 2. Mass obsolete Terms
 1. Go to relevant GitHub ticket (for example, [https://github.com/monarch-initiative/mondo/issues/6739](https://github.com/monarch-initiative/mondo/issues/6739))
-2. copy and paste the table into a new tab in the spreadsheet (for example, see [here](https://docs.google.com/spreadsheets/d/1KUYvnB1VVBV7KwbKipxvgNLX9FQC0aeaPn3kaxzz92g/edit#gid=36625823))
+2. Copy and paste the table into a new tab in the spreadsheet (for example, see [here](https://docs.google.com/spreadsheets/d/1KUYvnB1VVBV7KwbKipxvgNLX9FQC0aeaPn3kaxzz92g/edit#gid=36625823))
 3. Create a new column with the CURIES (see column C)
 4. Create a new file in mondo/src/ontology/config/ named `obsolete_me.txt`
 5. Copy and paste the CURIES into `obsolete_me.txt` and save
-6. Run `sh run.sh make mass_obsolete2 -B`
-7. (Optional) Open in Protege and make sure everything looks okay
+6. Run `sh run.sh make mass_obsolete2 -B GITHUB_ISSUE_URL=GITHUB-ISSUE-URL`, where the value of `GITHUB-ISSUE-URL` is a value like `https://github.com/monarch-initiative/mondo/issues/6739` (this value does not need to be in quotes)
+7. Note: some terms were already obsoleted (eg because they were obsoleted in the context of another branch). These terms were skipped when the pipeline ran.
+    1. Determine the list of terms already obsoleted (you can do this by comparing the list in the file `obsolete_me.txt` (containing all the terms to obsolete), and the file `filtered_obsolete_me.txt` (in which the already obsoleted terms were removed)
+    1. Add the GH issue tracker to the terms that were already obsoleted (either manually, or by using a ROBOT template)
 
 
-##### 2a. Add the term tracker item to the obsoleted terms
-
-1. Create a ROBOT template to add the term tracker item to the obsoleted terms (see example [here](https://docs.google.com/spreadsheets/d/1KUYvnB1VVBV7KwbKipxvgNLX9FQC0aeaPn3kaxzz92g/edit#gid=36625823))
-2. Run ROBOT command to add term tracker intermediate
-
-##### 2b. Review changes in Protege
-
+##### 2. Review changes in Protege
 1. Check the branch and review changes for obsoleted terms and orphaned terms:
     - Spot check a few terms to ensure they were properly obsoleted and have the correct Annotations
     - spot check a few terms to make sure they are assigned the correct parent (per the ROBOT template) and they have the correct source annotation(s)
