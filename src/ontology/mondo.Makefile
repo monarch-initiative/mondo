@@ -956,10 +956,10 @@ tmp/mondo-%.db: tmp/mondo-%.owl
 
 
 obsoletion_tables: tmp/mondo-relaxed-branchreview.db  tmp/mondo-reasoned-branchreview.db
-	for id in $(shell cat ../../branch_ids.tsv); do \
-        python ../scripts/branch_review.py create-review-table -i tmp/mondo-reasoned-branchreview.db -o tmp/mondo-reasoned-branch-$$id-review.tsv -f ../../obsoletion_terms.tsv -b $$id;\
-		python ../scripts/branch_review.py create-review-table -i tmp/mondo-relaxed-branchreview.db -o tmp/mondo-relaxed-branch-$$id-review.tsv -f ../../obsoletion_terms.tsv -b $$id;\
-		python ../scripts/branch_review.py relax-and-reason -i tmp/mondo-reasoned-branch-$$id-review.tsv -i tmp/mondo-relaxed-branch-$$id-review.tsv -r tmp/mondo-relaxed-branchreview.db   -f ../../obsoletion_terms.tsv -o reports/mondo-combined-branch-$$id-review.tsv;\
+	for id in $(shell cat ../../branch_ids_2.tsv); do \
+        python ../scripts/branch_review.py create-review-table -i tmp/mondo-reasoned-branchreview.db -o tmp/mondo-reasoned-branch-$$id-review_2.tsv -f ../../obsoletion_terms.tsv -b $$id;\
+		python ../scripts/branch_review.py create-review-table -i tmp/mondo-relaxed-branchreview.db -o tmp/mondo-relaxed-branch-$$id-review_2.tsv -f ../../obsoletion_terms.tsv -b $$id;\
+		python ../scripts/branch_review.py relax-and-reason -i tmp/mondo-reasoned-branch-$$id-review_2.tsv -i tmp/mondo-relaxed-branch-$$id-review_2.tsv -r tmp/mondo-relaxed-branchreview.db   -f ../../obsoletion_terms.tsv -o reports/mondo-combined-branch-$$id-review_2.tsv;\
     done
 
 #	python ../scripts/branch_review.py create-review-table -i tmp/mondo-reasoned-branchreview.db -o reports/mondo-reasoned-branch-review.tsv -f ../../obsoletion_terms.tsv -B ../../branch_ids.tsv
