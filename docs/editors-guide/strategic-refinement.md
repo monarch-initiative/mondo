@@ -1,8 +1,8 @@
-# Mass obsoletion pipeline
+# Strategic Refinement
 
 ## Summary
 
-The goal of this project is to clean up the hierarchy in Mondo and remove Orphanet (ORDO) grouping classes that are causing unwanted classifications in Mondo.
+The goal of this project is to to perform strategic refinement in Mondo and clean up the hierarchy. The first steps at this refinment is to remove the Orphanet (ORDO) grouping classes since these cause unwanted classifications in Mondo.
 
 **Justification**: Orphanet takes a different approach to classification compared to Mondo, where many disease entities are grouped together based on phenotypic features. This is causing some incorrect inferences in Mondo. 
 
