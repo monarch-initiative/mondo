@@ -66,7 +66,7 @@ Label for the parent	| parent class |	source |	PMID |	Curator confidence
 
 ### Review and reassign superclasses to "leave the branch" terms
 
-1. review terms that will leave the branch when the grouping terms are obsoleted
+1. review terms that will leave the branch when the grouping classes are obsoleted
 2. assign a new parent when appropriate, ie when the term leaving the branch should remain in the branch
 3. if you agree that a term should leave the branch, assign a "curator confidence" to indicate that the term was reviewed
 
