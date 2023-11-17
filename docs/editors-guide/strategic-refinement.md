@@ -58,7 +58,7 @@ Label for the parent	| parent class |	source |	PMID |	Curator confidence
 
 ### Review and reassign superclasses to Orphaned terms
 
-1. review terms that will become orphaned when the grouping terms are obsoleted
+1. review terms that will become orphaned when the grouping classes are obsoleted
 2. assign a new parent to each term
 3. See [video here](https://drive.google.com/file/d/1Be2Uh3bi-ni8bUOTlhxn6YvD31bEsDgX/view) for more details
 4. Share the spreadsheet with another curator for review, if needed
