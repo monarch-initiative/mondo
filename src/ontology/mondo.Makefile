@@ -588,6 +588,11 @@ $(MAPPINGSDIR)/mondo.sssom.tsv: tmp/mondo.sssom.tsv tmp/mondo-ingest.db
 
 mappings: $(ALL_MAPPINGS)
 
+mappings_fast:
+	$(MAKE) sssom -B
+	$(MAKE) mappings IMP=false MIR=false PAT=false -B
+
+
 ##### RELEASE Report ######
 
 reports/mondo_base_current_%.tsv: mondo-base.owl
