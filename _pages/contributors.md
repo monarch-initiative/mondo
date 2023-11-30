@@ -36,7 +36,7 @@ Moni Munoz-Torres | University of Colorado | Phenomics First Program Director | 
 
 Name | Affiliation | GitHub
 --- | --- | ---
-Gioconda Alyea | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [galyea-gard](https://github.com/galyea-gard )
+Gioconda Alyea | [NORD](https://rarediseases.org/) | [galyea-gard](https://github.com/galyea-gard )
 Joanna Amberger | [OMIM](https://omim.org/) | [jamberger](https://github.com/jamberger)
 Larry Babb | [ClinGen](https://clinicalgenome.org/) | [larrybabb](https://github.com/larrybabb)
 Jim Balhoff | [RENCI](https://renci.org/) | [balhoff ](https://github.com/balhoff )
@@ -120,7 +120,7 @@ Tudor Oprea            |                         | [TudorOprea](https://github.c
 David Osumi-Sutherland | [EBI](https://www.ebi.ac.uk/) | [dosumis](https://github.com/dosumis)
 Kalliopi Panoutsopoulou |  | [kallia-p](https://github.com/kallia-p)
 Brooke Palus | [ClinGen](https://clinicalgenome.org/) | [brookepalus](https://github.com/brookepalus)
-Anne Pariser | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [Anne-Pariser](https://github.com/Anne-Pariser)
+Anne Pariser | [Alltrna](https://www.alltrna.com/) | [Anne-Pariser](https://github.com/Anne-Pariser)
 Zoë Pendlington | [EBI](https://www.ebi.ac.uk/) | [zoependlington](https://github.com/zoependlington)
 Tim Putman | [Monarch Initiative](http://monarchinitiative.org/) | [putmantime](https://github.com/putmantime) 
 Stephen Ramsey         | Oregon State University | [saramsey](https://github.com/saramsey)
