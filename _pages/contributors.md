@@ -100,7 +100,7 @@ Sebastian Kohler | [Ada Health](https://ada.com/) | [drseb ](https://github.com/
 Abbe Lai | Boston Children's Hospital | [abbe-Lai](https://github.com/abbe-Lai)
 Martin Larralde        | EMBL                   | [althonos](https://github.com/althonos)        | 
 Austin Letcher | [CoRDS-Sanford](http://www.sanfordresearch.org/specialprograms/cords/) | [Letchau](https://github.com/Letchau)
-Janine Lewis | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [janinelewis3](https://github.com/janinelewis3)
+Janine Lewis | [NORD](https://rarediseases.org/) | [janinelewis3](https://github.com/janinelewis3)
 Antonia Lock           | UniProt Consortium     | [Antonialock](https://github.com/Antonialock)    | 
 Irene López            | EMBL-EBI                | [ireneisdoomed](https://github.com/ireneisdoomed)
 Donna Maglott | [NCBI](National Center for Biotechnology Information) | [maglott](https://github.com/maglott)
