@@ -565,7 +565,7 @@ tmp/mirror-efo.json: #mirror/efo.owl
 
 .PHONY: sssom
 sssom:
-	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall sssom==0.3.17
+	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall sssom==0.4.0
 
 .PHONY: oaklib
 oaklib:
