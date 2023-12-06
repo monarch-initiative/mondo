@@ -1,0 +1,21 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+    ?entity a owl:Class .
+    [] a owl:Axiom ;
+         owl:annotatedSource ?entity ;
+         owl:annotatedProperty oboInOwl:hasDbXref ;
+         owl:annotatedTarget ?xref ;
+         oboInOwl:source ?source .
+}
+WHERE {
+  ?entity oboInOwl:hasDbXref ?xref .
+  ?entity owl:deprecated ?deprecated . 
+
+  FILTER (STRSTARTS(str(?xref),"GARD:"))
+  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND(IF(?deprecated=true,"MONDO:obsoleteEquivalent","MONDO:equivalentTo") as ?source)
+}

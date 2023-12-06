@@ -214,25 +214,62 @@ clean:
 ##### Mondo subset auto-tagger ##############
 #############################################
 
-# gard is currently in Mondo
-# we dont know how to identify rare OMIM terms yet
-RARE_SUBSETS=nord orphanet mondo
+RARE_SUBSETS=nord orphanet inferred gard
 
 tmp/orphanet-rare-subset.ttl: $(SRC)
 	$(ROBOT) merge -i $(SRC) reason \
 		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
 
+
+subsets/gard-subset.template.tsv:
+	wget "https://github.com/monarch-initiative/gard/releases/latest/download/mondo-gard-exact.robot.template.tsv" -O $@
+
+# The complex part here is that we need to dynamically update the MONDO source code, i.e. 
+# MONDO:equivalentTo and MONDO:obsoleteEquivalentTo.
+tmp/gard-rare-subset.ttl: $(SRC) subsets/gard-subset.template.tsv
+	$(ROBOT) template --template subsets/gard-subset.template.tsv convert -f ttl -o $@
+	$(ROBOT) remove -i $< --select imports merge -i $@ query -f ttl --query ../sparql/construct/construct-equivalent-obsolete-gard.sparql $@.source
+	$(ROBOT) merge -i $@ -i $@.source -o $@
+
 tmp/nord-rare-subset.ttl: $(SRC)
 	$(ROBOT) template --template subsets/nord-subset.template.tsv convert -f ttl -o $@
 
-tmp/mondo-rare-subset.ttl: $(SRC)
-	$(ROBOT) merge -i $(SRC) reason \
-		query --format ttl --query ../sparql/construct/construct-mondo-rare-subset.sparql $@
+# The inferred subset depends on the other ones, so we need to first remove the old subsets
+# Then add the gard, nord and orphanet subsets back in
+tmp/inferred-rare-subset.ttl: $(SRC) tmp/nord-rare-subset.ttl tmp/gard-rare-subset.ttl tmp/orphanet-rare-subset.ttl
+	$(ROBOT) merge -i $(SRC) \
+		unmerge -i components/mondo-subsets.owl \
+		merge $(patsubst %, -i %, $^) \
+		reason \
+		query --format ttl --query ../sparql/construct/construct-inferred-rare-subset.sparql $@
 
-components/mondo-subsets.owl: tmp/mondo-rare-subset.ttl tmp/orphanet-rare-subset.ttl tmp/nord-rare-subset.ttl | dirs
-	$(ROBOT) merge -i tmp/nord-rare-subset.ttl -i tmp/mondo-rare-subset.ttl -i tmp/orphanet-rare-subset.ttl \
+components/mondo-subsets.owl: tmp/inferred-rare-subset.ttl tmp/orphanet-rare-subset.ttl tmp/nord-rare-subset.ttl tmp/gard-rare-subset.ttl
+	$(ROBOT) merge $(patsubst %, -i %, $^) \
 		query --update ../sparql/construct/construct-rare-subset.sparql \
 		annotate --ontology-iri $(ONTBASE)/$@ -o $@
+
+# As of 3 August, does not do anything.
+components/mondo-characteristic-rare.owl: components/mondo-subsets.owl
+	$(ROBOT) merge -i $(SRC) reason \
+		query --format ttl --query ../sparql/construct/construct-rare-subset.sparql \
+		annotate --ontology-iri $(ONTBASE)/$@ -o $@
+
+reports/new-rare-diseases.txt: #$(ONT)-base.owl
+	$(ROBOT) query -i $(ONT)-base.owl --query ../sparql/signature/rare-subset.sparql $@
+
+reports/old-rare-diseases.txt: tmp/mondo-lastbase.owl
+	$(ROBOT) query -i tmp/mondo-lastbase.owl --query ../sparql/signature/rare-subset.sparql $@
+
+reports/%-rare-diseases.tsv: $(ONT)-base.owl reports/%-rare-diseases.txt
+	$(ROBOT) filter --input $(ONT)-base.owl  -T reports/$*-rare-diseases.txt --select "annotations self" \
+		export --header "ID|LABEL|SYNONYMS" \
+  		--format tsv --export $@
+
+rare-disease-reports: reports/old-rare-diseases.tsv reports/new-rare-diseases.tsv
+	python ../scripts/filter_rare_disease_list.py reports/old-rare-diseases.tsv reports/new-rare-diseases.tsv reports/added-rare-disases.tsv reports/removed-rare-diseases.tsv
+
+	
+
 
 #############################################
 ##### Mondo analysis ########################
@@ -289,6 +326,9 @@ sources/$(SOURCE_VERSION)/equivalencies.owl: | source_release_dir
 #sources/CTD_diseases.obo:
 #	curl -L -s http://ctdbase.org/reports/CTD_diseases.obo.gz  | gzip -dc | perl -npe 's@alt_id@xref@' > $@.tmp && mv $@.tmp $@
 
+reports/gard-mondo-mapped-obsoletes.tsv: $(ONT).owl
+	$(ROBOT) query -i $(ONT).owl -f tsv --query $(SPARQLDIR)/reports/gard-mondo-mapped-obsoletes.sparql $@
+
 ##################################################
 ################## Old diseases2owl code #########
 
@@ -313,6 +353,10 @@ build-%:
 
 patterns: matches pattern_docs
 	make components/mondo-tags.owl
+
+components:
+	$(MAKE) patterns
+	$(MAKE) components/mondo-subsets.owl
 
 reports/robot_diff.md: mondo.obo mondo-lastbuild.obo
 	$(ROBOT) diff --left mondo-lastbuild.obo --right $< -f markdown -o $@
@@ -433,17 +477,38 @@ r2e:
 GH_ISSUE=none
 OBS_REASON=outOfScope
 
+.PRECIOUS: config/obsolete_me.txt
+.PRECIOUS: config/filtered_obsolete_me.txt
+
 mass_obsolete:
 	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/$(GH_ISSUE) --obsoletionReason MONDO:$(OBS_REASON)  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo
 
-tmp/mass_obsolete.sparql: ../sparql/reports/mondo-obsolete-simple.sparql config/obsolete_me.txt
-	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+tmp/mass_obsolete.sparql: ../sparql/reports/mondo-obsolete-simple.sparql config/filtered_obsolete_me.txt
+	@echo "\n** Run mondo-obsolete-simple.sparql **"
+	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
-tmp/mass_obsolete_warning.sparql: ../sparql/reports/mondo-obsolete-warning.sparql config/obsolete_me.txt
-	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+tmp/mondo-rename-effected-classes.ru: ../sparql/reports/mondo-rename-effected-classes.ru config/filtered_obsolete_me.txt
+	@echo "\n** Run mondo-rename-effected-classes.ru **"
+	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
-tmp/mass_obsolete.ru: ../sparql/update/mondo-obsolete-simple.ru config/obsolete_me.txt
-	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+tmp/mass_obsolete_warning.sparql: ../sparql/reports/mondo-obsolete-warning.sparql config/filtered_obsolete_me.txt
+	@echo "\n** Run mondo-obsolete-warning.sparql **"
+	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+
+tmp/mass_obsolete.ru: ../sparql/update/mondo-obsolete-simple.ru config/filtered_obsolete_me.txt
+	@echo "\n** Run mondo-obsolete-simple.ru **"
+	# Create input for query
+	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; \
+	sed -e "s/MONDO:0000000/$$LISTT/g" -e "s|GITHUB_ISSUE_URL|$(GITHUB_ISSUE_URL)|g" $< > $@
+
+
+config/filtered_obsolete_me.txt: tmp/identify_existing_obsoletes.txt config/obsolete_me.txt
+	# Remove ^M from tmp/identify_existing_obsoletes.txt
+	sed 's/\r//g' tmp/identify_existing_obsoletes.txt > tmp/filtered_identify_existing_obsoletes.txt
+
+	# Filter out existing obsoletes
+	grep -v -w -i -f tmp/filtered_identify_existing_obsoletes.txt config/obsolete_me.txt > $@
+
 
 tmp/mass_obsolete_me.txt: tmp/mass_obsolete.sparql
 	$(ROBOT) query -i $(SRC) --use-graphs true -f tsv --query $< $@
@@ -455,14 +520,31 @@ tmp/mass_obsolete_me.txt: tmp/mass_obsolete.sparql
 mass_obsolete_warning: tmp/mass_obsolete_warning.sparql
 	$(ROBOT) verify -i $(SRC) --queries $< --output-dir reports/
 
+tmp/identify_existing_obsoletes.ru: ../sparql/reports/check_obsoletes_from_list.ru config/obsolete_me.txt
+	@echo "\n** Identify existing obsoletes in config/obsolete_me.txt **"
+	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+
+tmp/identify_existing_obsoletes.txt: tmp/identify_existing_obsoletes.ru
+	@echo "\n** Write existing obsoletes to tmp/identify_existing_obsoletes.txt **"
+	$(ROBOT) query --format txt -i $(SRC) --query $< $@
+
 mass_obsolete2: tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
-	echo "Make sure you have updated config/obsolete_me.txt before running this script.."
-	make mass_obsolete_warning
+	@echo "Make sure you have updated config/obsolete_me.txt before running this script.."
+	$(MAKE) tmp/mondo-obsolete-labels.obo
+	$(MAKE) mass_obsolete_warning
+	@echo "** Check above for violations\n"
 	$(ROBOT) query -i $(SRC) --use-graphs true --update tmp/mass_obsolete.ru \
-		remove -T tmp/mass_obsolete_me.txt --axioms logical convert -f obo --check false -o $(SRC).obo
+		remove --preserve-structure false -T tmp/mass_obsolete_me.txt --axioms logical convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC)
-	make NORM
+	$(MAKE) NORM
 	mv NORM $(SRC)
+
+tmp/mondo-obsolete-labels.obo: tmp/mondo-rename-effected-classes.ru
+	@echo "\n** Re-name obsolete class labels **"
+	$(ROBOT) merge -i $(SRC) --collapse-import-closure false query --update tmp/mondo-rename-effected-classes.ru  \
+		convert -f obo --check false -o $@
+
+
 
 MAPPINGSDIR=mappings
 METADATADIR=metadata
@@ -504,8 +586,12 @@ $(MAPPINGSDIR)/mondo.sssom.tsv: tmp/mondo.sssom.tsv tmp/mondo-ingest.db
 #	sssom convert -i $< -o $@
 #	#python ../scripts/split_sssom_by_source.py $@
 
-
 mappings: $(ALL_MAPPINGS)
+
+mappings_fast:
+	$(MAKE) sssom -B
+	$(MAKE) mappings IMP=false MIR=false PAT=false -B
+
 
 ##### RELEASE Report ######
 
@@ -759,6 +845,53 @@ migrate-%: tmp/mondo-edit-%.ttl
 
 migrate: migrate-omim
 
+#######################################################
+##### British synonyms pipeline #######################
+#######################################################
+
+tmp/synonyms.csv: $(SRC)
+	$(ROBOT) query -i $< --use-graphs true -f csv --query ../sparql/reports/mondo_synonyms.sparql $@
+
+tmp/labels.csv: $(SRC)
+	$(ROBOT) query -i $< --use-graphs true -f csv --query ../sparql/reports/mondo_labels.sparql $@
+
+tmp/british_english_dictionary.csv:
+	wget "https://raw.githubusercontent.com/obophenotype/human-phenotype-ontology/master/src/ontology/hpo_british_english_dictionary.csv" -O $@
+
+SYN_TYPES=hasBroadSynonym hasRelatedSynonym hasExactSynonym hasNarrowSynonym
+SYN_TYPE_TEMPLATES=$(patsubst %, tmp/be_syns_%.csv, $(SYN_TYPES))
+
+$(SYN_TYPE_TEMPLATES): tmp/labels.csv tmp/synonyms.csv tmp/british_english_dictionary.csv
+	python3 ../scripts/compute_british_synonyms.py $^ tmp/
+
+tmp/british_synonyms.owl: $(SYN_TYPE_TEMPLATES) $(SRC)
+	$(ROBOT) merge -i $(SRC) template $(patsubst %, --template %, $(SYN_TYPE_TEMPLATES)) --output $@ && \
+	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
+
+#We remove the old ones so that if we change the synonym scope of the AE synonym, its changed as well for this one.
+add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
+	echo "WARNING: REMOVING OLD BRITISH SYNONYMS! WE HOPE YOU DIDNT CURATE ANY MANUALLY!"
+	grep -v 'OMO:0003005' mondo-edit.obo > TT || true
+	mv TT mondo-edit.obo
+	$(ROBOT) merge -i $< -i tmp/british_synonyms.owl --collapse-import-closure false -o tmp/mondo-edit.obo && mv tmp/mondo-edit.obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
+# This updates all British English in Mondo to American English.
+.PHONY: americanize
+
+americanize: $(SRC) tmp/british_english_dictionary.csv
+	python ../scripts/clean-british-english.py $^
+
+
+.PHONY: update-gard-mappings
+update-gard-mappings:
+	grep -v '^xref: GARD:' mondo-edit.obo > TT || true
+	mv TT mondo-edit.obo
+	# make NORM
+	# mv NORM $(SRC)
+
+
 #######################################
 ### New Pattern merge pipeline ########
 #######################################
@@ -821,3 +954,11 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 		mv tmp/$(SRC) $(SRC)
 		make NORM
 		mv NORM $(SRC)
+
+.PHONY: help
+help:
+	@echo "$$data"
+	echo "Making sure all english in Mondo in American:"
+	echo "sh run.sh make americanize"
+	echo "Update british english synonyms"
+	echo "sh run.sh make add_british_language_synonyms"

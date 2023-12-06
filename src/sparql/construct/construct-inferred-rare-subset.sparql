@@ -1,0 +1,41 @@
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+#description: This query constructs the inferred rare subset by checking all rare disease terms according
+# to our disease authorities (GARD, ORDO, NORD) and then looking at their children according to MONDO. 
+
+CONSTRUCT {
+  ?child a owl:Class .
+  ?child <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#inferred_rare> .
+}
+
+WHERE
+{
+  
+  VALUES ?subset { 
+    <http://purl.obolibrary.org/obo/mondo#gard_rare> 
+    <http://purl.obolibrary.org/obo/mondo#mondo_rare> 
+    <http://purl.obolibrary.org/obo/mondo#orphanet_rare>
+    <http://purl.obolibrary.org/obo/mondo#nord_rare> 
+  }
+
+  ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> ?subset.
+  ?child rdfs:subClassOf+ ?cls .
+
+FILTER NOT EXISTS {
+    VALUES ?anySubset { 
+    <http://purl.obolibrary.org/obo/mondo#gard_rare> 
+    <http://purl.obolibrary.org/obo/mondo#mondo_rare> 
+    <http://purl.obolibrary.org/obo/mondo#orphanet_rare>
+    <http://purl.obolibrary.org/obo/mondo#nord_rare> 
+  }
+    ?child <http://www.geneontology.org/formats/oboInOwl#inSubset> ?anySubset.
+  }
+
+ FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+}
+  

@@ -1,3 +1,3 @@
 # Set up Docker
 
-Check back soon.
+[See instructions here.](https://oboacademy.github.io/obook/howto/setup-docker/)

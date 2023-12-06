@@ -1,7 +1,9 @@
 # Mondo Curation Workflow Overview
 
 ## Description
-This document describes the community curation workflow in Mondo, including how new terms are added to Mondo, when terms are obsoleted, and Mondo releases. 
+This document describes the community curation workflow in Mondo, including how new terms are added to Mondo, when terms are obsoleted, and Mondo releases. An overview of the types of commonly requested changes are depicted below.
+
+![Mondo term changes](../images/Mondo-term-changes-figure.png)
 
 ## Adding new terms to Mondo
 - New terms are added to Mondo via two processes:
@@ -58,7 +60,8 @@ The community has at least two months to dispute the obsoletion of Mondo terms t
 
 The Mondo development team strives to provide an inclusive, community-based development process and we thrive based on our user and community feedback and participation. 
 
-In the case that there are disagreements about our development approaches, we will work to resolve the issues. Some approaches include:
+In the case that there are disagreements about our development approaches, we will work to resolve the issues. Some approaches include:  
+
 - Vetting process by members of the community is done on GitHub issues that are visible to (and can be commented on by) the community
 - Open weekly Mondo Curation calls - any member of the community is welcome to join our calls. Please email info@monarchinitative.org and request to be added to the invitation.
 - We host community workshops to discuss larger topics and workflows. A list of past workshops is available [here](https://mondo.monarchinitiative.org/pages/workshop/).

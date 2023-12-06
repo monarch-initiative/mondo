@@ -6,7 +6,30 @@ on:
     types: [ opened, edited ]
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      phraseExists: ${{ steps.check-body.outputs.result }}
+    steps:
+      - name: Check if issue body contains 'Hey ontobot'
+        id: check-body
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issue = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number
+            });
+            if (!issue.data.body) {
+              console.log('Issue body is empty or null');
+              return false;
+            }
+            return issue.data.body.toLowerCase().includes('hey ontobot');
+  
   build:
+    needs: check
+    if: needs.check.outputs.phraseExists == 'true'
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
