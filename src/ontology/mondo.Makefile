@@ -220,19 +220,54 @@ tmp/orphanet-rare-subset.ttl: $(SRC)
 	$(ROBOT) merge -i $(SRC) reason \
 		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
 
+####################################
+##### GARD #########################
+####################################
 
 subsets/gard-subset.template.tsv:
-	wget "https://github.com/monarch-initiative/gard/releases/latest/download/mondo-gard-exact.robot.template.tsv" -O $@
+	#wget "https://github.com/monarch-initiative/gard/releases/latest/download/mondo-gard-exact.robot.template.tsv" -O $@
+	echo "skipped"
 
 # The complex part here is that we need to dynamically update the MONDO source code, i.e. 
 # MONDO:equivalentTo and MONDO:obsoleteEquivalentTo.
-tmp/gard-rare-subset.ttl: $(SRC) subsets/gard-subset.template.tsv
-	$(ROBOT) template --template subsets/gard-subset.template.tsv convert -f ttl -o $@
+tmp/gard-rare-subset.owl: $(SRC) subsets/gard-subset.template.tsv
+	$(ROBOT) template --template subsets/gard-subset.template.tsv convert -f ttl -o $@.subset
 	$(ROBOT) remove -i $< --select imports merge -i $@ query -f ttl --query ../sparql/construct/construct-equivalent-obsolete-gard.sparql $@.source
-	$(ROBOT) merge -i $@ -i $@.source -o $@
+	$(ROBOT) merge -i $@.subset -i $@.source convert -f ofn -o $@
 
-tmp/nord-rare-subset.ttl: $(SRC)
+.PHONY: update-gard-mappings
+update-gard-mappings:
+	$(MAKE) tmp/gard-rare-subset.owl
+	grep -v '^xref: GARD:' mondo-edit.obo > TT || true
+	mv TT mondo-edit.obo
+	grep -v '^subset: gard_rare' mondo-edit.obo > TT || true
+	mv TT mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/gard-rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
+####################################
+##### NORD #########################
+####################################
+
+subsets/nord-subset.template.tsv:
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vQuj-0iOk3JkfNGA0AAXHLiFH6XZZWnuFz-UhyqJwC7OcCdC5kXL2CoWPt4c7yDOG3DoKeFi4nDabdU/pub?gid=0&single=true&output=tsv" -O $@
+
+tmp/nord-rare-subset.owl: $(SRC) subsets/nord-subset.template.tsv
 	$(ROBOT) template --template subsets/nord-subset.template.tsv convert -f ttl -o $@
+
+.PHONY: update-nord-mappings
+update-nord-mappings:
+	$(MAKE) tmp/nord-rare-subset.owl
+	grep -v '^xref: NORD:' mondo-edit.obo > TT || true
+	mv TT mondo-edit.obo
+	grep -v '^subset: nord_rare' mondo-edit.obo > TT || true
+	mv TT mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/nord-rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
 
 # The inferred subset depends on the other ones, so we need to first remove the old subsets
 # Then add the gard, nord and orphanet subsets back in
@@ -891,13 +926,6 @@ add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 americanize: $(SRC) tmp/british_english_dictionary.csv
 	python ../scripts/clean-british-english.py $^
 
-
-.PHONY: update-gard-mappings
-update-gard-mappings:
-	grep -v '^xref: GARD:' mondo-edit.obo > TT || true
-	mv TT mondo-edit.obo
-	# make NORM
-	# mv NORM $(SRC)
 
 
 #######################################
