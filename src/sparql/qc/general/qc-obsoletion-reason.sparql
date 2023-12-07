@@ -9,10 +9,11 @@ PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
 SELECT ?entity ?property ?value WHERE {
   VALUES ?property { IAO:0000231 }
   ?entity ?property ?value .
-  FILTER(!isIRI(?value))
-  FILTER(?value!=OMO:0001000 && 
+  FILTER(!isIRI(?value) || 
+   (?value!=OMO:0001000 && 
     ?value!=IAO:0000423 &&
     ?value!=IAO:0000229 &&
-    ?value!=MONDO:TermsMerged )
+    ?value!=IAO:0000227 &&
+    ?value!=MONDO:TermsMerged ))
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
 }
