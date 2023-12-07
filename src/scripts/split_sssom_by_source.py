@@ -14,9 +14,10 @@ import pandas as pd
 from argparse import ArgumentParser
 import yaml
 
-from sssom.util import read_pandas, sort_df_rows_columns
-from sssom.parsers import from_sssom_dataframe, split_dataframe_by_prefix
-from sssom.writers import write_table, write_tables
+from sssom.util import sort_df_rows_columns
+from sssom.parsers import from_sssom_dataframe, split_dataframe_by_prefix, parse_sssom_table
+from sssom.writers import write_tables
+from sssom.constants import SEMAPV
 
 import logging
 
@@ -70,24 +71,23 @@ def read_metadata(filename):
     return meta, curie_map
 
 meta, curie_map=read_metadata(metadata_file)
-df=read_pandas(sssom_file)
-df["mapping_justification"]="semapv:ManualMappingCuration"
-
+msdf_main=parse_sssom_table(sssom_file)
+msdf_main.df["mapping_justification"]=SEMAPV.ManualMappingCuration.value
 subject_prefixes_allowed = meta['subject_prefixes']
 relations_allowed = meta['relations']
 
-subject_prefixes=set(df['subject_id'].str.split(pat=':', n=1, expand=True)[0])
-object_prefixes=set(df['object_id'].str.split(pat=':',n= 1, expand=True)[0])
-relations=set(df['predicate_id'])
 
-df = replace_temporary_prefixes(subject_prefixes, df)
-df = replace_temporary_prefixes(object_prefixes, df)
+subject_prefixes=set(msdf_main.df['subject_id'].str.split(pat=':', n=1, expand=True)[0])
+object_prefixes=set(msdf_main.df['object_id'].str.split(pat=':',n= 1, expand=True)[0])
+relations=set(msdf_main.df['predicate_id'])
+
+msdf_main.df = replace_temporary_prefixes(subject_prefixes, msdf_main.df)
+msdf_main.df = replace_temporary_prefixes(object_prefixes, msdf_main.df)
 global_metadata=meta['global_metadata']
-
-msdf = from_sssom_dataframe(df, prefix_map=curie_map, meta=global_metadata)
+new_msdf = from_sssom_dataframe(msdf_main.df, prefix_map=msdf_main.prefix_map, meta=global_metadata)
 today = datetime.today().strftime('%Y-%m-%d')
 
-splitted = split_dataframe_by_prefix(msdf,subject_prefixes_allowed,object_prefixes, relations_allowed)
+splitted = split_dataframe_by_prefix(new_msdf,subject_prefixes_allowed,object_prefixes, relations_allowed)
 for msdf in splitted:
     fromS = msdf.split("_")[0].upper()
     toS = msdf.split("_")[2].upper()
