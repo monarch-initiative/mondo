@@ -5,6 +5,12 @@
 # Required
 version: 2
 
+# See documentation here: https://blog.readthedocs.com/use-build-os-config/
+build:
+  os: "ubuntu-22.04"
+  tools:
+    python: "3.9"
+    
 # Build documentation with MkDocs
 mkdocs:
   configuration: mkdocs.yml
@@ -14,6 +20,5 @@ formats: all
 
 # Optionally set the version of Python and requirements required to build your docs
 python:
-  version: 3.7
   install:
     - requirements: docs/requirements.txt

@@ -46,6 +46,9 @@ See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/
     1. Mondo ID for the term that will replace the obsoleted terms
     1. Label for the term that will replace the obsoleted terms
     
+### Workflow video explanation
+See [here](https://drive.google.com/file/d/1pnf0BT1qJ9wxXKvykkWhjwvFLceI2U-2/view?usp=sharing)
+    
 #### If new obsoletion reasons are needed
 
 Request from the technical team if you need additional obsolescence reasons. This involves:
@@ -177,7 +180,7 @@ Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:e
 
 If you only want to obsolete terms without taking another look, you can use the simple mass obsoletion pipeline:
 
-1. add all terms you wish to obsolete to config/obsolete_me.txt
+1. add all terms you wish to obsolete to config/obsolete_me.txt (note, this file may need to be created and saved in this folder). The changes will not show up in the git diff.
 1. run `sh run.sh make mass_obsolete2 -B`
 1. Very carefully review the diff. More carefully then usual!
 

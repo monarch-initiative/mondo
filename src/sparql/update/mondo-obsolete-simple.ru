@@ -3,11 +3,18 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 DELETE {
   ?entity <http://purl.obolibrary.org/obo/IAO_0006012> ?date .
   ?entity oboInOwl:inSubset ?subset . #this does not delete nested subsets (ie subsets with dbxrefs)
+  ?entity rdfs:comment ?comment .
   ?entity oboInOwl:inSubset <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate> .
+  ?xsubset a owl:Axiom ;
+         owl:annotatedSource ?entity ;
+         owl:annotatedProperty oboInOwl:inSubset ;
+         owl:annotatedTarget ?subset ;
+         oboInOwl:source ?subsetsource .
   ?xref_anno oboInOwl:source ?source . #this deletes MONDO:equivalentTo 
   ?entity rdfs:label ?label . #this deletes the old label and adds the new label
   ?entity <http://purl.obolibrary.org/obo/IAO_0000115> ?definition . #This deletes the definition
@@ -15,14 +22,14 @@ DELETE {
 }
 
 INSERT {
-  ?xref_anno oboInOwl:source ?new_source . #this adds MONDO:obsoleteEquivalent (where the annotation was previously MONDO:equivalentTo)
+  ?xref_anno oboInOwl:source ?new_source . #adds MONDO:obsoleteEquivalent (where previously MONDO:equivalentTo) and adds MONDO:obsoleteEquivalentObsolete (where previously MONDO:equivalentObsolete)
   ?entity rdfs:label ?new_label . #this adds the new label obsolete label 
+  ?entity <http://purl.obolibrary.org/obo/IAO_0000233> ?github_issue_url .
   ?entity owl:deprecated true .
-  ?entity <http://purl.obolibrary.org/obo/IAO_0000231> "out of scope" .
+  ?entity <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/OMO_0001000> .
   ?entity <http://purl.obolibrary.org/obo/IAO_0000115> ?obsolete_definition .
   ?def_anno owl:annotatedTarget ?obsolete_definition.
-  ?entity <http://purl.obolibrary.org/obo/IAO_0000231> <http://purl.obolibrary.org/obo/OMO_0001000> .
-  ?xref_anno a owl:Axiom ;
+  [] rdf:type owl:Axiom ;
            owl:annotatedSource ?entity ;
            owl:annotatedProperty <http://purl.obolibrary.org/obo/IAO_0000231> ;
            owl:annotatedTarget <http://purl.obolibrary.org/obo/OMO_0001000> ;
@@ -45,8 +52,24 @@ WHERE {
     	FILTER(?subset != <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate> )
   	}
     
+    OPTIONAL {
+      ?entity oboInOwl:inSubset ?subset .
+      
+      ?xsubset a owl:Axiom ;
+             owl:annotatedSource ?entity ;
+             owl:annotatedProperty oboInOwl:inSubset ;
+             owl:annotatedTarget ?subset ;
+             oboInOwl:source ?subsetsource .
+             
+      FILTER(?subset != <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate> )
+    }
+    
   	OPTIONAL {
   		?entity <http://purl.obolibrary.org/obo/IAO_0006012> ?date .
+  	}
+
+    OPTIONAL {
+  		?entity rdfs:comment ?comment .
   	}
     
     OPTIONAL {
@@ -66,6 +89,7 @@ WHERE {
 
    	FILTER NOT EXISTS { ?entity owl:deprecated true }
   	
-  	BIND(REPLACE(str(?source), "MONDO:equivalentTo", "MONDO:obsoleteEquivalent") as ?new_source)
-  	BIND(CONCAT("obsolete ",str(?label)) as ?new_label)
+  	BIND (REPLACE(REPLACE(?source, "MONDO:equivalentTo", "MONDO:obsoleteEquivalent"), "MONDO:equivalentObsolete", "MONDO:obsoleteEquivalentObsolete") AS ?new_source)
+    BIND(CONCAT("obsolete ",str(?label)) as ?new_label)
+    BIND("GITHUB_ISSUE_URL"^^xsd:anyURI as ?github_issue_url)
 }
