@@ -587,10 +587,17 @@ $(MAPPINGSDIR)/mondo.sssom.tsv: tmp/mondo.sssom.tsv tmp/mondo-ingest.db
 #	sssom convert -i $< -o $@
 #	#python ../scripts/split_sssom_by_source.py $@
 
-mappings: $(ALL_MAPPINGS)
+.PHONY: clean_mappings
+.PHONY: mappings mappings_fast
+
+clean_mappings:
+	rm -rf $(MAPPINGSDIR)/*.sssom.tsv
+
+mappings: clean_mappings $(ALL_MAPPINGS)
 
 mappings_fast:
 	$(MAKE) sssom -B
+	$(MAKE) clean_mappings -B
 	$(MAKE) mappings IMP=false MIR=false PAT=false -B
 
 
