@@ -32,24 +32,24 @@ metadata_file=args.sssom_metadata_path
 mapping_dir=args.tsv_out_path
 
 
-# def reconcile_curie(pre_orig):
-#     if re.match(r".*__[0-9]$", pre_orig):
-#         print(f"{pre_orig} non standard prefix, reconciling")
-#         pre = pre_orig[:-3]
-#     else:
-#         pre = pre_orig
-#     return pre
+def reconcile_curie(pre_orig):
+    if re.match(r".*__[0-9]$", pre_orig):
+        print(f"{pre_orig} non standard prefix, reconciling")
+        pre = pre_orig[:-3]
+    else:
+        pre = pre_orig
+    return pre
 
 
-# def replace_temporary_prefixes(prefixes, df):
-#     for pre_orig in prefixes:
-#         pre = reconcile_curie(pre_orig)
-#         if pre!=pre_orig:
-#             print(f"Replacing temporary curie {pre_orig} with {pre}")
-#             logging.warning(f"Replacing temporary curie {pre_orig} with {pre}")
-#             df['object_id'] = df['object_id'].str.replace(pre_orig+":",pre+":")
-#             df['subject_id'] = df['subject_id'].str.replace(pre_orig+":",pre+":")
-#     return df
+def replace_temporary_prefixes(prefixes, df):
+    for pre_orig in prefixes:
+        pre = reconcile_curie(pre_orig)
+        if pre!=pre_orig:
+            print(f"Replacing temporary curie {pre_orig} with {pre}")
+            logging.warning(f"Replacing temporary curie {pre_orig} with {pre}")
+            df['object_id'] = df['object_id'].str.replace(pre_orig+":",pre+":")
+            df['subject_id'] = df['subject_id'].str.replace(pre_orig+":",pre+":")
+    return df
 
 def read_metadata(filename):
     """
@@ -76,18 +76,18 @@ msdf_main.df["mapping_justification"]=SEMAPV.ManualMappingCuration.value
 subject_prefixes_allowed = meta['subject_prefixes']
 relations_allowed = meta['relations']
 
-# subject_prefixes=set(df['subject_id'].str.split(pat=':', n=1, expand=True)[0])
+
+subject_prefixes=set(msdf_main.df['subject_id'].str.split(pat=':', n=1, expand=True)[0])
 object_prefixes=set(msdf_main.df['object_id'].str.split(pat=':',n= 1, expand=True)[0])
-# relations=set(df['predicate_id'])
+relations=set(msdf_main.df['predicate_id'])
 
-# df = replace_temporary_prefixes(subject_prefixes, df)
-# df = replace_temporary_prefixes(object_prefixes, df)
-# global_metadata=meta['global_metadata']
-
-# msdf = from_sssom_dataframe(df, prefix_map=curie_map, meta=global_metadata)
+msdf_main.df = replace_temporary_prefixes(subject_prefixes, msdf_main.df)
+msdf_main.df = replace_temporary_prefixes(object_prefixes, msdf_main.df)
+global_metadata=meta['global_metadata']
+new_msdf = from_sssom_dataframe(msdf_main.df, prefix_map=msdf_main.prefix_map, meta=global_metadata)
 today = datetime.today().strftime('%Y-%m-%d')
 
-splitted = split_dataframe_by_prefix(msdf_main,subject_prefixes_allowed,object_prefixes, relations_allowed)
+splitted = split_dataframe_by_prefix(new_msdf,subject_prefixes_allowed,object_prefixes, relations_allowed)
 for msdf in splitted:
     fromS = msdf.split("_")[0].upper()
     toS = msdf.split("_")[2].upper()
