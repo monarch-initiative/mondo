@@ -82,7 +82,7 @@ IMPORT_FILES = $(IMPORT_OWL_FILES)
 all_imports: $(IMPORT_FILES)
 
 
-COMPONENTS = mondo-tags mondo-subsets gard.owl
+COMPONENTS = mondo-tags mondo-subsets
 COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
 
 SUBSETS = mondo-minimal mondo-rare
@@ -195,15 +195,14 @@ ANN = annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$@.owl
 
 GITHUB_ACTION = false
 
-filtered.obo: $(SRC) tmp/gard-rare-subset.ttl
+filtered.obo: $(SRC)
 	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS|ICD10CM):@ && !(m@(obsoleteEquivalent|equivalentObsolete|equivalentTo|relatedTo|mondoIsNarrowerThanSource|directSiblingOf|mondoIsBroaderThanSource)@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
 	if [ $(GITHUB_ACTION) = false ]; then $(ROBOT) query -i $@ --use-graphs false \
 		--update ../sparql/update/delete-axiom-annotations.ru \
 		--update ../sparql/update/delete-axiom-annotations-by-prefix.ru \
 		--update ../sparql/update/inject-cross-species-analog.ru \
 		remove --term-file config/remove-annotations-before-release.txt \
-		convert -f obo --check false -o $@.obo &&\
-		$(ROBOT) merge -i $@.obo -i tmp/gard-rare-subset.ttl --collapse-import-closure false -o $@; fi
+		convert -f obo --check false -o $@.obo && mv $@.obo $@; fi
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
 skos.ttl: filtered.obo
@@ -416,7 +415,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/merged_term
 		remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T $(IMPORTDIR)/merged_terms_combined.txt --select complement --select "annotation-properties" \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
 		$(ANNOTATE_CONVERT_FILE); fi
-.PRECIOUS: $(IMPORTDIR)/merged_import.owl
+
 
 
 
