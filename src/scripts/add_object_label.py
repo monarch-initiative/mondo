@@ -34,9 +34,18 @@ def run(input: str = SSSOM_FILE, output: TextIO =SSSOM_FILE):
     msdf = parse_sssom_table(input)
     ontology_resource = OntologyResource(slug=RESOURCE, local=True)
     oi = SqlImplementation(ontology_resource)
-    if OBJECT_LABEL_COLUMN not in msdf.df.columns:
-        msdf.df[OBJECT_LABEL_COLUMN] = msdf.df[OBJECT_ID_COLUMN].apply(lambda x: oi.label(x))
-        write_table(msdf=msdf,file=output)
+
+    # Condition to check if OBJECT_LABEL_COLUMN is empty
+    is_empty = msdf.df[OBJECT_LABEL_COLUMN].isnull() | (msdf.df[OBJECT_LABEL_COLUMN] == '')
+
+    # Apply the function only where OBJECT_LABEL_COLUMN is empty
+    msdf.df.loc[is_empty, OBJECT_LABEL_COLUMN] = msdf.df.loc[is_empty, OBJECT_ID_COLUMN].apply(lambda x: oi.label(x))
+
+    write_table(msdf=msdf,file=output)
+
+    # if OBJECT_LABEL_COLUMN not in msdf.df.columns:
+    #     msdf.df[OBJECT_LABEL_COLUMN] = msdf.df[OBJECT_ID_COLUMN].apply(lambda x: oi.label(x))
+    #     write_table(msdf=msdf,file=output)
 
 if __name__ == "__main__":
     main()
