@@ -76,8 +76,8 @@ df["mapping_justification"]="semapv:ManualMappingCuration"
 subject_prefixes_allowed = meta['subject_prefixes']
 relations_allowed = meta['relations']
 
-subject_prefixes=set(df['subject_id'].str.split(':', 1, expand=True)[0])
-object_prefixes=set(df['object_id'].str.split(':', 1, expand=True)[0])
+subject_prefixes=set(df['subject_id'].str.split(pat=':', n=1, expand=True)[0])
+object_prefixes=set(df['object_id'].str.split(pat=':',n= 1, expand=True)[0])
 relations=set(df['predicate_id'])
 
 df = replace_temporary_prefixes(subject_prefixes, df)

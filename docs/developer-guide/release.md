@@ -55,7 +55,7 @@ _Note: While the release is running, don't shut your laptop or switch between re
 1. Open mondo.owl and mondo.obo and check the latest changes are there and it looks reasonable
 1. Run `sh run.sh make prepare_release_direct`
 1. Review the file `src/ontology/reports/mondo_release_diff.md`. There is now a new QC section up top, `---START LOG:` to `---END LOG:`. Review the text and _delete it from the file_ if there is no suspicious output.
-1. **UPDATE from 230601**: with the addition of the rare disease subset, the PR will be too large to commit. In GitHub Desktop:
+1. **UPDATE from 230601** _(this should not be an issue anymore, but check anyways)_: with the addition of the rare disease subset, the PR will be too large to commit. In GitHub Desktop:
       1. find the file "raredisease subset.owl"
       1. right click and "ignore file"
 1. Commit changes to a branch
@@ -66,9 +66,16 @@ _Note: While the release is running, don't shut your laptop or switch between re
 
 ## Initial Setup:
 Make sure the initial setup (see above) has been done:  
-1. Download the `obo-simple-diff.pl` script to the "tools" directory and set-up your path to the tools directory.  
-2. Generate token  
-3. Make sure you have gh installed: `brew install gh`. For other ways to install, see [here](https://github.com/cli/cli).  
+1. Download the `obo-simple-diff.pl` script to the "tools" directory
+      1. go into the tools directory
+      2. type `wget https://github.com/cmungall/obo-scripts/blob/master/obo-simple-diff.pl`
+      3. Note that if you have a new computer, you might need to install 'wget' using `brew install wget`
+          1. you can see whether you have wget installed by taping `wget -V`. If it is installed, the version will be reported 
+1. set-up your path to the tools directory.
+      1. see top of this document
+1. Generate token
+      1. see top of this document 
+1. Ensure you have gh installed: `brew install gh`. For other ways to install, see [here](https://github.com/cli/cli).  
 
 
 ## Deploy Release
@@ -90,8 +97,8 @@ Press Enter to open github.com in your browser...
 
 1. `cp ~/.token .token`  
 1. `make GHVERSION=vYYYY-MM-DD deploy_release` - note, this takes about 30 minutes  
-  - make sure you are in the `src/ontology` folder when running the above command   
-  - the date should be the date of the release in the format `make GHVERSION=vYYYY-MM-DD deploy_release` (for example, v2022-04-01) (very important: It should not necessarily be today, it is the day the release artifacts were created according to the IRIs. In order to find the right date, open mondo-base.obo and check version IRI, and use this date)
+       - make sure you are in the `src/ontology` folder when running the above command   
+       - the date should be the date of the release in the format `make GHVERSION=vYYYY-MM-DD deploy_release` (for example, v2022-04-01) (very important: It should not necessarily be today, it is the day the release artifacts were created according to the IRIs. In order to find the right date, open mondo-base.obo and check version IRI, and use this date)
 1. Check these the release pages (make sure you replace the date correctly **in the link in the output in the terminal**):
     1. For example: https://github.com/monarch-initiative/mondo/releases/tag/untagged-2a6c39951f3210b62380
     2. Ensure that it says [name] (eg nicolevasilevsky) released this 1 days ago or now
