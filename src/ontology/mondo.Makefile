@@ -319,7 +319,7 @@ tmp/rare-subset.owl: $(SRC)
 .PHONY: update-rare-subset
 update-rare-subset:
 	$(MAKE) tmp/rare-subset.owl
-	grep -vE '^(subset: rare)$' $(SRC) > tmp/mondo-edit.tmp || true
+	grep -vE '^(subset: rare)$$' $(SRC) > tmp/mondo-edit.tmp || true
 	mv tmp/mondo-edit.tmp mondo-edit.obo
 	$(ROBOT) merge -i $(SRC) -i tmp/rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
