@@ -59,9 +59,6 @@ while (<>) {
         elsif ($prefix eq 'Orphanet') {
             $uri = 'http://www.orpha.net/ORDO/Orphanet_';
         }
-        elsif ($prefix eq 'GARD') {
-            $uri = 'https://rarediseases.info.nih.gov/diseases/';
-        }
         elsif ($prefix eq 'MEDGEN') {
             $uri = 'http://identifiers.org/medgen/';
         }
