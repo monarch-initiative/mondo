@@ -313,11 +313,11 @@ update-clingen:
 ####################################
 
 tmp/rare-subset.owl: $(SRC)
-	$(ROBOT) merge $(SRC) \
-		query --update ../sparql/construct/construct-rare-subset.sparql -o $@
+	$(ROBOT) merge -i $(SRC) \
+		query --format ttl --query ../sparql/construct/construct-rare-subset.sparql $@
 
-.PHONY: update-rare
-update-rare:
+.PHONY: update-rare-subset
+update-rare-subset:
 	$(MAKE) tmp/rare-subset.owl
 	grep -vE '^(subset: rare)$' $(SRC) > tmp/mondo-edit.tmp || true
 	mv tmp/mondo-edit.tmp mondo-edit.obo
