@@ -4,6 +4,7 @@ about: Report all kinds of typos or bugs in Mondo
 title: ''
 labels: bug
 assignees: sabrinatoro
+
 ---
 
 **Mondo term (ID Label)**
