@@ -90,6 +90,13 @@ def create_custom_mondo_diff(mainbase_db, currentbase_db, branch_id_file, output
     
     # Get Obsoletes between ontology versions
     obsoletes_between_versions = get_obsoletes_between_versions(OI_MAINBASE, OI_CURRENTBASE)
+
+    # Map curies for obsolete terms to their labels
+    mapped_obsoletes_between_versions = map_labels_to_curies(obsoletes_between_versions, OI_CURRENTBASE)
+
+    # Save list of obsolete terms (IDs and Labels to a file)
+    create_obsoletes_file(mapped_obsoletes_between_versions)
+
     logger.debug(f"Number of Obsoletes between versions: {len(obsoletes_between_versions)}")
     
     # Get all children for each newly obsolete class as found in the OI_CURRENTBASE (last/previous ontology version)
@@ -337,6 +344,20 @@ def create_report_file(data, output_file):
 
         # Write the data rows
         writer.writerows(data)
+
+
+def create_obsoletes_file(data: set):
+    """
+    Save list of obsolete terms and their labels to a file.
+    """
+    # Create a DataFrame
+    df = pd.DataFrame(data, columns=['curie', 'label'])
+
+    # Concatenate the columns in the desired order
+    df['obsoleted classes'] = df['label'] + '(' + df['curie'] + ')'
+
+    # Save the DataFrame to an Excel file
+    df.to_excel('obsolete_classes.xlsx', index=False)
 
 
 if __name__ == "__main__":
