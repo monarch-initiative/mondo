@@ -211,14 +211,42 @@ clean:
 		reasoned-plus-equivalents.owl reasoned.owl tmp/*
 
 #############################################
-##### Mondo subset auto-tagger ##############
+##### Mondo Subsets Pipeline ################
 #############################################
 
-RARE_SUBSETS=nord orphanet inferred gard
+####################################
+##### Inferred #####################
+####################################
+
+# The inferred subset depends on the other ones, so we need to first remove the old subsets
+# Then add the gard, nord and orphanet subsets back in
+tmp/inferred-rare-subset.ttl: $(SRC)
+	$(ROBOT) merge -i $(SRC) \
+		reason \
+		query --format ttl --query ../sparql/construct/construct-inferred-rare-subset.sparql $@
+
+update-inferred-subset:
+	$(MAKE) tmp/inferred-rare-subset.owl
+	grep -vE '^(subset: inferred_rare)' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/inferred-rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+####################################
+##### Orphanet #####################
+####################################
 
 tmp/orphanet-rare-subset.ttl: $(SRC)
 	$(ROBOT) merge -i $(SRC) reason \
 		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
+
+.PHONY: update-orphanet-subset
+update-orphanet-subset:
+	$(MAKE) tmp/orphanet-rare-subset.owl
+	grep -vE '^(subset: orphanet_rare)' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/orphanet-rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
 ####################################
 ##### GARD #########################
@@ -280,27 +308,27 @@ update-clingen:
 	$(ROBOT) merge -i $(SRC) -i tmp/clingen.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
-# The inferred subset depends on the other ones, so we need to first remove the old subsets
-# Then add the gard, nord and orphanet subsets back in
-tmp/inferred-rare-subset.ttl: $(SRC) tmp/nord-rare-subset.ttl tmp/gard-rare-subset.ttl tmp/orphanet-rare-subset.ttl
-	$(ROBOT) merge -i $(SRC) \
-		unmerge -i components/mondo-subsets.owl \
-		merge $(patsubst %, -i %, $^) \
-		reason \
-		query --format ttl --query ../sparql/construct/construct-inferred-rare-subset.sparql $@
+####################################
+##### RARE #########################
+####################################
 
-components/mondo-subsets.owl: tmp/inferred-rare-subset.ttl tmp/orphanet-rare-subset.ttl tmp/nord-rare-subset.ttl tmp/gard-rare-subset.ttl
-	$(ROBOT) merge $(patsubst %, -i %, $^) \
-		query --update ../sparql/construct/construct-rare-subset.sparql \
-		annotate --ontology-iri $(ONTBASE)/$@ -o $@
+tmp/rare-subset.owl: $(SRC)
+	$(ROBOT) merge $(SRC) \
+		query --update ../sparql/construct/construct-rare-subset.sparql -o $@
 
-# As of 3 August, does not do anything.
-components/mondo-characteristic-rare.owl: components/mondo-subsets.owl
-	$(ROBOT) merge -i $(SRC) reason \
-		query --format ttl --query ../sparql/construct/construct-rare-subset.sparql \
-		annotate --ontology-iri $(ONTBASE)/$@ -o $@
+.PHONY: update-rare
+update-rare:
+	$(MAKE) tmp/rare-subset.owl
+	grep -vE '^(subset: rare)$' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
-reports/new-rare-diseases.txt: #$(ONT)-base.owl
+##########################################
+##### RARE REPORT ########################
+##########################################
+
+reports/new-rare-diseases.txt: $(ONT)-base.owl
 	$(ROBOT) query -i $(ONT)-base.owl --query ../sparql/signature/rare-subset.sparql $@
 
 reports/old-rare-diseases.txt: tmp/mondo-lastbase.owl
@@ -313,9 +341,6 @@ reports/%-rare-diseases.tsv: $(ONT)-base.owl reports/%-rare-diseases.txt
 
 rare-disease-reports: reports/old-rare-diseases.tsv reports/new-rare-diseases.tsv
 	python ../scripts/filter_rare_disease_list.py reports/old-rare-diseases.tsv reports/new-rare-diseases.tsv reports/added-rare-disases.tsv reports/removed-rare-diseases.tsv
-
-	
-
 
 #############################################
 ##### Mondo analysis ########################
