@@ -214,6 +214,9 @@ clean:
 ##### Mondo Subsets Pipeline ################
 #############################################
 
+tmp/%.template.owl: subsets/%.template.tsv $(SRC)
+	$(ROBOT) template --template $< convert -f ttl -o $@
+
 ####################################
 ##### Inferred #####################
 ####################################
@@ -277,15 +280,12 @@ update-gard:
 subsets/nord-xrefs.template.tsv:
 	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vQuj-0iOk3JkfNGA0AAXHLiFH6XZZWnuFz-UhyqJwC7OcCdC5kXL2CoWPt4c7yDOG3DoKeFi4nDabdU/pub?gid=0&single=true&output=tsv" -O $@
 
-tmp/nord-rare-%.owl: subsets/nord-%.template.tsv $(SRC) 
-	$(ROBOT) template --template $< convert -f ttl -o $@
-
 .PHONY: update-nord
 update-nord:
-	$(MAKE) tmp/nord-rare-subset.owl tmp/nord-rare-xrefs.owl
+	$(MAKE) tmp/nord-subset.template.owl tmp/nord-xrefs.template.owl
 	grep -vE '^(xref: NORD:|subset: nord_rare)' $(SRC) > tmp/mondo-edit.tmp || true
 	mv tmp/mondo-edit.tmp mondo-edit.obo
-	$(ROBOT) merge -i $(SRC) -i tmp/nord-rare-subset.owl -i tmp/nord-rare-xrefs.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	$(ROBOT) merge -i $(SRC) -i tmp/nord-subset.template.owl -i tmp/nord-xrefs.template.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
 ####################################
@@ -295,17 +295,14 @@ update-nord:
 subsets/clingen.template.tsv:
 	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vRiYDV1n1nDuJOgnlFx6DsYGyIGlbgI1HeDzI740OgmOKYy2RCCyBqLHiBh-IMadYXjVglsxDPypArh/pub?gid=637121472&single=true&output=tsv" -O $@
 
-tmp/clingen.owl: subsets/clingen.template.tsv $(SRC)
-	$(ROBOT) template --template $< convert -f ttl -o $@
-
 .PHONY: update-clingen
 update-clingen:
-	$(MAKE) tmp/clingen.owl
+	$(MAKE) tmp/clingen.template.owl
 	grep -vE '^(xref: CGGV:|xref: CGGCIEX:|subset: clingen)' $(SRC) > tmp/mondo-edit.tmp || true
 	mv tmp/mondo-edit.tmp mondo-edit.obo
 	sed -i 's/CLINGEN_PREFERRED//g' > tmp/mondo-edit.tmp || true
 	mv tmp/mondo-edit.tmp mondo-edit.obo
-	$(ROBOT) merge -i $(SRC) -i tmp/clingen.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	$(ROBOT) merge -i $(SRC) -i tmp/clingen.template.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
 ####################################
@@ -323,6 +320,25 @@ update-rare-subset:
 	mv tmp/mondo-edit.tmp mondo-edit.obo
 	$(ROBOT) merge -i $(SRC) -i tmp/rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+####################################
+##### EFO ##########################
+####################################
+
+subsets/mondo-efo.template.tsv:
+	wget "https://github.com/EBISPOT/efo/blob/master/src/ontology/reports/mondo-efo.robot.tsv" -O $@
+
+mondo-otar-subset.template.tsv:
+	wget "https://github.com/EBISPOT/efo/blob/master/src/ontology/reports/mondo-otar-subset.robot.tsv" -O $@
+
+.PHONY: update-efo-subset
+update-efo-subset:
+	$(MAKE) tmp/rare-subset.owl
+	grep -vE '^(subset: rare)$$' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
 
 ##########################################
 ##### RARE REPORT ########################
