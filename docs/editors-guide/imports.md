@@ -21,7 +21,7 @@ If you have Docker installed (note - you may need to increase your memory in Doc
      `git status` - only the updated files should be added and ready to be committed. There will be some untracked files as well, which should not be added or committed.
      `git commit`  
      `git push`  
-6. Once the new imports are generated, it could contain newly deprecatecd classes from the source ontology and this could affect the Mondo ontology by creating danglers/obsolete references. To fix this, follow the instructions in [Repair axioms pointing to deprecated classes](https://mondo.readthedocs.io/en/latest/developer-guide/repair-obsoleted-classes/).
+6. Once the new imports are generated, it could contain newly deprecated classes from the source ontology and this could affect the Mondo ontology by creating danglers/obsolete references. To fix this, follow the instructions in [Repair axioms pointing to deprecated classes](https://mondo.readthedocs.io/en/latest/developer-guide/repair-obsoleted-classes/).
 
 ## Increase memory in Docker (Mac specific instructions)
 
