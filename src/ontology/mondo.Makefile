@@ -277,7 +277,7 @@ update-gard:
 subsets/nord-xrefs.template.tsv:
 	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vQuj-0iOk3JkfNGA0AAXHLiFH6XZZWnuFz-UhyqJwC7OcCdC5kXL2CoWPt4c7yDOG3DoKeFi4nDabdU/pub?gid=0&single=true&output=tsv" -O $@
 
-tmp/nord-rare-%.owl: subsets/nord-%.remplate.tsv $(SRC) 
+tmp/nord-rare-%.owl: subsets/nord-%.template.tsv $(SRC) 
 	$(ROBOT) template --template $< convert -f ttl -o $@
 
 .PHONY: update-nord
