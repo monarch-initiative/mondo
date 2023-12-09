@@ -239,7 +239,7 @@ update-inferred-subset:
 ##### Orphanet #####################
 ####################################
 
-tmp/orphanet-rare-subset.ttl: $(SRC)
+tmp/orphanet-rare-subset.owl: $(SRC)
 	$(ROBOT) merge -i $(SRC) reason \
 		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
 
