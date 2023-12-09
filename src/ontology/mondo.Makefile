@@ -274,18 +274,18 @@ update-gard:
 ##### NORD #########################
 ####################################
 
-subsets/nord-subset.template.tsv:
+subsets/nord-xrefs.template.tsv:
 	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vQuj-0iOk3JkfNGA0AAXHLiFH6XZZWnuFz-UhyqJwC7OcCdC5kXL2CoWPt4c7yDOG3DoKeFi4nDabdU/pub?gid=0&single=true&output=tsv" -O $@
 
-tmp/nord-rare-subset.owl: subsets/nord-subset.template.tsv $(SRC) 
+tmp/nord-rare-%.owl: subsets/nord-%.remplate.tsv $(SRC) 
 	$(ROBOT) template --template $< convert -f ttl -o $@
 
 .PHONY: update-nord
 update-nord:
-	$(MAKE) tmp/nord-rare-subset.owl
+	$(MAKE) tmp/nord-rare-subset.owl tmp/nord-rare-xrefs.owl
 	grep -vE '^(xref: NORD:|subset: nord_rare)' $(SRC) > tmp/mondo-edit.tmp || true
 	mv tmp/mondo-edit.tmp mondo-edit.obo
-	$(ROBOT) merge -i $(SRC) -i tmp/nord-rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	$(ROBOT) merge -i $(SRC) -i tmp/nord-rare-subset.owl -i tmp/nord-rare-xrefs.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
 ####################################
