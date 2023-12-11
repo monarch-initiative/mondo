@@ -223,7 +223,7 @@ tmp/%.template.owl: subsets/%.template.tsv $(SRC)
 
 # The inferred subset depends on the other ones, so we need to first remove the old subsets
 # Then add the gard, nord and orphanet subsets back in
-tmp/inferred-rare-subset.ttl: $(SRC)
+tmp/inferred-rare-subset.owl: $(SRC)
 	$(ROBOT) merge -i $(SRC) \
 		reason \
 		query --format ttl --query ../sparql/construct/construct-inferred-rare-subset.sparql $@
