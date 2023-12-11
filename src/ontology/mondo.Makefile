@@ -325,18 +325,19 @@ update-rare-subset:
 ##### EFO ##########################
 ####################################
 
-subsets/mondo-efo.template.tsv:
-	wget "https://github.com/EBISPOT/efo/blob/master/src/ontology/reports/mondo-efo.robot.tsv" -O $@
 
-mondo-otar-subset.template.tsv:
-	wget "https://github.com/EBISPOT/efo/blob/master/src/ontology/reports/mondo-otar-subset.robot.tsv" -O $@
+subsets/mondo-efo.template.tsv:
+	wget "https://raw.githubusercontent.com/EBISPOT/efo/master/src/ontology/reports/mondo-efo.robot.tsv" -O $@
+
+subsets/mondo-otar-subset.template.tsv:
+	wget "https://raw.githubusercontent.com/EBISPOT/efo/master/src/ontology/reports/mondo-otar-subset.robot.tsv" -O $@
 
 .PHONY: update-efo-subset
 update-efo-subset:
-	$(MAKE) tmp/rare-subset.owl
-	grep -vE '^(subset: rare)$$' $(SRC) > tmp/mondo-edit.tmp || true
+	$(MAKE) tmp/mondo-otar-subset.template.owl tmp/mondo-efo.template.owl
+	grep -vE '^(xref: EFO:|subset: otar)$$' $(SRC) > tmp/mondo-edit.tmp || true
 	mv tmp/mondo-edit.tmp mondo-edit.obo
-	$(ROBOT) merge -i $(SRC) -i tmp/rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	$(ROBOT) merge -i $(SRC) -i tmp/mondo-otar-subset.template.owl -i tmp/mondo-efo.template.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
 
