@@ -5,11 +5,18 @@ prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 #classes with the axiom "'bearer of' some rare" AND/OR "has subset :‘gard_rare’" AND limited to disease branch (ie not including the disease susceptibility branch
 
 CONSTRUCT {
   ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#orphanet_rare> .
+  [] rdf:type owl:Axiom ;
+           owl:annotatedSource ?cls ;
+           owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#inSubset> ;
+           owl:annotatedTarget <http://purl.obolibrary.org/obo/mondo#orphanet_rare> ;
+           oboInOwl:source ?xref .
 }
 
 WHERE
