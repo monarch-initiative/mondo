@@ -1,0 +1,20 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+
+#description: terms with comments
+
+SELECT DISTINCT ?entity ?comment WHERE {
+  	VALUES ?entity {
+    MONDO:0011469
+    MONDO:0011876
+  }
+  
+    ?entity rdfs:comment ?comment .
+        
+   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+}
+
+ 
+
