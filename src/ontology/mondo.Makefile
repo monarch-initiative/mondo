@@ -298,9 +298,10 @@ subsets/clingen.template.tsv:
 .PHONY: update-clingen
 update-clingen:
 	$(MAKE) tmp/clingen.template.owl
+	git checkout master -- mondo-edit.obo
 	grep -vE '^(xref: CGGV:|xref: CGGCIEX:|subset: clingen)' $(SRC) > tmp/mondo-edit.tmp || true
-	mv tmp/mondo-edit.tmp mondo-edit.obo
-	sed -i 's/CLINGEN_PREFERRED//g' > tmp/mondo-edit.tmp || true
+	sed -i '' 's/EXACT CLINGEN_PREFERRED/EXACT/g' tmp/mondo-edit.tmp || true
+	sed -i '' 's/NARROW CLINGEN_PREFERRED/NARROW/g' tmp/mondo-edit.tmp || true
 	mv tmp/mondo-edit.tmp mondo-edit.obo
 	$(ROBOT) merge -i $(SRC) -i tmp/clingen.template.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
