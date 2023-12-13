@@ -673,7 +673,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/location_top.yaml">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/disease-or-disease-like.yaml"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/location.yaml"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disease involving the owl_thing.</obo:IAO_0000115>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">location_top</terms:title>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease of owl_thing</oboInOwl:hasExactSynonym>
@@ -1054,6 +1053,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/disease-or-disease-like.yaml"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease&apos; that disrupts &apos;owl_thing&apos;</obo:IAO_0000115>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X disease disrupts X</terms:title>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;owl_thing&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;owl_thing&apos; &apos;disease&apos;</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml">
@@ -1118,6 +1129,18 @@
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">substance_abuse</terms:title>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">abuse of &apos;material entity&apos;</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;material entity&apos; abuse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/inherited_susceptibility.yaml"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A susceptibility or predisposition to &apos;disease or disorder&apos; in which the cause of the disease is a mutation in the &apos;gene&apos; gene.</obo:IAO_0000115>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">susceptibility_by_gene</terms:title>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos; susceptibility caused by &apos;gene&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos; susceptibility, &apos;gene&apos; form</rdfs:label>
     </owl:Class>
     
 
