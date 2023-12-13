@@ -80,8 +80,10 @@ def run(input_file: str = INPUT_FILE, output_file: str = OUTPUT_FILE):
     # Output: List of CUIs of bad xrefs
     out_df = pd.DataFrame(rows).sort_values(['xref_id', 'mondo_id']).drop_duplicates()
     out_df['mondo_id'] = out_df['mondo_id'].apply(lambda x: x.replace('_', ':'))
+    out_df = out_df[out_df['xref_id'].str.startswith("UMLS:")]
     out_df['source_medgen'] = "MONDO:MEDGEN"
-    out_df = pd.concat([pd.DataFrame([{'mondo_id': 'ID', 'xref_id': 'A oboInOwl:hasDbXref', 'source_medgen': '>A oboInOwl:source'}]), out_df])
+    out_df['source_mondo'] = "MONDO:equivalentTo"
+    out_df = pd.concat([pd.DataFrame([{'mondo_id': 'ID', 'xref_id': 'A oboInOwl:hasDbXref', 'source_medgen': '>A oboInOwl:source', 'source_mondo': '>A oboInOwl:source'}]), out_df])
     out_df.to_csv(output_file, index=False, sep='\t')
 
 def cli():
