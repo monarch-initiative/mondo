@@ -31,7 +31,9 @@ EFO2OBO_OPTS = --rename-entity $(EFO)/definition $(OBO)/IAO_0000115 \
            --rename-entity $(OBO)/ECO_0000218 "$(OIO)source"
 
 
-V=4.0
+V=4.3
+PWD := $(shell pwd)
+ONT_DIR := $(realpath $(PWD)/../../)
 
 # STEP 0: DOWNLOAD
 #ordo_orphanet.owl.zip:
@@ -44,8 +46,8 @@ V=4.0
 ordo_orphanet.owl:
 	curl -L -s http://www.orphadata.org/data/ORDO/ORDO_en_$(V).owl > $@.tmp && mv $@.tmp $@
 
-obo_orphanet_0.owl: ordo_orphanet.owl unmerge.owl
-	robot unmerge -i $< -i unmerge.owl -o $@
+obo_orphanet_0.owl: ordo_orphanet.owl # tmp/unmerge.owl
+	robot unmerge -i ordo_orphanet.owl -i $(ONT_DIR)/tmp/unmerge.owl -o $@
 
 # STEP 1: FIX URIs
 obo_orphanet_1.owl: obo_orphanet_0.owl

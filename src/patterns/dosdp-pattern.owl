@@ -98,7 +98,6 @@ Declaration(Class(<http://purl.obolibrary.org/obo/SO_0001217>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000061>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001062>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0010000>))
-Declaration(Class(<http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/acquired.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/acute.yaml>))
@@ -184,19 +183,20 @@ Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/ring_chromosome
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/sarcoma.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/severe.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/small_cell_carcinoma.yaml>))
+Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_agent.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/specific_infectious_disease_by_location.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/specific_inflammatory_disease_by_site.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/squamous_cell_carcinoma.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/substance_abuse.yaml>))
+Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/tetrasomy.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/trisomy.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/vectorBorneDisease.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/x_linked.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/y_linked.yaml>))
-Declaration(Class(<urn:dosdp:defined_class>))
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/MONDO_0100333>))
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/MONDO_0700097>))
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000053>))
@@ -229,14 +229,6 @@ Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#has
 # Class: <http://purl.obolibrary.org/obo/MONDO_0000001> (<http://purl.obolibrary.org/obo/MONDO_0000001>)
 
 EquivalentClasses(<http://purl.obolibrary.org/obo/MONDO_0000001> <http://purl.obolibrary.org/obo/mondo/patterns/disease-or-disease-like.yaml>)
-
-# Class: <http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X> ('owl_thing' 'disease')
-
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X> "Any 'disease' that disrupts 'owl_thing'"^^xsd:string)
-AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X> "X disease disrupts X"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X> "'owl_thing' 'disease'"^^xsd:string)
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X> "'owl_thing' 'disease'"^^xsd:string)
-EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0000001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0004024> owl:Thing)))
 
 # Class: <http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml> ('disease')
 
@@ -938,6 +930,14 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSyno
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/small_cell_carcinoma.yaml> "owl_thing small cell carcinoma"^^xsd:string)
 EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/small_cell_carcinoma.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0000402> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0004026> owl:Thing)))
 
+# Class: <http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml> ('owl_thing' 'disease')
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml> "Any 'disease' that disrupts 'owl_thing'"^^xsd:string)
+AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml> "X disease disrupts X"^^xsd:string)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml> "'owl_thing' 'disease'"^^xsd:string)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml> "'owl_thing' 'disease'"^^xsd:string)
+EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0000001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0004024> owl:Thing)))
+
 # Class: <http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml> ('owl_thing' 'disease')
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml> "Any 'disease' in which the causes of the disease is a perturbation of the 'owl_thing' leading to its dysfunction."^^xsd:string)
@@ -983,6 +983,14 @@ AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/mondo/patterns/substance_abuse.yaml> "abuse of 'material entity'"^^xsd:string)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/substance_abuse.yaml> "'material entity' abuse"^^xsd:string)
 EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/substance_abuse.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0002491> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0004028> <http://purl.obolibrary.org/obo/BFO_0000040>)))
+
+# Class: <http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml> ('disease or disorder' susceptibility, 'gene' form)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml> "A susceptibility or predisposition to 'disease or disorder' in which the cause of the disease is a mutation in the 'gene' gene."^^xsd:string)
+AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml> "susceptibility_by_gene"^^xsd:string)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml> "'disease or disorder' susceptibility caused by 'gene'"^^xsd:string)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml> "'disease or disorder' susceptibility, 'gene' form"^^xsd:string)
+EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0020573> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0004003> <http://purl.obolibrary.org/obo/SO_0000704>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/mondo#predisposes_towards> <http://purl.obolibrary.org/obo/MONDO_0000001>)))
 
 # Class: <http://purl.obolibrary.org/obo/mondo/patterns/syndromic.yaml> (syndromic 'disease or disorder')
 
@@ -1030,14 +1038,5 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynony
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/y_linked.yaml> "Y-linked 'disease'"^^xsd:string)
 EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/y_linked.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0000001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000053> <http://purl.obolibrary.org/obo/HP_0001450>)))
 
-# Class: <urn:dosdp:defined_class> ('disease or disorder' susceptibility, 'gene' form)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <urn:dosdp:defined_class> "A susceptibility or predisposition to 'disease or disorder' in which the cause of the disease is a mutation in the 'gene' gene."^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <urn:dosdp:defined_class> "'disease or disorder' susceptibility caused by 'gene'"^^xsd:string)
-AnnotationAssertion(rdfs:label <urn:dosdp:defined_class> "'disease or disorder' susceptibility, 'gene' form"^^xsd:string)
-EquivalentClasses(<urn:dosdp:defined_class> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0020573> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0004003> <http://purl.obolibrary.org/obo/SO_0000704>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/mondo#predisposes_towards> <http://purl.obolibrary.org/obo/MONDO_0000001>)))
-
-
-AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml
-Examples - [autism, susceptibility to, X-linked 5](http://purl.obolibrary.org/obo/MONDO_0010449), [bulimia nervosa, susceptibility to, 2](http://purl.obolibrary.org/obo/MONDO_0012461), [nephrolithiasis susceptibility caused by SLC26A1](http://purl.obolibrary.org/obo/MONDO_0020722)'> "susceptibility_by_gene"^^xsd:string)
 )

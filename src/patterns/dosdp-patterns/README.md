@@ -1775,7 +1775,7 @@ Examples: [disease of catalytic activity](http://purl.obolibrary.org/obo/MONDO_0
 
 | Attribute | Info |
 |----------|----------|
-| IRI | http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X |
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml |
 | Name | X disease disrupts X |
 | Classes | owl:Thing, MONDO:0000001,  |
 | Variables | disease (MONDO:0000001), process (owl:Thing),  |
@@ -1916,12 +1916,12 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/substance_abuse.tsv)
 ### Susceptibility by gene
-*This pattern should be used for terms in which a gene dysfunction causes a predisposition or susceptibility towards developing a specific disease. This pattern is a sub-pattern of [inherited_susceptibility.yaml](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/inherited_susceptibility.yaml)*
+*This pattern should be used for terms in which a gene dysfunction causes a predisposition or susceptibility towards developing a specific disease. This pattern is a sub-pattern of [inherited_susceptibility.yaml](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/dosdp-patterns/inherited_susceptibility.yaml)
+Examples - [autism, susceptibility to, X-linked 5](http://purl.obolibrary.org/obo/MONDO_0010449), [bulimia nervosa, susceptibility to, 2](http://purl.obolibrary.org/obo/MONDO_0012461), [nephrolithiasis susceptibility caused by SLC26A1](http://purl.obolibrary.org/obo/MONDO_0020722)'*
 
 | Attribute | Info |
 |----------|----------|
-| IRI | http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml
-Examples - [autism, susceptibility to, X-linked 5](http://purl.obolibrary.org/obo/MONDO_0010449), [bulimia nervosa, susceptibility to, 2](http://purl.obolibrary.org/obo/MONDO_0012461), [nephrolithiasis susceptibility caused by SLC26A1](http://purl.obolibrary.org/obo/MONDO_0020722)' |
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml |
 | Name | susceptibility_by_gene |
 | Classes | MONDO:0000001, MONDO:0020573, SO:0000704,  |
 | Variables | gene (SO:0000704), disease (MONDO:0000001),  |

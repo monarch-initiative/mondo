@@ -224,7 +224,7 @@ filtered.owl: filtered.obo skos.ttl
 # note: $(ROBOT) will protect redundant annotated axioms
 reasoned.owl: filtered.owl
 	$(ROBOT) reason -T true -x true -X true -i $< -r ELK relax reduce -p false -r ELK \
-		remove --term MONDO:0700097 $(ANN) -o $@
+		remove --term MONDO:0700097 --term OGMS:0000031 $(ANN) -o $@
 
 
 test: reasoned-plus-equivalents.owl
@@ -338,6 +338,11 @@ tmp/rare-seed-classes.txt: tmp/rare-subset-pre.owl
 	$(ROBOT) merge -i $< query --query ../sparql/signature/rare-subset.sparql $@
 .PRECIOUS: tmp/rare-seed-classes.txt
 
+# This gets us all the rare disease classes:
+tmp/rare-seed-parents.txt: tmp/rare-subset-pre.owl
+	$(ROBOT) merge -i $< query --query ../sparql/signature/rare-subset-parents.sparql $@
+.PRECIOUS: tmp/rare-seed-parents.txt
+
 # This gets us all the entities linked to the rare disease classes
 # Make sure you add the relationships you want to add to ../sparql/signature/rare-subset-related-entity.sparql
 # AND config/rare_subset_relations.txt
@@ -346,7 +351,7 @@ tmp/rare-seed-entities.txt: tmp/rare-subset-pre.owl tmp/rare-seed-classes.txt
 .PRECIOUS: tmp/rare-seed-entities.txt
 
 # This merges thes seed together into one file (including rare disease classes _and_ related entities.)
-tmp/rare-seed.txt: tmp/rare-seed-entities.txt tmp/rare-seed-classes.txt config/rare_subset_relations.txt
+tmp/rare-seed.txt: tmp/rare-seed-entities.txt tmp/rare-seed-classes.txt config/rare_subset_relations.txt tmp/rare-seed-parents.txt
 	cat $^ | sort | uniq > $@
 .PRECIOUS: tmp/rare-seed.txt
 

@@ -502,21 +502,37 @@ GH_ISSUE=none
 OBS_REASON=outOfScope
 
 .PRECIOUS: config/obsolete_me.txt
+.PRECIOUS: config/filtered_obsolete_me.txt
 
 mass_obsolete:
 	perl ../scripts/obo-obsoletify.pl --seeAlso https://github.com/monarch-initiative/mondo/issues/$(GH_ISSUE) --obsoletionReason MONDO:$(OBS_REASON)  -i ../scripts/obsolete_me.txt mondo-edit.obo > OBSOLETE && mv OBSOLETE mondo-edit.obo
 
-tmp/mass_obsolete.sparql: ../sparql/reports/mondo-obsolete-simple.sparql config/obsolete_me.txt
-	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+tmp/mass_obsolete.sparql: ../sparql/reports/mondo-obsolete-simple.sparql config/filtered_obsolete_me.txt
+	@echo "\n** Run mondo-obsolete-simple.sparql **"
+	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
-tmp/mondo-rename-effected-classes.ru: ../sparql/reports/mondo-rename-effected-classes.ru config/obsolete_me.txt
-	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+tmp/mondo-rename-effected-classes.ru: ../sparql/reports/mondo-rename-effected-classes.ru config/filtered_obsolete_me.txt
+	@echo "\n** Run mondo-rename-effected-classes.ru **"
+	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
-tmp/mass_obsolete_warning.sparql: ../sparql/reports/mondo-obsolete-warning.sparql config/obsolete_me.txt
-	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+tmp/mass_obsolete_warning.sparql: ../sparql/reports/mondo-obsolete-warning.sparql config/filtered_obsolete_me.txt
+	@echo "\n** Run mondo-obsolete-warning.sparql **"
+	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
 
-tmp/mass_obsolete.ru: ../sparql/update/mondo-obsolete-simple.ru config/obsolete_me.txt
-	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+tmp/mass_obsolete.ru: ../sparql/update/mondo-obsolete-simple.ru config/filtered_obsolete_me.txt
+	@echo "\n** Run mondo-obsolete-simple.ru **"
+	# Create input for query
+	LISTT="$(shell paste -sd" " config/filtered_obsolete_me.txt)"; \
+	sed -e "s/MONDO:0000000/$$LISTT/g" -e "s|GITHUB_ISSUE_URL|$(GITHUB_ISSUE_URL)|g" $< > $@
+
+
+config/filtered_obsolete_me.txt: tmp/identify_existing_obsoletes.txt config/obsolete_me.txt
+	# Remove ^M from tmp/identify_existing_obsoletes.txt
+	sed 's/\r//g' tmp/identify_existing_obsoletes.txt > tmp/filtered_identify_existing_obsoletes.txt
+
+	# Filter out existing obsoletes
+	grep -v -w -i -f tmp/filtered_identify_existing_obsoletes.txt config/obsolete_me.txt > $@
+
 
 tmp/mass_obsolete_me.txt: tmp/mass_obsolete.sparql
 	$(ROBOT) query -i $(SRC) --use-graphs true -f tsv --query $< $@
@@ -528,10 +544,19 @@ tmp/mass_obsolete_me.txt: tmp/mass_obsolete.sparql
 mass_obsolete_warning: tmp/mass_obsolete_warning.sparql
 	$(ROBOT) verify -i $(SRC) --queries $< --output-dir reports/
 
+tmp/identify_existing_obsoletes.ru: ../sparql/reports/check_obsoletes_from_list.ru config/obsolete_me.txt
+	@echo "\n** Identify existing obsoletes in config/obsolete_me.txt **"
+	LISTT="$(shell paste -sd" " config/obsolete_me.txt)"; sed "s/MONDO:0000000/$$LISTT/g" $< > $@
+
+tmp/identify_existing_obsoletes.txt: tmp/identify_existing_obsoletes.ru
+	@echo "\n** Write existing obsoletes to tmp/identify_existing_obsoletes.txt **"
+	$(ROBOT) query --format txt -i $(SRC) --query $< $@
+
 mass_obsolete2: tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
-	echo "Make sure you have updated config/obsolete_me.txt before running this script.."
+	@echo "Make sure you have updated config/obsolete_me.txt before running this script.."
 	$(MAKE) tmp/mondo-obsolete-labels.obo
 	$(MAKE) mass_obsolete_warning
+	@echo "** Check above for violations\n"
 	$(ROBOT) query -i $(SRC) --use-graphs true --update tmp/mass_obsolete.ru \
 		remove --preserve-structure false -T tmp/mass_obsolete_me.txt --axioms logical convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC)
@@ -539,6 +564,7 @@ mass_obsolete2: tmp/mass_obsolete.ru tmp/mass_obsolete_me.txt
 	mv NORM $(SRC)
 
 tmp/mondo-obsolete-labels.obo: tmp/mondo-rename-effected-classes.ru
+	@echo "\n** Re-name obsolete class labels **"
 	$(ROBOT) merge -i $(SRC) --collapse-import-closure false query --update tmp/mondo-rename-effected-classes.ru  \
 		convert -f obo --check false -o $@
 
@@ -563,7 +589,7 @@ tmp/mirror-efo.json: #mirror/efo.owl
 
 .PHONY: sssom
 sssom:
-	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall sssom==0.3.17
+	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall sssom==0.4.0
 
 .PHONY: oaklib
 oaklib:
@@ -579,12 +605,25 @@ $(MAPPINGSDIR)/mondo.sssom.tsv: tmp/mondo.sssom.tsv tmp/mondo-ingest.db
 	sssom dosql -Q "SELECT * FROM df WHERE predicate_id IN (\"skos:exactMatch\", \"skos:broadMatch\")" $< -o $@
 	sssom annotate $@ -o $@ --mapping_set_id "http://purl.obolibrary.org/obo/mondo/mappings/mondo.sssom.tsv"
 	sssom sort $@ -o $@
+	sssom validate $@
 
 #$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
 #	sssom convert -i $< -o $@
 #	#python ../scripts/split_sssom_by_source.py $@
 
-mappings: $(ALL_MAPPINGS)
+.PHONY: clean_mappings
+.PHONY: mappings mappings_fast
+
+clean_mappings:
+	rm -rf $(MAPPINGSDIR)/*.sssom.tsv
+
+mappings: clean_mappings $(ALL_MAPPINGS)
+
+mappings_fast:
+	$(MAKE) sssom -B
+	$(MAKE) clean_mappings -B
+	$(MAKE) mappings IMP=false MIR=false PAT=false -B
+
 
 ##### RELEASE Report ######
 

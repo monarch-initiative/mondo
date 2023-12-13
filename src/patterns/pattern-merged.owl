@@ -10,7 +10,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/mondo-pattern.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2023-09-21/mondo-pattern.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2023-10-30/mondo-pattern.owl"/>
     </owl:Ontology>
     
 
@@ -719,28 +719,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0010000 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010000"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/X_disease_disrupts_X">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MONDO_0000001"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004024"/>
-                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease&apos; that disrupts &apos;owl_thing&apos;</obo:IAO_0000115>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X disease disrupts X</terms:title>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;owl_thing&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;owl_thing&apos; &apos;disease&apos;</rdfs:label>
-    </owl:Class>
     
 
 
@@ -2666,6 +2644,28 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_disrupted_process.yaml">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MONDO_0000001"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004024"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease&apos; that disrupts &apos;owl_thing&apos;</obo:IAO_0000115>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X disease disrupts X</terms:title>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;owl_thing&apos; &apos;disease&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;owl_thing&apos; &apos;disease&apos;</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/specific_disease_by_dysfunctional_structure.yaml">
@@ -2792,6 +2792,32 @@
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">substance_abuse</terms:title>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">abuse of &apos;material entity&apos;</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;material entity&apos; abuse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MONDO_0020573"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004003"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/mondo#predisposes_towards"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MONDO_0000001"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A susceptibility or predisposition to &apos;disease or disorder&apos; in which the cause of the disease is a mutation in the &apos;gene&apos; gene.</obo:IAO_0000115>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">susceptibility_by_gene</terms:title>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos; susceptibility caused by &apos;gene&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos; susceptibility, &apos;gene&apos; form</rdfs:label>
     </owl:Class>
     
 
@@ -2923,46 +2949,6 @@
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos;, Y-linked</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y-linked &apos;disease&apos;</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- urn:dosdp:defined_class -->
-
-    <owl:Class rdf:about="urn:dosdp:defined_class">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MONDO_0020573"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004003"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/mondo#predisposes_towards"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MONDO_0000001"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A susceptibility or predisposition to &apos;disease or disorder&apos; in which the cause of the disease is a mutation in the &apos;gene&apos; gene.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos; susceptibility caused by &apos;gene&apos;</oboInOwl:hasExactSynonym>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease or disorder&apos; susceptibility, &apos;gene&apos; form</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/susceptibility_by_gene.yaml
-Examples - [autism, susceptibility to, X-linked 5](http://purl.obolibrary.org/obo/MONDO_0010449), [bulimia nervosa, susceptibility to, 2](http://purl.obolibrary.org/obo/MONDO_0012461), [nephrolithiasis susceptibility caused by SLC26A1](http://purl.obolibrary.org/obo/MONDO_0020722)&apos;">
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">susceptibility_by_gene</terms:title>
-    </rdf:Description>
 </rdf:RDF>
 
 
