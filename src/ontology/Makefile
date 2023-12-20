@@ -679,10 +679,8 @@ mirror/dipper-%.ttl: | $(MIRRORDIR)
 .PRECIOUS: mirror/dipper-%.ttl
 
 mirror-hgnc: mirror/dipper-hgnc.ttl | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ] && [ -f $(TMPDIR)/mirror-$*.owl ]; then $(ROBOT) merge -i $< \
-		query --format ttl --query ../sparql/construct/construct-hgnc.sparql $(TMPDIR)/$@.tmp.ttl &&\
-	$(ROBOT) convert -i $(TMPDIR)/$@.tmp.ttl -o $@.tmp.owl && mv $@.tmp.owl $(MIRRORDIR)/hgnc.owl &&\
-	$(ROBOT) convert -i $(MIRRORDIR)/hgnc.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
+		query --format ttl --query ../sparql/construct/construct-hgnc.sparql $(TMPDIR)/$@.owl; fi
 
 IMPORTSEED=$(IMPORTDIR)/seed.txt # SHOULD BE TMP
 ###### END CUSTOM IMPORTS ###################
