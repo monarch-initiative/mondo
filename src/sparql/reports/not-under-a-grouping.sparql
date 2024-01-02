@@ -1,0 +1,36 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?mondo_id ?label ?definition
+
+WHERE
+{
+  ?mondo_id a owl:Class .
+  OPTIONAL {
+  	?mondo_id rdfs:label ?label .
+  }
+  OPTIONAL {
+  	?mondo_id IAO:0000115 ?definition .
+  }
+
+  FILTER((STRSTARTS(STR(?mondo_id),"http://purl.obolibrary.org/obo/MONDO_")))
+
+  FILTER NOT EXISTS { ?mondo_id owl:deprecated true }
+  
+  FILTER NOT EXISTS {
+    VALUES ?grouping { 
+        MONDO:0000001
+      MONDO:0042489
+      MONDO:0021178
+      MONDO:0021125
+  }
+    ?mondo_id rdfs:subClassOf* ?grouping .
+  }
+
+}
