@@ -1,3 +1,1431 @@
+# 2024-01-03
+## Overview:
+
+* Number of new terms: 757
+* Number of changed labels: 4
+* Number of changed definitions: 2
+* Number obsoleted terms: 2
+* Number of new obsoletion candidates: 0
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 0
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0700224 | PDE6A-related retinopathy | Any retinopathy caused by variants in the PDE6A gene. |
+| MONDO:0700227 | ELOVL4-related maculopathy | Any maculopathy caused by a variant in the ELOVL4 gene. |
+| MONDO:0700228 | LRP5-related exudative vitreoretinopathy | Any exudative vitreoretinopathy with or without osteoporosis caused by variants in the LRP5 gene. |
+| MONDO:0700229 | MAK-related retinopathy | Any retinopathy caused by variants in the MAK gene. |
+| MONDO:0700230 | GPR143-related foveal hypoplasia | Any foveal hypoplasia with or without albinism caused by a variant in the GPR143 gene. |
+| MONDO:0700231 | TSPAN12-related exudative vitreoretinopathy | Any exudative vitreoretinopathy caused by variants in the TSPAN12 gene. |
+| MONDO:0700232 | KIZ-related retinopathy | Any retinopathy caused by variants in the KIZ gene. |
+| MONDO:0700233 | TOPORS-related retinopathy | Any retinopathy caused by a variant in the TOPORS gene. |
+| MONDO:0700234 | PRPF8-related retinopathy | Any retinopathy caused by a variant in the PRPF8 gene. |
+| MONDO:0700235 | RD3-related retinopathy | Any retinopathy caused by variants in the RD3 gene. |
+| MONDO:0700236 | BBS9-related ciliopathy | Any ciliopathy caused by variants in the BBS9 gene. |
+| MONDO:0700237 | BBS10-related ciliopathy | Any ciliopathy caused by variants in the BBS10 gene. |
+| MONDO:0700238 | BEST1-related dominant retinopathy | Any retinopathy caused by a heterozygous variant in the BEST1 gene. |
+| MONDO:0700239 | BEST1-related recessive retinopathy | Any retinopathy caused by bi-allelic variants in the BEST1 gene. |
+| MONDO:0700240 | BEST1-related vitreoretinochoroidopathy | Any vitreoretinochoroidopathy caused by a heterozygous variant in the BEST1 gene. |
+| MONDO:0700241 | IMPG2-related recessive retinopathy | Any retinopathy caused by bi-allelic variants in the IMPG2 gene. |
+| MONDO:0700242 | IMPG2-related dominant retinopathy | Any retinopathy caused by a heterozygous variant in the IMPG2 gene. |
+| MONDO:0700243 | CACNA1F-related retinopathy | Any retinopathy caused by a variant in the CACNA1F gene. |
+| MONDO:0700244 | CACNA2D4-related retinopathy | Any retinopathy caused by variants in the CACNA2D4 gene. |
+| MONDO:0800456 | SYNCRIP-related neurodevelopmental disorder | Any neurodevelopmental disorder in which the cause of the disease is a variation in the SYNCRIP gene. It is characterized by a neurologic and developmental disorder with autism spectrum disorder (ASD), intellectual disability (ID), and epilepsy. Other signs and symptoms may include cerebral structural anomalies such as periventricular nodular heterotopia and widening of subarachnoid spaces. |
+| MONDO:0800457 | HNRNPC-related neurodevelopmental disorder | Any neurodevelopmental disorder in which the cause of the disease is a variation in the HNRNPC gene. It is characterized by global developmental delay, intellectual disability, behavioral abnormalities, and subtle facial dysmorphism. It is caused by heterozygous HNRNPC germline variants. |
+| MONDO:0800458 | NR2F2 related multiple congenital anomalies/dysmorphic syndrome | A heart disease that is present at birth. Representative examples include atrial, ventricular, and atrioventricular septal defects, double-outlet right ventricle, tetralogy of Fallot, hypoplastic left heart syndrome, aortic stenosis, and coarctation of the aorta. |
+| MONDO:0800460 | ASAH1-related disorders | The spectrum of ASAH1-related disorders ranges from Farber disease (FD) to spinal muscular atrophy with progressive myoclonic epilepsy (SMA-PME). The diagnosis of an ASAH1-related disorder is established in a proband with suggestive clinical findings by identification of biallelic pathogenic variants in ASAH1 and/or decreased activity of the enzyme acid ceramidase in peripheral blood leukocytes or cultured skin fibroblasts. |
+| MONDO:0800461 | COL4A1-related disorders | The spectrum of COL4A1-related disorders includes small-vessel brain disease of varying severity including porencephaly, variably associated with eye defects (retinal arterial tortuosity, Axenfeld-Rieger anomaly, cataract) and systemic findings (kidney involvement, muscle cramps, cerebral aneurysms, Raynaud phenomenon, cardiac arrhythmia, and hemolytic anemia). |
+| MONDO:0800462 | FHL1-related myopathy | A group of myopathies that includes Emery-Dreifuss muscular dystrophy (EDMD), and two allelic disorders characterized by the presence of reducing body on histopathology, namely reducing body myopathy (RBM) and scapuloperoneal myopathy. |
+| MONDO:0800463 | KIF7-related ciliopathy | A spectrum of ciliopathy disorders that typically show autosomal recessive inheritance and includes Al-Gazali-Bakalinova syndrome, hydrolethalus syndrome 2, acrocallosal syndrome, Joubert syndrome 12. |
+| MONDO:0800464 | SQSTM1-related multisystem proteinopathy | A group of disorders including Paget disease of bone (PBD), inclusion body myopathy (IBM), and less frequently frontotemporal dementia (FTD) and amyotrophic lateral sclerosis (ALS). Phenotypic presentation and severity are highly variable, and individuals within the same family may present with different associated conditions. |
+| MONDO:0800465 | CTSC-related disorder | Any ectodermal dysplasia syndrome in which the cause of the disease is a variation in the CTSC gene. Variations in the CTSC gene can result in (1) Papillon-Lefevre syndrome (PLS) characterized by palmoplantar keratoderma, severe periodontitis affecting deciduous and permanent dentitions, and premature loss of dentition, (2) Haim-Munk syndrome (HMS) with additional features of arachnodactly, acroosteolysis, pesplanus, and onychogryphosis, (3) aggressive periodontitis 1 (AP1) characterized by severe and protracted gingival infections, leading to tooth loss. All three phenotypes are associated with autosomal recessive inheritance. |
+| MONDO:0800466 | disorder of GNAS inactivation | Any endocrine system disorder in which the cause of the disease is inactivation of the GNAS gene. Phenotypes include pseudohypoparathyroidism Ia, Ib, and Ic (PHP-Ia, -Ib, -Ic), pseudopseudohypoparathyroidism (PPHP), progressive osseous heteroplasia (POH), and osteoma cutis (OC). |
+| MONDO:0800467 | dyskeratosis congenita and related telomere biology disorder | A dyskeratosis congenita caused by impaired telomere maintenance resulting in short or very short telomeres. The phenotypic spectrum includes individuals with classic dyskeratosis congenita (DC) as well as those with very short telomeres and an isolated physical finding. Classic DC is characterized by a triad of dysplastic nails, lacy reticular pigmentation of the upper chest and/or neck, and oral leukoplakia, although this may not be present in all individuals. People with DC/TBD are at increased risk for progressive bone marrow failure (BMF), myelodysplastic syndrome or acute myelogenous leukemia, solid tumors (usually squamous cell carcinoma of the head/neck or anogenital cancer), and pulmonary fibrosis. Other findings can include eye abnormalities (epiphora, blepharitis, sparse eyelashes, ectropion, entropion, trichiasis), taurodontism, liver disease, gastrointestinal telangiectasias, and avascular necrosis of the hips or shoulders. Additional findings include cerebellar hypoplasia (Hoyeraal Hreidarsson syndrome) and bilateral exudative retinopathy and intracranial calcifications (Revesz syndrome and Coats plus syndrome). Onset and progression of manifestations of DC/TBD vary: at the mild end of the spectrum are those who have only minimal physical findings with normal bone marrow function, and at the severe end are those who have the diagnostic triad and early-onset BMF. |
+| MONDO:0800468 | SCN4A-related channelopathy | Any muscular channelopathy in which the cause of the disease is a variation in the SCN4 gene. This is characteristic of a continuum in the clinical spectrum that includes sodium-channel myotonia, paramyotonia congenita, hypokalemic periodic paralysis type II and hyperkalemic periodic paralysis. |
+| MONDO:0800470 | TUBB4A-related neurologic disorder | Any neurologic condition in which the cause of the disease is a mutation in the TUBB4A gene. |
+| MONDO:0800472 | CYP1B1-related glaucoma with or without anterior segment dysgenesis | Any primary congenital glaucoma in which the cause of the disease is a mutation in the CYP1B1 gene. |
+| MONDO:0800474 | SOX3-related X-linked pituitary hormone deficiency with or without intellectual developmental disorder | An X-linked syndromic intellectual disability caused by alterations to the SOX3 gene which leads to hypopituitarism with variable deficiency of hormones in the anterior lobe of the pituitary gland. In some cases there is also intellectual disability. |
+| MONDO:0800475 | NACC1-related neurodevelopmental disorder with epilepsy, cataracts and episodic irritability | A neurodevelopmental disorder caused by heterozygous variants in NACC1 and characterized by developmental delay, intellectual disability, epilepsy, cataracts, feeding difficulties, and recurring episodes of extreme irritability. Other phenotypes include hypotonia, delayed myelination, microcephaly, stereotypic hand movements, gastrointestinal tract issues, and sleeping problems. |
+| MONDO:0800476 | HAND2 related congenital heart defect | A heart disease that is present at birth caused by a variation in th HAND2 gene. Representative examples include tetralogy of fallot and ventricular septal defect. |
+| MONDO:0800477 | SETD2-related neurodevelopmental disorder without or with macrocephaly/overgrowth | A neurodevelopmental disorder caused by heterozygous variants in SETD2 and characterized by intellectual disability or developmental delay, motor delay, speech delay, hypotonia, autism spectrum disorder, attention deficit disorder, and sometimes features such as macrocephaly, overgrowth, and dysmorphic features. |
+| MONDO:0800478 | trigeminal trophic syndrome | A syndrome characterized by an uncommon and relatively unknown cause of facial ulceration that occurs after damage to the trigeminal nerve. It characteristically involves non-healing facial ulceration(s) with accompanying anesthesia, paresthesia, and dysesthesia along the distribution of a trigeminal dermatome. |
+| MONDO:0800479 | self-limited neonatal seizures | A neonatal/infantile epilepsy syndrome where seizures start in the neonate between day 4 and 7 of life and are often unilateral clonic events that recur and may alternate sides from seizure to seizure. Seizures can be repetitive over hours to days. Seizures remit by 4-6 months of age. A proportion of those affected may have seizures in later life. The child is expected to have normal developmental progress. This is distinguished from familial neonatal epilepsy on the basis of family history. These entities may have similar genetic etiologies, with de novo mutations responsible for the lack of family history in self-limited neonatal seizures. |
+| MONDO:0800480 | non-verbal learning disability | A neurodevelopmental disorder characterized by core deficits in visual-spatial processing and a significant discrepancy between verbal and nonverbal intelligence (where verbal intelligence is higher). |
+| MONDO:0800481 | oral fibroma | A non-metastasizing oral neoplasm arising from fibrous tissue characterized by the presence of spindle-shaped fibroblasts. |
+| MONDO:0800482 | head injury | An injury that involves the head. |
+| MONDO:0800483 | SF3B4-related acrofacial dysostosis | A congenital malformation syndrome characterized by mandibulofacial dysostosis and anterior upper-limb defects, though occasionally, lower-limb defects have also been reported. Intrafamilial variability has been observed along with phenotype variability and severity including shoulder and pelvic girdle hypoplasia, fibular hypoplasia and eleven ribs. |
+| MONDO:0800484 | PRKAG2-related cardiomyopathy | A metabolic heart condition characterized by variable cardiac hypertrophy, ventricular pre-excitation, and aberrant glycogen storage in the cardiac tissue due to a pathogenic variant in PRKAG2 that results in a net anabolic effect in cardiac cells. |
+| MONDO:0800486 | metabolic bone disorder | A group of disorders that affect the bones secondary to increased levels of minerals or deficient levels of minerals such as calcium, magnesium, phosphorus, and vitamin D. Representative examples are osteomalacia, osteoporosis, and Paget disease. |
+| MONDO:1010407 | epilepsy, golden hamster | Epilepsy that occurs in golden hamster. |
+| MONDO:1010408 | epilepsy, Mongolian gerbil | Epilepsy that occurs in Mongolian gerbil. |
+| MONDO:1010409 | epilepsy, chicken | Epilepsy that occurs in chicken. |
+| MONDO:1010410 | epilepsy, white-tufted-ear marmoset | Epilepsy that occurs in white-tufted-ear marmoset. |
+| MONDO:1010411 | epilepsy, dog | Epilepsy that occurs in dog. |
+| MONDO:1010412 | epilepsy, domestic cat | Epilepsy that occurs in domestic cat. |
+| MONDO:1010413 | epilepsy, horse | Epilepsy that occurs in horse. |
+| MONDO:1010414 | epilepsy, cattle | Epilepsy that occurs in cattle. |
+| MONDO:1010415 | epilepsy, rabbit | Epilepsy that occurs in rabbit. |
+| MONDO:1010416 | myoclonus, horse | Myoclonus that occurs in horse. |
+| MONDO:1010417 | myoclonus, cattle | Myoclonus that occurs in cattle. |
+| MONDO:1010418 | narcolepsy, dog | Narcolepsy that occurs in dog. |
+| MONDO:1010419 | narcolepsy, domestic cat | Narcolepsy that occurs in domestic cat. |
+| MONDO:1010420 | narcolepsy, horse | Narcolepsy that occurs in horse. |
+| MONDO:1010421 | narcolepsy, sheep | Narcolepsy that occurs in sheep. |
+| MONDO:1010422 | paroxysmal dyskinesia, dog | Paroxysmal dyskinesia that occurs in dog. |
+| MONDO:1010423 | paroxysmal dyskinesia, domestic cat | Paroxysmal dyskinesia that occurs in domestic cat. |
+| MONDO:1010424 | autism spectrum disorder, zebra finch | Autism spectrum disorder that occurs in zebra finch. |
+| MONDO:1010425 | Phelan-McDermid syndrome, crab-eating macaque | Phelan-McDermid syndrome that occurs in crab-eating macaque. |
+| MONDO:1010426 | subvalvular aortic stenosis, dog | Subvalvular aortic stenosis that occurs in dog. |
+| MONDO:1010427 | atherosclerosis, golden hamster | Atherosclerosis that occurs in golden hamster. |
+| MONDO:1010428 | atherosclerosis, rock pigeon | Atherosclerosis that occurs in rock pigeon. |
+| MONDO:1010429 | atherosclerosis, Japanese quail | Atherosclerosis that occurs in Japanese quail. |
+| MONDO:1010430 | atherosclerosis, dog | Atherosclerosis that occurs in dog. |
+| MONDO:1010431 | atherosclerosis, domestic cat | Atherosclerosis that occurs in domestic cat. |
+| MONDO:1010432 | atherosclerosis, pig | Atherosclerosis that occurs in pig. |
+| MONDO:1010433 | atrial septal defect, koala | Atrial septal defect that occurs in koala. |
+| MONDO:1010434 | atrial septal defect, dog | Atrial septal defect that occurs in dog. |
+| MONDO:1010435 | atrial septal defect, domestic cat | Atrial septal defect that occurs in domestic cat. |
+| MONDO:1010436 | atrial septal defect, cattle | Atrial septal defect that occurs in cattle. |
+| MONDO:1010437 | cardiomyopathy, golden hamster | Cardiomyopathy that occurs in golden hamster. |
+| MONDO:1010438 | cardiomyopathy, salmonids | Cardiomyopathy that occurs in salmonids. |
+| MONDO:1010439 | cardiomyopathy, chicken | Cardiomyopathy that occurs in chicken. |
+| MONDO:1010440 | cardiomyopathy, hedgehogs | Cardiomyopathy that occurs in hedgehogs. |
+| MONDO:1010441 | cardiomyopathy, dog | Cardiomyopathy that occurs in dog. |
+| MONDO:1010442 | cardiomyopathy, domestic cat | Cardiomyopathy that occurs in domestic cat. |
+| MONDO:1010443 | cardiomyopathy, cattle | Cardiomyopathy that occurs in cattle. |
+| MONDO:1010444 | cardiomyopathy, goat | Cardiomyopathy that occurs in goat. |
+| MONDO:1010445 | dilated cardiomyopathy, golden hamster | Dilated cardiomyopathy that occurs in golden hamster. |
+| MONDO:1010446 | dilated cardiomyopathy, sea otter | Dilated cardiomyopathy that occurs in sea otter. |
+| MONDO:1010447 | dilated cardiomyopathy, turkey | Dilated cardiomyopathy that occurs in turkey. |
+| MONDO:1010448 | dilated cardiomyopathy, dog | Dilated cardiomyopathy that occurs in dog. |
+| MONDO:1010449 | dilated cardiomyopathy, domestic cat | Dilated cardiomyopathy that occurs in domestic cat. |
+| MONDO:1010450 | dilated cardiomyopathy, pig | Dilated cardiomyopathy that occurs in pig. |
+| MONDO:1010451 | dilated cardiomyopathy, cattle | Dilated cardiomyopathy that occurs in cattle. |
+| MONDO:1010452 | dilated cardiomyopathy, rabbit | Dilated cardiomyopathy that occurs in rabbit. |
+| MONDO:1010453 | conotruncal heart malformations, dog | Conotruncal heart malformations that occurs in dog. |
+| MONDO:1010454 | cor triatriatum dexter, dog | Cor triatriatum dexter that occurs in dog. |
+| MONDO:1010455 | essential hypertension, dog | Essential hypertension that occurs in dog. |
+| MONDO:1010456 | hypertrophic cardiomyopathy, woolly monkeys | Hypertrophic cardiomyopathy that occurs in woolly monkeys. |
+| MONDO:1010457 | hypertrophic cardiomyopathy, Rhesus monkey | Hypertrophic cardiomyopathy that occurs in Rhesus monkey. |
+| MONDO:1010458 | hypertrophic cardiomyopathy, dog | Hypertrophic cardiomyopathy that occurs in dog. |
+| MONDO:1010459 | hypertrophic cardiomyopathy, domestic cat | Hypertrophic cardiomyopathy that occurs in domestic cat. |
+| MONDO:1010460 | hypertrophic cardiomyopathy, pig | Hypertrophic cardiomyopathy that occurs in pig. |
+| MONDO:1010461 | hypertrophic cardiomyopathy, Arabian camel | Hypertrophic cardiomyopathy that occurs in Arabian camel. |
+| MONDO:1010462 | hypertrophic cardiomyopathy, cattle | Hypertrophic cardiomyopathy that occurs in cattle. |
+| MONDO:1010463 | mitral valve stenosis, domestic cat | Mitral valve stenosis that occurs in domestic cat. |
+| MONDO:1010464 | patent ductus arteriosus, chicken | Patent ductus arteriosus that occurs in chicken. |
+| MONDO:1010465 | patent ductus arteriosus, dog | Patent ductus arteriosus that occurs in dog. |
+| MONDO:1010466 | patent ductus arteriosus, domestic cat | Patent ductus arteriosus that occurs in domestic cat. |
+| MONDO:1010467 | patent ductus arteriosus, horse | Patent ductus arteriosus that occurs in horse. |
+| MONDO:1010468 | patent ductus arteriosus, cattle | Patent ductus arteriosus that occurs in cattle. |
+| MONDO:1010469 | patent ductus arteriosus, sheep | Patent ductus arteriosus that occurs in sheep. |
+| MONDO:1010470 | persistent truncus arteriosus, alpaca | Persistent truncus arteriosus that occurs in alpaca. |
+| MONDO:1010471 | persistent truncus arteriosus, dog | Persistent truncus arteriosus that occurs in dog. |
+| MONDO:1010472 | persistent truncus arteriosus, domestic cat | Persistent truncus arteriosus that occurs in domestic cat. |
+| MONDO:1010473 | persistent truncus arteriosus, horse | Persistent truncus arteriosus that occurs in horse. |
+| MONDO:1010474 | persistent truncus arteriosus, pig | Persistent truncus arteriosus that occurs in pig. |
+| MONDO:1010475 | persistent truncus arteriosus, cattle | Persistent truncus arteriosus that occurs in cattle. |
+| MONDO:1010476 | persistent truncus arteriosus, sheep | Persistent truncus arteriosus that occurs in sheep. |
+| MONDO:1010477 | arrhythmogenic right ventricular cardiomyopathy, chimpanzee | Arrhythmogenic right ventricular cardiomyopathy that occurs in chimpanzee. |
+| MONDO:1010478 | arrhythmogenic right ventricular cardiomyopathy, dog | Arrhythmogenic right ventricular cardiomyopathy that occurs in dog. |
+| MONDO:1010479 | arrhythmogenic right ventricular cardiomyopathy, domestic cat | Arrhythmogenic right ventricular cardiomyopathy that occurs in domestic cat. |
+| MONDO:1010480 | supravalvular aortic stenosis, domestic cat | Supravalvular aortic stenosis that occurs in domestic cat. |
+| MONDO:1010481 | tetralogy of fallot, snow leopard | Tetralogy of fallot that occurs in snow leopard. |
+| MONDO:1010482 | tetralogy of fallot, dog | Tetralogy of fallot that occurs in dog. |
+| MONDO:1010483 | tetralogy of fallot, domestic cat | Tetralogy of fallot that occurs in domestic cat. |
+| MONDO:1010484 | tetralogy of fallot, horse | Tetralogy of fallot that occurs in horse. |
+| MONDO:1010485 | tetralogy of fallot, cattle | Tetralogy of fallot that occurs in cattle. |
+| MONDO:1010486 | ventricular septal defect, alpaca | Ventricular septal defect that occurs in alpaca. |
+| MONDO:1010487 | ventricular septal defect, chicken | Ventricular septal defect that occurs in chicken. |
+| MONDO:1010488 | ventricular septal defect, turkey | Ventricular septal defect that occurs in turkey. |
+| MONDO:1010489 | ventricular septal defect, dog | Ventricular septal defect that occurs in dog. |
+| MONDO:1010490 | ventricular septal defect, domestic cat | Ventricular septal defect that occurs in domestic cat. |
+| MONDO:1010491 | ventricular septal defect, horse | Ventricular septal defect that occurs in horse. |
+| MONDO:1010492 | ventricular septal defect, pig | Ventricular septal defect that occurs in pig. |
+| MONDO:1010493 | ventricular septal defect, cattle | Ventricular septal defect that occurs in cattle. |
+| MONDO:1010494 | ventricular septal defect, sheep | Ventricular septal defect that occurs in sheep. |
+| MONDO:1010495 | ventricular septal defect, rabbit | Ventricular septal defect that occurs in rabbit. |
+| MONDO:1010496 | patent ductus venosus, gray wolf | Patent ductus venosus that occurs in gray wolf. |
+| MONDO:1010497 | patent ductus venosus, dog | Patent ductus venosus that occurs in dog. |
+| MONDO:1010498 | atrial fibrillation, dog | Atrial fibrillation that occurs in dog. |
+| MONDO:1010499 | atrial fibrillation, horse | Atrial fibrillation that occurs in horse. |
+| MONDO:1010500 | Wolff-Parkinson-White syndrome, cattle | Wolff-Parkinson-White syndrome that occurs in cattle. |
+| MONDO:1010501 | Budd-chiari syndrome, dog | Budd-Chiari syndrome that occurs in dog. |
+| MONDO:1010502 | Budd-chiari syndrome, domestic cat | Budd-Chiari syndrome that occurs in domestic cat. |
+| MONDO:1010503 | endocardial fibroelastosis, dog | Endocardial fibroelastosis that occurs in dog. |
+| MONDO:1010504 | endocardial fibroelastosis, domestic cat | Endocardial fibroelastosis that occurs in domestic cat. |
+| MONDO:1010505 | endocardial fibroelastosis, tiger | Endocardial fibroelastosis that occurs in tiger. |
+| MONDO:1010506 | endocardial fibroelastosis, horse | Endocardial fibroelastosis that occurs in horse. |
+| MONDO:1010507 | endocardial fibroelastosis, cattle | Endocardial fibroelastosis that occurs in cattle. |
+| MONDO:1010508 | cerebral amyloid angiopathy, dog | Cerebral amyloid angiopathy that occurs in dog. |
+| MONDO:1010509 | cerebral amyloid angiopathy, domestic cat | Cerebral amyloid angiopathy that occurs in domestic cat. |
+| MONDO:1010513 | triploidy, tench | Triploidy that occurs in tench. |
+| MONDO:1010514 | triploidy, chicken | Triploidy that occurs in chicken. |
+| MONDO:1010515 | triploidy, blue-and-yellow macaw | Triploidy that occurs in blue-and-yellow macaw. |
+| MONDO:1010516 | Jacobsen syndrome, cattle | Jacobsen syndrome that occurs in cattle. |
+| MONDO:1010517 | holoprosencephaly, horse | Holoprosencephaly that occurs in horse. |
+| MONDO:1010518 | holoprosencephaly, pig | Holoprosencephaly that occurs in pig. |
+| MONDO:1010519 | holoprosencephaly, sheep | Holoprosencephaly that occurs in sheep. |
+| MONDO:1010520 | cleft lip with or without cleft palate, dog | Cleft lip with or without cleft palate that occurs in dog. |
+| MONDO:1010521 | mandibulofacial dysostosis, cattle | Mandibulofacial dysostosis that occurs in cattle. |
+| MONDO:1010522 | frontonasal dysplasia, cattle | Frontonasal dysplasia that occurs in cattle. |
+| MONDO:1010523 | cleft palate, spectacled flying fox | Cleft palate that occurs in spectacled flying fox. |
+| MONDO:1010524 | cleft palate, American mink | Cleft palate that occurs in American mink. |
+| MONDO:1010525 | cleft palate, chicken | Cleft palate that occurs in chicken. |
+| MONDO:1010526 | cleft palate, dog | Cleft palate that occurs in dog. |
+| MONDO:1010527 | cleft palate, domestic cat | Cleft palate that occurs in domestic cat. |
+| MONDO:1010528 | cleft palate, horse | Cleft palate that occurs in horse. |
+| MONDO:1010529 | cleft palate, pig | Cleft palate that occurs in pig. |
+| MONDO:1010530 | cleft palate, cattle | Cleft palate that occurs in cattle. |
+| MONDO:1010531 | cleft palate, sheep | Cleft palate that occurs in sheep. |
+| MONDO:1010532 | cleft palate, rabbit | Cleft palate that occurs in rabbit. |
+| MONDO:1010533 | gingival hypertrophy, dog | Gingival hypertrophy that occurs in dog. |
+| MONDO:1010534 | gingival hypertrophy, red fox | Gingival hypertrophy that occurs in red fox. |
+| MONDO:1010535 | megacolon, domestic cat | Megacolon that occurs in domestic cat. |
+| MONDO:1010536 | megacolon, horse | Megacolon that occurs in horse. |
+| MONDO:1010537 | megacolon, pig | Megacolon that occurs in pig. |
+| MONDO:1010538 | megacolon, cattle | Megacolon that occurs in cattle. |
+| MONDO:1010539 | megacolon, rabbit | Megacolon that occurs in rabbit. |
+| MONDO:1010540 | pyloric stenosis, domestic cat | Pyloric stenosis that occurs in domestic cat. |
+| MONDO:1010541 | Meckel diverticulum, horse | Meckel diverticulum that occurs in horse. |
+| MONDO:1010542 | protein-losing enteropathy, dog | Protein-losing enteropathy that occurs in dog. |
+| MONDO:1010543 | cystic fibrosis, domestic ferret | Cystic fibrosis that occurs in domestic ferret. |
+| MONDO:1010544 | cystic fibrosis, pig | Cystic fibrosis that occurs in pig. |
+| MONDO:1010545 | cystic fibrosis, sheep | Cystic fibrosis that occurs in sheep. |
+| MONDO:1010546 | microvillus inclusion disease, pig | Microvillus inclusion disease that occurs in pig. |
+| MONDO:1010547 | diprosopus, domestic cat | Diprosopus that occurs in domestic cat. |
+| MONDO:1010548 | diprosopus, cattle | Diprosopus that occurs in cattle. |
+| MONDO:1010549 | diprosopus, sheep | Diprosopus that occurs in sheep. |
+| MONDO:1010550 | patent urachus, dog | Patent urachus that occurs in dog. |
+| MONDO:1010551 | patent urachus, domestic cat | Patent urachus that occurs in domestic cat. |
+| MONDO:1010552 | patent urachus, mountain zebra | Patent urachus that occurs in mountain zebra. |
+| MONDO:1010553 | patent urachus, white rhinoceros | Patent urachus that occurs in white rhinoceros. |
+| MONDO:1010554 | patent urachus, sheep | Patent urachus that occurs in sheep. |
+| MONDO:1010555 | spina bifida, snow leopard | Spina bifida that occurs in snow leopard. |
+| MONDO:1010556 | spina bifida, dog | Spina bifida that occurs in dog. |
+| MONDO:1010557 | spina bifida, domestic cat | Spina bifida that occurs in domestic cat. |
+| MONDO:1010558 | spina bifida, cattle | Spina bifida that occurs in cattle. |
+| MONDO:1010559 | spina bifida, sheep | Spina bifida that occurs in sheep. |
+| MONDO:1010560 | spina bifida, rabbit | Spina bifida that occurs in rabbit. |
+| MONDO:1010561 | spina bifida occulta, dog | Spina bifida occulta that occurs in dog. |
+| MONDO:1010562 | acromegaly, dog | Acromegaly that occurs in dog. |
+| MONDO:1010563 | acromegaly, domestic cat | Acromegaly that occurs in domestic cat. |
+| MONDO:1010564 | congenital adrenal hyperplasia, rabbit | Congenital adrenal hyperplasia that occurs in rabbit. |
+| MONDO:1010565 | diabetes insipidus, chicken | Diabetes insipidus that occurs in chicken. |
+| MONDO:1010566 | diabetes insipidus, Japanese quail | Diabetes insipidus that occurs in Japanese quail. |
+| MONDO:1010567 | diabetes insipidus, dog | Diabetes insipidus that occurs in dog. |
+| MONDO:1010568 | diabetes insipidus, domestic cat | Diabetes insipidus that occurs in domestic cat. |
+| MONDO:1010569 | diabetes insipidus, horse | Diabetes insipidus that occurs in horse. |
+| MONDO:1010570 | diabetes insipidus, pig | Diabetes insipidus that occurs in pig. |
+| MONDO:1010571 | diabetes mellitus, domestic guinea pig | Diabetes mellitus that occurs in domestic guinea pig. |
+| MONDO:1010572 | diabetes mellitus, long-tailed chinchilla | Diabetes mellitus that occurs in long-tailed chinchilla. |
+| MONDO:1010573 | diabetes mellitus, koala | Diabetes mellitus that occurs in koala. |
+| MONDO:1010574 | diabetes mellitus, dog | Diabetes mellitus that occurs in dog. |
+| MONDO:1010575 | diabetes mellitus, domestic cat | Diabetes mellitus that occurs in domestic cat. |
+| MONDO:1010576 | diabetes mellitus, horse | Diabetes mellitus that occurs in horse. |
+| MONDO:1010577 | diabetes mellitus, pig | Diabetes mellitus that occurs in pig. |
+| MONDO:1010578 | diabetes mellitus, cattle | Diabetes mellitus that occurs in cattle. |
+| MONDO:1010579 | diabetes mellitus, rabbit | Diabetes mellitus that occurs in rabbit. |
+| MONDO:1010580 | familial goiter, golden hamster | Familial goiter that occurs in golden hamster. |
+| MONDO:1010581 | familial goiter, bongo | Familial goiter that occurs in bongo. |
+| MONDO:1010582 | familial goiter, water buffalo | Familial goiter that occurs in water buffalo. |
+| MONDO:1010583 | familial goiter, chicken | Familial goiter that occurs in chicken. |
+| MONDO:1010584 | familial goiter, dog | Familial goiter that occurs in dog. |
+| MONDO:1010585 | familial goiter, American black bear | Familial goiter that occurs in American black bear. |
+| MONDO:1010586 | familial goiter, domestic cat | Familial goiter that occurs in domestic cat. |
+| MONDO:1010587 | familial goiter, pig | Familial goiter that occurs in pig. |
+| MONDO:1010588 | familial goiter, cattle | Familial goiter that occurs in cattle. |
+| MONDO:1010589 | familial goiter, goat | Familial goiter that occurs in goat. |
+| MONDO:1010590 | familial goiter, sheep | Familial goiter that occurs in sheep. |
+| MONDO:1010591 | hyperparathyroidism, dog | Hyperparathyroidism that occurs in dog. |
+| MONDO:1010592 | hyperparathyroidism, domestic cat | Hyperparathyroidism that occurs in domestic cat. |
+| MONDO:1010593 | hyperparathyroidism, horse | Hyperparathyroidism that occurs in horse. |
+| MONDO:1010594 | hyperthyroidism, domestic guinea pig | Hyperthyroidism that occurs in domestic guinea pig. |
+| MONDO:1010595 | hyperthyroidism, domestic cat | Hyperthyroidism that occurs in domestic cat. |
+| MONDO:1010596 | hyperthyroidism, horse | Hyperthyroidism that occurs in horse. |
+| MONDO:1010597 | hyperthyroidism, rabbit | Hyperthyroidism that occurs in rabbit. |
+| MONDO:1010598 | hypoparathyroidism, dog | Hypoparathyroidism that occurs in dog. |
+| MONDO:1010599 | hypoparathyroidism, domestic cat | Hypoparathyroidism that occurs in domestic cat. |
+| MONDO:1010600 | hypoparathyroidism, horse | Hypoparathyroidism that occurs in horse. |
+| MONDO:1010601 | congenital hypothyroidism, chicken | Congenital hypothyroidism that occurs in chicken. |
+| MONDO:1010602 | congenital hypothyroidism, dog | Congenital hypothyroidism that occurs in dog. |
+| MONDO:1010603 | congenital hypothyroidism, domestic cat | Congenital hypothyroidism that occurs in domestic cat. |
+| MONDO:1010604 | congenital hypothyroidism, horse | Congenital hypothyroidism that occurs in horse. |
+| MONDO:1010605 | congenital hypothyroidism, goat | Congenital hypothyroidism that occurs in goat. |
+| MONDO:1010606 | congenital hypothyroidism, sheep | Congenital hypothyroidism that occurs in sheep. |
+| MONDO:1010607 | exocrine pancreatic insufficiency, dog | Exocrine pancreatic insufficiency that occurs in dog. |
+| MONDO:1010608 | exocrine pancreatic insufficiency, domestic cat | Exocrine pancreatic insufficiency that occurs in domestic cat. |
+| MONDO:1010609 | exocrine pancreatic insufficiency, tiger | Exocrine pancreatic insufficiency that occurs in tiger. |
+| MONDO:1010610 | thyroiditis, domestic guinea pig | Thyroiditis that occurs in domestic guinea pig. |
+| MONDO:1010611 | thyroiditis, dog | Thyroiditis that occurs in dog. |
+| MONDO:1010612 | pheochromocytoma, domestic cat | Pheochromocytoma that occurs in domestic cat. |
+| MONDO:1010613 | hyperaldosteronism, domestic cat | Hyperaldosteronism that occurs in domestic cat. |
+| MONDO:1010614 | congenital adrenal hyperplasia due to 11-beta hydroxylase deficiency, domestic cat | Congenital adrenal hyperplasia due to 11-beta hydroxylase deficiency that occurs in domestic cat. |
+| MONDO:1010615 | congenital adrenal hypoplasia, crab-eating macaque | Congenital adrenal hypoplasia that occurs in crab-eating macaque. |
+| MONDO:1010618 | microcephaly, sheep | Microcephaly that occurs in sheep. |
+| MONDO:1010619 | omphalocele, domestic cat | Omphalocele that occurs in domestic cat. |
+| MONDO:1010620 | omphalocele, horse | Omphalocele that occurs in horse. |
+| MONDO:1010621 | omphalocele, cattle | Omphalocele that occurs in cattle. |
+| MONDO:1010622 | situs inversus, domestic cat | Situs inversus that occurs in domestic cat. |
+| MONDO:1010623 | situs inversus, horse | Situs inversus that occurs in horse. |
+| MONDO:1010624 | situs inversus, cattle | Situs inversus that occurs in cattle. |
+| MONDO:1010625 | autoimmune thrombocytopenia, dog | Autoimmune thrombocytopenia that occurs in dog. |
+| MONDO:1010626 | autoimmune thrombocytopenia, domestic cat | Autoimmune thrombocytopenia that occurs in domestic cat. |
+| MONDO:1010627 | Chediak-Higashi syndrome, American mink | Chediak-Higashi syndrome that occurs in American mink. |
+| MONDO:1010628 | Chediak-Higashi syndrome, Arctic fox | Chediak-Higashi syndrome that occurs in Arctic fox. |
+| MONDO:1010629 | Chediak-Higashi syndrome, domestic cat | Chediak-Higashi syndrome that occurs in domestic cat. |
+| MONDO:1010630 | Chediak-Higashi syndrome, killer whale | Chediak-Higashi syndrome that occurs in killer whale. |
+| MONDO:1010631 | Chediak-Higashi syndrome, cattle | Chediak-Higashi syndrome that occurs in cattle. |
+| MONDO:1010632 | factor VII deficiency, dog | Factor VII deficiency that occurs in dog. |
+| MONDO:1010633 | factor VII deficiency, Asiatic elephant | Factor VII deficiency that occurs in Asiatic elephant. |
+| MONDO:1010634 | factor X deficiency, dog | Factor X deficiency that occurs in dog. |
+| MONDO:1010635 | factor X deficiency, domestic cat | Factor X deficiency that occurs in domestic cat. |
+| MONDO:1010636 | factor XI deficiency, dog | Factor XI deficiency that occurs in dog. |
+| MONDO:1010637 | factor XI deficiency, domestic cat | Factor XI deficiency that occurs in domestic cat. |
+| MONDO:1010638 | factor XI deficiency, cattle | Factor XI deficiency that occurs in cattle. |
+| MONDO:1010639 | factor XII deficiency, dog | Factor XII deficiency that occurs in dog. |
+| MONDO:1010640 | factor XII deficiency, domestic cat | Factor XII deficiency that occurs in domestic cat. |
+| MONDO:1010641 | factor XII deficiency, killer whale | Factor XII deficiency that occurs in killer whale. |
+| MONDO:1010642 | factor XII deficiency, common bottlenose dolphin | Factor XII deficiency that occurs in common bottlenose dolphin. |
+| MONDO:1010643 | hemophilia B, dog | Hemophilia B that occurs in dog. |
+| MONDO:1010644 | hemophilia B, domestic cat | Hemophilia B that occurs in domestic cat. |
+| MONDO:1010645 | hemophilia B, horse | Hemophilia B that occurs in horse. |
+| MONDO:1010646 | hemophilia B, pig | Hemophilia B that occurs in pig. |
+| MONDO:1010647 | hypereosinophilic syndrome, dog | Hypereosinophilic syndrome that occurs in dog. |
+| MONDO:1010648 | hypereosinophilic syndrome, domestic cat | Hypereosinophilic syndrome that occurs in domestic cat. |
+| MONDO:1010649 | hypereosinophilic syndrome, horse | Hypereosinophilic syndrome that occurs in horse. |
+| MONDO:1010650 | Pelger-Huet anomaly, dog | Pelger-Huet anomaly that occurs in dog. |
+| MONDO:1010651 | Pelger-Huet anomaly, domestic cat | Pelger-Huet anomaly that occurs in domestic cat. |
+| MONDO:1010652 | Pelger-Huet anomaly, rabbit | Pelger-Huet anomaly that occurs in rabbit. |
+| MONDO:1010653 | polycythemia, dog | Polycythemia that occurs in dog. |
+| MONDO:1010654 | polycythemia, domestic cat | Polycythemia that occurs in domestic cat. |
+| MONDO:1010655 | polycythemia, llama | Polycythemia that occurs in llama. |
+| MONDO:1010656 | polycythemia, cattle | Polycythemia that occurs in cattle. |
+| MONDO:1010657 | prekallikrein deficiency, dog | Prekallikrein deficiency that occurs in dog. |
+| MONDO:1010658 | prekallikrein deficiency, horse | Prekallikrein deficiency that occurs in horse. |
+| MONDO:1010659 | thrombocytopenia, dog | Thrombocytopenia that occurs in dog. |
+| MONDO:1010660 | thrombocytopenia, domestic cat | Thrombocytopenia that occurs in domestic cat. |
+| MONDO:1010661 | thrombocytopenia, horse | Thrombocytopenia that occurs in horse. |
+| MONDO:1010662 | thrombocytopenia, cattle | Thrombocytopenia that occurs in cattle. |
+| MONDO:1010663 | autoimmune thrombocytopenic purpura, dog | Autoimmune thrombocytopenic purpura that occurs in dog. |
+| MONDO:1010664 | autoimmune thrombocytopenic purpura, pig | Autoimmune thrombocytopenic purpura that occurs in pig. |
+| MONDO:1010665 | Evans syndrome, horse | Evans syndrome that occurs in horse. |
+| MONDO:1010666 | Scott Syndrome, dog | Scott Syndrome that occurs in dog. |
+| MONDO:1010668 | factor XIII deficiency, cattle | Factor XIII deficiency that occurs in cattle. |
+| MONDO:1010669 | myeloperoxidase deficiency, dog | Myeloperoxidase deficiency that occurs in dog. |
+| MONDO:1010675 | anotia, cattle | Anotia that occurs in cattle. |
+| MONDO:1010676 | microtia, pig | Microtia that occurs in pig. |
+| MONDO:1010677 | microtia, sheep | Microtia that occurs in sheep. |
+| MONDO:1010678 | AA amyloidosis, island gray fox | AA amyloidosis that occurs in island gray fox. |
+| MONDO:1010680 | AA amyloidosis, cheetah | AA amyloidosis that occurs in cheetah. |
+| MONDO:1010681 | AA amyloidosis, northern tree shrew | AA amyloidosis that occurs in northern tree shrew. |
+| MONDO:1010682 | AA amyloidosis, zebra finch | AA amyloidosis that occurs in zebra finch. |
+| MONDO:1010683 | AA amyloidosis, chicken | AA amyloidosis that occurs in chicken. |
+| MONDO:1010684 | AA amyloidosis, bats | AA amyloidosis that occurs in bats. |
+| MONDO:1010685 | AA amyloidosis, white-tufted-ear marmoset | AA amyloidosis that occurs in white-tufted-ear marmoset. |
+| MONDO:1010686 | AA amyloidosis, dog | AA amyloidosis that occurs in dog. |
+| MONDO:1010687 | AA amyloidosis, red fox | AA amyloidosis that occurs in red fox. |
+| MONDO:1010688 | AA amyloidosis, domestic cat | AA amyloidosis that occurs in domestic cat. |
+| MONDO:1010689 | AA amyloidosis, Sumatran tiger | AA amyloidosis that occurs in Sumatran tiger. |
+| MONDO:1010690 | AA amyloidosis, pig | AA amyloidosis that occurs in pig. |
+| MONDO:1010691 | AA amyloidosis, cattle | AA amyloidosis that occurs in cattle. |
+| MONDO:1010692 | AA amyloidosis, goat | AA amyloidosis that occurs in goat. |
+| MONDO:1010693 | AA amyloidosis, sheep | AA amyloidosis that occurs in sheep. |
+| MONDO:1010694 | AL amyloidosis, domestic cat | AL amyloidosis that occurs in domestic cat. |
+| MONDO:1010695 | AL amyloidosis, horse | AL amyloidosis that occurs in horse. |
+| MONDO:1010696 | analphalipoproteinaemia, chicken | Analphalipoproteinaemia that occurs in chicken. |
+| MONDO:1010697 | citrullinaemia, cattle | Citrullinemia that occurs in cattle. |
+| MONDO:1010701 | pyruvate kinase deficiency of erythrocyte, dog | Pyruvate kinase deficiency of erythrocyte that occurs in dog. |
+| MONDO:1010702 | pyruvate kinase deficiency of erythrocyte, domestic cat | Pyruvate kinase deficiency of erythrocyte that occurs in domestic cat. |
+| MONDO:1010705 | galactosemia, kangaroo | Galactosemia that occurs in kangaroo. |
+| MONDO:1010706 | porphyria cutanea tarda, pig | Porphyria cutanea tarda that occurs in pig. |
+| MONDO:1010707 | porphyria cutanea tarda, sheep | Porphyria cutanea tarda that occurs in sheep. |
+| MONDO:1010708 | eclampsia, dog | Eclampsia that occurs in dog. |
+| MONDO:1010709 | trimethylaminuria (fishy taint), mallard | Trimethylaminuria (fishy taint) that occurs in mallard. |
+| MONDO:1010710 | trimethylaminuria (fishy taint), chicken | Trimethylaminuria (fishy taint) that occurs in chicken. |
+| MONDO:1010711 | trimethylaminuria (fishy taint), Japanese quail | Trimethylaminuria (fishy taint) that occurs in Japanese quail. |
+| MONDO:1010712 | trimethylaminuria (fishy taint), cattle | Trimethylaminuria (fishy taint) that occurs in cattle. |
+| MONDO:1010713 | pyruvate dehydrogenase deficiency, dog | Pyruvate dehydrogenase deficiency that occurs in dog. |
+| MONDO:1010714 | multiple acyl-CoA dehydrogenase deficiency, domestic cat | Multiple acyl-coa dehydrogenase deficiency that occurs in domestic cat. |
+| MONDO:1010715 | multiple acyl-CoA dehydrogenase deficiency, horse | Multiple acyl-coa dehydrogenase deficiency that occurs in horse. |
+| MONDO:1010716 | acute intermittent porphyria, domestic cat | Acute intermittent porphyria that occurs in domestic cat. |
+| MONDO:1010718 | dihydropyrimidinase deficiency, domestic cat | Dihydropyrimidinase deficiency that occurs in domestic cat. |
+| MONDO:1010719 | hyperphosphatemia, cattle | Hyperphosphatemia that occurs in cattle. |
+| MONDO:1010723 | glucocorticoid resistance, dog | Glucocorticoid resistance that occurs in dog. |
+| MONDO:1010724 | phenylketonuria, pig | Phenylketonuria that occurs in pig. |
+| MONDO:1010725 | c8 deficiency, rabbit | C8 deficiency that occurs in rabbit. |
+| MONDO:1010733 | systemic lupus erythematosus, dog | Systemic lupus erythematosus that occurs in dog. |
+| MONDO:1010734 | systemic lupus erythematosus, domestic cat | Systemic lupus erythematosus that occurs in domestic cat. |
+| MONDO:1010735 | scleroderma, chicken | Scleroderma that occurs in chicken. |
+| MONDO:1010737 | periodic fever syndrome, dog | Periodic fever syndrome that occurs in dog. |
+| MONDO:1010740 | common variable immunodeficiency, horse | Common variable immunodeficiency that occurs in horse. |
+| MONDO:1010741 | autoimmune lymphoproliferative syndrome, domestic cat | Autoimmune lymphoproliferative syndrome that occurs in domestic cat. |
+| MONDO:1010743 | atopic dermatitis, dog | Atopic dermatitis that occurs in dog. |
+| MONDO:1010744 | atopic dermatitis, domestic cat | Atopic dermatitis that occurs in domestic cat. |
+| MONDO:1010745 | dermatomyositis, dog | Dermatomyositis that occurs in dog. |
+| MONDO:1010750 | epidermolysis bullosa, dog | Epidermolysis bullosa that occurs in dog. |
+| MONDO:1010751 | epidermolysis bullosa, cattle | Epidermolysis bullosa that occurs in cattle. |
+| MONDO:1010752 | hypertrichosis, dog | Hypertrichosis that occurs in dog. |
+| MONDO:1010753 | hypertrichosis, cattle | Hypertrichosis that occurs in cattle. |
+| MONDO:1010757 | acrodermatitis enteropathica, dog | Acrodermatitis enteropathica that occurs in dog. |
+| MONDO:1010758 | acrodermatitis enteropathica, domestic cat | Acrodermatitis enteropathica that occurs in domestic cat. |
+| MONDO:1010759 | acrodermatitis enteropathica, cattle | Acrodermatitis enteropathica that occurs in cattle. |
+| MONDO:1010760 | pityriasis rosea, pig | Pityriasis rosea that occurs in pig. |
+| MONDO:1010761 | protoporphyria, chicken | Protoporphyria that occurs in chicken. |
+| MONDO:1010762 | protoporphyria, cattle | Protoporphyria that occurs in cattle. |
+| MONDO:1010763 | vitiligo, water buffalo | Vitiligo that occurs in water buffalo. |
+| MONDO:1010764 | vitiligo, chicken | Vitiligo that occurs in chicken. |
+| MONDO:1010765 | vitiligo, dog | Vitiligo that occurs in dog. |
+| MONDO:1010766 | vitiligo, domestic cat | Vitiligo that occurs in domestic cat. |
+| MONDO:1010767 | vitiligo, horse | Vitiligo that occurs in horse. |
+| MONDO:1010768 | vitiligo, cattle | Vitiligo that occurs in cattle. |
+| MONDO:1010769 | bullous pemphigoid, Rhesus monkey | Bullous pemphigoid that occurs in Rhesus monkey. |
+| MONDO:1010770 | bullous pemphigoid, dog | Bullous pemphigoid that occurs in dog. |
+| MONDO:1010771 | bullous pemphigoid, pig | Bullous pemphigoid that occurs in pig. |
+| MONDO:1010772 | pemphigus, dog | Pemphigus that occurs in dog. |
+| MONDO:1010773 | pemphigus, domestic cat | Pemphigus that occurs in domestic cat. |
+| MONDO:1010774 | pemphigus, horse | Pemphigus that occurs in horse. |
+| MONDO:1010775 | pemphigus, cattle | Pemphigus that occurs in cattle. |
+| MONDO:1010776 | pemphigus, goat | Pemphigus that occurs in goat. |
+| MONDO:1010777 | atrichia with papular lesions, Rhesus monkey | Atrichia with papular lesions that occurs in Rhesus monkey. |
+| MONDO:1010778 | alopecia areata, dog | Alopecia areata that occurs in dog. |
+| MONDO:1010779 | alopecia areata, domestic cat | Alopecia areata that occurs in domestic cat. |
+| MONDO:1010780 | alopecia areata, horse | Alopecia areata that occurs in horse. |
+| MONDO:1010781 | alopecia areata, pig | Alopecia areata that occurs in pig. |
+| MONDO:1010782 | alopecia areata, cattle | Alopecia areata that occurs in cattle. |
+| MONDO:1010783 | ectodermal dysplasia/skin fragility syndrome, dog | Ectodermal dysplasia/skin fragility syndrome that occurs in dog. |
+| MONDO:1010784 | pyoderma, dog | Pyoderma that occurs in dog. |
+| MONDO:1010785 | incontinentia pigmenti, horse | Incontinentia pigmenti that occurs in horse. |
+| MONDO:1010789 | stiff skin syndrome, dog | Stiff skin syndrome that occurs in dog. |
+| MONDO:1010791 | tricho-dento-osseous-like syndrome, cattle | Tricho-dento-osseous-like syndrome that occurs in cattle. |
+| MONDO:1010796 | Darier disease, dog | Darier disease that occurs in dog. |
+| MONDO:1010799 | cutis laxa, sika deer | Cutis laxa that occurs in sika deer. |
+| MONDO:1010800 | brachydactyly, chicken | Brachydactyly that occurs in chicken. |
+| MONDO:1010801 | brachydactyly, dog | Brachydactyly that occurs in dog. |
+| MONDO:1010802 | brachydactyly, pig | Brachydactyly that occurs in pig. |
+| MONDO:1010803 | brachydactyly, rabbit | Brachydactyly that occurs in rabbit. |
+| MONDO:1010804 | hyperostosis, pig | Hyperostosis that occurs in pig. |
+| MONDO:1010805 | polydactyly, domestic guinea pig | Polydactyly that occurs in domestic guinea pig. |
+| MONDO:1010806 | polydactyly, alpaca | Polydactyly that occurs in alpaca. |
+| MONDO:1010807 | polydactyly, springbok | Polydactyly that occurs in springbok. |
+| MONDO:1010808 | polydactyly, rock pigeon | Polydactyly that occurs in rock pigeon. |
+| MONDO:1010809 | polydactyly, chicken | Polydactyly that occurs in chicken. |
+| MONDO:1010810 | polydactyly, turkey | Polydactyly that occurs in turkey. |
+| MONDO:1010811 | polydactyly, dog | Polydactyly that occurs in dog. |
+| MONDO:1010812 | polydactyly, domestic cat | Polydactyly that occurs in domestic cat. |
+| MONDO:1010813 | polydactyly, horse | Polydactyly that occurs in horse. |
+| MONDO:1010814 | polydactyly, pig | Polydactyly that occurs in pig. |
+| MONDO:1010815 | polydactyly, Arabian camel | Polydactyly that occurs in Arabian camel. |
+| MONDO:1010816 | polydactyly, guanaco | Polydactyly that occurs in guanaco. |
+| MONDO:1010817 | polydactyly, llama | Polydactyly that occurs in llama. |
+| MONDO:1010818 | polydactyly, Western roe deer | Polydactyly that occurs in Western roe deer. |
+| MONDO:1010819 | polydactyly, cattle | Polydactyly that occurs in cattle. |
+| MONDO:1010820 | polydactyly, goat | Polydactyly that occurs in goat. |
+| MONDO:1010821 | polydactyly, sheep | Polydactyly that occurs in sheep. |
+| MONDO:1010822 | split hand, domestic cat | Split hand that occurs in domestic cat. |
+| MONDO:1010823 | syndactyly, Swainson's hawk | Syndactyly that occurs in Swainson's hawk. |
+| MONDO:1010824 | syndactyly, chicken | Syndactyly that occurs in chicken. |
+| MONDO:1010825 | syndactyly, dog | Syndactyly that occurs in dog. |
+| MONDO:1010826 | syndactyly, domestic cat | Syndactyly that occurs in domestic cat. |
+| MONDO:1010827 | syndactyly, cattle | Syndactyly that occurs in cattle. |
+| MONDO:1010828 | syndactyly, sheep | Syndactyly that occurs in sheep. |
+| MONDO:1010829 | tibial hemimelia, cattle | Tibial hemimelia that occurs in cattle. |
+| MONDO:1010830 | radial hemimelia, domestic cat | Radial hemimelia that occurs in domestic cat. |
+| MONDO:1010831 | tetradysmelia, cattle | Tetradysmelia that occurs in cattle. |
+| MONDO:1010832 | Wilson disease, dog | Wilson disease that occurs in dog. |
+| MONDO:1010833 | Wilson disease, domestic cat | Wilson disease that occurs in domestic cat. |
+| MONDO:1010834 | Wilson disease, pig | Wilson disease that occurs in pig. |
+| MONDO:1010835 | Wilson disease, cattle | Wilson disease that occurs in cattle. |
+| MONDO:1010836 | Wilson disease, sheep | Wilson disease that occurs in sheep. |
+| MONDO:1010838 | galactosialidosis, dog | Galactosialidosis that occurs in dog. |
+| MONDO:1010839 | gangliosidosis, emu | Gangliosidosis that occurs in emu. |
+| MONDO:1010840 | gangliosidosis, dog | Gangliosidosis that occurs in dog. |
+| MONDO:1010841 | gangliosidosis, domestic cat | Gangliosidosis that occurs in domestic cat. |
+| MONDO:1010842 | gangliosidosis, pig | Gangliosidosis that occurs in pig. |
+| MONDO:1010843 | gangliosidosis, cattle | Gangliosidosis that occurs in cattle. |
+| MONDO:1010854 | Krabbe disease, Rhesus monkey | Krabbe disease that occurs in Rhesus monkey. |
+| MONDO:1010855 | Krabbe disease, dog | Krabbe disease that occurs in dog. |
+| MONDO:1010856 | Krabbe disease, domestic cat | Krabbe disease that occurs in domestic cat. |
+| MONDO:1010857 | Krabbe disease, sheep | Krabbe disease that occurs in sheep. |
+| MONDO:1010858 | lysosomal storage disease, emu | Lysosomal storage disease that occurs in emu. |
+| MONDO:1010859 | lysosomal storage disease, kangaroo | Lysosomal storage disease that occurs in kangaroo. |
+| MONDO:1010860 | lysosomal storage disease, dog | Lysosomal storage disease that occurs in dog. |
+| MONDO:1010861 | lysosomal storage disease, domestic cat | Lysosomal storage disease that occurs in domestic cat. |
+| MONDO:1010862 | lysosomal storage disease, cattle | Lysosomal storage disease that occurs in cattle. |
+| MONDO:1010863 | alpha-mannosidosis, domestic guinea pig | Alpha-mannosidosis that occurs in domestic guinea pig. |
+| MONDO:1010864 | alpha-mannosidosis, domestic cat | Alpha-mannosidosis that occurs in domestic cat. |
+| MONDO:1010865 | alpha-mannosidosis, cattle | Alpha-mannosidosis that occurs in cattle. |
+| MONDO:1010866 | alpha-mannosidosis, goat | Alpha-mannosidosis that occurs in goat. |
+| MONDO:1010867 | alpha-mannosidosis, sheep | Alpha-mannosidosis that occurs in sheep. |
+| MONDO:1010905 | deficiency of uridine monophosphate synthase, cattle | Deficiency of uridine monophosphate synthase that occurs in cattle. |
+| MONDO:1010906 | central core myopathy, dog | Central core myopathy that occurs in dog. |
+| MONDO:1010907 | central core myopathy, horse | Central core myopathy that occurs in horse. |
+| MONDO:1010908 | muscular dystrophy, American mink | Muscular dystrophy that occurs in American mink. |
+| MONDO:1010909 | muscular dystrophy, chicken | Muscular dystrophy that occurs in chicken. |
+| MONDO:1010910 | muscular dystrophy, turkey | Muscular dystrophy that occurs in turkey. |
+| MONDO:1010911 | muscular dystrophy, dog | Muscular dystrophy that occurs in dog. |
+| MONDO:1010912 | muscular dystrophy, domestic cat | Muscular dystrophy that occurs in domestic cat. |
+| MONDO:1010913 | muscular dystrophy, sheep | Muscular dystrophy that occurs in sheep. |
+| MONDO:1010915 | myopathy, golden hamster | Myopathy that occurs in golden hamster. |
+| MONDO:1010916 | myopathy, chicken | Myopathy that occurs in chicken. |
+| MONDO:1010917 | myopathy, dog | Myopathy that occurs in dog. |
+| MONDO:1010918 | congenital myopathy, dog | Congenital myopathy that occurs in dog. |
+| MONDO:1010919 | congenital myopathy, goat | Congenital myopathy that occurs in goat. |
+| MONDO:1010920 | myositis ossificans, pig | Myositis ossificans that occurs in pig. |
+| MONDO:1010921 | myositis ossificans, cattle | Myositis ossificans that occurs in cattle. |
+| MONDO:1010922 | myotonic dystrophy, Japanese quail | Myotonic dystrophy that occurs in Japanese quail. |
+| MONDO:1010923 | muscular dystrophy, Duchenne type, dog | Muscular dystrophy, Duchenne type that occurs in dog. |
+| MONDO:1010924 | muscular dystrophy, Duchenne type, domestic cat | Muscular dystrophy, Duchenne type that occurs in domestic cat. |
+| MONDO:1010925 | muscular dystrophy, Duchenne type, pig | Muscular dystrophy, Duchenne type that occurs in pig. |
+| MONDO:1010927 | congenital pseudomyotonia, dog | Congenital pseudomyotonia that occurs in dog. |
+| MONDO:1010928 | congenital pseudomyotonia, cattle | Congenital pseudomyotonia that occurs in cattle. |
+| MONDO:1010929 | myotubular myopathy 1, dog | Myotubular myopathy 1 that occurs in dog. |
+| MONDO:1010930 | myotubular myopathy 1, domestic cat | Myotubular myopathy 1 that occurs in domestic cat. |
+| MONDO:1010931 | polymyositis, dog | Polymyositis that occurs in dog. |
+| MONDO:1010936 | myofibrillar myopathy, horse | Myofibrillar myopathy that occurs in horse. |
+| MONDO:1010937 | lymphosarcoma, pig | Lymphosarcoma that occurs in pig. |
+| MONDO:1010938 | lymphosarcoma, rabbit | Lymphosarcoma that occurs in rabbit. |
+| MONDO:1010939 | malignant histiocytosis, dog | Malignant histiocytosis that occurs in dog. |
+| MONDO:1010940 | malignant histiocytosis, domestic cat | Malignant histiocytosis that occurs in domestic cat. |
+| MONDO:1010941 | malignant histiocytosis, pig | Malignant histiocytosis that occurs in pig. |
+| MONDO:1010942 | malignant histiocytosis, cattle | Malignant histiocytosis that occurs in cattle. |
+| MONDO:1010943 | mycosis fungoides, dog | Mycosis fungoides that occurs in dog. |
+| MONDO:1010944 | mycosis fungoides, domestic cat | Mycosis fungoides that occurs in domestic cat. |
+| MONDO:1010945 | mycosis fungoides, horse | Mycosis fungoides that occurs in horse. |
+| MONDO:1010947 | chronic monocytic leukemia, dog | Chronic monocytic leukemia that occurs in dog. |
+| MONDO:1010948 | non-hodgkin lymphoma, dog | Non-hodgkin lymphoma that occurs in dog. |
+| MONDO:1010949 | non-hodgkin lymphoma, domestic cat | Non-hodgkin lymphoma that occurs in domestic cat. |
+| MONDO:1010950 | familial adenomatous polyposis, dog | Familial adenomatous polyposis that occurs in dog. |
+| MONDO:1010951 | familial adenomatous polyposis, pig | Familial adenomatous polyposis that occurs in pig. |
+| MONDO:1010952 | embryonal rhabdomyosarcoma, cattle | Embryonal rhabdomyosarcoma that occurs in cattle. |
+| MONDO:1010953 | schwannomatosis, cattle | Schwannomatosis that occurs in cattle. |
+| MONDO:1010958 | ameloblastoma, dog | Ameloblastoma that occurs in dog. |
+| MONDO:1010960 | chronic myelomonocytic leukemia, dog | Chronic myelomonocytic leukemia that occurs in dog. |
+| MONDO:1010961 | prostate cancer, dog | Prostate cancer that occurs in dog. |
+| MONDO:1010962 | benign prostatic hyperplasia, dog | Benign prostatic hyperplasia that occurs in dog. |
+| MONDO:1010963 | cystic hygroma, pig | Cystic hygroma that occurs in pig. |
+| MONDO:1010964 | lymphangiosarcoma, dog | Lymphangiosarcoma that occurs in dog. |
+| MONDO:1010965 | cauda equina syndrome, dog | Cauda equina syndrome that occurs in dog. |
+| MONDO:1010966 | Dandy-Walker syndrome, domestic cat | Dandy-Walker syndrome that occurs in domestic cat. |
+| MONDO:1010967 | Dandy-Walker syndrome, sheep | Dandy-Walker syndrome that occurs in sheep. |
+| MONDO:1010968 | dysautonomia, dog | Dysautonomia that occurs in dog. |
+| MONDO:1010969 | dysautonomia, domestic cat | Dysautonomia that occurs in domestic cat. |
+| MONDO:1010970 | dysautonomia, horse | Dysautonomia that occurs in horse. |
+| MONDO:1010971 | dysautonomia, llama | Dysautonomia that occurs in llama. |
+| MONDO:1010972 | dysautonomia, rabbit | Dysautonomia that occurs in rabbit. |
+| MONDO:1010973 | hepatic encephalopathy, dog | Hepatic encephalopathy that occurs in dog. |
+| MONDO:1010974 | hepatic encephalopathy, domestic cat | Hepatic encephalopathy that occurs in domestic cat. |
+| MONDO:1010975 | hepatic encephalopathy, sheep | Hepatic encephalopathy that occurs in sheep. |
+| MONDO:1010976 | Huntington disease, Rhesus monkey | Huntington disease that occurs in Rhesus monkey. |
+| MONDO:1010977 | Huntington disease, pig | Huntington disease that occurs in pig. |
+| MONDO:1010978 | Huntington disease, sheep | Huntington disease that occurs in sheep. |
+| MONDO:1010979 | hydranencephaly, dog | Hydranencephaly that occurs in dog. |
+| MONDO:1010980 | hydranencephaly, cattle | Hydranencephaly that occurs in cattle. |
+| MONDO:1010981 | hydranencephaly, sheep | Hydranencephaly that occurs in sheep. |
+| MONDO:1010982 | hydrocephalus, golden hamster | Hydrocephalus that occurs in golden hamster. |
+| MONDO:1010983 | hydrocephalus, yellow-crowned parrot | Hydrocephalus that occurs in yellow-crowned parrot. |
+| MONDO:1010984 | hydrocephalus, dog | Hydrocephalus that occurs in dog. |
+| MONDO:1010985 | hydrocephalus, domestic cat | Hydrocephalus that occurs in domestic cat. |
+| MONDO:1010986 | hydrocephalus, tiger | Hydrocephalus that occurs in tiger. |
+| MONDO:1010987 | hydrocephalus, puma | Hydrocephalus that occurs in puma. |
+| MONDO:1010988 | hydrocephalus, horse | Hydrocephalus that occurs in horse. |
+| MONDO:1010989 | hydrocephalus, pig | Hydrocephalus that occurs in pig. |
+| MONDO:1010990 | hydrocephalus, llama | Hydrocephalus that occurs in llama. |
+| MONDO:1010991 | hydrocephalus, cattle | Hydrocephalus that occurs in cattle. |
+| MONDO:1010992 | hydrocephalus, sheep | Hydrocephalus that occurs in sheep. |
+| MONDO:1010993 | hydrocephalus, rabbit | Hydrocephalus that occurs in rabbit. |
+| MONDO:1010994 | olivopontocerebellar atrophy, domestic cat | Olivopontocerebellar atrophy that occurs in domestic cat. |
+| MONDO:1010995 | spinal muscular atrophy, dog | Spinal muscular atrophy that occurs in dog. |
+| MONDO:1010996 | spinal muscular atrophy, domestic cat | Spinal muscular atrophy that occurs in domestic cat. |
+| MONDO:1010997 | spinal muscular atrophy, cattle | Spinal muscular atrophy that occurs in cattle. |
+| MONDO:1010998 | syringomyelia, dog | Syringomyelia that occurs in dog. |
+| MONDO:1010999 | syringomyelia, domestic cat | Syringomyelia that occurs in domestic cat. |
+| MONDO:1011000 | syringomyelia, horse | Syringomyelia that occurs in horse. |
+| MONDO:1011001 | syringomyelia, cattle | Syringomyelia that occurs in cattle. |
+| MONDO:1011002 | syringomyelia, rabbit | Syringomyelia that occurs in rabbit. |
+| MONDO:1011003 | polymicrogyria, cattle | Polymicrogyria that occurs in cattle. |
+| MONDO:1011004 | leukodystrophy, American mink | Leukodystrophy that occurs in American mink. |
+| MONDO:1011005 | leukodystrophy, dog | Leukodystrophy that occurs in dog. |
+| MONDO:1011006 | leukodystrophy, sheep | Leukodystrophy that occurs in sheep. |
+| MONDO:1011007 | peripheral neuropathy, dog | Peripheral neuropathy that occurs in dog. |
+| MONDO:1011008 | peripheral neuropathy, pig | Peripheral neuropathy that occurs in pig. |
+| MONDO:1011009 | Horner syndrome, dog | Horner syndrome that occurs in dog. |
+| MONDO:1011010 | Horner syndrome, domestic cat | Horner syndrome that occurs in domestic cat. |
+| MONDO:1011011 | Horner syndrome, horse | Horner syndrome that occurs in horse. |
+| MONDO:1011012 | Horner syndrome, cattle | Horner syndrome that occurs in cattle. |
+| MONDO:1011013 | giant axonal neuropathy, dog | Giant axonal neuropathy that occurs in dog. |
+| MONDO:1011014 | Alexander disease, dog | Alexander disease that occurs in dog. |
+| MONDO:1011015 | cerebellar degeneration, chicken | Cerebellar degeneration that occurs in chicken. |
+| MONDO:1011016 | cerebellar degeneration, dog | Cerebellar degeneration that occurs in dog. |
+| MONDO:1011017 | cerebellar degeneration, domestic cat | Cerebellar degeneration that occurs in domestic cat. |
+| MONDO:1011018 | L-2-hydroxyglutaricacidemia, dog | L-2-hydroxyglutaricacidemia that occurs in dog. |
+| MONDO:1011019 | L-2-hydroxyglutaricacidemia, domestic cat | L-2-hydroxyglutaricacidemia that occurs in domestic cat. |
+| MONDO:1011020 | hyperekplexia, dog | Hyperekplexia that occurs in dog. |
+| MONDO:1011022 | lissencephaly and cerebellar hypoplasia, dog | Lissencephaly and cerebellar hypoplasia that occurs in dog. |
+| MONDO:1011026 | lissencephaly and cerebellar hypoplasia, sheep | Lissencephaly and cerebellar hypoplasia that occurs in sheep. |
+| MONDO:1011028 | ataxia telangiectasia, pig | Ataxia telangiectasia that occurs in pig. |
+| MONDO:1011031 | succinic semialdehyde dehydrogenase deficiency, dog | Succinic semialdehyde dehydrogenase deficiency that occurs in dog. |
+| MONDO:1011043 | glomerulonephritis, dog | Glomerulonephritis that occurs in dog. |
+| MONDO:1011044 | glomerulonephritis, domestic cat | Glomerulonephritis that occurs in domestic cat. |
+| MONDO:1011045 | nephritis, dog | Nephritis that occurs in dog. |
+| MONDO:1011046 | nephrolithiasis, domestic cat | Nephrolithiasis that occurs in domestic cat. |
+| MONDO:1011047 | nephrotic syndrome, dog | Nephrotic syndrome that occurs in dog. |
+| MONDO:1011048 | nephrotic syndrome, domestic cat | Nephrotic syndrome that occurs in domestic cat. |
+| MONDO:1011049 | polycystic kidney disease, degu | Polycystic kidney disease that occurs in degu. |
+| MONDO:1011050 | polycystic kidney disease, markhor | Polycystic kidney disease that occurs in markhor. |
+| MONDO:1011051 | polycystic kidney disease, springbok | Polycystic kidney disease that occurs in springbok. |
+| MONDO:1011052 | polycystic kidney disease, crab-eating macaque | Polycystic kidney disease that occurs in crab-eating macaque. |
+| MONDO:1011053 | polycystic kidney disease, dog | Polycystic kidney disease that occurs in dog. |
+| MONDO:1011054 | polycystic kidney disease, domestic cat | Polycystic kidney disease that occurs in domestic cat. |
+| MONDO:1011055 | polycystic kidney disease, lion | Polycystic kidney disease that occurs in lion. |
+| MONDO:1011056 | polycystic kidney disease, horse | Polycystic kidney disease that occurs in horse. |
+| MONDO:1011057 | polycystic kidney disease, pig | Polycystic kidney disease that occurs in pig. |
+| MONDO:1011058 | polycystic kidney disease, Western roe deer | Polycystic kidney disease that occurs in Western roe deer. |
+| MONDO:1011060 | polycystic kidney disease, sheep | Polycystic kidney disease that occurs in sheep. |
+| MONDO:1011061 | polycystic kidney disease, rabbit | Polycystic kidney disease that occurs in rabbit. |
+| MONDO:1011063 | renal hypoplasia, chicken | Renal hypoplasia that occurs in chicken. |
+| MONDO:1011064 | renal hypoplasia, unilateral, pig | Renal hypoplasia, unilateral that occurs in pig. |
+| MONDO:1011065 | renal hypoplasia, bilateral, dog | Renal hypoplasia, bilateral that occurs in dog. |
+| MONDO:1011066 | renal hypoplasia, bilateral, pig | Renal hypoplasia, bilateral that occurs in pig. |
+| MONDO:1011067 | urolithiasis, domestic guinea pig | Urolithiasis that occurs in domestic guinea pig. |
+| MONDO:1011068 | urolithiasis, Silvery lutung | Urolithiasis that occurs in Silvery lutung. |
+| MONDO:1011069 | urolithiasis, Javan langur | Urolithiasis that occurs in Javan langur. |
+| MONDO:1011070 | urolithiasis, long-tailed chinchilla | Urolithiasis that occurs in long-tailed chinchilla. |
+| MONDO:1011071 | urolithiasis, American mink | Urolithiasis that occurs in American mink. |
+| MONDO:1011072 | urolithiasis, Red shanked douc langur | Urolithiasis that occurs in Red shanked douc langur. |
+| MONDO:1011073 | urolithiasis, Francois's langur | Urolithiasis that occurs in Francois's langur. |
+| MONDO:1011074 | urolithiasis, Dusky leaf-monkey | Urolithiasis that occurs in Dusky leaf-monkey. |
+| MONDO:1011075 | urolithiasis, Siberian chipmunk | Urolithiasis that occurs in Siberian chipmunk. |
+| MONDO:1011076 | urolithiasis, kangaroo | Urolithiasis that occurs in kangaroo. |
+| MONDO:1011077 | urolithiasis, Rhesus monkey | Urolithiasis that occurs in Rhesus monkey. |
+| MONDO:1011078 | urolithiasis, dog | Urolithiasis that occurs in dog. |
+| MONDO:1011079 | urolithiasis, domestic ferret | Urolithiasis that occurs in domestic ferret. |
+| MONDO:1011080 | urolithiasis, domestic cat | Urolithiasis that occurs in domestic cat. |
+| MONDO:1011081 | urolithiasis, horse | Urolithiasis that occurs in horse. |
+| MONDO:1011082 | urolithiasis, pig | Urolithiasis that occurs in pig. |
+| MONDO:1011083 | urolithiasis, llama | Urolithiasis that occurs in llama. |
+| MONDO:1011084 | urolithiasis, cattle | Urolithiasis that occurs in cattle. |
+| MONDO:1011085 | urolithiasis, goat | Urolithiasis that occurs in goat. |
+| MONDO:1011086 | urolithiasis, sheep | Urolithiasis that occurs in sheep. |
+| MONDO:1011087 | renal dysplasia, dog | Renal dysplasia that occurs in dog. |
+| MONDO:1011088 | renal dysplasia, domestic cat | Renal dysplasia that occurs in domestic cat. |
+| MONDO:1011089 | renal dysplasia, horse | Renal dysplasia that occurs in horse. |
+| MONDO:1011090 | renal dysplasia, cattle | Renal dysplasia that occurs in cattle. |
+| MONDO:1011091 | hypospadias, dog | Hypospadias that occurs in dog. |
+| MONDO:1011092 | hypospadias, horse | Hypospadias that occurs in horse. |
+| MONDO:1011093 | hypospadias, cattle | Hypospadias that occurs in cattle. |
+| MONDO:1011094 | hypospadias, goat | Hypospadias that occurs in goat. |
+| MONDO:1011095 | hypospadias, sheep | Hypospadias that occurs in sheep. |
+| MONDO:1011096 | alkaptonuria, crab-eating macaque | Alkaptonuria that occurs in crab-eating macaque. |
+| MONDO:1011098 | alkaptonuria, domestic cat | Alkaptonuria that occurs in domestic cat. |
+| MONDO:1011099 | alkaptonuria, rabbit | Alkaptonuria that occurs in rabbit. |
+| MONDO:1011102 | renal agenesis, dog | Renal agenesis that occurs in dog. |
+| MONDO:1011103 | renal agenesis, domestic cat | Renal agenesis that occurs in domestic cat. |
+| MONDO:1011104 | renal agenesis, rabbit | Renal agenesis that occurs in rabbit. |
+| MONDO:1011108 | cryptorchidism, dog | Cryptorchidism that occurs in dog. |
+| MONDO:1011109 | cryptorchidism, domestic cat | Cryptorchidism that occurs in domestic cat. |
+| MONDO:1011110 | cryptorchidism, puma | Cryptorchidism that occurs in puma. |
+| MONDO:1011111 | cryptorchidism, horse | Cryptorchidism that occurs in horse. |
+| MONDO:1011112 | cryptorchidism, pig | Cryptorchidism that occurs in pig. |
+| MONDO:1011113 | cryptorchidism, Arabian camel | Cryptorchidism that occurs in Arabian camel. |
+| MONDO:1011114 | cryptorchidism, llama | Cryptorchidism that occurs in llama. |
+| MONDO:1011115 | cryptorchidism, cattle | Cryptorchidism that occurs in cattle. |
+| MONDO:1011116 | cryptorchidism, goat | Cryptorchidism that occurs in goat. |
+| MONDO:1011117 | cryptorchidism, sheep | Cryptorchidism that occurs in sheep. |
+| MONDO:1011118 | hypogonadism, dog | Hypogonadism that occurs in dog. |
+| MONDO:1011119 | hypogonadism, deer | Hypogonadism that occurs in deer. |
+| MONDO:1011120 | orchitis, dog | Orchitis that occurs in dog. |
+| MONDO:1011121 | orchitis, domestic cat | Orchitis that occurs in domestic cat. |
+| MONDO:1011122 | persistent Mullerian duct syndrome, dog | Persistent Mullerian duct syndrome that occurs in dog. |
+| MONDO:1011123 | persistent Mullerian duct syndrome, domestic cat | Persistent Mullerian duct syndrome that occurs in domestic cat. |
+| MONDO:1011124 | persistent Mullerian duct syndrome, goat | Persistent Mullerian duct syndrome that occurs in goat. |
+| MONDO:1011125 | priapism, dog | Priapism that occurs in dog. |
+| MONDO:1011126 | priapism, domestic cat | Priapism that occurs in domestic cat. |
+| MONDO:1011127 | testicular regression syndrome, horse | Testicular regression syndrome that occurs in horse. |
+| MONDO:1011128 | azoospermia, horse | Azoospermia that occurs in horse. |
+| MONDO:1011130 | allergic rhinitis, cattle | Allergic rhinitis that occurs in cattle. |
+| MONDO:1011131 | atrophic rhinitis, pig | Atrophic rhinitis that occurs in pig. |
+| MONDO:1011132 | atrophic rhinitis, cattle | Atrophic rhinitis that occurs in cattle. |
+| MONDO:1011133 | pneumothorax, dog | Pneumothorax that occurs in dog. |
+| MONDO:1011134 | pneumothorax, domestic cat | Pneumothorax that occurs in domestic cat. |
+| MONDO:1011135 | pulmonary hypertension, pig | Pulmonary hypertension that occurs in pig. |
+| MONDO:1011136 | pulmonary hypertension, cattle | Pulmonary hypertension that occurs in cattle. |
+| MONDO:1011138 | choanal atresia, alpaca | Choanal atresia that occurs in alpaca. |
+| MONDO:1011139 | choanal atresia, dog | Choanal atresia that occurs in dog. |
+| MONDO:1011140 | choanal atresia, domestic cat | Choanal atresia that occurs in domestic cat. |
+| MONDO:1011141 | choanal atresia, ass | Choanal atresia that occurs in ass. |
+| MONDO:1011142 | choanal atresia, horse | Choanal atresia that occurs in horse. |
+| MONDO:1011143 | choanal atresia, llama | Choanal atresia that occurs in llama. |
+| MONDO:1011144 | choanal atresia, sheep | Choanal atresia that occurs in sheep. |
+| MONDO:1011145 | pulmonary agenesis, horse | Pulmonary agenesis that occurs in horse. |
+| MONDO:1011146 | achondroplasia, water buffalo | Achondroplasia that occurs in water buffalo. |
+| MONDO:1011147 | achondroplasia, dog | Achondroplasia that occurs in dog. |
+| MONDO:1011148 | achondroplasia, cattle | Achondroplasia that occurs in cattle. |
+| MONDO:1011149 | achondroplasia, sheep | Achondroplasia that occurs in sheep. |
+| MONDO:1011150 | ankylosing spondylitis, dog | Ankylosing spondylitis that occurs in dog. |
+| MONDO:1011151 | anodontia, dog | Anodontia that occurs in dog. |
+| MONDO:1011152 | anodontia, domestic cat | Anodontia that occurs in domestic cat. |
+| MONDO:1011153 | rheumatoid arthritis, dog | Rheumatoid arthritis that occurs in dog. |
+| MONDO:1011154 | osteoporosis, horse | Osteoporosis that occurs in horse. |
+| MONDO:1011155 | Marfan syndrome, pig | Marfan syndrome that occurs in pig. |
+| MONDO:1011156 | Marfan syndrome, cattle | Marfan syndrome that occurs in cattle. |
+| MONDO:1011157 | osteoarthritis, domestic guinea pig | Osteoarthritis that occurs in domestic guinea pig. |
+| MONDO:1011158 | osteoarthritis, sea otter | Osteoarthritis that occurs in sea otter. |
+| MONDO:1011159 | osteoarthritis, koala | Osteoarthritis that occurs in koala. |
+| MONDO:1011160 | osteoarthritis, dog | Osteoarthritis that occurs in dog. |
+| MONDO:1011161 | osteoarthritis, domestic cat | Osteoarthritis that occurs in domestic cat. |
+| MONDO:1011162 | osteoarthritis, horse | Osteoarthritis that occurs in horse. |
+| MONDO:1011163 | osteoarthritis, pig | Osteoarthritis that occurs in pig. |
+| MONDO:1011164 | osteoarthritis, cattle | Osteoarthritis that occurs in cattle. |
+| MONDO:1011165 | osteoarthritis, sheep | Osteoarthritis that occurs in sheep. |
+| MONDO:1011166 | osteochondritis dissecans, snow leopard | Osteochondritis dissecans that occurs in snow leopard. |
+| MONDO:1011167 | osteochondritis dissecans, dog | Osteochondritis dissecans that occurs in dog. |
+| MONDO:1011168 | osteochondritis dissecans, horse | Osteochondritis dissecans that occurs in horse. |
+| MONDO:1011169 | osteochondrosis, raccoon dog | Osteochondrosis that occurs in raccoon dog. |
+| MONDO:1011170 | osteochondrosis, chicken | Osteochondrosis that occurs in chicken. |
+| MONDO:1011171 | osteochondrosis, dog | Osteochondrosis that occurs in dog. |
+| MONDO:1011172 | osteochondrosis, domestic cat | Osteochondrosis that occurs in domestic cat. |
+| MONDO:1011173 | osteochondrosis, horse | Osteochondrosis that occurs in horse. |
+| MONDO:1011174 | osteochondrosis, pig | Osteochondrosis that occurs in pig. |
+| MONDO:1011175 | osteochondrosis, deer | Osteochondrosis that occurs in deer. |
+| MONDO:1011176 | osteochondrosis, cattle | Osteochondrosis that occurs in cattle. |
+| MONDO:1011177 | osteochondrosis, sheep | Osteochondrosis that occurs in sheep. |
+| MONDO:1011178 | osteopetrosis, Japanese quail | Osteopetrosis that occurs in Japanese quail. |
+| MONDO:1011179 | osteopetrosis, ass | Osteopetrosis that occurs in ass. |
+| MONDO:1011180 | osteopetrosis, horse | Osteopetrosis that occurs in horse. |
+| MONDO:1011181 | osteopetrosis, cattle | Osteopetrosis that occurs in cattle. |
+| MONDO:1011182 | osteopetrosis, rabbit | Osteopetrosis that occurs in rabbit. |
+| MONDO:1011186 | scoliosis, chicken | Scoliosis that occurs in chicken. |
+| MONDO:1011187 | scoliosis, dog | Scoliosis that occurs in dog. |
+| MONDO:1011188 | scoliosis, horse | Scoliosis that occurs in horse. |
+| MONDO:1011189 | spinal stenosis, dog | Spinal stenosis that occurs in dog. |
+| MONDO:1011190 | spinal stenosis, cattle | Spinal stenosis that occurs in cattle. |
+| MONDO:1011191 | synovial chondromatosis, great horned owl | Synovial chondromatosis that occurs in great horned owl. |
+| MONDO:1011192 | synovial chondromatosis, horse | Synovial chondromatosis that occurs in horse. |
+| MONDO:1011193 | craniosynostosis, rabbit | Craniosynostosis that occurs in rabbit. |
+| MONDO:1011194 | osteochondrodysplasia, dog | Osteochondrodysplasia that occurs in dog. |
+| MONDO:1011195 | osteochondrodysplasia, domestic cat | Osteochondrodysplasia that occurs in domestic cat. |
+| MONDO:1011201 | schmid metaphyseal chondrodysplasia dwarfism, pig | Schmid metaphyseal chondrodysplasia dwarfism that occurs in pig. |
+| MONDO:1011203 | osteopetrosis with gingival hamartomas, cattle | Osteopetrosis with gingival hamartomas that occurs in cattle. |
+| MONDO:1011204 | spondylocostal dysostosis, autosomal recessive, dog | Spondylocostal dysostosis, autosomal recessive that occurs in dog. |
+| MONDO:1011205 | Van den Ende-Gupta syndrome, dog | Van den Ende-Gupta syndrome that occurs in dog. |
+| MONDO:1011206 | periodontitis, Rhesus monkey | Periodontitis that occurs in Rhesus monkey. |
+| MONDO:1011207 | hypophosphatasia, dog | Hypophosphatasia that occurs in dog. |
+| MONDO:1011208 | hypophosphatasia, sheep | Hypophosphatasia that occurs in sheep. |
+| MONDO:1011210 | GAPO syndrome, pig | GAPO syndrome that occurs in pig. |
+| MONDO:1011211 | coloboma, snow leopard | Coloboma that occurs in snow leopard. |
+| MONDO:1011212 | coloboma, Mexican tetra | Coloboma that occurs in Mexican tetra. |
+| MONDO:1011213 | coloboma, chicken | Coloboma that occurs in chicken. |
+| MONDO:1011214 | coloboma, dog | Coloboma that occurs in dog. |
+| MONDO:1011215 | coloboma, domestic cat | Coloboma that occurs in domestic cat. |
+| MONDO:1011216 | coloboma, horse | Coloboma that occurs in horse. |
+| MONDO:1011217 | coloboma, llama | Coloboma that occurs in llama. |
+| MONDO:1011218 | coloboma, cattle | Coloboma that occurs in cattle. |
+| MONDO:1011219 | corneal dystrophy, dog | Corneal dystrophy that occurs in dog. |
+| MONDO:1011220 | corneal dystrophy, domestic cat | Corneal dystrophy that occurs in domestic cat. |
+| MONDO:1011221 | retinal detachment, dog | Retinal detachment that occurs in dog. |
+| MONDO:1011222 | retinal detachment, domestic cat | Retinal detachment that occurs in domestic cat. |
+| MONDO:1011223 | retinal detachment, horse | Retinal detachment that occurs in horse. |
+| MONDO:1011224 | ectropion, dog | Ectropion that occurs in dog. |
+| MONDO:1011225 | entropion, dog | Entropion that occurs in dog. |
+| MONDO:1011226 | entropion, domestic cat | Entropion that occurs in domestic cat. |
+| MONDO:1011227 | entropion, horse | Entropion that occurs in horse. |
+| MONDO:1011228 | entropion, pig | Entropion that occurs in pig. |
+| MONDO:1011229 | entropion, cattle | Entropion that occurs in cattle. |
+| MONDO:1011230 | entropion, goat | Entropion that occurs in goat. |
+| MONDO:1011231 | entropion, sheep | Entropion that occurs in sheep. |
+| MONDO:1011232 | entropion, rabbit | Entropion that occurs in rabbit. |
+| MONDO:1011233 | microphthalmia, golden hamster | Microphthalmia that occurs in golden hamster. |
+| MONDO:1011234 | microphthalmia, Campbell's desert hamster | Microphthalmia that occurs in Campbell's desert hamster. |
+| MONDO:1011235 | microphthalmia, Nile tilapia | Microphthalmia that occurs in Nile tilapia. |
+| MONDO:1011236 | microphthalmia, water buffalo | Microphthalmia that occurs in water buffalo. |
+| MONDO:1011237 | microphthalmia, chicken | Microphthalmia that occurs in chicken. |
+| MONDO:1011238 | microphthalmia, dog | Microphthalmia that occurs in dog. |
+| MONDO:1011239 | microphthalmia, pig | Microphthalmia that occurs in pig. |
+| MONDO:1011240 | microphthalmia, Eastern wapiti | Microphthalmia that occurs in Eastern wapiti. |
+| MONDO:1011241 | microphthalmia, cattle | Microphthalmia that occurs in cattle. |
+| MONDO:1011242 | microphthalmia, sheep | Microphthalmia that occurs in sheep. |
+| MONDO:1011243 | congenital nystagmus, dog | Congenital nystagmus that occurs in dog. |
+| MONDO:1011244 | retinal degeneration, crab-eating macaque | Retinal degeneration that occurs in crab-eating macaque. |
+| MONDO:1011245 | retinal degeneration, domestic cat | Retinal degeneration that occurs in domestic cat. |
+| MONDO:1011246 | retinal degeneration, horse | Retinal degeneration that occurs in horse. |
+| MONDO:1011247 | retinal degeneration, cattle | Retinal degeneration that occurs in cattle. |
+| MONDO:1011248 | strabismus, domestic cat | Strabismus that occurs in domestic cat. |
+| MONDO:1011249 | retinoschisis, dog | Retinoschisis that occurs in dog. |
+| MONDO:1011250 | leber congenital amaurosis, dog | Leber congenital amaurosis that occurs in dog. |
+| MONDO:1011251 | leber congenital amaurosis, domestic cat | Leber congenital amaurosis that occurs in domestic cat. |
+| MONDO:1011252 | keratitis, dog | Keratitis that occurs in dog. |
+| MONDO:1011253 | keratitis, horse | Keratitis that occurs in horse. |
+| MONDO:1011258 | retinitis pigmentosa, pig | Retinitis pigmentosa that occurs in pig. |
+| MONDO:1011259 | retinitis pigmentosa, cattle | Retinitis pigmentosa that occurs in cattle. |
+| MONDO:1011263 | myopia, dog | Myopia that occurs in dog. |
+| MONDO:1011270 | diabetic cataract, degu | Diabetic cataract that occurs in degu. |
+| MONDO:1011271 | Peters anomaly, snow leopard | Peters anomaly that occurs in snow leopard. |
+| MONDO:1011278 | macular corneal dystrophy, dog | Macular corneal dystrophy that occurs in dog. |
+| MONDO:1011279 | age-related macular degeneration, Rhesus monkey | Age-related macular degeneration that occurs in Rhesus monkey. |
+| MONDO:1011280 | microphthalmia, isolated, with coloboma, dog | Microphthalmia, isolated, with coloboma that occurs in dog. |
+| MONDO:1011286 | Leber hereditary optic neuropathy, cattle | Leber hereditary optic neuropathy that occurs in cattle. |
+| MONDO:1011287 | night blindness, dog | Night blindness that occurs in dog. |
+| MONDO:1011288 | night blindness, cattle | Night blindness that occurs in cattle. |
+| MONDO:1011289 | dacryocystitis, rabbit | Dacryocystitis that occurs in rabbit. |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0008654 | spinocerebellar ataxia 27A | nystagmus 4, congenital, autosomal dominant | spinocerebellar ataxia 27A |
+| MONDO:0016980 | ATR-X-related syndrome | obsolete ATR-X-related syndrome | ATR-X-related syndrome |
+| MONDO:0015012 | mucopolysaccharidosis-plus syndrome | mucopolysaccharidosis-like syndrome with congenital heart defects and hematopoietic disorders | mucopolysaccharidosis-plus syndrome |
+| MONDO:0036042 | KAT6B-related multiple congenital anomalies syndrome | obsolete KAT6B-related multiple congenital anomalies syndrome | KAT6B-related multiple congenital anomalies syndrome |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0012905 | hypomyelinating leukodystrophy 6 | Hypomyelination with atrophy of basal ganglia and cerebellum (H-ABC) is characterized by slowly progressive spasticity, extrapyramidal movement disorders (dystonia, choreoathetosis and rigidity), cerebellar ataxia, moderate to severe cognitive deficit, and anarthria/dysarthria. | A leukodystrophy characterized by slowly progressive spasticity, extrapyramidal movement disorders (dystonia, choreoathetosis and rigidity), cerebellar ataxia, moderate to severe cognitive deficit, and anarthria/dysarthria. |
+| MONDO:0859143 | Radio-Tartaglia syndrome | | A syndrome that is caused by a variation in the SPEN gene and is characterized by developmental delay/intellectual disability, autism spectrum disorder, anxiety, aggressive behavior, attention deficit disorder, hypotonia, brain and spine anomalies, congenital heart defects, high/narrow palate, facial dysmorphisms, and obesity/increased BMI, especially in females. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0016980 | ATR-X-related syndrome |
+| MONDO:0036042 | KAT6B-related multiple congenital anomalies syndrome |
+
+### New obsoletion candidates
+
+No new candidates for obsoletion.
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+No changes.
+
+# 2023-12-12
+## Overview:
+
+
+* Number of new terms: 11
+* Number of changed labels: 31
+* Number of changed definitions: 26
+* Number obsoleted terms: 484
+* Number of new obsoletion candidates: 20
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 6
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0100529 | Sunflower syndrome | A rare, photosensitive epileptic disorder characterized by highly stereotyped seizures. During these seizures, individuals with Sunflower syndrome turn toward a bright light while simultaneously waving one hand in front of their eyes. This unique behavior is coupled with abrupt lapses in consciousness. |
+| MONDO:0100530 | myopathy caused by variation in CRPPA | Any myopathy in which the cause of the disease is a variation in the CRPPA gene. |
+| MONDO:0100531 | Emery-Dreifuss muscular dystrophy 1, X-linked | |
+| MONDO:0100532 | blepharospasm, benign essential, susceptibility to | |
+| MONDO:0800444 | Birt-Hogg-Dube syndrome | |
+| MONDO:0800445 | Birt-Hogg-Dube syndrome 1 | Any Birt-Hogg-Dube (BHD) syndrome in which the cause of the disease is a variation in the FLCN gene. |
+| MONDO:0800446 | bleeding diathesis due to thromboxane synthesis deficiency | A rare, genetic, isolated constitutional thrombocytopenia disease characterized by impaired platelet aggregation resulting from a defect in thromboxane synthesis or signaling, manifesting with mild to moderate mucocutaneous, gastrointestinal or surgical bleeding (e.g. easy bruising, prolonged epistaxis, excessive bleeding after a tooth extraction). |
+| MONDO:0800447 | bleeding disorder, platelet-type, 13, susceptibility to | |
+| MONDO:0800449 | lysosomal acid lipase deficiency | |
+| MONDO:0800450 | microcephaly, short stature, and impaired glucose metabolism | |
+| MONDO:0800455 | Birt-Hogg-Dube syndrome 2 | Birt-Hogg-Dube syndrome caused by the mutations in PRDM10. |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0015397 | craniofacial microsomia 1 | oculo-auriculo-vertebral spectrum | craniofacial microsomia 1 |
+| MONDO:0004759 | zoophilia | bestiality | zoophilia |
+| MONDO:0007027 | metabolic dysfunction-associated steatohepatitis | non-alcoholic steatohepatitis | metabolic dysfunction-associated steatohepatitis |
+| MONDO:0013209 | metabolic dysfunction-associated steatotic liver disease | non-alcoholic fatty liver disease | metabolic dysfunction-associated steatotic liver disease |
+| MONDO:0007078 | pseudohypoparathyroidism type 1A | Pseudohypoparathyroidism type 1A | pseudohypoparathyroidism type 1A |
+| MONDO:0008451 | neuronopathy, distal hereditary motor, autosomal dominant 1 | neuronopathy, distal hereditary motor, type 1 | neuronopathy, distal hereditary motor, autosomal dominant 1 |
+| MONDO:0015362 | neuronopathy, distal hereditary motor, autosomal dominant | autosomal dominant distal hereditary motor neuropathy | neuronopathy, distal hereditary motor, autosomal dominant |
+| MONDO:0010683 | X-linked myotubular myopathy | X-linked centronuclear myopathy | X-linked myotubular myopathy |
+| MONDO:0010773 | mitochondrial myopathy with diabetes | myopathy and diabetes mellitus | mitochondrial myopathy with diabetes |
+| MONDO:0010839 | neuronopathy, distal hereditary motor, autosomal dominant 8 | autosomal dominant congenital benign spinal muscular atrophy | neuronopathy, distal hereditary motor, autosomal dominant 8 |
+| MONDO:0015363 | neuronopathy, distal hereditary motor, autosomal recessive | autosomal recessive distal hereditary motor neuropathy | neuronopathy, distal hereditary motor, autosomal recessive |
+| MONDO:0011728 | benign essential blepharospasm | blepharospasm | benign essential blepharospasm |
+| MONDO:0011771 | neuronopathy, distal hereditary motor, autosomal recessive 3 | distal spinal muscular atrophy type 3 | neuronopathy, distal hereditary motor, autosomal recessive 3 |
+| MONDO:0012190 | epidermolysis bullosa simplex 7, with nephropathy and deafness | nephrotic syndrome - deafness - pretibial epidermolysis bullosa syndrome | epidermolysis bullosa simplex 7, with nephropathy and deafness |
+| MONDO:0012240 | congenital myopathy 23 | nemaline myopathy 4 | congenital myopathy 23 |
+| MONDO:0012608 | neuronopathy, distal hereditary motor, autosomal recessive 4 | autosomal recessive lower motor neuron disease with childhood onset | neuronopathy, distal hereditary motor, autosomal recessive 4 |
+| MONDO:0013772 | Huppke-Brendel syndrome | congenital cataract-hearing loss-severe developmental delay syndrome | Huppke-Brendel syndrome |
+| MONDO:0013835 | muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 7 | muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type a, 7 | muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 7 |
+| MONDO:0013947 | neuronopathy, distal hereditary motor, autosomal recessive 5 | young adult-onset distal hereditary motor neuropathy | neuronopathy, distal hereditary motor, autosomal recessive 5 |
+| MONDO:0013999 | retinal dystrophy, optic nerve edema, splenomegaly, anhidrosis, and migraine headache syndrome | optic nerve edema-splenomegaly syndrome | retinal dystrophy, optic nerve edema, splenomegaly, anhidrosis, and migraine headache syndrome |
+| MONDO:0014700 | Au-Kline syndrome | neurodevelopmental disorder-craniofacial dysmorphism-cardiac defect-hip dysplasia syndrome due to a point mutation | Au-Kline syndrome |
+| MONDO:0014899 | progressive external ophthalmoplegia with mitochondrial DNA deletions, autosomal recessive 4 | adult-onset multiple mitochondrial DNA deletion syndrome due to DGUOK deficiency | progressive external ophthalmoplegia with mitochondrial DNA deletions, autosomal recessive 4 |
+| MONDO:0015007 | spastic paraplegia, intellectual disability, nystagmus, and obesity | spastic paraplegia, intellectual disability, nystagmus, and obesity; | spastic paraplegia, intellectual disability, nystagmus, and obesity |
+| MONDO:0017939 | classic multiminicore myopathy | minicore myopathy | classic multiminicore myopathy |
+| MONDO:0020563 | dedifferentiated liposarcoma | Dedifferentiated liposarcoma | dedifferentiated liposarcoma |
+| MONDO:0030055 | neuronopathy, distal hereditary motor, autosomal recessive 8 | sorbitol dehydrogenase deficiency with peripheral neuropathy | neuronopathy, distal hereditary motor, autosomal recessive 8 |
+| MONDO:0030977 | neuronopathy, distal hereditary motor, autosomal recessive 7 | neuropathy, hereditary motor, with myopathic features | neuronopathy, distal hereditary motor, autosomal recessive 7 |
+| MONDO:0100230 | fatty acyl-CoA reductase 1 upregulation | fatty acyl-CoA reductase 1 dysregulation | fatty acyl-CoA reductase 1 upregulation |
+| MONDO:0800313 | xeroderma pigmentosum, type F/Cockayne syndrome | xeroderma pigmentosum, type F/cockayne syndrome | xeroderma pigmentosum, type F/Cockayne syndrome |
+| MONDO:0800314 | xeroderma pigmentosum, type G/Cockayne syndrome | xeroderma pigmentosum, type G/cockayne syndrome | xeroderma pigmentosum, type G/Cockayne syndrome |
+| MONDO:0859300 | neuronopathy, distal hereditary motor, autosomal dominant 10 | Neuronopathy, distal hereditary motor, type X | neuronopathy, distal hereditary motor, autosomal dominant 10 |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0018882 | vasculitis | Vasculitis represents a clinically heterogenous group of diseases of multifactorial etiology characterized by inflammation of either large-sized vessels (large-vessel vasculitis, e.g. Giant-cell arteritis and Takayasu arteritis), medium-sized vessels (medium-vessel vasculitis e.g. polyarteritis nodosa and Kawasaki disease), or small-sized vessels (small-vessel vasculitis, e.g. granulomatosis with polyangiitis, microscopic polyangiitis, immunoglobulin A vasculitis, and cutaneous leukocytoclastic angiitis). Vasculitis occurs at any age, may be acute or chronic, and manifests with general symptoms such as fever, weight loss and fatigue, as well as more specific clinical signs depending on the type of vessels and organs affected. The degree of severity is variable, ranging from life or sight threatening disease (e.g. BehC'et disease) to relatively minor skin disease. | Vasculitis represents a clinically heterogenous group of diseases of multifactorial etiology characterized by inflammation of either large-sized vessels (large-vessel vasculitis, e.g. Giant-cell arteritis and Takayasu arteritis), medium-sized vessels (medium-vessel vasculitis e.g. polyarteritis nodosa and Kawasaki disease), or small-sized vessels (small-vessel vasculitis, e.g. granulomatosis with polyangiitis, microscopic polyangiitis, immunoglobulin A vasculitis, and cutaneous leukocytoclastic angiitis). Vasculitis occurs at any age, may be acute or chronic, and manifests with general symptoms such as fever, weight loss and fatigue, as well as more specific clinical signs depending on the type of vessels and organs affected. The degree of severity is variable, ranging from life or sight threatening disease (e.g. Behcet disease) to relatively minor skin disease. |
+| MONDO:0007027 | metabolic dysfunction-associated steatohepatitis | Fatty replacement and damage to the hepatocytes not related to alcohol use. It may lead to cirrhosis and liver failure. | Metabolic dysfunction-associated steatohepatitis (MASH, formerly known as nonalcoholic steatohepatitis or NASH) is a type of fatty liver disease. It often develops due to a metabolic disorder, such as obesity or diabetes, resulting in a toxic buildup of fat in the liver. It is the most severe form of metabolic dysfunction-associated steatotic liver disease (MASLD, formerly known as nonalcoholic fatty liver disease or NAFLD). |
+| MONDO:0013209 | metabolic dysfunction-associated steatotic liver disease | A term referring to fatty replacement of the hepatic parenchyma which is not related to alcohol use. | Metabolic dysfunction-associated steatotic liver disease (MASLD, formerly known as nonalcoholic fatty liver disease or NAFLD) is a type of liver disease that is not caused by alcohol. It typically does not cause symptoms in the early stages, but it can cause health problems due to fat accumulation, inflammation, and scarring in the liver. |
+| MONDO:0018965 | Alport syndrome | A genetic syndrome usually inherited as an X-link trait. It is caused by abnormalities in the COL4A5 gene. It affects males more often than females and is characterized by hematuria, progressive renal insufficiency, hearing loss, and ocular abnormalities. | A rare renal disease characterized by glomerular nephropathy with hematuria progressing to end-stage renal disease (ESRD), frequently associated with sensorineural deafness, and occasionally with ocular anomalies. |
+| MONDO:0007652 | gastric mucosal hypertrophy | MC)nC)trier disease (MD) is a rare premalignant hyperproliferative gastropathy characterized by massive overgrowth of foveolar cells in the gastric lining, resulting in large gastric folds, and manifesting with epigastric pain, nausea, vomiting, peripheral edema and, less commonly, anorexia and weight loss. | A rare premalignant hyperproliferative gastropathy characterized by massive overgrowth of foveolar cells in the gastric lining, resulting in large gastric folds, and manifesting with epigastric pain, nausea, vomiting, peripheral edema and, less commonly, anorexia and weight loss. |
+| MONDO:0010641 | X-linked diffuse leiomyomatosis-Alport syndrome | The association of X-linked Alport syndrome with leiomyomatosis of the esophagus, tracheobronchial tree or female genitals has been reported in more than 30 families. | A rare renal disease characterized by the association of X-linked Alport syndrome (glomerular nephropathy, sensorineural deafness and ocular anomalies) and benign proliferation of visceral smooth muscle cells along the gastrointestinal, respiratory, and female genital tracts and clinically manifests with dysphagia, dyspnea, cough, stridor, postprandial vomiting, retrosternal or epigastric pain, recurrent pneumonia, and clitoral hypertrophy in females. |
+| MONDO:0011500 | Becker nevus syndrome | Becker nevus syndrome is characterized by the presence of a Becker nevus in association withunderdevelopment (hypoplasia)of the breast or other skin-related, muscular, or skeletal defects, all of which usually involve the same side of the bodyas the nevus (ipsilateral). Specific signs and symptoms in addition to the nevus may include ipsilateral breast hypoplasia;skeletal abnormalities such ashypoplasia of the shoulder girdle, scoliosis, fused ribs, and ipsilateral shortness of the arm; and several other features. Thecondition is thought to be sporadic (occurring in individuals with no history of the condition in the family). Treatment varies depending upon the specific symptoms present and the extent of the condition in the affected individual. | Becker nevus syndrome is characterized by the presence of a Becker nevus in association with underdevelopment (hypoplasia) of the breast or other skin-related, muscular, or skeletal defects, all of which usually involve the same side of the bodyas the nevus (ipsilateral). Specific signs and symptoms in addition to the nevus may include ipsilateral breast hypoplasia; skeletal abnormalities such ashypoplasia of the shoulder girdle, scoliosis, fused ribs, and ipsilateral shortness of the arm; and several other features. Thecondition is thought to be sporadic (occurring in individuals with no history of the condition in the family). Treatment varies depending upon the specific symptoms present and the extent of the condition in the affected individual. |
+| MONDO:0011738 | bilateral frontoparietal polymicrogyria | Bilateral frontoparietal polymicrogyria (BFPP) is a sub-type of polymicrogyria (PMG), a cerebral cortical malformation characterized by excessive cortical folding and abnormal cortical layering, that involves the frontoparietal region of the brain and that presents with hypotonia, developmental delay, moderate to severe intellectual disability, pyramidal signs, epileptic seizures, non progressive cerebellar ataxia, dysconjugate gaze and/or strabismus. | A descriptive term reflecting increased gyral folding in the frontoparietal regions as determined by magnetic resonance imaging. It has subsequently been shown to represent a cobblestone malformation on histopathology. BFPP typically presents with hypotonia, developmental delay, moderate to severe intellectual disability, pyramidal signs, epileptic seizures, non-progressive cerebellar ataxia, deconjugate gaze, and/or strabismus. |
+| MONDO:0011771 | neuronopathy, distal hereditary motor, autosomal recessive 3 | Distal spinal muscular atrophy type 3 is a rare neuromuscular disease characterized by progressive muscular weakness and atrophy predominantly affecting distal parts of limbs, later involvement of proximal and trunk muscles with marked hyperlordosis and late diaphragmatic dysfunction. | A rare neuromuscular disease characterized by progressive muscular weakness and atrophy predominantly affecting distal parts of limbs, later involvement of proximal and trunk muscles with marked hyperlordosis and late diaphragmatic dysfunction. |
+| MONDO:0011787 | autosomal recessive limb-girdle muscular dystrophy type 2I | Autosomal recessive limb-girdle muscular dystrophy type 2I (LGMD2I) is a subtype of autosomal recessive limb-girdle muscular dystrophy that presents a highly variable age of onset and phenotypic spectrum typically characterized by slowly progressive proximal weakness of the pelvic and shoulder girdle musculature (predominantly affecting the lower limbs), frequently associated with waddling gait, scapular winging, calf and tongue hypertrophy, exercise-induced myalgia, and myoglobinuria and/or elevated creatine kinase serum levels. Abdominal muscle weakness, cardiomyopathy, respiratory muscle involvement and various brain abnormalities have also been reported. | A subtype of autosomal recessive limb-girdle muscular dystrophy that presents a highly variable age of onset and phenotypic spectrum typically characterized by slowly progressive proximal weakness of the pelvic and shoulder girdle musculature (predominantly affecting the lower limbs), frequently associated with waddling gait, scapular winging, calf and tongue hypertrophy, exercise-induced myalgia, and myoglobinuria and/or elevated creatine kinase serum levels. Abdominal muscle weakness, cardiomyopathy, respiratory muscle involvement and various brain abnormalities have also been reported. |
+| MONDO:0012726 | autosomal dominant familial hematuria-retinal arteriolar tortuosity-contractures syndrome | Autosomal dominant familial hematuria-retinal arteriolar tortuosity-contractures syndrome is characterized by the association of hematuria (without proteinuria) with extrarenal manifestations: retinal arterial tortuosities responsible for retinal hemorrhages, cardiac arrhythmia, Raynaud phenomena and congenital muscular contractures. | A syndrome characterized by the association of hematuria (without proteinuria) with extrarenal manifestations: retinal arterial tortuosities responsible for retinal hemorrhages, cardiac arrhythmia, Raynaud phenomena and congenital muscular contractures. |
+| MONDO:0013894 | short stature-onychodysplasia-facial dysmorphism-hypotrichosis syndrome | | Extremely rare primordial dwarfism characterized by short stature, onychodysplasia, facial dysmorphism and hypotrichosis, which is caused by biallelic mutations in the POC1A gene. |
+| MONDO:0013999 | retinal dystrophy, optic nerve edema, splenomegaly, anhidrosis, and migraine headache syndrome | Optic nerve edema-splenomegaly syndrome is a rare presumably genetic disorder characterized by idiopathic massive splenomegaly with pancytopenia and childhood-onset chronic optic nerve edema with slowly progressive vision loss. Additional reported features include anhidrosis, urticaria and headaches. | A rare presumably genetic disorder characterized by idiopathic massive splenomegaly with pancytopenia and childhood-onset chronic optic nerve edema with slowly progressive vision loss. Additional reported features include anhidrosis, urticaria and headaches. |
+| MONDO:0014899 | progressive external ophthalmoplegia with mitochondrial DNA deletions, autosomal recessive 4 | Adult-onset multiple mitochondrial DNA deletion syndrome due to DGUOK deficiency is an extremely rare multiple mitochondrial DNA deletion syndrome with markedly decreased deoxyguanosine kinase (DGUOK) activity in skeletal muscle characterized by a highly variable phenotype. Clinical manifestations include progressive external ophthalmoplegia, mitochondrial myopathy, recurrent rhabdomyolysis, lower motor neuron disease, mild cognitive impairment, sensory axonal neuropathy, optic atrophy, ataxia, hypogonadism and/or parkinsonism. | An extremely rare multiple mitochondrial DNA deletion syndrome with markedly decreased deoxyguanosine kinase (DGUOK) activity in skeletal muscle characterized by a highly variable phenotype. Clinical manifestations include progressive external ophthalmoplegia, mitochondrial myopathy, recurrent rhabdomyolysis, lower motor neuron disease, mild cognitive impairment, sensory axonal neuropathy, optic atrophy, ataxia, hypogonadism and/or parkinsonism. |
+| MONDO:0015050 | esophageal duplication cyst | Esophageal duplication cyst is a rare, congenital, non-syndromic esophageal malformation, most frequently located in the distal esophagus and usually diagnosed in childhood, characterized by tubular or spherical cystic masses that have a double layer of surrounding smooth muscle lined with squamous or enteric epithelium, are continuous or contiguous to the esophagus and may, or may not, communicate with the esophageal lumen. Patients are frequently asymptomatic, or could present with a wide range of symptoms including respiratory distress, failure to thrive, dysphagia, epigastric discomfort, vomiting, stridor, non-productive cough, and chest pain. Other more rare symptoms, such as cardiac arrhythmia, thoracic back pain, cystic hemorrgage and ulceration, and mediastinitis, have also been reported. | A rare, congenital, non-syndromic esophageal malformation, most frequently located in the distal esophagus and usually diagnosed in childhood, characterized by tubular or spherical cystic masses that have a double layer of surrounding smooth muscle lined with squamous or enteric epithelium, are continuous or contiguous to the esophagus and may, or may not, communicate with the esophageal lumen. Patients are frequently asymptomatic, or could present with a wide range of symptoms including respiratory distress, failure to thrive, dysphagia, epigastric discomfort, vomiting, stridor, non-productive cough, and chest pain. Other more rare symptoms, such as cardiac arrhythmia, thoracic back pain, cystic hemorrgage and ulceration, and mediastinitis, have also been reported. |
+| MONDO:0016425 | Hughes-Stovin syndrome | Hughes-Stovin syndrome (HSS) is a life-threatening disorder, believed to be a cardiovascular clinical variant manifestation of BehC'et's disease (BD). It is characterized by the association of multiple pulmonary artery aneurysms (PAAs) and peripheral venous thrombosis. | Hughes-Stovin syndrome (HSS) is a life-threatening disorder, believed to be a cardiovascular clinical variant manifestation of Behcet's disease (BD). It is characterized by the association of multiple pulmonary artery aneurysms (PAAs) and peripheral venous thrombosis. |
+| MONDO:0016669 | sickle cell-hemoglobin c disease syndrome | | A rare, genetic hemoglobinopathy characterized by anemia, reticulocytosis and erythrocyte abnormalities including target cells, irreversibly sickled cells and crystal-containing cells. Clinical course is similar to sickle cell disease, but less severe and with less complications. Signs and symptoms may include acute episodes of pain, splenic infarction and splenic sequestration crisis, acute chest syndrome, focal segmental glomerulosclerosis, ischemic brain injury, peripheral retinopathy, and osteonecrosis. |
+| MONDO:0016670 | sickle cell-hemoglobin d disease syndrome | | A rare, genetic hemoglobinopathy characterized by all the characteristics of sickle cell anemia (SCA). Clinical course is similar to SCA, including acute episodes of pain, splenic infarction and splenic sequestration crisis, vaso-occlusive crisis, acute chest syndrome, ischemic brain injury, osteomyelitis and avascular bone necrosis. The genotype is characterized by an HbS allele in combination with the HbD variant, beta121Glu>Gln. |
+| MONDO:0016671 | sickle cell-hemoglobin E disease syndrome | | A rare, genetic hemoglobinopathy usually characterized by mild microcytic hemolysis and, very rarely, vaso-occlusive complications. Severe manifestations have been reported, including hematuria, splenic infarction, acute chest syndrome, acute episodes of pain and reversible bone marrow necrosis. The genotype is characterized by an HbS allele in combination with an HbE variant (beta26glu>lys); symptoms are due to the low allelic expression of HbE leading to HbS predominance (65+/-5%). |
+| MONDO:0016672 | hereditary persistence of fetal hemoglobin-sickle cell disease syndrome | | A rare, genetic, hemoglobinopathy characterized by generally mild clinical phenotype, high fetal hemoglobin levels and mild microcytosis and hypochromia. In some cases, acute sickle cell disease manifestations were reported, namely acute chest syndrome and acute pain crisis. The genotype is characterized by the combination of an HbS and HbF allele; symptoms depend on the degree of HbF:HbS expressivity with patients with more than 35% pancellular HbF expression being asymptomatic. Symptomatic patients have heterocellular expression of HbF. |
+| MONDO:0018346 | ferro-cerebro-cutaneous syndrome | | Ferro-cerebro-cutaneous syndrome is a rare, genetic, metabolic liver disease characterized by progressive neurodegeneration, cutaneous abnormalities, including varying degrees of ichthyosis or seborrheic dermatitis, and systemic iron overload. Patients manifest with infantile-onset seizures, encephalopathy, abnormal eye movements, axial hypotonia with peripheral hypertonia, brisk reflexes, cortical blindness and deafness, myoclonus and hepato/splenomegaly, as well as oral manifestations, including microdontia, widely spaced and pointed teeth with delayed eruption, and gingival overgrowth. |
+| MONDO:0018739 | neonatal alloimmune neutropenia | | A rare acquired neutropenia characterized by isolated neutropenia in a newborn due to maternal alloimmunization against human neutrophil antigens (HNA) inherited from the father and present on fetal neutrophils, and subsequent increased breakdown of the latter. The condition is self-limiting and resolves after several weeks. It usually presents with only mild bacterial infections or may even be asymptomatic, although severe forms with sepsis and fatal outcome have also been reported. |
+| MONDO:0019149 | cholesteryl ester storage disease | Cholesteryl ester storage disease (CESD) is a very rare, late-onset, genetic endocrine disease characterized by deficient or inactive lysosomal acid lipase (LAL) causing lipid build-up, which leads to atherosclerosis, hepatomegaly, splenomegaly, progressive liver disease, and malabsorption. | A form of lysosomal acid lipase deficiency characterized by progressive cholesterol esters and triglyceride accumulation in tissues and organs typically presenting with hepatosplenomegaly, liver dysfunction and/or dyslipidemia. |
+| MONDO:0020348 | acute motor and sensory axonal neuropathy | Acute motor-sensory axonal neuropathy (AMSAN) is a motor-sensory, axonal form of Guillain-BarrC) syndrome (GBS). | Acute motor-sensory axonal neuropathy (AMSAN) is a motor-sensory, axonal form of Guillain-Barre syndrome (GBS). |
+| MONDO:0020349 | acute motor axonal neuropathy | Acute motor axonal neuropathy (AMAN) is a pure motor axonal form of Guillain-BarrC) syndrome (GBS). | Acute motor axonal neuropathy (AMAN) is a pure motor axonal form of Guillain-Barre syndrome (GBS). |
+| MONDO:0020563 | dedifferentiated liposarcoma | Dedifferentiated liposarcoma (DDLS) is a high-grade subtype of liposarcoma (LS) that progresses from well-differentiated liposarcoma (WDLS), and most often occurs in the retroperitoneum. It is defined as a region of nonlipogenic sarcoma associated with WDLS. | A high-grade subtype of liposarcoma (LS) that progresses from well-differentiated liposarcoma (WDLS), and most often occurs in the retroperitoneum. It is defined as a region of nonlipogenic sarcoma associated with WDLS. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0019743 | obsolete nephropathy secondary to a storage or other metabolic disease |
+| MONDO:0015217 | obsolete non-syndromic developmental defect of the eye |
+| MONDO:0001500 | obsolete gender identity disorder |
+| MONDO:0001693 | obsolete ego-dystonic sexual orientation |
+| MONDO:0016756 | obsolete inherited nervous system cancer-predisposing syndrome |
+| MONDO:0017891 | obsolete inherited renal cancer-predisposing syndrome |
+| MONDO:0015334 | obsolete branchial arch or oral-acral syndrome |
+| MONDO:0015368 | obsolete neuro-ophthalmological disease |
+| MONDO:0020157 | obsolete syndromic palpebral coloboma |
+| MONDO:0020167 | obsolete malposition of external canthus |
+| MONDO:0019724 | obsolete secondary glomerular disease |
+| MONDO:0006514 | obsolete recalcitrant atopic dermatitis |
+| MONDO:0015488 | obsolete predominantly large-vessel vasculitis |
+| MONDO:0007299 | obsolete Sotos syndrome 1 |
+| MONDO:0015221 | obsolete non-syndromic respiratory or mediastinal malformation |
+| MONDO:0007607 | obsolete Birt-Hogg-Dube syndrome |
+| MONDO:0016072 | obsolete anomaly of puberty or/and menstrual cycle of genetic origin |
+| MONDO:0016170 | obsolete chronic polyradiculoneuropathy |
+| MONDO:0015359 | obsolete autosomal dominant hereditary demyelinating motor and sensory neuropathy |
+| MONDO:0015361 | obsolete autosomal recessive hereditary demyelinating motor and sensory neuropathy |
+| MONDO:0015503 | obsolete nose and cavum anomaly |
+| MONDO:0018562 | obsolete hereditary otorhinolaryngological malformation |
+| MONDO:0020197 | obsolete EEC syndrome and related syndrome |
+| MONDO:0015950 | obsolete inherited skin tumor |
+| MONDO:0020211 | obsolete syndromic keratoconus |
+| MONDO:0020235 | obsolete lens size anomaly |
+| MONDO:0020176 | obsolete palpebral sebaceous gland tumor |
+| MONDO:0015141 | obsolete disorder of medulla oblongata |
+| MONDO:0020215 | obsolete syndromic corneal dystrophy |
+| MONDO:0019292 | obsolete dermis elastic tissue disorder |
+| MONDO:0019520 | obsolete syndromic lymphedema |
+| MONDO:0008347 | obsolete idiopathic and/or familial pulmonary arterial hypertension |
+| MONDO:0015620 | obsolete syndromic urogenital tract malformation |
+| MONDO:0020238 | obsolete inherited vitreous-retinal disease |
+| MONDO:0008406 | obsolete autosomal recessive Emery-Dreifuss muscular dystrophy |
+| MONDO:0015310 | obsolete syndromic optic nerve hypoplasia |
+| MONDO:0020145 | obsolete developmental defect of the eye |
+| MONDO:0015145 | obsolete neurovascular malformation |
+| MONDO:0019723 | obsolete disease of glomerular basement membrane |
+| MONDO:0017656 | obsolete motor stereotypies |
+| MONDO:0020165 | obsolete syndromic epicanthus |
+| MONDO:0020203 | obsolete pigmented conjunctival lesion |
+| MONDO:0020240 | obsolete syndromic retinitis pigmentosa |
+| MONDO:0008807 | obsolete apnea, central sleep |
+| MONDO:0016114 | obsolete bulbospinal muscular atrophy of childhood |
+| MONDO:0015508 | obsolete hereditary parenchymatous liver disease |
+| MONDO:0020237 | obsolete lens shape anomaly |
+| MONDO:0015509 | obsolete hereditary biliary tract disease |
+| MONDO:0015111 | obsolete gastroesophageal disease |
+| MONDO:0020194 | obsolete congenital alacrima |
+| MONDO:0015178 | obsolete congenital intestinal transport defect |
+| MONDO:0018384 | obsolete avascular necrosis of genetic origin |
+| MONDO:0015490 | obsolete predominantly small-vessel vasculitis |
+| MONDO:0019699 | obsolete slender bone dysplasia |
+| MONDO:0015130 | obsolete acquired chronic primary adrenal insufficiency |
+| MONDO:0015212 | obsolete syndromic intestinal malformation |
+| MONDO:0015246 | obsolete syndromic anorectal malformation |
+| MONDO:0015778 | obsolete syndromic hypothyroidism |
+| MONDO:0015180 | obsolete intestinal disease due to fat malabsorption |
+| MONDO:0016121 | obsolete congenital myotonia |
+| MONDO:0019693 | obsolete multiple metaphyseal dysplasia |
+| MONDO:0009997 | obsolete Roberts syndrome |
+| MONDO:0017270 | obsolete autosomal ichthyosis syndrome |
+| MONDO:0010204 | obsolete lysosomal acid lipase deficiency |
+| MONDO:0016565 | obsolete syndromic genetic obesity |
+| MONDO:0017916 | obsolete pure or complex X-linked spastic paraplegia |
+| MONDO:0020158 | obsolete eyelids malposition disorder |
+| MONDO:0020174 | obsolete precancerous lesion of palpebral epidermis |
+| MONDO:0015921 | obsolete ARX-related epileptic encephalopathy |
+| MONDO:0016154 | obsolete qualitative or quantitative defects of myotubularin |
+| MONDO:0016115 | obsolete bulbospinal muscular atrophy of adulthood |
+| MONDO:0019271 | obsolete acrokeratoderma |
+| MONDO:0011499 | obsolete Okamoto syndrome |
+| MONDO:0015822 | obsolete acquired neutropenia |
+| MONDO:0018329 | obsolete persistent combined dystonia |
+| MONDO:0016536 | obsolete autosomal recessive lymphoproliferative disease |
+| MONDO:0019126 | obsolete intractable diarrhea of infancy |
+| MONDO:0957024 | obsolete hereditary 46,XX disorder of sex development |
+| MONDO:0013524 | obsolete bleeding diathesis due to thromboxane synthesis deficiency |
+| MONDO:0013742 | obsolete familial mesial temporal lobe epilepsy with febrile seizures |
+| MONDO:0018113 | obsolete isolated plagiocephaly |
+| MONDO:0018114 | obsolete isolated brachycephaly |
+| MONDO:0017673 | obsolete isolated focal palmoplantar keratoderma |
+| MONDO:0016805 | obsolete isolated oxidative phosphorylation complex disorder |
+| MONDO:0018782 | obsolete type 1 interferonopathy |
+| MONDO:0014753 | obsolete autosomal recessive optic atrophy |
+| MONDO:0016803 | obsolete unspecified inborn mitochondrial disorder |
+| MONDO:0025511 | obsolete inherited neuroendocrine tumor |
+| MONDO:0015088 | obsolete autosomal dominant pure spastic paraplegia |
+| MONDO:0015089 | obsolete autosomal recessive complex spastic paraplegia |
+| MONDO:0015090 | obsolete autosomal recessive pure spastic paraplegia |
+| MONDO:0015132 | obsolete immunodeficiency predominantly affecting antibody production |
+| MONDO:0015133 | obsolete quantitative and/or qualitative congenital phagocyte defect |
+| MONDO:0015135 | obsolete primary immunodeficiency due to a genetic defect in innate immunity |
+| MONDO:0015144 | obsolete brain inflammatory disease |
+| MONDO:0015179 | obsolete intestinal disease due to vitamin absorption anomaly |
+| MONDO:0015182 | obsolete congenital enteropathy involving intestinal mucosa development |
+| MONDO:0015207 | obsolete non-syndromic esophageal malformation |
+| MONDO:0015208 | obsolete syndromic esophageal malformation |
+| MONDO:0015209 | obsolete non-syndromic gastroduodenal malformation |
+| MONDO:0015210 | obsolete syndromic gastroduodenal malformation |
+| MONDO:0015211 | obsolete non-syndromic intestinal malformation |
+| MONDO:0015213 | obsolete non-syndromic visceral malformation |
+| MONDO:0015214 | obsolete syndromic visceral malformation |
+| MONDO:0015219 | obsolete non-syndromic central nervous system malformation |
+| MONDO:0015222 | obsolete syndromic respiratory or mediastinal malformation |
+| MONDO:0015227 | obsolete non-syndromic limb malformation |
+| MONDO:0015323 | obsolete teratogenic Pierre Robin syndrome |
+| MONDO:0015330 | obsolete overgrowth/obesity syndrome |
+| MONDO:0015360 | obsolete autosomal dominant hereditary axonal motor and sensory neuropathy |
+| MONDO:0015365 | obsolete autosomal dominant hereditary sensory and autonomic neuropathy |
+| MONDO:0015366 | obsolete autosomal recessive hereditary sensory and autonomic neuropathy |
+| MONDO:0015385 | obsolete external auditory canal aplasia/hypoplasia |
+| MONDO:0020205 | obsolete bulbar conjunctival dermoid or conjunctival dermolipoma |
+| MONDO:0015398 | obsolete hemifacial microsomia |
+| MONDO:0015412 | obsolete median facial cleft |
+| MONDO:0015415 | obsolete oblique facial cleft |
+| MONDO:0015418 | obsolete lateral facial cleft |
+| MONDO:0015470 | obsolete familial isolated dilated cardiomyopathy |
+| MONDO:0015478 | obsolete paramedian facial cleft |
+| MONDO:0015482 | obsolete otomandibular dysplasia |
+| MONDO:0015485 | obsolete primary hereditary glaucoma |
+| MONDO:0015489 | obsolete predominantly medium-vessel vasculitis |
+| MONDO:0015497 | obsolete hypoglossia/aglossia |
+| MONDO:0015499 | obsolete paralytic facial malformation |
+| MONDO:0015504 | obsolete larynx anomaly |
+| MONDO:0015505 | obsolete tracheal anomaly |
+| MONDO:0015586 | obsolete benign familial mesial temporal lobe epilepsy |
+| MONDO:0015591 | obsolete limbic encephalitis associated with antibodies to cell membrane antigens |
+| MONDO:0015617 | obsolete hereditary gastro-esophageal disease |
+| MONDO:0015619 | obsolete non-syndromic urogenital tract malformation |
+| MONDO:0015668 | obsolete hereditary dentin defect |
+| MONDO:0015679 | obsolete autosomal thrombocytopenia with normal platelets |
+| MONDO:0015682 | obsolete primary peritoneal tumor |
+| MONDO:0015683 | obsolete primary malignant peritoneal tumor |
+| MONDO:0015765 | obsolete congenital myopathy with cores |
+| MONDO:0015777 | obsolete adult hypothyroidism |
+| MONDO:0020195 | obsolete excretory apparatus of the lacrimal system anomaly |
+| MONDO:0015817 | obsolete aggressive primary cutaneous T-cell lymphoma |
+| MONDO:0015818 | obsolete aggressive primary cutaneous B-cell lymphoma |
+| MONDO:0015823 | obsolete primary immunodeficiency due to a defect in adaptive immunity |
+| MONDO:0015828 | obsolete uterovaginal malformation |
+| MONDO:0015829 | obsolete non-syndromic uterovaginal malformation |
+| MONDO:0015837 | obsolete Unicervical bicornuate uterus |
+| MONDO:0015846 | obsolete syndromic uterovaginal malformation |
+| MONDO:0015852 | obsolete excess breast volume or number |
+| MONDO:0015853 | obsolete deficient breast volume or number |
+| MONDO:0015860 | obsolete anomaly of puberty or/and menstrual cycle |
+| MONDO:0015902 | obsolete major hypertriglyceridemia |
+| MONDO:0015915 | obsolete cerebellar malformation |
+| MONDO:0015930 | obsolete respiratory malformation |
+| MONDO:0015932 | obsolete non-syndromic urogenital tract malformation of female |
+| MONDO:0015933 | obsolete non-syndromic urogenital tract malformation of male |
+| MONDO:0015961 | obsolete hereditary head and neck malformation |
+| MONDO:0015975 | obsolete hyper-IgM syndrome with susceptibility to opportunistic infections |
+| MONDO:0015976 | obsolete hyper-IgM syndrome without susceptibility to opportunistic infections |
+| MONDO:0016034 | obsolete cleft lip with or without cleft palate |
+| MONDO:0016054 | obsolete cerebral malformation |
+| MONDO:0016109 | obsolete autosomal recessive distal myopathy |
+| MONDO:0016116 | obsolete generalized bulbospinal muscular atrophy |
+| MONDO:0016125 | obsolete infectious, fungal or parasitic myopathy |
+| MONDO:0016149 | obsolete qualitative or quantitative defects of merosin |
+| MONDO:0016150 | obsolete qualitative or quantitative defects of integrin alpha-7 |
+| MONDO:0016152 | obsolete qualitative or quantitative defects of calpain |
+| MONDO:0016157 | obsolete qualitative or quantitative defects of fukutin |
+| MONDO:0016169 | obsolete chronic acquired demyelinating polyneuropathy |
+| MONDO:0016172 | obsolete acquired sensory ganglionopathy |
+| MONDO:0016173 | obsolete non-paraneoplastic sensory ganglionopathy |
+| MONDO:0016174 | obsolete paraneoplastic sensory ganglionopathy |
+| MONDO:0016179 | obsolete acquired amyloid peripheral neuropathy |
+| MONDO:0016182 | obsolete qualitative or quantitative defects of protein O-mannose beta1, 2N-acetylglucosaminyltransferase |
+| MONDO:0016183 | obsolete qualitative or quantitative defects of protein glycosyltransferase-like |
+| MONDO:0016196 | obsolete qualitative or quantitative defects of emerin |
+| MONDO:0016200 | obsolete qualitative or quantitative defects of glucosamine (UDP-N-acetyl)-2-epimerase/N-acetylmannosamine kinase |
+| MONDO:0016201 | obsolete qualitative or quantitative defects of myotilin |
+| MONDO:0016221 | obsolete temporomandibular joint anomaly |
+| MONDO:0016224 | obsolete autosomal dominant proximal spinal muscular atrophy |
+| MONDO:0016229 | obsolete hereditary vascular anomaly |
+| MONDO:0016230 | obsolete simple vascular malformation |
+| MONDO:0016348 | obsolete non-genetic cardiac rhythm disease |
+| MONDO:0016352 | obsolete idiopathic inherited hypercalciuria |
+| MONDO:0016355 | obsolete semilobar holoprosencephaly |
+| MONDO:0016361 | obsolete isolated hereditary giant platelet disorder |
+| MONDO:0016375 | obsolete acquired peripheral movement disorder |
+| MONDO:0016409 | obsolete primary congenital hypothyroidism |
+| MONDO:0016592 | obsolete non-hereditary degenerative ataxia |
+| MONDO:0016428 | obsolete multiple sclerosis variant |
+| MONDO:0016434 | obsolete acquired dermis elastic tissue disorder |
+| MONDO:0016493 | obsolete variant of Guillain-Barre syndrome |
+| MONDO:0016494 | obsolete regional variant of Guillain-Barre syndrome |
+| MONDO:0016495 | obsolete functional variant of Guillain-Barre syndrome |
+| MONDO:0016513 | obsolete alpha-thalassemia-related diseases |
+| MONDO:0016518 | obsolete isolated punctate palmoplantar keratoderma |
+| MONDO:0016520 | obsolete isolated Klippel-Feil syndrome |
+| MONDO:0016524 | obsolete congenital vascular bone syndrome |
+| MONDO:0016579 | obsolete dominant hypophosphatemia with nephrolithiasis or osteoporosis |
+| MONDO:0016589 | obsolete progressive cerebello-cerebral atrophy |
+| MONDO:0016599 | obsolete autosomal dominant secondary polycythemia |
+| MONDO:0016647 | obsolete autosomal recessive Stickler syndrome |
+| MONDO:0016667 | obsolete sickle cell disease associated with an other hemoglobin anomaly |
+| MONDO:0016678 | obsolete maternal disease-related embryofetopathy |
+| MONDO:0016701 | obsolete oligoastrocytic tumor |
+| MONDO:0016708 | obsolete embryonal tumor of neuroepithelial tissue |
+| MONDO:0016721 | obsolete pineal tumor of neuroepithelial tissue |
+| MONDO:0016725 | obsolete pineal parenchymal tumor of intermediate differenciation |
+| MONDO:0016726 | obsolete neuronal tumor |
+| MONDO:0016738 | obsolete primary germ cell tumor of central nervous system |
+| MONDO:0016744 | obsolete primary melanocytic tumor of central nervous system |
+| MONDO:0016794 | obsolete maternally-inherited mitochondrial myopathy |
+| MONDO:0016797 | obsolete multiple mitochondrial DNA deletion syndrome |
+| MONDO:0016815 | obsolete Leigh syndrome with leukodystrophy |
+| MONDO:0016816 | obsolete Leigh syndrome with nephrotic syndrome |
+| MONDO:0016899 | obsolete Duchenne and Becker muscular dystrophy |
+| MONDO:0016980 | obsolete ATR-X-related syndrome |
+| MONDO:0017027 | obsolete primary interstitial lung disease specific to adulthood |
+| MONDO:0017030 | obsolete interstitial lung disease in childhood and adulthood |
+| MONDO:0017031 | obsolete primary interstitial lung disease in childhood and adulthood |
+| MONDO:0017034 | obsolete secondary interstitial lung disease in childhood and adulthood |
+| MONDO:0017036 | obsolete Langerhans cell histiocytosis in childhood and adulthood |
+| MONDO:0017040 | obsolete exposure-related interstitial lung disease |
+| MONDO:0017049 | obsolete hypomyelination neuropathy-arthrogryposis syndrome |
+| MONDO:0017057 | obsolete hereditary thrombocytopenia with normal platelets |
+| MONDO:0017059 | obsolete neural tube closure defect |
+| MONDO:0017090 | obsolete midline cerebral malformation |
+| MONDO:0017104 | obsolete central nervous system cystic malformation |
+| MONDO:0017114 | obsolete global cerebellar malformation |
+| MONDO:0017127 | obsolete inherited soft tissue tumor |
+| MONDO:0017128 | obsolete inherited digestive tract tumor |
+| MONDO:0017129 | obsolete inherited cardiac tumor |
+| MONDO:0017131 | obsolete hereditary cardiac anomaly |
+| MONDO:0017132 | obsolete hereditary ATTR amyloidosis |
+| MONDO:0017144 | obsolete alpha-thalassemia and related diseases |
+| MONDO:0017146 | obsolete sickle cell disease and related diseases |
+| MONDO:0017173 | obsolete non-syndromic male infertility due to sperm motility disorder |
+| MONDO:0017218 | obsolete septopreoptic holoprosencephaly |
+| MONDO:0017234 | obsolete inherited prion disease |
+| MONDO:0017240 | obsolete acrodysostosis with multiple hormone resistance |
+| MONDO:0017241 | obsolete AP4-related intellectual disability and spastic paraplegia |
+| MONDO:0017262 | obsolete inherited non-syndromic ichthyosis |
+| MONDO:0017263 | obsolete inherited ichthyosis syndromic form |
+| MONDO:0017288 | obsolete DICER1 syndrome |
+| MONDO:0017302 | obsolete qualitative or quantitative defects of troponin |
+| MONDO:0017336 | obsolete fatal infantile hypertrophic cardiomyopathy due to mitochondrial complex I deficiency |
+| MONDO:0017397 | obsolete constitutional dyserythropoietic anemia |
+| MONDO:0017420 | obsolete intercalary limb defects |
+| MONDO:0017421 | obsolete non-syndromic terminal limb defects |
+| MONDO:0017422 | obsolete adactyly of hand |
+| MONDO:0017423 | obsolete split hand or/and split foot malformation |
+| MONDO:0017428 | obsolete congenital deformities of fingers |
+| MONDO:0017429 | obsolete joint formation defects |
+| MONDO:0017430 | obsolete non-syndromic congenital joint dislocations |
+| MONDO:0017431 | obsolete non-syndromic limb overgrowth |
+| MONDO:0017447 | obsolete congenital absence/hypoplasia of thumb |
+| MONDO:0017448 | obsolete congenital absence/hypoplasia of fingers excluding thumb |
+| MONDO:0017506 | obsolete congenital absence/hypoplasia of thumb, unilateral |
+| MONDO:0017507 | obsolete congenital absence/hypoplasia of thumb, bilateral |
+| MONDO:0017508 | obsolete congenital absence/hypoplasia of fingers excluding thumb, bilateral |
+| MONDO:0017581 | obsolete familial infantile gigantism |
+| MONDO:0017629 | obsolete sodium channelopathy-related small fiber neuropathy |
+| MONDO:0017651 | obsolete primary myoclonus |
+| MONDO:0017667 | obsolete isolated diffuse palmoplantar keratoderma |
+| MONDO:0017670 | obsolete autosomal dominant diffuse mutilating palmoplantar keratoderma |
+| MONDO:0017676 | obsolete marginal papular palmoplantar keratoderma |
+| MONDO:0017709 | obsolete disorder of lipid absorption and transport |
+| MONDO:0017710 | obsolete congenital systemic veins anomaly |
+| MONDO:0017742 | obsolete disorder of O-xylosylglycan synthesis |
+| MONDO:0017743 | obsolete disorder of O-N-acetylgalactosaminylglycan synthesis |
+| MONDO:0017744 | obsolete disorder of O-xylosyl/N-acetylgalactosaminylglycan synthesis |
+| MONDO:0017745 | obsolete disorder of O-mannosylglycan synthesis |
+| MONDO:0017756 | obsolete disorder of pterin metabolism |
+| MONDO:0017760 | obsolete disorder of other vitamins and cofactors metabolism and transport |
+| MONDO:0017828 | obsolete primary renal tubular acidosis |
+| MONDO:0017912 | obsolete X-linked pure spastic paraplegia |
+| MONDO:0017914 | obsolete pure or complex autosomal dominant spastic paraplegia |
+| MONDO:0017915 | obsolete pure or complex autosomal recessive spastic paraplegia |
+| MONDO:0019720 | obsolete non-syndromic renal or urinary tract malformation |
+| MONDO:0017922 | obsolete deafness-onychodystrophy syndrome |
+| MONDO:0017950 | obsolete microcephalic primordial dwarfism |
+| MONDO:0017954 | obsolete pyogenic autoinflammatory syndrome |
+| MONDO:0017955 | obsolete granulomatous autoinflammatory syndrome |
+| MONDO:0017961 | obsolete 46,XX disorder of gonadal development |
+| MONDO:0017962 | obsolete 46,XX disorder of sex development induced by fetoplacental androgens excess |
+| MONDO:0017963 | obsolete 46,XX disorder of sex development induced by endogenous maternal-derived androgen |
+| MONDO:0017964 | obsolete 46,XX disorder of sex development induced by exogenous maternal-derived androgen |
+| MONDO:0017966 | obsolete 46,XY disorder of gonadal development |
+| MONDO:0017969 | obsolete 46,XY disorder of sex development of endocrine origin |
+| MONDO:0017974 | obsolete 46,XY disorder of sex development induced by maternal-exposure to endocrine disruptors |
+| MONDO:0021034 | obsolete hereditary alopecia |
+| MONDO:0018112 | obsolete isolated scaphocephaly |
+| MONDO:0018144 | obsolete congenital myasthenic syndromes with glycosylation defect |
+| MONDO:0018292 | obsolete congenital disorder of glycosylation-related bone disorder |
+| MONDO:0018185 | obsolete congenital anomaly of the great veins |
+| MONDO:0018187 | obsolete hereditary syndromic Pierre Robin syndrome |
+| MONDO:0018188 | obsolete hereditary intestinal polyposis |
+| MONDO:0018191 | obsolete tumor of testis and paratestis |
+| MONDO:0018222 | obsolete X-linked intellectual disability due to GRIA3 anomalies |
+| MONDO:0018239 | obsolete aggrecan-related bone disorder |
+| MONDO:0018241 | obsolete primary short bowel syndrome |
+| MONDO:0018246 | obsolete homozygous 2p21 microdeletion syndrome |
+| MONDO:0018262 | obsolete fetal anticonvulsant syndrome |
+| MONDO:0018277 | obsolete congenital muscular dystrophy with cerebellar involvement |
+| MONDO:0018279 | obsolete congenital muscular dystrophy without intellectual disability |
+| MONDO:0018283 | obsolete primary qualitative or quantitative defects of alpha-dystroglycan |
+| MONDO:0018318 | obsolete disorder of asparagine metabolism |
+| MONDO:0018337 | obsolete severe neonatal lactic acidosis due to NFS1-ISD11 complex deficiency |
+| MONDO:0018340 | obsolete hereditary isolated aplastic anemia |
+| MONDO:0018385 | obsolete osteochondrosis of genetic origin |
+| MONDO:0018393 | obsolete male infertility with azoospermia or oligozoospermia due to single gene mutation |
+| MONDO:0018451 | obsolete X-linked distal hereditary motor neuropathy |
+| MONDO:0018454 | obsolete dysostosis of genetic origin |
+| MONDO:0018496 | obsolete ARX-related encephalopathy-brain malformation spectrum |
+| MONDO:0018529 | obsolete qualitative or quantitative defects of Torsin-1A-interacting protein 1 |
+| MONDO:0018532 | obsolete adenocarcinoma of liver and intrahepatic biliary tract |
+| MONDO:0018538 | obsolete inherited digestive cancer-predisposing syndrome |
+| MONDO:0018550 | obsolete spastic paraplegia-optic atrophy-neuropathy and spastic paraplegia-optic atrophy-neuropathy-related disorder |
+| MONDO:0018574 | obsolete intellectual disability-expressive aphasia-facial dysmorphism syndrome |
+| MONDO:0018575 | obsolete microcephalic primordial dwarfism-insulin resistance syndrome |
+| MONDO:0018579 | obsolete disorder of ketone body transport |
+| MONDO:0018580 | obsolete PURA-related severe neonatal hypotonia-seizures-encephalopathy syndrome |
+| MONDO:0018665 | obsolete X-linked acrogigantism due to a point mutation |
+| MONDO:0018701 | obsolete congenital nemaline myopathy |
+| MONDO:0018720 | obsolete common cystic lymphatic malformation |
+| MONDO:0018731 | obsolete lethal multiple congenital anomalies/dysmorphic syndrome |
+| MONDO:0018743 | obsolete immune-mediated acquired neuromuscular junction disease |
+| MONDO:0018745 | obsolete superficial pemphigus |
+| MONDO:0018758 | obsolete familial patent arterial duct |
+| MONDO:0018771 | obsolete congenital anomaly of ventricular septum |
+| MONDO:0020130 | obsolete malformation of the cerebellar vermis |
+| MONDO:0018775 | obsolete axonal hereditary motor and sensory neuropathy |
+| MONDO:0018779 | obsolete hypercontractile muscle stiffness syndrome |
+| MONDO:0018786 | obsolete pontine autosomal dominant microangiopathy with leukoencephalopathy |
+| MONDO:0018788 | obsolete COL4A1 or COL4A2-related cerebral small vessel disease |
+| MONDO:0018791 | obsolete Moyomoya angiopathy |
+| MONDO:0018796 | obsolete isolated constitutional thrombocytopenia |
+| MONDO:0018831 | obsolete HTRA1-related cerebral small vessel disease |
+| MONDO:0018888 | obsolete congenital cornea plana |
+| MONDO:0018916 | obsolete isolated anorectal malformation |
+| MONDO:0020177 | obsolete pigmented palpebral tumor |
+| MONDO:0019044 | obsolete tumor of hematopoietic and lymphoid tissues |
+| MONDO:0019063 | obsolete vascular anomaly |
+| MONDO:0019138 | obsolete bleeding diathesis due to a collagen receptor defect |
+| MONDO:0019150 | obsolete familial isolated restrictive cardiomyopathy |
+| MONDO:0019176 | obsolete trichorhinophalangeal syndrome type I or III |
+| MONDO:0019213 | obsolete cerebral organic aciduria |
+| MONDO:0019224 | obsolete inborn disorder of gamma-aminobutyric acid metabolism |
+| MONDO:0019227 | obsolete inborn disorder of glycerol metabolism |
+| MONDO:0019277 | obsolete epidermal appendage anomaly |
+| MONDO:0019281 | obsolete isolated genetic hair shaft abnormality |
+| MONDO:0019286 | obsolete sebaceous gland anomaly |
+| MONDO:0019486 | obsolete myoclonic epilepsy of infancy |
+| MONDO:0019505 | obsolete hypomyelination-hypogonadotropic hypogonadism-hypodontia syndrome |
+| MONDO:0019513 | obsolete esophageal malformation |
+| MONDO:0019541 | obsolete non-infectious posterior uveitis |
+| MONDO:0019593 | obsolete 46,XX disorder of sex development induced by fetal androgens excess |
+| MONDO:0019597 | obsolete 46,XY disorder of sex development due to isolated 17,20-lyase deficiency |
+| MONDO:0019599 | obsolete primary lipodystrophy |
+| MONDO:0019608 | obsolete 46,XX disorder of sex development induced by maternal-derived androgen |
+| MONDO:0019619 | obsolete duplication of the esophagus |
+| MONDO:0019688 | obsolete sulfation-related bone disorder |
+| MONDO:0019689 | obsolete perlecan-related bone disorder |
+| MONDO:0019692 | obsolete multiple epiphyseal dysplasia and pseudoachondroplasia |
+| MONDO:0019697 | obsolete mesomelic and rhizo-mesomelic dysplasia |
+| MONDO:0019712 | obsolete patellar dysostosis |
+| MONDO:0019714 | obsolete non-syndromic polydactyly, syndactyly and/or hyperphalangy |
+| MONDO:0019718 | obsolete lethal chondrodysplasia |
+| MONDO:0019758 | obsolete midline interhemispheric variant of holoprosencephaly |
+| MONDO:0019800 | obsolete chronic hepatic porphyria |
+| MONDO:0019816 | obsolete anomaly of the tricuspid subvalvular apparatus |
+| MONDO:0019822 | obsolete arterial duct anomaly |
+| MONDO:0019826 | obsolete abnormal origin or aberrant course of coronary artery |
+| MONDO:0019831 | obsolete congenital anomaly of the coronary sinus |
+| MONDO:0019837 | obsolete atrial appendage anomaly |
+| MONDO:0019844 | obsolete pituitary hormone deficiency secondary to storage disease |
+| MONDO:0019998 | obsolete gastroduodenal malformation |
+| MONDO:0019999 | obsolete intestinal malformation |
+| MONDO:0020018 | obsolete cranial malformation |
+| MONDO:0020019 | obsolete digestive tract malformation |
+| MONDO:0020020 | obsolete visceral malformation of the liver, biliary tract, pancreas or spleen |
+| MONDO:0020023 | obsolete respiratory or mediastinal malformation |
+| MONDO:0020039 | obsolete 46,XX disorder of sex development induced by androgens excess |
+| MONDO:0020069 | obsolete chronic encephalitis |
+| MONDO:0020081 | obsolete macrophage or histiocytic tumor |
+| MONDO:0020084 | obsolete lymphoproliferative disease associated with primary immune disease |
+| MONDO:0020093 | obsolete autosomal dominant isolated diffuse palmoplantar keratoderma |
+| MONDO:0020096 | obsolete autosomal recessive isolated diffuse palmoplantar keratoderma |
+| MONDO:0020118 | obsolete dense granule disease |
+| MONDO:0020125 | obsolete acquired neuromuscular junction disease |
+| MONDO:0020131 | obsolete malformation of the cerebellar hemispheres |
+| MONDO:0020132 | obsolete cranial nerve and nuclear aplasia |
+| MONDO:0020133 | obsolete posterior fossa malformation |
+| MONDO:0020144 | obsolete cerebrovascular dementia |
+| MONDO:0020146 | obsolete major induction processes eye anomaly |
+| MONDO:0020147 | obsolete anophthalmia-microphthalmia syndrome |
+| MONDO:0020148 | obsolete syndromic aniridia |
+| MONDO:0020154 | obsolete microblepharon-ablephara syndrome |
+| MONDO:0020155 | obsolete eyelid border anomaly |
+| MONDO:0020156 | obsolete syndromic ankyloblepharon |
+| MONDO:0020160 | obsolete secondary entropion |
+| MONDO:0020162 | obsolete secondary ectropion |
+| MONDO:0020163 | obsolete canthal anomaly |
+| MONDO:0020164 | obsolete epicanthal fold |
+| MONDO:0020178 | obsolete palpebral lentiginosis |
+| MONDO:0020180 | obsolete palpebral piliary tumor |
+| MONDO:0020181 | obsolete mesenchymatous palpebral tumor |
+| MONDO:0020193 | obsolete secretory apparatus of the lacrimal system anomaly |
+| MONDO:0020196 | obsolete anomaly of the secretory and excretory apparatus of the lacrimal system |
+| MONDO:0020210 | obsolete syndromic hyperopia |
+| MONDO:0020216 | obsolete secondary dysgenetic glaucoma |
+| MONDO:0020219 | obsolete corneogoniodysgenesis |
+| MONDO:0020256 | obsolete congenital trochlear nerve palsy |
+| MONDO:0020275 | obsolete oculocutaneous or ocular albinism |
+| MONDO:0020284 | obsolete heart position anomaly |
+| MONDO:0020285 | obsolete transposition of the great arteries and conotruncal cardiac anomaly |
+| MONDO:0020286 | obsolete aortic malformation |
+| MONDO:0020287 | obsolete pulmonary artery or pulmonary branch anomaly |
+| MONDO:0020288 | obsolete atrioventricular valve anomaly |
+| MONDO:0020293 | obsolete ascending aorta anomaly |
+| MONDO:0020294 | obsolete atrial defect and interatrial communication |
+| MONDO:0020339 | obsolete X-linked complex spastic paraplegia |
+| MONDO:0020343 | obsolete alpha-crystallinopathy |
+| MONDO:0020345 | obsolete presynaptic congenital myasthenic syndrome |
+| MONDO:0020346 | obsolete synaptic congenital myasthenic syndrome |
+| MONDO:0020375 | obsolete coralliform cataract |
+| MONDO:0020392 | obsolete discrete fixed membranous subaortic stenosis |
+| MONDO:0020506 | obsolete ovarioleukodystrophy |
+| MONDO:0020524 | obsolete primary parathyroid hyperplasia |
+| MONDO:0020537 | obsolete occupational allergic alveolitis |
+| MONDO:0021927 | obsolete arthrogryposis epileptic seizures migrational brain disorder |
+| MONDO:0022397 | obsolete retinal ciliopathy due to mutation in the retinitis pigmentosa-1 gene |
+| MONDO:0022399 | obsolete retinal ciliopathy due to mutation in the RPGR gene |
+| MONDO:0022400 | obsolete retinal ciliopathy due to mutation in the RPGRIP gene |
+| MONDO:0022404 | obsolete retinal ciliopathy due to mutation in Usher gene |
+| MONDO:0022405 | obsolete retinal ciliopathy due to mutation in nephronophthisis gene |
+| MONDO:0022407 | obsolete retinal ciliopathy due to mutation in Bardet-Biedl gene |
+| MONDO:0022409 | obsolete nephropathy-associated ciliopathy |
+| MONDO:0024471 | obsolete non-inflammatory vasculopathy |
+| MONDO:0028618 | obsolete gastroenteric neuroendocrine neoplasm |
+| MONDO:0033947 | obsolete hereditary angioedema with normal C1Inh |
+| MONDO:0034024 | obsolete kyphoscoliotic Ehlers-Danlos syndrome |
+| MONDO:0034217 | obsolete resistance to thyroid hormone due to a mutation in thyroid hormone receptor beta |
+| MONDO:0034661 | obsolete syndromic biliary atresia |
+| MONDO:0034669 | obsolete non-syndromic preaxial polydactyly |
+| MONDO:0034670 | obsolete non-syndromic postaxial polydactyly |
+| MONDO:0034671 | obsolete non-syndromic complex polydactyly |
+| MONDO:0034872 | obsolete large granular lymphocyte leukemia |
+| MONDO:0034901 | obsolete ATP13A2-related parkinsonism |
+| MONDO:0034954 | obsolete syndromic vitreoretinopathy |
+| MONDO:0035002 | obsolete isolated inherited retinal disorder |
+| MONDO:0035014 | obsolete primary orthostatic disorder |
+| MONDO:0035075 | obsolete secondary early-onset glaucoma of genetic origin |
+| MONDO:0035160 | obsolete progressive myoclonic epilepsy with neuroserpin inclusion bodies |
+| MONDO:0035162 | obsolete PIK3CA-related overgrowth syndrome |
+| MONDO:0035561 | obsolete sporadic human prion disease |
+| MONDO:0035645 | obsolete inherited gynecological cancer-predisposing syndrome |
+| MONDO:0035682 | obsolete fibrous dysplasia/McCune-Albright syndrome |
+| MONDO:0035684 | obsolete epidermolysis bullosa simplex without extracutaneous involvement |
+| MONDO:0035685 | obsolete epidermolysis bullosa simplex with extracutaneous involvement |
+| MONDO:0035689 | obsolete syndrome of reduced sensitivity to thyroid hormone |
+| MONDO:0036042 | obsolete KAT6B-related multiple congenital anomalies syndrome |
+| MONDO:0036192 | obsolete EN1-related dorsoventral syndrome |
+| MONDO:0038268 | obsolete autoimmune neurological channelopathy |
+| MONDO:0044655 | obsolete c12orf65-related combined oxidative phosphorylation defect |
+| MONDO:0100189 | obsolete apolipoprotein A-I deficiency |
+| MONDO:0100282 | obsolete SC phocomelia syndrome |
+| MONDO:0100343 | obsolete antenatal Bartter syndrome |
+| MONDO:0800075 | obsolete dysostosis with predominant vertebral with and without costal involvement |
+| MONDO:0800084 | obsolete primary bone dysplasia with increased bone density |
+| MONDO:0800085 | obsolete dysostosis with predominant craniofacial involvement |
+| MONDO:0800086 | obsolete primary bone dysplasia with multiple joint dislocations |
+| MONDO:0800087 | obsolete type 11 collagen-related bone disorder |
+| MONDO:0800089 | obsolete primary bone dysplasia with disorganized development of skeletal components |
+| MONDO:0800090 | obsolete ectrodactyly with and without other manifestations |
+| MONDO:0800091 | obsolete overgrowth or tall stature syndrome with skeletal involvement |
+| MONDO:0800092 | obsolete hereditary inflammatory or rheumatoid-like osteoarthropathy |
+| MONDO:0800093 | obsolete dysostosis with brachydactyly without extraskeletal manifestations |
+| MONDO:0800094 | obsolete dysostosis with brachydactyly with extraskeletal manifestations |
+| MONDO:0800095 | obsolete syndrome with synostosis or other joint formation defect |
+| MONDO:0800342 | obsolete cap myopathy 2 |
+| MONDO:0858986 | obsolete autosomal dominant spastic paraplegia type 80 |
+| MONDO:0858987 | obsolete autosomal recessive spastic paraplegia type 82 |
+| MONDO:0858988 | obsolete autosomal recessive spastic paraplegia type 83 |
+| MONDO:0957001 | obsolete hereditary mixed dermis disorder |
+| MONDO:0957009 | obsolete hereditary posterior fossa malformation |
+| MONDO:0957025 | obsolete hereditary 46,XY disorder of sex development |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0000075 | neuronopathy, distal hereditary motor |
+| MONDO:0002013 | lymphangioma |
+| MONDO:0002063 | breast papillomatosis |
+| MONDO:0020489 | familial hyperreninemic hypoaldosteronism type 1 |
+| MONDO:0010123 | absent thumb-short stature-immunodeficiency syndrome |
+| MONDO:0020075 | hereditary non-syndromic obesity |
+| MONDO:0011469 | congenital amegakaryocytic thrombocytopenia |
+| MONDO:0011876 | juvenile absence epilepsy |
+| MONDO:0014695 | glioma susceptibility 9 |
+| MONDO:0015255 | blepharophimosis-radioulnar synostosis syndrome |
+| MONDO:0015343 | secondary acute transverse myelitis |
+| MONDO:0015593 | limbic encephalitis with nCMAgs antibodies |
+| MONDO:0016287 | adenoid basal carcinoma of the cervix uteri |
+| MONDO:0018107 | idiopathic recurrent and disabling cutaneous herpes |
+| MONDO:0018110 | lethal idiopathic viral infection |
+| MONDO:0018706 | syndromic sensorineural deafness due to combined oxidative phosphorylation defect |
+| MONDO:0018812 | MSH3-related attenuated familial adenomatous polyposis |
+| MONDO:0054836 | parkinsonism-dystonia, infantile, 2 |
+| MONDO:0700042 | X-linked mendelian susceptibility to mycobacterial diseases due to IKBKG deficiency |
+| MONDO:0957404 | pyogenic autoinflammatory syndrome of childhood |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0019054 | congenital limb malformation |
+| MONDO:0019713 | non-syndromic limb reduction defect |
+| MONDO:0018240 | TRPV4-related bone disorder |
+| MONDO:0015338 | syndromic craniosynostosis |
+| MONDO:0015337 | isolated craniosynostosis |
+| MONDO:0018640 | secondary vasculitis |
+
 # 2023-09-12
 
 ## Overview:
