@@ -34,7 +34,8 @@ Aug 25 | 9 AM PT/12 PM ET | Courtney Thaxton ([ClinGen](https://clinicalgenome.o
 Sept 22 | 9 AM PT/12 PM ET | Daniel Himmelstein ([Related Sciences](https://www.related.vc/)), Eric Czech ([Related Sciences](https://www.related.vc/)), and Daniel Korn ([Every Cure](https://everycure.org/)) | Classifying EFO/MONDO diseases as areas, roots, or subtypes;  [Slides are here](https://slides.com/dhimmel/efo-disease-precision#/cover) | [Here](https://drive.google.com/file/d/1AdRRiNdowZBVs_hJFXJfDTF7k63SoIi7/view?usp=sharing)|
 Oct 20 | 9 AM PT/12 PM ET | Emily Hartley and Ian Braun ([Critical Path Institute]([https://c-path.org/)) | RDCA-DAP: Ontology Applications in Rare Diseases | [Here](https://drive.google.com/file/d/1na_7tvv-T4ctbn2zCNEFPdLsbpLdI81q/view?usp=sharing)
 Nov 17 | 9 AM PT/12 PM ET | Sabrina Toro and Trish Whetzel  ([Monarch Initiative](https://monarchinitiative.org/)) | Overview of Mondo reclassification efforts | [Here](https://drive.google.com/file/d/1FOPeuocZxY0ADxa1A5F-gJraqx9Cx70f/view?usp=sharing)
-Dec 15 | 9 AM PT/12 PM ET | Tim Putman ([Monarch Initiative](https://monarchinitiative.org/)) | Use of Mondo in Monarch
+Dec 15 | 9 AM PT/12 PM ET | Kevin Schaper ([Monarch Initiative](https://monarchinitiative.org/)) | Use of Mondo in Monarch | [Here](https://drive.google.com/file/d/1KWVIzo8dIMPQa2cLEmN1sGsOanu7YJBx/view?usp=sharing)
+Jan 12 | 9 AM PT/12 PM ET | Sierra Moxon | Use of Mondo in NCATS Translator
 
 <a name="feb-2023"></a> 
 ## Mondo Workshops
