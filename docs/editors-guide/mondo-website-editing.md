@@ -1,13 +1,13 @@
-# Mondo website editing guidelines
+# Mondo community website editing guidelines
 
-_Updated 04-Oct-2023_
+_Updated 17-Jan-2024_
 
 ## Overview
 These instructions are for updating the <a href="https://mondo.monarchinitiative.org/" target="_blank">Mondo Disease Ontology community web site</a>. The files for the web site are contained within the `mondo` repo[1] and the web site files are in the `gh-pages` branch. A GitHub Action called `pages build and deployment` deploys the web site. The web site is built with Jekyll.
 
 ## Prerequisites
-- Clone the Mondo GitHub repo[1] locally 
-- Install Docker[2]
+- Clone the <a href="https://github.com/monarch-initiative/mondo" target="_blank">Mondo GitHub repo</a> locally
+- Install Docker following these <a href="https://oboacademy.github.io/obook/howto/setup-docker/" target="_blank">instructions</a>
 
 
 ## Instructions
@@ -86,8 +86,3 @@ This will cause Docker to stop/exit the container but the container is still ava
 10. Push your local changes to the remote.
 _NOTE:_ Since the web site is maintained on a branch, when changes are pushed to the remote this automatically triggers a GitHub Action to deploy the branch. There is no Pull Review step.
 
-
-## Resources
-[1] https://github.com/monarch-initiative/mondo
-
-[2] https://oboacademy.github.io/obook/howto/setup-docker/
