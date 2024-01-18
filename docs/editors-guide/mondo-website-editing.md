@@ -3,7 +3,7 @@
 _Updated 04-Oct-2023_
 
 ## Overview
-These instructions are for updating the Mondo Disease Ontology web site (https://mondo.monarchinitiative.org/). The files for the web site are contained within the `mondo` repo[1] and the web site files are in the `gh-pages` branch. A GitHub Action called `pages build and deployment` deploys the web site. The web site is built with Jekyll.
+These instructions are for updating the <a href="https://mondo.monarchinitiative.org/" target="_blank">Mondo Disease Ontology community web site</a>. The files for the web site are contained within the `mondo` repo[1] and the web site files are in the `gh-pages` branch. A GitHub Action called `pages build and deployment` deploys the web site. The web site is built with Jekyll.
 
 ## Prerequisites
 - Clone the Mondo GitHub repo[1] locally 
