@@ -10,7 +10,7 @@ Some examples of when to obsolete and/or merge a term are:
 
 - **Duplicate terms**: for example "mitochondrial disease" (MONDO:0019055) was obsoleted and replaced by  "inborn mitochondrial metabolism disorder" (MONDO:0004069)
 - **Out of scope**: some terms are excluded from Mondo based on certain criteria, which are outlined in the [exclusion reason table](https://mondo.readthedocs.io/en/latest/editors-guide/exclusion-reasons/). For example, terms that are not truly diseases, (i.e. phenotype terms, such as "Colchicine resistance" (MONDO:0007348). For another example, see [see #503](https://github.com/monarch-initiative/mondo/issues/503).
-- **Obsoleted in source**: external resources such as OMIM, Orphanet, or GARD may retire or obsolete a term. For example "obsolete autoimmune enteropathy type 2" (MONDO:0015173) is a phenotype and not a disease or "obsolete pathologic fracture" (MONDO:0043606)
+- **Obsoleted in source**: external resources such as OMIM, Orphanet, or GARD may retire or obsolete a term. For example "obsolete Ehlers-Danlos syndrome with periventricular heterotopia" (MONDO:0019348).
 
 Issues should remain open for at least two (2) months* to allow for the community to comment and bring up any objections. All obsoletions will be done via a pull request and reviewed by Mondo developers.
 
@@ -80,25 +80,6 @@ There are 2 ways to merge classes:
 * Manually (not recommended)
 * Using owltools within the ODK Docker container (see instructions <a href="https://mondo.readthedocs.io/en/latest/editors-guide/set-up-new-computer/#set-up-docker" target="_blank">here</a>)
 
->>> START DELETE
-
-To use owl tools you will need to have Docker installed and running (see instructions <a href="https://mondo.readthedocs.io/en/latest/editors-guide/set-up-new-computer/#set-up-docker" target="_blank">here</a>). This should be done in plain text, either csv or tsv. Two columns (or optionally 4 columns with labels):
-
-1. CURIE of class to be obsoleted
-1. CURIE of replacement class
-
-These are then merged like this:
-
-```
-owltools mondo-edit.obo  --obsolete-replace MONDO:0000267 MONDO:0015264 --assert-inferred-subclass-axioms --markIsInferred --removeRedundant -o -f obo new.obo
-diff mondo-edit.obo new.obo
-mv new.obo mondo-edit.obo
-```
-
-Note this can frequently lead to cycles and equivalence between named class pairs, as many seemingly identical classes have different implicit semantics.
-
-Note: if you add an obsoletion reason, make sure that the replaced class does not have an alt_id assertion. If so, remove that before committing.
->>> END DELETE
 
 ### Merge using owltools (recommended)
 
@@ -132,7 +113,7 @@ Note: if you add an obsoletion reason, make sure that the replaced class does no
 
 1. Open a new version of mondo-edit.obo in Protege
 1. **Obsoleted class**: Search for the term that was obsoleted
-    1. Add "term tracker item" (type xsd:anyURI) annotation with a link to the GitHub issue that requested the obsoletion.
+    1. Add "term tracker item" (type xsd:anyURI) annotation with a link to the GitHub issue (e.g. `https://github.com/monarch-initiative/mondo/issues/YOUR-TICKET-NUMBER`) that requested the obsoletion.
     1. Add an obsoletion reason: use the annotation property "has obsolescence reason" and add `http://purl.obolibrary.org/obo/MONDO_TermsMerged` in the IRI Editor field.
     1. Any source annotations to MONDO:equivalentTo on a dbxref should be changed to MONDO:obsoleteEquivalent.
     1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the terms were merged.
