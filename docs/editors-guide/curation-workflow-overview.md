@@ -49,7 +49,7 @@ Once a Mondo term is tagged as “obsoletion candidate”, the community has two
           1. report of other similar grouping terms (ie sibling terms). For example, if grouping by inheritance type, grouping terms by all inheritance types should exist).
           2. Suggestions for maintaining the diseases grouped by this term
              
-Please note that a request to retain a term in Mondo does not imply that the term will be removed from the obsoletion list: further discussion with the Mondo team and the user community will be required before the final decision.
+Please note that a request to retain a term in Mondo does not imply that the term will not be an obsoletion candidate anymore: further discussion with the Mondo team and the user community will be required before the final decision.
 
 2. The **obsoletion candidate is used in disease annotations**. Annotations using terms tagged for obsoletion should be reviewed and updated accordingly. We do understand that it might take longer than 2 months to review all annotations, and therefore we will accommodate requests for delaying term obsoletion up to one year (unless ongoing discussions indicate otherwise). Please note that unless there is strong evidence that the obsoletion candidate represents an actual disease or a useful grouping class (see above), obsoletion candidates will eventually be obsoleted from Mondo. 
 
