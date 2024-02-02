@@ -451,6 +451,9 @@ report-tbd-query-%: tmp/mondo-rdfxml.owl
 
 update-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) --update $(SPARQLDIR)/update/$*.ru convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
 
 construct-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) --query $(SPARQLDIR)/update/$*.ru tmp/construct-$*.ttl
