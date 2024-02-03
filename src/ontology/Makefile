@@ -365,7 +365,7 @@ tmp/clingen-seed.txt: $(SRC)
 .PRECIOUS: tmp/rare-seed-entities.txt
 
 subsets/mondo-clingen.owl: $(ONT)-base.owl tmp/clingen-seed.txt | $(SUBSETDIR)
-	$(ROBOT) merge -i $< extract --method subset -T tmp/clingen-seed.txt --copy-ontology-annotations true --output $@ &&\
+	$(ROBOT) merge -i $< query --update ../sparql/update/clingen-labels.ru extract --method subset -T tmp/clingen-seed.txt --copy-ontology-annotations true --output $@ &&\
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: $(SUBSETDIR)/mondo-rare.owl
 
