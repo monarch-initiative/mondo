@@ -85,7 +85,7 @@ all_imports: $(IMPORT_FILES)
 COMPONENTS = mondo-tags mondo-subsets
 COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
 
-SUBSETS = mondo-minimal mondo-rare
+SUBSETS = mondo-minimal mondo-rare mondo-clingen
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json)
 
@@ -359,6 +359,16 @@ subsets/mondo-rare.owl: $(ONT)-base.owl imports/hgnc_import.owl  tmp/rare-seed.t
 	$(ROBOT) merge -i $< -i imports/hgnc_import.owl extract --method subset -T tmp/rare-seed.txt --output $@ &&\
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: $(SUBSETDIR)/mondo-rare.owl
+
+tmp/clingen-seed.txt: $(SRC)
+	$(ROBOT) merge -i $< query --query ../sparql/signature/clingen-subset.sparql $@
+.PRECIOUS: tmp/rare-seed-entities.txt
+
+subsets/mondo-clingen.owl: $(ONT)-base.owl tmp/clingen-seed.txt | $(SUBSETDIR)
+	$(ROBOT) merge -i $< extract --method subset -T tmp/rare-seed.txt --output $@ &&\
+	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: $(SUBSETDIR)/mondo-rare.owl
+
 
 TRIM_MINIMAL = --remove-imports-declarations --remove-abox --remove-axiom-annotations --remove-annotation-assertions -l -r -p $(OIO)hasDbXref -p $(SKOS)exactMatch  -p $(SKOS)narrowMatch   -p $(SKOS)relatedMatch  -p $(SKOS)broadMatch
 subsets/mondo-minimal.owl: mondo-base.owl imports/equivalencies.owl
