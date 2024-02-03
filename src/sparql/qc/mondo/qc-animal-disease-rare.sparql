@@ -1,0 +1,23 @@
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Tests if an animal disease made it into the rare disease subset
+
+SELECT DISTINCT ?entity ?property ?value WHERE
+{
+  VALUES ?property { <http://purl.obolibrary.org/obo/mondo#rare> }
+  ?entity <http://www.geneontology.org/formats/oboInOwl#inSubset> ?property .
+  ?entity rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0005583>
+ FILTER NOT EXISTS {
+    ?entity owl:deprecated "true"^^xsd:boolean
+  }
+   FILTER NOT EXISTS {
+      ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-animal-disease-rare.sparql .
+   }
+ FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND("Animal disease in Rare subset" as ?value)
+}
