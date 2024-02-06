@@ -24,7 +24,7 @@ WHERE {
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
   } UNION {
     ?ax owl:annotatedSource ?entity ;
-         owl:annotatedTarget ?property ;
+         owl:annotatedProperty ?property ;
          oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#CLINGEN_LABEL> .
     FILTER(?property!=oboInOwl:hasExactSynonym)
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
