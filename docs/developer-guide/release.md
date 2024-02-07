@@ -47,17 +47,14 @@ _Note: While the release is running, don't shut your laptop or switch between re
 4. Merge the PR and continue with the release.
 
 ## Prepare the release
-1. Do a docker pull: `docker pull obolibrary/odkfull`
+1. Do a docker pull: `docker pull obolibrary/odkfull:dev`
 1. Pull master
 1. Run command: `cd mondo/src/ontology/` (navigate to folder on your computer)
-1. `MEMORY_GB=12 sh run.sh make IMP=false all -B` - note, this takes 1+ hour(s)
+1. `IMAGE=odkfull:dev ./run.sh make IMP=false all -B` - note, this takes 1+ hour(s)
 1. Make sure you see ‘release finished’ after the command has run
 1. Open mondo.owl and mondo.obo and check the latest changes are there and it looks reasonable
 1. Run `sh run.sh make prepare_release_direct`
 1. Review the file `src/ontology/reports/mondo_release_diff.md`. There is now a new QC section up top, `---START LOG:` to `---END LOG:`. Review the text and _delete it from the file_ if there is no suspicious output.
-1. **UPDATE from 230601** _(this should not be an issue anymore, but check anyways)_: with the addition of the rare disease subset, the PR will be too large to commit. In GitHub Desktop:
-      1. find the file "raredisease subset.owl"
-      1. right click and "ignore file"
 1. Commit changes to a branch
       1. Create a branch and commit the changes on the branch
       1. Do a pull request (PR)
@@ -105,19 +102,19 @@ Press Enter to open github.com in your browser...
     3. Ensure it has all release artifacts attached to it (there should be 22 assets in the draft. Note, there will be 24 after the release is published.)
     4. Check this file to ensure you see the expected changes (spot check a few changes): download the mondo.obo or mondo.owl from the asset list in the release.
 1. Write a description of the release
-   1. Add the release description to the release tab:
-       - All of the releases can be found under the [releases](https://github.com/monarch-initiative/mondo/releases) tab.
-       - To add a description of the release:
-         - click edit
-         - in the 'describe this release' section add the content from the file `src/ontology/reports/mondo_release_diff.md`.
+    1. Add the release description to the release tab:
+          - All of the releases can be found under the [releases](https://github.com/monarch-initiative/mondo/releases) tab.
+          - To add a description of the release:
+                - click edit
+                - in the 'describe this release' section add the content from the file `src/ontology/reports/mondo_release_diff.md`.
          - click "save draft"
-   2. Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
-      - go to changes.md
-      - click edit
-      - add the name of the new release and the content from the change log text file above.
-      - commit to master
+    2. Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
+         - go to changes.md
+         - click edit
+         - add the name of the new release and the content from the change log text file above.
+         - commit to master
       Note: If you cannot find the "edit" button, you can update the changes.md file using atom, and committing to master.
-   3. Click on "Publish release" (THIS IS NEW, the release, so far should have been in Draft state)
+1. Click on "Publish release" (THIS IS NEW, the release, so far should have been in Draft state)
 
 ## Check obsoletion candidates
 
