@@ -30,5 +30,7 @@ WHERE {
          owl:annotatedTarget ?clingen_label ;
          oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#CLINGEN_LABEL> .
 
+  FILTER(STR(?label)!=STR(?clingen_label))
+
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
 }
