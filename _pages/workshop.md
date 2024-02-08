@@ -18,24 +18,49 @@ Details and summaries for upcoming and past Mondo workshops.
 
 
 <a name="outreach"></a> 
-## Mondo Outreach Calls 2023
+## Mondo Outreach Calls
 
 The goal of the **Mondo Outreach Calls** is to bring together stakeholders and clinical terminology experts with the goal of discussing specific use cases and requirements, and improving Mondo with a focus of our user needs in mind. Every month we plan to invite a group to present their use case (not necessarily directly related to Mondo), and learn if there is anything we can do from the Mondo technical side to better support them. During the call, the Mondo technical team will give an overview of the latest developments and followed by a ~20 minute  talk + discussion from specific users where we’ll discuss paths forward on how we can work together. 
 
 Notes are available [here](https://docs.google.com/document/d/16eMB-x3iANHfiTxw7vUXFoTHtdxscjnfVQ_OrRsnzvE/edit).
 
 
+<style>
+    table {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+    th, td {
+        width: 5%; /* Adjust this value as needed */
+        padding: 8px;
+        /* border: 1px solid #ddd; */
+    }
+</style>
+
+<div style="background-color: lightgray; text-align: center;">
+    2024 Presentations
+</div>
+
 Date | Time | Presenter (Organization)| Topic | Recording 
 -- | -- | -- | -- | -- 
-June 02 | 9 AM PT/12 PM ET | Gioconda Alyea, Sean Roberts, and Marybeth McAfee ([NORD](https://rarediseases.org/)) | Rare Diseases in NORD | [Here](https://drive.google.com/file/d/1wJzqU6ruAGuzsk7xZLzIu9G_UH8SI8ta/view?usp=sharing)
-June 30 | 9 AM PT/12 PM ET | Eric Sid and Qian Zhu ([NCATS](https://rarediseases.info.nih.gov/about)) | Use of Disease Ontologies and Knowledge in Addressing Translation Science in Rare Diseases | [Here](https://drive.google.com/drive/folders/1qsqteFng74C7Kvm2BdIoDASWOaWaqEjN)
-July 28 | 9 AM PT/12 PM ET | Megan Kane ([MedGen](https://www.ncbi.nlm.nih.gov/medgen/)) | MedGen curation workflows | [Here](https://drive.google.com/file/d/1xla8WjcOuhocYc-DB7U17pMn7TvhR5Vk/view?usp=sharing)
-Aug 25 | 9 AM PT/12 PM ET | Courtney Thaxton ([ClinGen](https://clinicalgenome.org/)) | ClinGen Variant Curation | [Here](https://drive.google.com/file/d/1vNqUOQY9wtgGegNpRRP0nEVuZYcKrDJa/view?usp=sharing)
-Sept 22 | 9 AM PT/12 PM ET | Daniel Himmelstein ([Related Sciences](https://www.related.vc/)), Eric Czech ([Related Sciences](https://www.related.vc/)), and Daniel Korn ([Every Cure](https://everycure.org/)) | Classifying EFO/MONDO diseases as areas, roots, or subtypes;  [Slides are here](https://slides.com/dhimmel/efo-disease-precision#/cover) | [Here](https://drive.google.com/file/d/1AdRRiNdowZBVs_hJFXJfDTF7k63SoIi7/view?usp=sharing)|
-Oct 20 | 9 AM PT/12 PM ET | Emily Hartley and Ian Braun ([Critical Path Institute]([https://c-path.org/)) | RDCA-DAP: Ontology Applications in Rare Diseases | [Here](https://drive.google.com/file/d/1na_7tvv-T4ctbn2zCNEFPdLsbpLdI81q/view?usp=sharing)
-Nov 17 | 9 AM PT/12 PM ET | Sabrina Toro and Trish Whetzel  ([Monarch Initiative](https://monarchinitiative.org/)) | Overview of Mondo reclassification efforts | [Here](https://drive.google.com/file/d/1FOPeuocZxY0ADxa1A5F-gJraqx9Cx70f/view?usp=sharing)
+Feb 9  | 9 AM PT/12 PM ET | Zoe Pendlington ([Open Targets](https://www.opentargets.org/) / [EBI](https://www.ebi.ac.uk/)) | Open Targets and the Experimental Factor Ontology (EFO) | 
+Jan 12 | 9 AM PT/12 PM ET | Sierra Moxon | Use of Mondo in NCATS Translator | [Here](https://drive.google.com/file/d/16ceHk2MXga1Jko0hSy-ZEUfDmaQDzn4p/view?usp=sharing) 
+
+
+<div style="background-color: lightgray; text-align: center;">
+    2023 Presentations
+</div>
+
+-- | -- | -- | -- | -- 
 Dec 15 | 9 AM PT/12 PM ET | Kevin Schaper ([Monarch Initiative](https://monarchinitiative.org/)) | Use of Mondo in Monarch | [Here](https://drive.google.com/file/d/1KWVIzo8dIMPQa2cLEmN1sGsOanu7YJBx/view?usp=sharing)
-Jan 12 | 9 AM PT/12 PM ET | Sierra Moxon | Use of Mondo in NCATS Translator
+Nov 17 | 9 AM PT/12 PM ET | Sabrina Toro and Trish Whetzel  ([Monarch Initiative](https://monarchinitiative.org/)) | Overview of Mondo reclassification efforts | [Here](https://drive.google.com/file/d/1FOPeuocZxY0ADxa1A5F-gJraqx9Cx70f/view?usp=sharing)
+Oct 20 | 9 AM PT/12 PM ET | Emily Hartley and Ian Braun ([Critical Path Institute]([https://c-path.org/)) | RDCA-DAP: Ontology Applications in Rare Diseases | [Here](https://drive.google.com/file/d/1na_7tvv-T4ctbn2zCNEFPdLsbpLdI81q/view?usp=sharing)
+Sept 22 | 9 AM PT/12 PM ET | Daniel Himmelstein ([Related Sciences](https://www.related.vc/)), Eric Czech ([Related Sciences](https://www.related.vc/)), and Daniel Korn ([Every Cure](https://everycure.org/)) | Classifying EFO/MONDO diseases as areas, roots, or subtypes;  [Slides are here](https://slides.com/dhimmel/efo-disease-precision#/cover) | [Here](https://drive.google.com/file/d/1AdRRiNdowZBVs_hJFXJfDTF7k63SoIi7/view?usp=sharing) |
+Aug 25 | 9 AM PT/12 PM ET | Courtney Thaxton ([ClinGen](https://clinicalgenome.org/)) | ClinGen Variant Curation | [Here](https://drive.google.com/file/d/1vNqUOQY9wtgGegNpRRP0nEVuZYcKrDJa/view?usp=sharing)
+July 28 | 9 AM PT/12 PM ET | Megan Kane ([MedGen](https://www.ncbi.nlm.nih.gov/medgen/)) | MedGen curation workflows | [Here](https://drive.google.com/file/d/1xla8WjcOuhocYc-DB7U17pMn7TvhR5Vk/view?usp=sharing)
+June 30 | 9 AM PT/12 PM ET | Eric Sid and Qian Zhu ([NCATS](https://rarediseases.info.nih.gov/about)) | Use of Disease Ontologies and Knowledge in Addressing Translation Science in Rare Diseases | [Here](https://drive.google.com/drive/folders/1qsqteFng74C7Kvm2BdIoDASWOaWaqEjN)
+June 02 | 9 AM PT/12 PM ET | Gioconda Alyea, Sean Roberts, and Marybeth McAfee ([NORD](https://rarediseases.org/)) | Rare Diseases in NORD | [Here](https://drive.google.com/file/d/1wJzqU6ruAGuzsk7xZLzIu9G_UH8SI8ta/view?usp=sharing) |
+
 
 <a name="feb-2023"></a> 
 ## Mondo Workshops
