@@ -50,11 +50,15 @@ _Note: While the release is running, don't shut your laptop or switch between re
 1. Do a docker pull: `docker pull obolibrary/odkfull:dev`
 1. Pull master
 1. Run command: `cd mondo/src/ontology/` (navigate to folder on your computer)
-1. `IMAGE=odkfull:dev ./run.sh make IMP=false all -B` - note, this takes 1+ hour(s)
+1. `IMAGE=odkfull:dev ./run.sh make IMP=false all -B` 
+    - note, this takes 1+ hour(s)
+    - note that we are using the dev image as it is always up to date with the Python dependencies.
 1. Make sure you see ‘release finished’ after the command has run
 1. Open mondo.owl and mondo.obo and check the latest changes are there and it looks reasonable
 1. Run `sh run.sh make prepare_release_direct`
-1. Review the file `src/ontology/reports/mondo_release_diff.md`. There is now a new QC section up top, `---START LOG:` to `---END LOG:`. Review the text and _delete it from the file_ if there is no suspicious output.
+1. Review the file `src/ontology/reports/mondo_release_diff.md`. 
+    - There is now a new QC section up top, `---START LOG:` to `---END LOG:`. Review the text and _delete it from the file_ if there is no suspicious output.
+    - note that this file is 'gitignore', ie one only sees it if they are the one running the release.
 1. Commit changes to a branch
       1. Create a branch and commit the changes on the branch
       1. Do a pull request (PR)
@@ -106,7 +110,7 @@ Press Enter to open github.com in your browser...
           - All of the releases can be found under the [releases](https://github.com/monarch-initiative/mondo/releases) tab.
           - To add a description of the release:
                 - click edit
-                - in the 'describe this release' section add the content from the file `src/ontology/reports/mondo_release_diff.md`.
+                - in the 'describe this release' section add the content from the file `src/ontology/reports/mondo_release_diff.md`. (reminder that this file is 'gitignore', ie one only sees it if they are the one running the release.)
          - click "save draft"
     2. Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
          - go to changes.md
