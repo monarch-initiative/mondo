@@ -3,12 +3,13 @@
 [http://purl.obolibrary.org/obo/mondo/patterns/infectious_disease_by_agent.yaml](http://purl.obolibrary.org/obo/mondo/patterns/infectious_disease_by_agent.yaml)
 ## Description 
 
-Infectious diseases can be classified by the infectioos agent, such as bacteria, coronavirus, etc, that causes the disease.
+Infectious diseases can be classified by the infectious agent, such as bacteria, coronavirus, etc, that causes the disease.
 
 Examples: [COVID-19](http://purl.obolibrary.org/obo/MONDO_0100096), [cholera](http://purl.obolibrary.org/obo/MONDO_0015766)
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
 * [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
+* [https://orcid.org/0000-0002-1780-9872](https://orcid.org/0000-0002-1780-9872) 
 ## Name 
 
 {[agent](http://purl.obolibrary.org/obo/NCBITaxon_1)} infectious disease
