@@ -1,3 +1,248 @@
+#2024-02-06
+## Overview:
+
+* Number of new terms: 126
+* Number of changed labels: 8
+* Number of changed definitions: 9
+* Number obsoleted terms: 19
+* Number of new obsoletion candidates: 40
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 0
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0100533 | hemorrhage, intracerebral, susceptibility to | An inherited susceptibility or predisposition to developing intracerebral hemorrhage. |
+| MONDO:0100534 | SMARCB1-deficient kidney medullary carcinoma | A high-grade carcinoma that arises from the renal medulla and is characterized by inactivation of the SMARCB1 gene. It affects children and adults and occurs mainly in patients with sickle cell trait. The majority of the cases occur in the right kidney. |
+| MONDO:0100535 | hypodontia/oligodontia with orofacial cleft | |
+| MONDO:0100536 | tooth agenesis, selective, with orofacial cleft | |
+| MONDO:0100537 | plasminogen deficiency, type II | |
+| MONDO:0100538 | dysplasminogenemia | |
+| MONDO:0700246 | ocular dysgenesis caused by defects in PAX6 regulation | Any eye disorder in which the cause of the disease is a variant in the PAX6 gene itself or a variant within another locus that results in defective regulation of the PAX6 gene. |
+| MONDO:0700247 | RAB18 deficiency | Group of diseases encompassing a spectrum of disorders characterized by Warburg Micro Syndrome (characterized by eye, nervous system, and endocrine abnormalities) and Martsolf Syndrome phenotypes (characterized by similar – but milder – findings). To date Warburg micro syndrome comprises >96% of reported individuals with genetically defined RAB18 deficiency. The hallmark ophthalmologic findings are bilateral congenital cataracts, usually accompanied by microphthalmia, microcornea (diameter <10), and small atonic pupils. Poor vision despite early cataract surgery likely results from progressive optic atrophy and cortical visual impairment. Individuals with Warburg micro syndrome have severe to profound intellectual disability (ID); those with Martsolf syndrome have mild to moderate ID. Some individuals with RAB18 deficiency also have epilepsy. In Warburg micro syndrome, a progressive ascending spastic paraplegia typically begins with spastic diplegia and contractures during the first year, followed by upper-limb involvement leading to spastic quadriplegia after about age five years, often eventually causing breathing difficulties. In Martsolf syndrome infantile hypotonia is followed primarily by slowly progressive lower-limb spasticity. Hypogonadism – when present – manifests in both syndromes, in males as micropenis and/or cryptorchidism and in females as hypoplastic labia minora, clitoral hypoplasia, and small introitus. |
+| MONDO:0800451 | congenital amegakaryocytic thrombocytopenia | |
+| MONDO:0800452 | congenital amegakaryocytic thrombocytopenia 1 | A rare inherited bone marrow failure syndrome, in which the cause of the disease is a variation in the MPL gene. It is characterized by an isolated and severe decrease in the number of platelets and megakaryocytes during the first years of life that develops into bone marrow failure with pancytopenia later in childhood. |
+| MONDO:0957316 | epidermolytic hyperkeratosis | |
+| MONDO:0957317 | hematuria, benign familial | |
+| MONDO:0957318 | nephrolithiasis, calcium oxalate | |
+| MONDO:0957319 | pseudohypoaldosteronism, type I | |
+| MONDO:0957400 | cataracts, hearing impairment, nephrotic syndrome, and enterocolitis | |
+| MONDO:0957553 | Houge-Janssens syndrome | |
+| MONDO:0957560 | hearing loss, noise-induced, susceptibility to | |
+| MONDO:0957561 | encephalitis, acute, infection-induced, susceptibility to, 12 | |
+| MONDO:0957563 | cranial dysinnervation disorder, congenital, with absent corneal reflex and developmental delay | |
+| MONDO:0957564 | congenital smooth muscle hamartoma, with or without hemihypertrophy | |
+| MONDO:0957572 | thrombocytopenia 9 | |
+| MONDO:0957575 | amegakaryocytic thrombocytopenia, congenital, 2 | |
+| MONDO:0957576 | parkinson disease 25, autosomal recessive early-onset, with impaired intellectual development | |
+| MONDO:0957577 | variegate porphyria, childhood-onset | |
+| MONDO:0957578 | thrombocytopenia 10 | |
+| MONDO:0957580 | bleeding disorder, platelet-type, 25 | |
+| MONDO:0957583 | neurodevelopmental disorder with dysmorphic facies and behavioral abnormalities | |
+| MONDO:0957584 | spermatogenic failure 85 | |
+| MONDO:0957588 | neurodevelopmental disorder with impaired language, behavioral abnormalities, and dysmorphic facies | |
+| MONDO:0957593 | spermatogenic failure 86 | |
+| MONDO:0957594 | spermatogenic failure 87 | |
+| MONDO:0957595 | Ziegler-Huang syndrome | |
+| MONDO:0957599 | epilepsy, early-onset | |
+| MONDO:0957779 | neurodevelopmental disorder with language delay and variable cognitive abnormalities | |
+| MONDO:0957780 | developmental and epileptic encephalopathy 111 | |
+| MONDO:0957783 | ichthyosis with erythrokeratoderma | |
+| MONDO:0957786 | xerosis and growth failure with immune and pulmonary dysfunction syndrome | |
+| MONDO:0957787 | Fliedner-Zweier syndrome | |
+| MONDO:0957788 | spastic paraplegia 18a, autosomal dominant | |
+| MONDO:0957790 | immune dysregulation, autoimmunity, and autoinflammation | |
+| MONDO:0957791 | neurodevelopmental disorder with motor regression, progressive spastic paraplegia, and oromotor dysfunction | |
+| MONDO:0957795 | arrhythmogenic cardiomyopathy with variable ectodermal abnormalities | |
+| MONDO:0957807 | hyper-IgE syndrome 6, autosomal dominant, with recurrent infections | |
+| MONDO:0957809 | neutropenia, severe congenital, 10, autosomal recessive | |
+| MONDO:0957810 | developmental delay, dysmorphic facies, and brain anomalies | |
+| MONDO:0957811 | Alport syndrome 3b, autosomal recessive | |
+| MONDO:0957812 | developmental and epileptic encephalopathy 112 | |
+| MONDO:0957813 | spastic paraplegia 91, autosomal dominant, with or without cerebellar ataxia | |
+| MONDO:0957815 | developmental delay with or without epilepsy | |
+| MONDO:0957819 | arthrogryposis, distal, type 12 | |
+| MONDO:0957820 | congenital disorder of glycosylation, type IIb | |
+| MONDO:0957821 | spermatogenic failure 88 | |
+| MONDO:0957822 | premature ovarian failure 22 | |
+| MONDO:0957824 | optic atrophy 14 | |
+| MONDO:0957825 | deafness, autosomal recessive 121 | |
+| MONDO:0957832 | craniometadiaphyseal osteosclerosis with hip dysplasia | |
+| MONDO:0957870 | leukoencephalopathy with vanishing white matter 2 | |
+| MONDO:0957871 | leukoencephalopathy with vanishing white matter 3 | |
+| MONDO:0957872 | leukoencephalopathy with vanishing white matter 4 | |
+| MONDO:0957873 | leukoencephalopathy with vanishing white matter 5 | |
+| MONDO:0957874 | neuronopathy, distal hereditary motor, autosomal recessive 9 | |
+| MONDO:0957875 | neuronopathy, distal hereditary motor, autosomal dominant 11 | |
+| MONDO:0957876 | neuronopathy, distal hereditary motor, autosomal recessive 10 | |
+| MONDO:0957919 | Lui-Jee-Baron syndrome | |
+| MONDO:0957920 | immunodeficiency 113 with autoimmunity and autoinflammation | |
+| MONDO:0957921 | Cornelia de Lange syndrome 6 | |
+| MONDO:0957922 | ciliary dyskinesia, primary, 52 | |
+| MONDO:0957928 | otosclerosis 11 | |
+| MONDO:0957935 | optic atrophy 15 | |
+| MONDO:0957953 | Garg-Mishra progeroid syndrome | |
+| MONDO:0957954 | lymphatic malformation 14 | |
+| MONDO:0957955 | immunodeficiency 114, folate-responsive | |
+| MONDO:0957958 | spastic paraplegia 72b, autosomal recessive | |
+| MONDO:0957960 | Long-Olsen-Distelmaier syndrome | |
+| MONDO:0957961 | oocyte/zygote/embryo maturation arrest 21 | |
+| MONDO:0957978 | optic atrophy 16 | |
+| MONDO:0957981 | immunodeficiency 115 with autoinflammation | |
+| MONDO:0957984 | cardiomyopathy, dilated, 2j | |
+| MONDO:0957985 | neurodegeneration, childhood-onset, with cerebellar ataxia and cognitive decline | |
+| MONDO:0957988 | osteogenesis imperfecta, type 23 | |
+| MONDO:0957990 | Tan-Almurshedi syndrome | |
+| MONDO:0957991 | ciliary dyskinesia, primary, 53 | |
+| MONDO:0957992 | combined oxidative phosphorylation deficiency 59 | |
+| MONDO:0957993 | progressive external ophthalmoplegia with mitochondrial dna deletions, autosomal recessive 6 | |
+| MONDO:0957997 | diabetes, deafness, developmental delay, and short stature syndrome | |
+| MONDO:0957999 | intellectual developmental disorder, autosomal recessive 80, with variant lissencephaly | |
+| MONDO:0958000 | thrombocytopenia 11 with multiple congenital anomalies and dysmorphic facies | |
+| MONDO:0958001 | Alfadhel syndrome | |
+| MONDO:0958005 | Hoxha-Aliu syndrome | |
+| MONDO:0958006 | spondyloepimetaphyseal dysplasia, Guo-Campeau type | |
+| MONDO:0958009 | spastic ataxia 10, autosomal recessive | |
+| MONDO:0958011 | immunodeficiency 117 | |
+| MONDO:0958012 | neurodegeneration with brain iron accumulation 9 | |
+| MONDO:0958013 | immunodeficiency, common variable, 15 | |
+| MONDO:0958017 | neutropenia, severe congenital, 11, autosomal dominant | |
+| MONDO:0958018 | leukodystrophy, hypomyelinating, 27 | |
+| MONDO:0958022 | lipodystrophy, familial partial, type 8 | |
+| MONDO:0958023 | lipodystrophy, congenital generalized, type 5 | |
+| MONDO:0958030 | immunodeficiency 118 | |
+| MONDO:0958034 | lipodystrophy, familial partial, type 9 | |
+| MONDO:0958035 | premature ovarian failure 23 | |
+| MONDO:0958037 | developmental dysplasia of the hip 3 | |
+| MONDO:0958174 | basal cell nevus syndrome 1 | |
+| MONDO:0958175 | craniofacial microsomia 1 | |
+| MONDO:0958176 | oculopharyngeal muscular dystrophy 1 | |
+| MONDO:0958177 | chronic recurrent multifocal osteomyelitis 3 | |
+| MONDO:0958178 | cataracts, hearing impairment, nephrotic syndrome, and enterocolitis 1 | |
+| MONDO:0958179 | glycine encephalopathy 1 | |
+| MONDO:0958180 | prolonged electroretinal response suppression 1 | |
+| MONDO:0958181 | mitochondrial trifunctional protein deficiency 1 | |
+| MONDO:0958182 | C1Q deficiency 1 | |
+| MONDO:0958183 | Leber-like hereditary optic neuropathy, autosomal recessive 1 | |
+| MONDO:0958184 | epidermolytic hyperkeratosis 2 | |
+| MONDO:0958185 | mitochondrial trifunctional protein deficiency 2 | |
+| MONDO:0958186 | hematuria, benign familial, 2 | |
+| MONDO:0958187 | C1Q deficiency 2 | |
+| MONDO:0958188 | C1Q deficiency 3 | |
+| MONDO:0958189 | basal cell nevus syndrome 2 | |
+| MONDO:0958190 | prolonged electroretinal response suppression 2 | |
+| MONDO:0958191 | nephrolithiasis, calcium oxalate, 2, with or without nephrocalcinosis | |
+| MONDO:0958192 | glycine encephalopathy 2 | |
+| MONDO:0958193 | cataracts, hearing impairment, nephrotic syndrome, and enterocolitis 2 | |
+| MONDO:0958194 | craniofacial microsomia 2 | |
+| MONDO:0958195 | oculopharyngeal muscular dystrophy 2 | |
+| MONDO:0958196 | epilepsy, early-onset, 3, with or without developmental delay | |
+| MONDO:0958197 | Leber-like hereditary optic neuropathy, autosomal recessive 2 | |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0015397 | craniofacial microsomia | craniofacial microsomia 1 | craniofacial microsomia |
+| MONDO:0007709 | hematuria, benign familial, 1 | hematuria, benign familial | hematuria, benign familial, 1 |
+| MONDO:0024462 | susceptibility to familial cutaneous melanoma | familial cutaneous melanoma | susceptibility to familial cutaneous melanoma |
+| MONDO:0800461 | COL4A1-related disorder | COL4A1-related disorders | COL4A1-related disorder |
+| MONDO:0010714 | Pelizeaus-Merzbacher spectrum disorder | Pelizaeus-Merzbacher disease | Pelizeaus-Merzbacher spectrum disorder |
+| MONDO:0014368 | tumor predisposition syndrome 3 | melanoma, cutaneous malignant, susceptibility to, 10 | tumor predisposition syndrome 3 |
+| MONDO:0100213 | IFAP syndrome 1, with or without BRESHECK syndrome | IFAP syndrome with or without BRESHECK syndrome | IFAP syndrome 1, with or without BRESHECK syndrome |
+| MONDO:0033556 | muscular dystrophy-dystroglycanopathy (congenital with impaired intellectual development), type B, 15 | muscular dystrophy-dystroglycanopathy (congenital with impaired intellectual development), type b, 15 | muscular dystrophy-dystroglycanopathy (congenital with impaired intellectual development), type B, 15 |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0021747 | Acanthamoeba infectious disease | A infectious disease involving the Acanthamoeba. | An infectious disease involving the Acanthamoeba. |
+| MONDO:0007129 | tooth agenesis, selective, 1 | Any tooth agenesis in which the cause of the disease is a mutation in the MSX1 gene. | Any tooth agenesis in which the cause of the disease is a mutation in the MSX1 gene characterized by varying severity of tooth agenesis that may be seen in combination with orofacial clefting in some individuals. |
+| MONDO:0016761 | spondyloepiphyseal dysplasia | An osteochondrodysplasia that results in abnormalities of bone growth located in vertebral column, located in epiphysis, located in metaphysis. | An osteochondrodysplasia that results in abnormalities of bone growth in the vertebral column and the epiphysis. |
+| MONDO:0024462 | susceptibility to familial cutaneous melanoma | An instance of cutaneous melanoma (disease) that is caused by an inherited modification of the individual's genome. | A susceptibility or predisposition to cutaneous melanoma (disease) that is caused by an inherited modification of the individual's genome. |
+| MONDO:0018130 | brain dopamine-serotonin vesicular transport disease | Brain dopamine-serotonin vesicular transport disease is a newly discovered infantile-onset neurometabolic disease characterized by dystonia, parkinsonism, nonambulation, autonomic dysfunction, developmental delay and mood disturbances. | An infantile-onset neurometabolic disease characterized by dystonia, parkinsonism, nonambulation, autonomic dysfunction, developmental delay and mood disturbances. |
+| MONDO:0031213 | restrictive dermopathy | | A congenital genodermatosis with skin/mucosae involvement, characterized by very tight and thin skin with erosions and scaling, associated to a typical facial dysmorphism, arthrogryposis multiplex, fetal akinesia or hypokinesia deformation sequence (FADS) and pulmonary hypoplasia without neurological abnormalities. |
+| MONDO:0044300 | familial adenomatous polyposis 4 | Familial adenomatous polyposis-4 is an autosomal recessive tumor predisposition syndrome characterized by the development of multiple colonic adenomas in adulthood, often with progression to colorectal cancer. Proliferative lesions in other tissues may also occur (summary by {1:Adam et al., 2016}).nnFor a discussion of genetic heterogeneity of familial adenomatous polyposis, see FAP1 (OMIM:175100). | An autosomal recessive tumor predisposition syndrome characterized by the development of multiple colonic adenomas in adulthood, often with progression to colorectal cancer. Proliferative lesions in other tissues may also occur. |
+| MONDO:0800042 | restrictive dermopathy 1 | A a neonatal lethal genetic disease characterized by very tight and thin skin with erosions and scaling, associated to a typical facial dysmorphism, arthrogryposis multiplex, fetal akinesia or hypokinesia deformation sequence (FADS) and pulmonary hypoplasia without neurological abnormalities. | A restrictive dermopathy that has material basis in homozygous or compound heterozygous mutation in the ZMPSTE24 gene on chromosome 1p34. |
+| MONDO:0957397 | intellectual developmental disorder, autosomal dominant 72 | | An autosomal dominant intellectual disability disorder characterized by developmental delay, predominant speech delay, autistic or attention-deficit/hyperactivity disorder features, overfriendliness, generalized hypotonia, overweight/obesity, and dysmorphic features. |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0000075 | obsolete neuronopathy, distal hereditary motor |
+| MONDO:0002063 | obsolete breast papillomatosis |
+| MONDO:0010123 | obsolete absent thumb-short stature-immunodeficiency syndrome |
+| MONDO:0011469 | obsolete congenital amegakaryocytic thrombocytopenia |
+| MONDO:0014695 | obsolete glioma susceptibility 9 |
+| MONDO:0015255 | obsolete blepharophimosis-radioulnar synostosis syndrome |
+| MONDO:0015343 | obsolete secondary acute transverse myelitis |
+| MONDO:0015593 | obsolete limbic encephalitis with nCMAgs antibodies |
+| MONDO:0016287 | obsolete adenoid basal carcinoma of the cervix uteri |
+| MONDO:0018107 | obsolete idiopathic recurrent and disabling cutaneous herpes |
+| MONDO:0018110 | obsolete lethal idiopathic viral infection |
+| MONDO:0018706 | obsolete syndromic sensorineural deafness due to combined oxidative phosphorylation defect |
+| MONDO:0018812 | obsolete MSH3-related attenuated familial adenomatous polyposis |
+| MONDO:0020075 | obsolete hereditary non-syndromic obesity |
+| MONDO:0020489 | obsolete familial hyperreninemic hypoaldosteronism type 1 |
+| MONDO:0054836 | obsolete parkinsonism-dystonia, infantile, 2 |
+| MONDO:0700042 | obsolete X-linked mendelian susceptibility to mycobacterial diseases due to IKBKG deficiency |
+| MONDO:0800297 | obsolete neuronal ceroid lipofuscinosis, late infantile |
+| MONDO:0957404 | obsolete pyogenic autoinflammatory syndrome of childhood |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0000535 | tonsil squamous cell carcinoma |
+| MONDO:0000642 | brain meningioma |
+| MONDO:0002016 | benign familial neonatal epilepsy |
+| MONDO:0003954 | angiokeratoma of Fordyce |
+| MONDO:0002335 | chronic inflammatory demyelinating polyneuritis |
+| MONDO:0002799 | nodular medulloblastoma |
+| MONDO:0024886 | serous adenofibroma |
+| MONDO:0003530 | aggressive digital papillary adenocarcinoma |
+| MONDO:0003540 | acute T cell leukemia |
+| MONDO:0004964 | peripheral T-cell lymphoma, not otherwise specified |
+| MONDO:0005603 | pancreatic tubular adenocarcinoma |
+| MONDO:0006361 | penile fibromatosis |
+| MONDO:0008431 | slipped femoral capital epiphyses |
+| MONDO:0009941 | Pygmy |
+| MONDO:0020702 | autosomal dominant epidermolytic ichthyosis |
+| MONDO:0024361 | circadian rhythm sleep disorder |
+| MONDO:0015872 | giant adenofibroma of the breast |
+| MONDO:0019206 | sparse hair-short stature-skin anomalies syndrome |
+| MONDO:0019482 | dendritic cell sarcoma not otherwise specified |
+| MONDO:0020548 | ocular pemphigoid |
+| MONDO:0021969 | Banti syndrome |
+| MONDO:0022414 | allain-babin-demarquez syndrome |
+| MONDO:0022425 | alpha-thalassemia-abnormal morphogenesis |
+| MONDO:0022819 | congenital arteriovenous shunt |
+| MONDO:0022913 | cutler bass Romshe syndrome |
+| MONDO:0022953 | delta-1-pyrroline-5-carboxylate dehydrogenase deficiency |
+| MONDO:0023038 | eccentrochondrodysplasia |
+| MONDO:0023129 | Fara Chlupackova syndrome |
+| MONDO:0023140 | fenton Wilkinson Toselano syndrome |
+| MONDO:0023193 | Friedman Goodman syndrome |
+| MONDO:0023194 | frints de Smet Fabry Fryns syndrome |
+| MONDO:0023232 | giant cell myocarditis |
+| MONDO:0023820 | Moebius axonal neuropathy hypogonadism |
+| MONDO:0042902 | Say-Carpenter syndrome |
+| MONDO:0042924 | Vagneur-Triolle-Ripert syndrome |
+| MONDO:0043079 | acute articular rheumatism |
+| MONDO:0043187 | pulmonary artery agenesis |
+| MONDO:0044876 | drug hypersensitivity syndrome |
+| MONDO:0800199 | Angelman syndrome chromosome region |
+| MONDO:0800294 | progressive encephalomyelitis with rigidity |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+No changes.
+
+
 # 2024-01-03
 ## Overview:
 
