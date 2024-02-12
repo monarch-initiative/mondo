@@ -6,7 +6,7 @@ PREFIX definition: <http://purl.obolibrary.org/obo/IAO_0000115>
 PREFIX obsoletion_candidate: <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate>
 PREFIX in_subset: <http://www.geneontology.org/formats/oboInOwl#inSubset>
 
-SELECT ?mondo_term ?label ?definition ?obsoletion_candidate ?obsolete WHERE {
+SELECT ?mondo_term ?label ?definition ?obsoletion_candidate ?obsolete ?xref WHERE {
   ?mondo_term a owl:Class .
   OPTIONAL {
     ?mondo_term rdfs:label ?label .
@@ -16,6 +16,16 @@ SELECT ?mondo_term ?label ?definition ?obsoletion_candidate ?obsolete WHERE {
   }
   OPTIONAL {
     ?mondo_term owl:deprecated ?obsolete_value .
+  }
+  OPTIONAL {
+    ?mondo_term oboInOwl:hasDbXref ?xref .
+  }
+  OPTIONAL {
+    ?mondo_term oboInOwl:hasDbXref ?xref .
+    ?xref_anno owl:annotatedSource ?mondo_term ;
+             owl:annotatedProperty oboInOwl:hasDbXref ;
+             owl:annotatedTarget ?xref ;
+             oboInOwl:source ?source .
   }
   OPTIONAL {
     VALUES ?subset {obsoletion_candidate:} .
