@@ -1,0 +1,50 @@
+pattern_name: nonhuman_disease_by_gene
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_by_gene.yaml
+
+description: '
+  This pattern is meant to be used for OMIA Mendelian diseases (https://omia.org/) which are defined by a variation in a gene. Note that this pattern does not include an "in taxon" annotation as the species can be inferred by the gene record. This pattern is analogous to the human disease "OMIM_disease_series_by_gene" pattern. '
+
+contributors:
+- https://orcid.org/0000-0002-4142-7153
+- 
+
+classes:
+  disease: MONDO:0005583
+  gene: SO:0000704
+
+relations:
+  has material basis in germline mutation in: RO:0004003
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  disease: '''disease'''
+  gene: '''gene'''
+
+name:
+  text: '%s caused by variation in %s'
+  vars:
+  - disease
+  - gene
+
+annotations:
+- annotationProperty: exact_synonym
+  text: '%s %s'
+  vars:
+  - gene
+  - disease
+
+def:
+  text: Any %s in which the cause of the disease is a variation in the %s gene.
+  vars:
+  - disease
+  - gene
+
+equivalentTo:
+  text: '%s and ''has material basis in germline mutation in'' some %s'
+  vars:
+  - disease
+  - gene
