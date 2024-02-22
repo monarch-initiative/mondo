@@ -886,7 +886,7 @@ Examples: [infant botulism](http://purl.obolibrary.org/obo/MONDO_0015804), [infa
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infantile.tsv)
 ### Infectious disease by agent
-*Infectious diseases can be classified by the infectioos agent, such as bacteria, coronavirus, etc, that causes the disease.
+*Infectious diseases can be classified by the infectious agent, such as bacteria, coronavirus, etc, that causes the disease.
 Examples: [COVID-19](http://purl.obolibrary.org/obo/MONDO_0100096), [cholera](http://purl.obolibrary.org/obo/MONDO_0015766)*
 
 | Attribute | Info |
@@ -895,7 +895,7 @@ Examples: [COVID-19](http://purl.obolibrary.org/obo/MONDO_0100096), [cholera](ht
 | Name | infectious_disease_by_agent |
 | Classes | MONDO:0000001, NCBITaxon:1, MONDO:0005550,  |
 | Variables | agent (NCBITaxon:1),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432), [0000-0002-1780-9872](https://orcid.org/0000-0002-1780-9872),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/infectious_disease_by_agent.tsv) |
 
 #### Data preview: 
