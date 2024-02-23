@@ -278,16 +278,24 @@ update-gard:
 ##### NORD #########################
 ####################################
 
-subsets/nord-xrefs.template.tsv:
-	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vQuj-0iOk3JkfNGA0AAXHLiFH6XZZWnuFz-UhyqJwC7OcCdC5kXL2CoWPt4c7yDOG3DoKeFi4nDabdU/pub?gid=0&single=true&output=tsv" -O $@
+tmp/nord.template.owl:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/c9207b0bd0282e1b9905f4b591e4d71a19479484/src/ontology/external/nord.robot.owl" -O $@
 
 .PHONY: update-nord
 update-nord:
-	$(MAKE) tmp/nord-subset.template.owl tmp/nord-xrefs.template.owl
+	make tmp/nord.template.owl -B
 	grep -vE '^(xref: NORD:|subset: nord_rare)' $(SRC) > tmp/mondo-edit.tmp || true
 	mv tmp/mondo-edit.tmp mondo-edit.obo
-	$(ROBOT) merge -i $(SRC) -i tmp/nord-subset.template.owl -i tmp/nord-xrefs.template.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	$(ROBOT) merge -i $(SRC) -i tmp/nord.template.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+
+subsets/mondo-rare.kgx.tsv:
+	kgx transform --input-format obojson \
+                  --output subsets/mondo-rare.kgx \
+                  --output-format tsv \
+                  --knowledge-sources aggregator_knowledge_source "mondo,mondo disease ontology" \
+                  subsets/mondo-rare.json
 
 ####################################
 ##### CLINGEN ######################
@@ -931,6 +939,11 @@ mondo-harrisons-view.owl: mondo.owl tmp/harrisons_seed.txt
 	$(ROBOT) remove -i $< -T tmp/harrisons_seed.txt --select complement --select classes --select "MONDO:*" \
 	annotate -V $(ONTBASE)/releases/`date +%Y-%m-%d`/$@ annotate --ontology-iri $(ONTBASE)/$@ -o $@
 
+qdiff:
+	wget "http://purl.obolibrary.org/obo/mondo.obo" -O tmp/m.obo
+	wget "http://purl.obolibrary.org/obo/mondo/mondo-base.obo" -O tmp/mb.obo
+	robot diff --left tmp/m.obo --right tmp/mb.obo -o tmp/qdiff.txt
+	robot diff --left tmp/m.obo --right tmp/mb.obo -f markdown -o tmp/qdiff.md
 
 ######################################
 ### Mondo managing major use ids #####
