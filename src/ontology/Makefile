@@ -244,10 +244,12 @@ $(ONT).owl: reasoned.owl
 	$(ROBOT) merge -i $< annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 
 # obo is self-contained
-$(ONT).obo: reasoned.owl
-	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@.tmp.owl
-	owltools --use-catalog $@.tmp.owl --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
-	rm -f $@.tmp.owl
+$(ONT).obo: $(ONT)-base.owl
+	$(ROBOT) annotate -i $< \
+			-V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl \
+			--ontology-iri $(ONTBASE)/$(ONT).owl \
+		convert --check false -f obo -o $@.tmp.obo &&\
+		grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 
 $(ONT).json: $(ONT).owl
 	$(ROBOT) convert --input $< --check false -f json -o $@.tmp.json &&\
@@ -270,9 +272,13 @@ $(ONT)-with-equivalents.json: $(ONT)-with-equivalents.owl
 
 OTHER_SRC=imports/axioms.owl components/mondo-subsets.owl #components/mondo-tags.owl
 
+# The --select "<http://purl.obolibrary.org/obo/BFO_*>" is due to a bug with the reason -x option
+# Which is supposed to exclude external namespaces from reason, but does not. My guess:
+# BFO namespace was needed for Object Properties.
 $(ONT)-base.owl: reasoned.owl $(OTHER_SRC)
 	$(ROBOT) remove --input $< --select imports --trim false \
 		merge $(patsubst %, -i %, $(OTHER_SRC)) \
+		remove --select "<http://purl.obolibrary.org/obo/BFO_*>" --select classes \
 		annotate --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
 		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		--output $@.tmp.owl && mv $@.tmp.owl $@
