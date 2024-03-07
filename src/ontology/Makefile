@@ -82,7 +82,7 @@ IMPORT_FILES = $(IMPORT_OWL_FILES)
 all_imports: $(IMPORT_FILES)
 
 
-COMPONENTS = mondo-tags mondo-subsets
+COMPONENTS = mondo-tags
 COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
 
 SUBSETS = mondo-minimal mondo-rare
@@ -247,7 +247,7 @@ $(ONT).owl: reasoned.owl
 $(ONT).obo: $(ONT)-base.owl
 	$(ROBOT) annotate -i $< \
 			-V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl \
-			--ontology-iri $(ONTBASE)/$(ONT).owl \
+			--ontology-iri $(OBO)/$(ONT).owl \
 		convert --check false -f obo -o $@.tmp.obo &&\
 		grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 
@@ -270,7 +270,7 @@ $(ONT)-with-equivalents.json: $(ONT)-with-equivalents.owl
 # we remove imports and merge in additional assertions
 # note: typically component is not pre-reasoned, but this is compex for mondo.
 
-OTHER_SRC=imports/axioms.owl components/mondo-subsets.owl #components/mondo-tags.owl
+OTHER_SRC=imports/axioms.owl #components/mondo-tags.owl
 
 # The --select "<http://purl.obolibrary.org/obo/BFO_*>" is due to a bug with the reason -x option
 # Which is supposed to exclude external namespaces from reason, but does not. My guess:
@@ -379,7 +379,6 @@ subsets/%.obo: subsets/%.owl
 	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms: $@.tmp.obo > $@ && rm $@.tmp.obo
 
 rare_subset:
-	$(MAKE) IMP=false MIR=false COMP=false components/mondo-subsets.owl
 	$(MAKE) IMP=false MIR=false COMP=false subsets/mondo-rare.owl subsets/mondo-rare.json subsets/mondo-rare.obo
 
 # ----------------------------------------
