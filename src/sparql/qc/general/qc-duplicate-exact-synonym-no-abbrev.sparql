@@ -31,7 +31,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
          oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#ABBREVIATION> .
   }
   
-  FILTER NOT EXISTS { ?entity owl:deprecated true }
+  FILTER NOT EXISTS { ?entity1 owl:deprecated true }
   FILTER NOT EXISTS { ?entity2 owl:deprecated true }
   FILTER (?entity1 != ?entity2)
   FILTER (!isBlank(?entity1))
