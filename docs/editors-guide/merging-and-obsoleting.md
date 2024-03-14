@@ -124,6 +124,7 @@ There are 2 ways to merge classes:
     1. Remove the annotations:
         1. "in subset obsoletion candidate"
         1. "scheduled for obsoletion on or after"  
+    1. If there is a rare disease subset annotation from the obsolete term,  it is ok to keep the rare subset annotation to the term kept (we will let the rare disease authorities know so that they can update the source of truth. 
     1. When reviewing the diff, make sure there is not an Alt ID. The diff should only show additions to the merged term and the obsoleted class.
 
     ---
@@ -151,6 +152,7 @@ There are 2 ways to merge classes:
 1. Move all the synonyms to the new term. 
 1. Retain all of the **database_cross_references** on the obsoleted term. Any annotations to MONDO:equivalentTo should be changed to MONDO:obsoleteEquivalent.
 1. If applicable, to mark the synonym as deprecated, add an annotation to the synonym: has_synonym_type ‘A synonym that is historic and discouraged’. See granulomatosis with polyangiitis for examples of deprecated syn axiom annotations.
+1. remove all rare disease subset annotations
 
 Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:equivalentTo". Instead use "MONDO:obsoleteEquivalent" to map between an obsolete MONDO class and a live entry in another resource (these serve as a kind of flag of a state of inconsistency).
 
@@ -164,6 +166,7 @@ Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:e
 1. Add annotation 'term tracker item' (type xsd:anyURI)with a link to the GitHub issue that requested the obsoletion.
 1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
 1. Add annotation consider, add the CURIE for the term that should be considered as a replacement.
+1. Remove all rare disease subset annotations
 1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the term was obsoleted.
 
 ### Obsolete a class (manually)
@@ -176,6 +179,7 @@ Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:e
 1. Remove superclass axioms.
 1. If the class has children, remove the superclass assertions for the children.
 1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
+1. Remove all rare disease subset annotations
 1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the term was obsoleted.
 
 ## Simple mass obsoletion pipeline
@@ -215,4 +219,4 @@ There may be rare cases when we chose to reinstate or restore an obsolete class.
 1. If edits were made in the text file, be sure to open the file in Protege and Save As -> mondo-edit.obo and replace existing failure
 1. Commit to your branch and create a pull request
 
-_Updated 2023-01-17_
+_Updated 2024-03-14_
