@@ -1004,6 +1004,16 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 		make NORM
 		mv NORM $(SRC)
 
+
+$(TMPDIR)/mondo-hpo-merged.owl: $(TMPDIR)/mirror-hp.owl mondo.owl
+	$(ROBOT) merge $(foreach V,$^,-i $V) -o $@
+
+$(TMPDIR)/mondo-hpo-merged.db: $(TMPDIR)/mondo-hpo-merged.owl
+	semsql make $@
+
+$(TMPDIR)/%-lexmatch.sssom.tsv: $(TMPDIR)/%.db
+	runoak -i $< lexmatch -o $@
+
 .PHONY: help
 help:
 	@echo "$$data"
