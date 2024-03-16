@@ -212,50 +212,149 @@ clean:
 		reasoned-plus-equivalents.owl reasoned.owl tmp/*
 
 #############################################
-##### Mondo subset auto-tagger ##############
+##### Mondo Subsets Pipeline ################
 #############################################
 
-RARE_SUBSETS=nord orphanet inferred gard
+tmp/%.template.owl: subsets/%.template.tsv $(SRC)
+	$(ROBOT) template --template $< convert -f ttl -o $@
 
-tmp/orphanet-rare-subset.ttl: $(SRC)
+####################################
+##### Inferred #####################
+####################################
+
+# The inferred subset depends on the other ones, so we need to first remove the old subsets
+# Then add the gard, nord and orphanet subsets back in
+tmp/inferred-rare-subset.owl: $(SRC)
+	$(ROBOT) merge -i $(SRC) \
+		reason \
+		query --format ttl --query ../sparql/construct/construct-inferred-rare-subset.sparql $@
+
+update-inferred-subset:
+	$(MAKE) tmp/inferred-rare-subset.owl
+	grep -vE '^(subset: inferred_rare)' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/inferred-rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+####################################
+##### Orphanet #####################
+####################################
+
+tmp/orphanet-rare-subset.owl: $(SRC)
 	$(ROBOT) merge -i $(SRC) reason \
 		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
 
+.PHONY: update-orphanet-subset
+update-orphanet-subset:
+	$(MAKE) tmp/orphanet-rare-subset.owl
+	grep -vE '^(subset: orphanet_rare)' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/orphanet-rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+####################################
+##### GARD #########################
+####################################
 
 subsets/gard-subset.template.tsv:
 	wget "https://github.com/monarch-initiative/gard/releases/latest/download/mondo-gard-exact.robot.template.tsv" -O $@
 
 # The complex part here is that we need to dynamically update the MONDO source code, i.e. 
 # MONDO:equivalentTo and MONDO:obsoleteEquivalentTo.
-tmp/gard-rare-subset.ttl: $(SRC) subsets/gard-subset.template.tsv
-	$(ROBOT) template --template subsets/gard-subset.template.tsv convert -f ttl -o $@
+tmp/gard-rare-subset.owl: $(SRC) subsets/gard-subset.template.tsv
+	$(ROBOT) template --template subsets/gard-subset.template.tsv convert -f ttl -o $@.subset
 	$(ROBOT) remove -i $< --select imports merge -i $@ query -f ttl --query ../sparql/construct/construct-equivalent-obsolete-gard.sparql $@.source
-	$(ROBOT) merge -i $@ -i $@.source -o $@
+	$(ROBOT) merge -i $@.subset -i $@.source convert -f ofn -o $@
 
-tmp/nord-rare-subset.ttl: $(SRC)
-	$(ROBOT) template --template subsets/nord-subset.template.tsv convert -f ttl -o $@
+.PHONY: update-gard
+update-gard:
+	$(MAKE) tmp/gard-rare-subset.owl
+	grep -vE '^(xref: GARD:|subset: gard_rare)' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/gard-rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
-# The inferred subset depends on the other ones, so we need to first remove the old subsets
-# Then add the gard, nord and orphanet subsets back in
-tmp/inferred-rare-subset.ttl: $(SRC) tmp/nord-rare-subset.ttl tmp/gard-rare-subset.ttl tmp/orphanet-rare-subset.ttl
+####################################
+##### NORD #########################
+####################################
+
+tmp/nord.template.owl:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/c9207b0bd0282e1b9905f4b591e4d71a19479484/src/ontology/external/nord.robot.owl" -O $@
+
+.PHONY: update-nord
+update-nord:
+	make tmp/nord.template.owl -B
+	grep -vE '^(xref: NORD:|subset: nord_rare)' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/nord.template.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+
+subsets/mondo-rare.kgx.tsv:
+	kgx transform --input-format obojson \
+                  --output subsets/mondo-rare.kgx \
+                  --output-format tsv \
+                  --knowledge-sources aggregator_knowledge_source "mondo,mondo disease ontology" \
+                  subsets/mondo-rare.json
+
+####################################
+##### CLINGEN ######################
+####################################
+
+subsets/clingen.template.tsv:
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vRiYDV1n1nDuJOgnlFx6DsYGyIGlbgI1HeDzI740OgmOKYy2RCCyBqLHiBh-IMadYXjVglsxDPypArh/pub?gid=637121472&single=true&output=tsv" -O $@
+
+.PHONY: update-clingen
+update-clingen:
+	$(MAKE) tmp/clingen.template.owl
+	git checkout master -- mondo-edit.obo
+	grep -vE '^(xref: CGGV:|xref: CGGCIEX:|subset: clingen)' mondo-edit.obo > tmp/mondo-edit.tmp
+	#sed -i 's/EXACT CLINGEN_LABEL/EXACT/g' tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/clingen.template.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+####################################
+##### RARE #########################
+####################################
+
+tmp/rare-subset.owl: $(SRC)
 	$(ROBOT) merge -i $(SRC) \
-		unmerge -i components/mondo-subsets.owl \
-		merge $(patsubst %, -i %, $^) \
-		reason \
-		query --format ttl --query ../sparql/construct/construct-inferred-rare-subset.sparql $@
+		query --format ttl --query ../sparql/construct/construct-rare-subset.sparql $@
 
-components/mondo-subsets.owl: tmp/inferred-rare-subset.ttl tmp/orphanet-rare-subset.ttl tmp/nord-rare-subset.ttl tmp/gard-rare-subset.ttl
-	$(ROBOT) merge $(patsubst %, -i %, $^) \
-		query --update ../sparql/construct/construct-rare-subset.sparql \
-		annotate --ontology-iri $(ONTBASE)/$@ -o $@
+.PHONY: update-rare-subset
+update-rare-subset:
+	$(MAKE) tmp/rare-subset.owl
+	grep -vE '^(subset: rare)$$' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
-# As of 3 August, does not do anything.
-components/mondo-characteristic-rare.owl: components/mondo-subsets.owl
-	$(ROBOT) merge -i $(SRC) reason \
-		query --format ttl --query ../sparql/construct/construct-rare-subset.sparql \
-		annotate --ontology-iri $(ONTBASE)/$@ -o $@
+####################################
+##### EFO ##########################
+####################################
 
-reports/new-rare-diseases.txt: #$(ONT)-base.owl
+
+subsets/mondo-efo.template.tsv:
+	wget "https://raw.githubusercontent.com/EBISPOT/efo/master/src/ontology/reports/mondo-efo.robot.tsv" -O $@
+
+subsets/mondo-otar-subset.template.tsv:
+	wget "https://raw.githubusercontent.com/EBISPOT/efo/master/src/ontology/reports/mondo-otar-subset.robot.tsv" -O $@
+
+.PHONY: update-efo-subset
+update-efo-subset:
+	$(MAKE) tmp/mondo-otar-subset.template.owl tmp/mondo-efo.template.owl
+	grep -vE '^(xref: EFO:|subset: otar)$$' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/mondo-otar-subset.template.owl -i tmp/mondo-efo.template.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+
+##########################################
+##### RARE REPORT ########################
+##########################################
+
+reports/new-rare-diseases.txt: $(ONT)-base.owl
 	$(ROBOT) query -i $(ONT)-base.owl --query ../sparql/signature/rare-subset.sparql $@
 
 reports/old-rare-diseases.txt: tmp/mondo-lastbase.owl
@@ -840,6 +939,11 @@ mondo-harrisons-view.owl: mondo.owl tmp/harrisons_seed.txt
 	$(ROBOT) remove -i $< -T tmp/harrisons_seed.txt --select complement --select classes --select "MONDO:*" \
 	annotate -V $(ONTBASE)/releases/`date +%Y-%m-%d`/$@ annotate --ontology-iri $(ONTBASE)/$@ -o $@
 
+qdiff:
+	wget "http://purl.obolibrary.org/obo/mondo.obo" -O tmp/m.obo
+	wget "http://purl.obolibrary.org/obo/mondo/mondo-base.obo" -O tmp/mb.obo
+	robot diff --left tmp/m.obo --right tmp/mb.obo -o tmp/qdiff.txt
+	robot diff --left tmp/m.obo --right tmp/mb.obo -f markdown -o tmp/qdiff.md
 
 ######################################
 ### Mondo managing major use ids #####
@@ -932,13 +1036,6 @@ add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 americanize: $(SRC) tmp/british_english_dictionary.csv
 	python ../scripts/clean-british-english.py $^
 
-
-.PHONY: update-gard-mappings
-update-gard-mappings:
-	grep -v '^xref: GARD:' mondo-edit.obo > TT || true
-	mv TT mondo-edit.obo
-	# make NORM
-	# mv NORM $(SRC)
 
 
 #######################################
