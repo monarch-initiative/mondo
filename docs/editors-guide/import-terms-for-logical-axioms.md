@@ -2,6 +2,61 @@
 
 These workflows for adding classes from external ontologies (i.e., GO or CHEBI), which is much more streamlined compared to [MIREOTing](https://github.com/obophenotype/human-phenotype-ontology/wiki/Editor-Guide#mireoting).
 
+_Last updated 27-Mar-2024_
+### Preferred Instructions
+
+1. Open the `src/ontology/imports/manual_seed.txt`
+2. Add the IRI of the term(s) you want to add to this document, and save
+    - you can add any IRI, e.g. gene, NCBITaxon,...
+3. In the Terminal, run: `export "MEMORY_GB=15"`
+4. Then run import: `sh run.sh make refresh-merged` 
+    - All the imports will be updated, which means that you might see changes in your GitHub diff in the following files
+        - `src/ontology/imports/*_terms.txt`
+        - `src/ontology/imports/merged_import.owl`
+    - The terms added in the "manual_seed.txt" will be added to the appropriate import (e.g human genes will be added to hgnc_terms.txt; NCBITaxon will be added to ncbitaxom_terms.txt), and removed from the "manual_seed.txt" after the import refresh has run. 
+5. Edit in Protege, the new terms should be available for logical definitions.
+
+**Note when adding a new NCBITaxon**
+Check if the new NCBI Taxon identifier(s) exist in [https://github.com/obophenotype/ncbitaxon/blob/master/subsets/taxon-subset-ids.txt](https://github.com/obophenotype/ncbitaxon/blob/master/subsets/taxon-subset-ids.txt). 
+    - if the identifiers are not in the file, create a PR in this repo to include the new identifiers
+    Note: this file contains CURIEs (not IRIs) so the identifier should be added in this format `NCBITaxon:1`
+
+This additional step is needed since we are not using NCBI Taxon directly, but the OBO slim, and this file is the seed of the NCBITaxon slim.
+ 
+
+
+### Alternate instructions
+
+#### Add classes from external ontologies using a Text Editor
+
+1. Close Protege
+1. Checkout master
+1. Create a new branch
+1. Open mondo-edit.obo with a text editor like Sublime or TextEdit
+1. Add axiom in mondo-edit.obo *text file*
+1. **For example:**  relationship: disease_has_basis_in_dysfunction_of http://identifiers.org/hgnc/129
+1. Save text file
+1. open mondo-edit.obo in Protege
+1. File -> save as (obo format, save as mondo-edit.obo)
+1. Replace existing file  
+1. Check diff
+1. Commit/Push
+
+#### Add classes from external ontologies using Protege
+
+1. Select 'owl:Thing'
+1. Add a new class
+paste the full iri in the 'Name:' field, for example, http://purl.obolibrary.org/obo/CHEBI_50906.
+1. hit 'OK'
+1. Now you can use this term, for example to construct logical axioms. The next time the imports are refreshed, the metadata (labels, definitions, etc) for this term is imported from the respective external source ontology and becomes visible in mondo-edit.obo.
+1. See instructions on how to remake the imports file [here](../developer-guide/imports.md).
+
+
+
+
+---
+**_update from March 27, 2024: the following is not correct anymore, and will be removed from the documentation soon_**
+
 ### Preferred Instructions
 
 _Added 2020-05-06_
@@ -52,29 +107,4 @@ https://www.genenames.org/. Copy the ID (for example, 8965)
 
 Note: if an import does not have a `src/ontology/imports/*_terms.txt` file (e.g. for adding NCIT terms). The term(s) to import should be added to src/ontology/imports/manual_seed.txt.  When updating the import, the term(s) will seed the import files, which are pulled in when refreshing modules.
 
-### Alternate instructions
-
-#### Add classes from external ontologies using a Text Editor
-
-1. Close Protege
-1. Checkout master
-1. Create a new branch
-1. Open mondo-edit.obo with a text editor like Sublime or TextEdit
-1. Add axiom in mondo-edit.obo *text file*
-1. **For example:**  relationship: disease_has_basis_in_dysfunction_of http://identifiers.org/hgnc/129
-1. Save text file
-1. open mondo-edit.obo in Protege
-1. File -> save as (obo format, save as mondo-edit.obo)
-1. Replace existing file  
-1. Check diff
-1. Commit/Push
-
-#### Add classes from external ontologies using Protege
-
-1. Select 'owl:Thing'
-1. Add a new class
-paste the full iri in the 'Name:' field, for example, http://purl.obolibrary.org/obo/CHEBI_50906.
-1. hit 'OK'
-1. Now you can use this term, for example to construct logical axioms. The next time the imports are refreshed, the metadata (labels, definitions, etc) for this term is imported from the respective external source ontology and becomes visible in mondo-edit.obo.
-1. See instructions on how to remake the imports file [here](../developer-guide/imports.md).
-
+~~
