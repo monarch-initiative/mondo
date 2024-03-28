@@ -13,7 +13,7 @@ _Last updated 27-Mar-2024_
     - All the imports will be updated, which means that you might see changes in your GitHub diff in the following files
         - `src/ontology/imports/*_terms.txt`
         - `src/ontology/imports/merged_import.owl`
-    - The terms added in the "manual_seed.txt" will be added to the appropriate import (e.g human genes will be added to hgnc_terms.txt; NCBITaxon will be added to ncbitaxom_terms.txt), and removed from the "manual_seed.txt" after the import refresh has run. 
+    - The terms added in the "manual_seed.txt" will be added to the appropriate import (e.g human genes will be added to hgnc_terms.txt; NCBITaxon will be added to ncbitaxon_terms.txt), and removed from the "manual_seed.txt" after the import refresh has run. 
 5. Edit in Protege, the new terms should be available for logical definitions.
 
 **Note when adding a new NCBITaxon**
