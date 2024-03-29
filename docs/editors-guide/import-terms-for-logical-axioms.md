@@ -6,27 +6,51 @@ These workflows for adding classes from external ontologies (i.e., GO or CHEBI),
 
 _Added 2020-05-06_
 
-1. Open the src/ontology/imports/*_terms.txt
+1. Open the `src/ontology/imports/*_terms.txt`
 2. Add term to this file
 3. In the Terminal, run: `export "MEMORY_GB=15"`
 4. Then run import: `sh run.sh make refresh-merged`
 4. Close Protege and open again
 5. Edit in Protege
 
+---
+#### Detailed instructions for adding a new NCBI Taxon identifier 
+
+_Last updated 6-Mar-2024_
+
+1. Fetch the latest changes from `master`
+1. Create a new feature branch for the updated NCBI Taxon additions
+1. Open the `src/ontology/imports/ncbitaxon_terms.txt` file
+1. Add the IRI(s) of interest into the file, e.g. `http://purl.obolibrary.org/obo/NCBITaxon_3052303`
+1. In the Terminal, run: `export "MEMORY_GB=15"`
+1. Run import: `sh run.sh make refresh-merged` (Note: this may take ~2 hours)
+1. Review and commit the updated files, the changed files will be:
+    - `src/ontology/imports/ncbitaxon_terms.txt`
+    - `src/ontology/imports/merged_import.owl`
+1. Publish the branch and create a PR
+1. Once the PR is approved and merged, the new NCBI Taxon can be referenced in logical definitions
+1. Check if the new NCBI Taxon identifier(s) exist in [https://github.com/obophenotype/ncbitaxon/blob/master/subsets/taxon-subset-ids.txt](https://github.com/obophenotype/ncbitaxon/blob/master/subsets/taxon-subset-ids.txt)
+    - if the identifiers are not in the file, create a PR in this repo to include the new identifiers
+
+    Note: this file contains CURIEs (not IRIs) so the identifier should be added in this format `NCBITaxon:1`
+
+    This additional step is needed since we are not using NCBI Taxon directly, but the OBO slim, and this file is the seed of the NCBITaxon slim.
+ 
+---
 #### Detailed instructions for adding a new gene
 
 1. Find the gene in HGNC that you need to add:
 https://www.genenames.org/. Copy the ID (for example, 8965)
-2. Open the src/ontology/imports/hgnc_terms.txt
+2. Open the `src/ontology/imports/hgnc_terms.txt` file
 3. Add a new line to the file: http://identifiers.org/hgnc/[your ID], for example http://identifiers.org/hgnc/8965
-5. run import:
+5. Run import:
 `sh run.sh make refresh-merged`
 4. Close Protege and open again
 5. Edit in Protege
 6. In your diff, you will see changes to src/ontology/imports/hgnc_terms.txt and src/ontology/imports/merged_import.owl
 7. Commmit changes on a branch and create a pull request.
 
-Note: if an import does not have a src/ontology/imports/*_terms.txt file (eg for adding NCIT terms). The term(s) to import should be added to src/ontology/imports/manual_seed.txt.  When updating the import, the term(s) will seed the import files, which are pulled in when refreshing modules.
+Note: if an import does not have a `src/ontology/imports/*_terms.txt` file (e.g. for adding NCIT terms). The term(s) to import should be added to src/ontology/imports/manual_seed.txt.  When updating the import, the term(s) will seed the import files, which are pulled in when refreshing modules.
 
 ### Alternate instructions
 
