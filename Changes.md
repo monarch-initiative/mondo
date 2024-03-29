@@ -1,3 +1,117 @@
+#2024-03-04
+## Overview:
+
+* Number of new terms: 34
+* Number of changed labels: 5
+* Number of changed definitions: 10
+* Number obsoleted terms: 6
+* Number of new obsoletion candidates: 17
+* Number of terms who were previously candidate for obsoletion and are now not anymore: 0
+
+
+## New terms
+| Mondo ID | Label | Definition |
+|:---|:---|:---|
+| MONDO:0100539 | hemiplegic migraine-developmental and epileptic encephalopathy spectrum | A spectrum in which individuals may present with phenotypes ranging from hemiplegic migraines without epilepsy to developmental and epileptic encephalopathy with or without episodic hemiplegia or other forms of paresis. Symptoms and severity may vary within families. |
+| MONDO:0100540 | GATA6-related congenital heart disease with or without pancreatic agenesis or neonatal diabetes | A congenital heart disease that is present at birth. Representative examples include atrial septal defect 9, conotruncal heart malformations, tetralogy of Fallot, ventricular septal defect, atrioventricular septal defect, bicuspid aortic valve, transposition of the great arteries, persistent truncus arteriosus, congenital heart disease with pancreatic agenesis, and congenital heart disease with neonatal diabetes. |
+| MONDO:0100541 | GATA5-related congenital heart defects | A congenital heart disease that is present at birth. Representative examples include tetralogy of fallot, bicuspid aortic valve, atrial septal defect, double outlet right ventricle, ventricular septal defect, and coarctation of the aorta, and atrioventricular canal. |
+| MONDO:0100542 | clonal hematopoiesis | A precancerous condition characterized by cellular proliferation of hematopoietic cells where a substantial proportion of the cells are derived from a single hematopoietic stem cell lineage. |
+| MONDO:0100543 | clonal hematopoiesis of indeterminate potential | A precancerous condition characterized by the presence of somatic mutations in bone marrow or peripheral blood cells in individuals who may be cytopenic but do not have morphologic evidence of hematologic neoplasia. Its prevalence rises with age and is found in approximately 10% of individuals aged 70 to 80. It is associated with an increased risk of hematologic neoplasia. Mutations in the DNMT3A, TET2, or ASXL1 genes are usually identified. Approximately 10%-40% of individuals with age-related clonal hematopoiesis will progress to meet the diagnostic criteria for clonal hematopoiesis of indeterminate potential. |
+| MONDO:0100544 | age-related clonal hematopoiesis | A precancerous condition characterized by the gradual, clonal expansion of hematopoietic stem and progenitor cells carrying specific, disruptive, and recurrent genetic variants, in individuals without clear diagnosis of hematological malignancies. It is associated with an increased risk of developing hematologic cancers. |
+| MONDO:0100545 | hereditary neurological disease | A heterogeneous group of genetic conditions with Mendelian (autosomal dominant, recessive, or X-linked) or chromosomal etiology characterized by abnormalities in the brain, spinal cord, nerves, or muscles. |
+| MONDO:0100546 | hereditary neuromuscular disease | A heterogeneous group of genetic conditions with Mendelian (autosomal dominant, recessive, or X-linked) or chromosomal etiology that is characterized by progressive muscle degeneration and weakness. |
+| MONDO:0100547 | cardiogenetic disease | A heterogeneous group of genetic conditions, with Mendelian (autosomal dominant, recessive, or X-linked) or chromosomal etiology that are characterized by abnormalities in the cardiovascular system. |
+| MONDO:0100548 | SERAC1-related neurological disorder | Any neurological disorder in which the cause of the disease is a mutation in the SERAC1 gene. |
+| MONDO:0100549 | focal nodular hyperplasia | A benign tumor of the liver, characterized by hyperplastic growth of hepatocytes and a central fibrovascular scar. |
+| MONDO:0100550 | orbital myositis | A rare form of myositis that affects only the orbital muscles. |
+| MONDO:0800453 | juvenile absence epilepsy | A genetic epilepsy with onset occurring around puberty. Juvenile absence epilepsy is characterized by sporadic occurrence of absence seizures, frequently associated with a long-life prevalence of generalized tonic-clonic seizures (GTCS) and sporadic myoclonic jerks. |
+| MONDO:0958083 | conjoined twins | |
+| MONDO:0958091 | cleft palate-congenital heart defect-intellectual disability syndrome | |
+| MONDO:0958094 | adult-onset progressive leukoencephalopathy-early-onset deafness | A rare genetic neurological disorder characterized by congenital or early-onset sensorineural deafness and adult-onset progressive leukoencephalopathy. Progressive cognitive impairment and behavioral abnormalities are observed in the second or third decade of life, sometimes preceded by mild developmental delay and learning difficulties. Visual impairment in adult age has been reported. No central nervous system calcification is reported. |
+| MONDO:0958106 | congenital insensitivity to pain syndrome, Marsili type | |
+| MONDO:0958110 | atrophic papulosis | |
+| MONDO:0958115 | autosomal recessive combined immunodeficiency due to complete IL6ST deficiency | |
+| MONDO:0958116 | autosomal recessive combined immunodeficiency due to partial IL6ST deficiency | |
+| MONDO:0958117 | autosomal dominant combined immunodeficiency due to partial IL6ST deficiency | |
+| MONDO:0958118 | autosomal recessive combined immunodeficiency due to IL6R deficiency | |
+| MONDO:0958119 | embryonal tumor with multilayered rosettes | A rare central nervous system embryonal tumor characterized by embryonal cells arranged in multilayered rosettes and displaying one of three morphological patterns: embryonal tumor with abundant neuropil and true rosettes, ependymoblastoma, or medulloepithelioma. The tumors typically have a C19MC alteration or (rarely) a DICER1 mutation and correspond to WHO grade IV. They are mostly localized intracranially, rarely in the spinal cord, and commonly cause signs and symptoms of elevated intracranial pressure, sometimes seizures and focal neurological signs. Most cases occur in children during the first two years of life. |
+| MONDO:0958120 | autosomal dominant combined immunodeficiency due to ERBIN deficiency | |
+| MONDO:0958127 | transplant-related bronchiolitis obliterans | |
+| MONDO:0958199 | myoclonic epilepsy of Lafora 1 | |
+| MONDO:0958200 | intellectual developmental disorder, x-linked 113 | |
+| MONDO:0958201 | myoclonic epilepsy of Lafora 2 | |
+| MONDO:0958202 | moyamoya disease 7 | |
+| MONDO:0958203 | intellectual developmental disorder, autosomal dominant 74 | |
+| MONDO:0958204 | intellectual developmental disorder, autosomal recessive 81 | |
+| MONDO:0958205 | Yuksel-Vogel-Bauer syndrome | |
+| MONDO:0958206 | spermatogenic failure 89 | |
+| MONDO:1030001 | epilepsy, juvenile absence, susceptibility to | |
+
+
+## Changed terms
+
+### Changed labels
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0004769 | orbital pseudotumor | orbital plasma cell granuloma | orbital pseudotumor |
+| MONDO:0009929 | surfactant metabolism dysfunction, pulmonary, 1 | neonatal acute respiratory distress due to SP-B deficiency | surfactant metabolism dysfunction, pulmonary, 1 |
+| MONDO:0012280 | Goldberg-Shprintzen syndrome | Goldberg-Shprintzen megacolon syndrome | Goldberg-Shprintzen syndrome |
+| MONDO:0016499 | autoimmune autonomic ganglionopathy | acute pandysautonomia | autoimmune autonomic ganglionopathy |
+| MONDO:0957820 | congenital disorder of glycosylation, type IIbb | congenital disorder of glycosylation, type IIb | congenital disorder of glycosylation, type IIbb |
+
+### Changed definitions
+
+| Mondo ID | Label | Previous release | New release |
+|:---|:---|:---|:---|
+| MONDO:0005775 | G6PD deficiency | An X-linked genetic condition caused by alterations in the gene G6PD that result in moderately to severely decreased activity levels of the enzyme glucose-6-phosphate dehydrogenase. Most individuals with G6PD deficiency are asymptomatic. Individuals with G6PD variants that cause G6PD deficiency are at risk for acute hemolytic anemia in response to certain medication exposures, chemical exposures, infections, or consumption of fava beans. | An X-linked genetic condition caused by alterations in the gene G6PD that result in moderately to severely decreased activity levels of the enzyme glucose-6-phosphate dehydrogenase. Most individuals with G6PD deficiency are asymptomatic. Individuals with G6PD variants that cause G6PD deficiency are at risk for neonatal jaundice. These individuals are also at risk for acute hemolytic anemia in response to certain medication exposures, chemical exposures, infections, or consumption of fava beans. |
+| MONDO:0005594 | severe cutaneous adverse reaction | A permanent mark left on the skin in the process of wound healing. | A group of skin disorders including Stevens-Johnson syndrome/toxic epidermal necrolysis (SJS/TEN), drug reaction with eosinophilia and systemic symptoms (DRESS), acute generalized exanthematous pustulosis (AGEP), and generalized bullous fixed drug eruptions (GBFDE). |
+| MONDO:0006553 | Fox-Fordyce disease | Fox-Fordyce disease isa chronic skin diseasemost common in women aged 13-35 years.It is characterized by the development of intense itching in the underarm area, the pubic area, and around the nipple of the breast as a result of perspiration which becomes trapped in the sweat gland and surrounding areas. The cause is unknown,but heat, humidity, and stress may play a role. Treatment may include the use of retinoids, antibiotics, and immunosuppressants. | A chronic skin disease most common in women aged 13-35 years.It is characterized by the development of intense itching in the underarm area, the pubic area, and around the nipple of the breast as a result of perspiration which becomes trapped in the sweat gland and surrounding areas. The cause is unknown, but heat, humidity, and stress may play a role. Treatment may include the use of retinoids, antibiotics, and immunosuppressants. |
+| MONDO:0009868 | glycogen storage disease IXb | Glycogen storage disease (GSD) due to liver and muscle phosphorylase kinase (PhK) deficiency is a benign inborn error of glycogen metabolism. It is the mildest form of GSD due to PhK deficiency. | A disorder of glycogen metabolism caused by a deficiency in liver and muscle phosphorylase kinase subunit b, is autosomal recessive and can lead to hepatomegaly, hypoglycemia after prolonged fasting, and growth retardation. |
+| MONDO:0017771 | Mayer-Rokitansky-Kuster-Hauser syndrome | Mayer-Rokitansky-Küster-Hauser (MRKH) syndrome describes a spectrum of Mullerian duct anomalies characterized by congenital aplasia of the uterus and upper 2/3 of the vagina in otherwise phenotypically normal females. It can be classified as either MRKH syndrome type 1 (corresponding to isolated utero-vaginal aplasia) or MRKH syndrome type 2 (utero-vaginal aplasia associated with other malformations). | Spectrum of Mullerian duct anomalies characterized by congenital aplasia of the uterus and upper 2/3 of the vagina in otherwise phenotypically normal females. It can be classified as either MRKH syndrome type 1 (corresponding to isolated utero-vaginal aplasia) or MRKH syndrome type 2 (utero-vaginal aplasia associated with other malformations). |
+| MONDO:0010802 | pancreatic hypoplasia-diabetes-congenital heart disease syndrome | Pancreatic hypoplasia-diabetes-congenital heart disease syndrome is characterized by partial pancreatic agenesis, diabetes mellitus, and heart anomalies (including transposition of the great vessels, ventricular or atrial septal defects, pulmonary stenosis, or patent ductus arteriosis). | A rare, syndromic diabetes mellitus characterized by partial pancreatic agenesis, diabetes mellitus, and heart anomalies (including transposition of the great vessels, ventricular or atrial septal defects, pulmonary stenosis, or patent ductus arteriosis). |
+| MONDO:0012280 | Goldberg-Shprintzen syndrome | Goldberg-Shprintzen megacolon syndrome is a multiple malformation syndrome characterized by Hirschprung megacolon with microcephaly, hypertelorism, submucous cleft palate, short stature and learning disability. | A multiple malformation syndrome characterized by Hirschprung megacolon with microcephaly, hypertelorism, submucous cleft palate, short stature and learning disability. |
+| MONDO:0014855 | intellectual disability, autosomal dominant 42 | Any autosomal dominant non-syndromic intellectual disability in which the cause of the disease is a mutation in the GNB1 gene. | Any autosomal dominant non-syndromic intellectual disability in which the cause of the disease is a heterozygous mutation in the GNB1 gene. It is characterized by global developmental delay, intellectual disability, hypotonia, structural brain abnormalities, and seizures. Other less common findings include dystonia, visual impairment, behavior problems, growth delay, craniofacial defects, and genitourinary abnormalities in males. |
+| MONDO:0016499 | autoimmune autonomic ganglionopathy | Acute pandysautonomia is a rare variant of Guillain-Barré syndrome characterized by acute post-ganglionic sympathetic and parasympathetic failure presenting several weeks after acute infection with gastrointestinal symptoms (abdominal pain, vomiting, constipation, diarrhea, gastroparesis, ileus), orthostatic hypotension, erectile dysfunction, urinary frequency, urgency or retention, vasomotor instability with acrocyanosis and reduced salivation, lacrimation and sweating. | A rare variant of Guillain-Barré syndrome characterized by acute post-ganglionic sympathetic and parasympathetic failure presenting several weeks after acute infection with gastrointestinal symptoms (abdominal pain, vomiting, constipation, diarrhea, gastroparesis, ileus), orthostatic hypotension, erectile dysfunction, urinary frequency, urgency or retention, vasomotor instability with acrocyanosis and reduced salivation, lacrimation and sweating. |
+| MONDO:0024349 | pityriasis alba | | A prevalent and benign dermatological condition that predominantly affects children and adolescents. The name \pityriasis alba\" derives from its appearance, where \"pityriasis\" denotes the fine scales and \"alba\" signifies the pale color (hypopigmentation)." |
+
+### Obsolete terms
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0011876 | obsolete juvenile absence epilepsy |
+| MONDO:0017681 | obsolete erythrokeratoderma variabilis progressiva |
+| MONDO:0858989 | obsolete autosomal recessive spastic paraplegia type 84 |
+| MONDO:0858990 | obsolete autosomal recessive spastic paraplegia type 85 |
+| MONDO:0858991 | obsolete autosomal recessive spastic paraplegia type 86 |
+| MONDO:0858992 | obsolete autosomal recessive spastic paraplegia type 87 |
+
+### New obsoletion candidates
+
+| Mondo ID | Label |
+|:---|:---|
+| MONDO:0002003 | papilledema |
+| MONDO:0003629 | uterine corpus serous adenocarcinoma |
+| MONDO:0004490 | gestational uterine corpus choriocarcinoma |
+| MONDO:0004527 | congenital granular cell tumor |
+| MONDO:0004587 | hereditary night blindness |
+| MONDO:0005190 | macroglobulinemia |
+| MONDO:0006788 | hydrophthalmos |
+| MONDO:0009586 | mesangial sclerosis, diffuse renal, with ocular abnormalities |
+| MONDO:0009714 | myosclerosis |
+| MONDO:0018347 | severe intellectual disability-progressive postnatal microcephaly- midline stereotypic hand movements syndrome |
+| MONDO:0019946 | ligneous conjunctivitis |
+| MONDO:0020327 | classic Hodgkin lymphoma, nodular sclerosis type |
+| MONDO:0023041 | ectodermal dysplasia Berlin type |
+| MONDO:0024345 | pityriasis streptogenes |
+| MONDO:0100005 | primary mast cell activation syndrome |
+| MONDO:0957316 | epidermolytic hyperkeratosis |
+| MONDO:0957319 | pseudohypoaldosteronism, type I |
+
+### Terms that were previously candidate for obsoletion and are now not anymore
+
+No changes.
+
 #2024-02-06
 ## Overview:
 
