@@ -279,7 +279,7 @@ update-gard:
 ####################################
 
 tmp/nord.template.owl:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/c9207b0bd0282e1b9905f4b591e4d71a19479484/src/ontology/external/nord.robot.owl" -O $@
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/add-externally-managed-content/src/ontology/external/nord.robot.owl" -O $@
 
 .PHONY: update-nord
 update-nord:
