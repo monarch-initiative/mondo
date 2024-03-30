@@ -1,0 +1,29 @@
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix dc: <http://purl.org/dc/elements/1.1/>
+
+CONSTRUCT {
+  ?gene a owl:Class ;
+     rdfs:subClassOf <http://purl.obolibrary.org/obo/SO_0000704> ;
+     rdfs:label ?symbol ;
+     rdfs:subClassOf [
+        owl:onProperty <http://purl.obolibrary.org/obo/RO_0002162> ;
+        owl:someValuesFrom ?taxon ] ;
+     <http://purl.org/dc/terms/description> ?description . 
+}
+WHERE {
+ ?gene <https://w3id.org/biolink/vocab/category> <https://w3id.org/biolink/vocab/Gene> ;
+     <https://w3id.org/biolink/vocab/in_taxon> ?taxon_xref ;
+     <https://w3id.org/biolink/vocab/symbol> ?symbol .
+
+ OPTIONAL {
+  ?gene <http://purl.org/dc/terms/description> ?description .
+ }
+ 
+ FILTER (!isBlank(?gene))
+ FILTER ( regex(str(?gene), "^http://identifiers.org/ncbigene/"))
+ BIND(IRI(REPLACE(str(?taxon_xref), "NCBITaxon:","http://purl.obolibrary.org/obo/NCBITaxon_")) AS ?taxon)
+}
+
+
