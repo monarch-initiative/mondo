@@ -71,7 +71,7 @@ all: test all_artefacts mappings
 # Artefacts
 # ----------------------------------------
 
-IMPORTS =  uberon cl go pato envo ro hp mf ncbitaxon chebi ncit hgnc foodon so ecto omo chr hsapdv nbo maxo mfomd
+IMPORTS =  uberon cl go pato envo ro hp mf ncbitaxon chebi ncit hgnc foodon so ecto omo chr hsapdv nbo maxo mfomd ncbigene
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -688,14 +688,24 @@ $(MIRRORDIR)/%.owl: mirror-% | $(MIRRORDIR)
 
 ###### END PARTIAL ODK MIGRATION ##############
 ###### BEGIN CUSTOM IMPORTS ###################
-mirror/dipper-%.ttl: | $(MIRRORDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget --no-check-certificate https://archive.monarchinitiative.org/latest/rdf/$*.ttl -O $@.tmp &&\
+mirror/hgnc_gene.nt: | $(MIRRORDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://data.monarchinitiative.org/monarch-kg/latest/rdf/hgnc_gene.nt.gz | gzip -d > $@.tmp &&\
 		perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@; fi
-.PRECIOUS: mirror/dipper-%.ttl
+.PRECIOUS: mirror/hgnc_gene.nt
 
-mirror-hgnc: mirror/dipper-hgnc.ttl | $(TMPDIR)
+mirror/ncbi_gene.nt: | $(MIRRORDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://data.monarchinitiative.org/monarch-kg/latest/rdf/ncbi_gene.nt.gz | gzip -d > $@.tmp &&\
+		perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@; fi
+.PRECIOUS: mirror/ncbi_gene.nt
+
+mirror-hgnc: mirror/hgnc_gene.nt | $(TMPDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
 		query --format ttl --query ../sparql/construct/construct-hgnc.sparql $(TMPDIR)/$@.owl; fi
+
+mirror-ncbigene: mirror/ncbi_gene.nt | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
+		query --format ttl --query ../sparql/construct/construct-ncbigene.sparql $(TMPDIR)/$@.owl; fi
+
 
 IMPORTSEED=$(IMPORTDIR)/seed.txt # SHOULD BE TMP
 ###### END CUSTOM IMPORTS ###################
