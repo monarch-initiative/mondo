@@ -6,7 +6,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
-  ?cls rdfs:subClassOf+ [
+  ?cls rdfs:subClassOf [
         owl:onProperty <http://purl.obolibrary.org/obo/RO_0000053> ;
         owl:someValuesFrom <http://purl.obolibrary.org/obo/MONDO_0021136> ] .
 }
