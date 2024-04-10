@@ -27,7 +27,7 @@ WHERE
   }
  
   FILTER (?cls NOT IN (MONDO:0000001))
-  FILTER (strStarts(?source,"MONDO:equivalent"))
+  FILTER (?source="MONDO:equivalentTo")
   FILTER (strStarts(?xref,"Orphanet:"))
 
   FILTER NOT EXISTS {

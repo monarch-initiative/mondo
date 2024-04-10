@@ -71,7 +71,7 @@ all: test all_artefacts mappings
 # Artefacts
 # ----------------------------------------
 
-IMPORTS =  uberon cl go pato envo ro hp mf ncbitaxon chebi ncit hgnc foodon so ecto omo chr hsapdv nbo maxo mfomd
+IMPORTS =  uberon cl go pato envo ro hp mf ncbitaxon chebi ncit hgnc foodon so ecto omo chr hsapdv nbo maxo mfomd ncbigene
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -82,7 +82,7 @@ IMPORT_FILES = $(IMPORT_OWL_FILES)
 all_imports: $(IMPORT_FILES)
 
 
-COMPONENTS = mondo-tags mondo-subsets
+COMPONENTS = mondo-tags
 COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
 
 SUBSETS = mondo-minimal mondo-rare
@@ -244,10 +244,12 @@ $(ONT).owl: reasoned.owl
 	$(ROBOT) merge -i $< annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 
 # obo is self-contained
-$(ONT).obo: reasoned.owl
-	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@.tmp.owl
-	owltools --use-catalog $@.tmp.owl --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
-	rm -f $@.tmp.owl
+$(ONT).obo: $(ONT)-base.owl
+	$(ROBOT) annotate -i $< \
+			-V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl \
+			--ontology-iri $(OBO)/$(ONT).owl \
+		convert --check false -f obo -o $@.tmp.obo &&\
+		grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 
 $(ONT).json: $(ONT).owl
 	$(ROBOT) convert --input $< --check false -f json -o $@.tmp.json &&\
@@ -268,11 +270,15 @@ $(ONT)-with-equivalents.json: $(ONT)-with-equivalents.owl
 # we remove imports and merge in additional assertions
 # note: typically component is not pre-reasoned, but this is compex for mondo.
 
-OTHER_SRC=imports/axioms.owl components/mondo-subsets.owl #components/mondo-tags.owl
+OTHER_SRC=imports/axioms.owl #components/mondo-tags.owl
 
+# The --select "<http://purl.obolibrary.org/obo/BFO_*>" is due to a bug with the reason -x option
+# Which is supposed to exclude external namespaces from reason, but does not. My guess:
+# BFO namespace was needed for Object Properties.
 $(ONT)-base.owl: reasoned.owl $(OTHER_SRC)
 	$(ROBOT) remove --input $< --select imports --trim false \
 		merge $(patsubst %, -i %, $(OTHER_SRC)) \
+		remove --select "<http://purl.obolibrary.org/obo/BFO_*>" --select classes \
 		annotate --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
 		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		--output $@.tmp.owl && mv $@.tmp.owl $@
@@ -373,7 +379,6 @@ subsets/%.obo: subsets/%.owl
 	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms: $@.tmp.obo > $@ && rm $@.tmp.obo
 
 rare_subset:
-	$(MAKE) IMP=false MIR=false COMP=false components/mondo-subsets.owl
 	$(MAKE) IMP=false MIR=false COMP=false subsets/mondo-rare.owl subsets/mondo-rare.json subsets/mondo-rare.obo
 
 # ----------------------------------------
@@ -673,14 +678,24 @@ $(MIRRORDIR)/%.owl: mirror-% | $(MIRRORDIR)
 
 ###### END PARTIAL ODK MIGRATION ##############
 ###### BEGIN CUSTOM IMPORTS ###################
-mirror/dipper-%.ttl: | $(MIRRORDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget --no-check-certificate https://archive.monarchinitiative.org/latest/rdf/$*.ttl -O $@.tmp &&\
+mirror/hgnc_gene.nt: | $(MIRRORDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://data.monarchinitiative.org/monarch-kg/latest/rdf/hgnc_gene.nt.gz | gzip -d > $@.tmp &&\
 		perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@; fi
-.PRECIOUS: mirror/dipper-%.ttl
+.PRECIOUS: mirror/hgnc_gene.nt
 
-mirror-hgnc: mirror/dipper-hgnc.ttl | $(TMPDIR)
+mirror/ncbi_gene.nt: | $(MIRRORDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://data.monarchinitiative.org/monarch-kg/latest/rdf/ncbi_gene.nt.gz | gzip -d > $@.tmp &&\
+		perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@; fi
+.PRECIOUS: mirror/ncbi_gene.nt
+
+mirror-hgnc: mirror/hgnc_gene.nt | $(TMPDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
 		query --format ttl --query ../sparql/construct/construct-hgnc.sparql $(TMPDIR)/$@.owl; fi
+
+mirror-ncbigene: mirror/ncbi_gene.nt | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
+		query --format ttl --query ../sparql/construct/construct-ncbigene.sparql $(TMPDIR)/$@.owl; fi
+
 
 IMPORTSEED=$(IMPORTDIR)/seed.txt # SHOULD BE TMP
 ###### END CUSTOM IMPORTS ###################
