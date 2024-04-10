@@ -944,6 +944,27 @@ config/exclusion_reasons.tsv:
 
 all: config/exclusion_reasons.tsv
 
+
+tmp/nando.owl:
+	wget "https://raw.githubusercontent.com/aidrd/nando/master/results/nando.rdf" -O $@
+
+
+tmp/nando_en.owl: tmp/nando.owl
+	$(ROBOT) query -i $< --format ttl --query ../sparql/construct/nando.sparql $@
+
+tmp/nando_mondo.owl: tmp/nando.owl mondo.owl
+	$(ROBOT) merge -i tmp/nando.owl -i mondo.owl -o $@
+
+tmp/nando_mondo.db: tmp/nando_mondo.owl
+	@rm -f .template.db
+	@rm -f .template.db.tmp
+	RUST_BACKTRACE=full semsql make $@ -P config/prefixes.csv
+	@rm -f .template.db
+	@rm -f .template.db.tmp
+
+tmp/nando_mondo.sssom.tsv: tmp/nando_mondo.db
+	runoak -i sqlite:$< lexmatch -R config/match-rules.yaml --ensure-strict-prefixes true -o $@
+
 ##################################
 ##### Scheduled GH Actions #######
 ##################################
@@ -967,3 +988,4 @@ help:
 	echo "sh run.sh make americanize"
 	echo "Update british english synonyms"
 	echo "sh run.sh make add_british_language_synonyms"
+
