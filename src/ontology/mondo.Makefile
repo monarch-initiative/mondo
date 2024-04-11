@@ -344,7 +344,7 @@ subsets/mondo-otar-subset.template.tsv:
 .PHONY: update-efo-subset
 update-efo-subset:
 	$(MAKE) tmp/mondo-otar-subset.template.owl tmp/mondo-efo.template.owl
-	grep -vE '^(xref: EFO:|subset: otar)$$' $(SRC) > tmp/mondo-edit.tmp || true
+	grep -vE '^(xref: EFO:|subset: otar)' $(SRC) > tmp/mondo-edit.tmp || true
 	mv tmp/mondo-edit.tmp mondo-edit.obo
 	$(ROBOT) merge -i $(SRC) -i tmp/mondo-otar-subset.template.owl -i tmp/mondo-efo.template.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
