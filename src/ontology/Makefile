@@ -197,7 +197,7 @@ GITHUB_ACTION = false
 
 filtered.obo: $(SRC)
 	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS|ICD10CM):@ && !(m@(obsoleteEquivalent|equivalentObsolete|equivalentTo|relatedTo|mondoIsNarrowerThanSource|directSiblingOf|mondoIsBroaderThanSource)@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
-	perl -ne 'print if !(/^xref: (Orphanet|OMIM|OMIMPS|DOID):/ && !(/(obsoleteEquivalent|equivalentObsolete|equivalentTo)/i))' $@  > $@.tmp && mv $@.tmp $@
+	perl -ne 'print if !(/^xref: (Orphanet|OMIM|OMIMPS|DOID):/ && !(/(obsoleteEquivalent|equivalentObsolete|equivalentTo|obsoleteEquivalentObsolete)/i))' $@  > $@.tmp && mv $@.tmp $@
 	if [ $(GITHUB_ACTION) = false ]; then $(ROBOT) query -i $@ --use-graphs false \
 		--update ../sparql/update/delete-axiom-annotations.ru \
 		--update ../sparql/update/delete-axiom-annotations-by-prefix.ru \
