@@ -382,6 +382,9 @@ rm_related_annos_to_exact:
 rm_xref_without_source:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/update/rm-xref-without-source.ru -o $(SRC)
 
+rm_confidence_annotation:
+	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/update/rm-confidence_annotation.ru -o $(SRC)
+
 report-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
 
