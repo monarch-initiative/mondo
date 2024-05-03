@@ -24,12 +24,19 @@ WHERE
   ?cls a owl:Class .
 
   { 
+    # Match the XREF and the fact this term belongs to the ordo_disease subset
     ?cls <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?xref .
+
+    # Only ordo_disease is included as per request by Orphanet: these are the diseases they truly consider rare
+    ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#ordo_disease> .
     
+    # For safety reasons, we only consider the case that the evidence of the subset corresponds exactly to the xref
+    # This is probably redundant, but it is possible that a class has two ORDO xrefs, one exact, one not
+    # and we only want to record the exact xref as evidence for the rare subset
     ?a <http://www.w3.org/2002/07/owl#annotatedSource> ?cls .
-    ?a <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> .
-    ?a <http://www.w3.org/2002/07/owl#annotatedTarget> ?xref .
-    ?a <http://www.geneontology.org/formats/oboInOwl#source> ?source .
+    ?a <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.geneontology.org/formats/oboInOwl#inSubset> .
+    ?a <http://www.w3.org/2002/07/owl#annotatedTarget> <http://purl.obolibrary.org/obo/mondo#ordo_disease> .
+    ?a <http://www.geneontology.org/formats/oboInOwl#source> ?xref .
   
   }
  
