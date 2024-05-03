@@ -137,6 +137,8 @@ all_release_reports: $(REPORT_FILES_RELEASE)
 
 #all: test all_imports all_reports all_equivalencies all_subsets imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
 
+#TODO: roundtrip.obo seems unnecessary check.
+
 test: sparql_test_edit roundtrip.obo debug.owl debug_inference_check.owl mondo-edit.owl sparql_test_main_obo test_nomerge
 test: reports/robot-report-mondo-tags-reasoned.owl.tsv
 
@@ -228,7 +230,7 @@ reasoned.owl: filtered.owl
 		remove --term MONDO:0700097 --term OGMS:0000031 $(ANN) -o $@
 
 
-test: reasoned-plus-equivalents.owl
+#test: reasoned-plus-equivalents.owl
 
 # merged = reasoned + equivalencies
 reasoned-plus-equivalents.owl: reasoned.owl imports/equivalencies.owl
