@@ -244,8 +244,19 @@ tmp/orphanet-rare-subset.owl: $(SRC)
 	$(ROBOT) merge -i $(SRC) reason \
 		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
 
+.PHONY: update-ordo-subsets
+update-ordo-subsets:
+	grep -vE '^(subset: ordo_group_of_disorders)' $(SRC) | grep -vE '^(subset: ordo_disease)' | grep -vE '^(subset: ordo_clinical_subtype)' > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(MAKE) merge_template TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vTec1wITyBUI6uR9_oFsZpAWdAwmrazt2zDyjkrUTEjZ1ISVrI2RO0wYgf2ilUukh-_M4beuYU3skQt/pub?gid=976194052&single=true&output=tsv" -B
+	make NORM && mv NORM $(SRC)
+	
+
 .PHONY: update-orphanet-subset
 update-orphanet-subset:
+	# We always need to update the ordo subsets (disease vs grouping vs subtype)
+	# Which is a prerequisite for the rare determination in ORDO
+	make update-ordo-subsets
 	$(MAKE) tmp/orphanet-rare-subset.owl
 	grep -vE '^(subset: orphanet_rare)' $(SRC) > tmp/mondo-edit.tmp || true
 	mv tmp/mondo-edit.tmp mondo-edit.obo
