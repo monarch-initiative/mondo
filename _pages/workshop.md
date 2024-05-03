@@ -43,6 +43,7 @@ Notes are available [here](https://docs.google.com/document/d/16eMB-x3iANHfiTxw7
 
 Date | Time | Presenter (Organization)| Topic | Recording 
 -- | -- | -- | -- | -- 
+May 3 | 9 AM PT/12 PM ET | Bryan Laraway([N3C](https://covid.cd2h.org/)) | Use of Mondo in the National Covid Cohort Collaborative |
 Apr 5 | 9 AM PT/12 PM ET | Imke Tammen and Frank Nicolas ([OMIA](https://www.omia.org/home/)) | Online Mendelian Inheritance in Animals (OMIA) | [Here](https://drive.google.com/file/d/1Wf5IAC5fcIdYHVOk2HV_L7qlR37PsrwT/view?usp=sharing)
 Mar 8 | 9 AM PT/12 PM ET | Julie Tahraoui ([Orphanet](https://www.orpha.net/)) | Orphanet mapping practices | [Here](https://drive.google.com/file/d/1BF2CXBnMT3XNifzc8qrGV-XY5ui_9uIE/view?usp=sharing)
 Feb 9  | 9 AM PT/12 PM ET | Zoe Pendlington ([Open Targets](https://www.opentargets.org/) / [EBI](https://www.ebi.ac.uk/)) | Open Targets and the Experimental Factor Ontology (EFO) | [Here](https://drive.google.com/file/d/1fdKunlS2Un6suYdF3mKHv02DdejkOGyn/view?usp=sharing)
