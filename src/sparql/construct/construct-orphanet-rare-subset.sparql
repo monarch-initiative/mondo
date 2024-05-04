@@ -39,10 +39,6 @@ WHERE
     ?a <http://www.geneontology.org/formats/oboInOwl#source> ?xref .
   
   }
- 
-  FILTER (?cls NOT IN (MONDO:0000001))
-  FILTER (?source="MONDO:equivalentTo")
-  FILTER (strStarts(?xref,"Orphanet:"))
 
   FILTER NOT EXISTS {
     ?cls owl:deprecated "true"^^xsd:boolean
