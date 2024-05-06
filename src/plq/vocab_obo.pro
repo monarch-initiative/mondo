@@ -10400,7 +10400,7 @@ relational_adj_ra('paralyses', 'paralysed', 'attribute').
 relational_adj_ra('perforation', 'perforated', 'attribute').
 relational_adj_ra('perforations', 'perforated', 'attribute').
 relational_adj_ra('periodic', 'period', 'attribute').
-relational_adj_ra('persistant', 'persistence', 'attribute').
+relational_adj_ra('persistent', 'persistence', 'attribute').
 relational_adj_ra('persistent', 'persistence', 'attribute').
 relational_adj_ra('persisting', 'persistence', 'attribute').
 relational_adj_ra('positive', 'position', 'attribute').
