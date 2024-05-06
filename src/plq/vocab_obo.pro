@@ -10385,7 +10385,7 @@ relational_adj_ra('nutrition', 'nutritional', 'attribute').
 relational_adj_ra('obstruction', 'obstructed', 'attribute').
 relational_adj_ra('obstructions', 'obstructed', 'attribute').
 relational_adj_ra('obstructive', 'obstructed', 'attribute').
-relational_adj_ra('occurring', 'occurence', 'attribute').
+relational_adj_ra('occurring', 'occurrence', 'attribute').
 relational_adj_ra('opacities', 'opacity', 'attribute').
 relational_adj_ra('opening', 'open', 'attribute').
 relational_adj_ra('organic', 'organized', 'attribute').
