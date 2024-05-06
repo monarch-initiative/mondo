@@ -7,7 +7,7 @@ TODO: Ideally would refactor this to OAK, if its possible. SqlImplementation. Qu
 
 See also:
 - GH issue: https://github.com/monarch-initiative/mondo-ingest/issues/273
-- Megan Kane's source files includeing readme.txt that goes over each sheet:
+- Megan Kane's source files including readme.txt that goes over each sheet:
   https://github.com/monarch-initiative/mondo-ingest/issues/273#issuecomment-1632774012
 """
 from argparse import ArgumentParser

@@ -311,7 +311,7 @@ $(ONT)-base.json: $(ONT)-base.owl
 	$(ROBOT) convert --input $< --check false -f json -o $@.tmp.json &&\
 		mv $@.tmp.json $@
 
-# ensure that inference includeing equivalencies does not result in merging any classes in MONDO.
+# ensure that inference including equivalencies does not result in merging any classes in MONDO.
 # if this fails, the resolution is to look for two MONDO classes with equivalence to the same external class
 test_nomerge: mondo.owl
 	owltools  --log-error --use-catalog $< --reasoner elk --merge-equivalence-sets -P MONDO -s MONDO 100 --remove-dangling -o $@
@@ -357,7 +357,7 @@ tmp/rare-seed-entities.txt: tmp/rare-subset-pre.owl tmp/rare-seed-classes.txt
 	$(ROBOT) merge -i $< filter -T tmp/rare-seed-classes.txt --trim false query --query ../sparql/signature/rare-subset-related-entity.sparql $@
 .PRECIOUS: tmp/rare-seed-entities.txt
 
-# This merges thes seed together into one file (includeing rare disease classes _and_ related entities.)
+# This merges thes seed together into one file (including rare disease classes _and_ related entities.)
 tmp/rare-seed.txt: tmp/rare-seed-entities.txt tmp/rare-seed-classes.txt config/rare_subset_relations.txt tmp/rare-seed-parents.txt
 	cat $^ | sort | uniq > $@
 .PRECIOUS: tmp/rare-seed.txt

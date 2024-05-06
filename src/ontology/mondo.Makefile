@@ -645,7 +645,7 @@ all: reports/mondo_obsoletioncandidates.tsv
 # 1. In a ROBOT template, define a top level as you see fit (using, however, MONDO ids)
 # 2. Make sure the template file ends up in modules, and is named like modules/harrisons-view.tsv, where harrisons is the id
 # 3. Add the id to the MONDOVIEWS variable
-# 4. Run `sh run.sh make mondo-views` to generate all views, includeing your new one.
+# 4. Run `sh run.sh make mondo-views` to generate all views, including your new one.
 # This will:
 #     a) build the template (modules/mondo-%-view-top.owl)
 #     b) query for the children of the leafs in the template

@@ -5,7 +5,7 @@ prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-# MONDO classes (only leaf terms) with the axiom "'has modifier' some rare" AND/OR "has subset :‘gard_rare’" AND limited to the 'disease' branch (ie not includeing terms from the 'disease susceptibility' branch) AND consider only leaf nodes.
+# MONDO classes (only leaf terms) with the axiom "'has modifier' some rare" AND/OR "has subset :‘gard_rare’" AND limited to the 'disease' branch (ie not including terms from the 'disease susceptibility' branch) AND consider only leaf nodes.
 
 SELECT distinct (count(distinct ?cls) as ?count)
 
