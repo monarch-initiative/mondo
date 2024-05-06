@@ -6,7 +6,7 @@ PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
-# description: Checks if a proper obsolesence reason was documented for this class
+# description: Checks if a proper obsolescence reason was documented for this class
 
 
 DELETE {

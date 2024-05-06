@@ -48,7 +48,7 @@ https://www.genenames.org/. Copy the ID (for example, 8965)
 4. Close Protege and open again
 5. Edit in Protege
 6. In your diff, you will see changes to src/ontology/imports/hgnc_terms.txt and src/ontology/imports/merged_import.owl
-7. Commmit changes on a branch and create a pull request.
+7. Commit changes on a branch and create a pull request.
 
 Note: if an import does not have a `src/ontology/imports/*_terms.txt` file (e.g. for adding NCIT terms). The term(s) to import should be added to src/ontology/imports/manual_seed.txt.  When updating the import, the term(s) will seed the import files, which are pulled in when refreshing modules.
 

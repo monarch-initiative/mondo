@@ -14,7 +14,7 @@ prefix obo: <http://purl.obolibrary.org/obo/>
 #   owl:annotatedTarget "true"^^xsd:boolean ;
 #   <http://www.geneontology.org/formats/oboInOwl#source> "ordo.owl"^^xsd:string
 #] .
-# This query deletes all axiom annotations on owl deprected axioms.
+# This query deletes all axiom annotations on owl deprecated axioms.
 
 DELETE {
   ?ax rdf:type owl:Axiom ;

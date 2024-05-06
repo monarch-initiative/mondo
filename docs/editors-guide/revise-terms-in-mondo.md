@@ -21,7 +21,7 @@ Note the Anonymous Ancestors. These are superclasses that are inherited from the
 
 In Mondo, we don't want to delete superclasses, but rather exclude the superclasses using the excludedsubcClassOf annotation, in order to retain the provenance of that superclass assertion.
 
-1. Click on the parent class that you want to exlcude.
+1. Click on the parent class that you want to exclude.
 1. On a Mac, click command + U or go to Refactor -> Rename entity...
 1. Click box to Show full IRI
 1. Copy the IRIs
