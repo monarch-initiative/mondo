@@ -33,7 +33,7 @@ OMIM may rename a disease from FOO to FOO 1, and create a new phenotypic series 
 the new ID for the new terms in advance by adding the label to this [ROBOT template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=2063035843).
 1. Add the obsoletion tags to the terms to be obsoleted:
 1. In [ROBOT_NewTermSplit-ObsTag](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=1242007499):
-- add the IDs for the terms to be obsoleted in columnn A
+- add the IDs for the terms to be obsoleted in column A
 - add the labels in column B (for human readability)
 - the labels in column E should be automatically populated from the [ROBOT_CreateNewTerm](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=2063035843)
 template
