@@ -2109,7 +2109,7 @@ name: p-block molecular entity
 def: "A main group molecular entity that contains one or more atoms of a p-block element." []
 synonym: "p-block compounds" RELATED []
 synonym: "p-block molecular entities" RELATED []
-synonym: "p-block molecular entity" RELATED []
+synonym: "p-block molecular entitiy" RELATED []
 is_a: CHEBI:33579 ! main group molecular entity
 relationship: BFO:0000051 CHEBI:33560 ! has part p-block element atom
 
@@ -3018,7 +3018,7 @@ is_a: CHEBI:52209 ! aetiopathogenetic role
 [Term]
 id: CHEBI:50903
 name: carcinogenic agent
-def: "A role played by a chemical compound which is known to  induce a process of carcinogenesis  by corrupting  normal cellular pathways, leading to the acquisition of tumoral capabilities." []
+def: "A role played by a chemical compound which is known to  induce a process of carcinogenesis  by corrupting  normal cellular pathways, leading to the acquistion of tumoral capabilities." []
 synonym: "agente carcinogeno" RELATED []
 synonym: "cancerigene" RELATED []
 synonym: "cancerogene" RELATED []
@@ -5588,7 +5588,7 @@ relationship: RO:0002473 ENVO:00001995 ! composed primarily of rock
 id: ENVO:00000428
 name: biome
 def: "A biome is an ecosystem to which resident ecological communities have evolved adaptations." []
-synonym: "EcosystemType" RELATED []
+synonym: "EcosytemType" RELATED []
 synonym: "major habitat type" EXACT []
 is_a: ENVO:01001110 ! ecosystem
 relationship: BFO:0000050 ENVO:01000817 ! part of biosphere
@@ -5695,7 +5695,7 @@ relationship: has_increased_levels_of CHEBI:24431 ! chemical entity
 [Term]
 id: ENVO:00002149
 name: sea water
-def: "Water which has physicochemical properties that have been determined by the processes occurring in a sea or ocean." []
+def: "Water which has physicochemical properties that have been determined by the processes occuring in a sea or ocean." []
 synonym: "ocean water" EXACT []
 synonym: "seawater" EXACT []
 is_a: ENVO:00002010 ! saline water
@@ -6016,7 +6016,7 @@ relationship: RO:0002507 ENVO:00002006 ! determined by liquid water
 [Term]
 id: ENVO:01000320
 name: marine environment
-def: "A marine environment and environment which is determined by a marine water body." []
+def: "A marine environment and enviroment which is determined by a marine water body." []
 is_a: ENVO:01000254 ! environmental system
 intersection_of: ENVO:01000254 ! environmental system
 intersection_of: RO:0002507 ENVO:00001999 ! determined by marine water body
@@ -6208,7 +6208,7 @@ is_a: ENVO:02000140 ! fluid environmental material
 [Term]
 id: ENVO:01000799
 name: astronomical body
-def: "An object which is naturally occurring, bound together by gravitational or electromagnetic forces, and surrounded by space." []
+def: "An object which is naturally occuring, bound together by gravitational or electromagnetic forces, and surrounded by space." []
 synonym: "celestial body" RELATED []
 is_a: ENVO:01000804 ! astronomical object
 
@@ -9441,7 +9441,7 @@ inverse_of: RO:0002630 ! directly negatively regulates
 [Typedef]
 id: RO:0002024
 name: directly positively regulated by
-def: "Process(P2) is directly positively regulated by process(P1) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P2 is directly positively regulated by P1." []
+def: "Process(P2) is directly postively regulated by process(P1) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P2 is directly postively regulated by P1." []
 is_a: RO:0002022 ! directly regulated by
 inverse_of: RO:0002629 ! directly positively regulates
 
@@ -9520,7 +9520,7 @@ transitive_over: RO:0002025 ! has effector activity
 [Typedef]
 id: RO:0002212
 name: negatively regulates
-def: "Process(P1) negatively regulates process(P2) iff: P1 terminates P2, or P1 decreases the the frequency of initiation of P2 or the magnitude or rate of output of P2." []
+def: "Process(P1) negatively regulates process(P2) iff: P1 terminates P2, or P1 descreases the the frequency of initiation of P2 or the magnitude or rate of output of P2." []
 is_a: RO:0002211 ! regulates (processual)
 is_a: RO:0002305 ! causally upstream of, negative effect
 inverse_of: RO:0002335 ! negatively regulated by
@@ -9528,7 +9528,7 @@ inverse_of: RO:0002335 ! negatively regulated by
 [Typedef]
 id: RO:0002213
 name: positively regulates
-def: "Process(P1) positively regulates process(P2) iff: P1 initiates P2, or P1 increases the the frequency of initiation of P2 or the magnitude or rate of output of P2." []
+def: "Process(P1) postively regulates process(P2) iff: P1 initiates P2, or P1 increases the the frequency of initiation of P2 or the magnitude or rate of output of P2." []
 holds_over_chain: RO:0002212 RO:0002212
 is_transitive: true
 is_a: RO:0002211 ! regulates (processual)
@@ -10109,7 +10109,7 @@ is_a: RO:0002410 ! causally related to
 [Typedef]
 id: RO:0002629
 name: directly positively regulates
-def: "Process(P1) directly positively regulates process(P2) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P1 directly positively regulates P2." []
+def: "Process(P1) directly postively regulates process(P2) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P1 directly positively regulates P2." []
 is_a: RO:0002213 ! positively regulates
 is_a: RO:0002578 ! directly regulates
 
