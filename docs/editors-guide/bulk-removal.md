@@ -5,16 +5,16 @@
 - update of annotations in bulk. For example: updating exclusion code from a lot of terms because these codes were updated.
 
 ### Overview of the process:
-1. A ROBOT template is created, including the annotations to remove.
+1. A ROBOT template is created, includeing the annotations to remove.
 1. An `.owl` version of the ROBOT template is created. This .owl file contains the annotations to be removed.
 1. The .owl file created (containing the annotations to remove) is removed from the ontology using the "unmerge" command
 1. _(if updating the annotations)_
-    1. A ROBOT template is created, including the annotations replacing the one removed.
+    1. A ROBOT template is created, includeing the annotations replacing the one removed.
     1. the ROBOT template is merged using the regular "[Merging a ROBOT template](https://mondo.readthedocs.io/en/latest/editors-guide/robot-template/)" process
 
 ### Removing annotations in bulk:
 1. Create a ROBOT template for annotations to remove.
-    1. create a Google sheet including: Mondo term ID, Annotations to be removed
+    1. create a Google sheet includeing: Mondo term ID, Annotations to be removed
          Note: the column names for the annotations to remove follow the regular [ROBOT template semantics](http://robot.obolibrary.org/template)        
     1. Publish the spreadsheet on the web, in .tsv format
         1. Click File->Share->Publish to the Web

@@ -108,7 +108,7 @@ Mondo QC is split into two conceptual parts:
 1. Violations
 2. Warnings
 
-Violations _have to be fixed_ and are executed every time a pull request is created. They are implemented as sparql queries with a postfix "violation", like `no-label-violation.sparql`. To create a new violation, we create a new SPARQL SELECT query that queries for the violation, and name it including the `-violation` postfix. The violation query is executed using ROBOT verify, which will make the CI (Travis/Jenkins) pipeline fail if the query has more than `0` results.
+Violations _have to be fixed_ and are executed every time a pull request is created. They are implemented as sparql queries with a postfix "violation", like `no-label-violation.sparql`. To create a new violation, we create a new SPARQL SELECT query that queries for the violation, and name it includeing the `-violation` postfix. The violation query is executed using ROBOT verify, which will make the CI (Travis/Jenkins) pipeline fail if the query has more than `0` results.
 
 _Warnings_ do not have to be fixed, but are indications of something going wrong. Warnings are implemented in the same way as `violation` queries with a SPARQL Select query, named with a postfix (example: `single-child-warning.sparql`).
 

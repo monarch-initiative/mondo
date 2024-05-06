@@ -37,7 +37,7 @@ Record of [obsoletion candidates](http://purl.obolibrary.org/obo/mondo/mondo_obs
 -   The previous (old) and new value of the given property on a given MONDO term are included in each record. 
 -   The 4 properties being tracked are "**label**", "**definition**", "**obsolete**" flag, and "**obsoletion_candidate**" flag. 
     - "**label**" - the previous (old) value of the mondo label and the new value. 
-      - This will include ANY change to the label including when the "obsolete" term is prepended at the time a MONDO term is actually obsoleted in a given release. 
+      - This will include ANY change to the label includeing when the "obsolete" term is prepended at the time a MONDO term is actually obsoleted in a given release. 
       - Both old and new values are required (labels cannot be blank or empty). 
       - While the obsolete = TRUE state is the computably definitive way to determine if a term is obsoleted, we should reasonably expect all obsoleted terms to have a label change.
     - "**definition**" the previous (old) value of the mondo definition and the new value. 

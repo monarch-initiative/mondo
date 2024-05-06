@@ -33,7 +33,7 @@ mondo-edit.owl: mondo-edit.obo
 ### Proxy merge checking
 
 ```
-# ensure that inference including equivalencies does not result in merging any classes in MONDO.
+# ensure that inference includeing equivalencies does not result in merging any classes in MONDO.
 # if this fails, the resolution is to look for two MONDO classes with equivalence to the same external class
 test_nomerge: mondo.owl
 	owltools  --log-error --use-catalog $< --reasoner elk --merge-equivalence-sets -P MONDO -s MONDO 100 --remove-dangling -o $@
