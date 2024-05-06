@@ -1617,7 +1617,7 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | Examples |  |
 
 ### Realized in response to environmental exposure
-*This pattern is used for a disease, where the cause of the disease is an exposure to an environmental stimulus (using ECTO exposure terms) or a medical action, such as a therapeutic treatment (using MAxO terms). Note that this pattern does not include infectious disease or classes that would include an organism, virus or viroid. Rather it includes exposures to chemicals (includeng drugs), or mixtures.
+*This pattern is used for a disease, where the cause of the disease is an exposure to an environmental stimulus (using ECTO exposure terms) or a medical action, such as a therapeutic treatment (using MAxO terms). Note that this pattern does not include infectious disease or classes that would include an organism, virus or viroid. Rather it includes exposures to chemicals (including drugs), or mixtures.
 Examples: [chemically-induced disorder](http://purl.obolibrary.org/obo/MONDO_0029001), [alcohol amnestic disorder](http://purl.obolibrary.org/obo/MONDO_0021702), [alcoholic polyneuropathy](http://purl.obolibrary.org/obo/MONDO_0006645), [chemotherapy-induced alopecia](http://purl.obolibrary.org/obo/MONDO_0005483) (26 total)*
 
 | Attribute | Info |
