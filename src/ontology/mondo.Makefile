@@ -290,7 +290,7 @@ update-gard:
 ####################################
 
 tmp/nord.template.owl:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/add-externally-managed-content/src/ontology/external/nord.robot.owl" -O $@
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/external/nord.robot.owl" -O $@
 
 .PHONY: update-nord
 update-nord:
@@ -328,6 +328,14 @@ update-clingen:
 ####################################
 ##### RARE #########################
 ####################################
+
+# Current method to update RD subset
+# sh run.sh make update-ordo-subsets
+# sh run.sh make update-orphanet-subset
+# sh run.sh make update-gard
+# sh run.sh make update-nord
+# sh run.sh make update-inferred-subset
+# sh run.sh make update-rare-subset
 
 tmp/rare-subset.owl: $(SRC)
 	$(ROBOT) merge -i $(SRC) \
