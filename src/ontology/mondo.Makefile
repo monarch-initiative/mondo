@@ -330,12 +330,16 @@ update-clingen:
 ####################################
 
 # Current method to update RD subset
-# sh run.sh make update-ordo-subsets
-# sh run.sh make update-orphanet-subset
-# sh run.sh make update-gard
-# sh run.sh make update-nord
-# sh run.sh make update-inferred-subset
-# sh run.sh make update-rare-subset
+
+mondo-rare-subset:
+	sh run.sh make update-ordo-subsets -B
+	sh run.sh make update-orphanet-subset -B
+	sh run.sh make update-gard -B
+	sh run.sh make update-nord -B
+	sh run.sh make update-inferred-subset -B
+	sh run.sh make update-rare-subset -B
+	git diff mondo-edit.obo > diff.txt
+	grep -E "^[+-]" diff.txt > additions.txt
 
 tmp/rare-subset.owl: $(SRC)
 	$(ROBOT) merge -i $(SRC) \
