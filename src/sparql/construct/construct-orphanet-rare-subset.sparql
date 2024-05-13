@@ -44,5 +44,7 @@ WHERE
     ?cls owl:deprecated "true"^^xsd:boolean
   }
  FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+ FILTER( STR(?xref) != "Orphanet:377788")
+ # See https://github.com/monarch-initiative/mondo/issues/7704, some specific mappings should be excluded
 }
   
