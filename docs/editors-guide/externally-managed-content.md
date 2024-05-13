@@ -31,12 +31,15 @@ We collaborate with these providers as follows:
 - [GARD](#gard)
 - [Orphanet](#orphanet)
 - [Open Targets](#otar)
+- [Nando](#nando)
 
 <a id="clingen"></a>
 
 #### Clinical Genome Resource (ClinGen)
 
-- TBD
+- ClinGen linkouts
+- ClinGen preferred names
+- ClinGen subset (terms used by ClinGen)
 
 <a id="medgen"></a>
 
@@ -45,27 +48,49 @@ We collaborate with these providers as follows:
 MedGen is NCBI's portal to information about conditions and phenotypes related to Medical Genetics.
 
 - [Website](https://www.ncbi.nlm.nih.gov/medgen/)
+- Externally managed content:
+    - Mondo -  Medgen mappings
+    - Mondo - UMLS mappings
+    - Mondo - MESH mappings (currently on hold)
 
 <a id="nord"></a>
 
 #### National Organization for Rare Disorders (NORD)
 
-- TBD
+- NORD rare subset (Mondo IDs deemed "rare" by NORD)
+- NORD preferred names (report names)
+- NORD cross-references
 
 <a id="gard"></a>
 
 #### Genetic and Rare Diseases (GARD) Information Center
 
-- TBD
+- GARD rare subset
+- GARD cross-references
 
 <a id="orphanet"></a>
 
 #### Orphanet
 
-- TBD
+- Subsets for `disorder`, `group of disorders`, `subtype of a disorder`.
+- Rare subset (based on `disorder` subset above)
 
 <a id="otar"></a>
 
 #### Open Targets (OTAR)
 
-- TBD
+- Mondo - EFO mappings (managed by EBI)
+- Open Targets subset (terms used by Open Targets)
+
+<a id="nando"></a>
+
+#### NANDO
+
+- Mondo - Nando mappings (managed by DBCLS)
+- Nando rare subset
+
+#### OMIM
+
+- Mondo - OMIM phenotype associations
+- 
+
