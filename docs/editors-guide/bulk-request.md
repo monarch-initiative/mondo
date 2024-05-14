@@ -14,7 +14,7 @@ The [template](https://github.com/monarch-initiative/mondo/blob/master/src/templ
 1. **Disease label** - required for new term request.  
 1. **Disease ID** - if the disease is already in Mondo, and the request is to add more information for this existing term, please add the Mondo ID in the format MONDO:XXXXXXX.  
 1. **Definition.** - required - Please try to formulate a definition of your term that will be comprehensible to non-specialists. When submitting multiple diseases of the same "type", a pattern should be used for consistency, and ease of the submitter (see [DOSDP patterns](https://mondo.readthedocs.io/en/latest/editors-guide/e-design-patterns/#design-pattern-dp-docs) for examples). A Mondo curator can assist with this if needed.  
-1. **References.** - required - should be included with the definition. Please include link(s) to a published paper (preferrably in the format PMID:XXXXX) or other sources (e.g. ORCID). Each reference should be separated by | (pipe, no space)  
+1. **References.** - required - should be included with the definition. Please include link(s) to a published paper (preferably in the format PMID:XXXXX) or other sources (e.g. ORCID). Each reference should be separated by | (pipe, no space)
 1. **Synonyms.** - optional - multiple synonyms should be separated by | (pipe, no space)  
 1. **Parent term label** - required - Please provide the name of the parent term under which the term will be classified  
 1. **Parent term ID** If the parent term is already in Mondo, please add the Mondo ID  
