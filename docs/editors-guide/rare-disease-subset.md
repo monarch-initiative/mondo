@@ -28,7 +28,7 @@ The Mondo rare disease subset represents the UNION of rare diseases according to
 Rare disease terms in Mondo are annotated with `in_subset: rare` (see arrowhead in image above), and include
 - terms with the annotation in_subset ‘X_rare’ (which includes ALL the rare disease authorities represented in Mondo)
 - terms with the annotation in_subset ‘mondo_rare’ (representing the manually curated rare diseases)
-- terms with the annotation in_subset 'inferred_rare' (representing the diseases  ontologically infered as rare based on their parents)
+- terms with the annotation in_subset 'inferred_rare' (representing the diseases  ontologically inferred as rare based on their parents)
 
 Users should decide which subset they want to use for their applications. They can do so by filtering the rare disease subset by any of the 'in_subset' annotations. 
 
