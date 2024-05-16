@@ -215,7 +215,7 @@ ORDER BY ?entity
 ###  qc-illegal-prefix-on-xref-annotation.sparql
 
 ```
-# description: Looks for xrefs with illegal prefixes that are on annotation properies
+# description: Looks for xrefs with illegal prefixes that are on annotation properties
 
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
@@ -808,7 +808,7 @@ ORDER BY ?entity
 ###  qc-definition-containing-underscore.sparql
 
 ```
-# description: Checks wether definitions contain underscore characters, which could be an indication of a typo.
+# description: Checks whether definitions contain underscore characters, which could be an indication of a typo.
 
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -1008,7 +1008,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-# Checks wether Axiom annotation are one of oboInOwl:source, oboInOwl:hasDbXref or oboInOwl:hasSynonymType .
+# Checks whether Axiom annotation are one of oboInOwl:source, oboInOwl:hasDbXref or oboInOwl:hasSynonymType .
 
 SELECT distinct ?entity ?property ?value
 WHERE 
@@ -1189,7 +1189,7 @@ PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
 PREFIX OMO: <http://purl.obolibrary.org/obo/OMO_>
 PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
 
-# description: Checks if a proper obsolesence reason was documented for this class
+# description: Checks if a proper obsolescence reason was documented for this class
 
 SELECT ?entity ?property ?value WHERE {
   VALUES ?property { IAO:0000231 }

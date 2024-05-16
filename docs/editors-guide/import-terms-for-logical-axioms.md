@@ -33,6 +33,5 @@ As a Mondo curator, when you have a ticket that requires a term from an external
 - This additional step is needed since we are not using NCBI Taxon directly, but the OBO slim, and the [taxon-subset-ids.txt](https://github.com/obophenotype/ncbitaxon/blob/master/subsets/taxon-subset-ids.txt) file is the seed of the NCBITaxon slim.
  
 
-
 ## Alternate approaches
 While there are alternate approaches to add classes from external ontologies, the instructions above are the only process that should be followed for importing external ontology classes into Mondo.
