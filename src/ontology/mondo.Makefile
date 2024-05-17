@@ -182,6 +182,9 @@ reports/mondo_analysis.md: $(QC_REPORTS)
 	# This is a hack to get rid of <style> tags that are rendered very ugly by github.
 	perl -0777 -i.original -pe 's#<style[^<]*<\/style>##igs' $@
 
+reports/all_synonym_data.tsv: #mondo.owl
+	$(ROBOT) query -i mondo.owl --query ../sparql/reports/all_synonym_data.sparql $@
+
 reports/mondo_analysis.pdf: $(QC_REPORTS)
 	jupyter nbconvert --execute --to pdf --TemplateExporter.exclude_input=True reports/mondo_analysis.ipynb
 
@@ -937,6 +940,15 @@ mondo_obo:
 tmp/mondo-ingest.owl:
 	curl https://github.com/monarch-initiative/mondo-ingest/releases/latest/download/mondo-ingest.owl -L --output $@
 
+tmp/mondo_paper.owl: mondo.owl
+	cp $< $@
+
+tmp/mondo_paper.db: tmp/mondo_paper.owl
+	@rm -f .template.db
+	@rm -f .template.db.tmp
+	RUST_BACKTRACE=full semsql make $@ -P config/prefixes.csv
+	@rm -f .template.db
+	@rm -f .template.db.tmp
 
 tmp/mondo-ingest.db: tmp/mondo-ingest.owl
 	@rm -f .template.db
