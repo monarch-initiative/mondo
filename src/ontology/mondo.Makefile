@@ -289,6 +289,23 @@ update-gard:
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
 ####################################
+##### NANDO #########################
+####################################
+
+
+tmp/nando.template.owl:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/57766671b301eaa8697bbbcc89261130326e7a76/src/ontology/external/nando-mappings.robot.owl" -O $@
+
+.PHONY: update-nando
+update-nando:
+	make tmp/nando.template.owl -B
+	#grep -vE '^(xref: NORD:|subset: nord_rare)' $(SRC) > tmp/mondo-edit.tmp || true
+	#mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/nando.template.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+
+####################################
 ##### NORD #########################
 ####################################
 
