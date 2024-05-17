@@ -293,8 +293,9 @@ update-gard:
 ####################################
 
 
-tmp/nando.template.owl:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/57766671b301eaa8697bbbcc89261130326e7a76/src/ontology/external/nando-mappings.robot.owl" -O $@
+tmp/nando.template.tsv:
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNVCVQdzdyUe1KfGmayQM9l2_2pkqK2vC_ZGp8-hivZnU2N3BIGczuHY_HuW_AIE8o-YryTmZwqm4T/pub?gid=8080357&single=true&output=tsv" -O $@
+
 
 .PHONY: update-nando
 update-nando:
