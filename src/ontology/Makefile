@@ -87,7 +87,7 @@ COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
 
 SUBSETS = mondo-minimal mondo-rare
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
-SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json)
+SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json $(n)_nodes.kgx.tsv $(n)_edges.kgx.tsv)
 
 REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes obsoletion-candidates synonyms class-stats root-classes superclass-count
 REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/reports/$V.sparql reports/$V.tmp.tsv)
@@ -375,6 +375,9 @@ subsets/mondo-minimal.owl: mondo-base.owl imports/equivalencies.owl
 
 subsets/%.json: subsets/%.owl
 	$(ROBOT) convert -i $< -o $@
+
+subsets/%_nodes.kgx.tsv subsets/%_edges.kgx.tsv: subsets/%.json
+	kgx transform --input-format obojson --output-format tsv --output subsets/$* $< && test -f $@
 
 subsets/%.obo: subsets/%.owl
 	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms: $@.tmp.obo > $@ && rm $@.tmp.obo
