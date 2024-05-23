@@ -87,7 +87,7 @@ COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
 
 SUBSETS = mondo-minimal mondo-rare
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
-SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json $(n)_nodes.kgx.tsv $(n)_edges.kgx.tsv)
+SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json $(n)_nodes.tsv $(n)_edges.tsv)
 
 REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes obsoletion-candidates synonyms class-stats root-classes superclass-count
 REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/reports/$V.sparql reports/$V.tmp.tsv)
@@ -98,7 +98,7 @@ REPORT_FILES = $(MAIN_REPORT_FILES) $(ADDITIONAL_REPORT_FILES)
 
 
 MAIN_PRODUCTS = $(ONT) $(ONT)-base $(ONT)-with-equivalents
-MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json)
+MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json $(n)_nodes.tsv $(n)_edges.tsv)
 EQUIVALENTS_FILES=imports/equivalencies
 EQUIVALENTS = $(foreach n, $(EQUIVALENTS_FILES), $(n).owl $(n).obo $(n).json)
 ARTEFACTS = \
@@ -256,6 +256,9 @@ $(ONT).json: $(ONT).owl
 	$(ROBOT) convert --input $< --check false -f json -o $@.tmp.json &&\
 		mv $@.tmp.json $@
 
+$(ONT)_nodes.tsv subsets/$(ONT)_edges.tsv:$(ONT).json
+	kgx transform --input-format obojson --output-format tsv --output subsets/$* $< && test -f $@
+
 $(ONT)-with-equivalents.owl: reasoned-plus-equivalents.owl
 	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 
@@ -376,7 +379,7 @@ subsets/mondo-minimal.owl: mondo-base.owl imports/equivalencies.owl
 subsets/%.json: subsets/%.owl
 	$(ROBOT) convert -i $< -o $@
 
-subsets/%_nodes.kgx.tsv subsets/%_edges.kgx.tsv: subsets/%.json
+subsets/%_nodes.tsv subsets/%_edges.tsv: subsets/%.json
 	kgx transform --input-format obojson --output-format tsv --output subsets/$* $< && test -f $@
 
 subsets/%.obo: subsets/%.owl
