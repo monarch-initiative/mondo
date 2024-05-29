@@ -42,7 +42,7 @@ Disease naming conventions are explained [here](https://mondo.monarchinitiative.
 
 - Mondo follows the OMIM naming conventions. Therefore, the disease name coming from OMIM will be preferentially the primary term label  
 - Term relabeling requests (e.g. gene-based labels) are addressed as follow:  
-  - if the original term label comes from OMIM, the original label is retained and the requested new label is added as an "exact synonym". If the request comes for a ClinGen working group, the synonym type called ‘ClinGen preferred’ will be added.  
+  - if the original term label comes from OMIM, the original label is retained and the requested new label is added as an "exact synonym". If the request comes for a ClinGen working group, the synonym type called ‘ClinGen label’ will be added.  
   - if the original term label does not come from OMIM, the term will be relabeled as requested (note that the original label will be added as an exact synonym)  
 
 
@@ -108,7 +108,7 @@ A synonym that is historic and discouraged | DEPRACATE | We mark synonyms with D
 A synonym that is recorded for consistency with another source but is a misspelling | MISSPELLING | The source term has a misspelling | MONDO:0011154 acrofacial dysostosis, Palagonia type
 abbreviation | ABBREVIATION | Abbreviations of the primary label | MONDO:0004976 'amyotrophic lateral sclerosis'
 ambiguous | AMBIGUOUS | A synonym that is unclear or inexact | MONDO:0021636 'astrocytic tumor'
-clingen preferred | CLINGEN_PREFERRED | Added to gene-based names/synonyms that were requested by ClinGen, and other terms that are the preferred terms for ClinGen. | MONDO:0700000 'ALG9-associated autosomal dominant polycystic kidney disease'
+clingen label | CLINGEN_LABEL | Added to gene-based names/synonyms that were requested by ClinGen, and other terms that are the preferred terms for ClinGen. | MONDO:0700000 'ALG9-associated autosomal dominant polycystic kidney disease'
 dubious synonym | DUBIOUS | Not not to be relied upon or suspect | MONDO:0002776 'external ear disease'
 Synonym to be removed from public release but maintained in edit version as record of external usage | EXCLUDE | Some synonyms are annotated with EXCLUDE, e.g. “NOS” (not otherwise specified) synonyms. It is useful to have these in the edit version, but these are filtered on release. | MONDO:0011088 congenital myasthenic syndrome 1A, MONDO:0002679 cerebral infarction, MONDO:0008170 'ovarian cancer'
 
@@ -201,6 +201,7 @@ MONDO:mondoIsNarrowerThanSource   |   The Mondo class is narrower (more specific
 MONDO:mondoIsBroaderThanSource |   The Mondo class is broader (more general) than the source xref.  |  xrefs  |   N   |   
 MONDO:NCBI_mim2gene_medline | This indicates the gene relationship came from MedGen.  | xrefs | N | MONDO:0100288 enhanced S-cone syndrome
 MONDO:notFoundInDiseaseSubset   |   This annotation is typically added to dbxefs from UMLS or NCIt, to indicate the term is not from the disease branch.    |   dbxef   |   N   |   MONDO_0015350 '17q11.2 microduplication syndrome'
+MONDO:notVerified   | Indicates that the relationship has not been manually verified by a curator and by default is from the automatic subclass sync process. | subclassOf  |   |
 MONDO:obsoleteEquivalent    |   Used for cases where we have exact 1:1 matches between an obsolete in Mondo and a live class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.    |  xrefs  |   N   |   MONDO:0011812 ‘Duane-radial ray syndrome’ database_cross_reference: Orphanet:959 (was equivalent to MONDO:0019863 which was obsoleted)  {source=MONDO:obsoleteEquivalent}
 MONDO:obsoleteEquivalentObsolete    |   Used for cases where we have exact 1:1 matches between an obsolete in Mondo and an obsolete class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.    |  xrefs  |   N   |   TBD
 MONDO:ontobio   |   Lexical matching method |   subclassOf  |   N   |   MONDO:0012176 'Emanuel syndrome'
