@@ -271,7 +271,7 @@ update-orphanet-subset:
 ####################################
 
 subsets/gard-subset.template.tsv:
-	wget "https://github.com/monarch-initiative/gard/releases/latest/download/mondo-gard-exact.robot.template.tsv" -O $@
+	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vTGh0fO79utQPPmjSykHatfQMc6P_bnkqPfiqHJDdmqWJk7H1pSm8OkrJclJT9SiA/pub?gid=1163320745&single=true&output=tsv" -O $@
 
 # The complex part here is that we need to dynamically update the MONDO source code, i.e. 
 # MONDO:equivalentTo and MONDO:obsoleteEquivalentTo.
