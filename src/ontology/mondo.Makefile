@@ -297,7 +297,7 @@ tmp/nando.template.tsv:
 	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNVCVQdzdyUe1KfGmayQM9l2_2pkqK2vC_ZGp8-hivZnU2N3BIGczuHY_HuW_AIE8o-YryTmZwqm4T/pub?gid=8080357&single=true&output=tsv" -O $@
 
 tmp/nando.template.owl: tmp/nando.template.tsv
-	$(ROBOT) template --template $< convert -f ofn -o $@
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --template $< convert -f ofn -o $@
 
 .PHONY: update-nando
 update-nando:
