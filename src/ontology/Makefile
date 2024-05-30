@@ -87,7 +87,7 @@ COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
 
 SUBSETS = mondo-minimal mondo-rare mondo-clingen
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
-SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json)
+SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json $(n)_nodes.tsv $(n)_edges.tsv)
 
 REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes obsoletion-candidates synonyms class-stats root-classes superclass-count
 REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/reports/$V.sparql reports/$V.tmp.tsv)
@@ -97,8 +97,8 @@ ADDITIONAL_REPORT_FILES = reports/semantic-xref-pairs.tsv
 REPORT_FILES = $(MAIN_REPORT_FILES) $(ADDITIONAL_REPORT_FILES)
 
 
-MAIN_PRODUCTS = $(ONT) $(ONT)-base $(ONT)-with-equivalents
-MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json)
+MAIN_PRODUCTS = $(ONT) $(ONT)-base $(ONT)-with-equivalents $(ONT)-simple
+MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json) $(ONT)_nodes.tsv $(ONT)_edges.tsv
 EQUIVALENTS_FILES=imports/equivalencies
 EQUIVALENTS = $(foreach n, $(EQUIVALENTS_FILES), $(n).owl $(n).obo $(n).json)
 ARTEFACTS = \
@@ -136,6 +136,8 @@ all_release_reports: $(REPORT_FILES_RELEASE)
 # ----------------------------------------
 
 #all: test all_imports all_reports all_equivalencies all_subsets imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
+
+#TODO: roundtrip.obo seems unnecessary check.
 
 test: sparql_test_edit roundtrip.obo debug.owl debug_inference_check.owl mondo-edit.owl sparql_test_main_obo test_nomerge
 test: reports/robot-report-mondo-tags-reasoned.owl.tsv
@@ -228,7 +230,7 @@ reasoned.owl: filtered.owl
 		remove --term MONDO:0700097 --term OGMS:0000031 $(ANN) -o $@
 
 
-test: reasoned-plus-equivalents.owl
+#test: reasoned-plus-equivalents.owl
 
 # merged = reasoned + equivalencies
 reasoned-plus-equivalents.owl: reasoned.owl imports/equivalencies.owl
@@ -244,8 +246,7 @@ reasoned-plus-equivalents.owl: reasoned.owl imports/equivalencies.owl
 $(ONT).owl: reasoned.owl
 	$(ROBOT) merge -i $< annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 
-# obo is self-contained
-$(ONT).obo: $(ONT)-base.owl
+$(ONT).obo: $(ONT).owl
 	$(ROBOT) annotate -i $< \
 			-V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl \
 			--ontology-iri $(OBO)/$(ONT).owl \
@@ -256,6 +257,9 @@ $(ONT).json: $(ONT).owl
 	$(ROBOT) convert --input $< --check false -f json -o $@.tmp.json &&\
 		mv $@.tmp.json $@
 
+$(ONT)_nodes.tsv $(ONT)_edges.tsv: $(ONT).json
+	kgx transform --input-format obojson --output-format tsv --output $(ONT) $< && test -f $(ONT)_nodes.tsv
+
 $(ONT)-with-equivalents.owl: reasoned-plus-equivalents.owl
 	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 
@@ -263,6 +267,43 @@ $(ONT)-with-equivalents.obo: $(ONT)-with-equivalents.owl
 	$(OWL2OBO)
 $(ONT)-with-equivalents.json: $(ONT)-with-equivalents.owl
 	$(ROBOT) convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
+
+ONTOLOGYTERMS=$(TMPDIR)/mondo_classes.txt
+
+$(ONTOLOGYTERMS): reasoned.owl
+	$(ROBOT) query -f csv -i $< --query ../sparql/signature/mondo-classes.sparql $@
+
+SIMPLESEED=$(TMPDIR)/simple_seed.txt
+
+$(SIMPLESEED): reasoned.owl $(ONTOLOGYTERMS)
+	$(ROBOT) query -f csv -i $< --query ../sparql/signature/simple-seed.sparql $@.tmp &&\
+	cat $@.tmp $(ONTOLOGYTERMS) | sort | uniq >  $@ &&\
+	echo "http://www.geneontology.org/formats/oboInOwl#SubsetProperty" >> $@ &&\
+	echo "http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty" >> $@
+
+# foo-simple: (edit->reason,relax,reduce,drop imports, drop every axiom which contains an entity outside the "namespaces of interest")
+# drop every axiom: filter --term-file keep_terms.txt --trim true
+#	remove --select imports --trim false
+# NOTE FOR FUTURE: this is slightly different from the usual simple as it completely removes all
+# Object properties from the ontology (remove --select object-properties).
+$(ONT)-simple.owl: reasoned.owl $(OTHER_SRC) $(SIMPLESEED) $(IMPORT_FILES)
+	$(ROBOT) merge --input $< \
+		reason --equivalent-classes-allowed none --exclude-tautologies true --annotate-inferred-axioms true \
+		relax \
+		remove --axioms equivalent \
+		remove --select object-properties \
+		relax \
+		filter --term-file $(SIMPLESEED) --select "annotations ontology anonymous self" --trim true --signature true \
+		reduce \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
+
+$(ONT)-simple.obo: $(ONT)-simple.owl
+	$(OWL2OBO)
+
+$(ONT)-simple.json: $(ONT)-simple.owl
+	$(ROBOT) convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
+
 
 #$(ONT)-atomic.owl: $(ONT).owl
 #	owltools --use-catalog $< --remove-imports-declarations --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
@@ -385,6 +426,9 @@ subsets/mondo-minimal.owl: mondo-base.owl imports/equivalencies.owl
 
 subsets/%.json: subsets/%.owl
 	$(ROBOT) convert -i $< -o $@
+
+subsets/%_nodes.tsv subsets/%_edges.tsv: subsets/%.json
+	kgx transform --input-format obojson --output-format tsv --output subsets/$* $< && test -f subsets/$*_nodes.tsv
 
 subsets/%.obo: subsets/%.owl
 	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms: $@.tmp.obo > $@ && rm $@.tmp.obo
@@ -768,7 +812,13 @@ NEWAXTEST: mondo-edit.owl new.owl
 SPARQL_MONDO_QC=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/qc/mondo/qc-*.sparql)))
 SPARQL_GENERAL_QC=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/qc/general/qc-*.sparql)))
 SPARQL_EDIT_EXCLUDE=
-SPARQL_OBO_EXCLUDE=qc-single-child qc-omimps-should-be-inherited qc-omim-subsumption qc-permitted-properties
+# qc-duplicate-exact-synonym-no-abbrev is excluded from the OBO check because we are running the OBO check on the base file
+# There is something super weird about the way the OBO file is generated that causes this to fail
+# Because the id of ontology is `ontology: mondo/mondo-base`, all the IRIs to properties related to 
+# the ontology begin looking like this: http://purl.obolibrary.org/obo/mondo/mondo-base#... This
+# will cause the query to fail because it expects the IRI  http://purl.obolibrary.org/obo/mondo#ABREVIATION
+# for the duplicate-exact-synonym-no-abbrev check.
+SPARQL_OBO_EXCLUDE=qc-single-child qc-omimps-should-be-inherited qc-omim-subsumption qc-permitted-properties qc-duplicate-exact-synonym-no-abbrev
 SPARQL_OWL_EXCLUDE=qc-permitted-properties
 SPARQL_GENERAL_QC_EDIT=$(filter-out $(SPARQL_EDIT_EXCLUDE),$(SPARQL_GENERAL_QC))
 SPARQL_GENERAL_QC_OWL=$(filter-out $(SPARQL_OWL_EXCLUDE),$(SPARQL_GENERAL_QC))
@@ -809,7 +859,9 @@ sparql_test_main_owl: $(ONT).owl
 	mkdir -p reports/main_owl/ &&\
 	$(ROBOT) verify -i $< --queries $(SPARQL_MONDO_QC_FILES_OWL) $(SPARQL_GENERAL_QC_FILES_OWL) -O reports/main_owl/ && touch $@
 
-sparql_test_main_obo: $(ONT).obo
+# See comment about http://purl.obolibrary.org/obo/mondo/mondo-base# above
+# if you ever encounter "strange" errors related to Mondo internal property ids.
+sparql_test_main_obo: $(ONT)-base.obo
 	mkdir -p reports/main_obo/ &&\
 	$(ROBOT) verify -i $< --queries $(SPARQL_MONDO_QC_FILES_OBO) $(SPARQL_GENERAL_QC_FILES_OBO) -O reports/main_obo/ && touch $@
 

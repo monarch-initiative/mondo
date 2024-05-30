@@ -36,7 +36,7 @@ test: test_reason_equivalence
 test: test_reason_equivalence_hermit
 test: obo_validator
 
-test_reason_equivalence_hermit: $(ONT).obo
+test_reason_equivalence_hermit: $(ONT)-base.obo
 	$(ROBOT) reason -i $< --equivalent-classes-allowed none -r hermit
 
 test_reason_equivalence: $(SRC)
