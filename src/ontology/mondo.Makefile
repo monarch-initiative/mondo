@@ -302,8 +302,8 @@ tmp/nando.template.owl: tmp/nando.template.tsv
 .PHONY: update-nando
 update-nando:
 	make tmp/nando.template.owl -B
-	#grep -vE '^(xref: NORD:|subset: nord_rare)' $(SRC) > tmp/mondo-edit.tmp || true
-	#mv tmp/mondo-edit.tmp mondo-edit.obo
+	grep -vE '^(xref: NANDO:|subset: nando)' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
 	$(ROBOT) merge -i $(SRC) -i tmp/nando.template.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
