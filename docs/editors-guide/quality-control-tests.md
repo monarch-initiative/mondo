@@ -215,7 +215,7 @@ ORDER BY ?entity
 ###  qc-illegal-prefix-on-xref-annotation.sparql
 
 ```
-# description: Looks for xrefs with illegal prefixes that are on annotation properies
+# description: Looks for xrefs with illegal prefixes that are on annotation properties
 
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
@@ -811,7 +811,7 @@ ORDER BY ?entity
 ###  qc-definition-containing-underscore.sparql
 
 ```
-# description: Checks wether definitions contain underscore characters, which could be an indication of a typo.
+# description: Checks whether definitions contain underscore characters, which could be an indication of a typo.
 
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -1018,7 +1018,8 @@ prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 # Tests if an animal disease made it into the rare disease subset
 
-SELECT DISTINCT ?entity ?property ?value WHERE
+SELECT DISTINCT ?entity ?property ?value
+WHERE
 {
   VALUES ?property { <http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> }
   ?entity ?property ?value .
@@ -1036,7 +1037,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-# Checks wether Axiom annotation are one of oboInOwl:source, oboInOwl:hasDbXref or oboInOwl:hasSynonymType .
+# Checks whether Axiom annotation are one of oboInOwl:source, oboInOwl:hasDbXref or oboInOwl:hasSynonymType .
 
 SELECT distinct ?entity ?property ?value
 WHERE 
@@ -1217,7 +1218,7 @@ PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
 PREFIX OMO: <http://purl.obolibrary.org/obo/OMO_>
 PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
 
-# description: Checks if a proper obsolesence reason was documented for this class
+# description: Checks if a proper obsolescence reason was documented for this class
 
 SELECT ?entity ?property ?value WHERE {
   VALUES ?property { IAO:0000231 }
@@ -1333,9 +1334,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 
-# Tests if an animal disease made it into the rare disease subset
+# Tests for excluded_subClassOf relationships that do not also have a source annotation with an ORCID.
 
-SELECT DISTINCT ?entity ?property ?value WHERE
+SELECT DISTINCT ?entity ?property ?value
+WHERE
 {
   VALUES ?property { <http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> }
   ?entity ?property ?value .
@@ -1637,7 +1639,8 @@ ORDER BY ?entity
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?entity ?property ?value WHERE {
+SELECT DISTINCT ?entity ?property ?value
+WHERE {
   VALUES ?property {oboInOwl:hasDbXref}
   ?entity ?property ?value .
   FILTER (!regex(?value, "^[A-Za-z_][A-Za-z0-9_.-]*[A-Za-z0-9_]:[^\\s]+$"))
