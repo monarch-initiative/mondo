@@ -8,7 +8,8 @@ prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 # description: Creates a list of all CLINGEN labels
 
-SELECT ?entity ?label (GROUP_CONCAT(?value;SEPARATOR="|") AS ?values) ?synonym_property  WHERE {
+SELECT ?entity ?label (GROUP_CONCAT(?value;SEPARATOR="|") AS ?values) ?synonym_property
+WHERE {
   ?entity rdfs:label ?label .
   [] owl:annotatedSource ?entity ;
          owl:annotatedProperty ?synonym_property ;

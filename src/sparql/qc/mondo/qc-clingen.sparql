@@ -11,7 +11,6 @@ prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 # description: This QC check ensures that no class ever has two clingen labels, and that there are only exact preferred labels
 
 SELECT ?entity ?property ?value
-
 WHERE {
  {
   ?ax owl:annotatedSource ?entity ;
