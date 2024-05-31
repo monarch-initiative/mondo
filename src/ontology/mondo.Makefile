@@ -403,10 +403,10 @@ update-efo-subset:
 
 update-external-content:
 	$(MAKE) update-efo-subset -B
-	$(MAKE) update-clingen -B
-	$(MAKE) update-nando -B
-	$(MAKE) update-nord -B
-	$(MAKE) update-gard -B
+	#$(MAKE) update-clingen -B
+	#$(MAKE) update-nando -B
+	#$(MAKE) update-nord -B
+	#$(MAKE) update-gard -B
 	$(MAKE) update-orphanet-subset -B
 	$(MAKE) update-inferred-subset -B
 	$(MAKE) update-rare-subset -B
