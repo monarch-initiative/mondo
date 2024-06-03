@@ -402,6 +402,7 @@ update-efo-subset:
 ##########################################
 
 update-external-content:
+	$(MAKE) subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-before.tsv
 	$(MAKE) update-efo-subset -B
 	#$(MAKE) update-clingen -B
 	#$(MAKE) update-nando -B
@@ -410,6 +411,15 @@ update-external-content:
 	$(MAKE) update-orphanet-subset -B
 	$(MAKE) update-inferred-subset -B
 	$(MAKE) update-rare-subset -B
+	sh run.sh make subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-after.tsv
+	@echo "Subset metrics before..."
+	cat tmp/subset-metrics-before.tsv
+	@echo "Subset metrics after..."
+	cat tmp/subset-metrics-after.tsv
+
+.PHONY: subset-metrics
+subset-metrics:
+	$(ROBOT) query -f tsv -i $(SRC) --query $(SPARQLDIR)/reports/count-subsets.sparql tmp/$@.tsv
 
 ##########################################
 ##### RARE REPORT ########################
