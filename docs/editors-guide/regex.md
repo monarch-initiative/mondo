@@ -132,5 +132,5 @@ Related to: https://github.com/monarch-initiative/mondo/issues/4688
 (xref: .*)source="MONDO:subClassOf"(.*) _or_
 (xref: .*)source="MONDO:superClassOf"(.*) _or_
 
-**Relace:**
+**Replace:**
 $1$2
