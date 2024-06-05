@@ -18,7 +18,7 @@ SELECT ?mondo_curie ?label ?deprecated
        (IF(BOUND(?subset_obsoletion_candidate), "yes", "no") AS ?obsoletion_candidate)
        (IF(BOUND(?subset_ordo_clinical_subtype), "yes", "no") AS ?ordo_disorder_subtype)
        (IF(BOUND(?subset_ordo_group_of_disorders), "yes", "no") AS ?ordo_group_of_disorders)
-       (IF(BOUND(?subset_ordo_disease), "yes", "no") AS ?ordo_disorder)
+       (IF(BOUND(?subset_ordo_disorder), "yes", "no") AS ?ordo_disorder)
        (GROUP_CONCAT(DISTINCT STR(?xref); separator="|") as ?xrefs)
        (GROUP_CONCAT(DISTINCT STR(?ancestor_label); separator=", ") as ?ancestors)
 	   
@@ -685,7 +685,7 @@ WHERE {
   OPTIONAL { ?mondo_id oio:inSubset ?subset_ordo_clinical_subtype . FILTER(STR(?subset_ordo_clinical_subtype) = "http://purl.obolibrary.org/obo/mondo#ordo_clinical_subtype") }
   OPTIONAL { ?mondo_id oio:inSubset ?subset_ordo_group_of_disorders . FILTER(STR(?subset_ordo_group_of_disorders) = "http://purl.obolibrary.org/obo/mondo#ordo_group_of_disorders") }
   OPTIONAL { ?mondo_id oio:inSubset ?subset_clingen . FILTER(STR(?subset_clingen) = "http://purl.obolibrary.org/obo/mondo#clingen") }
-  OPTIONAL { ?mondo_id oio:inSubset ?subset_ordo_disease . FILTER(STR(?subset_ordo_disease) = "http://purl.obolibrary.org/obo/mondo#ordo_disease") }
+  OPTIONAL { ?mondo_id oio:inSubset ?subset_ordo_disorder . FILTER(STR(?subset_ordo_disorder) = "http://purl.obolibrary.org/obo/mondo#ordo_disorder") }
   BIND(REPLACE(REPLACE(STR(?mondo_id),"http://purl.obolibrary.org/obo/",""),"_",":") as ?mondo_curie)  
   FILTER (isIRI(?mondo_id) && STRSTARTS(str(?mondo_id), "http://purl.obolibrary.org/obo/MONDO_"))
 } GROUP BY ?mondo_curie ?label ?deprecated 
@@ -707,5 +707,5 @@ WHERE {
 ?subset_obsoletion_candidate
 ?subset_ordo_clinical_subtype
 ?subset_ordo_group_of_disorders
-?subset_ordo_disease
+?subset_ordo_disorder
 ?subset_mondo_rare

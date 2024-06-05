@@ -13,8 +13,8 @@ SELECT
 
 WHERE {
   ?mondo_id owl:deprecated true .
-  ?mondo_id oio:inSubset <http://purl.obolibrary.org/obo/mondo#ordo_disease> .
-    
+  ?mondo_id oio:inSubset <http://purl.obolibrary.org/obo/mondo#ordo_disorder> .
+  
   OPTIONAL {
   ?mondo_id rdfs:label ?label .
   }

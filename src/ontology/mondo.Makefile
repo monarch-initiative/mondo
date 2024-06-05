@@ -247,12 +247,25 @@ tmp/orphanet-rare-subset.owl: $(SRC)
 	$(ROBOT) merge -i $(SRC) reason \
 		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
 
+tmp/ordo-subsets.robot.owl:
+	#cp /Users/matentzn/ws/mondo-ingest/src/ontology/external/ordo-subsets.robot.owl $@
+	echo "WARNING WARNING WARNING:::::: MAKE SURE TO COPY THE RIGHT THING"
+
 .PHONY: update-ordo-subsets
 update-ordo-subsets:
-	grep -vE '^(subset: ordo_group_of_disorders)' $(SRC) | grep -vE '^(subset: ordo_disease)' | grep -vE '^(subset: ordo_clinical_subtype)' > tmp/mondo-edit.tmp || true
+	$(MAKE) subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-before.tsv
+	$(MAKE) tmp/ordo-subsets.robot.owl -B
+	grep -vE '^(subset: ordo_group_of_disorders)' $(SRC) | grep -vE '^(subset: ordo_disorder)' | grep -vE '^(subset: ordo_subtype_of_a_disorder)' > tmp/mondo-edit.tmp || true
 	mv tmp/mondo-edit.tmp mondo-edit.obo
-	$(MAKE) merge_template TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vTec1wITyBUI6uR9_oFsZpAWdAwmrazt2zDyjkrUTEjZ1ISVrI2RO0wYgf2ilUukh-_M4beuYU3skQt/pub?gid=976194052&single=true&output=tsv" -B
+	$(ROBOT) merge -i $(SRC) -i tmp/ordo-subsets.robot.owl --collapse-import-closure false convert -f obo --check false -o tmp/mondo-edit.tmp
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	#$(MAKE) merge_template TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vTec1wITyBUI6uR9_oFsZpAWdAwmrazt2zDyjkrUTEjZ1ISVrI2RO0wYgf2ilUukh-_M4beuYU3skQt/pub?gid=976194052&single=true&output=tsv" -B
 	make NORM && mv NORM $(SRC)
+	$(MAKE) subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-after.tsv
+	@echo "Subset metrics before..."
+	cat tmp/subset-metrics-before.tsv
+	@echo "Subset metrics after..."
+	cat tmp/subset-metrics-after.tsv
 	
 
 .PHONY: update-orphanet-subset
@@ -265,6 +278,7 @@ update-orphanet-subset:
 	mv tmp/mondo-edit.tmp mondo-edit.obo
 	$(ROBOT) merge -i $(SRC) -i tmp/orphanet-rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+	
 
 ####################################
 ##### GARD #########################
@@ -341,7 +355,6 @@ subsets/clingen.template.tsv:
 .PHONY: update-clingen
 update-clingen:
 	$(MAKE) tmp/clingen.template.owl
-	git checkout master -- mondo-edit.obo
 	grep -vE '^(xref: CGGV:|xref: CGGCIEX:|subset: clingen)' mondo-edit.obo > tmp/mondo-edit.tmp
 	#sed -i 's/EXACT CLINGEN_LABEL/EXACT/g' tmp/mondo-edit.tmp || true
 	mv tmp/mondo-edit.tmp mondo-edit.obo

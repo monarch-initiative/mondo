@@ -8,8 +8,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
-#classes with the axiom "'bearer of' some rare" AND/OR "has subset :‘gard_rare’" AND limited to disease branch (ie not including the disease susceptibility branch
-
 CONSTRUCT {
   ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#orphanet_rare> .
   [] rdf:type owl:Axiom ;
@@ -24,18 +22,18 @@ WHERE
   ?cls a owl:Class .
 
   { 
-    # Match the XREF and the fact this term belongs to the ordo_disease subset
+    # Match the XREF and the fact this term belongs to the ordo_disorder subset
     ?cls <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?xref .
 
-    # Only ordo_disease is included as per request by Orphanet: these are the diseases they truly consider rare
-    ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#ordo_disease> .
+    # Only ordo_disorder is included as per request by Orphanet: these are the diseases they truly consider rare
+    ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#ordo_disorder> .
     
     # For safety reasons, we only consider the case that the evidence of the subset corresponds exactly to the xref
     # This is probably redundant, but it is possible that a class has two ORDO xrefs, one exact, one not
     # and we only want to record the exact xref as evidence for the rare subset
     ?a <http://www.w3.org/2002/07/owl#annotatedSource> ?cls .
     ?a <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.geneontology.org/formats/oboInOwl#inSubset> .
-    ?a <http://www.w3.org/2002/07/owl#annotatedTarget> <http://purl.obolibrary.org/obo/mondo#ordo_disease> .
+    ?a <http://www.w3.org/2002/07/owl#annotatedTarget> <http://purl.obolibrary.org/obo/mondo#ordo_disorder> .
     ?a <http://www.geneontology.org/formats/oboInOwl#source> ?xref .
   
   }

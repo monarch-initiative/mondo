@@ -17,17 +17,20 @@ WHERE
     <http://purl.obolibrary.org/obo/mondo#orphanet_rare>
     <http://purl.obolibrary.org/obo/mondo#nord_rare>
     <http://purl.obolibrary.org/obo/mondo#clingen>
+    <http://purl.obolibrary.org/obo/mondo#ordo_disorder>
+    <http://purl.obolibrary.org/obo/mondo#ordo_subtype_of_a_disorder>
+    <http://purl.obolibrary.org/obo/mondo#ordo_group_of_disorders>
     <http://purl.obolibrary.org/obo/mondo#rare>
     <http://purl.obolibrary.org/obo/mondo#otar>
   }
 
   ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> ?subset.
 
-
   FILTER NOT EXISTS {
     ?cls owl:deprecated ?deprecated
   }
+ 
  FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+ #BIND(CONCAT(CONCAT(CONCAT(REPLACE(STR(?subset), "http://purl.obolibrary.org/obo/mondo#", "", "i"),": (Deprecated: "), STR(?deprecated), ")")) AS ?subset_message)
 } 
 GROUP BY ?subset ?deprecated
-ORDER BY ?subset ?deprecated
