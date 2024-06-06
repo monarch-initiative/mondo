@@ -422,7 +422,7 @@ update-rare-disease-subset:
 	#$(MAKE) update-nord -B
 	$(MAKE) update-inferred-subset -B
 	$(MAKE) update-rare-subset -B
-	$(MAKE) make subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-after.tsv
+	$(MAKE) subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-after.tsv
 	@echo "Subset metrics before..."
 	cat tmp/subset-metrics-before.tsv
 	@echo "Subset metrics after..."
