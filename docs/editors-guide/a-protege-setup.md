@@ -2,8 +2,8 @@
 
 (This was adopted from the [Gene Ontology editors guide](http://wiki.geneontology.org/index.php/Protege5_5_setup_for_GO_Eds))
 
-## Operating System
-These instructions are for Mac OS
+## Operating system
+These instructions are for Mac OS.
 
 ## Protege version
 As of August 2023, Mondo editors are using `Protege version 5.6.
@@ -15,23 +15,43 @@ As of August 2023, Mondo editors are using `Protege version 5.6.
 
 ### ELK reasoner
 
-The ELK reasoner is included with Protege 5.6. For instructions on adding the ELK reasoner (if you are using an older version of Protege, see the [Install Elk 0.5 in Protege how to guide](https://oboacademy.github.io/obook/howto/installing-elk-in-protege/).)
+The ELK reasoner is included with Protege 5.6. For instructions on adding the ELK reasoner (if you are using an older version of Protege), see the [Install Elk 0.5 in Protege how to guide](https://oboacademy.github.io/obook/howto/installing-elk-in-protege/).
 
 ## Increase memory in Protege
 
-1. Protege needs at least 4G of RAM to cope with Mondo, ideally use 12G or 16G if your machine can handle it.
-1. If running from Protege.app on a mac, open the /Applications/Protege-5.6/Protégé.app/Contents/info.plist file
-1. Below the line: <string>-Xss16M</string>
-1. Insert another line: <string>-Xmx12G</string>
-1. Note - if you have issues opening Protege, then reduce the memory, try 10G (or lower) instead.
+Starting from version 5.6, Protege will automatically set the maximal
+amount of memory it can use, based on how much memory is available on
+your system:
 
-## Fix memory settings
-- Protege needs at least 4G of RAM to cope with Mondo, ideally use 12G or 16G if your machine can handle it.
-- If running from Protege.app on a mac, open the /Applications/Protege-5.6/Protégé.app/Contents/info.plist file
-  - Below the line: `<string>-Xss16M</string>`
-  - Insert another line: `<string>-Xmx12G</string>`
+* if you have less than 4G of RAM, Protege will use at most 1G;
+* if you have between 4 and 8G, Protege will use at most half of the
+  system memory (e.g., 3G if you have 6G);
+* if you have between 8 and 16G, Protege will use at most two-thirds of
+  the system memory (e.g., 8G if you have 12G);
+* if you have more than 16G, Protege will use at most 75% of the system
+  memory (e.g., 18G if you have 24G).
 
-_Note - if you have issues opening Protege, then reduce the memory, try 10G (or lower) instead._
+This default behaviour means that in most cases, editors shouldn’t have
+to worry about manually setting Protege’s max available memory.
+
+Should you wish anyway to set the maximal amount of memory to an
+explicit value, you may do so by editing the file
+`.Protege/conf/jvm.conf` in your home directory (create that file, and
+the parent directory `.Protege/conf` itself, if it does not already
+exist) and adding a line like the following:
+
+```
+max_heap_size=20G
+```
+
+where `20G` is the maxinmal amount of memory you want Protege to use.
+Restart Protege (if it was already running) for the new setting to be
+taken into account.
+
+When Protege is running, you can check how much memory it is configured
+to use by opening the “About Protege” dialog (`Protege > About
+Protege`). Look for the line “Max memory set to ...MB”.
+
 
 ## Instructions for new Protege users
 

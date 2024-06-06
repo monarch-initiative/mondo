@@ -1,0 +1,29 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+PREFIX OMO: <http://purl.obolibrary.org/obo/OMO_>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# description: Checks if a proper obsolesence reason was documented for this class
+
+SELECT ?entity ?label ?synonym ?xref WHERE {
+  ?entity rdfs:label ?label .
+  [] owl:annotatedSource ?entity ;
+         owl:annotatedProperty oboInOwl:hasExactSynonym ;
+         owl:annotatedTarget ?synonym ;
+         oboInOwl:hasDbXref ?xref .
+  FILTER(STRSTARTS(str(?xref), "Orphanet:") || STRSTARTS(str(?xref), "OMIM:") || STRSTARTS(str(?xref), "OMIMPS:")  )
+  FILTER(!STRSTARTS(str(?xref), "OMIM:gene"))
+  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER NOT EXISTS { ?entity owl:deprecated "true"^^xsd:boolean . }
+  FILTER NOT EXISTS {
+  [] owl:annotatedSource ?entity ;
+         owl:annotatedProperty oboInOwl:hasDbXref ;
+         owl:annotatedTarget ?xref ;
+         oboInOwl:source "MONDO:equivalentTo" .
+  }
+}

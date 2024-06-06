@@ -2,6 +2,37 @@
 
 ## Mondo specific checks
 
+###  qc-animal-disease-rare.sparql
+
+```
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+
+# Tests if an animal disease made it into the rare disease subset
+
+SELECT DISTINCT ?entity ?property ?value WHERE
+{
+  VALUES ?property { <http://purl.obolibrary.org/obo/mondo#rare> }
+  ?entity <http://www.geneontology.org/formats/oboInOwl#inSubset> ?property .
+  ?entity rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0005583>
+ FILTER NOT EXISTS {
+    ?entity owl:deprecated "true"^^xsd:boolean
+  }
+   FILTER NOT EXISTS {
+      ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-animal-disease-rare.sparql .
+   }
+ FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND("Animal disease in Rare subset" as ?value)
+}
+
+```
+
 ###  qc-check-for-two-replaced-by-annotations.sparql
 
 ```
@@ -184,7 +215,7 @@ ORDER BY ?entity
 ###  qc-illegal-prefix-on-xref-annotation.sparql
 
 ```
-# description: Looks for xrefs with illegal prefixes that are on annotation properies
+# description: Looks for xrefs with illegal prefixes that are on annotation properties
 
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
@@ -232,6 +263,7 @@ WHERE
       "ICD10CM",
       "ICD10WHO",
       "ICD11",
+      "icd11.foundation",
       "ICD9",
       "ICD9CM",
       "ICDO",
@@ -247,6 +279,7 @@ WHERE
       "MESH",
       "MFOMD",
       "MONDO",
+      "NORD",
       "MONDORULE",
       "MP",
       "MPATH",
@@ -307,7 +340,6 @@ WHERE
   }
   FILTER( STRBEFORE(str(?value),":") not in (
       "CSP",
-      "DERMO",
       "DECIPHER",
       "DOID",
       "EFO",
@@ -319,38 +351,35 @@ WHERE
       "ICD10EXP",
       "ICD10WHO",
       "ICD11",
+      "icd11.foundation",
       "ICD9",
       "ICD9CM",
       "ICDO",
       "IDO",
       "KEGG",
-      "LOINC",
       "MedDRA",
       "MEDGEN",
       "MESH",
       "MFOMD",
       "MONDO",
-      "MP",
       "MPATH",
       "MTH",
+      "NANDO",
       "NCIT",
       "NDFRT",
       "NIFSTD",
+      "NORD",
       "OBI",
       "OGMS",
       "OMIM",
       "OMIMPS",
       "OMIA",
-      "OMOP",
       "ONCOTREE",
       "Orphanet",
-      "PATO",
       "PMID",
-      "Reactome",
       "SCDO",
       "SCTID",
       "UMLS",
-      "Wikidata",
       "Wikipedia"
     ))
   FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
@@ -782,7 +811,7 @@ ORDER BY ?entity
 ###  qc-definition-containing-underscore.sparql
 
 ```
-# description: Checks wether definitions contain underscore characters, which could be an indication of a typo.
+# description: Checks whether definitions contain underscore characters, which could be an indication of a typo.
 
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -939,7 +968,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
          oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#ABBREVIATION> .
   }
   
-  FILTER NOT EXISTS { ?entity owl:deprecated true }
+  FILTER NOT EXISTS { ?entity1 owl:deprecated true }
   FILTER NOT EXISTS { ?entity2 owl:deprecated true }
   FILTER (?entity1 != ?entity2)
   FILTER (!isBlank(?entity1))
@@ -974,6 +1003,32 @@ ORDER BY ?entity
 
 ```
 
+###  qc-excluded-subclass.sparql
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+
+# Tests if an animal disease made it into the rare disease subset
+
+SELECT DISTINCT ?entity ?property ?value
+WHERE
+{
+  VALUES ?property { <http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> }
+  ?entity ?property ?value .
+  FILTER(!isIRI(?value) || !STRSTARTS(STR(?value),"http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+}
+
+```
+
 ###  qc-illegal-axiom-annotation.sparql
 
 ```
@@ -982,7 +1037,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-# Checks wether Axiom annotation are one of oboInOwl:source, oboInOwl:hasDbXref or oboInOwl:hasSynonymType .
+# Checks whether Axiom annotation are one of oboInOwl:source, oboInOwl:hasDbXref or oboInOwl:hasSynonymType .
 
 SELECT distinct ?entity ?property ?value
 WHERE 
@@ -1163,18 +1218,20 @@ PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
 PREFIX OMO: <http://purl.obolibrary.org/obo/OMO_>
 PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
 
-# description: Checks if a proper obsolesence reason was documented for this class
+# description: Checks if a proper obsolescence reason was documented for this class
 
 SELECT ?entity ?property ?value WHERE {
   VALUES ?property { IAO:0000231 }
   ?entity ?property ?value .
-  FILTER(!isIRI(?value))
-  FILTER(?value!=OMO:00001000 || 
-    ?value!=IAO:0000423 ||
-    ?value!=IAO:0000229 ||
-    ?value!=MONDO:TermsMerged )
+  FILTER(!isIRI(?value) || 
+   (?value!=OMO:0001000 && 
+    ?value!=IAO:0000423 &&
+    ?value!=IAO:0000229 &&
+    ?value!=IAO:0000227 &&
+    ?value!=MONDO:TermsMerged ))
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
 }
+
 ```
 
 ###  qc-owldef-self-reference.sparql
@@ -1226,7 +1283,6 @@ SELECT DISTINCT ?term ?property WHERE
 		dc:conformsTo,
 		dc:creator,
 		dce:date,
-		mondo:confidence,
 		mondo:excluded_from_qc_check,
 		mondo:excluded_subClassOf,
 		mondo:excluded_synonym,
@@ -1261,6 +1317,38 @@ SELECT DISTINCT ?term ?property WHERE
 		<https://w3id.org/semapv/vocab/crossSpeciesExactMatch>
 		)
 	)
+}
+
+```
+
+###  qc-provenance-missing.sparql
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+
+# Tests for excluded_subClassOf relationships that do not also have a source annotation with an ORCID.
+
+SELECT DISTINCT ?entity ?property ?value
+WHERE
+{
+  VALUES ?property { <http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> }
+  ?entity ?property ?value .
+  FILTER NOT EXISTS {
+  [] owl:annotatedSource ?entity ;
+         owl:annotatedProperty ?property ;
+         owl:annotatedTarget ?value ;
+         oboInOwl:source ?orcid .
+        FILTER(STRSTARTS(STR(?orcid),"https://orcid.org/"))
+  }
+ FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
 }
 
 ```
@@ -1542,18 +1630,21 @@ ORDER BY ?entity
 ###  qc-xref-syntax.sparql
 
 ```
-# home: hp
-prefix hasDbXref: <http://www.geneontology.org/formats/oboInOwl#hasDbXref>
-prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
-prefix owl: <http://www.w3.org/2002/07/owl#>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# # Invalid Xref
+#
+# **Problem:** A database_cross_reference is not in CURIE format.
+#
+# **Solution:** Replace the reference with a [CURIE](https://www.w3.org/TR/2010/NOTE-curie-20101216/).
 
-SELECT DISTINCT ?entity ?property ?value WHERE 
-{
-  ?entity hasDbXref: ?x .
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-  FILTER( regex(STR(?x), " ") || regex(STR(?x), ";") || STR(?x) = ""  )
-  BIND(hasDbXref: AS ?property)
+SELECT DISTINCT ?entity ?property ?value
+WHERE {
+  VALUES ?property {oboInOwl:hasDbXref}
+  ?entity ?property ?value .
+  FILTER (!regex(?value, "^[A-Za-z_][A-Za-z0-9_.-]*[A-Za-z0-9_]:[^\\s]+$"))
+  FILTER (!isBlank(?entity))
 }
 ORDER BY ?entity
 

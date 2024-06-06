@@ -71,7 +71,7 @@ all: test all_artefacts mappings
 # Artefacts
 # ----------------------------------------
 
-IMPORTS =  uberon cl go pato envo ro hp mf ncbitaxon chebi ncit hgnc foodon so ecto omo chr hsapdv nbo maxo mfomd
+IMPORTS =  uberon cl go pato envo ro hp mf ncbitaxon chebi ncit hgnc foodon so ecto omo chr hsapdv nbo maxo mfomd ncbigene
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -82,12 +82,12 @@ IMPORT_FILES = $(IMPORT_OWL_FILES)
 all_imports: $(IMPORT_FILES)
 
 
-COMPONENTS = mondo-tags mondo-subsets
+COMPONENTS = mondo-tags
 COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
 
 SUBSETS = mondo-minimal mondo-rare
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
-SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json)
+SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json $(n)_nodes.tsv $(n)_edges.tsv)
 
 REPORTS = basic-report class-count-by-prefix edges xrefs obsoletes obsoletion-candidates synonyms class-stats root-classes superclass-count
 REPORT_ARGS = $(foreach V,$(REPORTS),-s $(SPARQLDIR)/reports/$V.sparql reports/$V.tmp.tsv)
@@ -97,8 +97,8 @@ ADDITIONAL_REPORT_FILES = reports/semantic-xref-pairs.tsv
 REPORT_FILES = $(MAIN_REPORT_FILES) $(ADDITIONAL_REPORT_FILES)
 
 
-MAIN_PRODUCTS = $(ONT) $(ONT)-base $(ONT)-with-equivalents
-MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json)
+MAIN_PRODUCTS = $(ONT) $(ONT)-base $(ONT)-with-equivalents $(ONT)-simple
+MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json) $(ONT)_nodes.tsv $(ONT)_edges.tsv
 EQUIVALENTS_FILES=imports/equivalencies
 EQUIVALENTS = $(foreach n, $(EQUIVALENTS_FILES), $(n).owl $(n).obo $(n).json)
 ARTEFACTS = \
@@ -136,6 +136,8 @@ all_release_reports: $(REPORT_FILES_RELEASE)
 # ----------------------------------------
 
 #all: test all_imports all_reports all_equivalencies all_subsets imports/equivalencies.obo $(ONT).owl $(ONT).obo $(ONT).json pre/$(ONT).owl pre/$(ONT).obo pre/$(ONT).json extid/$(ONT).owl extid/$(ONT).obo extid/$(ONT).json $(ONT)-merged.owl
+
+#TODO: roundtrip.obo seems unnecessary check.
 
 test: sparql_test_edit roundtrip.obo debug.owl debug_inference_check.owl mondo-edit.owl sparql_test_main_obo test_nomerge
 test: reports/robot-report-mondo-tags-reasoned.owl.tsv
@@ -196,7 +198,8 @@ ANN = annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$@.owl
 GITHUB_ACTION = false
 
 filtered.obo: $(SRC)
-	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS|ICD10CM):@ && !(m@(obsoleteEquivalent|equivalentObsolete|equivalentTo|relatedTo|mondoIsNarrowerThanSource|directSiblingOf|mondoIsBroaderThanSource)@i))' $< | grep -v '^property_value: confidence' | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
+	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT|SCTID|MESH|UMLS|ICD10CM):@ && !(m@(obsoleteEquivalent|equivalentObsolete|equivalentTo|relatedTo|mondoIsNarrowerThanSource|directSiblingOf|mondoIsBroaderThanSource)@i))' $< | grep -v '^property_value: excluded_subClassOf' | egrep -v '^synonym: .*EXCLUDE' | egrep -v 'relationship: disease_has_basis_in_dysfunction_of (hgnc|HGNC|NCBIGene):' > $@.tmp && mv $@.tmp $@
+	perl -ne 'print if !(/^xref: (Orphanet|OMIM|OMIMPS|DOID):/ && !(/(obsoleteEquivalent|equivalentObsolete|equivalentTo|obsoleteEquivalentObsolete)/i))' $@  > $@.tmp && mv $@.tmp $@
 	if [ $(GITHUB_ACTION) = false ]; then $(ROBOT) query -i $@ --use-graphs false \
 		--update ../sparql/update/delete-axiom-annotations.ru \
 		--update ../sparql/update/delete-axiom-annotations-by-prefix.ru \
@@ -227,7 +230,7 @@ reasoned.owl: filtered.owl
 		remove --term MONDO:0700097 --term OGMS:0000031 $(ANN) -o $@
 
 
-test: reasoned-plus-equivalents.owl
+#test: reasoned-plus-equivalents.owl
 
 # merged = reasoned + equivalencies
 reasoned-plus-equivalents.owl: reasoned.owl imports/equivalencies.owl
@@ -243,15 +246,19 @@ reasoned-plus-equivalents.owl: reasoned.owl imports/equivalencies.owl
 $(ONT).owl: reasoned.owl
 	$(ROBOT) merge -i $< annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
 
-# obo is self-contained
-$(ONT).obo: reasoned.owl
-	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@.tmp.owl
-	owltools --use-catalog $@.tmp.owl --remove-imports-declarations --remove-dangling -o -f obo --no-check $@.tmp && $(obo-filter-axiom-header) $@.tmp > $@
-	rm -f $@.tmp.owl
+$(ONT).obo: $(ONT).owl
+	$(ROBOT) annotate -i $< \
+			-V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl \
+			--ontology-iri $(OBO)/$(ONT).owl \
+		convert --check false -f obo -o $@.tmp.obo &&\
+		grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 
 $(ONT).json: $(ONT).owl
 	$(ROBOT) convert --input $< --check false -f json -o $@.tmp.json &&\
 		mv $@.tmp.json $@
+
+$(ONT)_nodes.tsv $(ONT)_edges.tsv: $(ONT).json
+	kgx transform --input-format obojson --output-format tsv --output $(ONT) $< && test -f $(ONT)_nodes.tsv
 
 $(ONT)-with-equivalents.owl: reasoned-plus-equivalents.owl
 	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
@@ -261,6 +268,43 @@ $(ONT)-with-equivalents.obo: $(ONT)-with-equivalents.owl
 $(ONT)-with-equivalents.json: $(ONT)-with-equivalents.owl
 	$(ROBOT) convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
 
+ONTOLOGYTERMS=$(TMPDIR)/mondo_classes.txt
+
+$(ONTOLOGYTERMS): reasoned.owl
+	$(ROBOT) query -f csv -i $< --query ../sparql/signature/mondo-classes.sparql $@
+
+SIMPLESEED=$(TMPDIR)/simple_seed.txt
+
+$(SIMPLESEED): reasoned.owl $(ONTOLOGYTERMS)
+	$(ROBOT) query -f csv -i $< --query ../sparql/signature/simple-seed.sparql $@.tmp &&\
+	cat $@.tmp $(ONTOLOGYTERMS) | sort | uniq >  $@ &&\
+	echo "http://www.geneontology.org/formats/oboInOwl#SubsetProperty" >> $@ &&\
+	echo "http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty" >> $@
+
+# foo-simple: (edit->reason,relax,reduce,drop imports, drop every axiom which contains an entity outside the "namespaces of interest")
+# drop every axiom: filter --term-file keep_terms.txt --trim true
+#	remove --select imports --trim false
+# NOTE FOR FUTURE: this is slightly different from the usual simple as it completely removes all
+# Object properties from the ontology (remove --select object-properties).
+$(ONT)-simple.owl: reasoned.owl $(OTHER_SRC) $(SIMPLESEED) $(IMPORT_FILES)
+	$(ROBOT) merge --input $< \
+		reason --equivalent-classes-allowed none --exclude-tautologies true --annotate-inferred-axioms true \
+		relax \
+		remove --axioms equivalent \
+		remove --select object-properties \
+		relax \
+		filter --term-file $(SIMPLESEED) --select "annotations ontology anonymous self" --trim true --signature true \
+		reduce \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
+
+$(ONT)-simple.obo: $(ONT)-simple.owl
+	$(OWL2OBO)
+
+$(ONT)-simple.json: $(ONT)-simple.owl
+	$(ROBOT) convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
+
+
 #$(ONT)-atomic.owl: $(ONT).owl
 #	owltools --use-catalog $< --remove-imports-declarations --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
 
@@ -268,11 +312,15 @@ $(ONT)-with-equivalents.json: $(ONT)-with-equivalents.owl
 # we remove imports and merge in additional assertions
 # note: typically component is not pre-reasoned, but this is compex for mondo.
 
-OTHER_SRC=imports/axioms.owl components/mondo-subsets.owl #components/mondo-tags.owl
+OTHER_SRC=imports/axioms.owl #components/mondo-tags.owl
 
+# The --select "<http://purl.obolibrary.org/obo/BFO_*>" is due to a bug with the reason -x option
+# Which is supposed to exclude external namespaces from reason, but does not. My guess:
+# BFO namespace was needed for Object Properties.
 $(ONT)-base.owl: reasoned.owl $(OTHER_SRC)
 	$(ROBOT) remove --input $< --select imports --trim false \
 		merge $(patsubst %, -i %, $(OTHER_SRC)) \
+		remove --select "<http://purl.obolibrary.org/obo/BFO_*>" --select classes \
 		annotate --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
 		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		--output $@.tmp.owl && mv $@.tmp.owl $@
@@ -369,11 +417,13 @@ subsets/mondo-minimal.owl: mondo-base.owl imports/equivalencies.owl
 subsets/%.json: subsets/%.owl
 	$(ROBOT) convert -i $< -o $@
 
+subsets/%_nodes.tsv subsets/%_edges.tsv: subsets/%.json
+	kgx transform --input-format obojson --output-format tsv --output subsets/$* $< && test -f subsets/$*_nodes.tsv
+
 subsets/%.obo: subsets/%.owl
 	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms: $@.tmp.obo > $@ && rm $@.tmp.obo
 
 rare_subset:
-	$(MAKE) IMP=false MIR=false COMP=false components/mondo-subsets.owl
 	$(MAKE) IMP=false MIR=false COMP=false subsets/mondo-rare.owl subsets/mondo-rare.json subsets/mondo-rare.obo
 
 # ----------------------------------------
@@ -673,14 +723,24 @@ $(MIRRORDIR)/%.owl: mirror-% | $(MIRRORDIR)
 
 ###### END PARTIAL ODK MIGRATION ##############
 ###### BEGIN CUSTOM IMPORTS ###################
-mirror/dipper-%.ttl: | $(MIRRORDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget --no-check-certificate https://archive.monarchinitiative.org/latest/rdf/$*.ttl -O $@.tmp &&\
+mirror/hgnc_gene.nt: | $(MIRRORDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://data.monarchinitiative.org/monarch-kg/latest/rdf/hgnc_gene.nt.gz | gzip -d > $@.tmp &&\
 		perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@; fi
-.PRECIOUS: mirror/dipper-%.ttl
+.PRECIOUS: mirror/hgnc_gene.nt
 
-mirror-hgnc: mirror/dipper-hgnc.ttl | $(TMPDIR)
+mirror/ncbi_gene.nt: | $(MIRRORDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://data.monarchinitiative.org/monarch-kg/latest/rdf/ncbi_gene.nt.gz | gzip -d > $@.tmp &&\
+		perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@; fi
+.PRECIOUS: mirror/ncbi_gene.nt
+
+mirror-hgnc: mirror/hgnc_gene.nt | $(TMPDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
 		query --format ttl --query ../sparql/construct/construct-hgnc.sparql $(TMPDIR)/$@.owl; fi
+
+mirror-ncbigene: mirror/ncbi_gene.nt | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
+		query --format ttl --query ../sparql/construct/construct-ncbigene.sparql $(TMPDIR)/$@.owl; fi
+
 
 IMPORTSEED=$(IMPORTDIR)/seed.txt # SHOULD BE TMP
 ###### END CUSTOM IMPORTS ###################
@@ -742,7 +802,13 @@ NEWAXTEST: mondo-edit.owl new.owl
 SPARQL_MONDO_QC=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/qc/mondo/qc-*.sparql)))
 SPARQL_GENERAL_QC=$(patsubst %.sparql, %, $(notdir $(wildcard $(SPARQLDIR)/qc/general/qc-*.sparql)))
 SPARQL_EDIT_EXCLUDE=
-SPARQL_OBO_EXCLUDE=qc-single-child qc-omimps-should-be-inherited qc-omim-subsumption qc-permitted-properties
+# qc-duplicate-exact-synonym-no-abbrev is excluded from the OBO check because we are running the OBO check on the base file
+# There is something super weird about the way the OBO file is generated that causes this to fail
+# Because the id of ontology is `ontology: mondo/mondo-base`, all the IRIs to properties related to 
+# the ontology begin looking like this: http://purl.obolibrary.org/obo/mondo/mondo-base#... This
+# will cause the query to fail because it expects the IRI  http://purl.obolibrary.org/obo/mondo#ABREVIATION
+# for the duplicate-exact-synonym-no-abbrev check.
+SPARQL_OBO_EXCLUDE=qc-single-child qc-omimps-should-be-inherited qc-omim-subsumption qc-permitted-properties qc-duplicate-exact-synonym-no-abbrev
 SPARQL_OWL_EXCLUDE=qc-permitted-properties
 SPARQL_GENERAL_QC_EDIT=$(filter-out $(SPARQL_EDIT_EXCLUDE),$(SPARQL_GENERAL_QC))
 SPARQL_GENERAL_QC_OWL=$(filter-out $(SPARQL_OWL_EXCLUDE),$(SPARQL_GENERAL_QC))
@@ -783,7 +849,9 @@ sparql_test_main_owl: $(ONT).owl
 	mkdir -p reports/main_owl/ &&\
 	$(ROBOT) verify -i $< --queries $(SPARQL_MONDO_QC_FILES_OWL) $(SPARQL_GENERAL_QC_FILES_OWL) -O reports/main_owl/ && touch $@
 
-sparql_test_main_obo: $(ONT).obo
+# See comment about http://purl.obolibrary.org/obo/mondo/mondo-base# above
+# if you ever encounter "strange" errors related to Mondo internal property ids.
+sparql_test_main_obo: $(ONT)-base.obo
 	mkdir -p reports/main_obo/ &&\
 	$(ROBOT) verify -i $< --queries $(SPARQL_MONDO_QC_FILES_OBO) $(SPARQL_GENERAL_QC_FILES_OBO) -O reports/main_obo/ && touch $@
 

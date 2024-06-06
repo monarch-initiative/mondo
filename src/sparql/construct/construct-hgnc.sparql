@@ -6,14 +6,16 @@ prefix dc: <http://purl.org/dc/elements/1.1/>
 CONSTRUCT {
   ?gene a owl:Class ;
      rdfs:subClassOf <http://purl.obolibrary.org/obo/SO_0000704> ;
-     rdfs:label ?label ;
-     <http://purl.org/dc/elements/1.1/description> ?description . 
+     rdfs:label ?symbol ;
+     <http://purl.org/dc/terms/description> ?description . 
 }
 WHERE {
- ?gene rdfs:label ?label .
+ ?gene <https://w3id.org/biolink/vocab/category> <https://w3id.org/biolink/vocab/Gene> ;
+     <https://w3id.org/biolink/vocab/in_taxon> ?taxon_xref ;
+     <https://w3id.org/biolink/vocab/symbol> ?symbol .
 
  OPTIONAL {
-  ?gene <http://purl.org/dc/elements/1.1/description> ?description .
+  ?gene <http://purl.org/dc/terms/description> ?description .
  }
  
  FILTER (!isBlank(?gene))

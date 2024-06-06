@@ -11,12 +11,13 @@
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 # mapping_date: '2017-09-20'
 # mapping_set_id: http://purl.obolibrary.org/obo/mondo/mappings/mondo_hasdbxref_mesh.sssom.tsv
-# mapping_set_version: http://purl.obolibrary.org/obo/mondo/releases/2024-01-03/mappings/mondo_hasdbxref_mesh.sssom.tsv
+# mapping_set_version: http://purl.obolibrary.org/obo/mondo/releases/2024-06-04/mappings/mondo_hasdbxref_mesh.sssom.tsv
 # subject_source: http://purl.obolibrary.org/obo/mondo.owl
 subject_id	subject_label	predicate_id	object_id	mapping_justification
 MONDO:0000001	disease	oboInOwl:hasDbXref	mesh:D004194	semapv:ManualMappingCuration
 MONDO:0000004	adrenocortical insufficiency	oboInOwl:hasDbXref	mesh:D000309	semapv:ManualMappingCuration
 MONDO:0000022	nocturnal enuresis	oboInOwl:hasDbXref	mesh:D053206	semapv:ManualMappingCuration
+MONDO:0000070	Mycobacterium tuberculosis, susceptibility	oboInOwl:hasDbXref	mesh:C536092	semapv:ManualMappingCuration
 MONDO:0000082	pelvic organ prolapse	oboInOwl:hasDbXref	mesh:D056887	semapv:ManualMappingCuration
 MONDO:0000087	polymicrogyria	oboInOwl:hasDbXref	mesh:D065706	semapv:ManualMappingCuration
 MONDO:0000088	precocious puberty	oboInOwl:hasDbXref	mesh:D011629	semapv:ManualMappingCuration
@@ -402,7 +403,6 @@ MONDO:0001976	chorea gravidarum	oboInOwl:hasDbXref	mesh:D020150	semapv:ManualMap
 MONDO:0001979	dumping syndrome	oboInOwl:hasDbXref	mesh:D004377	semapv:ManualMappingCuration
 MONDO:0001982	Niemann-Pick disease	oboInOwl:hasDbXref	mesh:D009542	semapv:ManualMappingCuration
 MONDO:0001997	root resorption	oboInOwl:hasDbXref	mesh:D012391	semapv:ManualMappingCuration
-MONDO:0002003	papilledema	oboInOwl:hasDbXref	mesh:D010211	semapv:ManualMappingCuration
 MONDO:0002008	labyrinthitis	oboInOwl:hasDbXref	mesh:D007762	semapv:ManualMappingCuration
 MONDO:0002009	major depressive disorder	oboInOwl:hasDbXref	mesh:D003865	semapv:ManualMappingCuration
 MONDO:0002012	methylmalonic acidemia	oboInOwl:hasDbXref	mesh:C537358	semapv:ManualMappingCuration
@@ -515,7 +515,6 @@ MONDO:0002330	alcoholic psychosis	oboInOwl:hasDbXref	mesh:D011604	semapv:ManualM
 MONDO:0002331	nephrosis	oboInOwl:hasDbXref	mesh:D009401	semapv:ManualMappingCuration
 MONDO:0002332	splenic disorder	oboInOwl:hasDbXref	mesh:D013158	semapv:ManualMappingCuration
 MONDO:0002334	hematopoietic and lymphoid system neoplasm	oboInOwl:hasDbXref	mesh:D019337	semapv:ManualMappingCuration
-MONDO:0002335	chronic inflammatory demyelinating polyneuritis	oboInOwl:hasDbXref	mesh:D020277	semapv:ManualMappingCuration
 MONDO:0002341	granulomatous angiitis	oboInOwl:hasDbXref	mesh:D020293	semapv:ManualMappingCuration
 MONDO:0002345	cervicitis	oboInOwl:hasDbXref	mesh:D002575	semapv:ManualMappingCuration
 MONDO:0002356	pancreas disorder	oboInOwl:hasDbXref	mesh:D010182	semapv:ManualMappingCuration
@@ -803,6 +802,7 @@ MONDO:0004215	cutaneous anthrax	oboInOwl:hasDbXref	mesh:C531621	semapv:ManualMap
 MONDO:0004225	monoclonal gammopathy of uncertain significance	oboInOwl:hasDbXref	mesh:D008998	semapv:ManualMappingCuration
 MONDO:0004230	adenomatoid tumor	oboInOwl:hasDbXref	mesh:D018254	semapv:ManualMappingCuration
 MONDO:0004235	diverticulitis	oboInOwl:hasDbXref	mesh:D004238	semapv:ManualMappingCuration
+MONDO:0004242	active peptic ulcer disease	oboInOwl:hasDbXref	mesh:D010438	semapv:ManualMappingCuration
 MONDO:0004247	peptic ulcer disease	oboInOwl:hasDbXref	mesh:D010437	semapv:ManualMappingCuration
 MONDO:0004255	Wolffian adnexal tumor	oboInOwl:hasDbXref	mesh:C536741	semapv:ManualMappingCuration
 MONDO:0004260	peptic ulcer perforation	oboInOwl:hasDbXref	mesh:D010439	semapv:ManualMappingCuration
@@ -893,7 +893,7 @@ MONDO:0004755	monieziasis	oboInOwl:hasDbXref	mesh:D008989	semapv:ManualMappingCu
 MONDO:0004758	scotoma	oboInOwl:hasDbXref	mesh:D012607	semapv:ManualMappingCuration
 MONDO:0004766	status asthmaticus	oboInOwl:hasDbXref	mesh:D013224	semapv:ManualMappingCuration
 MONDO:0004768	keratoconjunctivitis	oboInOwl:hasDbXref	mesh:D007637	semapv:ManualMappingCuration
-MONDO:0004769	orbital plasma cell granuloma	oboInOwl:hasDbXref	mesh:D016727	semapv:ManualMappingCuration
+MONDO:0004769	orbital pseudotumor	oboInOwl:hasDbXref	mesh:D016727	semapv:ManualMappingCuration
 MONDO:0004770	exophthalmos	oboInOwl:hasDbXref	mesh:D005094	semapv:ManualMappingCuration
 MONDO:0004773	iridocyclitis	oboInOwl:hasDbXref	mesh:D015863	semapv:ManualMappingCuration
 MONDO:0004779	epididymitis	oboInOwl:hasDbXref	mesh:D004823	semapv:ManualMappingCuration
@@ -1070,7 +1070,7 @@ MONDO:0005178	osteoarthritis	oboInOwl:hasDbXref	mesh:D010003	semapv:ManualMappin
 MONDO:0005180	Parkinson disease	oboInOwl:hasDbXref	mesh:D010300	semapv:ManualMappingCuration
 MONDO:0005181	progressive external ophthalmoplegia	oboInOwl:hasDbXref	mesh:D017246	semapv:ManualMappingCuration
 MONDO:0005184	pancreatic ductal adenocarcinoma	oboInOwl:hasDbXref	mesh:D021441	semapv:ManualMappingCuration
-MONDO:0005190	macroglobulinemia	oboInOwl:hasDbXref	mesh:D008258	semapv:ManualMappingCuration
+MONDO:0005190	obsolete macroglobulinemia	oboInOwl:hasDbXref	mesh:D008258	semapv:ManualMappingCuration
 MONDO:0005193	prostate intraepithelial neoplasia	oboInOwl:hasDbXref	mesh:D019048	semapv:ManualMappingCuration
 MONDO:0005194	Rotavirus infection	oboInOwl:hasDbXref	mesh:D012400	semapv:ManualMappingCuration
 MONDO:0005201	restrictive cardiomyopathy	oboInOwl:hasDbXref	mesh:D002313	semapv:ManualMappingCuration
@@ -1483,7 +1483,7 @@ MONDO:0005858	mucinous cystadenocarcinoma	oboInOwl:hasDbXref	mesh:D018282	semapv
 MONDO:0005859	mucocutaneous leishmaniasis	oboInOwl:hasDbXref	mesh:D007897	semapv:ManualMappingCuration
 MONDO:0005861	multidrug-resistant tuberculosis	oboInOwl:hasDbXref	mesh:D018088	semapv:ManualMappingCuration
 MONDO:0005862	obsolete multiple chemical sensitivity	oboInOwl:hasDbXref	mesh:D018777	semapv:ManualMappingCuration
-MONDO:0005866	mycobacterium avium complex disease	oboInOwl:hasDbXref	mesh:D015270	semapv:ManualMappingCuration
+MONDO:0005866	Mycobacterium avium complex disease	oboInOwl:hasDbXref	mesh:D015270	semapv:ManualMappingCuration
 MONDO:0005867	Mycoplasma pneumoniae pneumonia	oboInOwl:hasDbXref	mesh:D011019	semapv:ManualMappingCuration
 MONDO:0005868	myelophthisic anemia	oboInOwl:hasDbXref	mesh:D000750	semapv:ManualMappingCuration
 MONDO:0005870	necatoriasis	oboInOwl:hasDbXref	mesh:D009332	semapv:ManualMappingCuration
@@ -1940,6 +1940,7 @@ MONDO:0006875	ocular hypertension	oboInOwl:hasDbXref	mesh:D009798	semapv:ManualM
 MONDO:0006876	ocular tuberculosis	oboInOwl:hasDbXref	mesh:D014392	semapv:ManualMappingCuration
 MONDO:0006877	oophoritis	oboInOwl:hasDbXref	mesh:D009869	semapv:ManualMappingCuration
 MONDO:0006878	Moraxellaceae infectious disease	oboInOwl:hasDbXref	mesh:D045828	semapv:ManualMappingCuration
+MONDO:0006879	optic papillitis	oboInOwl:hasDbXref	mesh:D010211	semapv:ManualMappingCuration
 MONDO:0006880	oral leukoedema	oboInOwl:hasDbXref	mesh:D007967	semapv:ManualMappingCuration
 MONDO:0006881	orbital cellulitis	oboInOwl:hasDbXref	mesh:D054517	semapv:ManualMappingCuration
 MONDO:0006882	orchitis	oboInOwl:hasDbXref	mesh:D009920	semapv:ManualMappingCuration
@@ -2404,7 +2405,7 @@ MONDO:0007518	edema, familial idiopathic, prepubertal	oboInOwl:hasDbXref	mesh:C5
 MONDO:0007519	Edinburgh malformation syndrome	oboInOwl:hasDbXref	mesh:C563051	semapv:ManualMappingCuration
 MONDO:0007520	ectrodactyly, ectodermal dysplasia, and cleft lip-palate syndrome 1	oboInOwl:hasDbXref	mesh:C565062	semapv:ManualMappingCuration
 MONDO:0007523	Ehlers-Danlos syndrome, hypermobility type	oboInOwl:hasDbXref	mesh:C536196	semapv:ManualMappingCuration
-MONDO:0007525	Ehlers-Danlos syndrome, arthrochalasis type	oboInOwl:hasDbXref	mesh:C562625	semapv:ManualMappingCuration
+MONDO:0007525	Ehlers-Danlos syndrome, arthrochalasia type	oboInOwl:hasDbXref	mesh:C562625	semapv:ManualMappingCuration
 MONDO:0007526	Ehlers-Danlos syndrome, spondylodysplastic type	oboInOwl:hasDbXref	mesh:C536201	semapv:ManualMappingCuration
 MONDO:0007527	Ehlers-Danlos syndrome, periodontitis type	oboInOwl:hasDbXref	mesh:C562626	semapv:ManualMappingCuration
 MONDO:0007528	Ehlers-Danlos syndrome, autosomal dominant, type unspecified	oboInOwl:hasDbXref	mesh:C562424	semapv:ManualMappingCuration
@@ -2523,7 +2524,6 @@ MONDO:0007705	Heinz body anemia	oboInOwl:hasDbXref	mesh:C563030	semapv:ManualMap
 MONDO:0007706	cavernous hemangiomas of face-supraumbilical midline raphe syndrome	oboInOwl:hasDbXref	mesh:C538144	semapv:ManualMappingCuration
 MONDO:0007707	hemangiomas of small intestine	oboInOwl:hasDbXref	mesh:C564201	semapv:ManualMappingCuration
 MONDO:0007708	Kasabach-Merritt syndrome	oboInOwl:hasDbXref	mesh:D059885	semapv:ManualMappingCuration
-MONDO:0007709	hematuria, benign familial	oboInOwl:hasDbXref	mesh:C562476	semapv:ManualMappingCuration
 MONDO:0007710	facial hemiatrophy	oboInOwl:hasDbXref	mesh:D005150	semapv:ManualMappingCuration
 MONDO:0007711	Bencze syndrome	oboInOwl:hasDbXref	mesh:C564199	semapv:ManualMappingCuration
 MONDO:0007713	clonic hemifacial spasm	oboInOwl:hasDbXref	mesh:C564198	semapv:ManualMappingCuration
@@ -2829,6 +2829,7 @@ MONDO:0008157	Buschke-Ollendorff syndrome	oboInOwl:hasDbXref	mesh:C537415	semapv
 MONDO:0008158	dacryocystitis-osteopoikilosis syndrome	oboInOwl:hasDbXref	mesh:C536061	semapv:ManualMappingCuration
 MONDO:0008159	postmenopausal osteoporosis	oboInOwl:hasDbXref	mesh:D015663	semapv:ManualMappingCuration
 MONDO:0008160	osteosclerosis with ichthyosis and fractures	oboInOwl:hasDbXref	mesh:C563483	semapv:ManualMappingCuration
+MONDO:0008163	otofaciocervical syndrome	oboInOwl:hasDbXref	mesh:C537074	semapv:ManualMappingCuration
 MONDO:0008163	otofaciocervical syndrome	oboInOwl:hasDbXref	mesh:C563481	semapv:ManualMappingCuration
 MONDO:0008166	ovalocytosis, hereditary hemolytic, with defective erythropoiesis	oboInOwl:hasDbXref	mesh:C563479	semapv:ManualMappingCuration
 MONDO:0008167	dermoid cyst of ovary	oboInOwl:hasDbXref	mesh:C562731	semapv:ManualMappingCuration
@@ -3017,7 +3018,6 @@ MONDO:0008425	omphalocele syndrome, Shprintzen-Goldberg type	oboInOwl:hasDbXref	
 MONDO:0008428	septooptic dysplasia	oboInOwl:hasDbXref	mesh:D025962	semapv:ManualMappingCuration
 MONDO:0008429	Singleton-Merten dysplasia	oboInOwl:hasDbXref	mesh:C537343	semapv:ManualMappingCuration
 MONDO:0008430	skeletal dysplasia with delayed epiphyseal and carpal bone ossification	oboInOwl:hasDbXref	mesh:C566687	semapv:ManualMappingCuration
-MONDO:0008431	slipped femoral capital epiphyses	oboInOwl:hasDbXref	mesh:D060048	semapv:ManualMappingCuration
 MONDO:0008433	small cell lung carcinoma	oboInOwl:hasDbXref	mesh:D055752	semapv:ManualMappingCuration
 MONDO:0008434	Smith-Magenis syndrome	oboInOwl:hasDbXref	mesh:D058496	semapv:ManualMappingCuration
 MONDO:0008436	Sneddon syndrome	oboInOwl:hasDbXref	mesh:D018860	semapv:ManualMappingCuration
@@ -4127,7 +4127,7 @@ MONDO:0009924	vitamin D-dependent rickets, type 1	oboInOwl:hasDbXref	mesh:C56268
 MONDO:0009925	autosomal recessive inherited pseudoxanthoma elasticum	oboInOwl:hasDbXref	mesh:D011561	semapv:ManualMappingCuration
 MONDO:0009927	3MC syndrome 2	oboInOwl:hasDbXref	mesh:C535586	semapv:ManualMappingCuration
 MONDO:0009928	pulmonary alveolar microlithiasis	oboInOwl:hasDbXref	mesh:C562405	semapv:ManualMappingCuration
-MONDO:0009929	neonatal acute respiratory distress due to SP-B deficiency	oboInOwl:hasDbXref	mesh:C566882	semapv:ManualMappingCuration
+MONDO:0009929	surfactant metabolism dysfunction, pulmonary, 1	oboInOwl:hasDbXref	mesh:C566882	semapv:ManualMappingCuration
 MONDO:0009930	obsolete pulmonary arteriovenous malformation	oboInOwl:hasDbXref	mesh:C562404	semapv:ManualMappingCuration
 MONDO:0009931	pulmonary atresia-intact ventricular septum syndrome	oboInOwl:hasDbXref	mesh:C562832	semapv:ManualMappingCuration
 MONDO:0009932	pulmonary bullae causing pneumothorax	oboInOwl:hasDbXref	mesh:C564863	semapv:ManualMappingCuration
@@ -4276,7 +4276,7 @@ MONDO:0010115	thoracic dysplasia-hydrocephalus syndrome	oboInOwl:hasDbXref	mesh:
 MONDO:0010116	thoracomelic dysplasia	oboInOwl:hasDbXref	mesh:C564773	semapv:ManualMappingCuration
 MONDO:0010120	thrombocytopenia 3	oboInOwl:hasDbXref	mesh:C567487	semapv:ManualMappingCuration
 MONDO:0010121	thrombocytopenia-absent radius syndrome	oboInOwl:hasDbXref	mesh:C536940	semapv:ManualMappingCuration
-MONDO:0010123	absent thumb-short stature-immunodeficiency syndrome	oboInOwl:hasDbXref	mesh:C564770	semapv:ManualMappingCuration
+MONDO:0010123	obsolete absent thumb-short stature-immunodeficiency syndrome	oboInOwl:hasDbXref	mesh:C564770	semapv:ManualMappingCuration
 MONDO:0010125	upper limb defect-eye and ear abnormalities syndrome	oboInOwl:hasDbXref	mesh:C564769	semapv:ManualMappingCuration
 MONDO:0010126	thymic aplasia with fetal death	oboInOwl:hasDbXref	mesh:C564768	semapv:ManualMappingCuration
 MONDO:0010127	thymoma, familial	oboInOwl:hasDbXref	mesh:C564767	semapv:ManualMappingCuration
@@ -4651,7 +4651,7 @@ MONDO:0010710	Pierre Robin syndrome-faciodigital anomaly syndrome	oboInOwl:hasDb
 MONDO:0010711	TARP syndrome	oboInOwl:hasDbXref	mesh:C536942	semapv:ManualMappingCuration
 MONDO:0010712	panhypopituitarism, X-linked	oboInOwl:hasDbXref	mesh:C538613	semapv:ManualMappingCuration
 MONDO:0010713	properdin deficiency, X-linked	oboInOwl:hasDbXref	mesh:C537241	semapv:ManualMappingCuration
-MONDO:0010714	Pelizaeus-Merzbacher disease	oboInOwl:hasDbXref	mesh:D020371	semapv:ManualMappingCuration
+MONDO:0010714	Pelizeaus-Merzbacher spectrum disorder	oboInOwl:hasDbXref	mesh:D020371	semapv:ManualMappingCuration
 MONDO:0010716	X-linked lethal multiple pterygium syndrome	oboInOwl:hasDbXref	mesh:C564072	semapv:ManualMappingCuration
 MONDO:0010717	pyruvate dehydrogenase E1-alpha deficiency	oboInOwl:hasDbXref	mesh:C564071	semapv:ManualMappingCuration
 MONDO:0010718	absent radius-anogenital anomalies syndrome	oboInOwl:hasDbXref	mesh:C535281	semapv:ManualMappingCuration
@@ -5159,7 +5159,7 @@ MONDO:0011392	autosomal recessive nonsyndromic hearing loss 20	oboInOwl:hasDbXre
 MONDO:0011395	cone-rod dystrophy 3	oboInOwl:hasDbXref	mesh:C565827	semapv:ManualMappingCuration
 MONDO:0011396	loricrin keratoderma	oboInOwl:hasDbXref	mesh:C565826	semapv:ManualMappingCuration
 MONDO:0011398	dystrophic epidermolysis bullosa pruriginosa	oboInOwl:hasDbXref	mesh:C563192	semapv:ManualMappingCuration
-MONDO:0011399	alpha thalassemia	oboInOwl:hasDbXref	mesh:D017085	semapv:ManualMappingCuration
+MONDO:0011399	alpha thalassemia spectrum	oboInOwl:hasDbXref	mesh:D017085	semapv:ManualMappingCuration
 MONDO:0011400	dilated cardiomyopathy 1G	oboInOwl:hasDbXref	mesh:C565824	semapv:ManualMappingCuration
 MONDO:0011401	Alzheimer disease without neurofibrillary tangles	oboInOwl:hasDbXref	mesh:C536599	semapv:ManualMappingCuration
 MONDO:0011401	Alzheimer disease without neurofibrillary tangles	oboInOwl:hasDbXref	mesh:C566998	semapv:ManualMappingCuration
@@ -5207,7 +5207,6 @@ MONDO:0011464	spinocerebellar ataxia type 11	oboInOwl:hasDbXref	mesh:C565772	sem
 MONDO:0011465	infundibulocystic basal cell carcinoma	oboInOwl:hasDbXref	mesh:C537655	semapv:ManualMappingCuration
 MONDO:0011467	obsolete human herpesvirus type 6, integrated	oboInOwl:hasDbXref	mesh:C565771	semapv:ManualMappingCuration
 MONDO:0011468	hereditary motor and sensory neuropathy, Okinawa type	oboInOwl:hasDbXref	mesh:C535717	semapv:ManualMappingCuration
-MONDO:0011469	congenital amegakaryocytic thrombocytopenia	oboInOwl:hasDbXref	mesh:C535982	semapv:ManualMappingCuration
 MONDO:0011470	hyperlipidemia, combined, 2	oboInOwl:hasDbXref	mesh:C565766	semapv:ManualMappingCuration
 MONDO:0011471	inflammatory bowel disease 3	oboInOwl:hasDbXref	mesh:C565764	semapv:ManualMappingCuration
 MONDO:0011472	epidermolysis bullosa simplex due to plakophilin deficiency	oboInOwl:hasDbXref	mesh:C536183	semapv:ManualMappingCuration
@@ -5548,7 +5547,6 @@ MONDO:0011937	peeling skin syndrome 4	oboInOwl:hasDbXref	mesh:C564309	semapv:Man
 MONDO:0011938	atrial septal defect 2	oboInOwl:hasDbXref	mesh:C538263	semapv:ManualMappingCuration
 MONDO:0011939	Spondyloenchondrodysplasia with immune dysregulation	oboInOwl:hasDbXref	mesh:C535782	semapv:ManualMappingCuration
 MONDO:0011939	Spondyloenchondrodysplasia with immune dysregulation	oboInOwl:hasDbXref	mesh:C564307	semapv:ManualMappingCuration
-MONDO:0011940	mycobacterium tuberculosis, susceptibility to	oboInOwl:hasDbXref	mesh:C536092	semapv:ManualMappingCuration
 MONDO:0011945	Gaucher disease perinatal lethal	oboInOwl:hasDbXref	mesh:C564306	semapv:ManualMappingCuration
 MONDO:0011946	diaphanospondylodysostosis	oboInOwl:hasDbXref	mesh:C564305	semapv:ManualMappingCuration
 MONDO:0011948	pontocerebellar hypoplasia type 3	oboInOwl:hasDbXref	mesh:C548072	semapv:ManualMappingCuration
@@ -5736,7 +5734,7 @@ MONDO:0012199	posterior polymorphous corneal dystrophy 2	oboInOwl:hasDbXref	mesh
 MONDO:0012200	posterior polymorphous corneal dystrophy 3	oboInOwl:hasDbXref	mesh:C563788	semapv:ManualMappingCuration
 MONDO:0012203	familial hyperthyroidism due to mutations in TSH receptor	oboInOwl:hasDbXref	mesh:C563786	semapv:ManualMappingCuration
 MONDO:0012204	familial pseudohyperkalemia	oboInOwl:hasDbXref	mesh:C563785	semapv:ManualMappingCuration
-MONDO:0012206	Czech dysplasia, metatarsal type	oboInOwl:hasDbXref	mesh:C535766	semapv:ManualMappingCuration
+MONDO:0012206	spondyloepiphyseal dysplasia with metatarsal shortening	oboInOwl:hasDbXref	mesh:C535766	semapv:ManualMappingCuration
 MONDO:0012207	umbilicus, familial flat	oboInOwl:hasDbXref	mesh:C537059	semapv:ManualMappingCuration
 MONDO:0012208	congenital reticular ichthyosiform erythroderma	oboInOwl:hasDbXref	mesh:C563781	semapv:ManualMappingCuration
 MONDO:0012209	branchiogenic deafness syndrome	oboInOwl:hasDbXref	mesh:C563780	semapv:ManualMappingCuration
@@ -5800,7 +5798,7 @@ MONDO:0012275	fetal valproate syndrome	oboInOwl:hasDbXref	mesh:C536525	semapv:Ma
 MONDO:0012276	generalized epilepsy-paroxysmal dyskinesia syndrome	oboInOwl:hasDbXref	mesh:C563719	semapv:ManualMappingCuration
 MONDO:0012277	myofibrillar myopathy 4	oboInOwl:hasDbXref	mesh:C563718	semapv:ManualMappingCuration
 MONDO:0012278	supranuclear palsy, progressive, 2	oboInOwl:hasDbXref	mesh:C563717	semapv:ManualMappingCuration
-MONDO:0012280	Goldberg-Shprintzen megacolon syndrome	oboInOwl:hasDbXref	mesh:C537279	semapv:ManualMappingCuration
+MONDO:0012280	Goldberg-Shprintzen syndrome	oboInOwl:hasDbXref	mesh:C537279	semapv:ManualMappingCuration
 MONDO:0012282	Al-Gazali syndrome	oboInOwl:hasDbXref	mesh:C536817	semapv:ManualMappingCuration
 MONDO:0012283	cleft palate, midfacial hypoplasia, triangular facies, and sensorineural hearing loss	oboInOwl:hasDbXref	mesh:C536427	semapv:ManualMappingCuration
 MONDO:0012284	nephropathy, progressive, with deafness	oboInOwl:hasDbXref	mesh:C563713	semapv:ManualMappingCuration
@@ -5811,7 +5809,7 @@ MONDO:0012290	CEDNIK syndrome	oboInOwl:hasDbXref	mesh:C537943	semapv:ManualMappi
 MONDO:0012291	immunoglobulin A deficiency 2	oboInOwl:hasDbXref	mesh:C536291	semapv:ManualMappingCuration
 MONDO:0012293	autosomal recessive nonsyndromic hearing loss 23	oboInOwl:hasDbXref	mesh:C563705	semapv:ManualMappingCuration
 MONDO:0012296	lipomyelomeningocele	oboInOwl:hasDbXref	mesh:C537030	semapv:ManualMappingCuration
-MONDO:0012297	SPOAN syndrome	oboInOwl:hasDbXref	mesh:C563702	semapv:ManualMappingCuration
+MONDO:0012297	spastic paraplegia, optic atropy, and neuropathy	oboInOwl:hasDbXref	mesh:C563702	semapv:ManualMappingCuration
 MONDO:0012298	omphalocele, diaphragmatic hernia, and radial ray defects	oboInOwl:hasDbXref	mesh:C563701	semapv:ManualMappingCuration
 MONDO:0012299	nanophthalmos 2	oboInOwl:hasDbXref	mesh:C563700	semapv:ManualMappingCuration
 MONDO:0012300	prostate cancer, hereditary, 6	oboInOwl:hasDbXref	mesh:C563699	semapv:ManualMappingCuration
@@ -5860,7 +5858,7 @@ MONDO:0012354	platelet-type bleeding disorder 8	oboInOwl:hasDbXref	mesh:C565220	
 MONDO:0012355	autosomal recessive nonsyndromic hearing loss 28	oboInOwl:hasDbXref	mesh:C565218	semapv:ManualMappingCuration
 MONDO:0012357	obsolete glaucoma 1, open angle, G	oboInOwl:hasDbXref	mesh:C563692	semapv:ManualMappingCuration
 MONDO:0012359	combined immunodeficiency due to partial RAG1 deficiency	oboInOwl:hasDbXref	mesh:C563691	semapv:ManualMappingCuration
-MONDO:0012360	congenital nongoitrous hypothryoidism 3	oboInOwl:hasDbXref	mesh:C567935	semapv:ManualMappingCuration
+MONDO:0012360	congenital nongoitrous hypothyroidism 3	oboInOwl:hasDbXref	mesh:C567935	semapv:ManualMappingCuration
 MONDO:0012362	dilated cardiomyopathy 1P	oboInOwl:hasDbXref	mesh:C563690	semapv:ManualMappingCuration
 MONDO:0012363	retinitis pigmentosa 32	oboInOwl:hasDbXref	mesh:C563689	semapv:ManualMappingCuration
 MONDO:0012364	dilated cardiomyopathy 1Q	oboInOwl:hasDbXref	mesh:C563688	semapv:ManualMappingCuration
@@ -6516,7 +6514,7 @@ MONDO:0013373	dilated cardiomyopathy 1V	oboInOwl:hasDbXref	mesh:C566856	semapv:M
 MONDO:0013378	orofacial cleft 10	oboInOwl:hasDbXref	mesh:C566605	semapv:ManualMappingCuration
 MONDO:0013383	Hirschsprung disease, susceptibility to, 3	oboInOwl:hasDbXref	mesh:C538121	semapv:ManualMappingCuration
 MONDO:0013395	retinitis pigmentosa 4	oboInOwl:hasDbXref	mesh:C566706	semapv:ManualMappingCuration
-MONDO:0013400	Congenital adrenal insuffiency with 46, XY sex reversal OR 46,XY disorder of sex development-adrenal insufficiency due to CYP11A1 deficiency	oboInOwl:hasDbXref	mesh:C566130	semapv:ManualMappingCuration
+MONDO:0013400	Congenital adrenal insufficiency with 46, XY sex reversal OR 46,XY disorder of sex development-adrenal insufficiency due to CYP11A1 deficiency	oboInOwl:hasDbXref	mesh:C566130	semapv:ManualMappingCuration
 MONDO:0013402	retinitis pigmentosa 27	oboInOwl:hasDbXref	mesh:C563526	semapv:ManualMappingCuration
 MONDO:0013406	age related macular degeneration 6	oboInOwl:hasDbXref	mesh:C563674	semapv:ManualMappingCuration
 MONDO:0013411	cataract 16 multiple types	oboInOwl:hasDbXref	mesh:C565134	semapv:ManualMappingCuration
@@ -6655,7 +6653,7 @@ MONDO:0015247	opsoclonus-myoclonus syndrome	oboInOwl:hasDbXref	mesh:D053578	sema
 MONDO:0015250	spinal atrophy-ophthalmoplegia-pyramidal syndrome	oboInOwl:hasDbXref	mesh:C535625	semapv:ManualMappingCuration
 MONDO:0015253	Diamond-Blackfan anemia	oboInOwl:hasDbXref	mesh:D029503	semapv:ManualMappingCuration
 MONDO:0015254	schistosomiasis	oboInOwl:hasDbXref	mesh:D012552	semapv:ManualMappingCuration
-MONDO:0015255	blepharophimosis-radioulnar synostosis syndrome	oboInOwl:hasDbXref	mesh:C536292	semapv:ManualMappingCuration
+MONDO:0015255	obsolete blepharophimosis-radioulnar synostosis syndrome	oboInOwl:hasDbXref	mesh:C536292	semapv:ManualMappingCuration
 MONDO:0015260	diphyllobothriasis	oboInOwl:hasDbXref	mesh:D004169	semapv:ManualMappingCuration
 MONDO:0015261	pseudopelade of Brocq	oboInOwl:hasDbXref	mesh:C531609	semapv:ManualMappingCuration
 MONDO:0015262	brachyolmia	oboInOwl:hasDbXref	mesh:C537098	semapv:ManualMappingCuration
@@ -6683,6 +6681,7 @@ MONDO:0015304	arachnoiditis	oboInOwl:hasDbXref	mesh:D001100	semapv:ManualMapping
 MONDO:0015306	Lemierre syndrome	oboInOwl:hasDbXref	mesh:D057831	semapv:ManualMappingCuration
 MONDO:0015324	cataract-intellectual disability-anal atresia-urinary defects syndrome	oboInOwl:hasDbXref	mesh:C537009	semapv:ManualMappingCuration
 MONDO:0015325	cataract-deafness-hypogonadism syndrome	oboInOwl:hasDbXref	mesh:C536626	semapv:ManualMappingCuration
+MONDO:0015340	drug rash with eosinophilia and systemic symptoms	oboInOwl:hasDbXref	mesh:D063926	semapv:ManualMappingCuration
 MONDO:0015342	acute transverse myelitis	oboInOwl:hasDbXref	mesh:D009188	semapv:ManualMappingCuration
 MONDO:0015352	distal hereditary motor neuropathy type 2	oboInOwl:hasDbXref	mesh:C580044	semapv:ManualMappingCuration
 MONDO:0015356	hereditary neoplastic syndrome	oboInOwl:hasDbXref	mesh:D009386	semapv:ManualMappingCuration
@@ -6691,7 +6690,7 @@ MONDO:0015364	hereditary sensory and autonomic neuropathy	oboInOwl:hasDbXref	mes
 MONDO:0015374	primary central nervous system vasculitis	oboInOwl:hasDbXref	mesh:C537295	semapv:ManualMappingCuration
 MONDO:0015374	primary central nervous system vasculitis	oboInOwl:hasDbXref	mesh:D020293	semapv:ManualMappingCuration
 MONDO:0015375	orofaciodigital syndrome	oboInOwl:hasDbXref	mesh:D009958	semapv:ManualMappingCuration
-MONDO:0015397	craniofacial microsomia 1	oboInOwl:hasDbXref	mesh:D006053	semapv:ManualMappingCuration
+MONDO:0015397	craniofacial microsomia	oboInOwl:hasDbXref	mesh:D006053	semapv:ManualMappingCuration
 MONDO:0015421	orofaciodigital syndrome type 12	oboInOwl:hasDbXref	mesh:C548034	semapv:ManualMappingCuration
 MONDO:0015422	orofaciodigital syndrome type 13	oboInOwl:hasDbXref	mesh:C548035	semapv:ManualMappingCuration
 MONDO:0015427	paroxysmal dyskinesia	oboInOwl:hasDbXref	mesh:D002819	semapv:ManualMappingCuration
@@ -6731,6 +6730,7 @@ MONDO:0015492	anti-neutrophil cytoplasmic antibody-associated vasculitis	oboInOw
 MONDO:0015496	macroglossia	oboInOwl:hasDbXref	mesh:D008260	semapv:ManualMappingCuration
 MONDO:0015514	hereditary endocrine growth disease	oboInOwl:hasDbXref	mesh:D006130	semapv:ManualMappingCuration
 MONDO:0015515	carnitine palmitoyltransferase II deficiency	oboInOwl:hasDbXref	mesh:C535589	semapv:ManualMappingCuration
+MONDO:0015516	symbrachydactyly of hands and feet	oboInOwl:hasDbXref	mesh:C538062	semapv:ManualMappingCuration
 MONDO:0015517	common variable immunodeficiency	oboInOwl:hasDbXref	mesh:D017074	semapv:ManualMappingCuration
 MONDO:0015523	epithelioid hemangioendothelioma	oboInOwl:hasDbXref	mesh:D018323	semapv:ManualMappingCuration
 MONDO:0015525	congenital pseudoarthrosis of the limbs	oboInOwl:hasDbXref	mesh:C535762	semapv:ManualMappingCuration
@@ -6953,6 +6953,7 @@ MONDO:0016810	autosomal recessive progressive external ophthalmoplegia	oboInOwl:
 MONDO:0016812	dopa-responsive dystonia	oboInOwl:hasDbXref	mesh:C538007	semapv:ManualMappingCuration
 MONDO:0016814	maternally-inherited Leigh syndrome	oboInOwl:hasDbXref	mesh:C536035	semapv:ManualMappingCuration
 MONDO:0016817	Meier-Gorlin syndrome	oboInOwl:hasDbXref	mesh:C538012	semapv:ManualMappingCuration
+MONDO:0016819	Moebius syndrome-axonal neuropathy-hypogonadotropic hypogonadism syndrome	oboInOwl:hasDbXref	mesh:C535806	semapv:ManualMappingCuration
 MONDO:0016820	Moyamoya disease	oboInOwl:hasDbXref	mesh:D009072	semapv:ManualMappingCuration
 MONDO:0016822	myalgia-eosinophilia syndrome associated with tryptophan	oboInOwl:hasDbXref	mesh:D016603	semapv:ManualMappingCuration
 MONDO:0016823	mycetoma	oboInOwl:hasDbXref	mesh:D008271	semapv:ManualMappingCuration
@@ -7173,6 +7174,7 @@ MONDO:0018360	neonatal lupus erythematosus	oboInOwl:hasDbXref	mesh:C536397	semap
 MONDO:0018363	focal facial dermal dysplasia	oboInOwl:hasDbXref	mesh:C537068	semapv:ManualMappingCuration
 MONDO:0018364	malignant epithelial tumor of ovary	oboInOwl:hasDbXref	mesh:C538090	semapv:ManualMappingCuration
 MONDO:0018381	osteochondrosis	oboInOwl:hasDbXref	mesh:D055034	semapv:ManualMappingCuration
+MONDO:0018382	epiphysiolysis of the hip	oboInOwl:hasDbXref	mesh:D060048	semapv:ManualMappingCuration
 MONDO:0018442	acitretin/etretinate embryopathy	oboInOwl:hasDbXref	mesh:C538169	semapv:ManualMappingCuration
 MONDO:0018460	Eales disease	oboInOwl:hasDbXref	mesh:C538011	semapv:ManualMappingCuration
 MONDO:0018477	bilirubin encephalopathy	oboInOwl:hasDbXref	mesh:D007647	semapv:ManualMappingCuration
@@ -7736,7 +7738,6 @@ MONDO:0021957	autosomal recessive nonsyndromic congenital nuclear cataract	oboIn
 MONDO:0021962	baetz-greenwalt syndrome	oboInOwl:hasDbXref	mesh:C537795	semapv:ManualMappingCuration
 MONDO:0021964	bagatelle Cassidy syndrome	oboInOwl:hasDbXref	mesh:C537796	semapv:ManualMappingCuration
 MONDO:0021966	baker Vinters syndrome	oboInOwl:hasDbXref	mesh:C537899	semapv:ManualMappingCuration
-MONDO:0021969	Banti syndrome	oboInOwl:hasDbXref	mesh:C537903	semapv:ManualMappingCuration
 MONDO:0021979	Basaran Yilmaz syndrome	oboInOwl:hasDbXref	mesh:C537660	semapv:ManualMappingCuration
 MONDO:0021994	Berk-Tabatznik syndrome	oboInOwl:hasDbXref	mesh:C535432	semapv:ManualMappingCuration
 MONDO:0022007	water intoxication	oboInOwl:hasDbXref	mesh:D014869	semapv:ManualMappingCuration
@@ -7749,7 +7750,7 @@ MONDO:0022037	large-cell immunoblastic lymphoma	oboInOwl:hasDbXref	mesh:D016400	
 MONDO:0022055	Calabro syndrome	oboInOwl:hasDbXref	mesh:C537960	semapv:ManualMappingCuration
 MONDO:0022057	calcifying epithelial odontogenic tumor	oboInOwl:hasDbXref	mesh:C537961	semapv:ManualMappingCuration
 MONDO:0022060	calloso-genital dysplasia	oboInOwl:hasDbXref	mesh:C537962	semapv:ManualMappingCuration
-MONDO:0022067	Cantu sanchez-corona fragoso syndrome	oboInOwl:hasDbXref	mesh:C535571	semapv:ManualMappingCuration
+MONDO:0022067	Cantu Sanchez-Corona Fragoso syndrome	oboInOwl:hasDbXref	mesh:C535571	semapv:ManualMappingCuration
 MONDO:0022089	Carnevale hernandez castillo syndrome	oboInOwl:hasDbXref	mesh:C535585	semapv:ManualMappingCuration
 MONDO:0022094	Cartwright Nelson Fryns syndrome	oboInOwl:hasDbXref	mesh:C535917	semapv:ManualMappingCuration
 MONDO:0022096	pyogenic granuloma	oboInOwl:hasDbXref	mesh:D017789	semapv:ManualMappingCuration
@@ -7823,7 +7824,6 @@ MONDO:0023094	exogenous ochronosis	oboInOwl:hasDbXref	mesh:C531762	semapv:Manual
 MONDO:0023106	Fairbank disease	oboInOwl:hasDbXref	mesh:C536393	semapv:ManualMappingCuration
 MONDO:0023111	familial capillaro-venous leptomeningeal angiomatosis	oboInOwl:hasDbXref	mesh:C536609	semapv:ManualMappingCuration
 MONDO:0023119	familial myelofibrosis	oboInOwl:hasDbXref	mesh:C536848	semapv:ManualMappingCuration
-MONDO:0023129	Fara Chlupackova syndrome	oboInOwl:hasDbXref	mesh:C537074	semapv:ManualMappingCuration
 MONDO:0023133	Faye-Petersen-Ward-Carey syndrome	oboInOwl:hasDbXref	mesh:C537076	semapv:ManualMappingCuration
 MONDO:0023134	febrile ulceronecrotic Mucha-Habermann disease	oboInOwl:hasDbXref	mesh:C537077	semapv:ManualMappingCuration
 MONDO:0023138	Feingold trainer syndrome	oboInOwl:hasDbXref	mesh:C536179	semapv:ManualMappingCuration
@@ -7835,7 +7835,6 @@ MONDO:0023176	formaldehyde poisoning	oboInOwl:hasDbXref	mesh:C537268	semapv:Manu
 MONDO:0023182	Franceschini Vardeu Guala syndrome	oboInOwl:hasDbXref	mesh:C537272	semapv:ManualMappingCuration
 MONDO:0023186	Fraser Jequier Chen syndrome	oboInOwl:hasDbXref	mesh:C535481	semapv:ManualMappingCuration
 MONDO:0023188	Freiberg disease	oboInOwl:hasDbXref	mesh:C535636	semapv:ManualMappingCuration
-MONDO:0023194	frints de Smet Fabry Fryns syndrome	oboInOwl:hasDbXref	mesh:C538062	semapv:ManualMappingCuration
 MONDO:0023203	Fuchs atrophia gyrata chorioideae et retinae	oboInOwl:hasDbXref	mesh:C538071	semapv:ManualMappingCuration
 MONDO:0023209	galactorrhoea-hyperprolactinaemia	oboInOwl:hasDbXref	mesh:C535402	semapv:ManualMappingCuration
 MONDO:0023212	Garret-Tripp syndrome	oboInOwl:hasDbXref	mesh:C535646	semapv:ManualMappingCuration
@@ -7885,7 +7884,6 @@ MONDO:0023704	Martinez Monasterio Pinheiro syndrome	oboInOwl:hasDbXref	mesh:C536
 MONDO:0023757	meralgia paresthetica	oboInOwl:hasDbXref	mesh:C537458	semapv:ManualMappingCuration
 MONDO:0023807	obsolete midphalangeal hair	oboInOwl:hasDbXref	mesh:C537471	semapv:ManualMappingCuration
 MONDO:0023809	Milner-Khallouf-Gibson syndrome	oboInOwl:hasDbXref	mesh:C537473	semapv:ManualMappingCuration
-MONDO:0023820	Moebius axonal neuropathy hypogonadism	oboInOwl:hasDbXref	mesh:C535806	semapv:ManualMappingCuration
 MONDO:0023833	multifocal choroiditis	oboInOwl:hasDbXref	mesh:C537374	semapv:ManualMappingCuration
 MONDO:0023833	multifocal choroiditis	oboInOwl:hasDbXref	mesh:D000080364	semapv:ManualMappingCuration
 MONDO:0024235	Brenner tumor	oboInOwl:hasDbXref	mesh:D001948	semapv:ManualMappingCuration
@@ -8061,6 +8059,7 @@ MONDO:0033938	acute radiation syndrome	oboInOwl:hasDbXref	mesh:D054508	semapv:Ma
 MONDO:0035735	acquired hemophilia A	oboInOwl:hasDbXref	mesh:C536392	semapv:ManualMappingCuration
 MONDO:0036591	adrenal cortex neoplasm	oboInOwl:hasDbXref	mesh:D000306	semapv:ManualMappingCuration
 MONDO:0036688	rhabdomyoma	oboInOwl:hasDbXref	mesh:D012207	semapv:ManualMappingCuration
+MONDO:0037251	congestive splenomegaly	oboInOwl:hasDbXref	mesh:C537903	semapv:ManualMappingCuration
 MONDO:0037252	thecoma	oboInOwl:hasDbXref	mesh:D013798	semapv:ManualMappingCuration
 MONDO:0037747	spinal injury	oboInOwl:hasDbXref	mesh:D013124	semapv:ManualMappingCuration
 MONDO:0037748	hyperlipoproteinemia	oboInOwl:hasDbXref	mesh:D006951	semapv:ManualMappingCuration
@@ -8265,7 +8264,6 @@ MONDO:0044350	hyperparathyroidism, primary, caused by water clear cell hyperplas
 MONDO:0044745	nervous system injury	oboInOwl:hasDbXref	mesh:D020196	semapv:ManualMappingCuration
 MONDO:0044784	myxoma	oboInOwl:hasDbXref	mesh:D009232	semapv:ManualMappingCuration
 MONDO:0044871	dystonia, focal, task-specific	oboInOwl:hasDbXref	mesh:C566973	semapv:ManualMappingCuration
-MONDO:0044876	drug hypersensitivity syndrome	oboInOwl:hasDbXref	mesh:D063926	semapv:ManualMappingCuration
 MONDO:0044877	paraneoplastic cerebellar degeneration	oboInOwl:hasDbXref	mesh:D020362	semapv:ManualMappingCuration
 MONDO:0044989	obsolete foot disorder	oboInOwl:hasDbXref	mesh:D005534	semapv:ManualMappingCuration
 MONDO:0045037	hyalohyphomycosis	oboInOwl:hasDbXref	mesh:D060605	semapv:ManualMappingCuration
@@ -8297,7 +8295,7 @@ MONDO:0100164	permanent neonatal diabetes mellitus	oboInOwl:hasDbXref	mesh:C5634
 MONDO:0100185	immune reconstitution inflammatory syndrome	oboInOwl:hasDbXref	mesh:D054019	semapv:ManualMappingCuration
 MONDO:0100192	liver failure	oboInOwl:hasDbXref	mesh:D017093	semapv:ManualMappingCuration
 MONDO:0100211	growth hormone insensitivity with immune dysregulation 1, autosomal recessive	oboInOwl:hasDbXref	mesh:C537871	semapv:ManualMappingCuration
-MONDO:0100213	IFAP syndrome with or without BRESHECK syndrome	oboInOwl:hasDbXref	mesh:C536085	semapv:ManualMappingCuration
+MONDO:0100213	IFAP syndrome 1, with or without BRESHECK syndrome	oboInOwl:hasDbXref	mesh:C536085	semapv:ManualMappingCuration
 MONDO:0100226	parasomnia, sleepwalking type	oboInOwl:hasDbXref	mesh:D013009	semapv:ManualMappingCuration
 MONDO:0100229	obsolete Heimler syndrome	oboInOwl:hasDbXref	mesh:C535994	semapv:ManualMappingCuration
 MONDO:0100233	long COVID-19	oboInOwl:hasDbXref	mesh:D000094024	semapv:ManualMappingCuration
@@ -8334,7 +8332,6 @@ MONDO:0600008	cytokine release syndrome	oboInOwl:hasDbXref	mesh:D000080424	semap
 MONDO:0600024	familial idiopathic inflammatory myopathy	oboInOwl:hasDbXref	mesh:C000598744	semapv:ManualMappingCuration
 MONDO:0700035	monosomy chromosome 8	oboInOwl:hasDbXref	mesh:C537823	semapv:ManualMappingCuration
 MONDO:0700038	TDP-43 proteinopathy	oboInOwl:hasDbXref	mesh:D057177	semapv:ManualMappingCuration
-MONDO:0700042	X-linked mendelian susceptibility to mycobacterial diseases due to IKBKG deficiency	oboInOwl:hasDbXref	mesh:C564468	semapv:ManualMappingCuration
 MONDO:0700048	hand-foot syndrome	oboInOwl:hasDbXref	mesh:D060831	semapv:ManualMappingCuration
 MONDO:0700064	aneuploidy	oboInOwl:hasDbXref	mesh:D000782	semapv:ManualMappingCuration
 MONDO:0700065	trisomy	oboInOwl:hasDbXref	mesh:D014314	semapv:ManualMappingCuration
@@ -8357,8 +8354,12 @@ MONDO:0800436	craniofacial dysmorphism, skeletal anomalies, and impaired intelle
 MONDO:0800437	Carey-Fineman-Ziter syndrome 1	oboInOwl:hasDbXref	mesh:C536102	semapv:ManualMappingCuration
 MONDO:0800445	Birt-Hogg-Dube syndrome 1	oboInOwl:hasDbXref	mesh:D058249	semapv:ManualMappingCuration
 MONDO:0800449	lysosomal acid lipase deficiency	oboInOwl:hasDbXref	mesh:C531854	semapv:ManualMappingCuration
+MONDO:0800452	congenital amegakaryocytic thrombocytopenia 1	oboInOwl:hasDbXref	mesh:C535982	semapv:ManualMappingCuration
 MONDO:0810000	choroidal neovascularization	oboInOwl:hasDbXref	mesh:D020256	semapv:ManualMappingCuration
+MONDO:0957317	hematuria, benign familial	oboInOwl:hasDbXref	mesh:C562476	semapv:ManualMappingCuration
+MONDO:0957421	borna virus encephalitis	oboInOwl:hasDbXref	mesh:D001890	semapv:ManualMappingCuration
 MONDO:1010000	pythiosis	oboInOwl:hasDbXref	mesh:D058968	semapv:ManualMappingCuration
+MONDO:1010029	aleutian mink disease, human	oboInOwl:hasDbXref	mesh:D000453	semapv:ManualMappingCuration
 MONDO:8000006	WHIM syndrome 1	oboInOwl:hasDbXref	mesh:C536697	semapv:ManualMappingCuration
 MONDO:8000008	Martsolf syndrome 1	oboInOwl:hasDbXref	mesh:C536028	semapv:ManualMappingCuration
 MONDO:8000010	antiphospholipid syndrome	oboInOwl:hasDbXref	mesh:D016736	semapv:ManualMappingCuration

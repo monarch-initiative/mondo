@@ -36,7 +36,7 @@ test: test_reason_equivalence
 test: test_reason_equivalence_hermit
 test: obo_validator
 
-test_reason_equivalence_hermit: $(ONT).obo
+test_reason_equivalence_hermit: $(ONT)-base.obo
 	$(ROBOT) reason -i $< --equivalent-classes-allowed none -r hermit
 
 test_reason_equivalence: $(SRC)
@@ -211,51 +211,8 @@ clean:
 		debug.owl roundtrip.obo test_nomerge sparql_test_* disjoint_sibs.obo \
 		reasoned-plus-equivalents.owl reasoned.owl tmp/*
 
-#############################################
-##### Mondo subset auto-tagger ##############
-#############################################
 
-RARE_SUBSETS=nord orphanet inferred gard
-
-tmp/orphanet-rare-subset.ttl: $(SRC)
-	$(ROBOT) merge -i $(SRC) reason \
-		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
-
-
-subsets/gard-subset.template.tsv:
-	wget "https://github.com/monarch-initiative/gard/releases/latest/download/mondo-gard-exact.robot.template.tsv" -O $@
-
-# The complex part here is that we need to dynamically update the MONDO source code, i.e. 
-# MONDO:equivalentTo and MONDO:obsoleteEquivalentTo.
-tmp/gard-rare-subset.ttl: $(SRC) subsets/gard-subset.template.tsv
-	$(ROBOT) template --template subsets/gard-subset.template.tsv convert -f ttl -o $@
-	$(ROBOT) remove -i $< --select imports merge -i $@ query -f ttl --query ../sparql/construct/construct-equivalent-obsolete-gard.sparql $@.source
-	$(ROBOT) merge -i $@ -i $@.source -o $@
-
-tmp/nord-rare-subset.ttl: $(SRC)
-	$(ROBOT) template --template subsets/nord-subset.template.tsv convert -f ttl -o $@
-
-# The inferred subset depends on the other ones, so we need to first remove the old subsets
-# Then add the gard, nord and orphanet subsets back in
-tmp/inferred-rare-subset.ttl: $(SRC) tmp/nord-rare-subset.ttl tmp/gard-rare-subset.ttl tmp/orphanet-rare-subset.ttl
-	$(ROBOT) merge -i $(SRC) \
-		unmerge -i components/mondo-subsets.owl \
-		merge $(patsubst %, -i %, $^) \
-		reason \
-		query --format ttl --query ../sparql/construct/construct-inferred-rare-subset.sparql $@
-
-components/mondo-subsets.owl: tmp/inferred-rare-subset.ttl tmp/orphanet-rare-subset.ttl tmp/nord-rare-subset.ttl tmp/gard-rare-subset.ttl
-	$(ROBOT) merge $(patsubst %, -i %, $^) \
-		query --update ../sparql/construct/construct-rare-subset.sparql \
-		annotate --ontology-iri $(ONTBASE)/$@ -o $@
-
-# As of 3 August, does not do anything.
-components/mondo-characteristic-rare.owl: components/mondo-subsets.owl
-	$(ROBOT) merge -i $(SRC) reason \
-		query --format ttl --query ../sparql/construct/construct-rare-subset.sparql \
-		annotate --ontology-iri $(ONTBASE)/$@ -o $@
-
-reports/new-rare-diseases.txt: #$(ONT)-base.owl
+reports/new-rare-diseases.txt: $(ONT)-base.owl
 	$(ROBOT) query -i $(ONT)-base.owl --query ../sparql/signature/rare-subset.sparql $@
 
 reports/old-rare-diseases.txt: tmp/mondo-lastbase.owl
@@ -394,7 +351,6 @@ patterns: matches pattern_docs
 
 components:
 	$(MAKE) patterns
-	$(MAKE) components/mondo-subsets.owl
 
 reports/robot_diff.md: mondo.obo mondo-lastbuild.obo
 	$(ROBOT) diff --left mondo-lastbuild.obo --right $< -f markdown -o $@
@@ -425,6 +381,9 @@ rm_related_annos_to_exact:
 
 rm_xref_without_source:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/update/rm-xref-without-source.ru -o $(SRC)
+
+rm_confidence_annotation:
+	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/update/rm-confidence_annotation.ru -o $(SRC)
 
 report-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
