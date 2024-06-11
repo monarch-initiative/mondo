@@ -416,13 +416,24 @@ update-efo-subset:
 
 update-rare-disease-subset:
 	$(MAKE) subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-before.tsv
-	$(MAKE) update-ordo-subsets -B
 	$(MAKE) update-orphanet-subset -B
 	#$(MAKE) update-gard -B
 	#$(MAKE) update-nord -B
 	$(MAKE) update-inferred-subset -B
 	$(MAKE) update-rare-subset -B
 	$(MAKE) subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-after.tsv
+	@echo "Subset metrics before..."
+	cat tmp/subset-metrics-before.tsv
+	@echo "Subset metrics after..."
+	cat tmp/subset-metrics-after.tsv
+
+clingen-otar-ordo-content:
+	$(MAKE) subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-before.tsv
+	$(MAKE) update-efo-subset -B
+	$(MAKE) update-clingen -B
+	$(MAKE) update-ordo-subsets -B
+	$(MAKE) update-nando -B
+	$(MAKE)  subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-after.tsv
 	@echo "Subset metrics before..."
 	cat tmp/subset-metrics-before.tsv
 	@echo "Subset metrics after..."
