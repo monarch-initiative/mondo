@@ -410,6 +410,29 @@ update-efo-subset:
 		convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
+
+####################################
+##### MedGen #######################
+####################################
+
+
+tmp/mondo-medgen.template.tsv:
+	wget "https://github.com/monarch-initiative/medgen/releases/download/2024-06-09/medgen-xrefs.robot.template.tsv" -O $@
+
+tmp/mondo-medgen.template.owl: tmp/mondo-medgen.template.tsv
+	$(ROBOT) template --prefix "orcid: https://orcid.org/" --template $< convert -f ofn -o $@
+
+.PHONY: update-medgen
+update-medgen:
+	$(MAKE) tmp/mondo-medgen.template.owl
+	grep -vE '^(xref: UMLS:|xref: MEDGEN:|subset: medgen)' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/mondo-medgen.template.owl --collapse-import-closure false \
+		query --use-graphs false --update ../sparql/update/update-equivalent-obsolete.ru \
+		convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC) 
+
+
 ##########################################
 ###### Update all external content #######
 ##########################################
