@@ -327,7 +327,7 @@ update-nando:
 ####################################
 
 tmp/nord.template.owl:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/external/nord.robot.owl" -O $@
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/data-load-12062024/src/ontology/external/nord.robot.owl" -O $@
 
 .PHONY: update-nord
 update-nord:
@@ -440,8 +440,8 @@ update-medgen:
 update-rare-disease-subset:
 	$(MAKE) subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-before.tsv
 	$(MAKE) update-orphanet-subset -B
-	#$(MAKE) update-gard -B
-	#$(MAKE) update-nord -B
+	$(MAKE) update-gard -B
+	$(MAKE) update-nord -B
 	$(MAKE) update-inferred-subset -B
 	$(MAKE) update-rare-subset -B
 	$(MAKE) subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-after.tsv
