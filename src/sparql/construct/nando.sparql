@@ -1,0 +1,22 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?nando_id rdf:type owl:Class .
+  ?nando_id rdfs:seeAlso ?see_also .
+  ?nando_id skos:closeMatch ?mondo_id .
+  ?nando_id rdfs:label ?label .
+  ?nando_id rdfs:subClassOf ?parent .
+}
+
+WHERE {
+  ?nando_id rdf:type owl:Class .
+  ?nando_id rdfs:seeAlso ?see_also .
+  ?nando_id skos:closeMatch ?mondo_id .
+  ?nando_id rdfs:label ?label .
+  FILTER(LANG(?label)="en")
+  ?nando_id rdfs:subClassOf ?parent .
+}
+

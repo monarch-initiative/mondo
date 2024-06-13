@@ -1,0 +1,113 @@
+rules:
+  - description: default
+    postconditions:
+      predicate_id: skos:closeMatch
+      weight: 0.0
+
+  - description: exact to exact
+    preconditions:
+      subject_match_field_one_of:
+        - oio:hasExactSynonym
+        - rdfs:label
+        - skos:prefLabel
+      object_match_field_one_of:
+        - oio:hasExactSynonym
+        - rdfs:label
+        - skos:prefLabel
+    postconditions:
+      predicate_id: skos:exactMatch
+      weight: 2.0
+
+  - description: >-
+     label to label; note this is additive with the exact to exact rule,
+      so the score just represents an additional small boost
+    preconditions:
+      subject_match_field_one_of:
+        - rdfs:label
+      object_match_field_one_of:
+        - rdfs:label
+    postconditions:
+      predicate_id: skos:exactMatch
+      weight: 0.5
+
+  - description: xref match
+    preconditions:
+      subject_match_field_one_of:
+        # - oio:hasDbXref
+        - skos:exactMatch
+      object_match_field_one_of:
+        # - oio:hasDbXref
+        - skos:exactMatch
+    postconditions:
+      predicate_id: skos:exactMatch
+      weight: 4.0
+
+  - preconditions:
+      subject_match_field_one_of:
+        - oio:hasExactSynonym
+        - rdfs:label
+      object_match_field_one_of:
+        - oio:hasBroadSynonym
+    postconditions:
+      predicate_id: skos:broadMatch
+      weight: 2.0
+
+  - preconditions:
+      subject_match_field_one_of:
+        - oio:hasExactSynonym
+        - rdfs:label
+      object_match_field_one_of:
+        - oio:hasNarrowSynonym
+    postconditions:
+      predicate_id: skos:narrowMatch
+      weight: 2.0
+
+  # - synonymizer:
+  #     the_rule: Remove parentheses bound info from the label.
+  #     match: r'\([^)]*\)'
+  #     match_scope: "*"
+  #     replacement: ""
+
+  - synonymizer:
+      the_rule: Remove box brackets bound info from the label.
+      match: r'\[[^)]*\]'
+      match_scope: "*"
+      replacement: ""
+
+  # - synonymizer:
+  #     the_rule: Remove abbreviations.
+  #     match: r'\b[A-Z][a-zA-Z\.]*[A-Z]\b\.?' [a-zA-Z]*\d
+  #     match_scope: "*"
+  #     replacement: ""
+
+  # - synonymizer:
+  #     the_rule: Remove abbreviations that end with a number in them.
+  #     match: r'[a-zA-Z]*\d[a-zA-Z]*'
+  #     match_scope: "*"
+  #     replacement: ""
+  
+  - synonymizer:
+      the_rule: Broad match terms with the term 'other' in them.
+      match: r'(?i)^Other '
+      match_scope: "*"
+      replacement: ""
+      qualifier: "broad"
+
+  - synonymizer:
+      the_rule: Replace disease with disorder in the label.
+      match: r'disease'
+      match_scope: "*"
+      replacement: "disorder"
+
+  - synonymizer:
+      the_rule: Replace numbers by "type number" in the label.
+      match: r'(?<!type)\s(\d)'
+      match_scope: "*"
+      replacement: " type \\1"
+
+  - synonymizer:
+      the_rule: Replace "'s" by "s" in the label.
+      match: r'\'s'
+      match_scope: "*"
+      replacement: "s"
+
