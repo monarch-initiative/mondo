@@ -963,6 +963,20 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 		make NORM
 		mv NORM $(SRC)
 
+$(TMPDIR)/mondo-omim-genes.robot.owl:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/hgnc-template/src/ontology/external/mondo_genes.robot.owl" -O $@
+
+.PHONY: update-omim-genes
+update-omim-genes: 
+	$(MAKE) $(TMPDIR)/mondo-omim-genes.robot.owl
+	$(ROBOT) remove --input $(SRC) \
+		--term RO:0004003 --axioms SubClassOf --preserve-structure false \
+		merge -i $(TMPDIR)/mondo-omim-genes.robot.owl --collapse-import-closure false \
+		convert -f obo --check false -o tmp/$(SRC)
+		mv tmp/$(SRC) $(SRC)
+		make NORM
+		mv NORM $(SRC)
+
 .PHONY: help
 help:
 	@echo "$$data"
