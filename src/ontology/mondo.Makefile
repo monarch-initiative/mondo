@@ -952,7 +952,7 @@ all: config/exclusion_reasons.tsv
 ##################################
 
 $(TMPDIR)/subclass-confirmed.robot.tsv:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/reports/sync-subClassOf.confirmed.tsv" -O $@
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/f95792d034240a23c2edef3fdcdc0c0aba7a3e8d/src/ontology/reports/sync-subClassOf.confirmed.tsv" -O $@
 
 $(TMPDIR)/new-exact-matches-%.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/lexmatch/unmapped_$*_lex_exact.tsv" -O $@
