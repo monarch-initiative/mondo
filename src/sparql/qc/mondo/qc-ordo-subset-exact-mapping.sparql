@@ -7,7 +7,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?entity ?property ?value WHERE {
     VALUES ?subset {
-        <http://purl.obolibrary.org/obo/mondo#ordo_disease>
+        <http://purl.obolibrary.org/obo/mondo#ordo_disorder>
     }
     ?entity oboInOwl:inSubset ?subset .
 
