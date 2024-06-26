@@ -729,7 +729,7 @@ mirror/hgnc_gene.nt: | $(MIRRORDIR)
 .PRECIOUS: mirror/hgnc_gene.nt
 
 mirror/ncbi_gene.nt: | $(MIRRORDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://data.monarchinitiative.org/monarch-kg/latest/rdf/ncbi_gene.nt.gz | gzip -d > $@.tmp &&\
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/monarch-initiative/ncbi-gene/releases/latest/download/ncbi_gene.nt.gz | gzip -d > $@.tmp &&\
 		perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@; fi
 .PRECIOUS: mirror/ncbi_gene.nt
 
