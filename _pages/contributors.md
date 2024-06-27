@@ -16,7 +16,9 @@ Name | Affiliation | GitHub | Curation team? | Technical team?
 --- | --- | --- | --- | ---
 [Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | Critical Path Institute | [nicolevasilevsky](https://github.com/nicolevasilevsky) | Y | Y
 [Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | semanticly, Ltd | [matentzn](https://github.com/matentzn) | N | Y
-[Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of Colorado | [sabrinatoro](https://github.com/sabrinatoro) | Y | Y
+[Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of North Caronlina at Chapel Hill | [sabrinatoro](https://github.com/sabrinatoro) | Y | Y
+[Trish Whetzel](https://orcid.org/0000-0002-3458-4839) | University of North Caronlina at Chapel Hill | [twhetzel](https://github.com/twhetzel) | Y | Y
+[Katie Mullen](https://orcid.org/0000-0002-5002-8648) | University of Colorado Anschutz Medical Campus | [katiermullen](https://github.com/katiermullen) | Y | N
 [Joe Flack](https://orcid.org/0000-0002-2906-7319) | Johns Hopkins University | [joeflack4](https://github.com/joeflack4) | N | Y
 [Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson) | Y (medical expert)| N
 [Harshad Hegde](https://orcid.org/0000-0002-2411-565X) | Lawrence Berkeley National Lab | [hrshdhgd](https://github.com/hrshdhgd) | N | Y
