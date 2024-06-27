@@ -43,7 +43,10 @@ Notes are available [here](https://docs.google.com/document/d/16eMB-x3iANHfiTxw7
 
 Date | Time | Presenter (Organization)| Topic | Recording 
 -- | -- | -- | -- | -- 
-June 28 | 9AM PT/12PM ET | Toyofumi Fujiwara ([DBCLS](https://dbcls.rois.ac.jp/index-en.html)) | Nando | 
+Sep 20 | 9AM PT/12PM ET | TBD | Externally managed metadata in Mondo
+August 23 | Summer Break
+July 26 | Summer Break
+June 28 | 9AM PT/12PM ET | Toyofumi Fujiwara ([DBCLS](https://dbcls.rois.ac.jp/index-en.html)) |  Enhancing Interoperability of Biomedical Resources Using Ontologies | 
 May 31 | 9AM PT/12PM ET | Brian Schilder (Imperial College London) | Navigating the Phenomic Landscape: Systematic characterisation of the latent genomic space underlying all traits and diseases | [Here](https://drive.google.com/file/d/1i7xKNKH84TcmkEuesAZ5jJ5Ub_Whd00b/view?usp=sharing)
 May 3 | 9 AM PT/12 PM ET | Bryan Laraway([N3C](https://covid.cd2h.org/)) | Mondo to identify rare disease cohorts within N3C | [Here](https://drive.google.com/file/d/1UpsRft8FOPI0e7QKPSTagPEVehIL3Zmw/view?usp=sharing)
 Apr 5 | 9 AM PT/12 PM ET | Imke Tammen and Frank Nicolas ([OMIA](https://www.omia.org/home/)) | Online Mendelian Inheritance in Animals (OMIA) | [Here](https://drive.google.com/file/d/1Wf5IAC5fcIdYHVOk2HV_L7qlR37PsrwT/view?usp=sharing)
