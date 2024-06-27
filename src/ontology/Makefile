@@ -738,8 +738,7 @@ mirror-hgnc: mirror/hgnc_gene.nt | $(TMPDIR)
 		query --format ttl --query ../sparql/construct/construct-hgnc.sparql $(TMPDIR)/$@.owl; fi
 
 mirror-ncbigene: mirror/ncbi_gene.nt | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
-		query --format ttl --query ../sparql/construct/construct-ncbigene.sparql $(TMPDIR)/$@.owl; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then arq --data=mirror/ncbi_gene.nt --query=../sparql/construct/construct-ncbigene.sparql > $(TMPDIR)/$@.owl; fi
 
 
 IMPORTSEED=$(IMPORTDIR)/seed.txt # SHOULD BE TMP
