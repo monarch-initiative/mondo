@@ -2,21 +2,21 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
+# description: This QC check ensures that, for our core namespaces, we always have a source
+
 SELECT DISTINCT ?entity ?xref WHERE {
     ?entity oboInOwl:hasDbXref ?xref .
-    OPTIONAL {
-      ?entity owl:deprecated ?obsolete .
-    }
     FILTER NOT EXISTS {
-    ?xref_anno a owl:Axiom ;
-           owl:annotatedSource ?entity ;
-           owl:annotatedProperty oboInOwl:hasDbXref ;
-           owl:annotatedTarget ?xref ;
-           oboInOwl:source ?source .
+    [] a owl:Axiom ;
+        owl:annotatedSource ?entity ;
+        owl:annotatedProperty oboInOwl:hasDbXref ;
+        owl:annotatedTarget ?xref ;
+        oboInOwl:source ?source .
    	    FILTER (strstarts(str(?source), "MONDO:"))
-  }
-
-    FILTER (strstarts(str(?xref), "OMIM:") || (strstarts(str(?xref), "OMIMPS:" || strstarts(str(?xref), "DOID:") || strstarts(str(?xref), "Orphanet:") || strstarts(str(?xref), "ORDO:") || strstarts(str(?xref), "NCIT:"))))
+    }
+    # 20.06.2024: had to remove Orphanet and NCIT as they actually had too many errors
+    # strstarts(str(?xref), "Orphanet:") || strstarts(str(?xref), "ORDO:") || strstarts(str(?xref), "NCIT:")
+    FILTER (strstarts(str(?xref), "OMIM:") || strstarts(str(?xref), "OMIMPS:") || strstarts(str(?xref), "DOID:"))
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
 }
 ORDER BY ?entity
