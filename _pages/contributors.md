@@ -4,6 +4,8 @@
 
 The best way to contribute is by addressing tickets or reporting issues on the [GitHub tracker](https://github.com/monarch-initiative/mondo/issues). See this guide on [how to make a good term request](https://mondo.readthedocs.io/en/latest/editors-guide/c-make-good-term-request/).
 
+See the [Mondo Users Corner](https://mondo.readthedocs.io/en/latest/) in our documentation for more details specific to users.
+
 Issues that need medical expertise are [here](https://github.com/monarch-initiative/mondo/labels/medical%20input%20needed).
 
 # Developers
@@ -12,9 +14,11 @@ Mondo is developed by members of the [Monarch Initiative](https://monarchinitiat
 
 Name | Affiliation | GitHub | Curation team? | Technical team?
 --- | --- | --- | --- | ---
-[Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | University of Colorado | [nicolevasilevsky](https://github.com/nicolevasilevsky) | Y | Y
+[Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | Critical Path Institute | [nicolevasilevsky](https://github.com/nicolevasilevsky) | Y | Y
 [Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | semanticly, Ltd | [matentzn](https://github.com/matentzn) | N | Y
-[Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of Colorado | [sabrinatoro](https://github.com/sabrinatoro) | Y | Y
+[Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of North Caronlina at Chapel Hill | [sabrinatoro](https://github.com/sabrinatoro) | Y | Y
+[Trish Whetzel](https://orcid.org/0000-0002-3458-4839) | University of North Caronlina at Chapel Hill | [twhetzel](https://github.com/twhetzel) | Y | Y
+[Katie Mullen](https://orcid.org/0000-0002-5002-8648) | University of Colorado Anschutz Medical Campus | [katiermullen](https://github.com/katiermullen) | Y | N
 [Joe Flack](https://orcid.org/0000-0002-2906-7319) | Johns Hopkins University | [joeflack4](https://github.com/joeflack4) | N | Y
 [Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson) | Y (medical expert)| N
 [Harshad Hegde](https://orcid.org/0000-0002-2411-565X) | Lawrence Berkeley National Lab | [hrshdhgd](https://github.com/hrshdhgd) | N | Y
@@ -25,16 +29,16 @@ Name | Affiliation | GitHub | Curation team? | Technical team?
 
 # Project managers
 
-Name | Affiliation | GitHub 
+Name | Affiliation | Role | GitHub 
 --- | --- | --- | 
-Sarah Gehrke | University of Colorado | [sagehrke](https://github.com/sagehrke)
-Moni Munoz-Torres | University of Colorado | [monicacecilia ](https://github.com/monicacecilia )
+Sarah Gehrke | University of Colorado | Project Manager | [sagehrke](https://github.com/sagehrke)
+Moni Munoz-Torres | University of Colorado | Phenomics First Program Director | [monicacecilia ](https://github.com/monicacecilia )
 
 # Contributors
 
 Name | Affiliation | GitHub
 --- | --- | ---
-Gioconda Alyea | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [galyea-gard](https://github.com/galyea-gard )
+Gioconda Alyea | [NORD](https://rarediseases.org/) | [galyea123](https://github.com/galyea123 )
 Joanna Amberger | [OMIM](https://omim.org/) | [jamberger](https://github.com/jamberger)
 Larry Babb | [ClinGen](https://clinicalgenome.org/) | [larrybabb](https://github.com/larrybabb)
 Jim Balhoff | [RENCI](https://renci.org/) | [balhoff ](https://github.com/balhoff )
@@ -98,7 +102,7 @@ Sebastian Kohler | [Ada Health](https://ada.com/) | [drseb ](https://github.com/
 Abbe Lai | Boston Children's Hospital | [abbe-Lai](https://github.com/abbe-Lai)
 Martin Larralde        | EMBL                   | [althonos](https://github.com/althonos)        | 
 Austin Letcher | [CoRDS-Sanford](http://www.sanfordresearch.org/specialprograms/cords/) | [Letchau](https://github.com/Letchau)
-Janine Lewis | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [janinelewis3](https://github.com/janinelewis3)
+Janine Lewis | [NORD](https://rarediseases.org/) | [janinelewis3](https://github.com/janinelewis3)
 Antonia Lock           | UniProt Consortium     | [Antonialock](https://github.com/Antonialock)    | 
 Irene López            | EMBL-EBI                | [ireneisdoomed](https://github.com/ireneisdoomed)
 Donna Maglott | [NCBI](National Center for Biotechnology Information) | [maglott](https://github.com/maglott)
@@ -118,7 +122,7 @@ Tudor Oprea            |                         | [TudorOprea](https://github.c
 David Osumi-Sutherland | [EBI](https://www.ebi.ac.uk/) | [dosumis](https://github.com/dosumis)
 Kalliopi Panoutsopoulou |  | [kallia-p](https://github.com/kallia-p)
 Brooke Palus | [ClinGen](https://clinicalgenome.org/) | [brookepalus](https://github.com/brookepalus)
-Anne Pariser | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [Anne-Pariser](https://github.com/Anne-Pariser)
+Anne Pariser | [Alltrna](https://www.alltrna.com/) | [Anne-Pariser](https://github.com/Anne-Pariser)
 Zoë Pendlington | [EBI](https://www.ebi.ac.uk/) | [zoependlington](https://github.com/zoependlington)
 Tim Putman | [Monarch Initiative](http://monarchinitiative.org/) | [putmantime](https://github.com/putmantime) 
 Stephen Ramsey         | Oregon State University | [saramsey](https://github.com/saramsey)

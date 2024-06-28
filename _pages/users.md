@@ -5,18 +5,20 @@
 Name | Description
 -- | -- 
 [Monarch Initiative](https://monarchinitiative.org/) | Monarch is a system that allows for cross-species disease discovery, and Mondo was initially developed for the Monarch Initiative and is used for integrating disease data across species. 
-[Broad Institute](https://www.broadinstitute.org/) | A research organization that assembles a community of researchers from MIT, Harvard, and Harvard-affiliated hospitals. 
+[Biolookup](http://biolookup.io/) | The Biolookup Service provides metadata and ontological information about biomedical entities based on their [compact identifiers](https://en.wikipedia.org/wiki/CURIE) (CURIEs).
 [ClinGen](https://clinicalgenome.org/) | ClinGen is a curated database of clinically relevant genes and variants. Mondo is used annotating diseases associated with gene variants.
 [Critcal Path Institute](https://c-path.org/) | An independent nonprofit, public-private partnership with the U.S. Food and Drug Administration (FDA) focused on the medical product development process.
+[European Bioinformatics Institute (EBI)](https://www.ebi.ac.uk) | EBI uses Mondo as the primary ontology for disease concepts integrated into the  Experimental Factor Ontology (EFO) for integration of data across EBI. Mondo is used for disease annotations in [EBI resources](https://www.ebi.ac.uk/services), [Open Targets](https://www.opentargets.org/), GWAS catalog and [Euro-Bioimaging](http://www.eurobioimaging.eu/).
 [European Joint Programme on Rare Diseases](https://www.ejprarediseases.org/) | An Europe-based information resource for rare diseases.
-[Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/efo/) | EBI develops and aligns Mondo with the Experimental Factor Ontology (EFO) for integration of data across EBI. Mondo is used for disease annotations in [EBI resources](https://www.ebi.ac.uk/services), [Open Targets](https://www.opentargets.org/), and [Euro-Bioimaging](http://www.eurobioimaging.eu/) 
 [Euro-Bioimaging](https://www.eurobioimaging.eu/) | Provides access to bioimaging technologies, training and data services. Mondo is used for disease annotations.
+[Exscientia](https://www.exscientia.ai/) | Exscientia is an AI-driven pharmatech company committed to discovering, designing and developing the best possible drugs in the fastest and most effective manner.
 [Fabric Genomics](https://fabricgenomics.com/) | Genome interpretation software for use in rare disease diagnosis.
 [Gabriella Miller Kids First Data Resource Portal](https://kidsfirstdrc.org/) | The Kids First Data Resource Portal is a curated database of clinical and genetic sequence data from pediatric patients with structural abnormalities or childhood cancers, and Mondo is used to structure diagnosis information.
-[Genomics England Panel App](https://panelapp.genomicsengland.co.uk/) | A crowdsourcing tool to allow gene panels to be shared, downloaded, viewed and evaluated by the scientific community for use in rare disease diagnosis.
 [Global Alliance for Genomics & Health (GAG4H)](https://www.ga4gh.org/) | A policy-framing and technical standards-setting organization that aims to enable responsible genomic data sharing within a human rights framework.
+[Global Genes](https://globalgenes.org/) | A non-profit organization dedicated to eliminating the burdens and challenges of rare diseases for patients and families globally. 
 [HL7 International](https://confluence.hl7.org/display/TA/External+Terminologies+-+Information) | A standards developing organization that provides a comprehensive framework and related standards for the exchange, integration, sharing and retrieval of electronic health information that supports clinical practice and the management, delivery and evaluation of health services.
 [Human Cell Atlas](https://www.humancellatlas.org/) | A group of researchers who aim to create cellular reference maps with the position, function and characteristics of every cell type in the human body.
+[INDRA](https://github.com/sorgerlab/indra) | INDRA (Integrated Network and Dynamical Reasoning Assembler) is an automated model assembly system, originally developed for molecular systems biology and then generalized to other domains.
 [Infertility Disease Database](http://mdl.shsmu.edu.cn/IDDB/module/mainpage/mainpage.jsp) | A resource for genes, experiments and clinical records related with the infertility diseases. 
 [MSeqDR: the Mitochondrial Disease Sequence Data Resource Consortium ](https://mseqdr.org/) | Securely collects and shares data for rare diseases, patients and causative mutations.
 [NCBI ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/) | ClinVar aggregates information about genomic variation and its relationship to human health.

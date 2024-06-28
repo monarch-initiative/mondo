@@ -22,7 +22,7 @@ See [Changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes
 
 ## View Mondo:
 
-- **Ontology Lookup Service**: [https://www.ebi.ac.uk/ols/ontologies/mondo](https://www.ebi.ac.uk/ols/ontologies/mondo). _Note: OLS is uploaded approximately one week after the Mondo release._
+- **Ontology Lookup Service**: [https://www.ebi.ac.uk/ols4/ontologies/mondo](https://www.ebi.ac.uk/ols4/ontologies/mondo). _Note: OLS is uploaded approximately one week after the Mondo release._
 - **Monarch Initiative**: [https://monarchinitiative.org/disease/MONDO:0000001](https://monarchinitiative.org/disease/MONDO:0000001) _Note: Monarch does not always have the latest Mondo release. We recommend searching in OLS for the latest changes._
 - **AberOWL**: [http://aber-owl.net/ontology/MONDO/#/](http://aber-owl.net/ontology/MONDO/#/)
 - **BioPortal**: [https://bioportal.bioontology.org/ontologies/MONDO](https://bioportal.bioontology.org/ontologies/MONDO)
