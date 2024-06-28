@@ -27,7 +27,7 @@
 - [Monkeying around with OWL: Musings on building and using ontologies](https://douroucouli.wordpress.com/). Posts by Chris Mungall
 
 ## Relevant Presentations
-- [Standardizing Rare Disease Data Collection: It Takes an (Ontology) Village.]((https://doi.org/10.5281/zenodo.7125341)) Vasilevsky N. [Keynote address]. 4th U.S. Semantic Technologies Symposium, East Lansing, MI, USA, September 29, 2022. 
+- [Standardizing Rare Disease Data Collection: It Takes an (Ontology) Village.](https://doi.org/10.5281/zenodo.7125341) Vasilevsky N. [Keynote address]. 4th U.S. Semantic Technologies Symposium, East Lansing, MI, USA, September 29, 2022. 
 - [Using the Mondo Disease Ontology to Standardize Rare Disease Nomenclature.]((https://zenodo.org/record/7102403#.Yyt_s-zML6M)) Nicole Vasilevsky. FDA Office of Orphan Products Development, Virtual, September 21, 2022
 - Standardization of Cancer Terminology in the Mondo Disease Ontology. Nicole Vasilevsky, Nico Matentzoglu, Sabrina Toro, Joe Flack, Ada Hamosh, Peter Robinson, Melissa Haendel, Chris Mungall. [Poster presentation] Cancer Genomics Consortium 2022 Annual Meeting. Virtual. August 01, 2022.
 - Mondo Disease Ontology: Building a Community-Based Disease Resource. Nicole Vasilevsky, Sabrina Toro, Nico A. Matentzoglu, Dazhi Jiao, Nomi L. Harris, Melissa A. Haendel, Peter N. Robinson, Chris Mungall. [Conference session]. AMIA 2022 Informatics Summit, Chicago, IL,, USA. March 23, 2022
