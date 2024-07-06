@@ -960,8 +960,8 @@ TRANSLATION_FILES=$(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv $(TRANSLATIONSDIR)/$
 translations:
 	$(MAKE) $(TRANSLATION_FILES)
 
-TRANSLATIONS_ADAPTER=simpleobo:mondo-base.obo
-TRANSLATIONS_ONTOLOGY=mondo-base.obo
+TRANSLATIONS_ADAPTER=pronto:mondo-simple.obo
+TRANSLATIONS_ONTOLOGY=mondo-simple.obo
 TRANSLATE_PREDICATES=rdfs:label 
 
 
