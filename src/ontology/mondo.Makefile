@@ -1009,6 +1009,10 @@ $(TRANSLATIONSDIR)/%.babelon.json: $(TRANSLATIONSDIR)/%.babelon.tsv
 	$(BABELONPY) convert $< --output-format json -o $@
 
 
+$(ONT)-international.owl: $(ONT).owl $(TRANSLATIONS_OWL)
+	$(ROBOT) merge $(patsubst %, -i %, $^) \
+		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		--output $@.tmp.owl && mv $@.tmp.owl $@
 
 
 ##################################
