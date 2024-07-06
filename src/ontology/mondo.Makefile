@@ -947,6 +947,70 @@ config/exclusion_reasons.tsv:
 
 all: config/exclusion_reasons.tsv
 
+# ----------------------------------------
+# Babelon Translation Files
+# ----------------------------------------
+
+BABELONPY=babelon -q
+TRANSLATIONSDIR=../translations
+TRANSLATIONS_OWL=$(TRANSLATIONSDIR)/mondo-jp.babelon.owl
+TRANSLATIONS_TSV=$(TRANSLATIONSDIR)/mondo-jp-preprocessed.babelon.tsv
+TRANSLATION_FILES=$(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv $(TRANSLATIONSDIR)/$(ONT)-all.babelon.json
+
+translations:
+	$(MAKE) $(TRANSLATION_FILES)
+
+TRANSLATIONS_ADAPTER=simpleobo:mondo-base.obo
+TRANSLATIONS_ONTOLOGY=mondo-base.obo
+TRANSLATE_PREDICATES=rdfs:label 
+
+
+$(TRANSLATIONSDIR)/mondo-jp.babelon.tsv:
+	test -f $@
+
+
+$(TRANSLATIONSDIR)/mondo-jp-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/mondo-jp.babelon.tsv
+	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/mondo-jp.babelon.tsv \
+		--oak-adapter $(TRANSLATIONS_ADAPTER) \
+		--language-code jp \
+		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
+		--output-source-changed $(TRANSLATIONSDIR)/mondo-jp-changed.babelon.tsv  \
+		--output-not-translated $(TRANSLATIONSDIR)/mondo-jp-not-translated.babelon.tsv \
+		--include-not-translated false \
+		--update-translation-status true \
+		--drop-unknown-columns true \
+		-o $@
+
+
+$(TRANSLATIONSDIR)/%.synonyms.owl: $(TRANSLATIONSDIR)/%.synonyms.tsv
+	$(ROBOT) template --template $< \
+		annotate \
+			--ontology-iri $(ONTBASE)/translations/$*.synonyms.owl \
+			-V $(ONTBASE)/releases/$(VERSION)/translations/$*.synonyms.owl \
+			--annotation owl:versionInfo $(VERSION) \
+		convert -f owl --output $@
+.PRECIOUS: $(TRANSLATIONSDIR)/%.synonyms.owl
+
+$(TRANSLATIONSDIR)/%.babelon.owl: $(TRANSLATIONSDIR)/%-preprocessed.babelon.tsv
+	$(BABELONPY) convert $< --output-format owl -o $@.tmp
+	$(ROBOT) merge -i $@.tmp \
+		annotate \
+			--ontology-iri $(ONTBASE)/translations/$*.babelon.owl \
+			-V $(ONTBASE)/releases/$(VERSION)/translations/$*.babelon.owl \
+			--annotation owl:versionInfo $(VERSION) \
+		convert -f owl --output $@
+	@rm $@.tmp
+.PRECIOUS: $(TRANSLATIONSDIR)/%.babelon.owl
+
+$(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv: $(TRANSLATIONS_TSV)
+	$(BABELONPY) merge $^ -o $@
+
+$(TRANSLATIONSDIR)/%.babelon.json: $(TRANSLATIONSDIR)/%.babelon.tsv
+	$(BABELONPY) convert $< --output-format json -o $@
+
+
+
+
 ##################################
 ##### Scheduled GH Actions #######
 ##################################
