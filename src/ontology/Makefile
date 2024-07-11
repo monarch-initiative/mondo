@@ -729,7 +729,7 @@ mirror/hgnc_gene.nt: | $(MIRRORDIR)
 .PRECIOUS: mirror/hgnc_gene.nt
 
 mirror/ncbi_gene.nt: | $(MIRRORDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://data.monarchinitiative.org/monarch-kg/latest/rdf/ncbi_gene.nt.gz | gzip -d > $@.tmp &&\
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/monarch-initiative/ncbi-gene/releases/latest/download/ncbi_gene.nt.gz | gzip -d > $@.tmp &&\
 		perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@; fi
 .PRECIOUS: mirror/ncbi_gene.nt
 
@@ -738,8 +738,7 @@ mirror-hgnc: mirror/hgnc_gene.nt | $(TMPDIR)
 		query --format ttl --query ../sparql/construct/construct-hgnc.sparql $(TMPDIR)/$@.owl; fi
 
 mirror-ncbigene: mirror/ncbi_gene.nt | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
-		query --format ttl --query ../sparql/construct/construct-ncbigene.sparql $(TMPDIR)/$@.owl; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then arq --data=mirror/ncbi_gene.nt --query=../sparql/construct/construct-ncbigene.sparql > $(TMPDIR)/$@.owl; fi
 
 
 IMPORTSEED=$(IMPORTDIR)/seed.txt # SHOULD BE TMP
