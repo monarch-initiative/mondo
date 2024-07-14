@@ -638,6 +638,38 @@ release_diff: reports/mondo_release_diff.md
 all: reports/mondo_release_diff.md
 all: reports/mondo_obsoletioncandidates.tsv
 
+##################
+### KGCL Diff ####
+##################
+
+KGCL_ONTOLOGY=mondo-base.obo
+
+prepare_release: kgcl-diff
+
+.PHONY: kgcl-diff
+kgcl-diff: kgcl-diff-release-base
+
+.PHONY: kgcl-diff-release-base
+kgcl-diff-release-base: reports/difference_release_base.yaml \
+						reports/difference_release_base.tsv \
+						reports/difference_release_base.md
+
+tmp/mondo-released.obo:
+	wget http://purl.obolibrary.org/obo/mondo.obo -O tmp/mondo-released.obo
+
+reports/difference_release_base.md: tmp/mondo-released.obo $(KGCL_ONTOLOGY)
+	runoak -i simpleobo:tmp/mondo-released.obo diff -X simpleobo:$(KGCL_ONTOLOGY) -o $@ --output-type md
+
+reports/difference_release_base.tsv: tmp/mondo-released.obo $(KGCL_ONTOLOGY)
+	runoak -i simpleobo:tmp/mondo-released.obo diff -X simpleobo:$(KGCL_ONTOLOGY) \
+	-o $@ --output-type csv --statistics --group-by-property oio:hasOBONamespace
+
+reports/difference_release_base.txt: tmp/mondo-released.obo $(KGCL_ONTOLOGY)
+	runoak -i simpleobo:tmp/mondo-released.obo diff -X simpleobo:$(KGCL_ONTOLOGY) -o $@ --output-type kgcl
+
+reports/difference_release_base.yaml: tmp/mondo-released.obo $(KGCL_ONTOLOGY)
+	runoak -i simpleobo:tmp/mondo-released.obo diff -X simpleobo:$(KGCL_ONTOLOGY) -o $@ --output-type yaml
+
 ###########################
 ## MONDO VIEW GENERATION ##
 ###########################
