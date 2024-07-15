@@ -104,12 +104,12 @@ We follow a lot of the same rules as Uberon for text mining: [https://github.com
 
 Synonym Label | Synonym type | Description | Example of usage
 -- | -- | -- | --
-A synonym that is historic and discouraged | DEPRACATE | We mark synonyms with DEPRECATED that are historic and no longer appropriate to use, e.g. all occurrences of “mental retardation” should be “intellectual disability”. We try and avoid including things in this list: [https://en.wikipedia.org/wiki/List_of_medical_eponyms_with_Nazi_associations](https://en.wikipedia.org/wiki/List_of_medical_eponyms_with_Nazi_associations) but if it’s established (e.g. Wegener granulomatosis) may include as a synonym and mark DEPRECATED | MONDO:0001071 'intellectual disability'
+A synonym that is historic and discouraged | DEPRECATE | We mark synonyms with DEPRECATED that are historic and no longer appropriate to use, e.g. all occurrences of “mental retardation” should be “intellectual disability”. We try and avoid including things in this list: [https://en.wikipedia.org/wiki/List_of_medical_eponyms_with_Nazi_associations](https://en.wikipedia.org/wiki/List_of_medical_eponyms_with_Nazi_associations) but if it’s established (e.g. Wegener granulomatosis) may include as a synonym and mark DEPRECATED | MONDO:0001071 'intellectual disability'
 A synonym that is recorded for consistency with another source but is a misspelling | MISSPELLING | The source term has a misspelling | MONDO:0011154 acrofacial dysostosis, Palagonia type
 abbreviation | ABBREVIATION | Abbreviations of the primary label | MONDO:0004976 'amyotrophic lateral sclerosis'
 ambiguous | AMBIGUOUS | A synonym that is unclear or inexact | MONDO:0021636 'astrocytic tumor'
 clingen label | CLINGEN_LABEL | Added to gene-based names/synonyms that were requested by ClinGen, and other terms that are the preferred terms for ClinGen. | MONDO:0700000 'ALG9-associated autosomal dominant polycystic kidney disease'
-dubious synonym | DUBIOUS | Not not to be relied upon or suspect | MONDO:0002776 'external ear disease'
+dubious synonym | DUBIOUS | Not to be relied upon or suspect | MONDO:0002776 'external ear disease'
 Synonym to be removed from public release but maintained in edit version as record of external usage | EXCLUDE | Some synonyms are annotated with EXCLUDE, e.g. “NOS” (not otherwise specified) synonyms. It is useful to have these in the edit version, but these are filtered on release. | MONDO:0011088 congenital myasthenic syndrome 1A, MONDO:0002679 cerebral infarction, MONDO:0008170 'ovarian cancer'
 
 Example of a DEPRECATE synonym in Protege: MONDO_0001071 'intellectual disability'
@@ -151,7 +151,7 @@ We annotate these axioms to provide more specific semantics. Currently equivalen
 Here the xref between MONDO:chondrocalcinosis and Orphanet:1416 as two axiom annotations, one semantic and one provenance/consistency.
 
 * We indicate the source of an xref using source, e.g. the source of the xref from our chondrocalcinosis class to Orphanet:416 is DOID:1156
-    * Note: we should consider changing the AP here. It’s not really the case that these are source any more, as they are added after the fact as an easy way to guage consistency of axioms across ontologies.
+    * Note: we should consider changing the AP here. It’s not really the case that these are source any more, as they are added after the fact as an easy way to gauge consistency of axioms across ontologies.
 * We indicate the semantics of the xref using a source of one of
     * MONDO:equivalentTo
     * MONDO:OtherRelationship
@@ -190,7 +190,7 @@ MONDO:ambiguous     |   Used to indicate where there is a known case where this 
 MONDO:design_pattern    |   If annotated on a synonym, the synonym was derived from a design pattern.   |   synonyms    |   N   |   MONDO:0009770 '3MC syndrome 1' (synonym: 3MC syndrome caused by mutation in MASP1)
 MONDO:directSiblingOf   |   The term that is xref'd is a direct sibling of term. The goal was to capture where someone made an xref.    |   xrefs   |   N   |   MONDO:0008854 ‘Bardet-Biedl syndrome 1’ database_cross_reference: UMLS:C1859564 (refers to ‘Bardet-Biedl syndrome 3’) {source=MONDO:directSiblingOf}
 MONDO:entailed  |   An inferred superclass (which is a redundant axiom) |   subclassOf  |   Y   |   MONDO:0001594 'Achilles bursitis'
-MONDO:equivalentObsolete    |   Used for cases where we have exact 1:1 matches between a live class in Mondo and an obsolete class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.   |   xrefs   |   N   |   MONDO:0020499 'Nipah virus disease' database_cross_reference: Orphanet:1239 (was obsoleted in orphanet) {source=MONDO:equivalentObsolete}
+MONDO:equivalentObsolete    |   Used for cases where we have exact 1:1 matches between a live class in Mondo and an obsolete class in the source ontology. We want to avoid making an equivalence axiom (MONDO:equivalentTo) here.   |   xrefs   |   N   |   MONDO:0020499 'Nipah virus disease' database_cross_reference: Orphanet:1239 (was obsoleted in Orphanet) {source=MONDO:equivalentObsolete}
 MONDO:equivalentTo  |   This is interpreted strongly as an OWL equivalence axiom, meaning the two terms are considered to be exactly the same. This can be added to any xref where this is true.   |   xrefs   |   N   |   MONDO:0100087 'familial Alzheimer disease' database_cross_reference: GARD:0000632 (refers to the disease in GARD) {source=MONDO:equivalentTo}
 MONDO:includedEntryInOMIM | This indicates a term is an 'included' entry in OMIM, for example https://omim.org/entry/233910 | xrefs | N | MONDO:0100167 'dystonia, dopa-responsive, with or without hyperphenylalaninemia, autosomal recessive'
 MONDO:kboom-pr-[number]     |   These are the probability scores from the kBoom algorithm.  |  xrefs   |   Y   |   MONDO:0008966 'Aagenaes syndrome'
