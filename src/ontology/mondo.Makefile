@@ -248,25 +248,16 @@ tmp/orphanet-rare-subset.owl: $(SRC)
 		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
 
 tmp/ordo-subsets.robot.owl:
-	#cp /Users/matentzn/ws/mondo-ingest/src/ontology/external/ordo-subsets.robot.owl $@
-	echo "WARNING WARNING WARNING:::::: MAKE SURE TO COPY THE RIGHT THING"
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/external/ordo-subsets.robot.owl" -O $@
 
 .PHONY: update-ordo-subsets
 update-ordo-subsets:
-	$(MAKE) subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-before.tsv
 	$(MAKE) tmp/ordo-subsets.robot.owl -B
 	grep -vE '^(subset: ordo_group_of_disorders)' $(SRC) | grep -vE '^(subset: ordo_disorder)' | grep -vE '^(subset: ordo_subtype_of_a_disorder)' > tmp/mondo-edit.tmp || true
 	mv tmp/mondo-edit.tmp mondo-edit.obo
 	$(ROBOT) merge -i $(SRC) -i tmp/ordo-subsets.robot.owl --collapse-import-closure false convert -f obo --check false -o tmp/mondo-edit.tmp
 	mv tmp/mondo-edit.tmp mondo-edit.obo
-	#$(MAKE) merge_template TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vTec1wITyBUI6uR9_oFsZpAWdAwmrazt2zDyjkrUTEjZ1ISVrI2RO0wYgf2ilUukh-_M4beuYU3skQt/pub?gid=976194052&single=true&output=tsv" -B
 	make NORM && mv NORM $(SRC)
-	$(MAKE) subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-after.tsv
-	@echo "Subset metrics before..."
-	cat tmp/subset-metrics-before.tsv
-	@echo "Subset metrics after..."
-	cat tmp/subset-metrics-after.tsv
-	
 
 .PHONY: update-orphanet-subset
 update-orphanet-subset:
@@ -306,12 +297,8 @@ update-gard:
 ##### NANDO #########################
 ####################################
 
-
-tmp/nando.template.tsv:
-	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNVCVQdzdyUe1KfGmayQM9l2_2pkqK2vC_ZGp8-hivZnU2N3BIGczuHY_HuW_AIE8o-YryTmZwqm4T/pub?gid=8080357&single=true&output=tsv" -O $@
-
 tmp/nando.template.owl: tmp/nando.template.tsv
-	$(ROBOT) template --prefix "orcid: https://orcid.org/" --template $< convert -f ofn -o $@
+	wget https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/external/nando-mappings.robot.owl -O $@
 
 .PHONY: update-nando
 update-nando:
