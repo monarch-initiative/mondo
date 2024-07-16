@@ -1,0 +1,69 @@
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX mondo: <http://purl.obolibrary.org/obo/mondo#>
+
+SELECT DISTINCT ?category_class ?label ?definition (GROUP_CONCAT(DISTINCT STR(?type_); separator=", ") as ?types) (GROUP_CONCAT(DISTINCT STR(?synonym); separator=", ") as ?synonyms) (GROUP_CONCAT(DISTINCT STR(?subset); separator=", ") as ?subsets) WHERE
+{
+  ?category_class rdfs:subClassOf* MONDO:0700096 ;
+   rdfs:label ?label .
+  
+  OPTIONAL {
+    {
+      VALUES ?subset { 
+        <http://purl.obolibrary.org/obo/mondo#ordo_group_of_disorders> 
+        <http://purl.obolibrary.org/obo/mondo#disease_grouping> 
+        <http://purl.obolibrary.org/obo/mondo#harrisons_view> 
+        <http://purl.obolibrary.org/obo/mondo#rare_grouping>
+      }
+      ?category_class oio:inSubset ?subset .
+      BIND("grouping_subset" as ?type)
+    } UNION {
+      ?grouping_class_subset rdfs:subClassOf ?category_class .
+      VALUES ?subset { 
+        <http://purl.obolibrary.org/obo/mondo#ordo_group_of_disorders> 
+        <http://purl.obolibrary.org/obo/mondo#disease_grouping> 
+        <http://purl.obolibrary.org/obo/mondo#harrisons_view> 
+        <http://purl.obolibrary.org/obo/mondo#rare_grouping>
+      }
+      ?grouping_class_subset oio:inSubset ?subset .
+      BIND("grouping_subset_ancestor" as ?type)
+    } UNION {
+      VALUES ?subset { 
+        <http://purl.obolibrary.org/obo/mondo#ordo_subtype_of_a_disorder>
+        <http://purl.obolibrary.org/obo/mondo#ordo_clinical_subtype>
+      }
+      ?category_class oio:inSubset ?subset .
+      BIND("subtype_subset" as ?type)
+    } UNION {
+      ?category_class rdfs:subClassOf ?subtype_subset .
+      VALUES ?subset { 
+        <http://purl.obolibrary.org/obo/mondo#ordo_subtype_of_a_disorder>
+        <http://purl.obolibrary.org/obo/mondo#ordo_clinical_subtype>
+      }
+      ?subtype_subset oio:inSubset ?subset .
+      BIND("subtype_subset_descendant" as ?type)
+    } UNION {
+      ?category_class rdfs:subClassOf ?omimps .
+      ?omimps <http://www.w3.org/2004/02/skos/core#exactMatch> ?match .
+      FILTER(STRSTARTS(STR(?match), "https://omim.org/phenotypicSeries/PS"))
+      BIND("subtype_omimps_descendant" as ?type)
+    }
+  }
+  
+  BIND(COALESCE(?type, "uncategorized") as ?type_)
+
+  OPTIONAL {
+    ?category_class oio:hasExactSynonym ?synonym .
+  }
+
+  OPTIONAL {
+    ?category_class IAO:0000115 ?definition .
+  }
+  
+  FILTER( !isBlank(?category_class) && STRSTARTS(str(?category_class), "http://purl.obolibrary.org/obo/MONDO_"))
+} GROUP BY ?category_class ?label ?definition

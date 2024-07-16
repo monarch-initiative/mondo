@@ -325,6 +325,16 @@ reports/gard-mondo-mapped-obsoletes.tsv: $(ONT).owl
 	$(ROBOT) query -i $(ONT).owl -f tsv --query $(SPARQLDIR)/reports/gard-mondo-mapped-obsoletes.sparql $@
 
 ##################################################
+################## MATRIX pipeline ###############
+
+reports/matrix-disease-list.tsv: #$(ONT).owl
+	$(ROBOT) query -i $(ONT).owl -f tsv --query $(SPARQLDIR)/reports/matrix-disease-list.sparql $@
+	sed -i 's/[?]//g' $@
+	sed -i 's/<http:[/][/]purl[.]obolibrary[.]org[/]obo[/]MONDO_/MONDO:/g' $@
+	sed -i 's/http:[/][/]purl[.]obolibrary[.]org[/]obo[/]mondo#/mondo:/g' $@
+	sed -i 's/>//g' $@
+
+##################################################
 ################## Old diseases2owl code #########
 
 
