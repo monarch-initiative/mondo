@@ -243,10 +243,6 @@ update-inferred-subset:
 ##### Orphanet #####################
 ####################################
 
-tmp/orphanet-rare-subset.owl: $(SRC)
-	$(ROBOT) merge -i $(SRC) reason \
-		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
-
 tmp/ordo-subsets.robot.owl:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/external/ordo-subsets.robot.owl" -O $@
 
@@ -259,11 +255,14 @@ update-ordo-subsets:
 	mv tmp/mondo-edit.tmp mondo-edit.obo
 	make NORM && mv NORM $(SRC)
 
+tmp/orphanet-rare-subset.owl: $(SRC)
+	$(ROBOT) merge -i $(SRC) reason \
+		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
+
 .PHONY: update-orphanet-subset
 update-orphanet-subset:
 	# We always need to update the ordo subsets (disease vs grouping vs subtype)
 	# Which is a prerequisite for the rare determination in ORDO
-	make update-ordo-subsets
 	$(MAKE) tmp/orphanet-rare-subset.owl
 	grep -vE '^(subset: orphanet_rare)' $(SRC) > tmp/mondo-edit.tmp || true
 	mv tmp/mondo-edit.tmp mondo-edit.obo
@@ -314,7 +313,7 @@ update-nando:
 ####################################
 
 tmp/nord.template.owl:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/data-load-12062024/src/ontology/external/nord.robot.owl" -O $@
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/master/src/ontology/external/nord.robot.owl" -O $@
 
 .PHONY: update-nord
 update-nord:
@@ -351,18 +350,6 @@ update-clingen:
 ####################################
 ##### RARE #########################
 ####################################
-
-# Current method to update RD subset
-
-mondo-rare-subset:
-	sh run.sh make update-ordo-subsets -B
-	sh run.sh make update-orphanet-subset -B
-	sh run.sh make update-gard -B
-	sh run.sh make update-nord -B
-	sh run.sh make update-inferred-subset -B
-	sh run.sh make update-rare-subset -B
-	git diff mondo-edit.obo > diff.txt
-	grep -E "^[+-]" diff.txt > additions.txt
 
 tmp/rare-subset.owl: $(SRC)
 	$(ROBOT) merge -i $(SRC) \
