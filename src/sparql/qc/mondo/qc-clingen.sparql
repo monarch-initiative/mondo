@@ -1,0 +1,32 @@
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+PREFIX OMO: <http://purl.obolibrary.org/obo/OMO_>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+
+# description: This QC check ensures that no class ever has two clingen labels, and that there are only exact preferred labels
+
+SELECT ?entity ?property ?value
+WHERE {
+ {
+  ?ax owl:annotatedSource ?entity ;
+         owl:annotatedProperty ?property ;
+         oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#CLINGEN_LABEL> .
+  ?ax2 owl:annotatedSource ?entity ;
+         owl:annotatedProperty ?property ;
+         owl:annotatedTarget ?value ;
+         oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#CLINGEN_LABEL> .
+  FILTER(?ax!=?ax2)
+  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
+  } UNION {
+    ?ax owl:annotatedSource ?entity ;
+         owl:annotatedProperty ?property ;
+         oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#CLINGEN_LABEL> .
+    FILTER(?property!=oboInOwl:hasExactSynonym)
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
+  }
+}
