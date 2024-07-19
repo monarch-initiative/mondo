@@ -6,56 +6,130 @@ prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX mondo: <http://purl.obolibrary.org/obo/mondo#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT DISTINCT ?category_class ?label ?definition (GROUP_CONCAT(DISTINCT STR(?type_); separator=", ") as ?types) (GROUP_CONCAT(DISTINCT STR(?synonym); separator=", ") as ?synonyms) (GROUP_CONCAT(DISTINCT STR(?subset); separator=", ") as ?subsets) WHERE
+SELECT DISTINCT ?category_class ?label ?definition 
+  (GROUP_CONCAT(DISTINCT STR(?synonym); separator=", ") as ?synonyms) 
+  (GROUP_CONCAT(DISTINCT STR(?subset); separator=", ") as ?subsets) 
+  (GROUP_CONCAT(DISTINCT STR(?xref); separator=", ") as ?icd10_xrefs)
+  ?disease_list_monarch
+  ?disease_list_everycure
+  (IF(COALESCE(?filter_grouping_subset, "FALSE") = "TRUE", "TRUE", "") AS ?f_grouping_subset)
+  (IF(COALESCE(?filter_grouping_subset_ancestor, "FALSE") = "TRUE", "TRUE", "") AS ?f_grouping_subset_ancestor)
+  (IF(COALESCE(?filter_orphanet_subtype, "FALSE") = "TRUE", "TRUE", "") AS ?f_orphanet_subtype)
+  (IF(COALESCE(?filter_subtype_subset_descendant, "FALSE") = "TRUE", "TRUE", "") AS ?f_subtype_subset_descendant)
+  (IF(COALESCE(?filter_omimps, "FALSE") = "TRUE", "TRUE", "") AS ?f_omimps)
+  (IF(COALESCE(?filter_omimps_descendant, "FALSE") = "TRUE", "TRUE", "") AS ?f_omimps_descendant)
+  (IF(COALESCE(?filter_leaf, "FALSE") = "TRUE", "TRUE", "") AS ?f_leaf) 
+  (IF(COALESCE(?filter_leaf_direct_parent, "FALSE") = "TRUE", "TRUE", "") AS ?f_leaf_direct_parent) 
+  (IF(COALESCE(?filter_orphanet_disorder, "FALSE") = "TRUE", "TRUE", "") AS ?f_orphanet_disorder) 
+  (IF(COALESCE(?filter_omim, "FALSE") = "TRUE", "TRUE", "") AS ?f_omim) 
+  (IF(COALESCE(?filter_icd, "FALSE") = "TRUE", "TRUE", "") AS ?f_icd)
+
+WHERE
 {
   ?category_class rdfs:subClassOf* MONDO:0700096 ;
+   oio:inSubset ?subset ;
    rdfs:label ?label .
   
   OPTIONAL {
-    {
-      VALUES ?subset { 
-        <http://purl.obolibrary.org/obo/mondo#ordo_group_of_disorders> 
-        <http://purl.obolibrary.org/obo/mondo#disease_grouping> 
-        <http://purl.obolibrary.org/obo/mondo#harrisons_view> 
-        <http://purl.obolibrary.org/obo/mondo#rare_grouping>
-      }
-      ?category_class oio:inSubset ?subset .
-      BIND("grouping_subset" as ?type)
-    } UNION {
-      ?grouping_class_subset rdfs:subClassOf ?category_class .
-      VALUES ?subset { 
-        <http://purl.obolibrary.org/obo/mondo#ordo_group_of_disorders> 
-        <http://purl.obolibrary.org/obo/mondo#disease_grouping> 
-        <http://purl.obolibrary.org/obo/mondo#harrisons_view> 
-        <http://purl.obolibrary.org/obo/mondo#rare_grouping>
-      }
-      ?grouping_class_subset oio:inSubset ?subset .
-      BIND("grouping_subset_ancestor" as ?type)
-    } UNION {
-      VALUES ?subset { 
-        <http://purl.obolibrary.org/obo/mondo#ordo_subtype_of_a_disorder>
-        <http://purl.obolibrary.org/obo/mondo#ordo_clinical_subtype>
-      }
-      ?category_class oio:inSubset ?subset .
-      BIND("subtype_subset" as ?type)
-    } UNION {
-      ?category_class rdfs:subClassOf ?subtype_subset .
-      VALUES ?subset { 
-        <http://purl.obolibrary.org/obo/mondo#ordo_subtype_of_a_disorder>
-        <http://purl.obolibrary.org/obo/mondo#ordo_clinical_subtype>
-      }
-      ?subtype_subset oio:inSubset ?subset .
-      BIND("subtype_subset_descendant" as ?type)
-    } UNION {
-      ?category_class rdfs:subClassOf ?omimps .
-      ?omimps <http://www.w3.org/2004/02/skos/core#exactMatch> ?match .
-      FILTER(STRSTARTS(STR(?match), "https://omim.org/phenotypicSeries/PS"))
-      BIND("subtype_omimps_descendant" as ?type)
+    VALUES ?_subset { 
+      <http://purl.obolibrary.org/obo/mondo#ordo_group_of_disorders> 
+      <http://purl.obolibrary.org/obo/mondo#disease_grouping> 
+      <http://purl.obolibrary.org/obo/mondo#harrisons_view> 
+      <http://purl.obolibrary.org/obo/mondo#rare_grouping>
     }
+    ?category_class oio:inSubset ?_subset .
+    BIND("TRUE" as ?filter_grouping_subset)
   }
   
-  BIND(COALESCE(?type, "uncategorized") as ?type_)
+  OPTIONAL {
+    ?grouping_class_subset rdfs:subClassOf ?category_class .
+    VALUES ?_subset { 
+      <http://purl.obolibrary.org/obo/mondo#ordo_group_of_disorders> 
+      <http://purl.obolibrary.org/obo/mondo#disease_grouping> 
+      <http://purl.obolibrary.org/obo/mondo#harrisons_view> 
+      <http://purl.obolibrary.org/obo/mondo#rare_grouping>
+    }
+    ?grouping_class_subset oio:inSubset ?_subset .
+    BIND("TRUE" as ?filter_grouping_subset_ancestor)
+  }
+  
+  OPTIONAL {
+    VALUES ?_subset { 
+      <http://purl.obolibrary.org/obo/mondo#ordo_subtype_of_a_disorder>
+      <http://purl.obolibrary.org/obo/mondo#ordo_clinical_subtype>
+    }
+    ?category_class oio:inSubset ?_subset .
+    BIND("TRUE" as ?filter_orphanet_subtype)
+  }
+  
+  OPTIONAL {
+    VALUES ?_subset { 
+      <http://purl.obolibrary.org/obo/mondo#ordo_disorder>
+    }
+    ?category_class oio:inSubset ?_subset .
+    BIND("TRUE" as ?filter_orphanet_disorder)
+  }
+  
+  OPTIONAL {
+    ?category_class rdfs:subClassOf ?subtype_subset .
+    VALUES ?_subset { 
+      <http://purl.obolibrary.org/obo/mondo#ordo_subtype_of_a_disorder>
+      <http://purl.obolibrary.org/obo/mondo#ordo_clinical_subtype>
+    }
+    ?subtype_subset oio:inSubset ?_subset .
+    BIND("TRUE" as ?filter_subtype_subset_descendant)
+  }
+  
+  OPTIONAL {
+    ?category_class <http://www.w3.org/2004/02/skos/core#exactMatch> ?match .
+    FILTER(STRSTARTS(STR(?match), "https://omim.org/phenotypicSeries/PS"))
+    BIND("TRUE" as ?filter_omimps)
+  }
+  
+  OPTIONAL {
+    ?category_class rdfs:subClassOf ?omimps .
+    ?omimps <http://www.w3.org/2004/02/skos/core#exactMatch> ?match .
+    FILTER(STRSTARTS(STR(?match), "https://omim.org/phenotypicSeries/PS"))
+    BIND("TRUE" as ?filter_omimps_descendant)
+  }
+  
+  OPTIONAL {
+    ?category_class rdfs:subClassOf ?omim .
+    ?omim <http://www.w3.org/2004/02/skos/core#exactMatch> ?match .
+    FILTER(STRSTARTS(STR(?match), "https://omim.org/entry/"))
+    BIND("TRUE" as ?filter_omim)
+  }
+  
+  OPTIONAL {
+    ?category_class rdf:type owl:Class .
+    FILTER NOT EXISTS {
+      ?leaf_x rdfs:subClassOf ?category_class 
+    }
+    BIND("TRUE" as ?filter_leaf)
+  }
+  
+  OPTIONAL {
+    ?leaf rdfs:subClassOf ?category_class .
+    FILTER NOT EXISTS {
+      ?leaf_direct_parent_x rdfs:subClassOf ?leaf 
+    }
+    BIND("TRUE" as ?filter_leaf_direct_parent)
+  }
+  
+  OPTIONAL {
+    ?category_class oio:hasDbXref ?xref .
+    ?a owl:annotatedSource ?category_class ;
+       owl:annotatedProperty oio:hasDbXref ;
+       owl:annotatedTarget ?xref ;
+       oio:source ?type
+    FILTER (STRSTARTS(str(?xref), "ICD10"))
+    BIND("TRUE" as ?filter_icd)
+  }
+  
+  BIND("" as ?disease_list_monarch)
+  BIND("" as ?disease_list_everycure)
 
   OPTIONAL {
     ?category_class oio:hasExactSynonym ?synonym .
@@ -66,4 +140,11 @@ SELECT DISTINCT ?category_class ?label ?definition (GROUP_CONCAT(DISTINCT STR(?t
   }
   
   FILTER( !isBlank(?category_class) && STRSTARTS(str(?category_class), "http://purl.obolibrary.org/obo/MONDO_"))
-} GROUP BY ?category_class ?label ?definition
+} 
+GROUP BY ?category_class ?label ?definition
+  ?disease_list_monarch ?disease_list_everycure
+  ?filter_grouping_subset ?filter_grouping_subset_ancestor
+  ?filter_orphanet_subtype ?filter_subtype_subset_descendant
+  ?filter_omimps ?filter_omimps_descendant ?filter_leaf
+  ?filter_leaf_direct_parent ?filter_orphanet_disorder
+  ?filter_omim ?filter_icd
