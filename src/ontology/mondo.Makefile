@@ -644,7 +644,7 @@ all: reports/mondo_obsoletioncandidates.tsv
 
 KGCL_ONTOLOGY=mondo-base.obo
 
-prepare_release: kgcl-diff
+all: kgcl-diff
 
 .PHONY: kgcl-diff
 kgcl-diff: kgcl-diff-release-base
