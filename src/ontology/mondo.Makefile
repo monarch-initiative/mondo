@@ -654,7 +654,7 @@ kgcl-diff-release-base: reports/difference_release_base.yaml \
 						reports/difference_release_base.tsv \
 						reports/difference_release_base.md
 
-tmp/mondo-released.obo:
+tmp/mondo-released.obo: .FORCE
 	wget http://purl.obolibrary.org/obo/mondo.obo -O tmp/mondo-released.obo
 
 reports/difference_release_base.md: tmp/mondo-released.obo $(KGCL_ONTOLOGY)
