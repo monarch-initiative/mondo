@@ -12,8 +12,8 @@
 
 docker pull obolibrary/odkfull:latest
 
-IMAGE=${IMAGE:-odkfull:latest}
 MEMORY_GB=${MEMORY_GB:-8}
+IMAGE=${IMAGE:-odkfull:v1.5.2}
 MEMORY_JAVA="-Xmx${MEMORY_GB}G"
 ODK_DEBUG=${ODK_DEBUG:-no}
 
