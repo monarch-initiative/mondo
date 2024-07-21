@@ -50,7 +50,7 @@ _Note: While the release is running, don't shut your laptop or switch between re
 1. Do a docker pull: `docker pull obolibrary/odkfull:dev`
 1. Pull master
 1. Run command: `cd mondo/src/ontology/` (navigate to folder on your computer)
-1. `IMAGE=odkfull:dev ./run.sh make IMP=false all -B` 
+1. `./run.sh make IMP=false all -B` 
     - note, this takes 1+ hour(s)
     - note that we are using the dev image as it is always up to date with the Python dependencies.
 1. Make sure you see ‘release finished’ after the command has run
