@@ -600,6 +600,28 @@ mappings_fast:
 	$(MAKE) clean_mappings -B
 	$(MAKE) mappings IMP=false MIR=false PAT=false -B
 
+###### OMIM Genes #########
+
+tmp/omim.owl:
+	$(ROBOT) merge -I "https://github.com/monarch-initiative/omim/releases/latest/download/omim.owl" convert -o $@
+
+tmp/omim-genes.tsv: tmp/omim.owl
+	$(ROBOT) query --use-graphs true -i tmp/omim.owl -f tsv --tdb true --query $(SPARQLDIR)/reports/omim-genes.sparql $@
+	sed -i 's/[?]//g' $@
+	sed -i 's/[<]https[:][/][/]omim[.]org[/]entry[/]/OMIM:/g' $@
+	sed -i 's/>//g' $@
+	tail -n +2 $@ > output_file && mv output_file $@
+
+# Check for occurrences of OMIM genes in MONDO,
+# Then narrow down to only xrefs
+tmp/omim-gene-matches.txt: tmp/omim-genes.tsv
+	grep -Ff $< mondo-edit.obo | grep '^xref' > $@ || true
+	if [ -s $@ ]; then \
+		echo "Error: xref matches found in $@"; \
+		exit 1; \
+	fi
+
+test: tmp/omim-gene-matches.txt
 
 ##### RELEASE Report ######
 
