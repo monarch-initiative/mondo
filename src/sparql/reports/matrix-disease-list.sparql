@@ -1,9 +1,9 @@
-prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
-prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
-prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
-prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX def: <http://purl.obolibrary.org/obo/IAO_0000115>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX mondo: <http://purl.obolibrary.org/obo/mondo#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -14,23 +14,26 @@ SELECT DISTINCT ?category_class ?label ?definition
   (GROUP_CONCAT(DISTINCT STR(?xref); separator=", ") as ?icd10_xrefs)
   ?disease_list_monarch
   ?disease_list_everycure
-  (IF(COALESCE(?filter_grouping_subset, "FALSE") = "TRUE", "TRUE", "") AS ?f_grouping_subset)
-  (IF(COALESCE(?filter_grouping_subset_ancestor, "FALSE") = "TRUE", "TRUE", "") AS ?f_grouping_subset_ancestor)
-  (IF(COALESCE(?filter_orphanet_subtype, "FALSE") = "TRUE", "TRUE", "") AS ?f_orphanet_subtype)
-  (IF(COALESCE(?filter_subtype_subset_descendant, "FALSE") = "TRUE", "TRUE", "") AS ?f_subtype_subset_descendant)
-  (IF(COALESCE(?filter_omimps, "FALSE") = "TRUE", "TRUE", "") AS ?f_omimps)
-  (IF(COALESCE(?filter_omimps_descendant, "FALSE") = "TRUE", "TRUE", "") AS ?f_omimps_descendant)
-  (IF(COALESCE(?filter_leaf, "FALSE") = "TRUE", "TRUE", "") AS ?f_leaf) 
-  (IF(COALESCE(?filter_leaf_direct_parent, "FALSE") = "TRUE", "TRUE", "") AS ?f_leaf_direct_parent) 
-  (IF(COALESCE(?filter_orphanet_disorder, "FALSE") = "TRUE", "TRUE", "") AS ?f_orphanet_disorder) 
-  (IF(COALESCE(?filter_omim, "FALSE") = "TRUE", "TRUE", "") AS ?f_omim) 
-  (IF(COALESCE(?filter_icd, "FALSE") = "TRUE", "TRUE", "") AS ?f_icd)
+  (IF(SUM(IF(?filter_grouping_subset = "TRUE", 1, 0)) > 0, "TRUE", "") AS ?f_grouping_subset)
+  (IF(SUM(IF(?filter_grouping_subset_ancestor = "TRUE", 1, 0)) > 0, "TRUE", "") AS ?f_grouping_subset_ancestor)
+  (IF(SUM(IF(?filter_orphanet_subtype = "TRUE", 1, 0)) > 0, "TRUE", "") AS ?f_orphanet_subtype)
+  (IF(SUM(IF(?filter_subtype_subset_descendant = "TRUE", 1, 0)) > 0, "TRUE", "") AS ?f_subtype_subset_descendant)
+  (IF(SUM(IF(?filter_omimps = "TRUE", 1, 0)) > 0, "TRUE", "") AS ?f_omimps)
+  (IF(SUM(IF(?filter_omimps_descendant = "TRUE", 1, 0)) > 0, "TRUE", "") AS ?f_omimps_descendant)
+  (IF(SUM(IF(?filter_leaf = "TRUE", 1, 0)) > 0, "TRUE", "") AS ?f_leaf) 
+  (IF(SUM(IF(?filter_leaf_direct_parent = "TRUE", 1, 0)) > 0, "TRUE", "") AS ?f_leaf_direct_parent) 
+  (IF(SUM(IF(?filter_orphanet_disorder = "TRUE", 1, 0)) > 0, "TRUE", "") AS ?f_orphanet_disorder) 
+  (IF(SUM(IF(?filter_omim = "TRUE", 1, 0)) > 0, "TRUE", "") AS ?f_omim) 
+  (IF(SUM(IF(?filter_icd = "TRUE", 1, 0)) > 0, "TRUE", "") AS ?f_icd)
 
 WHERE
 {
   ?category_class rdfs:subClassOf* MONDO:0700096 ;
-   oio:inSubset ?subset ;
    rdfs:label ?label .
+
+  OPTIONAL {
+    ?category_class oio:inSubset ?subset .
+  }
   
   OPTIONAL {
     VALUES ?_subset { 
@@ -143,8 +146,4 @@ WHERE
 } 
 GROUP BY ?category_class ?label ?definition
   ?disease_list_monarch ?disease_list_everycure
-  ?filter_grouping_subset ?filter_grouping_subset_ancestor
-  ?filter_orphanet_subtype ?filter_subtype_subset_descendant
-  ?filter_omimps ?filter_omimps_descendant ?filter_leaf
-  ?filter_leaf_direct_parent ?filter_orphanet_disorder
-  ?filter_omim ?filter_icd
+ORDER BY DESC(?label)
