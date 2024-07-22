@@ -972,7 +972,7 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 
 tmp/subclass-axioms.owl: $(SRC)
 	$(ROBOT) filter --input $(SRC) --axioms SubClassOf --preserve-structure false --trim false \
-		--drop-axiom-annotations "oboInOwl:source=~'(DOID|ICD10CM|NCIT|OMIM|OMIMPS|Orphanet):.*'" \
+		--drop-axiom-annotations "oboInOwl:source=~'(DOID|ICD10CM|icd11.foundation|NCIT|OMIM|OMIMPS|Orphanet):.*'" \
 		-o $@
 
 # This command updates mondo-edit with all the confirmed subclass evidence from the mondo-ingest repo
