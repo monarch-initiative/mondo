@@ -740,6 +740,11 @@ mirror-hgnc: mirror/hgnc_gene.nt | $(TMPDIR)
 mirror-ncbigene: mirror/ncbi_gene.nt | $(TMPDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then arq --data=mirror/ncbi_gene.nt --query=../sparql/construct/construct-ncbigene.sparql > $(TMPDIR)/$@.owl; fi
 
+$(IMPORTDIR)/hgnc_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/hgnc_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) \
+		extract -i $< -T $(IMPORTDIR)/hgnc_terms_combined.txt --force true --individuals exclude --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f owl --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 IMPORTSEED=$(IMPORTDIR)/seed.txt # SHOULD BE TMP
 ###### END CUSTOM IMPORTS ###################
