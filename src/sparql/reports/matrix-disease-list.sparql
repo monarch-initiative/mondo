@@ -61,7 +61,6 @@ WHERE
   OPTIONAL {
     VALUES ?_subset { 
       <http://purl.obolibrary.org/obo/mondo#ordo_subtype_of_a_disorder>
-      <http://purl.obolibrary.org/obo/mondo#ordo_clinical_subtype>
     }
     ?category_class oio:inSubset ?_subset .
     BIND("TRUE" as ?filter_orphanet_subtype)
@@ -79,7 +78,6 @@ WHERE
     ?category_class rdfs:subClassOf ?subtype_subset .
     VALUES ?_subset { 
       <http://purl.obolibrary.org/obo/mondo#ordo_subtype_of_a_disorder>
-      <http://purl.obolibrary.org/obo/mondo#ordo_clinical_subtype>
     }
     ?subtype_subset oio:inSubset ?_subset .
     BIND("TRUE" as ?filter_subtype_subset_descendant)
