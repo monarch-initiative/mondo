@@ -1,14 +1,108 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/mondo/imports/hgnc_import.owl#"
      xml:base="http://purl.obolibrary.org/obo/mondo/imports/hgnc_import.owl"
+     xmlns:so="http://purl.obolibrary.org/obo/so#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mondo/imports/hgnc_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2023-05-25/imports/hgnc_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2024-07-23/imports/hgnc_import.owl"/>
+        <owl:versionInfo>2024-07-23</owl:versionInfo>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/so#SOFA -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/so#SOFA">
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#SubsetProperty -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasOBONamespace -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBONamespace"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#id -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#inSubset -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#inSubset"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/so#member_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/so#member_of"/>
     
 
 
@@ -1350,7 +1444,7 @@
 
     <owl:Class rdf:about="http://identifiers.org/hgnc/10898">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
-        <rdfs:label>SKIV2L</rdfs:label>
+        <rdfs:label>SKIC2</rdfs:label>
     </owl:Class>
     
 
@@ -1944,7 +2038,7 @@
 
     <owl:Class rdf:about="http://identifiers.org/hgnc/11075">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
-        <rdfs:label>SLC9A3R1</rdfs:label>
+        <rdfs:label>NHERF1</rdfs:label>
     </owl:Class>
     
 
@@ -6755,6 +6849,15 @@
     
 
 
+    <!-- http://identifiers.org/hgnc/14415 -->
+
+    <owl:Class rdf:about="http://identifiers.org/hgnc/14415">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+        <rdfs:label>ELOVL4</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://identifiers.org/hgnc/1442 -->
 
     <owl:Class rdf:about="http://identifiers.org/hgnc/1442">
@@ -8861,6 +8964,15 @@
     
 
 
+    <!-- http://identifiers.org/hgnc/16918 -->
+
+    <owl:Class rdf:about="http://identifiers.org/hgnc/16918">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+        <rdfs:label>SYNCRIP</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://identifiers.org/hgnc/16940 -->
 
     <owl:Class rdf:about="http://identifiers.org/hgnc/16940">
@@ -10040,6 +10152,15 @@
     
 
 
+    <!-- http://identifiers.org/hgnc/17985 -->
+
+    <owl:Class rdf:about="http://identifiers.org/hgnc/17985">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+        <rdfs:label>ROBO4</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://identifiers.org/hgnc/17989 -->
 
     <owl:Class rdf:about="http://identifiers.org/hgnc/17989">
@@ -10224,7 +10345,7 @@
 
     <owl:Class rdf:about="http://identifiers.org/hgnc/18119">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
-        <rdfs:label>SPATA5</rdfs:label>
+        <rdfs:label>AFG2A</rdfs:label>
     </owl:Class>
     
 
@@ -11439,7 +11560,7 @@
 
     <owl:Class rdf:about="http://identifiers.org/hgnc/19102">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
-        <rdfs:label>DDX58</rdfs:label>
+        <rdfs:label>RIGI</rdfs:label>
     </owl:Class>
     
 
@@ -12983,6 +13104,15 @@
     
 
 
+    <!-- http://identifiers.org/hgnc/20774 -->
+
+    <owl:Class rdf:about="http://identifiers.org/hgnc/20774">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+        <rdfs:label>TUBB4A</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://identifiers.org/hgnc/20778 -->
 
     <owl:Class rdf:about="http://identifiers.org/hgnc/20778">
@@ -13087,6 +13217,15 @@
     <owl:Class rdf:about="http://identifiers.org/hgnc/20914">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
         <rdfs:label>BLOC1S3</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://identifiers.org/hgnc/20967 -->
+
+    <owl:Class rdf:about="http://identifiers.org/hgnc/20967">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+        <rdfs:label>NACC1</rdfs:label>
     </owl:Class>
     
 
@@ -14949,7 +15088,7 @@
 
     <owl:Class rdf:about="http://identifiers.org/hgnc/23639">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
-        <rdfs:label>TTC37</rdfs:label>
+        <rdfs:label>SKIC3</rdfs:label>
     </owl:Class>
     
 
@@ -15642,7 +15781,7 @@
 
     <owl:Class rdf:about="http://identifiers.org/hgnc/24587">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
-        <rdfs:label>FAM126A</rdfs:label>
+        <rdfs:label>HYCC1</rdfs:label>
     </owl:Class>
     
 
@@ -18658,6 +18797,15 @@
     <owl:Class rdf:about="http://identifiers.org/hgnc/2876">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
         <rdfs:label>DIAPH1</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://identifiers.org/hgnc/28762 -->
+
+    <owl:Class rdf:about="http://identifiers.org/hgnc/28762">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+        <rdfs:label>AFG2B</rdfs:label>
     </owl:Class>
     
 
@@ -21821,6 +21969,15 @@
     
 
 
+    <!-- http://identifiers.org/hgnc/34033 -->
+
+    <owl:Class rdf:about="http://identifiers.org/hgnc/34033">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+        <rdfs:label>RNU7-1</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://identifiers.org/hgnc/341 -->
 
     <owl:Class rdf:about="http://identifiers.org/hgnc/341">
@@ -23625,7 +23782,7 @@
 
     <owl:Class rdf:about="http://identifiers.org/hgnc/4177">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
-        <rdfs:label>GBA</rdfs:label>
+        <rdfs:label>GBA1</rdfs:label>
     </owl:Class>
     
 
@@ -25016,6 +25173,15 @@
     
 
 
+    <!-- http://identifiers.org/hgnc/4808 -->
+
+    <owl:Class rdf:about="http://identifiers.org/hgnc/4808">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+        <rdfs:label>HAND2</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://identifiers.org/hgnc/4814 -->
 
     <owl:Class rdf:about="http://identifiers.org/hgnc/4814">
@@ -25561,6 +25727,15 @@
     <owl:Class rdf:about="http://identifiers.org/hgnc/5033">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
         <rdfs:label>HNRNPA2B1</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://identifiers.org/hgnc/5035 -->
+
+    <owl:Class rdf:about="http://identifiers.org/hgnc/5035">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+        <rdfs:label>HNRNPC</rdfs:label>
     </owl:Class>
     
 
@@ -32229,7 +32404,7 @@
 
     <owl:Class rdf:about="http://identifiers.org/hgnc/8912">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
-        <rdfs:label>PHB</rdfs:label>
+        <rdfs:label>PHB1</rdfs:label>
     </owl:Class>
     
 
@@ -34178,6 +34353,15 @@
     
 
 
+    <!-- http://identifiers.org/hgnc/9906 -->
+
+    <owl:Class rdf:about="http://identifiers.org/hgnc/9906">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+        <rdfs:label>RBFOX2</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://identifiers.org/hgnc/9910 -->
 
     <owl:Class rdf:about="http://identifiers.org/hgnc/9910">
@@ -34349,12 +34533,127 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/SO_0000001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+        <obo:IAO_0000115>A sequence_feature with an extent greater than zero. A nucleotide region is composed of bases and a polypeptide region is composed of amino acids.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>sequence</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>sequence</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>SO:0000001</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/so#SOFA"/>
+        <rdfs:label>region</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/SO_0000001"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A sequence_feature with an extent greater than zero. A nucleotide region is composed of bases and a polypeptide region is composed of amino acids.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>SO:ke</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000110 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000110">
+        <obo:IAO_0000115>Any extent of continuous biological sequence.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>INSDC_feature:misc_feature</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>INSDC_note:other</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>INSDC_note:sequence_feature</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>located_sequence_feature</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>sequence feature</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>sequence</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>located sequence feature</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>SO:0000110</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/so#SOFA"/>
+        <rdfs:label>sequence_feature</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Any extent of continuous biological sequence.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>LAMHDI:mb</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>SO:ke</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/SO_0000704 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000704"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000704">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001411"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/so#member_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0005855"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>http://en.wikipedia.org/wiki/Gene</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>INSDC_feature:gene</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>sequence</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>SO:0000704</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/so#SOFA"/>
+        <rdfs:comment>This term is mapped to MGED. Do not obsolete without consulting MGED ontology. A gene may be considered as a unit of inheritance.</rdfs:comment>
+        <rdfs:label>gene</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>SO:immuno_workshop</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+        <owl:annotatedTarget>http://en.wikipedia.org/wiki/Gene</owl:annotatedTarget>
+        <rdfs:label>wiki</rdfs:label>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0001411 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001411">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000001"/>
+        <obo:IAO_0000115>A region defined by its disposition to be involved in a biological process.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>INSDC_misc_feature</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>INSDC_note:biological_region</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>biological region</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>sequence</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>SO:0001411</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/so#SOFA"/>
+        <rdfs:label>biological_region</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/SO_0001411"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A region defined by its disposition to be involved in a biological process.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>SO:cb</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0005855 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0005855">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001411"/>
+        <obo:IAO_0000115>A collection of related genes.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>gene group</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>sequence</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>SO:0005855</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/so#SOFA"/>
+        <rdfs:label>gene_group</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/SO_0005855"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A collection of related genes.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>SO:ma</oboInOwl:hasDbXref>
+    </owl:Axiom>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi -->
 
