@@ -664,9 +664,6 @@ reports/difference_release_base.tsv: tmp/mondo-released.obo $(KGCL_ONTOLOGY)
 	runoak -i simpleobo:tmp/mondo-released.obo diff -X simpleobo:$(KGCL_ONTOLOGY) \
 	-o $@ --output-type csv --statistics --group-by-property oio:hasOBONamespace
 
-reports/difference_release_base.txt: tmp/mondo-released.obo $(KGCL_ONTOLOGY)
-	runoak -i simpleobo:tmp/mondo-released.obo diff -X simpleobo:$(KGCL_ONTOLOGY) -o $@ --output-type kgcl
-
 reports/difference_release_base.yaml: tmp/mondo-released.obo $(KGCL_ONTOLOGY)
 	runoak -i simpleobo:tmp/mondo-released.obo diff -X simpleobo:$(KGCL_ONTOLOGY) -o $@ --output-type yaml
 
