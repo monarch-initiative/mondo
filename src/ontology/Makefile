@@ -740,8 +740,9 @@ mirror-hgnc: mirror/hgnc_gene.nt | $(TMPDIR)
 mirror-ncbigene: mirror/ncbi_gene.nt | $(TMPDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then arq --data=mirror/ncbi_gene.nt --query=../sparql/construct/construct-ncbigene.sparql > $(TMPDIR)/$@.owl; fi
 
-$(TMPDIR)/hgnc_import.owl: $(IMPORTDIR)/merged_import.owl $(IMPORTDIR)/hgnc_terms_combined.txt
-	$(ROBOT) extract -i $< -T $(IMPORTDIR)/hgnc_terms_combined.txt --force true --individuals exclude --method BOT \
+
+$(TMPDIR)/hgnc_import.owl: $(IMPORTDIR)/merged_import.owl
+	$(ROBOT) filter -i $< --term SO:0000704 --select "annotations self descendants" --signature true \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f owl --output $@.tmp.owl && mv $@.tmp.owl $@
 
