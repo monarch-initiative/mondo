@@ -50,13 +50,13 @@ _Note: While the release is running, don't shut your laptop or switch between re
 1. Do a docker pull: `docker pull obolibrary/odkfull:dev`
 1. Pull master
 1. Run command: `cd mondo/src/ontology/` (navigate to folder on your computer)
-1. `IMAGE=odkfull:dev ./run.sh make IMP=false all -B` 
+1. `sh run.sh make IMP=false all -B` 
     - note, this takes 1+ hour(s)
     - note that we are using the dev image as it is always up to date with the Python dependencies.
 1. Make sure you see ‘release finished’ after the command has run
 1. Open mondo.owl and mondo.obo and check the latest changes are there and it looks reasonable
 1. Run `sh run.sh make prepare_release_direct`
-1. Review the file `src/ontology/reports/mondo_release_diff.md`. 
+1. WARNING: TO BE UPDATED Review the file `src/ontology/reports/mondo_release_diff.md`. 
     - There is now a new QC section up top, `---START LOG:` to `---END LOG:`. Review the text and _delete it from the file_ if there is no suspicious output.
     - note that this file is 'gitignore', ie one only sees it if they are the one running the release.
 1. Commit changes to a branch
@@ -105,14 +105,14 @@ Press Enter to open github.com in your browser...
     2. Ensure that it says [name] (eg nicolevasilevsky) released this 1 days ago or now
     3. Ensure it has all release artifacts attached to it (there should be 22 assets in the draft. Note, there will be 24 after the release is published.)
     4. Check this file to ensure you see the expected changes (spot check a few changes): download the mondo.obo or mondo.owl from the asset list in the release.
-1. Write a description of the release
+1. WARNING: TO BE UPDATED Write a description of the release
     1. Add the release description to the release tab:
           - All of the releases can be found under the [releases](https://github.com/monarch-initiative/mondo/releases) tab.
           - To add a description of the release:
                 - click edit
                 - in the 'describe this release' section add the content from the file `src/ontology/reports/mondo_release_diff.md`. (reminder that this file is 'gitignore', ie one only sees it if they are the one running the release.)
          - click "save draft"
-    2. Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
+    2. WARNING: TO BE UPDATED  Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
          - go to changes.md
          - click edit
          - add the name of the new release and the content from the change log text file above.
