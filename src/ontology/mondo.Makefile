@@ -618,6 +618,7 @@ tmp/omim-gene-matches.txt: tmp/omim-genes.tsv
 	grep -Ff $< mondo-edit.obo | grep '^xref' > $@ || true
 	if [ -s $@ ]; then \
 		echo "Error: xref matches found in $@"; \
+		cat $@; \
 		exit 1; \
 	fi
 
