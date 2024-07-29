@@ -20,6 +20,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
     FILTER NOT EXISTS {
         ?entity oboInOwl:hasDbXref ?xref .
         VALUES ?mondo_source {
+            "MONDO:obsoleteEquivalent"
             "MONDO:equivalentTo"
         }
         ?xref_anno a owl:Axiom ;
