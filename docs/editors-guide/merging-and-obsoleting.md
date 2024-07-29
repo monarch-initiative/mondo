@@ -116,7 +116,7 @@ There are 2 ways to merge classes:
     1. Add "term tracker item" (type xsd:anyURI) annotation with a link to the GitHub issue (e.g. `https://github.com/monarch-initiative/mondo/issues/YOUR-TICKET-NUMBER`) that requested the obsoletion.
     1. Add an obsoletion reason: use the annotation property "has obsolescence reason" and add `http://purl.obolibrary.org/obo/MONDO_TermsMerged` in the IRI Editor field.
     1. Any source annotations to MONDO:equivalentTo on a dbxref should be changed to MONDO:obsoleteEquivalent.
-    1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the terms were merged.
+    1. _Optional:_ Add an additional comment (rdfs:comment) explaining why the terms were merged.
 1. **Replacement term**: Search for the 'term replaced by' term
     1. Delete the old ID (_if you check the diff after doing this and saving, you'll see the unexpected addition will disappear_)
     1. Review the annotations to ensure there are no duplicate annotations. If there are, they should be combined. (Sometimes this is easier to review in the diff in GitHub Desktop, but they must be fixed in Protege.)
@@ -144,7 +144,7 @@ There are 2 ways to merge classes:
 1. Add annotation **owl:deprecated** and indicate true (in literal)
 1. Add annotation **term replaced by** and add ID of term which replaced it (in CURIE format, such as MONDO:0010684). If the disease term is being obsoleted and an HPO term should be used instead, do not use **term replaced by**, rather use the annotation **consider.** For example, see MONDO:0001445.
 1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and add `OMO:0001000` in the IRI editor (`OMO:0001000` = out of scope). Add a source annotation to the obsolescence reason that comes from this [list of exclusion reasons](https://mondo.readthedocs.io/en/latest/editors-guide/exclusion-reasons/). It should look something like: `property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}`.
-1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the terms were merged.
+1. _Optional:_ Add an additional comment (rdfs:comment) explaining why the terms were merged.
 1. Add annotation 'term tracker item' (type xsd:anyURI) with a link to the GitHub issue that requested the obsoletion.
 1. Remove superclass axioms
 1. If the class has children, remove the superclass assertion for the children 
@@ -167,7 +167,7 @@ Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:e
 1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
 1. Add annotation consider, add the CURIE for the term that should be considered as a replacement.
 1. Remove all rare disease subset annotations
-1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the term was obsoleted.
+1. _Optional:_ Add an additional comment (rdfs:comment) explaining why the term was obsoleted.
 
 ### Obsolete a class (manually)
 1. Search for the class to be obsoleted.
@@ -180,7 +180,7 @@ Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:e
 1. If the class has children, remove the superclass assertions for the children.
 1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
 1. Remove all rare disease subset annotations
-1. _Optional:_ Add an additional comment (rdfs:comment) explaning why the term was obsoleted.
+1. _Optional:_ Add an additional comment (rdfs:comment) explaining why the term was obsoleted.
 
 ## Simple mass obsoletion pipeline
 
