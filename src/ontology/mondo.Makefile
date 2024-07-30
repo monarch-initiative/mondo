@@ -1002,8 +1002,15 @@ all: config/exclusion_reasons.tsv
 ##################################
 ##### Scheduled GH Actions #######
 ##################################
+
+$(TMPDIR)/subclass-confirmed.robot.tsv:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/reports/sync-subClassOf.confirmed.tsv" -O $@
+
 $(TMPDIR)/new-exact-matches-%.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/lexmatch/unmapped_$*_lex_exact.tsv" -O $@
+
+$(TMPDIR)/%.robot.owl: $(TMPDIR)/%.robot.tsv
+	$(ROBOT) --prefix "sssom: https://w3id.org/sssom/" template --template $< -o $@
 
 $(TMPDIR)/new-exact-matches-%.owl: $(TMPDIR)/new-exact-matches-%.tsv
 	$(ROBOT) --prefix "sssom: https://w3id.org/sssom/" template --template $< -o $@
@@ -1014,6 +1021,25 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 		mv tmp/$(SRC) $(SRC)
 		make NORM
 		mv NORM $(SRC)
+
+tmp/subclass-axioms.owl: $(SRC)
+	$(ROBOT) filter --input $(SRC) --axioms SubClassOf --preserve-structure false --trim false \
+		--drop-axiom-annotations "oboInOwl:source=~'(DOID|ICD10CM|icd11.foundation|NCIT|OMIM|OMIMPS|Orphanet):.*'" \
+		-o $@
+
+# This command updates mondo-edit with all the confirmed subclass evidence from the mondo-ingest repo
+.PHONY: update-subclass-sync
+update-subclass-sync: $(TMPDIR)/subclass-confirmed.robot.owl tmp/subclass-axioms.owl
+	$(ROBOT) remove --input $(SRC) \
+		--select "self parents" \
+  		--axioms SubClassOf \
+		--trim false \
+		merge -i $< -i tmp/subclass-axioms.owl --collapse-import-closure false \
+		convert -f obo --check false -o tmp/$(SRC)
+		mv tmp/$(SRC) $(SRC)
+		make NORM
+		mv NORM $(SRC)
+
 
 .PHONY: help
 help:
