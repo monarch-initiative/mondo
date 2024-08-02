@@ -85,7 +85,7 @@ all_imports: $(IMPORT_FILES)
 COMPONENTS = mondo-tags
 COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
 
-SUBSETS = mondo-minimal mondo-rare
+SUBSETS = mondo-rare
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json $(n)_nodes.tsv $(n)_edges.tsv)
 
@@ -97,7 +97,7 @@ ADDITIONAL_REPORT_FILES = reports/semantic-xref-pairs.tsv
 REPORT_FILES = $(MAIN_REPORT_FILES) $(ADDITIONAL_REPORT_FILES)
 
 
-MAIN_PRODUCTS = $(ONT) $(ONT)-base $(ONT)-with-equivalents $(ONT)-simple
+MAIN_PRODUCTS = $(ONT) $(ONT)-base $(ONT)-simple
 MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json) $(ONT)_nodes.tsv $(ONT)_edges.tsv
 EQUIVALENTS_FILES=imports/equivalencies
 EQUIVALENTS = $(foreach n, $(EQUIVALENTS_FILES), $(n).owl $(n).obo $(n).json)
@@ -260,14 +260,6 @@ $(ONT).json: $(ONT).owl
 $(ONT)_nodes.tsv $(ONT)_edges.tsv: $(ONT).json
 	kgx transform --input-format obojson --output-format tsv --output $(ONT) $< && test -f $(ONT)_nodes.tsv
 
-$(ONT)-with-equivalents.owl: reasoned-plus-equivalents.owl
-	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
-
-$(ONT)-with-equivalents.obo: $(ONT)-with-equivalents.owl
-	$(OWL2OBO)
-$(ONT)-with-equivalents.json: $(ONT)-with-equivalents.owl
-	$(ROBOT) convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
-
 ONTOLOGYTERMS=$(TMPDIR)/mondo_classes.txt
 
 $(ONTOLOGYTERMS): reasoned.owl
@@ -407,12 +399,6 @@ subsets/mondo-rare.owl: $(ONT)-base.owl $(TMPDIR)/hgnc_import.owl  tmp/rare-seed
 	$(ROBOT) merge -i $< -i $(TMPDIR)/hgnc_import.owl extract --method subset -T tmp/rare-seed.txt --output $@ &&\
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: $(SUBSETDIR)/mondo-rare.owl
-
-TRIM_MINIMAL = --remove-imports-declarations --remove-abox --remove-axiom-annotations --remove-annotation-assertions -l -r -p $(OIO)hasDbXref -p $(SKOS)exactMatch  -p $(SKOS)narrowMatch   -p $(SKOS)relatedMatch  -p $(SKOS)broadMatch
-subsets/mondo-minimal.owl: mondo-base.owl imports/equivalencies.owl
-	owltools --use-catalog $< $(TRIM_MINIMAL) imports/equivalencies.owl --merge-support-ontologies --set-ontology-id $(OBO)/mondo/$@ -o $@.tmp.owl &&\
-	$(ROBOT) annotate -R -i $@.tmp.owl -o $@.tmp2.owl &&\
-	owltools $@.tmp2.owl --add-ontology-annotation $(PV_CC0) -o $@
 
 subsets/%.json: subsets/%.owl
 	$(ROBOT) convert -i $< -o $@
