@@ -1,0 +1,37 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+## This QC check ensures that if we have a source for subset, it must 
+## also be mapped to the same term as the subset
+
+SELECT DISTINCT ?entity ?property ?value WHERE {
+    VALUES ?subset {
+        <http://purl.obolibrary.org/obo/mondo#ordo_disorder>
+    }
+    ?entity oboInOwl:inSubset ?subset .
+
+    ?subset_anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty oboInOwl:inSubset ;
+           owl:annotatedTarget ?subset ;
+           oboInOwl:source ?xref .
+
+    FILTER NOT EXISTS {
+        ?entity oboInOwl:hasDbXref ?xref .
+        VALUES ?mondo_source {
+            "MONDO:obsoleteEquivalent"
+            "MONDO:equivalentTo"
+        }
+        ?xref_anno a owl:Axiom ;
+            owl:annotatedSource ?entity ;
+            owl:annotatedProperty oboInOwl:hasDbXref ;
+            owl:annotatedTarget ?xref ;
+            oboInOwl:source ?mondo_source .
+    }
+    FILTER (STRSTARTS(str(?xref), "Orphanet:"))
+    FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+    BIND(?xref as ?value)
+    BIND(str(?subset) as ?property)
+}
+ORDER BY ?entity
