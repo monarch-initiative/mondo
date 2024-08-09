@@ -97,7 +97,7 @@ ADDITIONAL_REPORT_FILES = reports/semantic-xref-pairs.tsv
 REPORT_FILES = $(MAIN_REPORT_FILES) $(ADDITIONAL_REPORT_FILES)
 
 
-MAIN_PRODUCTS = $(ONT) $(ONT)-base $(ONT)-simple
+MAIN_PRODUCTS = $(ONT) $(ONT)-base $(ONT)-simple $(ONT)-with-equivalents
 MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json) $(ONT)_nodes.tsv $(ONT)_edges.tsv
 EQUIVALENTS_FILES=imports/equivalencies
 EQUIVALENTS = $(foreach n, $(EQUIVALENTS_FILES), $(n).owl $(n).obo $(n).json)
@@ -256,6 +256,14 @@ $(ONT).obo: $(ONT).owl
 $(ONT).json: $(ONT).owl
 	$(ROBOT) convert --input $< --check false -f json -o $@.tmp.json &&\
 		mv $@.tmp.json $@
+
+$(ONT)-with-equivalents.owl: reasoned-plus-equivalents.owl
+	$(ROBOT) annotate -i $< -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
+
+$(ONT)-with-equivalents.obo: $(ONT)-with-equivalents.owl
+	$(OWL2OBO)
+$(ONT)-with-equivalents.json: $(ONT)-with-equivalents.owl
+	$(ROBOT) convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
 
 $(ONT)_nodes.tsv $(ONT)_edges.tsv: $(ONT).json
 	kgx transform --input-format obojson --output-format tsv --output $(ONT) $< && test -f $(ONT)_nodes.tsv
