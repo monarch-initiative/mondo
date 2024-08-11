@@ -14,11 +14,9 @@ SELECT DISTINCT ?entity ?property ?value
 
 WHERE
 {
-    ?entity a owl:Class;
-    		rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0000001> ;
-       	    ?property ?v .
+    ?entity ?property ?v .
 
-      ?axiom owl:annotatedSource ?entity ;
+    ?axiom owl:annotatedSource ?entity ;
              owl:annotatedProperty ?property ;
              owl:annotatedTarget ?v ;
              ?provenance ?x .
@@ -26,7 +24,7 @@ WHERE
     # The axiom provenance should typically use oio:source, so lets look for case where it does not
     # (also, it should not correspond to the actual RDF-reified annotation properties)
     FILTER(
-        ?provenance!=oio:source 
+           ?provenance!=oio:source 
         && ?provenance!=owl:annotatedSource 
         && ?provenance!=owl:annotatedTarget
         && ?provenance!=owl:annotatedProperty
@@ -35,14 +33,29 @@ WHERE
 
     # Ignore Synonym type annotations
     FILTER(
-        ?provenance!=oio:hasSynonymType 
-        && (?property!=oio:hasExactSynonym || ?property!=oio:hasRelatedSynonym || ?property!=oio:hasBroadSynonym || ?property!=oio:hasNarrowSynonym)
+        !(?provenance = oio:hasSynonymType && 
+            (
+                ?property IN (
+                    oio:hasExactSynonym, 
+                    oio:hasRelatedSynonym, 
+                    oio:hasBroadSynonym, 
+                    oio:hasNarrowSynonym)
+            )
+        )
     )
 
     # Xrefs are allowed on definitions and synonyms
-    FILTER(
-        (?provenance!=oio:hasDbXref) 
-        && (?property!=IAO:0000115 || ?property!=oio:hasExactSynonym || ?property!=oio:hasRelatedSynonym || ?property!=oio:hasBroadSynonym || ?property!=oio:hasNarrowSynonym)
+    FILTER (
+        !( 
+            ?provenance = oio:hasDbXref && 
+            ?property IN (
+                IAO:0000115, 
+                oio:hasExactSynonym, 
+                oio:hasRelatedSynonym, 
+                oio:hasBroadSynonym, 
+                oio:hasNarrowSynonym
+            )
+        )
     )
 
     BIND(CONCAT(str(?v),CONCAT(": ",str(?provenance))) as ?value)
