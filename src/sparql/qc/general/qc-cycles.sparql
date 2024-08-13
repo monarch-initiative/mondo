@@ -14,7 +14,7 @@ SELECT ?entity ?property ?value
 
 WHERE
 {
-  VALUES ?property { RO:0004003 RO:0004029 }
+#  VALUES ?property { RO:0004003 RO:0004029 }
   ?entity rdfs:subClassOf [
         owl:onProperty ?property ;
         owl:someValuesFrom ?entity
