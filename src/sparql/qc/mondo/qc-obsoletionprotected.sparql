@@ -1,0 +1,22 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+#this query reports when an obsoletion-candidate tag is added to a protected term
+
+SELECT ?mondo_id ?label
+WHERE 
+  { 
+?mondo_id a owl:Class; 
+  		rdfs:label ?label .
+  
+?mondo_id <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate>.
+  
+?mondo_id <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#obsoletion_protected>.
+
+  FILTER( !isBlank(?mondo_id) && regex(str(?mondo_id), "^http://purl.obolibrary.org/obo/MONDO_"))
+}
