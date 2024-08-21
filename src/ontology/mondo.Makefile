@@ -400,7 +400,7 @@ $(TMPDIR)/ordo-subsets.robot.owl:
 update-ordo-subsets:
 	$(MAKE) $(TMPDIR)/ordo-subsets.robot.owl -B
 	grep -vE '^(subset: ordo_group_of_disorders)' $(SRC) | grep -vE '^(subset: ordo_disorder)' | grep -vE '^(subset: ordo_subtype_of_a_disorder)' > $(TMPDIR)/mondo-edit.tmp || true
-	mv tmp/mondo-edit.tmp $(SRC)
+	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
 	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/ordo-subsets.robot.owl --collapse-import-closure false convert -f obo --check false -o $(TMPDIR)/mondo-edit.tmp
 	mv $(TMPDIR)/mondo-edit.tmp $(SRC) && make NORM && mv NORM $(SRC)
 	
