@@ -266,19 +266,142 @@ $(TEMPLATES_DIR)/ROBOT_addMedGen_fromConflictResolution.tsv: tmp/July2023_CUIRep
 $(TEMPLATES_DIR)/ROBOT_addMedGen_fromIngest.tsv:
 	wget "https://github.com/monarch-initiative/medgen/releases/latest/download/medgen-xrefs.robot.template.tsv" -O $@
 
+## FIX THIS BEFORE MERGING
+subsets/mondo-rare.kgx.tsv:
+	kgx transform --input-format obojson \
+                  --output subsets/mondo-rare.kgx \
+                  --output-format tsv \
+                  --knowledge-sources aggregator_knowledge_source "mondo,mondo disease ontology" \
+                  subsets/mondo-rare.json
+
+######################################################
+##### Mondo Ingest Update Pipelines ##################
+######################################################
+
+# 1. Rare disease pipeline
+# 2. Externally managed content pipeline
+
+# CHANGE THIS TO THE MAIN BRANCH BEFOR MERGING!!!
+MONDO_INGEST_EXTERNAL_LOCATION=https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/externalclingenmedgenefo/src/ontology/external
+
+######################################################
+##### Mondo Rare Disease Pipeline ####################
+######################################################
+
+update-rare-disease-subset:
+	$(MAKE) subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-before.tsv
+	$(MAKE) update-orphanet-rare -B
+	$(MAKE) update-gard -B
+	$(MAKE) update-nord -B
+	$(MAKE) update-inferred-subset -B
+	$(MAKE) update-rare-subset -B
+	$(MAKE) subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-after.tsv
+	@echo "Subset metrics before..."
+	cat tmp/subset-metrics-before.tsv
+	@echo "Subset metrics after..."
+	cat tmp/subset-metrics-after.tsv
+
+##### Orphanet Rare ################
+
+tmp/orphanet-rare-subset.owl: $(SRC)
+	$(ROBOT) merge -i $(SRC) reason \
+		query --format ttl --query ../sparql/construct/construct-orphanet-rare-subset.sparql $@
+
+.PHONY: update-orphanet-rare
+update-orphanet-rare:
+	$(MAKE) tmp/orphanet-rare-subset.owl
+	grep -vE '^(subset: orphanet_rare)' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/orphanet-rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+##### GARD #########################
+
+# Managed here: https://docs.google.com/spreadsheets/d/1W2wDcnU4Nw0OApe3AvHtXSaOlA4RtmG5/edit?gid=1163320745#gid=1163320745
+
+# The complex part here is that we need to dynamically update the MONDO source code, i.e. 
+# MONDO:equivalentTo and MONDO:obsoleteEquivalentTo.
+tmp/gard-rare-subset.owl: $(SRC)
+	wget "$(MONDO_INGEST_EXTERNAL_LOCATION)/processed-gard.robot.owl" -O $@.subset
+	$(ROBOT) remove -i $< --select imports merge -i $@.subset query -f ttl --query ../sparql/construct/construct-equivalent-obsolete-gard.sparql $@.source
+	$(ROBOT) merge -i $@.subset -i $@.source convert -f ofn -o $@
+
+.PHONY: update-gard
+update-gard:
+	$(MAKE) tmp/gard-rare-subset.owl
+	grep -vE '^(xref: GARD:|subset: gard_rare)' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/gard-rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make deprecated_annotation_merging && make NORM && mv NORM $(SRC)
+
+##### NORD #########################
+
+tmp/nord.template.owl:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/master/src/ontology/external/nord.robot.owl" -O $@
+
+.PHONY: update-nord
+update-nord:
+	make tmp/nord.template.owl -B
+	grep -vE '^(xref: NORD:|subset: nord_rare)' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/nord.template.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+##### Inferred #####################
+
+# The inferred subset depends on the other ones, so we need to first remove the old subsets
+# Then add the gard, nord and orphanet subsets back in
+tmp/inferred-rare-subset.owl: $(SRC)
+	$(ROBOT) merge -i $(SRC) \
+		reason \
+		query --format ttl --query ../sparql/construct/construct-inferred-rare-subset.sparql $@
+
+update-inferred-subset:
+	$(MAKE) tmp/inferred-rare-subset.owl
+	grep -vE '^(subset: inferred_rare)' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/inferred-rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+##### RARE #########################
+
+tmp/rare-subset.owl: $(SRC)
+	$(ROBOT) merge -i $(SRC) \
+		query --format ttl --query ../sparql/construct/construct-rare-subset.sparql $@
+
+.PHONY: update-rare-subset
+update-rare-subset:
+	$(MAKE) tmp/rare-subset.owl
+	grep -vE '^(subset: rare)$$' $(SRC) > tmp/mondo-edit.tmp || true
+	mv tmp/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i tmp/rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+
 ######################################################
 ##### Mondo External Content Pipeline ################
 ######################################################
 
-# CHANGE THIS TO THE MAIN BRANCH BEFOR MERGING!!!
-MONDO_INGEST_LOCATION=https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/externalclingenmedgenefo/src/ontology/external
+# This is the main pipeline to update all external content
+update-external-content:
+	$(MAKE) subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-before.tsv
+	$(MAKE) update-efo-subset -B
+	$(MAKE) update-clingen -B
+	$(MAKE) update-ordo-subsets -B
+	$(MAKE) update-nando -B
+	$(MAKE) update-medgen -B
+	$(MAKE)  subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-after.tsv
+	@echo "Subset metrics before..."
+	cat tmp/subset-metrics-before.tsv
+	@echo "Subset metrics after..."
+	cat tmp/subset-metrics-after.tsv
 
 ####################################
 ##### Orphanet #####################
 ####################################
 
 tmp/ordo-subsets.robot.owl:
-	wget "$(MONDO_INGEST_LOCATION)/processed-ordo-subsets.robot.owl" -O $@
+	wget "$(MONDO_INGEST_EXTERNAL_LOCATION)/processed-ordo-subsets.robot.owl" -O $@
 
 .PHONY: update-ordo-subsets
 update-ordo-subsets:
@@ -293,7 +416,7 @@ update-ordo-subsets:
 ####################################
 
 tmp/nando.template.owl:
-	wget $(MONDO_INGEST_LOCATION)/processed-nando-mappings.robot.owl -O $@
+	wget $(MONDO_INGEST_EXTERNAL_LOCATION)/processed-nando-mappings.robot.owl -O $@
 
 .PHONY: update-nando
 update-nando:
@@ -308,7 +431,7 @@ update-nando:
 ####################################
 
 tmp/clingen.template.owl:
-	wget "$(MONDO_INGEST_LOCATION)/processed-mondo-clingen.robot.owl" -O $@
+	wget "$(MONDO_INGEST_EXTERNAL_LOCATION)/processed-mondo-clingen.robot.owl" -O $@
 
 .PHONY: update-clingen
 update-clingen:
@@ -325,13 +448,13 @@ update-clingen:
 ####################################
 
 tmp/mondo-efo.template.owl:
-	wget "$(MONDO_INGEST_LOCATION)/processed-mondo-efo.robot.owl" -O $@
+	wget "$(MONDO_INGEST_EXTERNAL_LOCATION)/processed-mondo-efo.robot.owl" -O $@
 
 tmp/mondo-otar-subset.template.owl:
-	wget "$(MONDO_INGEST_LOCATION)/processed-mondo-otar-subset.robot.owl" -O $@
+	wget "$(MONDO_INGEST_EXTERNAL_LOCATION)/processed-mondo-otar-subset.robot.owl" -O $@
 
 tmp/efo-proxy-merges.template.owl:
-	wget "$(MONDO_INGEST_LOCATION)/efo-proxy-merges.robot.owl" -O $@
+	wget "$(MONDO_INGEST_EXTERNAL_LOCATION)/efo-proxy-merges.robot.owl" -O $@
 
 .PHONY: update-efo-subset
 update-efo-subset:
@@ -350,7 +473,7 @@ update-efo-subset:
 # CHANGE THIS TO THE MAIN BRANCH BEFOR MERGING!!!
 
 tmp/mondo-medgen.template.owl:
-	wget "$(MONDO_INGEST_LOCATION)/processed-mondo-medgen.robot.owl" -O $@
+	wget "$(MONDO_INGEST_EXTERNAL_LOCATION)/processed-mondo-medgen.robot.owl" -O $@
 
 .PHONY: update-medgen
 update-medgen:
@@ -362,23 +485,6 @@ update-medgen:
 		convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC) 
 
-##########################################
-###### Update all external content #######
-##########################################
-
-# This is the main pipeline to update all external content
-update-external-content:
-	$(MAKE) subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-before.tsv
-	$(MAKE) update-efo-subset -B
-	$(MAKE) update-clingen -B
-	$(MAKE) update-ordo-subsets -B
-	$(MAKE) update-nando -B
-	$(MAKE) update-medgen -B
-	$(MAKE)  subset-metrics -B && cp tmp/subset-metrics.tsv tmp/subset-metrics-after.tsv
-	@echo "Subset metrics before..."
-	cat tmp/subset-metrics-before.tsv
-	@echo "Subset metrics after..."
-	cat tmp/subset-metrics-after.tsv
 
 .PHONY: subset-metrics
 subset-metrics:
