@@ -266,13 +266,6 @@ $(TEMPLATES_DIR)/ROBOT_addMedGen_fromConflictResolution.tsv: tmp/July2023_CUIRep
 $(TEMPLATES_DIR)/ROBOT_addMedGen_fromIngest.tsv:
 	wget "https://github.com/monarch-initiative/medgen/releases/latest/download/medgen-xrefs.robot.template.tsv" -O $@
 
-## FIX THIS BEFORE MERGING
-subsets/mondo-rare.kgx.tsv:
-	kgx transform --input-format obojson \
-                  --output subsets/mondo-rare.kgx \
-                  --output-format tsv \
-                  --knowledge-sources aggregator_knowledge_source "mondo,mondo disease ontology" \
-                  subsets/mondo-rare.json
 
 ######################################################
 ##### Mondo Ingest Update Pipelines ##################
