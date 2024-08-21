@@ -1,0 +1,23 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+
+
+SELECT ?entity ?property ?value 
+
+WHERE
+{
+#  VALUES ?property { RO:0004003 RO:0004029 }
+  ?entity rdfs:subClassOf [
+        owl:onProperty ?property ;
+        owl:someValuesFrom ?entity
+      ] .
+  BIND ("Self cycle detected" as ?value)
+}

@@ -18,8 +18,8 @@ As a Mondo curator, when you have a ticket that requires a term from an external
         - `src/ontology/imports/*_terms.txt`
         - `src/ontology/imports/merged_import.owl`
     - The terms added in the `manual_seed.txt` file will be added to the appropriate import file (e.g human genes will be added to hgnc_terms.txt; NCBITaxon will be added to ncbitaxon_terms.txt). 
-1. Close Protege and open `mondo-edit.obo` in Protege again and save the ontology (as .obo).
-    - one needs to save the `mondo-edit.obo` file in order for the updates from the refresh import update process (e.g. updated names) to be visible in the ontology file 
+1. Close Protege and open `mondo-edit.obo` in Protege again and use the "Save as..." option under the "File" menu to save the ontology as OBO Format (.obo).
+    - One needs to save the `mondo-edit.obo` file in order for the updates from the refresh import update process (e.g. updated names) to be visible in the ontology file 
     - Therefore, changes such as updated names of imported entities might be shown in the git diff. 
     - The new terms should be available for logical definitions in Protege. Therefore one can also edit the file too, but changes not manually made could be expected (see previous comment).
         - Example file changes from previous refresh of imports: <a href="https://github.com/monarch-initiative/mondo/pull/7716/files" target="_blank">https://github.com/monarch-initiative/mondo/pull/7716/files</a>

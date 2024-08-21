@@ -26,6 +26,7 @@ curie_map:
   # ICD10CM__2: https://icd.codes/icd10cm/
   # ICD10WHO: https://icd.who.int/browse10/2019/en#/
   # ICD10WHO__2: http://apps.who.int/classifications/icd10/browse/2010/en#/
+  icd11.foundation: http://purl.obolibrary.org/obo/mondo/sources/icd11foundation/
   OMIMPS: https://omim.org/phenotypicSeries/PS
   MEDGEN: http://identifiers.org/medgen/
   MedDRA: http://identifiers.org/meddra/
@@ -87,6 +88,7 @@ subject_prefixes:
   - OMIMPS
   - NCIT
   - DOID
+  - icd11.foundation
 relations:
   - oboInOwl:hasDbXref
   - skos:exactMatch
@@ -139,3 +141,7 @@ source_metadata:
       object_source: http://purl.obolibrary.org/obo/doid.owl
       object_source_version: http://purl.obolibrary.org/obo/doid/releases/2018-07-05/doid.owl
       mapping_date: "2018-07-05"
+  - from: MONDO
+    to: icd11.foundation
+    metadata:
+      object_source: http://purl.obolibrary.org/obo/mondo/sources/icd11foundation.owl
