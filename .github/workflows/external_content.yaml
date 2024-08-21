@@ -1,0 +1,39 @@
+name: Update Externally Provided Content
+
+on:
+#  schedule:
+#    - cron: '0 14 * * 1'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.5.2
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+        with:
+          ref: automate-external-content
+      
+      - name: Update Externally Provided Content
+        run: |
+          cd src/ontology
+          make GITHUB_ACTION=true IMP=false PAT=false update-external-content -B
+    
+      - name: Run ontology QC checks
+        env:
+          DEFAULT_BRANCH: master
+        run: cd src/ontology; make GITHUB_ACTION=true IMP=false PAT=false test_owlaxioms -B
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch-suffix: short-commit-hash
+          labels: Automated
+          body: "Update the externally managed content."
+          title: "Externally managed content update"
+          base: ${{ github.head_ref }}
+          branch: "externally_managed_content"
+          token: ${{ secrets.GH_TOKEN }}
+          reviewers: "matentzn"
