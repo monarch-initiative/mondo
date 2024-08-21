@@ -8,15 +8,17 @@ prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 #this query reports when an obsoletion-candidate tag is added to a protected term
 
-SELECT ?mondo_id ?label
+SELECT ?entity ?property ?value
 WHERE 
   { 
-?mondo_id a owl:Class; 
-  		rdfs:label ?label .
-  
-?mondo_id <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate>.
-  
-?mondo_id <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#obsoletion_protected>.
 
-  FILTER( !isBlank(?mondo_id) && regex(str(?mondo_id), "^http://purl.obolibrary.org/obo/MONDO_"))
+VALUES ?property { <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate> }
+?entity <http://www.geneontology.org/formats/oboInOwl#inSubset> ?property.
+
+?entity a owl:Class; 
+  		rdfs:label ?value .
+
+?entity <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#obsoletion_protected>.
+
+  FILTER( !isBlank(?entity) && regex(str(?entity), "^http://purl.obolibrary.org/obo/MONDO_"))
 }
