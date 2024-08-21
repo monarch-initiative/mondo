@@ -270,15 +270,15 @@ $(TEMPLATES_DIR)/ROBOT_addMedGen_fromIngest.tsv:
 ##### Mondo External Content Pipeline ################
 ######################################################
 
-tmp/%.template.owl: subsets/%.template.tsv $(SRC)
-	$(ROBOT) template --template $< convert -f ttl -o $@
+# CHANGE THIS TO THE MAIN BRANCH BEFOR MERGING!!!
+MONDO_INGEST_LOCATION=https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/externalclingenmedgenefo/src/ontology/external
 
 ####################################
 ##### Orphanet #####################
 ####################################
 
 tmp/ordo-subsets.robot.owl:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/external/ordo-subsets.robot.owl" -O $@
+	wget "$(MONDO_INGEST_LOCATION)/processed-ordo-subsets.robot.owl" -O $@
 
 .PHONY: update-ordo-subsets
 update-ordo-subsets:
@@ -293,7 +293,7 @@ update-ordo-subsets:
 ####################################
 
 tmp/nando.template.owl:
-	wget https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/external/nando-mappings.robot.owl -O $@
+	wget $(MONDO_INGEST_LOCATION)/processed-nando-mappings.robot.owl -O $@
 
 .PHONY: update-nando
 update-nando:
@@ -307,9 +307,8 @@ update-nando:
 ##### CLINGEN ######################
 ####################################
 
-# CHANGE THIS TO THE MAIN BRANCH BEFOR MERGING!!!
 tmp/clingen.template.owl:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/externalclingenmedgenefo/src/ontology/external/mondo-clingen.robot.owl" -O $@
+	wget "$(MONDO_INGEST_LOCATION)/processed-mondo-clingen.robot.owl" -O $@
 
 .PHONY: update-clingen
 update-clingen:
@@ -325,17 +324,14 @@ update-clingen:
 ##### EFO ##########################
 ####################################
 
-# CHANGE THIS TO THE MAIN BRANCH BEFOR MERGING!!!
 tmp/mondo-efo.template.owl:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/externalclingenmedgenefo/src/ontology/external/mondo-efo.robot.owl" -O $@
+	wget "$(MONDO_INGEST_LOCATION)/processed-mondo-efo.robot.owl" -O $@
 
-# CHANGE THIS TO THE MAIN BRANCH BEFOR MERGING!!!
 tmp/mondo-otar-subset.template.owl:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/externalclingenmedgenefo/src/ontology/external/mondo-otar-subset.robot.owl" -O $@
+	wget "$(MONDO_INGEST_LOCATION)/processed-mondo-otar-subset.robot.owl" -O $@
 
-# CHANGE THIS TO THE MAIN BRANCH BEFOR MERGING!!!
 tmp/efo-proxy-merges.template.owl:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/externalclingenmedgenefo/src/ontology/external/efo-proxy-merges.robot.owl" -O $@
+	wget "$(MONDO_INGEST_LOCATION)/efo-proxy-merges.robot.owl" -O $@
 
 .PHONY: update-efo-subset
 update-efo-subset:
@@ -352,11 +348,9 @@ update-efo-subset:
 ####################################
 
 # CHANGE THIS TO THE MAIN BRANCH BEFOR MERGING!!!
-tmp/mondo-medgen.template.tsv:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/externalclingenmedgenefo/src/ontology/external/mondo-medgen.robot.tsv" -O $@
 
-tmp/mondo-medgen.template.owl: tmp/mondo-medgen.template.tsv
-	$(ROBOT) template --prefix "orcid: https://orcid.org/" --template $< convert -f ofn -o $@
+tmp/mondo-medgen.template.owl:
+	wget "$(MONDO_INGEST_LOCATION)/processed-mondo-medgen.robot.owl" -O $@
 
 .PHONY: update-medgen
 update-medgen:
