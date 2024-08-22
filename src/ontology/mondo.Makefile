@@ -330,7 +330,7 @@ update-gard:
 ##### NORD #########################
 
 tmp/nord.template.owl:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/master/src/ontology/external/nord.robot.owl" -O $@
+	wget "$(MONDO_INGEST_EXTERNAL_LOCATION)/processed-nord.robot.owl" -O $@
 
 .PHONY: update-nord
 update-nord:
@@ -401,8 +401,8 @@ update-ordo-subsets:
 	$(MAKE) $(TMPDIR)/ordo-subsets.robot.owl -B
 	grep -vE '^(subset: ordo_group_of_disorders)' $(SRC) | grep -vE '^(subset: ordo_disorder)' | grep -vE '^(subset: ordo_subtype_of_a_disorder)' > $(TMPDIR)/mondo-edit.tmp || true
 	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
-	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/ordo-subsets.robot.owl --collapse-import-closure false convert -f obo --check false -o $(TMPDIR)/mondo-edit.tmp
-	mv $(TMPDIR)/mondo-edit.tmp $(SRC) && make NORM && mv NORM $(SRC)
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/ordo-subsets.robot.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 	
 ####################################
 ##### NANDO #########################
@@ -447,7 +447,7 @@ tmp/mondo-otar-subset.template.owl:
 	wget "$(MONDO_INGEST_EXTERNAL_LOCATION)/processed-mondo-otar-subset.robot.owl" -O $@
 
 tmp/efo-proxy-merges.template.owl:
-	wget "$(MONDO_INGEST_EXTERNAL_LOCATION)/efo-proxy-merges.robot.owl" -O $@
+	wget "$(MONDO_INGEST_EXTERNAL_LOCATION)/processed-efo-proxy-merges.robot.owl" -O $@
 
 .PHONY: update-efo-subset
 update-efo-subset:
