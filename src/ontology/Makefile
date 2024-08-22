@@ -85,7 +85,7 @@ all_imports: $(IMPORT_FILES)
 COMPONENTS = mondo-tags
 COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
 
-SUBSETS = mondo-rare
+SUBSETS = mondo-rare mondo-clingen
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json $(n)_nodes.tsv $(n)_edges.tsv)
 
@@ -397,6 +397,15 @@ tmp/rare-seed.txt: tmp/rare-seed-entities.txt tmp/rare-seed-classes.txt config/r
 
 subsets/mondo-rare.owl: $(ONT)-base.owl $(TMPDIR)/hgnc_import.owl  tmp/rare-seed.txt | $(SUBSETDIR)
 	$(ROBOT) merge -i $< -i $(TMPDIR)/hgnc_import.owl extract --method subset -T tmp/rare-seed.txt --output $@ &&\
+	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: $(SUBSETDIR)/mondo-rare.owl
+
+tmp/clingen-seed.txt: $(SRC)
+	$(ROBOT) merge -i $< query --query ../sparql/signature/clingen-subset.sparql $@
+.PRECIOUS: tmp/rare-seed-entities.txt
+
+subsets/mondo-clingen.owl: $(ONT)-base.owl tmp/clingen-seed.txt | $(SUBSETDIR)
+	$(ROBOT) merge -i $< query --update ../sparql/update/clingen-labels.ru extract --method subset -T tmp/clingen-seed.txt --copy-ontology-annotations true --output $@ &&\
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: $(SUBSETDIR)/mondo-rare.owl
 
