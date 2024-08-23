@@ -11,7 +11,14 @@ prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
 
 SELECT DISTINCT ?entity ?property ?value WHERE
 {
-  VALUES ?property { <http://purl.obolibrary.org/obo/mondo#rare> }
+  VALUES ?property { 
+    <http://purl.obolibrary.org/obo/mondo#rare> 
+    <http://purl.obolibrary.org/obo/mondo#nord_rare>
+    <http://purl.obolibrary.org/obo/mondo#orphanet_rare>
+    <http://purl.obolibrary.org/obo/mondo#gard_rare>
+    <http://purl.obolibrary.org/obo/mondo#inferred_rare>
+    <http://purl.obolibrary.org/obo/mondo#mondo_rare>
+    }
   ?entity <http://www.geneontology.org/formats/oboInOwl#inSubset> ?property .
   ?entity rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0005583>
  FILTER NOT EXISTS {
