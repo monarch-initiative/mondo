@@ -354,17 +354,15 @@ update-orphanet-rare:
 # The complex part here is that we need to dynamically update the MONDO source code, i.e. 
 # MONDO:equivalentTo and MONDO:obsoleteEquivalentTo.
 
-tmp/gard-rare-subset.owl: tmp/external/processed-gard.robot.owl $(SRC)
-	$(ROBOT) remove -i $< --select imports merge -i $@.subset query -f ttl --query ../sparql/construct/construct-equivalent-obsolete-gard.sparql $@.source
-	$(ROBOT) merge -i $@.subset -i $@.source convert -f ofn -o $@
-
 .PHONY: update-gard
 update-gard:
-	$(MAKE) $(TMPDIR)/gard-rare-subset.owl
+	$(MAKE) $(TMPDIR)/external/processed-gard.robot.owl
 	grep -vE '^(xref: GARD:|subset: gard_rare)' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
 	mv $(TMPDIR)/mondo-edit.tmp mondo-edit.obo
-	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/gard-rare-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
-	mv $(SRC).obo $(SRC) && make deprecated_annotation_merging && make NORM && mv NORM $(SRC)
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-gard.robot.owl --collapse-import-closure false \
+		query --update ../sparql/update/insert-gard-obsoletion-status.ru \
+		convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC) && make deprecated_annotation_merging && make NORM && mv NORM $(SRC)
 
 ##### NORD #########################
 
