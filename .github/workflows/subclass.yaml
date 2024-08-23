@@ -23,18 +23,16 @@ jobs:
         # We need to eventually add a check to ensure that no subclass axioms have been added or removed
         # We should consider to create a seperate curation workflows with a table with previously supported and now not anymore supported subclass axioms
       - name: QC to ensure that nothing other than provenance has changed
-        run: |
-          cd src/ontology
-          make GITHUB_ACTION=true IMP=false PAT=false qc -B
+        run: cd src/ontology; make GITHUB_ACTION=true IMP=false PAT=false test -B
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
           branch-suffix: short-commit-hash
-          labels: Automated
+          labels: automated
           body: "Update the confirmed subclass axiom annotation."
-          title: "Weekly automated mappings update"
+          title: "Monthly confirmed subclass evidence update"
           base: ${{ github.head_ref }}
-          branch: "mapping_automation"
+          branch: "confirmed_subclass_evidence"
           token: ${{ secrets.GH_TOKEN }}
           reviewers: "sabrinatoro"
