@@ -9,8 +9,8 @@ This is a listing of all the patterns hosted as part of this directory
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml |
 | Name | OMIM_disease_series_by_gene |
-| Classes | MONDO:0000001, SO:0000704,  |
-| Variables | disease (MONDO:0000001), gene (SO:0000704),  |
+| Classes | MONDO:0700096, SO:0000704,  |
+| Variables | disease (MONDO:0700096), gene (SO:0000704),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432), [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153),  |
 | Examples |  |
 
@@ -22,8 +22,8 @@ Examples: [holoprosencephaly](http://purl.obolibrary.org/obo/MONDO_0016296) [OMI
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml |
 | Name | OMIM_phenotypic_series |
-| Classes | MONDO:0000001, MONDO:0021152,  |
-| Variables | disease (MONDO:0000001),  |
+| Classes | MONDO:0700096, MONDO:0021152,  |
+| Variables | disease (MONDO:0700096),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples |  |
 
@@ -656,8 +656,8 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml |
 | Name | disease_series_by_gene |
-| Classes | MONDO:0000001, SO:0001217,  |
-| Variables | disease (MONDO:0000001), gene (SO:0001217),  |
+| Classes | MONDO:0700096, SO:0000704,  |
+| Variables | disease (MONDO:0700096), gene (SO:0000704),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
 | Examples |  |
 
@@ -669,8 +669,8 @@ Examples: [Growth hormone insensitivity syndrome with immune dysregulation](http
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml |
 | Name | disease_series_by_gene_and_inheritance |
-| Classes | MONDO:0000001, SO:0000704, HP:0000005,  |
-| Variables | disease (MONDO:0000001), gene (SO:0000704), mode_of_inheritance (HP:0000005),  |
+| Classes | MONDO:0700096, SO:0000704, HP:0000005,  |
+| Variables | disease (MONDO:0700096), gene (SO:0000704), mode_of_inheritance (HP:0000005),  |
 | Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432), [0000-0002-7356-1779](https://orcid.org/0000-0002-7356-1779),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/disease_series_by_gene_and_inheritance.tsv) |
 
@@ -1429,6 +1429,18 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 | MONDO:0700103 | nutritional deficiency disease, non-human animal | MONDO:0006873 | nutritional deficiency disease |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/nonhuman_disease.tsv)
+### Nonhuman disease series by gene
+*This pattern is for non-human diseases that are defined based on a variation in one gene, such as many genetic diseases from the Online Mendelian Inheritance in Animals (OMIA).  Examples: TBD*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_series_by_gene.yaml |
+| Name | nonhuman_disease_series_by_gene |
+| Classes | MONDO:0005583, SO:0000704, NCBITaxon:1,  |
+| Variables | disease (MONDO:0005583), gene (SO:0000704), taxon (NCBITaxon:1),  |
+| Contributors | [0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153), [0000-0002-5002-8648](https://orcid.org/0000-0002-5002-8648),  |
+| Examples |  |
+
 ### Nonhuman disease taxon
 *This pattern should be used for diseases affecting non-human animal which have a corresponding/an analog disease in human AND the taxon affected is known. Examples: [leukemia, feline](http://purl.obolibrary.org/obo/MONDO_0025488)*
 
