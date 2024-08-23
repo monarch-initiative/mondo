@@ -8,7 +8,7 @@ jobs:
     # Do not run on forks. https://github.com/monarch-initiative/mondo/issues/5255
     if: github.repository_owner == 'monarch-initiative'
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.3.0
+    container: obolibrary/odkfull:v1.5.2
     strategy:
       max-parallel: 1
     steps:
