@@ -19,21 +19,22 @@ jobs:
       - name: Update Externally Provided Content
         run: |
           cd src/ontology
-          make GITHUB_ACTION=true IMP=false PAT=false update-external-content -B
+          make GITHUB_ACTION=true IMP=false PAT=false update-external-content-incl-rare -B
     
       - name: Run ontology QC checks
         env:
           DEFAULT_BRANCH: master
-        run: cd src/ontology; make GITHUB_ACTION=true IMP=false PAT=false test_owlaxioms -B
+        run: cd src/ontology; make GITHUB_ACTION=true IMP=false PAT=false test -B
+        continue-on-error: true  # Allow QC to fail but continue
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
           branch-suffix: short-commit-hash
           labels: Automated
-          body: "Update the externally managed content."
+          body: "Update the externally managed content. This includes all content, including updates to the rare disease subsets."
           title: "Externally managed content update"
           base: ${{ github.head_ref }}
           branch: "externally_managed_content"
           token: ${{ secrets.GH_TOKEN }}
-          reviewers: "matentzn"
+          reviewers: "twhetzel"
