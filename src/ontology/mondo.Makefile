@@ -1010,6 +1010,8 @@ update_deprecated_mappings: $(ALL_SOURCES_DEPRECATED_PATTERNS)
  		$(patsubst %, --template %, $^) \
  		convert -f obo -o $(SRC)
 	$(MAKE) NORM && mv NORM $(SRC)
+	$(MAKE) deprecated_annotation_merging
+	$(MAKE) NORM && mv NORM $(SRC)
 
 deprecated_annotation_merging:
 	sed -i 's/source="MONDO:equivalentObsolete",\ source="MONDO:obsoleteEquivalentObsolete"/source="MONDO:obsoleteEquivalentObsolete"/g' mondo-edit.obo || true

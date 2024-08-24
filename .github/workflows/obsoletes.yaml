@@ -1,0 +1,36 @@
+name: Update Obsoletion Status for external references
+
+on:
+#  schedule:
+#    - cron: '0 14 * * 1'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.5.2
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+      
+      - name: Update Obsoletion status
+        run: |
+          cd src/ontology
+          make GITHUB_ACTION=true IMP=false PAT=false update_deprecated_mappings -B
+    
+      - name: QC to ensure that obsoletion status change ran successfully
+        run: cd src/ontology; make GITHUB_ACTION=true IMP=false PAT=false test -B
+        continue-on-error: true  # Allow QC to fail but continue
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch-suffix: short-commit-hash
+          labels: automated
+          body: "Update obsoletion status of xrefs."
+          title: "Obsoletion status of xref update"
+          base: ${{ github.head_ref }}
+          branch: "obsoletion_status_xref"
+          token: ${{ secrets.GH_TOKEN }}
+          reviewers: "sabrinatoro"
