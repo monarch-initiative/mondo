@@ -11,15 +11,27 @@ prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
 
 SELECT DISTINCT ?entity ?property ?value WHERE
 {
-  VALUES ?property { <http://purl.obolibrary.org/obo/mondo#rare> }
-  ?entity <http://www.geneontology.org/formats/oboInOwl#inSubset> ?property .
+  VALUES ?value { 
+    <http://purl.obolibrary.org/obo/mondo#rare> 
+    <http://purl.obolibrary.org/obo/mondo#nord_rare>
+    <http://purl.obolibrary.org/obo/mondo#orphanet_rare>
+    <http://purl.obolibrary.org/obo/mondo#gard_rare>
+    <http://purl.obolibrary.org/obo/mondo#inferred_rare>
+    <http://purl.obolibrary.org/obo/mondo#mondo_rare>
+  }
+  VALUES ?property { 
+    <http://www.geneontology.org/formats/oboInOwl#inSubset>
+  }
+  ?entity ?property ?value .
   ?entity rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0005583>
- FILTER NOT EXISTS {
+  
+  FILTER NOT EXISTS {
     ?entity owl:deprecated "true"^^xsd:boolean
   }
-   FILTER NOT EXISTS {
-      ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-animal-disease-rare.sparql .
-   }
+  
+  FILTER NOT EXISTS {
+    ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-animal-disease-rare.sparql .
+  }
+ 
  FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
-  BIND("Animal disease in Rare subset" as ?value)
 }
