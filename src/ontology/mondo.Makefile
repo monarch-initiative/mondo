@@ -418,7 +418,9 @@ update-omim-genes:
 	$(MAKE) $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl -B
 	grep -vE '^(relationship: has_material_basis_in_germline_mutation_in)' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
 	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
-	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl --collapse-import-closure false \
+		query --update ../sparql/update/omim-gene-equivalence.ru \
+		convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
 ####################################
