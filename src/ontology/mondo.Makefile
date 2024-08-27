@@ -416,6 +416,8 @@ update-rare-subset:
 .PHONY: update-omim-genes
 update-omim-genes:
 	$(MAKE) $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl -B
+	# We need to be less aggressive here, as some gene relations were not originally sourced
+	# from OMIM, and were added, for example, for ClinGen.
 	grep -vE '^(relationship: has_material_basis_in_germline_mutation_in)' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
 	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
 	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl --collapse-import-closure false \
