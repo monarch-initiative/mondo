@@ -274,7 +274,7 @@ $(TEMPLATES_DIR)/ROBOT_addMedGen_fromIngest.tsv:
 # 1. Rare disease pipeline
 # 2. Externally managed content pipeline
 
-MONDO_INGEST_EXTERNAL_LOCATION=https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/master/src/ontology/external
+MONDO_INGEST_EXTERNAL_LOCATION=https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/external
 
 DOWNLOAD_EXTERNAL=true
 
