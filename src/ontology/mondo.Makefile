@@ -285,6 +285,7 @@ tmp/external/processed-%.robot.owl:
 	mkdir -p tmp/external
 	if [ $(DOWNLOAD_EXTERNAL) = true ]; then wget "$(MONDO_INGEST_EXTERNAL_LOCATION)/processed-$*.robot.owl" -O $@; fi
 
+# This is the main pipeline to update all rare disease subsets
 update-rare-disease-subset:
 	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-before.tsv
 	$(MAKE) update-orphanet-rare -B
@@ -298,7 +299,7 @@ update-rare-disease-subset:
 	@echo "Subset metrics after..."
 	cat $(TMPDIR)/subset-metrics-after.tsv
 
-# This is the main pipeline to update all external content
+# This is the main pipeline to update all externally managed content(EMC)
 update-external-content:
 	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-before.tsv
 	$(MAKE) update-efo-subset -B
@@ -306,13 +307,13 @@ update-external-content:
 	$(MAKE) update-ordo-subsets -B
 	$(MAKE) update-nando -B
 	$(MAKE) update-medgen -B
-	$(MAKE)  subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-after.tsv
+	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-after.tsv
 	@echo "Subset metrics before..."
 	cat $(TMPDIR)/subset-metrics-before.tsv
 	@echo "Subset metrics after..."
 	cat $(TMPDIR)/subset-metrics-after.tsv
 
-# This is the main pipeline to update all external content
+# This is the main pipeline to update both externally managed content and rare disease subsets
 update-external-content-incl-rare:
 	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-before.tsv
 	$(MAKE) update-efo-subset -B
@@ -325,7 +326,7 @@ update-external-content-incl-rare:
 	$(MAKE) update-nord -B
 	$(MAKE) update-inferred-subset -B
 	$(MAKE) update-rare-subset -B
-	$(MAKE)  subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-after.tsv
+	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-after.tsv
 	@echo "Subset metrics before..."
 	cat $(TMPDIR)/subset-metrics-before.tsv
 	@echo "Subset metrics after..."
@@ -406,7 +407,7 @@ update-rare-subset:
 
 
 ######################################################
-##### Mondo External Content Pipeline ################
+##### Mondo Externally Managed Content Pipeline ######
 ######################################################
 
 ####################################
