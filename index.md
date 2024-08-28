@@ -10,7 +10,7 @@ author_profile: true
 The Mondo Disease Ontology (Mondo) aims to harmonize disease definitions across the world. The name Mondo comes from the latin word 'mundus' and means 'for the world.'
 
 - [About](#about)
-- [How was it created?](#created)
+- [How was Mondo created?](#created)
 - [Summary statistics](#stats)
 - [Contribute](#contribute)
 - [License](#license)
@@ -31,6 +31,8 @@ For more details, please see these [slides](https://docs.google.com/presentation
 ## Summary statistics
 
 ### Summary statistics across all Mondo concepts
+See each release and statistics at: [MONDO Releases](https://github.com/monarch-initiative/mondo/tags)
+
 Version at: https://github.com/monarch-initiative/mondo/releases/tag/v2022-03-01
 
 Disease term feature | Count
@@ -55,7 +57,7 @@ Cancers (including neoplasms) | 4,298
 Mendelian diseases |  11,380
 
 <a name="created"></a> 
-## How was it created?    
+## How was Mondo created?    
 
 Mondo is a semi-automatically constructed ontology that merges in multiple disease resources to yield a coherent merged ontology. See sources [here](https://mondo.monarchinitiative.org/pages/sources/). Original versions of Mondo were constructed entirely automatically and used the IDs of source databases and ontologies. Later, additional manually curated cross-ontology axioms were added, and a native Mondo ID system was used to avoid confusion with source databases.
 
