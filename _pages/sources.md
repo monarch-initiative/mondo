@@ -16,6 +16,7 @@ Medical Subject Headings | MESH | xref/Alignments | [https://id.nlm.nih.gov/mesh
 Unified Medical Language System | UMLS | xref/Alignments | [https://www.nlm.nih.gov/research/umls/index.html](https://www.nlm.nih.gov/research/umls/index.html)
 ICD - ICD-9 - International Classification of Diseases | ICD9 | xref/Alignments | [https://www.cdc.gov/nchs/icd/icd9.htm](https://www.cdc.gov/nchs/icd/icd9.htm)
 ICD - ICD-10 - International Classification of Diseases | ICD10 | xref/Alignments | [https://www.cdc.gov/nchs/icd/icd10cm.htm](https://www.cdc.gov/nchs/icd/icd10cm.htm)
+ICD11 Foundation | icd11.foundation | xref/Alignments | [https://icd.who.int/dev11/](https://icd.who.int/dev11/) 
 Experimental Factor Ontology | EFO | xref/Alignments* | [https://www.ebi.ac.uk/efo/](https://www.ebi.ac.uk/efo/)
 Disease Ontology | DO | Source | [http://www.obofoundry.org/ontology/doid.html](http://www.obofoundry.org/ontology/doid.html)
 Mental Functioning Ontology | MF | Source | [http://www.obofoundry.org/ontology/mf.html](http://www.obofoundry.org/ontology/mf.html)
