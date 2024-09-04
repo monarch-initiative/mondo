@@ -145,4 +145,5 @@ Notify the project manager that the release should be announced on Mastodon.
 ### Email Mondo Users
 Send an email to Mondo users: mondo-users@googlegroups.com  
 (Note - the recipients usually a picture of someone's pet to be included.)
+1. Subject: The new Mondo release is available
 1. Update the Mondo release template with highlights of the releases, upcoming changes coming, announcements, etc.
