@@ -48,22 +48,29 @@ _Note: While the release is running, don't shut your laptop or switch between re
 
 ## Prepare the release
 1. Do a docker pull: `docker pull obolibrary/odkfull:dev`
-1. Pull master
-1. Run command: `cd mondo/src/ontology/` (navigate to folder on your computer)
-1. `sh run.sh make IMP=false all -B` 
+    - note, this step should not be required anymore.    
+1. Pull master, and navigate to the `mondo/src/ontology` folder on your computer
+1. **Run command: `sh run.sh make IMP=false all -B`** 
     - note, this takes 1+ hour(s)
     - note that we are using the dev image as it is always up to date with the Python dependencies.
-1. Make sure you see ‘release finished’ after the command has run
-1. Open mondo.owl and mondo.obo and check the latest changes are there and it looks reasonable
-1. Run `sh run.sh make prepare_release_direct`
-1. WARNING: TO BE UPDATED Review the file `src/ontology/reports/mondo_release_diff.md`. 
-    - There is now a new QC section up top, `---START LOG:` to `---END LOG:`. Review the text and _delete it from the file_ if there is no suspicious output.
-    - note that this file is 'gitignore', ie one only sees it if they are the one running the release.
+1. Review before the next step:
+    1. Make sure you see ‘release finished’ after the command has run
+    1. Open mondo.owl and mondo.obo and check the latest changes are there and it looks reasonable
+1. **Run `sh run.sh make prepare_release_direct`**
+    1. reports files will be created after running this command.
 1. Commit changes to a branch
-      1. Create a branch and commit the changes on the branch
-      1. Do a pull request (PR)
-      1. Wait for GitHub Actions/QC to pass
-      1. Merge PR
+    1. Create a branch and commit the changes on the branch
+    1. Do a pull request (PR)
+    1. Wait for GitHub Actions/QC to pass
+    1. Merge PR
+1. Note: review can be supported by the following files: 
+    - `src/ontology/reports/mondo_release_diff.md` 
+       - This file include a summary of the new terms, updated definition, new obsoletion, etc...
+       - There is now a new QC section up top, `---START LOG:` to `---END LOG:`. Review the text and _delete it from the file_ if there is no suspicious output.
+       - note that this file is 'gitignore', ie one only sees it if they are the one running the release.
+    - `src/ontology/reports/difference_release_base.md`
+       - similar to the file above, this file include new terms, updated definition, etc, but also update in mappings, subclass of, subsets, etc.
+
 
 ## Initial Setup:
 Make sure the initial setup (see above) has been done:  
@@ -105,14 +112,19 @@ Press Enter to open github.com in your browser...
     2. Ensure that it says [name] (eg nicolevasilevsky) released this 1 days ago or now
     3. Ensure it has all release artifacts attached to it (there should be 22 assets in the draft. Note, there will be 24 after the release is published.)
     4. Check this file to ensure you see the expected changes (spot check a few changes): download the mondo.obo or mondo.owl from the asset list in the release.
-1. WARNING: TO BE UPDATED Write a description of the release
+1. Write a description of the release
     1. Add the release description to the release tab:
           - All of the releases can be found under the [releases](https://github.com/monarch-initiative/mondo/releases) tab.
           - To add a description of the release:
                 - click edit
-                - in the 'describe this release' section add the content from the file `src/ontology/reports/mondo_release_diff.md`. (reminder that this file is 'gitignore', ie one only sees it if they are the one running the release.)
+                - in the 'describe this release' section add a curated content from the file `src/ontology/reports/difference_release_base.md`. 
+                    - the format of this files allows for open/close sections in the GH/Markdown format
+                    - titles should be updated to be less jargony to users
+                    - sections should be reorganized to add the new terms first, etc
+                    - some sections should not be added as they are confusing (e.g. mappings update, change in SubClasses,etc.)
+                    - when the list is too long, it should be shortened
          - click "save draft"
-    2. WARNING: TO BE UPDATED  Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
+    2. IGNORE AS WE DO NOT DO THIS ANYMORE  Add the summary of changes to [changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md).
          - go to changes.md
          - click edit
          - add the name of the new release and the content from the change log text file above.
@@ -133,22 +145,4 @@ Notify the project manager that the release should be announced on Mastodon.
 ### Email Mondo Users
 Send an email to Mondo users: mondo-users@googlegroups.com  
 (Note - the recipients usually a picture of someone's pet to be included.)
-
-### Subject
-Mondo release + obsoletion candidates
-
-### Body
-
-Hello,  
-
-The latest Mondo release is now available here: https://github.com/monarch-initiative/mondo/releases  
-
-Please find a list of terms that are candidates to be obsoleted or merged here: https://github.com/monarch-initiative/mondo/blob/master/src/ontology/reports/mondo_obsoletioncandidates.tsv
-
-Note - the proposed obsoletion date is listed in the table.  
-
-If you have an open issue that needs to be prioritized, please email us or comment on the ticket.  
-
-Thank you all,  
-
-Nicole and Sabrina on behalf of the Mondo team  
+1. Update the Mondo release template with highlights of the releases, upcoming changes coming, announcements, etc.
