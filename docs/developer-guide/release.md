@@ -49,7 +49,7 @@ _Note: While the release is running, don't shut your laptop or switch between re
 ## Prepare the release
 1. Do a docker pull: `docker pull obolibrary/odkfull:dev`
     - note, this step should not be required anymore.    
-1. Pull master, and navigate to the `mondo/src/ontology` folder on your computer
+1. Pull master, create a branch, and navigate to the `mondo/src/ontology` folder on your computer
 1. **Run command: `sh run.sh make IMP=false all -B`** 
     - note, this takes 1+ hour(s)
     - note that we are using the dev image as it is always up to date with the Python dependencies.
@@ -59,7 +59,7 @@ _Note: While the release is running, don't shut your laptop or switch between re
 1. **Run `sh run.sh make prepare_release_direct`**
     1. reports files will be created after running this command.
 1. Commit changes to a branch
-    1. Create a branch and commit the changes on the branch
+    1. Commit the changes on the branch (you should already be on a branch)
     1. Do a pull request (PR)
     1. Wait for GitHub Actions/QC to pass
     1. Merge PR
@@ -145,5 +145,5 @@ Notify the project manager that the release should be announced on Mastodon.
 ### Email Mondo Users
 Send an email to Mondo users: mondo-users@googlegroups.com  
 (Note - the recipients usually a picture of someone's pet to be included.)
-1. Subject: The new Mondo release is available
+1. Subject: The <INSERT-MONTH> Mondo release is available
 1. Update the Mondo release template with highlights of the releases, upcoming changes coming, announcements, etc.
