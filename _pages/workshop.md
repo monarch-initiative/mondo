@@ -43,7 +43,10 @@ Notes are available [here](https://docs.google.com/document/d/16eMB-x3iANHfiTxw7
 
 Date | Time | Presenter (Organization)| Topic | Recording 
 -- | -- | -- | -- | -- 
-Sep 20 | 9AM PT/12PM ET | TBD | Externally managed metadata in Mondo
+Dec 13 | 9AM PT/12PM ET | TBD | |
+Nov 15 | Canceled
+Oct 18 | 9AM PT/12PM ET | TBD | | 
+Sep 20 | 9AM PT/12PM ET | Sabrina Toro and Trish Whetzel ([Monarch Initiative](https://monarchinitiative.org/)) | Externally managed metadata in Mondo
 August 23 | Summer Break
 July 26 | Summer Break
 June 28 | 9AM PT/12PM ET | Toyofumi Fujiwara ([DBCLS](https://dbcls.rois.ac.jp/index-en.html)) |  Enhancing Interoperability of Biomedical Resources Using Ontologies | [Here](https://drive.google.com/file/d/1AAXbk6KW2w08G4uYzfBUZHccsBM3vUlP/view?usp=sharing)
