@@ -1,5 +1,5 @@
 ## Automatic Mondo Quality Control Checks for Externally Managed Content
-A subset of the extensive Mondo QC checks are automatically run on the externally managed content. To limit delay due to QC failure, any content from external providers that does not pass these QC checks is not included in Mondo until the content is updated by the data providers and passes the QC checks. Reports of these QC checks will be available for review of any errors so that any needed changes can be made.
+A subset of the extensive Mondo QC checks are automatically run on the externally managed content (EMC). To limit delay due to QC failure, any content from external providers that does not pass these QC checks is not included in Mondo until the content is updated by the data providers and passes the QC checks. Reports of these QC checks will be available for review of any errors so that any needed changes can be made.
 
 ### QC Checks for Externally Managed Content
 | Error | Description | SPARQL Query | 
