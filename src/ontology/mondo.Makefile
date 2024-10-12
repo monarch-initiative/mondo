@@ -1,6 +1,8 @@
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
 DOSDPT=dosdp-tools
 TEMPLATES_DIR=../templates
+MONDO_STATS_SPARQLDIR = ../sparql/mondo_stats
+MONDO_STATS_REPORTS = reports/mondo_stats
 
 .PHONY: dirs python-install-dependencies update-exclusion-reasons
 dirs:
@@ -225,6 +227,44 @@ reports/%-rare-diseases.tsv: $(ONT)-base.owl reports/%-rare-diseases.txt
 
 rare-disease-reports: reports/old-rare-diseases.tsv reports/new-rare-diseases.tsv
 	python ../scripts/filter_rare_disease_list.py reports/old-rare-diseases.tsv reports/new-rare-diseases.tsv reports/added-rare-disases.tsv reports/removed-rare-diseases.tsv
+
+
+#########################################
+######### Create Mondo Stats ############
+#########################################
+# Create overview Mondo stats as needed for presentations. This includes: count of disease classes, terms w/definitions, xrefs,
+# exact, related, narrow, and broad synonyms, and count of rare disease, cancer, infectious, and hereditary disease classes.
+
+# Get the current date including the timezone
+current_date := $(shell date)
+
+.PHONY: create-mondo-stats-summary-file create-mondo-stats
+
+# Create the directory if it does not already exist
+$(MONDO_STATS_REPORTS):
+	mkdir -p $(MONDO_STATS_REPORTS)
+
+# Create the Mondo Stats Summary file
+create-mondo-stats-summary-file: reasoned.owl $(MONDO_STATS_REPORTS)
+	$(ROBOT) query --input reasoned.owl \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-classes.sparql $(MONDO_STATS_REPORTS)/tmp_01_class_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-classes-with-definitions.sparql $(MONDO_STATS_REPORTS)/tmp_03_classDefinition_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-xrefs.sparql $(MONDO_STATS_REPORTS)/tmp_02_xref_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-exact-synonyms.sparql $(MONDO_STATS_REPORTS)/tmp_04_exactSynonym_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-related-synonyms.sparql $(MONDO_STATS_REPORTS)/tmp_05_relatedSynonym_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-narrow-synonyms.sparql $(MONDO_STATS_REPORTS)/tmp_06_narrowSynonym_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-broad-synonyms.sparql $(MONDO_STATS_REPORTS)/tmp_07_broadSynonym_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-rare-diseases-classes.sparql  $(MONDO_STATS_REPORTS)/tmp_08_rareDiseaseClass_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-infectious-diseases.sparql $(MONDO_STATS_REPORTS)/tmp_09_infectiousDiseaseClass_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-cancer-diseases.sparql $(MONDO_STATS_REPORTS)/tmp_10_cancerDiseaseClass_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-hereditary-diseases.sparql $(MONDO_STATS_REPORTS)/tmp_11_hereditaryDiseaseClass_count.tsv
+	echo "All Mondo Stats created on: $(current_date)" > $(MONDO_STATS_REPORTS)/all_mondo_stats.txt
+	cat $(MONDO_STATS_REPORTS)/tmp_* >> $(MONDO_STATS_REPORTS)/all_mondo_stats.txt
+	rm $(MONDO_STATS_REPORTS)/tmp_*
+
+create-mondo-stats:
+	$(MAKE) create-mondo-stats-summary-file -B
+
 
 #############################################
 ##### One-time scripts ######################
