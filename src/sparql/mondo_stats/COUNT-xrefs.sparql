@@ -9,12 +9,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT (COUNT(DISTINCT ?xref) AS ?xrefCount)
 WHERE {
   ?class rdfs:subClassOf* obo:MONDO_0000001 .
-  
+  ?class oboInOwl:hasDbXref ?xref .
+
   FILTER NOT EXISTS {
     ?class owl:deprecated "true"^^xsd:boolean
   }
-  
-  ?class oboInOwl:hasDbXref ?xref .
 
   FILTER (isIRI(?class) && STRSTARTS(str(?class), "http://purl.obolibrary.org/obo/MONDO_"))
 }
