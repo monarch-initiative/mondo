@@ -238,30 +238,31 @@ rare-disease-reports: reports/old-rare-diseases.tsv reports/new-rare-diseases.ts
 # Get the current date including the timezone
 current_date := $(shell date)
 
-.PHONY: create-mondo-stats-summary-file create-mondo-stats
-
 # Create the directory if it does not already exist
-$(MONDO_STATS_REPORTS):
+$(MONDO_STATS_REPORTS_DIR):
 	mkdir -p $@
 
 # Create the Mondo Stats Summary file
-create-mondo-stats-summary-file: reasoned.owl $(MONDO_STATS_REPORTS)
+.PHONY: create-mondo-stats-summary-file
+create-mondo-stats-summary-file: reasoned.owl | $(MONDO_STATS_REPORTS_DIR)
 	$(ROBOT) query --input reasoned.owl \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-classes.sparql $(MONDO_STATS_REPORTS)/tmp_01_class_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-classes-with-definitions.sparql $(MONDO_STATS_REPORTS)/tmp_03_classDefinition_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-xrefs.sparql $(MONDO_STATS_REPORTS)/tmp_02_xref_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-exact-synonyms.sparql $(MONDO_STATS_REPORTS)/tmp_04_exactSynonym_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-related-synonyms.sparql $(MONDO_STATS_REPORTS)/tmp_05_relatedSynonym_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-narrow-synonyms.sparql $(MONDO_STATS_REPORTS)/tmp_06_narrowSynonym_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-broad-synonyms.sparql $(MONDO_STATS_REPORTS)/tmp_07_broadSynonym_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-rare-diseases-classes.sparql  $(MONDO_STATS_REPORTS)/tmp_08_rareDiseaseClass_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-infectious-diseases.sparql $(MONDO_STATS_REPORTS)/tmp_09_infectiousDiseaseClass_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-cancer-diseases.sparql $(MONDO_STATS_REPORTS)/tmp_10_cancerDiseaseClass_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-hereditary-diseases.sparql $(MONDO_STATS_REPORTS)/tmp_11_hereditaryDiseaseClass_count.tsv
-	echo "All Mondo Stats created on: $(current_date)" > $(MONDO_STATS_REPORTS)/all_mondo_stats.txt
-	cat $(MONDO_STATS_REPORTS)/tmp_* >> $(MONDO_STATS_REPORTS)/all_mondo_stats.txt
-	rm $(MONDO_STATS_REPORTS)/tmp_*
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-classes.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_01_class_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-classes-with-definitions.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_03_classDefinition_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-xrefs.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_02_xref_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-exact-synonyms.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_04_exactSynonym_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-related-synonyms.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_05_relatedSynonym_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-narrow-synonyms.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_06_narrowSynonym_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-broad-synonyms.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_07_broadSynonym_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-rare-diseases-classes.sparql  $(MONDO_STATS_REPORTS_DIR)/tmp_08_rareDiseaseClass_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-infectious-diseases.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_09_infectiousDiseaseClass_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-cancer-diseases.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_10_cancerDiseaseClass_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-hereditary-diseases.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_11_hereditaryDiseaseClass_count.tsv
+	echo "All Mondo Stats created on: $(current_date)" > $(MONDO_STATS_REPORTS_DIR)/all_mondo_stats.txt
+	cat $(MONDO_STATS_REPORTS_DIR)/tmp_* >> $(MONDO_STATS_REPORTS_DIR)/all_mondo_stats.txt
+	rm $(MONDO_STATS_REPORTS_DIR)/tmp_*
 
+# Create general Mondo Stats
+.PHONY: create-mondo-stats
 create-mondo-stats:
 	$(MAKE) create-mondo-stats-summary-file -B
 
