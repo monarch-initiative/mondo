@@ -2,7 +2,7 @@ ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patter
 DOSDPT=dosdp-tools
 TEMPLATES_DIR=../templates
 MONDO_STATS_SPARQLDIR = ../sparql/mondo_stats
-MONDO_STATS_REPORTS = reports/mondo_stats
+MONDO_STATS_REPORTS_DIR = reports/mondo_stats
 
 .PHONY: dirs python-install-dependencies update-exclusion-reasons
 dirs:
@@ -242,7 +242,7 @@ current_date := $(shell date)
 
 # Create the directory if it does not already exist
 $(MONDO_STATS_REPORTS):
-	mkdir -p $(MONDO_STATS_REPORTS)
+	mkdir -p $@
 
 # Create the Mondo Stats Summary file
 create-mondo-stats-summary-file: reasoned.owl $(MONDO_STATS_REPORTS)
