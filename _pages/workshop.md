@@ -45,7 +45,7 @@ Date | Time | Presenter (Organization)| Topic | Recording
 -- | -- | -- | -- | -- 
 Dec 13 | 9AM PT/12PM ET | Nicole Vasilevsky ([Critical Path Institute](https://c-path.org/))| Epilepsy Workshop Summary |
 Nov 15 | Canceled
-Oct 18 | 9AM PT/12PM ET | TBD | | 
+Oct 18 | Canceled 
 Sep 20 | 9AM PT/12PM ET | Sabrina Toro and Trish Whetzel ([Monarch Initiative](https://monarchinitiative.org/)) | Externally managed metadata in Mondo | [Here](https://drive.google.com/file/d/1knxeQhlCk_gEmhy5LxnVF1vvrlCoR0cg/view?usp=sharing)
 August 23 | Summer Break
 July 26 | Summer Break
