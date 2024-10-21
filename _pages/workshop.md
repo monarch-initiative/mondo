@@ -29,7 +29,7 @@ The goal of this workshop series is to review the classification of terms in Mon
 - Part 2: October 25 (Friday) from 8-10 AM ([see your local time here](https://everytimezone.com/s/e594d712))  
 
 ### Agenda
-The emerging agenda is available [here](https://docs.google.com/document/d/1Cg6fSNXaC3PZGIEnWHq_R8InKkQ1J2wVgkpbbxHhLZY/edit)
+The emerging agenda is available [here](https://docs.google.com/document/d/1Cg6fSNXaC3PZGIEnWHq_R8InKkQ1J2wVgkpbbxHhLZY/edit). To RSVP, please fill out this [form](https://docs.google.com/forms/d/e/1FAIpQLSd2vJU6XoUPmOC2S-YNcO4wuQOKrSo4YjGcxKFNrbXmGUybaA/viewform).
 
 ### Recording
 The recording will be shared after the event.
