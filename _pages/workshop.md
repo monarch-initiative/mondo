@@ -21,8 +21,11 @@ Details and summaries for upcoming and past Mondo workshops.
 <a name="Oct-2024"></a> 
 ## Mondo Epilepsy Workshop
 
-### Part 1: October 25, 2024
-### Part 2: November 15, 2024
+### Part 1: October 25 (Friday) from 8-10 AM ([see your local time here](https://everytimezone.com/s/e594d712))  
+### Part 2: October 25 (Friday) from 8-10 AM ([see your local time here](https://everytimezone.com/s/e594d712))  
+
+
+
 
 <a name="outreach"></a> 
 ## Mondo Outreach Calls
