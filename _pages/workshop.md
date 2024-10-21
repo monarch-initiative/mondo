@@ -35,7 +35,7 @@ The emerging agenda is available [here](https://docs.google.com/document/d/1Cg6f
 The recording will be shared after the event.
 
 ### Funding
-NHGRI Phenomics First (1RM1HG010860-01)
+Funded by NHGRI Phenomics First (1RM1HG010860-01) and the [Critical Path Institute](https://c-path.org/fda-acknowledgement/).
 
 <a name="outreach"></a> 
 ## Mondo Outreach Calls
