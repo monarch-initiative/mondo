@@ -21,11 +21,21 @@ Details and summaries for upcoming and past Mondo workshops.
 <a name="Oct-2024"></a> 
 ## Mondo Epilepsy Workshop
 
-### Part 1: October 25 (Friday) from 8-10 AM ([see your local time here](https://everytimezone.com/s/e594d712))  
-### Part 2: October 25 (Friday) from 8-10 AM ([see your local time here](https://everytimezone.com/s/e594d712))  
+### Description
+The goal of this workshop series is to review the classification of terms in Mondo based on your expert opinions, to ensure that the epilepsy branch is scientifically accurate, aligns with the current understanding of the disease features, and is maximally useful for your projects.
 
+### Date and Time
+- Part 1: October 25 (Friday) from 8-10 AM ([see your local time here](https://everytimezone.com/s/e594d712))  
+- Part 2: October 25 (Friday) from 8-10 AM ([see your local time here](https://everytimezone.com/s/e594d712))  
 
+### Agenda
+The emerging agenda is available [here](https://docs.google.com/document/d/1Cg6fSNXaC3PZGIEnWHq_R8InKkQ1J2wVgkpbbxHhLZY/edit)
 
+### Recording
+The recording will be shared after the event.
+
+### Funding
+NHGRI Phenomics First (1RM1HG010860-01)
 
 <a name="outreach"></a> 
 ## Mondo Outreach Calls
