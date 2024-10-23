@@ -1264,6 +1264,10 @@ all: config/exclusion_reasons.tsv
 $(TMPDIR)/subclass-confirmed.robot.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/reports/sync-subClassOf.confirmed.tsv" -O $@
 
+# TODO WARNING THE URL POINTS TO A BRANCH!
+$(TMPDIR)/synonyms-confirmed.robot.tsv:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/sync1-synonyms/src/ontology/reports/sync-synonym/sync-synonyms.confirmed.robot.tsv" -O $@
+
 $(TMPDIR)/new-exact-matches-%.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/lexmatch/unmapped_$*_lex_exact.tsv" -O $@
 
@@ -1297,6 +1301,24 @@ update-subclass-sync: $(TMPDIR)/subclass-confirmed.robot.owl tmp/subclass-axioms
 		mv tmp/$(SRC) $(SRC)
 		make NORM
 		mv NORM $(SRC)
+
+tmp/synonyms-axioms.owl: $(SRC)
+	$(ROBOT) filter --input $(SRC) --term oboInOwl:hasExactSynonym --axioms annotation --preserve-structure false --trim false \
+		--drop-axiom-annotations "oboInOwl:source=~'(DOID|ICD10CM|icd11.foundation|NCIT|OMIM|OMIMPS|Orphanet):.*'" \
+		-o $@
+
+# This command updates mondo-edit with all the confirmed synonyms evidence from the mondo-ingest repo
+.PHONY: update-synonyms-sync
+update-synonyms-sync: $(TMPDIR)/synonyms-confirmed.robot.owl tmp/synonyms-axioms.owl
+	grep -vE '^synonym:.*EXACT' $(SRC) > tmp/$(SRC)
+	$(ROBOT) remove --input $(SRC) \
+		--term oboInOwl:hasExactSynonym --axioms annotation \
+		--trim false \
+		merge -i $< -i tmp/synonyms-axioms.owl --collapse-import-closure false \
+		convert -f obo --check false -o tmp/$(SRC)
+	mv tmp/$(SRC) $(SRC)
+	make NORM
+	mv NORM $(SRC)
 
 
 .PHONY: help
