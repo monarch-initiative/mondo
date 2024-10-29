@@ -27,6 +27,8 @@ Mondo’s development is coordinated with the [Human Phenotype Ontology (HPO)](h
 
 For more details, please see these [slides](https://docs.google.com/presentation/d/1piBa680WN4EmI2q5oGpXGeuurZNkP66E4iOSJtEM1Ro/edit#slide=id.p1).
 
+Mondo is generously supported by the NIH National Human Genome Research Institute Phenomics First Resource, NIH-NHGRI # 1 RM1 HG010860-01, a Center of Excellence in Genomic Science.
+
 <a name="stats"></a> 
 ## Summary statistics
 
