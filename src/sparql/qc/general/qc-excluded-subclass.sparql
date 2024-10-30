@@ -8,7 +8,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 
-# Tests if an animal disease made it into the rare disease subset
+# Tests if an excluded subclass of axiom is asserted between a Mondo class 
+# and a non-Mondo class, or between a Mondo class and a class expression
 
 SELECT DISTINCT ?entity ?property ?value WHERE
 {
