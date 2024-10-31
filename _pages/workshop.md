@@ -32,7 +32,7 @@ The goal of this workshop series is to review the classification of terms in Mon
 The emerging agenda is available [here](https://docs.google.com/document/d/1Cg6fSNXaC3PZGIEnWHq_R8InKkQ1J2wVgkpbbxHhLZY/edit). To RSVP, please fill out this [form](https://docs.google.com/forms/d/e/1FAIpQLSd2vJU6XoUPmOC2S-YNcO4wuQOKrSo4YjGcxKFNrbXmGUybaA/viewform).
 
 ### Recording
-Part 1 [recording here](https://www.youtube.com/@monarchinitiative/videos)
+Part 1 [recording here](https://www.youtube.com/watch?v=heVEumM5710)
 Part 2 _will be posted after the event
 
 ### Funding
