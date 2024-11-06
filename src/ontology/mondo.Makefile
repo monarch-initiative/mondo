@@ -1304,16 +1304,19 @@ update-subclass-sync: $(TMPDIR)/subclass-confirmed.robot.owl tmp/subclass-axioms
 
 tmp/synonyms-axioms.owl: $(SRC)
 	$(ROBOT) filter --input $(SRC) --term oboInOwl:hasExactSynonym --axioms annotation --preserve-structure false --trim false \
-		--drop-axiom-annotations "oboInOwl:source=~'(DOID|ICD10CM|icd11.foundation|NCIT|OMIM|OMIMPS|Orphanet):.*'" \
+		--drop-axiom-annotations "oboInOwl:source=~'(DOID|ICD10CM|ICD10WHO|icd11.foundation|NCIT|OMIM|OMIMPS|Orphanet):.*'" \
 		-o $@
 
 # This command updates mondo-edit with all the confirmed synonyms evidence from the mondo-ingest repo
 .PHONY: update-synonyms-sync
 update-synonyms-sync: $(TMPDIR)/synonyms-confirmed.robot.owl tmp/synonyms-axioms.owl
-	grep -vE '^synonym:.*EXACT' $(SRC) > tmp/$(SRC)
+	grep -vE '^synonym:.*(EXACT|NARROW|BROAD|RELATED)' $(SRC) > tmp/$(SRC)
 	$(ROBOT) remove --input $(SRC) \
-		--term oboInOwl:hasExactSynonym --axioms annotation \
-		--trim false \
+		--term oboInOwl:hasExactSynonym \
+		--term oboInOwl:hasNarrowSynonym \
+		--term oboInOwl:hasBroadSynonym \
+		--term oboInOwl:hasRelatedSynonym \
+		--axioms annotation --trim false \
 		merge -i $< -i tmp/synonyms-axioms.owl --collapse-import-closure false \
 		convert -f obo --check false -o tmp/$(SRC)
 	mv tmp/$(SRC) $(SRC)
