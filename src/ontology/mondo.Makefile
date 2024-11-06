@@ -1286,7 +1286,7 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 
 tmp/subclass-axioms.owl: $(SRC)
 	$(ROBOT) filter --input $(SRC) --axioms SubClassOf --preserve-structure false --trim false \
-		--drop-axiom-annotations "oboInOwl:source=~'(DOID|ICD10CM|icd11.foundation|NCIT|OMIM|OMIMPS|Orphanet):.*'" \
+		--drop-axiom-annotations "oboInOwl:source=~'($(SOURCES_REGEX)):.*'" \
 		-o $@
 
 # This command updates mondo-edit with all the confirmed subclass evidence from the mondo-ingest repo
@@ -1302,22 +1302,39 @@ update-subclass-sync: $(TMPDIR)/subclass-confirmed.robot.owl tmp/subclass-axioms
 		make NORM
 		mv NORM $(SRC)
 
+
+# All the synchronized sources
+SYNCED_SOURCES := DOID ICD10CM ICD10WHO icd11.foundation NCIT OMIM OMIMPS Orphanet
+
+# Join the sources with '|' to form a regex for use in commands
+SOURCES_REGEX := $(shell IFS='|'; echo "$(SYNCED_SOURCES)" | sed 's/ /|/g')
+
+# This target extracts all synonyms from mondo edit and then drops all axiom
+# annotations related to the sources that are in the list of curated sources
 tmp/synonyms-axioms.owl: $(SRC)
-	$(ROBOT) filter --input $(SRC) --term oboInOwl:hasExactSynonym --axioms annotation --preserve-structure false --trim false \
-		--drop-axiom-annotations "oboInOwl:source=~'(DOID|ICD10CM|ICD10WHO|icd11.foundation|NCIT|OMIM|OMIMPS|Orphanet):.*'" \
+	$(ROBOT) filter --input $(SRC) \
+		--term oboInOwl:hasExactSynonym \
+		--term oboInOwl:hasNarrowSynonym \
+		--term oboInOwl:hasBroadSynonym \
+		--term oboInOwl:hasRelatedSynonym \
+		--axioms annotation --preserve-structure false --trim false \
+		--drop-axiom-annotations "oboInOwl:source=~'($(SOURCES_REGEX)):.*'" \
 		-o $@
 
 # This command updates mondo-edit with all the confirmed synonyms evidence from the mondo-ingest repo
 .PHONY: update-synonyms-sync
 update-synonyms-sync: $(TMPDIR)/synonyms-confirmed.robot.owl tmp/synonyms-axioms.owl
-	grep -vE '^synonym:.*(EXACT|NARROW|BROAD|RELATED)' $(SRC) > tmp/$(SRC)
-	$(ROBOT) remove --input $(SRC) \
-		--term oboInOwl:hasExactSynonym \
-		--term oboInOwl:hasNarrowSynonym \
-		--term oboInOwl:hasBroadSynonym \
-		--term oboInOwl:hasRelatedSynonym \
-		--axioms annotation --trim false \
-		merge -i $< -i tmp/synonyms-axioms.owl --collapse-import-closure false \
+	$(ROBOT) \
+		remove --input $(SRC) \
+			--term oboInOwl:hasExactSynonym \
+			--term oboInOwl:hasNarrowSynonym \
+			--term oboInOwl:hasBroadSynonym \
+			--term oboInOwl:hasRelatedSynonym \
+			--axioms annotation --trim true \
+		merge \
+			-i $(TMPDIR)/synonyms-confirmed.robot.owl \
+			-i tmp/synonyms-axioms.owl \
+			--collapse-import-closure false \
 		convert -f obo --check false -o tmp/$(SRC)
 	mv tmp/$(SRC) $(SRC)
 	make NORM
