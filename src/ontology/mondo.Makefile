@@ -1318,7 +1318,7 @@ tmp/synonyms-axioms.owl: $(SRC)
 		--term oboInOwl:hasBroadSynonym \
 		--term oboInOwl:hasRelatedSynonym \
 		--axioms annotation --preserve-structure false --trim false \
-		--drop-axiom-annotations "oboInOwl:source=~'($(SOURCES_REGEX)):.*'" \
+		--drop-axiom-annotations "oboInOwl:hasDbXref=~'($(SOURCES_REGEX)):.*'" \
 		-o $@
 
 # This command updates mondo-edit with all the confirmed synonyms evidence from the mondo-ingest repo
