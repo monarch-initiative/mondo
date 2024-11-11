@@ -1,0 +1,35 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?class ?mondoCurie ?classLabel ?roProperty (GROUP_CONCAT(DISTINCT ?hgncIdentifier; separator=", ") AS ?hgncIdentifiers) (COALESCE(?source, "No Source") AS ?sourceAnnotation)
+WHERE {
+  ?class owl:equivalentClass ?equivClass ;
+         rdfs:label ?classLabel .
+
+  ?equivClass owl:intersectionOf/rdf:rest*/rdf:first ?component .
+  
+  ?component rdf:type owl:Restriction ;
+             owl:onProperty obo:RO_0004003 ;
+             owl:someValuesFrom ?hgncIdentifier .
+
+  # Filter for gene identifiers with HGNC prefix
+  FILTER(STRSTARTS(STR(?hgncIdentifier), "http://identifiers.org/hgnc/") || STRSTARTS(STR(?hgncIdentifier), "http://identifiers.org/ncbigene/"))
+
+  OPTIONAL {
+    ?annotation a owl:Axiom ;
+                owl:annotatedSource ?class ;
+                owl:annotatedProperty obo:RO_0004003 ;
+                owl:annotatedTarget ?hgncIdentifier ;
+                oboInOwl:source ?source .
+  }
+
+  BIND(REPLACE(STR(?class), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") AS ?mondoCurie)
+  BIND(STR(obo:RO_0004003) AS ?roProperty)
+}
+GROUP BY ?class ?mondoCurie ?classLabel ?roProperty ?source
+HAVING (COUNT(DISTINCT ?hgncIdentifier) > 1)
+ORDER BY ?mondoCurie
