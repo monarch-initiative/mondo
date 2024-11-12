@@ -1,0 +1,35 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+# Find classes with mismatched gene identifiers added as equivalentTo and subClassOf
+
+SELECT DISTINCT ?entity ?label ?equivGeneIdentifier ?subClassGeneIdentifier
+WHERE {
+  ?entity rdf:type owl:Class ;
+          rdfs:label ?label .
+  
+  # Equivalent class restriction
+  ?entity owl:equivalentClass ?equivClass .
+  ?equivClass owl:intersectionOf/rdf:rest*/rdf:first ?equivComponent .
+  
+  ?equivComponent rdf:type owl:Restriction ;
+                  owl:onProperty obo:RO_0004003 ;
+                  owl:someValuesFrom ?equivGeneIdentifier .
+  
+  # subClassOf restriction
+  ?entity rdfs:subClassOf ?subClassRestriction .
+  ?subClassRestriction rdf:type owl:Restriction ;
+                       owl:onProperty obo:RO_0004003 ;
+                       owl:someValuesFrom ?subClassGeneIdentifier .
+
+  # Filter for gene identifiers with HGNC or NCBIGene prefixes
+  FILTER(STRSTARTS(STR(?equivGeneIdentifier), "http://identifiers.org/hgnc/") || 
+         STRSTARTS(STR(?equivGeneIdentifier), "http://identifiers.org/ncbigene/"))
+  FILTER(STRSTARTS(STR(?subClassGeneIdentifier), "http://identifiers.org/hgnc/") || 
+         STRSTARTS(STR(?subClassGeneIdentifier), "http://identifiers.org/ncbigene/"))
+
+  # Filter for cases where the gene identifiers do not match
+  FILTER(?equivGeneIdentifier != ?subClassGeneIdentifier)
+}
