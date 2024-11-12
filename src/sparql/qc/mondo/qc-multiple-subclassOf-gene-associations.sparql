@@ -4,29 +4,19 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
-SELECT DISTINCT ?class ?mondoCurie ?classLabel ?roProperty (GROUP_CONCAT(DISTINCT ?geneIdentifier; separator=", ") AS ?geneIdentifiers) (COALESCE(?source, "No Source") AS ?sourceAnnotation)
+# Get classes that have more than 1 subClassOf gene association
+
+SELECT DISTINCT ?entity ?label (GROUP_CONCAT(DISTINCT ?geneIdentifier; separator=", ") AS ?geneIdentifiers)
 WHERE {
-  ?class rdfs:subClassOf ?restriction ;
-         rdfs:label ?classLabel .
+  ?entity rdfs:subClassOf ?restriction ;
+         rdfs:label ?label .
 
   ?restriction rdf:type owl:Restriction ;
                owl:onProperty obo:RO_0004003 ;
                owl:someValuesFrom ?geneIdentifier .
 
-  # Filter for gene identifiers with HGNC or NCBIGene prefixes
+  # Filter for gene identifiers with HGNC or NCBIGene prefixes or NCBI prefix (for non-human genes)
   FILTER(STRSTARTS(STR(?geneIdentifier), "http://identifiers.org/hgnc/") || STRSTARTS(STR(?geneIdentifier), "http://identifiers.org/ncbigene/"))
-
-  OPTIONAL {
-    ?annotation a owl:Axiom ;
-                owl:annotatedSource ?class ;
-                owl:annotatedProperty obo:RO_0004003 ;
-                owl:annotatedTarget ?geneIdentifier ;
-                oboInOwl:source ?source .
-  }
-
-  BIND(REPLACE(STR(?class), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") AS ?mondoCurie)
-  BIND(STR(obo:RO_0004003) AS ?roProperty)
 }
-GROUP BY ?class ?mondoCurie ?classLabel ?roProperty ?source
+GROUP BY ?entity ?label
 HAVING (COUNT(DISTINCT ?geneIdentifier) > 1)
-ORDER BY ?mondoCurie

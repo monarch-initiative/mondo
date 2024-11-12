@@ -5,31 +5,21 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT DISTINCT ?class ?mondoCurie ?classLabel ?roProperty (GROUP_CONCAT(DISTINCT ?hgncIdentifier; separator=", ") AS ?hgncIdentifiers) (COALESCE(?source, "No Source") AS ?sourceAnnotation)
+# Get classes that have more than 1 equivalentTo gene association
+
+SELECT DISTINCT ?entity ?label (GROUP_CONCAT(DISTINCT ?geneIdentifier; separator=", ") AS ?geneIdentifiers)
 WHERE {
-  ?class owl:equivalentClass ?equivClass ;
-         rdfs:label ?classLabel .
+  ?entity owl:equivalentClass ?equivClass ;
+         rdfs:label ?label .
 
   ?equivClass owl:intersectionOf/rdf:rest*/rdf:first ?component .
   
   ?component rdf:type owl:Restriction ;
              owl:onProperty obo:RO_0004003 ;
-             owl:someValuesFrom ?hgncIdentifier .
+             owl:someValuesFrom ?geneIdentifier .
 
-  # Filter for gene identifiers with HGNC prefix
-  FILTER(STRSTARTS(STR(?hgncIdentifier), "http://identifiers.org/hgnc/") || STRSTARTS(STR(?hgncIdentifier), "http://identifiers.org/ncbigene/"))
-
-  OPTIONAL {
-    ?annotation a owl:Axiom ;
-                owl:annotatedSource ?class ;
-                owl:annotatedProperty obo:RO_0004003 ;
-                owl:annotatedTarget ?hgncIdentifier ;
-                oboInOwl:source ?source .
-  }
-
-  BIND(REPLACE(STR(?class), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") AS ?mondoCurie)
-  BIND(STR(obo:RO_0004003) AS ?roProperty)
+  # Filter for gene identifiers with HGNC prefix or NCBI prefix (for non-human genes)
+  FILTER(STRSTARTS(STR(?geneIdentifier), "http://identifiers.org/hgnc/") || STRSTARTS(STR(?geneIdentifier), "http://identifiers.org/ncbigene/"))
 }
-GROUP BY ?class ?mondoCurie ?classLabel ?roProperty ?source
-HAVING (COUNT(DISTINCT ?hgncIdentifier) > 1)
-ORDER BY ?mondoCurie
+GROUP BY ?entity ?label
+HAVING (COUNT(DISTINCT ?geneIdentifier) > 1)
