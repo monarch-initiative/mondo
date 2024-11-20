@@ -1,6 +1,7 @@
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 ## This QC check ensures that if we have a source for subset, it must 
 ## also be mapped to the same term as the subset
@@ -29,6 +30,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
             owl:annotatedTarget ?xref ;
             oboInOwl:source ?mondo_source .
     }
+    FILTER NOT EXISTS { ?entity owl:deprecated "true"^^xsd:boolean . }
     FILTER (STRSTARTS(str(?xref), "Orphanet:"))
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
     BIND(?xref as ?value)
