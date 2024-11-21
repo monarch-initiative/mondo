@@ -12,17 +12,17 @@ This pattern is meant to be used for (1) OMIM Mendelian diseases (ie unitary gen
 * [https://orcid.org/0000-0002-4142-7153](https://orcid.org/0000-0002-4142-7153) 
 ## Name 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} caused by variation in {[gene](http://purl.obolibrary.org/obo/SO_0000704)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0700096)} caused by variation in {[gene](http://purl.obolibrary.org/obo/SO_0000704)}
 
 ## Annotations 
 
-* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[gene](http://purl.obolibrary.org/obo/SO_0000704)} {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[gene](http://purl.obolibrary.org/obo/SO_0000704)} {[disease](http://purl.obolibrary.org/obo/MONDO_0700096)}
 
 ## Definition 
 
-Any {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} in which the cause of the disease is a variation in the {[gene](http://purl.obolibrary.org/obo/SO_0000704)} gene.
+Any {[disease](http://purl.obolibrary.org/obo/MONDO_0700096)} in which the cause of the disease is a variation in the {[gene](http://purl.obolibrary.org/obo/SO_0000704)} gene.
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has material basis in germline mutation in](http://purl.obolibrary.org/obo/RO_0004003) some {[gene](http://purl.obolibrary.org/obo/SO_0000704)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0700096)} and [has material basis in germline mutation in](http://purl.obolibrary.org/obo/RO_0004003) some {[gene](http://purl.obolibrary.org/obo/SO_0000704)}
 

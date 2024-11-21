@@ -1,0 +1,19 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Count the total number of related synonyms on non-obsolete Mondo classes
+
+SELECT (COUNT(?relatedSynonym) AS ?relatedSynonymCount)
+WHERE {
+  ?class rdfs:subClassOf* obo:MONDO_0000001 ;
+            oboInOwl:hasRelatedSynonym ?relatedSynonym .
+
+  FILTER NOT EXISTS {
+    ?class owl:deprecated "true"^^xsd:boolean
+  }
+
+  FILTER (isIRI(?class) && STRSTARTS(str(?class), "http://purl.obolibrary.org/obo/MONDO_"))
+}

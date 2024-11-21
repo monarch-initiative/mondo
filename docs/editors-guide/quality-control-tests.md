@@ -18,17 +18,29 @@ prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
 
 SELECT DISTINCT ?entity ?property ?value WHERE
 {
-  VALUES ?property { <http://purl.obolibrary.org/obo/mondo#rare> }
-  ?entity <http://www.geneontology.org/formats/oboInOwl#inSubset> ?property .
+  VALUES ?value { 
+    <http://purl.obolibrary.org/obo/mondo#rare> 
+    <http://purl.obolibrary.org/obo/mondo#nord_rare>
+    <http://purl.obolibrary.org/obo/mondo#orphanet_rare>
+    <http://purl.obolibrary.org/obo/mondo#gard_rare>
+    <http://purl.obolibrary.org/obo/mondo#inferred_rare>
+    <http://purl.obolibrary.org/obo/mondo#mondo_rare>
+  }
+  VALUES ?property { 
+    <http://www.geneontology.org/formats/oboInOwl#inSubset>
+  }
+  ?entity ?property ?value .
   ?entity rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0005583>
- FILTER NOT EXISTS {
+  
+  FILTER NOT EXISTS {
     ?entity owl:deprecated "true"^^xsd:boolean
   }
-   FILTER NOT EXISTS {
-      ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-animal-disease-rare.sparql .
-   }
+  
+  FILTER NOT EXISTS {
+    ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-animal-disease-rare.sparql .
+  }
+ 
  FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
-  BIND("Animal disease in Rare subset" as ?value)
 }
 
 ```
@@ -574,6 +586,36 @@ ORDER BY ?entity
 
 ```
 
+###  qc-obsoletionprotected.sparql
+
+```
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+#this query reports when an obsoletion-candidate tag is added to a protected term
+
+SELECT ?entity ?property ?value
+WHERE 
+  { 
+
+VALUES ?property { <http://purl.obolibrary.org/obo/mondo#obsoletion_candidate> }
+?entity <http://www.geneontology.org/formats/oboInOwl#inSubset> ?property.
+
+?entity a owl:Class; 
+  		rdfs:label ?value .
+
+?entity <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#obsoletion_protected>.
+
+  FILTER( !isBlank(?entity) && regex(str(?entity), "^http://purl.obolibrary.org/obo/MONDO_"))
+}
+
+```
+
 ###  qc-omim-subsumption.sparql
 
 ```
@@ -663,6 +705,7 @@ ORDER BY ?entity
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 ## This QC check ensures that if we have a source for subset, it must 
 ## also be mapped to the same term as the subset
@@ -691,6 +734,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
             owl:annotatedTarget ?xref ;
             oboInOwl:source ?mondo_source .
     }
+    FILTER NOT EXISTS { ?entity owl:deprecated "true"^^xsd:boolean . }
     FILTER (STRSTARTS(str(?xref), "Orphanet:"))
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
     BIND(?xref as ?value)
@@ -822,7 +866,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   	FILTER ((str(?source2)="MONDO:equivalentTo") || (str(?source2)="MONDO:obsoleteEquivalent") || (str(?source2)="MONDO:equivalentObsolete") || (str(?source2)="MONDO:obsoleteEquivalentObsolete"))
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
     FILTER (isIRI(?entity2) && STRSTARTS(str(?entity2), "http://purl.obolibrary.org/obo/MONDO_"))
-    BIND(?xref as ?property)
+    BIND(IRI(CONCAT("http://mondo.source/", ?xref)) AS ?property)
     BIND(str(?entity2) as ?value)
 }
 ORDER BY ?entity
@@ -1002,7 +1046,7 @@ SELECT ?entity ?property ?value
 
 WHERE
 {
-  VALUES ?property { RO:0004003 RO:0004029 }
+#  VALUES ?property { RO:0004003 RO:0004029 }
   ?entity rdfs:subClassOf [
         owl:onProperty ?property ;
         owl:someValuesFrom ?entity

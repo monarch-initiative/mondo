@@ -1,6 +1,8 @@
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
 DOSDPT=dosdp-tools
 TEMPLATES_DIR=../templates
+MONDO_STATS_SPARQLDIR = ../sparql/mondo_stats
+MONDO_STATS_REPORTS_DIR = reports/mondo_stats
 
 .PHONY: dirs python-install-dependencies update-exclusion-reasons
 dirs:
@@ -226,6 +228,45 @@ reports/%-rare-diseases.tsv: $(ONT)-base.owl reports/%-rare-diseases.txt
 rare-disease-reports: reports/old-rare-diseases.tsv reports/new-rare-diseases.tsv
 	python ../scripts/filter_rare_disease_list.py reports/old-rare-diseases.tsv reports/new-rare-diseases.tsv reports/added-rare-disases.tsv reports/removed-rare-diseases.tsv
 
+
+#########################################
+######### Create Mondo Stats ############
+#########################################
+# Create overview Mondo stats as needed for presentations. This includes: count of disease classes, terms w/definitions, xrefs,
+# exact, related, narrow, and broad synonyms, and count of rare disease, cancer, infectious, and hereditary disease classes.
+
+# Get the current date including the timezone
+current_date := $(shell date)
+
+# Create the directory if it does not already exist
+$(MONDO_STATS_REPORTS_DIR):
+	mkdir -p $@
+
+# Create the Mondo Stats Summary file
+.PHONY: create-mondo-stats-summary-file
+create-mondo-stats-summary-file: reasoned.owl | $(MONDO_STATS_REPORTS_DIR)
+	$(ROBOT) query --input reasoned.owl \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-classes.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_01_class_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-classes-with-definitions.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_03_classDefinition_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-xrefs.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_02_xref_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-exact-synonyms.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_04_exactSynonym_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-related-synonyms.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_05_relatedSynonym_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-narrow-synonyms.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_06_narrowSynonym_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-broad-synonyms.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_07_broadSynonym_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-rare-diseases-classes.sparql  $(MONDO_STATS_REPORTS_DIR)/tmp_08_rareDiseaseClass_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-infectious-diseases.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_09_infectiousDiseaseClass_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-cancer-diseases.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_10_cancerDiseaseClass_count.tsv \
+		--query $(MONDO_STATS_SPARQLDIR)/COUNT-hereditary-diseases.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_11_hereditaryDiseaseClass_count.tsv
+	echo "All Mondo Stats created on: $(current_date)" > $(MONDO_STATS_REPORTS_DIR)/all_mondo_stats.txt
+	cat $(MONDO_STATS_REPORTS_DIR)/tmp_* >> $(MONDO_STATS_REPORTS_DIR)/all_mondo_stats.txt
+	rm $(MONDO_STATS_REPORTS_DIR)/tmp_*
+
+# Create general Mondo Stats
+.PHONY: create-mondo-stats
+create-mondo-stats:
+	$(MAKE) create-mondo-stats-summary-file -B
+
+
 #############################################
 ##### One-time scripts ######################
 #############################################
@@ -285,6 +326,7 @@ tmp/external/processed-%.robot.owl:
 	mkdir -p tmp/external
 	if [ $(DOWNLOAD_EXTERNAL) = true ]; then wget "$(MONDO_INGEST_EXTERNAL_LOCATION)/processed-$*.robot.owl" -O $@; fi
 
+# This is the main pipeline to update all rare disease subsets
 update-rare-disease-subset:
 	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-before.tsv
 	$(MAKE) update-orphanet-rare -B
@@ -298,7 +340,7 @@ update-rare-disease-subset:
 	@echo "Subset metrics after..."
 	cat $(TMPDIR)/subset-metrics-after.tsv
 
-# This is the main pipeline to update all external content
+# This is the main pipeline to update all externally managed content(EMC)
 update-external-content:
 	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-before.tsv
 	$(MAKE) update-efo-subset -B
@@ -306,13 +348,13 @@ update-external-content:
 	$(MAKE) update-ordo-subsets -B
 	$(MAKE) update-nando -B
 	$(MAKE) update-medgen -B
-	$(MAKE)  subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-after.tsv
+	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-after.tsv
 	@echo "Subset metrics before..."
 	cat $(TMPDIR)/subset-metrics-before.tsv
 	@echo "Subset metrics after..."
 	cat $(TMPDIR)/subset-metrics-after.tsv
 
-# This is the main pipeline to update all external content
+# This is the main pipeline to update both externally managed content and rare disease subsets
 update-external-content-incl-rare:
 	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-before.tsv
 	$(MAKE) update-efo-subset -B
@@ -325,7 +367,7 @@ update-external-content-incl-rare:
 	$(MAKE) update-nord -B
 	$(MAKE) update-inferred-subset -B
 	$(MAKE) update-rare-subset -B
-	$(MAKE)  subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-after.tsv
+	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-after.tsv
 	@echo "Subset metrics before..."
 	cat $(TMPDIR)/subset-metrics-before.tsv
 	@echo "Subset metrics after..."
@@ -406,7 +448,7 @@ update-rare-subset:
 
 
 ######################################################
-##### Mondo External Content Pipeline ################
+##### Mondo Externally Managed Content Pipeline ######
 ######################################################
 
 ####################################
@@ -469,10 +511,10 @@ update-clingen:
 
 .PHONY: update-efo-subset
 update-efo-subset:
-	$(MAKE) $(TMPDIR)/external/processed-mondo-otar-subset.robot.owl $(TMPDIR)/external/processed-mondo-efo.robot.owl $(TMPDIR)/external/processed-efo-proxy-merges.robot.owl
+	$(MAKE) $(TMPDIR)/external/processed-mondo-otar-subset.robot.owl $(TMPDIR)/external/processed-mondo-efo.robot.owl
 	grep -vE '^(xref: EFO:|subset: otar)' $(SRC) > tmp/mondo-edit.tmp || true
 	mv $(TMPDIR)/mondo-edit.tmp mondo-edit.obo
-	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-mondo-otar-subset.robot.owl -i $(TMPDIR)/external/processed-mondo-efo.robot.owl -i $(TMPDIR)/external/processed-efo-proxy-merges.robot.owl --collapse-import-closure false \
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-mondo-otar-subset.robot.owl -i $(TMPDIR)/external/processed-mondo-efo.robot.owl --collapse-import-closure false \
 		query --use-graphs false --update ../sparql/update/update-equivalent-obsolete.ru \
 		convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
@@ -1238,6 +1280,10 @@ all: config/exclusion_reasons.tsv
 $(TMPDIR)/subclass-confirmed.robot.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/reports/sync-subClassOf.confirmed.tsv" -O $@
 
+# TODO WARNING THE URL POINTS TO A BRANCH!
+$(TMPDIR)/synonyms-confirmed.robot.tsv:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/sync1-synonyms/src/ontology/reports/sync-synonym/sync-synonyms.confirmed.robot.tsv" -O $@
+
 $(TMPDIR)/new-exact-matches-%.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/lexmatch/unmapped_$*_lex_exact.tsv" -O $@
 
@@ -1256,7 +1302,7 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 
 tmp/subclass-axioms.owl: $(SRC)
 	$(ROBOT) filter --input $(SRC) --axioms SubClassOf --preserve-structure false --trim false \
-		--drop-axiom-annotations "oboInOwl:source=~'(DOID|ICD10CM|icd11.foundation|NCIT|OMIM|OMIMPS|Orphanet):.*'" \
+		--drop-axiom-annotations "oboInOwl:source=~'($(SOURCES_REGEX)):.*'" \
 		-o $@
 
 # This command updates mondo-edit with all the confirmed subclass evidence from the mondo-ingest repo
@@ -1271,6 +1317,44 @@ update-subclass-sync: $(TMPDIR)/subclass-confirmed.robot.owl tmp/subclass-axioms
 		mv tmp/$(SRC) $(SRC)
 		make NORM
 		mv NORM $(SRC)
+
+
+# All the synchronized sources
+SYNCED_SOURCES := DOID ICD10CM ICD10WHO icd11.foundation NCIT OMIM OMIMPS Orphanet
+
+# Join the sources with '|' to form a regex for use in commands
+SOURCES_REGEX := $(shell IFS='|'; echo "$(SYNCED_SOURCES)" | sed 's/ /|/g')
+
+# This target extracts all synonyms from mondo edit and then drops all axiom
+# annotations related to the sources that are in the list of curated sources
+tmp/synonyms-axioms.owl: $(SRC)
+	$(ROBOT) filter --input $(SRC) \
+		--term oboInOwl:hasExactSynonym \
+		--term oboInOwl:hasNarrowSynonym \
+		--term oboInOwl:hasBroadSynonym \
+		--term oboInOwl:hasRelatedSynonym \
+		--axioms annotation --preserve-structure false --trim false \
+		--drop-axiom-annotations "oboInOwl:hasDbXref=~'($(SOURCES_REGEX)):.*'" \
+		-o $@
+
+# This command updates mondo-edit with all the confirmed synonyms evidence from the mondo-ingest repo
+.PHONY: update-synonyms-sync
+update-synonyms-sync: $(TMPDIR)/synonyms-confirmed.robot.owl tmp/synonyms-axioms.owl
+	$(ROBOT) \
+		remove --input $(SRC) \
+			--term oboInOwl:hasExactSynonym \
+			--term oboInOwl:hasNarrowSynonym \
+			--term oboInOwl:hasBroadSynonym \
+			--term oboInOwl:hasRelatedSynonym \
+			--axioms annotation --trim true \
+		merge \
+			-i $(TMPDIR)/synonyms-confirmed.robot.owl \
+			-i tmp/synonyms-axioms.owl \
+			--collapse-import-closure false \
+		convert -f obo --check false -o tmp/$(SRC)
+	mv tmp/$(SRC) $(SRC)
+	make NORM
+	mv NORM $(SRC)
 
 
 .PHONY: help
