@@ -455,14 +455,23 @@ update-rare-subset:
 ##### OMIM #####################
 ####################################
 
+$(TMPDIR)/mondo-genes-axioms.owl: $(SRC)
+	$(ROBOT) filter --input $(SRC) \
+		--term RO:0004003 \
+		--axioms SubClassOf \
+		--preserve-structure false \
+		--trim false \
+		--drop-axiom-annotations "oboInOwl:source=~'(OMIM):.*'" \
+		-o $@
+
+
 .PHONY: update-omim-genes
 update-omim-genes:
-	$(MAKE) $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl -B
+	$(MAKE) $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl $(TMPDIR)/mondo-genes-axioms.owl -B
 	# We need to be less aggressive here, as some gene relations were not originally sourced
 	# from OMIM, and were added, for example, for ClinGen.
-	grep -vE '^(relationship: has_material_basis_in_germline_mutation_in .*source="OMIM:)' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
-	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
-	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl --collapse-import-closure false \
+	$(ROBOT) remove -i $(SRC) --term RO:0004003 --axioms SubClassOf --preserve-structure false --trim true \
+		merge -i $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl -i $(TMPDIR)/mondo-genes-axioms.owl --collapse-import-closure false \
 		query --update ../sparql/update/omim-gene-equivalence.ru \
 		convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
