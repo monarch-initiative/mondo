@@ -1,0 +1,62 @@
+pattern_name: disease_series_by_groupofgenes
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_groupofgenes.yaml
+
+description: 'This pattern is for diseases that are caused by variation(s) in one of multiple genes, most often one gene belonging to a complex. For example: [non-severe combined immunodeficiency due to polymerase delta deficiency](http://purl.obolibrary.org/obo/MONDO_0800145)'. This pattern is shown for diseases where one of 2 (only) genes would be causal, but it is possible that more than 2 genes need to be included.
+# this pattern does not allow for disease term in which the cause of the disease is a variation in multiple genes at the same time.
+
+
+contributors:
+- https://orcid.org/0000-0002-4142-7153
+
+classes:
+  disease: MONDO:0700096
+  gene: SO:0000704
+
+relations:
+  has material basis in germline mutation in: RO:0004003
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  disease: '''disease'''
+  gene: '''gene'''
+
+#name:
+#  text: '%s caused by variation in %s'
+#  vars:
+#  - disease
+#  - gene
+
+#annotations:
+#- annotationProperty: exact_synonym
+#  text: '%s %s'
+#  vars:
+#  - gene
+#  - disease
+#- annotationProperty: exact_synonym
+#  text: '%s related %s'
+#  vars:
+#  - gene
+#  - disease
+#- annotationProperty: exact_synonym
+#  text: '%s caused by mutation in %s'
+#  vars:
+#  - disease
+#  - gene
+
+def:
+  text: Any %s in which the cause of the disease is a variation in either of %s or %s genes.
+  vars:
+  - disease
+  - gene
+  - gene
+
+equivalentTo:
+  text: '%s and ''has material basis in germline mutation in'' some (%s or %s)'
+  vars:
+  - disease
+  - gene
+  - gene
