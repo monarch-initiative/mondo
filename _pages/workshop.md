@@ -6,7 +6,7 @@ Details and summaries for upcoming and past Mondo workshops.
 
 ## Workshops and Outreach Calls
 
-- [Mondo Epilepsy Workshop (Part 1: October 25, 2024, Part 2: November 15, 2024)](#Oct-2024)
+- [Mondo Epilepsy Workshop (Part 1: October 25, 2024, Part 2: November 22, 2024)](#Oct-2024)
 - [Mondo Outreach Calls](#outreach)
 - [Mondo Workshop (February 01, 2023)](#feb-2023)
 - [Using the Mondo Disease Ontology for Disease Data Curation (June 08, 2022)](#june-2022)
@@ -26,7 +26,7 @@ The goal of this workshop series is to review the classification of terms in Mon
 
 ### Date and Time
 - Part 1: October 25 (Friday) from 8-10 AM ([see your local time here](https://everytimezone.com/s/e594d712))  
-- Part 2: October 25 (Friday) from 8-10 AM ([see your local time here](https://everytimezone.com/s/e594d712))  
+- Part 2: November 22 (Friday) from 8-10 AM ([see your local time here](https://everytimezone.com/s/e594d712))  
 
 ### Agenda
 The emerging agenda is available [here](https://docs.google.com/document/d/1Cg6fSNXaC3PZGIEnWHq_R8InKkQ1J2wVgkpbbxHhLZY/edit). To RSVP, please fill out this [form](https://docs.google.com/forms/d/e/1FAIpQLSd2vJU6XoUPmOC2S-YNcO4wuQOKrSo4YjGcxKFNrbXmGUybaA/viewform).
