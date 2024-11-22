@@ -1296,7 +1296,12 @@ check: mondo-edit.obo
 	 ../utils/quick-check.pl $<
 
 mondo-edit.owl: mondo-edit.obo
-	../utils/quick-check.pl $< && $(ROBOT) convert -i $< -o $@
+	$(ROBOT) convert -i $< -o $@
+
+quickcheck: mondo-edit.obo
+	../utils/quick-check.pl $<
+
+test: quickcheck
 
 d2taxon-wd.tsv:
 	pq-wd -f tsv  "has_cause(D,T),doid_id(D,DX),ncbitaxon_id(T,TX)" "x(DX,TX)" > $@.tmp && perl -npe 's@\t@\tNCBITaxon:@' $@.tmp > $@
