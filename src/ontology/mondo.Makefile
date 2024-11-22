@@ -1283,19 +1283,36 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 		make NORM
 		mv NORM $(SRC)
 
-tmp/subclass-axioms.owl: $(SRC)
-	$(ROBOT) filter --input $(SRC) --axioms SubClassOf --preserve-structure false --trim false \
+# We want to preserve all axioms with relationships as they are here
+# As we only care about subclass relations between names.
+$(TMPDIR)/subclass-anonymous-axioms.owl: $(SRC)
+	$(ROBOT) filter --input $(SRC) \
+		--select "object-properties" \
+		--axioms SubClassOf \
+		--preserve-structure false \
+		--trim false \
+		-o $@
+
+# Here we select all subclass relations between named classes
+# and drop the evidence we want.
+# Hopefully the union of named and anonymous subclass relations will be _all_ subclass relations
+$(TMPDIR)/subclass-named-axioms.owl: $(SRC)
+	$(ROBOT) filter --input $(SRC) \
+		--axioms SubClassOf \
+		--preserve-structure false \
+		--trim false \
+		remove --select "object-properties" \
 		--drop-axiom-annotations "oboInOwl:source=~'($(SOURCES_REGEX)):.*'" \
 		-o $@
 
 # This command updates mondo-edit with all the confirmed subclass evidence from the mondo-ingest repo
 .PHONY: update-subclass-sync
-update-subclass-sync: $(TMPDIR)/subclass-confirmed.robot.owl tmp/subclass-axioms.owl
+update-subclass-sync: 
+	$(MAKE) $(TMPDIR)/subclass-confirmed.robot.owl $(TMPDIR)/subclass-named-axioms.owl $(TMPDIR)/subclass-anonymous-axioms.owl
 	$(ROBOT) remove --input $(SRC) \
-		--select "self parents" \
-  		--axioms SubClassOf \
-		--trim false \
-		merge -i $< -i tmp/subclass-axioms.owl --collapse-import-closure false \
+		--axioms SubClassOf \
+		--preserve-structure false \
+		merge -i $(TMPDIR)/subclass-confirmed.robot.owl -i $(TMPDIR)/subclass-named-axioms.owl -i $(TMPDIR)/subclass-anonymous-axioms.owl --collapse-import-closure false \
 		convert -f obo --check false -o tmp/$(SRC)
 		mv tmp/$(SRC) $(SRC)
 		make NORM
