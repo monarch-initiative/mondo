@@ -18,6 +18,9 @@ WHERE {
     ?restriction rdf:type owl:Restriction ;
                  owl:onProperty obo:RO_0004003 ;
                  owl:someValuesFrom ?geneIdentifier .
+    FILTER NOT EXISTS {
+      ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-multiple-gene-associations.sparql .
+    }
   }
   UNION
   {
@@ -30,9 +33,10 @@ WHERE {
     ?component rdf:type owl:Restriction ;
                owl:onProperty obo:RO_0004003 ;
                owl:someValuesFrom ?geneIdentifier .
-  }
-  FILTER NOT EXISTS {
-    ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-multiple-gene-associations.sparql .
+    
+    FILTER NOT EXISTS {
+      ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-multiple-gene-associations.sparql .
+    }
   }
 }
 GROUP BY ?entity ?label
