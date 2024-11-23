@@ -2,6 +2,8 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
 
 # Find classes with mismatched gene identifiers added as equivalentTo and subClassOf
 
@@ -24,6 +26,10 @@ WHERE {
                        owl:onProperty obo:RO_0004003 ;
                        owl:someValuesFrom ?subClassGeneIdentifier .
 
+  FILTER NOT EXISTS {
+      ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-gene-identifier-mismatch.sparql .
+    }
+  
   # Filter for gene identifiers with HGNC or NCBIGene prefixes
   FILTER(STRSTARTS(STR(?equivGeneIdentifier), "http://identifiers.org/hgnc/") || 
          STRSTARTS(STR(?equivGeneIdentifier), "http://identifiers.org/ncbigene/"))
