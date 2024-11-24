@@ -5,7 +5,7 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 
 # Find classes with mismatched gene identifiers added as equivalentTo and subClassOf
 
-SELECT DISTINCT ?entity ?label ?sortedEquivGeneIdentifiers ?sortedSubClassGeneIdentifiers
+SELECT DISTINCT ?entity ?label ?paddedEquivGeneIdentifiers ?paddedSubClassGeneIdentifiers
 WHERE {
   ?entity rdf:type owl:Class ;
           rdfs:label ?label .
