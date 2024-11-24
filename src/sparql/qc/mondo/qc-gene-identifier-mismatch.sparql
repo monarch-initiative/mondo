@@ -3,14 +3,14 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 
-SELECT DISTINCT ?entity ?label ?equivGeneIdentifiers ?subClassGeneIdentifiers
+SELECT DISTINCT ?entity ?label ?sortedEquivGeneIdentifiers ?sortedSubClassGeneIdentifiers
 WHERE {
   ?entity rdf:type owl:Class ;
           rdfs:label ?label .
-  
+
   # Equivalent class restrictions
   {
-    SELECT ?entity (GROUP_CONCAT(DISTINCT ?equivGeneIdentifier; separator=", ") AS ?equivGeneIdentifiers)
+    SELECT ?entity (GROUP_CONCAT(DISTINCT ?equivGeneIdentifier; separator=",") AS ?equivGeneIdentifiers)
     WHERE {
       ?entity owl:equivalentClass ?equivClass .
       ?equivClass owl:intersectionOf/rdf:rest*/rdf:first ?equivComponent .
@@ -24,10 +24,10 @@ WHERE {
     }
     GROUP BY ?entity
   }
-  
+
   # subClassOf restrictions
   {
-    SELECT ?entity (GROUP_CONCAT(DISTINCT ?subClassGeneIdentifier; separator=", ") AS ?subClassGeneIdentifiers)
+    SELECT ?entity (GROUP_CONCAT(DISTINCT ?subClassGeneIdentifier; separator=",") AS ?subClassGeneIdentifiers)
     WHERE {
       ?entity rdfs:subClassOf ?subClassRestriction .
       ?subClassRestriction rdf:type owl:Restriction ;
@@ -41,7 +41,12 @@ WHERE {
     GROUP BY ?entity
   }
 
-  # Ensure mismatched identifiers between equivalentClass and subClassOf
-  FILTER(?equivGeneIdentifiers != ?subClassGeneIdentifiers)
+  # Normalize and compare identifiers
+  BIND(CONCAT(",", ?equivGeneIdentifiers, ",") AS ?paddedEquivGeneIdentifiers)
+  BIND(CONCAT(",", ?subClassGeneIdentifiers, ",") AS ?paddedSubClassGeneIdentifiers)
+
+  FILTER NOT EXISTS {
+    FILTER(CONCAT(STR(?paddedEquivGeneIdentifiers)) = CONCAT(STR(?paddedSubClassGeneIdentifiers)))
+  }
+
 }
-ORDER BY ?entity ?label
