@@ -3,6 +3,8 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 
+# Find classes with mismatched gene identifiers added as equivalentTo and subClassOf
+
 SELECT DISTINCT ?entity ?label ?sortedEquivGeneIdentifiers ?sortedSubClassGeneIdentifiers
 WHERE {
   ?entity rdf:type owl:Class ;
