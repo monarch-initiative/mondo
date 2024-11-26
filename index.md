@@ -7,7 +7,7 @@ author_profile: true
 
 # Mondo Disease Ontology
 
-The Mondo Disease Ontology (Mondo) aims to harmonize disease definitions across the world. The name Mondo comes from the latin word 'mundus' and means 'for the world.'
+The Mondo Disease Ontology (Mondo) aims to harmonize disease definitions across the world. The name Mondo comes from the Latin word 'mundus' and means 'for the world.'
 
 - [About](#about)
 - [How was Mondo created?](#created)
