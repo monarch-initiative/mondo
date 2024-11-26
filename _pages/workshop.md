@@ -31,9 +31,9 @@ The goal of this workshop series is to review the classification of terms in Mon
 ### Agenda
 The emerging agenda is available [here](https://docs.google.com/document/d/1Cg6fSNXaC3PZGIEnWHq_R8InKkQ1J2wVgkpbbxHhLZY/edit). To RSVP, please fill out this [form](https://docs.google.com/forms/d/e/1FAIpQLSd2vJU6XoUPmOC2S-YNcO4wuQOKrSo4YjGcxKFNrbXmGUybaA/viewform).
 
-### Recording
+### Recordings
 - Part 1 [recording here](https://www.youtube.com/watch?v=heVEumM5710)  
-- Part 2 _will be posted after the event_  
+- Part 2 [recording here](https://youtu.be/W_WC7QZsL0M?si=tsXpcN2E9Zo4q6zZ)  
 
 ### Funding
 Funded by NHGRI Phenomics First (1RM1HG010860-01) and the [Critical Path Institute](https://c-path.org/fda-acknowledgement/).
