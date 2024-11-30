@@ -1291,6 +1291,9 @@ $(TMPDIR)/subclass-confirmed.robot.tsv:
 $(TMPDIR)/synonyms-confirmed.robot.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/main/src/ontology/reports/sync-synonym/sync-synonyms.confirmed.robot.tsv" -O $@
 
+$(TMPDIR)/synonyms-added.robot.tsv:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/main/src/ontology/reports/sync-synonym/sync-synonyms.added.robot.tsv" -O $@
+
 $(TMPDIR)/new-exact-matches-%.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/lexmatch/unmapped_$*_lex_exact.tsv" -O $@
 
@@ -1363,16 +1366,10 @@ tmp/synonyms-axioms.owl: $(SRC)
 
 # This command updates mondo-edit with all the confirmed synonyms evidence from the mondo-ingest repo
 .PHONY: update-synonyms-sync
-update-synonyms-sync: $(TMPDIR)/synonyms-confirmed.robot.owl tmp/synonyms-axioms.owl
+update-synonyms-sync: $(TMPDIR)/synonyms-confirmed.robot.owl $(TMPDIR)/synonyms-added.robot.owl tmp/synonyms-axioms.owl
 	$(ROBOT) \
-		remove --input $(SRC) \
-			--term oboInOwl:hasExactSynonym \
-			--term oboInOwl:hasNarrowSynonym \
-			--term oboInOwl:hasBroadSynonym \
-			--term oboInOwl:hasRelatedSynonym \
-			--axioms annotation --trim true \
-		merge \
-			-i $(TMPDIR)/synonyms-confirmed.robot.owl \
+		merge --input $(SRC) \
+			-i $(TMPDIR)/synonyms-added.robot.owl \
 			-i tmp/synonyms-axioms.owl \
 			--collapse-import-closure false \
 		convert -f obo --check false -o tmp/$(SRC)
@@ -1380,6 +1377,7 @@ update-synonyms-sync: $(TMPDIR)/synonyms-confirmed.robot.owl tmp/synonyms-axioms
 	make NORM
 	mv NORM $(SRC)
 
+# DO NOT MERGE THIS BEFORE ADDING BACK CONFIRMED SYNONYMS INTO THE GOAL ABOVE!!!
 
 .PHONY: help
 help:
