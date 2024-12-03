@@ -15,7 +15,7 @@ Details and summaries for upcoming and past Mondo workshops.
 - [Renal Disease and Phenotype Workshop (July 14, 2021)](#renal)
 - [ClinGen Virtual Retreat 2021 (June 24, 2021)](#june-2021)
 - [Mondo Upper Level Reclassification Workshop (April 05, 2021)](#april-2021)
-- [Mondo Introductory Workshop (November 2018)](#november-2018)
+- [Mondo Introductory Workshop (November 2018)](#november-2018) 
 
 
 <a name="Oct-2024"></a> 
@@ -25,8 +25,9 @@ Details and summaries for upcoming and past Mondo workshops.
 The goal of this workshop series is to review the classification of terms in Mondo based on your expert opinions, to ensure that the epilepsy branch is scientifically accurate, aligns with the current understanding of the disease features, and is maximally useful for your projects.
 
 ### Date and Time
-- Part 1: October 25 (Friday) from 8-10 AM ([see your local time here](https://everytimezone.com/s/e594d712))  
-- Part 2: November 22 (Friday) from 8-10 AM ([see your local time here](https://everytimezone.com/s/e594d712))  
+- Part 1: October 25, 2024 (Friday) from 8-10 AM ([see your local time here](https://everytimezone.com/s/e594d712))  
+- Part 2: November 22, 2024 (Friday) from 8-9:50 AM ([see your local time here](https://everytimezone.com/s/e594d712))
+- Part 3: January 17, 2025 (Friday) from 8-9:50 AM ([see your local time here](https://everytimezone.com/s/e594d712))    
 
 ### Agenda
 The emerging agenda is available [here](https://docs.google.com/document/d/1Cg6fSNXaC3PZGIEnWHq_R8InKkQ1J2wVgkpbbxHhLZY/edit). To RSVP, please fill out this [form](https://docs.google.com/forms/d/e/1FAIpQLSd2vJU6XoUPmOC2S-YNcO4wuQOKrSo4YjGcxKFNrbXmGUybaA/viewform).
