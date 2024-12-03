@@ -15,7 +15,7 @@ Details and summaries for upcoming and past Mondo workshops.
 - [Renal Disease and Phenotype Workshop (July 14, 2021)](#renal)
 - [ClinGen Virtual Retreat 2021 (June 24, 2021)](#june-2021)
 - [Mondo Upper Level Reclassification Workshop (April 05, 2021)](#april-2021)
-- [Mondo Introductory Workshop (November 2018)](#november-2018)
+- [Mondo Introductory Workshop (November 2018)](#november-2018) 
 
 
 <a name="Oct-2024"></a> 
