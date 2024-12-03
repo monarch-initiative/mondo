@@ -64,7 +64,7 @@ Notes are available [here](https://docs.google.com/document/d/16eMB-x3iANHfiTxw7
 
 Date | Time | Presenter (Organization)| Topic | Recording 
 -- | -- | -- | -- | -- 
-Dec 13 | 9AM PT/12PM ET | Nicole Vasilevsky ([Critical Path Institute](https://c-path.org/))| Epilepsy Workshop Summary |
+Dec 13 | 9AM PT/12PM ET | Nicole Vasilevsky ([Critical Path Institute](https://c-path.org/))| [Epilepsy Workshop Summary](https://docs.google.com/presentation/d/1FkBrO9uaeznKjSJMQyME1DmL8M391wtPjmw6LxApqd8/edit#slide=id.g1050aaf62ea_0_607) |
 Nov 15 | Canceled
 Oct 18 | Canceled 
 Sep 20 | 9AM PT/12PM ET | Sabrina Toro and Trish Whetzel ([Monarch Initiative](https://monarchinitiative.org/)) | Externally managed metadata in Mondo | [Here](https://drive.google.com/file/d/1knxeQhlCk_gEmhy5LxnVF1vvrlCoR0cg/view?usp=sharing)
