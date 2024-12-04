@@ -66,11 +66,7 @@ Notes are available [here](https://docs.google.com/document/d/16eMB-x3iANHfiTxw7
 Date | Time | Presenter (Organization)| Topic | Recording 
 -- | -- | -- | -- | -- 
 Dec 13 | 9AM PT/12PM ET | Nicole Vasilevsky ([Critical Path Institute](https://c-path.org/))| [Epilepsy Workshop Summary](https://docs.google.com/presentation/d/1FkBrO9uaeznKjSJMQyME1DmL8M391wtPjmw6LxApqd8/edit#slide=id.g1050aaf62ea_0_607) |
-Nov 15 | Canceled
-Oct 18 | Canceled 
 Sep 20 | 9AM PT/12PM ET | Sabrina Toro and Trish Whetzel ([Monarch Initiative](https://monarchinitiative.org/)) | Externally managed metadata in Mondo | [Here](https://drive.google.com/file/d/1knxeQhlCk_gEmhy5LxnVF1vvrlCoR0cg/view?usp=sharing)
-August 23 | Summer Break
-July 26 | Summer Break
 June 28 | 9AM PT/12PM ET | Toyofumi Fujiwara ([DBCLS](https://dbcls.rois.ac.jp/index-en.html)) |  Enhancing Interoperability of Biomedical Resources Using Ontologies | [Here](https://drive.google.com/file/d/1AAXbk6KW2w08G4uYzfBUZHccsBM3vUlP/view?usp=sharing)
 May 31 | 9AM PT/12PM ET | Brian Schilder (Imperial College London) | Navigating the Phenomic Landscape: Systematic characterisation of the latent genomic space underlying all traits and diseases | [Here](https://drive.google.com/file/d/1i7xKNKH84TcmkEuesAZ5jJ5Ub_Whd00b/view?usp=sharing)
 May 3 | 9 AM PT/12 PM ET | Bryan Laraway([N3C](https://covid.cd2h.org/)) | Mondo to identify rare disease cohorts within N3C | [Here](https://drive.google.com/file/d/1UpsRft8FOPI0e7QKPSTagPEVehIL3Zmw/view?usp=sharing)
