@@ -8,11 +8,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.5.2
+    container: obolibrary/odkfull:v1.5.4
 
     steps:
       - name: Checkout main branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: Update OMIM gene references
         run: |

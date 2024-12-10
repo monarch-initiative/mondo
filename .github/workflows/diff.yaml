@@ -8,16 +8,16 @@ jobs:
     # Do not run on forks. https://github.com/monarch-initiative/mondo/issues/5255
     if: github.repository_owner == 'monarch-initiative'
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.5.2
+    container: obolibrary/odkfull:v1.5.4
     strategy:
       max-parallel: 1
     steps:
       - name: Checkout main branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Run diff
         run: cd src/ontology/ && make IMP=false PAT=false MIR=false GITHUB_ACTION=true all_release_reports
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v5
         with:
           commit-message: Update Mondo diff reports
           title: 'Mondo Diff reports'
