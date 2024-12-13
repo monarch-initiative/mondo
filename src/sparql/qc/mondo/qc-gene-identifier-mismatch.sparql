@@ -1,0 +1,50 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+# Find classes with mismatched gene identifiers added as equivalentTo and subClassOf
+
+SELECT DISTINCT ?entity ?label ?sortedEquivGeneIdentifiers ?sortedSubClassGeneIdentifiers
+WHERE {
+  ?entity rdf:type owl:Class ;
+          rdfs:label ?label .
+
+  # Equivalent class restrictions
+  {
+    SELECT ?entity (GROUP_CONCAT(DISTINCT ?sortedEquivGeneIdentifier; separator=", ") AS ?sortedEquivGeneIdentifiers)
+    WHERE {
+      ?entity owl:equivalentClass ?equivClass .
+      ?equivClass owl:intersectionOf/rdf:rest*/rdf:first ?equivComponent .
+      ?equivComponent rdf:type owl:Restriction ;
+                      owl:onProperty obo:RO_0004003 ;
+                      owl:someValuesFrom ?equivGeneIdentifier .
+      FILTER(
+        STRSTARTS(STR(?equivGeneIdentifier), "http://identifiers.org/hgnc/") || 
+        STRSTARTS(STR(?equivGeneIdentifier), "http://identifiers.org/ncbigene/")
+      )
+    }
+    GROUP BY ?entity
+    ORDER BY ?sortedEquivGeneIdentifier
+  }
+
+  # subClassOf restrictions
+  {
+    SELECT ?entity (GROUP_CONCAT(DISTINCT ?sortedSubClassGeneIdentifier; separator=", ") AS ?sortedSubClassGeneIdentifiers)
+    WHERE {
+      ?entity rdfs:subClassOf ?subClassRestriction .
+      ?subClassRestriction rdf:type owl:Restriction ;
+                           owl:onProperty obo:RO_0004003 ;
+                           owl:someValuesFrom ?subClassGeneIdentifier .
+      FILTER(
+        STRSTARTS(STR(?subClassGeneIdentifier), "http://identifiers.org/hgnc/") || 
+        STRSTARTS(STR(?subClassGeneIdentifier), "http://identifiers.org/ncbigene/")
+      )
+    }
+    GROUP BY ?entity
+    ORDER BY ?sortedSubClassGeneIdentifier
+  }
+
+  # Compare sorted identifiers
+  FILTER(?sortedEquivGeneIdentifiers != ?sortedSubClassGeneIdentifiers)
+}
