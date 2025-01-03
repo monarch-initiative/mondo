@@ -1,4 +1,4 @@
-_Last updated 11-Dec-2024_
+_Last updated 2-Jan-2025_
 
 Updating imports is needed whenever logical axioms that reference external ontologies are added, but the classes being referenced have no labels or other logical definitions. Updating an import for those classes will bring in the labels, annotations, and logical axioms into the import file, and therefore into the Mondo ontology.
 
