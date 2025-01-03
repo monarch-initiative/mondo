@@ -1342,6 +1342,9 @@ update-subclass-sync:
 		make NORM
 		mv NORM $(SRC)
 
+ncit-exact-xrefs-and-subclass-evidence.tsv:
+	$(ROBOT) query -i $(SRC) --query $(SPARQLDIR)/reports/ncit-exact-xrefs-and-subclass-evidence.sparql reports/$@
+
 
 # All the synchronized sources
 SYNCED_SOURCES := DOID ICD10CM ICD10WHO icd11.foundation NCIT OMIM OMIMPS Orphanet
