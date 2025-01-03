@@ -1,0 +1,30 @@
+# Query for NCIT exact matches and subclass evidence
+# todo: Ideally I would use skos:exactMatch, but those were being removed when loaded into robot or converted to OWL, likely because of some issue with the catalog.xml or other setting
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?mondo_class ?label ?mondo_subclass ?subClassOf_source ?xref
+WHERE {
+  ?class a owl:Class ;
+    rdfs:label ?label ;
+    rdfs:subClassOf ?subClassOf .
+
+  FILTER(STRSTARTS(STR(?subClassOf), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND(REPLACE(str(?class), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") as ?mondo_class)
+  BIND(REPLACE(str(?subClassOf), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") as ?mondo_subclass)
+
+  ?axiom a owl:Axiom ;
+     owl:annotatedSource ?class ;
+     owl:annotatedProperty rdfs:subClassOf ;
+     owl:annotatedTarget ?subClassOf ;
+     oboInOwl:source ?subClassOf_source .
+  FILTER(STRSTARTS(?subClassOf_source, "NCIT:"))
+
+  # todo: consider if "optional" is really best here. for subclass sync, it is not optional. but i want more data
+  OPTIONAL {
+    ?class oboInOwl:hasDbXref ?xref .
+    FILTER(STRSTARTS(?xref, "NCIT:"))
+  }
+}

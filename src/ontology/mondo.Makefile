@@ -1342,8 +1342,8 @@ update-subclass-sync:
 		make NORM
 		mv NORM $(SRC)
 
-ncit-exact-xrefs-and-subclass-evidence.tsv:
-	$(ROBOT) query -i $(SRC) --query $(SPARQLDIR)/reports/ncit-exact-xrefs-and-subclass-evidence.sparql reports/$@
+ncit-xrefs-and-subclass-evidence.tsv:
+	$(ROBOT) query -i $(SRC) --query $(SPARQLDIR)/reports/ncit-xrefs-and-subclass-evidence.sparql $@ -vvv
 
 
 # All the synchronized sources
