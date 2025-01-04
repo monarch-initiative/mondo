@@ -1083,6 +1083,8 @@ deprecated_annotation_merging:
 	sed -i 's/source="MONDO:equivalentObsolete",\ source="MONDO:obsoleteEquivalentObsolete"/source="MONDO:obsoleteEquivalentObsolete"/g' mondo-edit.obo || true
 	sed -i 's/source="MONDO:equivalentObsolete",\ source="MONDO:equivalentTo"/source="MONDO:equivalentObsolete"/g' mondo-edit.obo || true
 	sed -i 's/\(.*\)source="MONDO:equivalentObsolete"\(.*\)source="MONDO:obsoleteEquivalentObsolete"\(.*\)/\1source="MONDO:obsoleteEquivalentObsolete"\2\3/g' mondo-edit.obo || true
+	sed -i '/source="MONDO:equivalentObsolete"/ s/, source="MONDO:equivalentTo"//g' mondo-edit.obo || true
+	sed -i 's/source="MONDO:equivalentObsolete",\ source="MONDO:obsoleteEquivalent"/source="MONDO:obsoleteEquivalentObsolete"/g' mondo-edit.obo || true
 	sed -i 's/, }/}/g' mondo-edit.obo || true
 	sed -i 's/, ,/,/g' mondo-edit.obo || true
 	echo "NOTE: There are still some broken cases that need to be manually fixed. Search for `quivalent.*quivalent` (no E) in case sensitive regex mode in Atom or Visual Studio"
