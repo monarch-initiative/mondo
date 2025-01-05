@@ -15,8 +15,8 @@ As a Mondo curator, when you have a ticket that requires a term from an external
 1. Fetch the latest changes from `master` in the "mondo" repo
 1. Create a new git feature branch
 1. Open the `src/ontology/imports/manual_seed.txt` file
-1. Add the IRI of the term(s) you want to add to this document and save the file
-    - IRIs for any entity can be added into the `manual_seed.txt` file, e.g. gene, NCBITaxon, etc.
+1. Add the IRI of the term(s) you want to add to the ontology to this document (`manual_seed.txt`) and save the file
+    - IRIs for any entity can be added into the `manual_seed.txt` file, e.g. HGNC gene, NCBI gene (for non-human genes), NCBITaxon, etc.
     - The IRIs to add to the `manual_seed.txt` file can be found in the <a href="https://docs.google.com/spreadsheets/d/1UME3pTeR42hwNt1I6RPl0nvJKVfTIeJqhx80laAlD50/edit?pli=1&gid=0#gid=0" target="_blank">terms required for import</a> Google Sheet.
 1. In the Terminal, run: `export "MEMORY_GB=28"`
 1. Then refresh the imports: 
