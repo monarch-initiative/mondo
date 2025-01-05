@@ -164,6 +164,7 @@ Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/neoplasm_by_ori
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/neuroendocrine_neoplasm.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/neuroendocrine_neoplasm_grade1.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease.yaml>))
+Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_series_by_gene.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_taxon.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/nuclear_subtype.yaml>))
 Declaration(Class(<http://purl.obolibrary.org/obo/mondo/patterns/partial_chromosomal_deletion.yaml>))
@@ -234,7 +235,7 @@ EquivalentClasses(<http://purl.obolibrary.org/obo/MONDO_0000001> <http://purl.ob
 
 AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml> "OMIM_phenotypic_series"^^xsd:string)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml> "'disease'"^^xsd:string)
-SubClassOf(<http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0000001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000053> <http://purl.obolibrary.org/obo/MONDO_0021152>)))
+SubClassOf(<http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0700096> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000053> <http://purl.obolibrary.org/obo/MONDO_0021152>)))
 
 # Class: <http://purl.obolibrary.org/obo/mondo/patterns/acquired.yaml> (acquired 'disease')
 
@@ -483,9 +484,8 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynony
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml> "'gene' related 'disease', 'mode of inheritance'"^^xsd:string)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml> "'disease' caused by mutation in 'gene', 'mode of inheritance'"^^xsd:string)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml> "'disease' caused by variation in 'gene'"^^xsd:string)
-EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0000001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000053> <http://purl.obolibrary.org/obo/HP_0000005>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0004003> <http://purl.obolibrary.org/obo/SO_0000704>)))
-EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0000001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0004003> <http://purl.obolibrary.org/obo/SO_0000704>)))
-EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0000001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0004003> <http://purl.obolibrary.org/obo/SO_0001217>)))
+EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0700096> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000053> <http://purl.obolibrary.org/obo/HP_0000005>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0004003> <http://purl.obolibrary.org/obo/SO_0000704>)))
+EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0700096> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0004003> <http://purl.obolibrary.org/obo/SO_0000704>)))
 
 # Class: <http://purl.obolibrary.org/obo/mondo/patterns/disrupts_process.yaml> (owl_thing disease)
 
@@ -778,6 +778,16 @@ AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.ob
 AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease.yaml> "nonhuman_disease"^^xsd:string)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease.yaml> "'human disease or disorder', non-human animal"^^xsd:string)
 EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0005583> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/MONDO_0700097> <http://purl.obolibrary.org/obo/MONDO_0700096>)))
+
+# Class: <http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_series_by_gene.yaml> ('disease' caused by variation in 'gene', 'taxon')
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_series_by_gene.yaml> "Any 'disease', occuring in 'taxon', in which the cause of the disease is a variation in the 'gene' gene."^^xsd:string)
+AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_series_by_gene.yaml> "nonhuman_disease_series_by_gene"^^xsd:string)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_series_by_gene.yaml> "'disease' caused by mutation in 'gene', 'taxon'"^^xsd:string)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_series_by_gene.yaml> "'gene' 'disease', 'taxon'"^^xsd:string)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_series_by_gene.yaml> "'gene' related 'disease', 'taxon'"^^xsd:string)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_series_by_gene.yaml> "'disease' caused by variation in 'gene', 'taxon'"^^xsd:string)
+EquivalentClasses(<http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_series_by_gene.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MONDO_0005583> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002162> <http://purl.obolibrary.org/obo/NCBITaxon_1>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0004003> <http://purl.obolibrary.org/obo/SO_0000704>)))
 
 # Class: <http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_taxon.yaml> ('human disease or disorder', 'taxon')
 

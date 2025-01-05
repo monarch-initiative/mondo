@@ -1,0 +1,65 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+# description: Looks for axiom annotations which use faulty provenance properties
+
+SELECT DISTINCT ?entity ?property ?value
+
+WHERE
+{
+    ?entity ?property ?v .
+
+    ?axiom owl:annotatedSource ?entity ;
+             owl:annotatedProperty ?property ;
+             owl:annotatedTarget ?v ;
+             ?provenance ?x .
+    
+    # The axiom provenance should typically use oio:source, so lets look for case where it does not
+    # (also, it should not correspond to the actual RDF-reified annotation properties)
+    FILTER(
+           ?provenance!=oio:source 
+        && ?provenance!=owl:annotatedSource 
+        && ?provenance!=owl:annotatedTarget
+        && ?provenance!=owl:annotatedProperty
+        && ?provenance!=rdf:type
+    )
+
+    # Ignore Synonym type annotations
+    FILTER(
+        !(?provenance = oio:hasSynonymType && 
+            (
+                ?property IN (
+                    oio:hasExactSynonym, 
+                    oio:hasRelatedSynonym, 
+                    oio:hasBroadSynonym, 
+                    oio:hasNarrowSynonym)
+            )
+        )
+    )
+
+    # Xrefs are allowed on definitions and synonyms
+    FILTER (
+        !( 
+            ?provenance = oio:hasDbXref && 
+            ?property IN (
+                IAO:0000115, 
+                oio:hasExactSynonym, 
+                oio:hasRelatedSynonym, 
+                oio:hasBroadSynonym, 
+                oio:hasNarrowSynonym
+            )
+        )
+    )
+
+    BIND(CONCAT(str(?v),CONCAT(": ",str(?provenance))) as ?value)
+
+   FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+} ORDER BY ?entity
+

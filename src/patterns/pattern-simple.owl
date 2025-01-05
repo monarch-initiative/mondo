@@ -62,7 +62,6 @@
     <!-- http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/OMIM_phenotypic_series.yaml">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/hereditary.yaml"/>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OMIM_phenotypic_series</terms:title>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos;</rdfs:label>
     </owl:Class>
@@ -407,7 +406,6 @@
     <!-- http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/disease_series_by_gene.yaml">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/mondo/patterns/disease-or-disease-like.yaml"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease&apos; in which the cause of the disease is a mutation in the &apos;gene&apos; gene, and has &apos;mode of inheritance&apos;.</obo:IAO_0000115>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease&apos; in which the cause of the disease is a variation in the &apos;gene&apos; gene.</obo:IAO_0000115>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OMIM_disease_series_by_gene</terms:title>
@@ -830,6 +828,19 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;human disease or disorder&apos; that occurs in non-human animals</obo:IAO_0000115>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nonhuman_disease</terms:title>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;human disease or disorder&apos;, non-human animal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_series_by_gene.yaml -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_series_by_gene.yaml">
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any &apos;disease&apos;, occuring in &apos;taxon&apos;, in which the cause of the disease is a variation in the &apos;gene&apos; gene.</obo:IAO_0000115>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nonhuman_disease_series_by_gene</terms:title>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; caused by mutation in &apos;gene&apos;, &apos;taxon&apos;</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;gene&apos; &apos;disease&apos;, &apos;taxon&apos;</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;gene&apos; related &apos;disease&apos;, &apos;taxon&apos;</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;disease&apos; caused by variation in &apos;gene&apos;, &apos;taxon&apos;</rdfs:label>
     </owl:Class>
     
 

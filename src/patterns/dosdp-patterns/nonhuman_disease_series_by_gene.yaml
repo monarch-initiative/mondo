@@ -1,0 +1,68 @@
+pattern_name: nonhuman_disease_series_by_gene
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/nonhuman_disease_series_by_gene.yaml
+
+description: 'This pattern is for non-human diseases that are defined based on a variation in one gene, such as many genetic diseases from the Online Mendelian Inheritance in Animals (OMIA).  Examples: TBD '
+
+contributors:
+- https://orcid.org/0000-0002-4142-7153
+- https://orcid.org/0000-0002-5002-8648
+
+classes:
+  disease: MONDO:0005583
+  gene: SO:0000704
+  taxon: NCBITaxon:1
+
+relations:
+  has material basis in germline mutation in: RO:0004003
+  in taxon: RO:0002162
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  disease: '''disease'''
+  gene: '''gene'''
+  taxon: '''taxon'''
+
+name:
+  text: '%s caused by variation in %s, %s'
+  vars:
+  - disease
+  - gene
+  - taxon
+
+annotations:
+- annotationProperty: exact_synonym
+  text: '%s %s, %s'
+  vars:
+  - gene
+  - disease
+  - taxon
+- annotationProperty: exact_synonym
+  text: '%s related %s, %s'
+  vars:
+  - gene
+  - disease
+  - taxon
+- annotationProperty: exact_synonym
+  text: '%s caused by mutation in %s, %s'
+  vars:
+  - disease
+  - gene
+  - taxon
+
+def:
+  text: Any %s, occuring in %s, in which the cause of the disease is a variation in the %s gene.
+  vars:
+  - disease
+  - taxon
+  - gene
+
+equivalentTo:
+  text: '%s and (''has material basis in germline mutation in'' some %s) and (''in taxon'' some %s)'
+  vars:
+  - disease
+  - gene
+  - taxon
