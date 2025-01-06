@@ -23,9 +23,6 @@ WHERE {
     FILTER NOT EXISTS {
       ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-multiple-gene-associations.sparql .
     }
-    FILTER NOT EXISTS {
-      ?entity mondoBase:excluded_from_qc_check mondoSparqlQcMondo:qc-multiple-gene-associations.sparql .
-    }
   }
   UNION
   {
@@ -42,9 +39,6 @@ WHERE {
     # Exclusion filter for mondo and mondo-base namespaces to account for qc checks after roundtrip
     FILTER NOT EXISTS {
       ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-multiple-gene-associations.sparql .
-    }
-    FILTER NOT EXISTS {
-      ?entity mondoBase:excluded_from_qc_check mondoSparqlQcMondo:qc-multiple-gene-associations.sparql .
     }
   }
 }
