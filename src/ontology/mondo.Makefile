@@ -315,8 +315,7 @@ $(TEMPLATES_DIR)/ROBOT_addMedGen_fromIngest.tsv:
 # 1. Rare disease pipeline
 # 2. Externally managed content pipeline
 
-# CHANGE THIS TO THE MAIN BRANCH BEFOR MERGING!!!
-MONDO_INGEST_EXTERNAL_LOCATION=https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/externalclingenmedgenefo/src/ontology/external
+MONDO_INGEST_EXTERNAL_LOCATION=https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/external
 
 DOWNLOAD_EXTERNAL=true
 
@@ -452,6 +451,31 @@ update-rare-subset:
 ######################################################
 
 ####################################
+##### OMIM #####################
+####################################
+
+$(TMPDIR)/mondo-genes-axioms.owl: $(SRC)
+	$(ROBOT) filter --input $(SRC) \
+		--term RO:0004003 \
+		--axioms SubClassOf \
+		--preserve-structure false \
+		--trim false \
+		--drop-axiom-annotations "oboInOwl:source=~'(OMIM):.*'" \
+		-o $@
+
+
+.PHONY: update-omim-genes
+update-omim-genes:
+	$(MAKE) $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl $(TMPDIR)/mondo-genes-axioms.owl -B
+	# We need to be less aggressive here, as some gene relations were not originally sourced
+	# from OMIM, and were added, for example, for ClinGen.
+	$(ROBOT) remove -i $(SRC) --term RO:0004003 --axioms SubClassOf --preserve-structure false --trim true \
+		merge -i $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl -i $(TMPDIR)/mondo-genes-axioms.owl --collapse-import-closure false \
+		query --update ../sparql/update/omim-gene-equivalence.ru \
+		convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+####################################
 ##### Orphanet #####################
 ####################################
 
@@ -537,7 +561,7 @@ subset-metrics:
 
 SOURCE_VERSION = $(TODAY)
 # snomed
-SOURCE_IDS = doid ncit ordo omim gard
+SOURCE_IDS = doid ncit ordo omim
 SOURCE_IDS_INCL_MONDO = $(SOURCE_IDS) mondo equivalencies
 ALL_SOURCES_JSON = $(patsubst %, sources/$(SOURCE_VERSION)/%.json, $(SOURCE_IDS_INCL_MONDO))
 ALL_SOURCES_JSON_GZ = $(patsubst %, sources/$(SOURCE_VERSION)/%.json.gz, $(SOURCE_IDS_INCL_MONDO))
@@ -1264,9 +1288,8 @@ all: config/exclusion_reasons.tsv
 $(TMPDIR)/subclass-confirmed.robot.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/reports/sync-subClassOf.confirmed.tsv" -O $@
 
-# TODO WARNING THE URL POINTS TO A BRANCH!
 $(TMPDIR)/synonyms-confirmed.robot.tsv:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/sync1-synonyms/src/ontology/reports/sync-synonym/sync-synonyms.confirmed.robot.tsv" -O $@
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/main/src/ontology/reports/sync-synonym/sync-synonyms.confirmed.robot.tsv" -O $@
 
 $(TMPDIR)/new-exact-matches-%.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/lexmatch/unmapped_$*_lex_exact.tsv" -O $@
@@ -1284,19 +1307,36 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 		make NORM
 		mv NORM $(SRC)
 
-tmp/subclass-axioms.owl: $(SRC)
-	$(ROBOT) filter --input $(SRC) --axioms SubClassOf --preserve-structure false --trim false \
+# We want to preserve all axioms with relationships as they are here
+# As we only care about subclass relations between names.
+$(TMPDIR)/subclass-anonymous-axioms.owl: $(SRC)
+	$(ROBOT) filter --input $(SRC) \
+		--select "object-properties" \
+		--axioms SubClassOf \
+		--preserve-structure false \
+		--trim false \
+		-o $@
+
+# Here we select all subclass relations between named classes
+# and drop the evidence we want.
+# Hopefully the union of named and anonymous subclass relations will be _all_ subclass relations
+$(TMPDIR)/subclass-named-axioms.owl: $(SRC)
+	$(ROBOT) filter --input $(SRC) \
+		--axioms SubClassOf \
+		--preserve-structure false \
+		--trim false \
+		remove --select "object-properties" \
 		--drop-axiom-annotations "oboInOwl:source=~'($(SOURCES_REGEX)):.*'" \
 		-o $@
 
 # This command updates mondo-edit with all the confirmed subclass evidence from the mondo-ingest repo
 .PHONY: update-subclass-sync
-update-subclass-sync: $(TMPDIR)/subclass-confirmed.robot.owl tmp/subclass-axioms.owl
+update-subclass-sync: 
+	$(MAKE) $(TMPDIR)/subclass-confirmed.robot.owl $(TMPDIR)/subclass-named-axioms.owl $(TMPDIR)/subclass-anonymous-axioms.owl
 	$(ROBOT) remove --input $(SRC) \
-		--select "self parents" \
-  		--axioms SubClassOf \
-		--trim false \
-		merge -i $< -i tmp/subclass-axioms.owl --collapse-import-closure false \
+		--axioms SubClassOf \
+		--preserve-structure false \
+		merge -i $(TMPDIR)/subclass-confirmed.robot.owl -i $(TMPDIR)/subclass-named-axioms.owl -i $(TMPDIR)/subclass-anonymous-axioms.owl --collapse-import-closure false \
 		convert -f obo --check false -o tmp/$(SRC)
 		mv tmp/$(SRC) $(SRC)
 		make NORM

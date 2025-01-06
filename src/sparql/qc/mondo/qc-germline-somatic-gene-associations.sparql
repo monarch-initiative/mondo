@@ -1,0 +1,29 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+# Check if any Mondo classes have both a germline and somatic gene associations (needed due to OMIM gene pipeline)
+
+SELECT DISTINCT ?entity ?label 
+                (REPLACE(STR(?somaticProperty), "http://purl.obolibrary.org/obo/", "RO:") AS ?somaticPropertyCURIE)
+                ?somaticValue
+                (REPLACE(STR(?germlineProperty), "http://purl.obolibrary.org/obo/", "RO:") AS ?germlinePropertyCURIE)
+                ?germlineValue
+WHERE {
+  ?entity rdf:type owl:Class ;
+          rdfs:label ?label ;
+          rdfs:subClassOf ?restriction1, ?restriction2 .
+
+  # Restriction for somatic mutation
+  ?restriction1 rdf:type owl:Restriction ;
+                owl:onProperty ?somaticProperty ;
+                owl:someValuesFrom ?somaticValue .
+  FILTER(?somaticProperty = <http://purl.obolibrary.org/obo/RO_0004004>) # Somatic mutation property
+
+  # Restriction for germline mutation
+  ?restriction2 rdf:type owl:Restriction ;
+                owl:onProperty ?germlineProperty ;
+                owl:someValuesFrom ?germlineValue .
+  FILTER(?germlineProperty = <http://purl.obolibrary.org/obo/RO_0004003>) # Germline mutation property
+}
