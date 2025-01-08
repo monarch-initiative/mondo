@@ -75,7 +75,6 @@ pattern_ontology: ../patterns/pattern.owl
 	filter --select "<http://purl.obolibrary.org/obo/mondo/patterns*>" --select "self annotations" --signature true --trim true -o ../patterns/pattern-simple.owl
 
 ../patterns/dosdp-patterns/README.md: .FORCE
-	pip install tabulate
 	python ../scripts/patterns_create_overview.py "../patterns/dosdp-patterns" "../patterns/data/matches" $@
 
 pattern_readmes: ../patterns/dosdp-patterns/README.md
