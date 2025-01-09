@@ -32,11 +32,17 @@ owlaxioms_check:
 obo_validator:
 	fastobo-validator mondo-edit.obo
 
+.PHONY: obo_validator_release
+obo_validator_release: mondo.obo
+	fastobo-validator $<
+	runoak --input pronto:$< info MONDO:0000001 
+
 test: pattern_schema_checks
 test: owlaxioms_check
 test: test_reason_equivalence
 test: test_reason_equivalence_hermit
 test: obo_validator
+test: obo_validator_release
 
 test_reason_equivalence_hermit: $(ONT)-base.obo
 	$(ROBOT) reason -i $< --equivalent-classes-allowed none -r hermit
