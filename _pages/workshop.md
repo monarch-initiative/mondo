@@ -65,6 +65,7 @@ Notes are available [here](https://docs.google.com/document/d/16eMB-x3iANHfiTxw7
 
 Date | Time | Presenter (Organization)| Topic | Recording 
 -- | -- | -- | -- | -- 
+Feb 7 | 9AM PT/12PM ET | Elliott Sharp ([Every Cure](https://everycure.org/)) |
 Dec 13 | 9AM PT/12PM ET | Nicole Vasilevsky ([Critical Path Institute](https://c-path.org/))| [Epilepsy Workshop Summary](https://docs.google.com/presentation/d/1FkBrO9uaeznKjSJMQyME1DmL8M391wtPjmw6LxApqd8/edit#slide=id.g1050aaf62ea_0_607) |
 Sep 20 | 9AM PT/12PM ET | Sabrina Toro and Trish Whetzel ([Monarch Initiative](https://monarchinitiative.org/)) | Externally managed metadata in Mondo | [Here](https://drive.google.com/file/d/1knxeQhlCk_gEmhy5LxnVF1vvrlCoR0cg/view?usp=sharing)
 June 28 | 9AM PT/12PM ET | Toyofumi Fujiwara ([DBCLS](https://dbcls.rois.ac.jp/index-en.html)) |  Enhancing Interoperability of Biomedical Resources Using Ontologies | [Here](https://drive.google.com/file/d/1AAXbk6KW2w08G4uYzfBUZHccsBM3vUlP/view?usp=sharing)
