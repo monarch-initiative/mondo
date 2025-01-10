@@ -957,7 +957,7 @@ kgcl-diff-release-base: reports/difference_release_base.yaml \
 						reports/difference_release_base.md
 
 tmp/mondo-released.obo: .FORCE
-	wget http://purl.obolibrary.org/obo/mondo/$(KGCL_ONTOLOGY) -O $@
+	wget http://purl.obolibrary.org/obo/mondo/releases/2024-12-03/mondo-base.owl -O $@
 
 reports/difference_release_base.md: tmp/mondo-released.obo $(KGCL_ONTOLOGY)
 	runoak -i simpleobo:tmp/mondo-released.obo diff -X simpleobo:$(KGCL_ONTOLOGY) -o $@ --output-type md
