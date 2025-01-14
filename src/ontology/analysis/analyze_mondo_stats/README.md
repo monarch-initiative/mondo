@@ -187,44 +187,93 @@ END {
 }' data/output/exact_synonyms.tsv 
 ```
 
-NOTE: To search for synonyms from a particular source, use this regex: `synonym: ".*?" EXACT \[.*?\bNCIT:[^\]]*\]` and make sure to toggle the Seach box in VS Code to the regex option. Alternatively, the search can also be done using grep, e.g. `grep -E 'synonym: ".*?" EXACT \[.*?\bhttps:[^]]*\]' mondo-edit.obo`.
+NOTE: To search for synonyms from a particular source, use this regex pattern:  `synonym: ".*?" EXACT \[.*?\bNCIT:[^\]]*\]` where `NCIT` is the CURIE prefix. Make sure to toggle the Seach box in VS Code to the regex option. 
+Alternatively, the search can also be done using grep, e.g. `grep -E 'synonym: ".*?" EXACT \[.*?\bhttps:[^]]*\]' mondo-edit.obo`.
+
+For synonym source values that are a URL, the regex pattern is: `synonym: ".*?" EXACT \[.*?\bhttps:\/\/orcid\.org\/[^\],]*.*`, where the bsae URL to search for is `https://orcid.org`.
+
+The list needed further analysis of synonym source values that start with `http` or `https` so further analysis was done in the Jupyter notebook.
+
 
 #### Results - Synonyms
-Source	Count
+sources  count
+NCIT	20215
 MONDO	18297
-MedDRA	5
+DOID	17968
 Orphanet	13181
-https	1422
-ONCOTREE	39
-ISBN-13	12
-EFO	34
-PMID	446
-ICD10CM	540
-MESH	649
-MEDGEN	5
-HP	11
+OMIM	10030
+MONDORULE	2825
 icd11.foundation	2606
+~https	1422~ # these sources were further processed based on unique URL domain
+GARD	912
+MESH	649
+ICD10CM	540
+ICD9CM	513
+PMID	446
+NORD	438
+OMIMPS	265
+MTH	102
+doi	88
+Wikipedia	72
+SCTID	57
+UMLS	53
+DECIPHER	40
+ONCOTREE	39
+EFO	34
 OMOP	24
 GTR	13
-MedGen	1
-UMLS	53
-MTH	102
-Wikipedia	72
-OMIM	10030
-SCDO	1
-NORD	438
-DECIPHER	40
-NCIT	20215
-GARD	912
+ISBN-13	12
+HP	11
+~http	8~ # these sources were further processed based on unique URL domain
+MedDRA	5
+MEDGEN	5
 ICD10WHO	2
-DOID	17968
 OGMS	1
 ICD9	1
-SCTID	57
-MONDORULE	2825
-doi	88
-http	8
-ICD9CM	513
-OMIMPS	265
-
-These results are too messy (multiple sources that start with 'https', e.g. ORICID, CDC, ClinGen, etc.) and will be tabulated in the Jupyter notebook.
+MedGen	1
+SCDO	1
+https://orcid.org	873
+https://clinicalgenome.org	178
+https://www.clinicalgenome.org	119
+https://www.ncbi.nlm.nih.gov	68
+https://github.com	36
+https://rarediseases.org	31
+https://www.epilepsydiagnosis.org	22
+https://www.circadiansleepdisorders.org	11
+https://ghr.nlm.nih.gov	11
+https://www.cdc.gov	9
+https://www.niddk.nih.gov	9
+https://www.ninds.nih.gov	4
+https://www.dysautonomiainternational.org	4
+https://rarediseases.info.nih.gov	4
+https://en.wikipedia.org	4
+https://www.who.int	3
+https://www.mda.org	3
+https://wwwnc.cdc.gov	3
+https://www.nccn.org	2
+https://www.medicalalgorithms.com	2
+https://www.dermnetnz.org	2
+https://science.jrank.org	2
+https://includedcc.org	2
+https://www.cincinnatichildrens.org	2
+https://medical-dictionary.thefreedictionary.com	2
+https://www.verywellhealth.com	2
+https://www.medicinenet.com	2
+https://doi.org	2
+http://www.clevelandclinicmeded.com	2
+http://www.kat6a.org	1
+https://www.nih.gov	1
+http://purl.bioontology.org	1
+https://search.clinicalgenome.org	1
+https://fertilitynj.com	1
+http://www.emro.who.int	1
+http://purl.obolibrary.org	1
+https://www.ecgmedicaltraining.com	1
+https://eyewiki.aao.org	1
+https://www.mayoclinic.org	1
+https://www.merriam-webster.com	1
+https://www.britannica.com	1
+http://cmr.asm.org	1
+http://www.dictionary.com	1
+https://globalgenes.org	1
+https://emedicine.medscape.com	1
