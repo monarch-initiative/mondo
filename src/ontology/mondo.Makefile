@@ -1289,10 +1289,10 @@ $(TMPDIR)/subclass-confirmed.robot.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/reports/sync-subClassOf.confirmed.tsv" -O $@
 
 $(TMPDIR)/synonyms-confirmed.robot.tsv:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/main/src/ontology/reports/sync-synonym/sync-synonyms.confirmed.robot.tsv" -O $@
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/qc-duplicate-exact-synonym-no-abbrev--mini-build/src/ontology/reports/sync-synonym/sync-synonyms.confirmed.robot.tsv" -O $@
 
 $(TMPDIR)/synonyms-added.robot.tsv:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/main/src/ontology/reports/sync-synonym/sync-synonyms.added.robot.tsv" -O $@
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/qc-duplicate-exact-synonym-no-abbrev--mini-build/src/ontology/reports/sync-synonym/sync-synonyms.added.robot.tsv" -O $@
 
 $(TMPDIR)/new-exact-matches-%.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/lexmatch/unmapped_$*_lex_exact.tsv" -O $@
