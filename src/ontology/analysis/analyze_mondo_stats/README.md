@@ -160,7 +160,7 @@ robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_human
 
 
 ### Request 7 - Synonyms
-Get the number of exact synonyms we have from each source.
+### Get the number of exact synonyms we have from each source
 
 - Run from `mondo/src/ontology/analysis/analyze_mondo_stats` as: 
 ```
@@ -277,3 +277,29 @@ http://cmr.asm.org	1
 http://www.dictionary.com	1
 https://globalgenes.org	1
 https://emedicine.medscape.com	1
+
+
+### Number of Sources for Synonyms
+How many sources overlap in terms of synonyms: Number of synonyms that have more than one source
+
+#### Results - Number of Sources for Synonyms
+Number of Sources	Count of Synonyms
+0	12389
+1	40059
+2	14079
+3	4538
+4	1470
+5	441
+6	132
+7	24
+
+This means there are 40059 exact synonyms that have only 1 database cross reference source for the synonym.
+
+
+
+### Request 7 - Preferred EMC Labels
+Get the count of how many mondo term have a:
+- ClinGen Label
+- NORD label (ignore if we don’t have it yet)
+- OTAR label (ignore if we don’t have it yet)
+
