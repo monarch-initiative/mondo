@@ -296,10 +296,12 @@ Number of Sources	Count of Synonyms
 This means there are 40059 exact synonyms that have only 1 database cross reference source for the synonym.
 
 
-
-### Request 7 - Preferred EMC Labels
+### Request 7 - "Preferred" Labels
 Get the count of how many mondo term have a:
 - ClinGen Label
-- NORD label (ignore if we don’t have it yet)
-- OTAR label (ignore if we don’t have it yet)
+  - Run this command from the Terminal from `mondo/src/ontology/analysis/analyze_mondo_stats` as: 
+  `grep -c 'EXACT CLINGEN_LABEL' ../../mondo-edit.obo ` --> 1881 Mondo classes with an exact synonym designated as the CLINGEN_LABEL
+- NORD label (ignore if we don’t have it yet) --> I don't see anything with a tag of `NORD_LABEL`
+- OTAR label (ignore if we don’t have it yet) --> I don't see anything with a tag of `OTAR_LABEL`
+
 
