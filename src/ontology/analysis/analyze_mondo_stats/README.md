@@ -20,10 +20,16 @@ robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_h
 - DOID
 - NCIT (neoplasm branch) --> special processing needed
 - OMIM
-- Orphanet
+- Orphanet - all terms and also only orphanet disorder and disease subtypes
 - ICD10CM
 - UMLS (as provided by MedGen)
 
+
+#### Orphanet Disorder and Disease Subtypes
+- Run from `mondo/src/ontology/analysis/analyze_mondo_stats` as:
+```
+robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_human_disease_mondo_classes_with_xref_ORDO-disorder-subtypes.ru data/output/all_human_disease_mondo_class_xref_ORDO-disorder-subtypes_count.tsv
+```
 
 #### Alignment to NCIT
 ##### Get all classes from NCIT that are in the neoplasm branch
@@ -47,12 +53,13 @@ $ wc data/all_mondo_classes_with_ncit_xref_neoplasm-branch.tsv
 ```
 
 #### Results for Alignment with the source - Total number of diseases in sources
-- DOID	11390
-- ICD10CM	9142
-- NCIT	3804
-- OMIM	9333
-- Orphanet	11035
-- UMLS	20738
+DOID	11390
+ICD10CM	9142
+NCIT	3804
+OMIM	9333
+Orphanet	11035 (all terms)
+Orphanet    7218 (ordo_disorder and ordo_subtype_of_a_disorder subsets)
+UMLS	20738
 
 
 ### Alignment with the source - Number of terms from the sources that are in Mondo (as Mondo:equivalent)
