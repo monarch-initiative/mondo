@@ -22,7 +22,7 @@ robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_h
 - OMIM
 - Orphanet - all terms and also only orphanet disorder and disease subtypes
 - ICD10CM
-- UMLS (as provided by MedGen)
+- UMLS
 
 
 #### Orphanet Disorder and Disease Subtypes
@@ -70,6 +70,11 @@ To generate these counts, follow the steps above for "Alignment with the source 
 robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_human_disease_mondo_classes_with_xref-equivalentTo.ru data/output/all_human_disease_mondo_class_xref_count-equivalentTo.tsv
 ```
 
+#### Alignment with Orphanet Disorder and Disease Subtypes
+- Run from `mondo/src/ontology/analysis/analyze_mondo_stats` as: 
+```
+robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_human_disease_mondo_classes_with_xref-equivalentTo_ORDO-disorders-subtypes.ru data/output/all_human_disease_mondo_class_xref_count-equivalentTo_ORDO-disorders-subtypes.tsv
+```
 
 #### Alignment to the source NCIT - Number of terms from the sources that are in Mondo (as Mondo:equivalent)
 - Query Mondo for a _list_ of all Mondo classes that are in the human disease branch, i.e. children of MONDO:0700096 'human disease' and have an xref to NCIT and also have an xref source annotation of `MONDO:equivalentTo`. Run from `mondo/src/ontology/analysis/analyze_mondo_stats` as: 
@@ -91,6 +96,7 @@ $ wc data/output/all_mondo_classes_with_ncit_xref_neoplasm-branch-equivalentTo.t
 - NCIT	3452
 - OMIM	9141
 - Orphanet	8176
+- Orphanet 7218 (ordo_disorder and ordo_subtype_of_a_disorder subsets)
 - UMLS	20738
 
 
