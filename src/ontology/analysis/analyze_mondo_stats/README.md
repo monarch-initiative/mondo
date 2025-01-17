@@ -114,15 +114,21 @@ robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_h
 - NANDO
 - NORD
 
+- Run from `mondo/src/ontology/analysis/analyze_mondo_stats` as:
+```
+robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_human_disease_mondo_classes_with_EMC_xref.ru data/output/get_all_human_disease_mondo_classes_with_EMC_xref.tsv
+```
+
+
 #### Results for Externally Managed Content
-- GARD	10719
-- MedGen	20738
-- NANDO	1499
-- NORD	911
+GARD	10719
+MedGen	20738
+NANDO	1499
+NORD	911
 
 
 ### Request 4 - General Statistics
-These can be generated as: `sh run.sh make create-mondo-stats`.
+These can be generated as: `sh run.sh make create-mondo-stats`. To get more details on this, search for the goal `create-mondo-stats` in the `mondo.Makefile` to see the commands and queries that are run.
 
 #### Results - General Statistics
 All Mondo Stats created on: Tue Jan 14 05:02:59 UTC 2025
@@ -200,7 +206,7 @@ END {
 }' data/output/exact_synonyms.tsv 
 ```
 
-NOTE: To search for synonyms from a particular source, use this regex pattern:  `synonym: ".*?" EXACT \[.*?\bNCIT:[^\]]*\]` where `NCIT` is the CURIE prefix. Make sure to toggle the Seach box in VS Code to the regex option. 
+NOTE: To search for synonyms from a particular source, use this regex pattern:  `synonym: ".*?" EXACT \[.*?\bNCIT:[^\]]*\]` where `NCIT` is the CURIE prefix or `synonym: ".*?" .*? \[\]` for synonyms of any type without any source. Make sure to toggle the Seach box in VS Code to the regex option.
 Alternatively, the search can also be done using grep, e.g. `grep -E 'synonym: ".*?" EXACT \[.*?\bhttps:[^]]*\]' mondo-edit.obo`.
 
 For synonym source values that are a URL, the regex pattern is: `synonym: ".*?" EXACT \[.*?\bhttps:\/\/orcid\.org\/[^\],]*.*`, where the bsae URL to search for is `https://orcid.org`.
@@ -293,7 +299,8 @@ https://emedicine.medscape.com	1
 
 
 ### Number of Sources for Synonyms
-How many sources overlap in terms of synonyms: Number of synonyms that have more than one source
+How many sources overlap in terms of synonyms: Number of synonyms that have more than one source where that synonym exists. See the Jupyter
+notebook "Overall Mondo Stats-checkpoint" for details on how these counts were generated.
 
 #### Results - Number of Sources for Synonyms
 Number of Sources	Count of Synonyms
