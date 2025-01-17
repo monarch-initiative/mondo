@@ -22,19 +22,23 @@ Details and summaries for upcoming and past Mondo workshops.
 ## Mondo Epilepsy Workshop
 
 ### Description
-The goal of this workshop series is to review the classification of terms in Mondo based on your expert opinions, to ensure that the epilepsy branch is scientifically accurate, aligns with the current understanding of the disease features, and is maximally useful for your projects.
+The goal of this workshop series was to review the classification of terms in Mondo based on your expert opinions, to ensure that the epilepsy branch is scientifically accurate, aligns with the current understanding of the disease features, and is maximally useful for your projects.
 
 ### Date and Time
-- Part 1: October 25, 2024 (Friday) from 8-10 AM ([see your local time here](https://everytimezone.com/s/e594d712))  
-- Part 2: November 22, 2024 (Friday) from 8-9:50 AM ([see your local time here](https://everytimezone.com/s/e594d712))
-- Part 3: January 17, 2025 (Friday) from 8-9:50 AM ([see your local time here](https://everytimezone.com/s/e594d712))    
+- Part 1: October 25, 2024   
+- Part 2: November 22, 2024  
+- Part 3: January 17, 2025      
 
 ### Agenda
-The emerging agenda is available [here](https://docs.google.com/document/d/1Cg6fSNXaC3PZGIEnWHq_R8InKkQ1J2wVgkpbbxHhLZY/edit). To RSVP, please fill out this [form](https://docs.google.com/forms/d/e/1FAIpQLSd2vJU6XoUPmOC2S-YNcO4wuQOKrSo4YjGcxKFNrbXmGUybaA/viewform).
+The agenda is available [here](https://docs.google.com/document/d/1Cg6fSNXaC3PZGIEnWHq_R8InKkQ1J2wVgkpbbxHhLZY/edit). 
+
+### slides
+Available [here](https://docs.google.com/presentation/d/1mWdReVvXRyxz7AZzbdGaJdrMt_YDcLKi_9S3oacWhA8/edit#slide=id.g1050aaf62ea_0_607)
 
 ### Recordings
 - Part 1 [recording here](https://www.youtube.com/watch?v=heVEumM5710)  
 - Part 2 [recording here](https://youtu.be/W_WC7QZsL0M?si=tsXpcN2E9Zo4q6zZ)  
+- Part 3 [recording here](https://youtu.be/_Nr42VNv_7Y?si=D5Qe9jMs0ps0O0cm)
 
 ### Funding
 Funded by NHGRI Phenomics First (1RM1HG010860-01) and the [Critical Path Institute](https://c-path.org/fda-acknowledgement/).
