@@ -6,7 +6,7 @@ Details and summaries for upcoming and past Mondo workshops.
 
 ## Workshops and Outreach Calls
 
-- [Mondo Epilepsy Workshop (Part 1: October 25, 2024, Part 2: November 22, 2024)](#Oct-2024)
+- [Mondo Epilepsy Workshop (Part 1: October 25, 2024, Part 2: November 22, 2024, Part 3: January 17, 2025)](#Oct-2024)
 - [Mondo Outreach Calls](#outreach)
 - [Mondo Workshop (February 01, 2023)](#feb-2023)
 - [Using the Mondo Disease Ontology for Disease Data Curation (June 08, 2022)](#june-2022)
