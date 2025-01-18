@@ -1264,6 +1264,10 @@ all: config/exclusion_reasons.tsv
 $(TMPDIR)/subclass-confirmed.robot.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/reports/sync-subClassOf.confirmed.tsv" -O $@
 
+# Get file of non-neoplasm branch NCIT terms
+$(TMPDIR)/non-neoplasm-ncit-subclass-provenance.robot.tsv:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-curation-analysis/refs/heads/main/mondo-subclass-sync-analysis/ncit_subclass_provenance_robot_df.tsv" -O $@
+
 # TODO WARNING THE URL POINTS TO A BRANCH!
 $(TMPDIR)/synonyms-confirmed.robot.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/sync1-synonyms/src/ontology/reports/sync-synonym/sync-synonyms.confirmed.robot.tsv" -O $@
@@ -1291,12 +1295,13 @@ tmp/subclass-axioms.owl: $(SRC)
 
 # This command updates mondo-edit with all the confirmed subclass evidence from the mondo-ingest repo
 .PHONY: update-subclass-sync
-update-subclass-sync: $(TMPDIR)/subclass-confirmed.robot.owl tmp/subclass-axioms.owl
+update-subclass-sync: $(TMPDIR)/subclass-confirmed.robot.owl tmp/subclass-axioms.owl $(TMPDIR)/non-neoplasm-ncit-subclass-provenance.robot.owl
 	$(ROBOT) remove --input $(SRC) \
 		--select "self parents" \
   		--axioms SubClassOf \
 		--trim false \
 		merge -i $< -i tmp/subclass-axioms.owl --collapse-import-closure false \
+		merge -i $< -i tmp/non-neoplasm-ncit-subclass-provenance.robot.owl --collapse-import-closure false \
 		convert -f obo --check false -o tmp/$(SRC)
 		mv tmp/$(SRC) $(SRC)
 		make NORM
