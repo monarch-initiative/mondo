@@ -9,12 +9,7 @@ WHERE {
 
   # Filter for database cross-references to specific sources
   ?mondoClass oboInOwl:hasDbXref ?xref .
-
-  # Extract the source (e.g., Orphanet)
-  BIND(STRBEFORE(STR(?xref), ":") AS ?source)
-
-  # Filter for specific source (Orphanet)
-  FILTER(?source = "Orphanet")
+  FILTER(STRSTARTS(STR(?xref), "Orphanet:"))
 
   # Check if the class is in either the ordo_disorder or ordo_subtype_of_a_disorder subsets
   ?mondoClass oboInOwl:inSubset ?subset .
