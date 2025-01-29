@@ -16,15 +16,13 @@ Name | Affiliation | GitHub | Curation team? | Technical team?
 --- | --- | --- | --- | ---
 [Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | Critical Path Institute | [nicolevasilevsky](https://github.com/nicolevasilevsky) | Y | Y
 [Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | semanticly, Ltd | [matentzn](https://github.com/matentzn) | N | Y
-[Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of North Caronlina at Chapel Hill | [sabrinatoro](https://github.com/sabrinatoro) | Y | Y
-[Trish Whetzel](https://orcid.org/0000-0002-3458-4839) | University of North Caronlina at Chapel Hill | [twhetzel](https://github.com/twhetzel) | Y | Y
+[Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of North Carolina at Chapel Hill | [sabrinatoro](https://github.com/sabrinatoro) | Y | Y
+[Trish Whetzel](https://orcid.org/0000-0002-3458-4839) | University of North Carolina at Chapel Hill | [twhetzel](https://github.com/twhetzel) | Y | Y
 [Katie Mullen](https://orcid.org/0000-0002-5002-8648) | University of Colorado Anschutz Medical Campus | [katiermullen](https://github.com/katiermullen) | Y | N
 [Joe Flack](https://orcid.org/0000-0002-2906-7319) | Johns Hopkins University | [joeflack4](https://github.com/joeflack4) | N | Y
 [Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson) | Y (medical expert)| N
-[Harshad Hegde](https://orcid.org/0000-0002-2411-565X) | Lawrence Berkeley National Lab | [hrshdhgd](https://github.com/hrshdhgd) | N | Y
 [Ada Hamosh](https://orcid.org/0000-0002-1780-5230) | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh) | medical expert | N
-[Melissa Haendel](https://orcid.org/0000-0001-9114-8737) | University of Colorado | [mellybelly](https://github.com/mellybelly) | Y | N
-[Deepak Unni](https://orcid.org/0000-0002-3583-7340) | EMBL | [deepakunni3](https://github.com/deepakunni3) | N | Y
+[Melissa Haendel](https://orcid.org/0000-0001-9114-8737) | University of North Carolina at Chapel Hill | [mellybelly](https://github.com/mellybelly) | Y | N
 [Chris Mungall](http://biosciences.lbl.gov/profiles/chris-mungall/) | Lawrence Berkeley National Lab | [cmungall](https://github.com/cmungall) | Y | Y
 
 # Project managers
@@ -32,7 +30,6 @@ Name | Affiliation | GitHub | Curation team? | Technical team?
 Name | Affiliation | Role | GitHub 
 --- | --- | --- | 
 Sarah Gehrke | University of Colorado | Project Manager | [sagehrke](https://github.com/sagehrke)
-Moni Munoz-Torres | University of Colorado | Phenomics First Program Director | [monicacecilia ](https://github.com/monicacecilia )
 
 # Contributors
 
@@ -83,7 +80,6 @@ Marc Hanauer | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [Orp
 Nomi Harris | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [nlharris ](https://github.com/nlharris)
 Emily Hartley | [Critical Path Institute](https://c-path.org/) | [ehartley](https://github.com/ehartley)
 Allison Heath | [CHOP](https://www.chop.edu/) | [allisonheath](https://github.com/allisonheath)
-Harshad Hegde | [Lawrence Berkeley National Lab](https://www.lbl.gov/) | [hrshdhgd](https://github.com/hrshdhgd)
 Jessica Hekman | [Broad Institute](https://www.broadinstitute.org/) | [jphekman](https://github.com/jphekman)
 Ingo Helbig | [CHOP](https://www.chop.edu/) | [ihelbig](https://github.com/ihelbig)
 Alex Henrie            |                        | [alexhenrie](https://github.com/alexhenrie)
@@ -158,6 +154,9 @@ Colleen Xu             |                        | [colleenXu](https://github.com
 Fuqi Xu                | EMBL-EBI                | [FuqiX](https://github.com/FuqiX) 
 Andreas Zankl          | University of Sydney   | [azankl](https://github.com/azankl) 
 Aaron Zhang | [Monarch Initiative](http://monarchinitiative.org/) | [kingmanzhang](https://github.com/kingmanzhang)
+Moni Munoz-Torres | University of Colorado |  [monicacecilia ](https://github.com/monicacecilia)
+Harshad Hegde |  | [hrshdhgd](https://github.com/hrshdhgd)
+Deepak Unni | EMBL | [deepakunni3](https://github.com/deepakunni3) | 
 N/A                    | N/A | [dancingline](https://github.com/dancingline)     
 N/A                    | N/A | [darintay](https://github.com/darintay)  
 N/A                    | N/A | [dst1](https://github.com/dst1) 
