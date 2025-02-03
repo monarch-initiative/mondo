@@ -99,6 +99,12 @@ $ wc data/output/all_mondo_classes_with_ncit_xref_neoplasm-branch-equivalentTo.t
 - Orphanet 7218 (ordo_disorder and ordo_subtype_of_a_disorder subsets)
 - UMLS	20738
 
+### Get the total number of Mondo classes in the Mondo human neoplasm branch, e.g. children of MONDO:0005070
+From `mondo/src/ontology/analysis/analyze_mondo_stats` run as:
+```
+robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_human_disease_mondo_classes_neoplasm_children.ru data/output/mondo_neoplasm_count.tsv
+```
+
 
 ### Request 3: Externally Managed Content
 For Mondo terms are in the human disease branch, i.e. children of MONDO:0700096 'human disease', get the total number of diseases represented by each Externally Managed Content source (see below). This should be the count of distinct Mondo classes that contain at least one database_cross_reference to each of the "Externally Managed Content" sources. The query can be run against `mondo-edit.obo`, but must use the parameter `reason` with the robot command since many Mondo classes only classify with a parent of MONDO:0700096 'human disease' in the inferred hierarchy.
