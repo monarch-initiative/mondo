@@ -112,7 +112,6 @@ list: $(MYDIR)/*
 qc_docs: ../../docs/editors-guide/quality-control-tests.md
 
 pattern_mkdocs:
-	pip install tabulate
 	python ../scripts/patterns_create_docs.py
 
 .PHONY: pattern_docs
