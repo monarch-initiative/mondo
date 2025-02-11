@@ -1,0 +1,32 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+SELECT 
+
+?mondo_curie ?label 
+(GROUP_CONCAT(DISTINCT STR(?xref); separator="|") as ?xrefs)
+(GROUP_CONCAT(DISTINCT STR(?subset); separator=", ") as ?subsets)
+(GROUP_CONCAT(DISTINCT STR(?exact_match); separator=", ") as ?exact_matches)
+
+WHERE {
+  ?mondo_id owl:deprecated true .
+  ?mondo_id oio:inSubset <http://purl.obolibrary.org/obo/mondo#ordo_disorder> .
+  
+  OPTIONAL {
+  ?mondo_id rdfs:label ?label .
+  }
+  OPTIONAL {
+  ?mondo_id	oio:inSubset ?subset .
+  }
+  OPTIONAL {
+  ?mondo_id	oio:hasDbXref ?xref .
+  }
+  OPTIONAL {
+  ?mondo_id	skos:exactMatch ?exact_match .
+  }
+  BIND(REPLACE(REPLACE(STR(?mondo_id),"http://purl.obolibrary.org/obo/",""),"_",":") as ?mondo_curie)  
+
+} GROUP BY ?mondo_curie ?label

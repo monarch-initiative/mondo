@@ -1,0 +1,24 @@
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?cls ?label (GROUP_CONCAT(DISTINCT STR(?parent); separator="|") as ?parent_ids) (GROUP_CONCAT(DISTINCT STR(?parent_label); separator="|") as ?parent_labels)
+
+WHERE
+{
+
+  ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#inferred_rare> .
+  ?cls rdfs:label ?label .
+  ?cls rdfs:subClassOf ?parent .
+  ?parent rdfs:label ?parent_label .
+  ?parent <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#rare> .
+  
+  FILTER NOT EXISTS {
+    ?parent <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#inferred_rare> .
+  }
+ 
+ FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+} GROUP BY ?cls ?label
