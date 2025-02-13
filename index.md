@@ -86,4 +86,4 @@ The best way to contribute is by addressing tickets or reporting issues on the [
 <a name="contact"></a> 
 # Contact
 
-If you are interested in receiving email updates about releases, please contact [info@monarchinitiative.org](info@monarchinitiative.org).
+If you are interested in receiving email updates about releases, please contact <a href="mailto:info@monarchinitiative.org">info@monarchinitiative.org</a>.
