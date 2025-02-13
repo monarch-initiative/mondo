@@ -5,7 +5,7 @@ _updated Feb 13 2025_
 
 **Background:** 
 Whether to lump or split disease entities has been recognized as the key challenge of nosology for over five decades [1]. Lumpers group diseases into broader categories that include items that share important features despite some differences; splitters prefer narrower disease categories that subgroup disease entities. 
-The Clinical Genome Resource (ClinGen) has developed frameworks to determine whether diseases should be “lump” or “split”. [2].
+The Clinical Genome Resource (ClinGen) has developed frameworks to determine whether diseases should be “lumped” or “split”. [2].
 
 In the context of the collaboration between ClinGen and Mondo, many requests refer to “lumping” or “splitting” terms in Mondo. This document summarized the rules followed in Mondo.
 
@@ -25,7 +25,7 @@ However, the [ClinGen Retina Gene Curation Expert Panel](https://clinicalgenome.
 **Mondo rules:**
 - create a new term for the "lumped" disease entity
     in the example above:‘RPE65-related recessive retinopathy’ (MONDO:0100368)
-- make the disease terms to be lump SubClass-Of this new "lumped" disease entity. 
+- make the disease terms to be lumped SubClass-Of this new "lumped" disease entity. 
     in the example above: ‘retinitis pigmentosa 20’ (MONDO:0013425) and ‘leber congenital amaurosis 2’ (MONDO:0008765) are SubClasses of MONDO:0100368 
 
 ![alt text](image.png)
