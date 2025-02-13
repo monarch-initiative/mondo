@@ -6,8 +6,8 @@ Details and summaries for upcoming and past Mondo workshops.
 
 ## Workshops and Outreach Calls
 
-- [Mondo Epilepsy Workshop (Part 1: October 25, 2024, Part 2: November 22, 2024, Part 3: January 17, 2025)](#Oct-2024)
 - [Mondo Outreach Calls](#outreach)
+- [Mondo Epilepsy Workshop (Part 1: October 25, 2024, Part 2: November 22, 2024, Part 3: January 17, 2025)](#Oct-2024)
 - [Mondo Workshop (February 01, 2023)](#feb-2023)
 - [Using the Mondo Disease Ontology for Disease Data Curation (June 08, 2022)](#june-2022)
 - [Mondo Clinical Reclassification Workshop Part 2 (November 17, 2021)](#november-2021)
@@ -17,31 +17,6 @@ Details and summaries for upcoming and past Mondo workshops.
 - [Mondo Upper Level Reclassification Workshop (April 05, 2021)](#april-2021)
 - [Mondo Introductory Workshop (November 2018)](#november-2018) 
 
-
-<a name="Oct-2024"></a> 
-## Mondo Epilepsy Workshop
-
-### Description
-The goal of this workshop series was to review the classification of terms in Mondo based on your expert opinions, to ensure that the epilepsy branch is scientifically accurate, aligns with the current understanding of the disease features, and is maximally useful for your projects.
-
-### Date and Time
-- Part 1: October 25, 2024   
-- Part 2: November 22, 2024  
-- Part 3: January 17, 2025      
-
-### Agenda
-The agenda is available [here](https://docs.google.com/document/d/1Cg6fSNXaC3PZGIEnWHq_R8InKkQ1J2wVgkpbbxHhLZY/edit). 
-
-### slides
-Available [here](https://docs.google.com/presentation/d/1mWdReVvXRyxz7AZzbdGaJdrMt_YDcLKi_9S3oacWhA8/edit#slide=id.g1050aaf62ea_0_607)
-
-### Recordings
-- Part 1 [recording here](https://www.youtube.com/watch?v=heVEumM5710)  
-- Part 2 [recording here](https://youtu.be/W_WC7QZsL0M?si=tsXpcN2E9Zo4q6zZ)  
-- Part 3 [recording here](https://youtu.be/_Nr42VNv_7Y?si=D5Qe9jMs0ps0O0cm)
-
-### Funding
-Funded by NHGRI Phenomics First (1RM1HG010860-01) and the [Critical Path Institute](https://c-path.org/fda-acknowledgement/).
 
 <a name="outreach"></a> 
 ## Mondo Outreach Calls
@@ -100,6 +75,31 @@ July 28 | 9 AM PT/12 PM ET | Megan Kane ([MedGen](https://www.ncbi.nlm.nih.gov/m
 June 30 | 9 AM PT/12 PM ET | Eric Sid and Qian Zhu ([NCATS](https://rarediseases.info.nih.gov/about)) | Use of Disease Ontologies and Knowledge in Addressing Translation Science in Rare Diseases | [Here](https://drive.google.com/drive/folders/1qsqteFng74C7Kvm2BdIoDASWOaWaqEjN)
 June 02 | 9 AM PT/12 PM ET | Gioconda Alyea, Sean Roberts, and Marybeth McAfee ([NORD](https://rarediseases.org/)) | Rare Diseases in NORD | [Here](https://drive.google.com/file/d/1wJzqU6ruAGuzsk7xZLzIu9G_UH8SI8ta/view?usp=sharing) |
 
+
+<a name="Oct-2024"></a> 
+## Mondo Epilepsy Workshop
+
+### Description
+The goal of this workshop series was to review the classification of terms in Mondo based on your expert opinions, to ensure that the epilepsy branch is scientifically accurate, aligns with the current understanding of the disease features, and is maximally useful for your projects.
+
+### Date and Time
+- Part 1: October 25, 2024   
+- Part 2: November 22, 2024  
+- Part 3: January 17, 2025      
+
+### Agenda
+The agenda is available [here](https://docs.google.com/document/d/1Cg6fSNXaC3PZGIEnWHq_R8InKkQ1J2wVgkpbbxHhLZY/edit). 
+
+### slides
+Available [here](https://docs.google.com/presentation/d/1mWdReVvXRyxz7AZzbdGaJdrMt_YDcLKi_9S3oacWhA8/edit#slide=id.g1050aaf62ea_0_607)
+
+### Recordings
+- Part 1 [recording here](https://www.youtube.com/watch?v=heVEumM5710)  
+- Part 2 [recording here](https://youtu.be/W_WC7QZsL0M?si=tsXpcN2E9Zo4q6zZ)  
+- Part 3 [recording here](https://youtu.be/_Nr42VNv_7Y?si=D5Qe9jMs0ps0O0cm)
+
+### Funding
+Funded by NHGRI Phenomics First (1RM1HG010860-01) and the [Critical Path Institute](https://c-path.org/fda-acknowledgement/).
 
 <a name="feb-2023"></a> 
 ## Mondo Workshops
