@@ -35,28 +35,31 @@ Mondo is generously supported by the NIH National Human Genome Research Institut
 ### Summary statistics across all Mondo concepts
 See each release and statistics at: [MONDO Releases](https://github.com/monarch-initiative/mondo/tags)
 
-Version at: https://github.com/monarch-initiative/mondo/releases/tag/v2022-03-01
+Latest version at: [https://github.com/monarch-initiative/mondo/releases/tag/v2025-02-04](https://github.com/monarch-initiative/mondo/releases/tag/v2025-02-04)
+
+
+### Overall Mondo Statistics
 
 Disease term feature | Count
 -- | -- 
-Total number of terms | 22,157
-Database cross references | 104,479
-Term definitions | 15,443
-Exact synonyms | 66,247
-Related synonyms | 30,661
-Narrow (more specific) synonyms | 2,214
-Broad (more general) synonyms | 847
+Total number of terms | 25,600
+Database cross references | 127,741
+Term definitions | 17,688
+Exact synonyms | 73,455
+Related synonyms | 30,514
+Narrow (more specific) synonyms | 2,545
+Broad (more general) synonyms | 1,399
 
 ### Disease concept statistics for select disease categories 
 
-Note that these groupings are overlapping. Version at: https://github.com/monarch-initiative/mondo/releases/tag/v2022-03-01. 
+Note that these groupings are overlapping.
 
 Disease type | Count (Concepts)
 -- | --
-Rare diseases | 10,443
-Infectious diseases  | 1,240
-Cancers (including neoplasms) | 4,298
-Mendelian diseases |  11,380
+Rare diseases | 15,648
+Infectious diseases  | 1,071
+Cancers (including neoplasms) | 4,711
+Mendelian diseases |  11,434
 
 <a name="created"></a> 
 ## How was Mondo created?    
