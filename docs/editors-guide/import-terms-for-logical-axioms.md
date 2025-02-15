@@ -1,10 +1,22 @@
-_Last updated 2-Jan-2025_
+_Last updated 2025-02-15_
 
 ## Import terms into Mondo for use in logical axioms
 
 This workflow is for adding classes from external ontologies (e.g. GO, CHEBI, HGNC, or NCBI) and is much more streamlined compared to [MIREOTing](https://github.com/obophenotype/human-phenotype-ontology/wiki/Editor-Guide#mireoting).
 
 As a Mondo curator, when you have a ticket that requires a term from an external ontology, create a new git feature branch to include _only_ the changes for the refresh of the imports following the steps below. Also, ask on Slack if other curators need other terms imported. 
+
+### Add new term via ROBOT template
+_Updated 2025-02-15_: This the preferred workflow currently to add a new gene for use in a subclassOf axiom.
+
+1. Create a ROBOT template, such as [this](https://docs.google.com/spreadsheets/d/1rJsEEi47oysRnO5LJ8rlTy5_NxnDLZawRPn-Rgtmyek/edit?gid=835348843#gid=835348843)
+2. Add the term ID in Column A for the term you want to add a subclass axiom to
+3. In the subclassOf Axiom column (column L on this spreadsheet), add the IRI for the term you want to add, for example: http://identifiers.org/hgnc/23017. Note, this will add a new sublcassOf axiom: 
+4. Run the ROBOT merge command
+5. You will see the new subclassOf axiom with the gene ID. Before the release, Mondoc curators will refresh the imports and this will bring in the label.
+6. Commit your changes and create a PR.
+
+## Alternative workflows
 
 ### Prepare your environment
 - Set the memory in Docker to 28 GB. See [instructions](/editors-guide/imports/#increase-memory-in-docker-mac-specific-instructions) below on how to change the memory setting.
