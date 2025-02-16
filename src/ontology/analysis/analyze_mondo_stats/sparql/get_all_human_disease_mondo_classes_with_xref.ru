@@ -4,40 +4,25 @@ PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 SELECT ?source (COUNT(DISTINCT ?mondoClass) AS ?count)
 WHERE {
-  # Find subclasses of MONDO:0700096
-  ?mondoClass rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0700096> .
+  # Find subclasses of MONDO:0700096 'human disease'
+  ?mondoClass rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0700096> .
 
   # Filter for database cross-references to specific sources
   ?mondoClass oboInOwl:hasDbXref ?xref .
 
-  # Match the desired sources
-  BIND(
-    IF(
-      STRSTARTS(STR(?xref), "DOID:"),
-      "DOID",
-      IF(
-        STRSTARTS(STR(?xref), "NCIT:"),
-        "NCIT",
-        IF(
-          STRSTARTS(STR(?xref), "OMIM:"),
-          "OMIM",
-          IF(
-            STRSTARTS(STR(?xref), "Orphanet:"),
-            "Orphanet",
-            IF(
-              STRSTARTS(STR(?xref), "ICD10CM:"),
-              "ICD10CM",
-              IF(STRSTARTS(STR(?xref), "UMLS:"), "UMLS", "OTHER")
-            )
-          )
-        )
-      )
-    )
-    AS ?source
-  )
+  # Define valid sources
+  VALUES (?prefix ?source) {
+    ("DOID:" "DOID")
+    #("NCIT:" "NCIT") # Exclude NCIT, count must be limited to NCIT 'neoplasm' branch, see README "Alignment to NCIT"
+    ("OMIM:" "OMIM")
+    ("Orphanet:" "Orphanet")
+    ("ICD10CM:" "ICD10CM")
+    ("UMLS:" "UMLS")
+    ("icd11.foundation:" "ICD11")
+  }
 
-  # Exclude any xrefs not matching the sources of interest
-  FILTER(?source != "OTHER")
+  # Match xref with source
+  FILTER(STRSTARTS(STR(?xref), ?prefix))
 }
 GROUP BY ?source
 ORDER BY ?source
