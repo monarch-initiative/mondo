@@ -1,0 +1,15 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+
+SELECT DISTINCT ?mondo_id ?label ?harrison WHERE {
+  ?mondo_id rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0700096> ;
+            rdfs:label ?label .
+  
+  	OPTIONAL {
+    	?mondo_id rdfs:subClassOf+ ?ancestor .
+  		 ?ancestor oboInOwl:inSubset <http://purl.obolibrary.org/obo/mondo#harrisons_view> .
+    	BIND("YES" as ?harrison)
+	}
+}

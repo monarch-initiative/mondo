@@ -803,7 +803,7 @@ SPARQL_EDIT_EXCLUDE=
 # the ontology begin looking like this: http://purl.obolibrary.org/obo/mondo/mondo-base#... This
 # will cause the query to fail because it expects the IRI  http://purl.obolibrary.org/obo/mondo#ABREVIATION
 # for the duplicate-exact-synonym-no-abbrev check.
-SPARQL_OBO_EXCLUDE=qc-single-child qc-omimps-should-be-inherited qc-omim-subsumption qc-permitted-properties qc-duplicate-exact-synonym-no-abbrev
+SPARQL_OBO_EXCLUDE=qc-single-child qc-omimps-should-be-inherited qc-omim-subsumption qc-permitted-properties qc-duplicate-exact-synonym-no-abbrev qc-multiple-gene-associations
 SPARQL_OWL_EXCLUDE=qc-permitted-properties
 SPARQL_GENERAL_QC_EDIT=$(filter-out $(SPARQL_EDIT_EXCLUDE),$(SPARQL_GENERAL_QC))
 SPARQL_GENERAL_QC_OWL=$(filter-out $(SPARQL_OWL_EXCLUDE),$(SPARQL_GENERAL_QC))
@@ -1296,7 +1296,12 @@ check: mondo-edit.obo
 	 ../utils/quick-check.pl $<
 
 mondo-edit.owl: mondo-edit.obo
-	../utils/quick-check.pl $< && $(ROBOT) convert -i $< -o $@
+	$(ROBOT) convert -i $< -o $@
+
+quickcheck: mondo-edit.obo
+	../utils/quick-check.pl $<
+
+test: quickcheck
 
 d2taxon-wd.tsv:
 	pq-wd -f tsv  "has_cause(D,T),doid_id(D,DX),ncbitaxon_id(T,TX)" "x(DX,TX)" > $@.tmp && perl -npe 's@\t@\tNCBITaxon:@' $@.tmp > $@

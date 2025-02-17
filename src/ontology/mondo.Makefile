@@ -75,7 +75,6 @@ pattern_ontology: ../patterns/pattern.owl
 	filter --select "<http://purl.obolibrary.org/obo/mondo/patterns*>" --select "self annotations" --signature true --trim true -o ../patterns/pattern-simple.owl
 
 ../patterns/dosdp-patterns/README.md: .FORCE
-	pip install tabulate
 	python ../scripts/patterns_create_overview.py "../patterns/dosdp-patterns" "../patterns/data/matches" $@
 
 pattern_readmes: ../patterns/dosdp-patterns/README.md
@@ -113,7 +112,6 @@ list: $(MYDIR)/*
 qc_docs: ../../docs/editors-guide/quality-control-tests.md
 
 pattern_mkdocs:
-	pip install tabulate
 	python ../scripts/patterns_create_docs.py
 
 .PHONY: pattern_docs
@@ -315,8 +313,7 @@ $(TEMPLATES_DIR)/ROBOT_addMedGen_fromIngest.tsv:
 # 1. Rare disease pipeline
 # 2. Externally managed content pipeline
 
-# CHANGE THIS TO THE MAIN BRANCH BEFOR MERGING!!!
-MONDO_INGEST_EXTERNAL_LOCATION=https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/externalclingenmedgenefo/src/ontology/external
+MONDO_INGEST_EXTERNAL_LOCATION=https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/external
 
 DOWNLOAD_EXTERNAL=true
 
@@ -452,6 +449,31 @@ update-rare-subset:
 ######################################################
 
 ####################################
+##### OMIM #####################
+####################################
+
+$(TMPDIR)/mondo-genes-axioms.owl: $(SRC)
+	$(ROBOT) filter --input $(SRC) \
+		--term RO:0004003 \
+		--axioms SubClassOf \
+		--preserve-structure false \
+		--trim false \
+		--drop-axiom-annotations "oboInOwl:source=~'(OMIM):.*'" \
+		-o $@
+
+
+.PHONY: update-omim-genes
+update-omim-genes:
+	$(MAKE) $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl $(TMPDIR)/mondo-genes-axioms.owl -B
+	# We need to be less aggressive here, as some gene relations were not originally sourced
+	# from OMIM, and were added, for example, for ClinGen.
+	$(ROBOT) remove -i $(SRC) --term RO:0004003 --axioms SubClassOf --preserve-structure false --trim true \
+		merge -i $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl -i $(TMPDIR)/mondo-genes-axioms.owl --collapse-import-closure false \
+		query --update ../sparql/update/omim-gene-equivalence.ru \
+		convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+####################################
 ##### Orphanet #####################
 ####################################
 
@@ -537,7 +559,7 @@ subset-metrics:
 
 SOURCE_VERSION = $(TODAY)
 # snomed
-SOURCE_IDS = doid ncit ordo omim gard
+SOURCE_IDS = doid ncit ordo omim
 SOURCE_IDS_INCL_MONDO = $(SOURCE_IDS) mondo equivalencies
 ALL_SOURCES_JSON = $(patsubst %, sources/$(SOURCE_VERSION)/%.json, $(SOURCE_IDS_INCL_MONDO))
 ALL_SOURCES_JSON_GZ = $(patsubst %, sources/$(SOURCE_VERSION)/%.json.gz, $(SOURCE_IDS_INCL_MONDO))
@@ -1059,6 +1081,8 @@ deprecated_annotation_merging:
 	sed -i 's/source="MONDO:equivalentObsolete",\ source="MONDO:obsoleteEquivalentObsolete"/source="MONDO:obsoleteEquivalentObsolete"/g' mondo-edit.obo || true
 	sed -i 's/source="MONDO:equivalentObsolete",\ source="MONDO:equivalentTo"/source="MONDO:equivalentObsolete"/g' mondo-edit.obo || true
 	sed -i 's/\(.*\)source="MONDO:equivalentObsolete"\(.*\)source="MONDO:obsoleteEquivalentObsolete"\(.*\)/\1source="MONDO:obsoleteEquivalentObsolete"\2\3/g' mondo-edit.obo || true
+	sed -i '/source="MONDO:equivalentObsolete"/ s/, source="MONDO:equivalentTo"//g' mondo-edit.obo || true
+	sed -i 's/source="MONDO:equivalentObsolete",\ source="MONDO:obsoleteEquivalent"/source="MONDO:obsoleteEquivalentObsolete"/g' mondo-edit.obo || true
 	sed -i 's/, }/}/g' mondo-edit.obo || true
 	sed -i 's/, ,/,/g' mondo-edit.obo || true
 	echo "NOTE: There are still some broken cases that need to be manually fixed. Search for `quivalent.*quivalent` (no E) in case sensitive regex mode in Atom or Visual Studio"
@@ -1264,6 +1288,9 @@ all: config/exclusion_reasons.tsv
 $(TMPDIR)/subclass-confirmed.robot.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/reports/sync-subClassOf.confirmed.tsv" -O $@
 
+$(TMPDIR)/synonyms-confirmed.robot.tsv:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/main/src/ontology/reports/sync-synonym/sync-synonyms.confirmed.robot.tsv" -O $@
+
 $(TMPDIR)/new-exact-matches-%.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/lexmatch/unmapped_$*_lex_exact.tsv" -O $@
 
@@ -1280,23 +1307,78 @@ update-%-mappings: $(TMPDIR)/new-exact-matches-%.owl
 		make NORM
 		mv NORM $(SRC)
 
-tmp/subclass-axioms.owl: $(SRC)
-	$(ROBOT) filter --input $(SRC) --axioms SubClassOf --preserve-structure false --trim false \
-		--drop-axiom-annotations "oboInOwl:source=~'(DOID|ICD10CM|icd11.foundation|NCIT|OMIM|OMIMPS|Orphanet):.*'" \
+# We want to preserve all axioms with relationships as they are here
+# As we only care about subclass relations between names.
+$(TMPDIR)/subclass-anonymous-axioms.owl: $(SRC)
+	$(ROBOT) filter --input $(SRC) \
+		--select "object-properties" \
+		--axioms SubClassOf \
+		--preserve-structure false \
+		--trim false \
+		-o $@
+
+# Here we select all subclass relations between named classes
+# and drop the evidence we want.
+# Hopefully the union of named and anonymous subclass relations will be _all_ subclass relations
+$(TMPDIR)/subclass-named-axioms.owl: $(SRC)
+	$(ROBOT) filter --input $(SRC) \
+		--axioms SubClassOf \
+		--preserve-structure false \
+		--trim false \
+		remove --select "object-properties" \
+		--drop-axiom-annotations "oboInOwl:source=~'($(SOURCES_REGEX)):.*'" \
 		-o $@
 
 # This command updates mondo-edit with all the confirmed subclass evidence from the mondo-ingest repo
 .PHONY: update-subclass-sync
-update-subclass-sync: $(TMPDIR)/subclass-confirmed.robot.owl tmp/subclass-axioms.owl
+update-subclass-sync: 
+	$(MAKE) $(TMPDIR)/subclass-confirmed.robot.owl $(TMPDIR)/subclass-named-axioms.owl $(TMPDIR)/subclass-anonymous-axioms.owl
 	$(ROBOT) remove --input $(SRC) \
-		--select "self parents" \
-  		--axioms SubClassOf \
-		--trim false \
-		merge -i $< -i tmp/subclass-axioms.owl --collapse-import-closure false \
+		--axioms SubClassOf \
+		--preserve-structure false \
+		merge -i $(TMPDIR)/subclass-confirmed.robot.owl -i $(TMPDIR)/subclass-named-axioms.owl -i $(TMPDIR)/subclass-anonymous-axioms.owl --collapse-import-closure false \
 		convert -f obo --check false -o tmp/$(SRC)
 		mv tmp/$(SRC) $(SRC)
 		make NORM
 		mv NORM $(SRC)
+
+
+# All the synchronized sources
+SYNCED_SOURCES := DOID ICD10CM ICD10WHO icd11.foundation NCIT OMIM OMIMPS Orphanet
+
+# Join the sources with '|' to form a regex for use in commands
+SOURCES_REGEX := $(shell IFS='|'; echo "$(SYNCED_SOURCES)" | sed 's/ /|/g')
+
+# This target extracts all synonyms from mondo edit and then drops all axiom
+# annotations related to the sources that are in the list of curated sources
+tmp/synonyms-axioms.owl: $(SRC)
+	$(ROBOT) filter --input $(SRC) \
+		--term oboInOwl:hasExactSynonym \
+		--term oboInOwl:hasNarrowSynonym \
+		--term oboInOwl:hasBroadSynonym \
+		--term oboInOwl:hasRelatedSynonym \
+		--axioms annotation --preserve-structure false --trim false \
+		--drop-axiom-annotations "oboInOwl:hasDbXref=~'($(SOURCES_REGEX)):.*'" \
+		-o $@
+
+# This command updates mondo-edit with all the confirmed synonyms evidence from the mondo-ingest repo
+.PHONY: update-synonyms-sync
+update-synonyms-sync: $(TMPDIR)/synonyms-confirmed.robot.owl tmp/synonyms-axioms.owl
+	$(ROBOT) \
+		remove --input $(SRC) \
+			--term oboInOwl:hasExactSynonym \
+			--term oboInOwl:hasNarrowSynonym \
+			--term oboInOwl:hasBroadSynonym \
+			--term oboInOwl:hasRelatedSynonym \
+			--axioms annotation --trim true \
+		merge \
+			-i $(TMPDIR)/synonyms-confirmed.robot.owl \
+			-i tmp/synonyms-axioms.owl \
+			--collapse-import-closure false \
+		convert -f obo --check false -o tmp/$(SRC)
+	mv tmp/$(SRC) $(SRC)
+	make NORM
+	mv NORM $(SRC)
 
 
 .PHONY: help
