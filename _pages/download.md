@@ -30,6 +30,9 @@ See [Changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes
 - **Ontobee**: [http://www.ontobee.org/ontology/MONDO](http://www.ontobee.org/ontology/MONDO)
 
 
+## Documentation
+- The Mondo Editor's Guide: [https://mondo.readthedocs.io/en/latest/](https://mondo.readthedocs.io/en/latest/)
+- The Mondo Ingest Guide: [https://monarch-initiative.github.io/mondo-ingest/](https://monarch-initiative.github.io/mondo-ingest/)
 
 
 ## Report issues/bugs/new term requests, changes, etc.
