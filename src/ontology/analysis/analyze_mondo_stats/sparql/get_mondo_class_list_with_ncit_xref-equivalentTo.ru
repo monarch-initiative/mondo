@@ -5,7 +5,7 @@ PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 SELECT DISTINCT ?mondoCURIE ?mondoLabel ?xref
 WHERE {
-  # Restrict to subclasses of MONDO:0700096
+  # Restrict to subclasses of MONDO:0700096 'human disease'
   ?mondoClass rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0700096> .
 
   # Retrieve the Mondo label
