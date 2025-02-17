@@ -4,8 +4,8 @@ PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 SELECT ?source (COUNT(DISTINCT ?mondoClass) AS ?count)
 WHERE {
-  # Find subclasses of MONDO:0700096
-  ?mondoClass rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0700096> .
+  # Find subclasses of MONDO:0700096 'human disease'
+  ?mondoClass rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0700096> .
 
   # Filter for database cross-references to specific sources
   ?mondoClass oboInOwl:hasDbXref ?xref .

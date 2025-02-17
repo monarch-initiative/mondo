@@ -5,8 +5,8 @@ PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 SELECT DISTINCT ?xref_source (COUNT(DISTINCT ?mondoClass) AS ?count)
 WHERE {
-  # Restrict to subclasses of MONDO:0700096
-  ?mondoClass rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0700096> .
+  # Restrict to subclasses of MONDO:0700096 'human disease'
+  ?mondoClass rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0700096> .
 
   # Check for xrefs
   ?mondoClass oboInOwl:hasDbXref ?xref .

@@ -4,23 +4,33 @@
 This notebook and SPARQL queries are to generate data as requested [here](https://docs.google.com/document/d/1vPl2x8gfTypjzcb9ND8qXXfKIjPDE4RwuExmzAUpM6Q/edit?tab=t.0). The section headings in this README follow those in that Google Document.
 
 
-The alignment data was generated using `mondo-edit.obo` from 14-Jan-2025, commit hash 88a1204.
 ---
 
-### Summmary Table of Alignment and Synonym Results
-| Source     | Xref   | Xref and MONDO:equivalentTo | Exact Synonym Count |
-| :---       | :---:  |        :---:                | :---:  |
-| DOID       | 11390  |                             | |
-| ICD10CM    | 9142     |                           | |
-| ICD11      | 4053   |  | | 
-| NCIT*      |        |  | |
-| OMIM       | 9333   | |  |
-| Orphanet   | 11035  | | |
-| Orphanet** |    | | |
-| UMLS   | 20738 | |
+### Mondo Cross Reference and Synomym Counts
+| Source     | Xref   | Xref and MONDO:equivalentTo | Exact Synonyms |
+| :---       | :---:  |        :---:                | :---:          |
+| DOID       | 11390  | 11184                       | 17968          |
+| ICD10CM    | 9142   | 1116                        | 540            | 
+| ICD11      | 4053   | 4040                        | 2606           |
+| NCIT       | 3804<sup>*</sup>  | 3452<sup>*</sup> | 20215<sup>**</sup> |
+| OMIM       | 9333   | 9141                        | 10030          |
+| Orphanet   | 11035  | 8176                        | 13181          |
+| Orphanet (disorder and subtypes) | 7218   | 7218  | NC             |
+| UMLS       | 20738  | 20737                       | 53             |
+| GARD       | 10719  | NC                          | 912            |
+| MedGen     | 20737  | NC                          | 6              |
+| NANDO      | 1499   | NC                          | 0              |  
+| NORD       | 911    | NC                          | 438            |
 
-*See "Alignment to NCIT" for details on how this was calculated.
-**See "Orphanet Disorder and Disease Subtypes" for details on how this was calculated.
+
+*Count is restricted to NCIT CURIEs that are within the NCIT 'neoplasm' branch. See section "Alignment to NCIT" for details on how this was calculated.
+
+**Count is for any NCIT CURIE.
+
+NC - not calculated
+
+
+The data was generated using `mondo-edit.obo` from the `master` branch. The alignment data was generated using the `mondo-edit.obo` version from 14-Jan-2025, commit hash [88a1204](https://github.com/monarch-initiative/mondo/blob/88a1204182d90ad43c725669044806235598e8ba/src/ontology/mondo-edit.obo) (the most recent version available at the time the analysis was run).
 
 ---
 ### Request 1: Alignment with the source - Total number of diseases in sources
@@ -47,7 +57,7 @@ robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_h
 #### Orphanet Disorder and Disease Subtypes
 - Run from `mondo/src/ontology/analysis/analyze_mondo_stats` as:
 ```
-robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_human_disease_mondo_classes_with_xref_ORDO-disorder-subtypes.ru data/output/all_human_disease_mondo_class_xref_ORDO-disorder-subtypes_count.tsv
+robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_human_disease_mondo_classes_with_xref_ORDO-disorder-subtypes.ru data/output/all_human_disease_mondo_classes_with_xref_ORDO-disorder-subtypes.tsv
 ```
 
 #### Alignment to NCIT
@@ -79,24 +89,24 @@ OMIM	9333
 Orphanet	11035 (all terms)
 Orphanet**    7218 (ordo_disorder and ordo_subtype_of_a_disorder subsets)
 UMLS	20738
-* See "Alignment to NCIT" for details on how this was calculated.
-** See "Orphanet Disorder and Disease Subtypes" for details on how this was calculated.
+*See "Alignment to NCIT" for details on how this was calculated.
+**See "Orphanet Disorder and Disease Subtypes" for details on how this was calculated.
 
-### Alignment with the source - Number of terms from the sources that are in Mondo (as Mondo:equivalent)
+### Alignment with the source - Number of terms from the sources that are in Mondo (as MONDO:equivalentTo)
 To generate these counts, follow the steps above for "Alignment with the source - Total number of diseases in sources", but create new queries where the xref must also have a source annotation of `MONDO:equivalentTo`.
 
 - Run from `mondo/src/ontology/analysis/analyze_mondo_stats` as: 
 ```
-robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_human_disease_mondo_classes_with_xref-equivalentTo.ru data/output/all_human_disease_mondo_class_xref_count-equivalentTo.tsv
+robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_human_disease_mondo_classes_with_xref-equivalentTo.ru data/output/all_human_disease_mondo_classes_with_xref-equivalentTo.tsv
 ```
 
 #### Alignment with Orphanet Disorder and Disease Subtypes
 - Run from `mondo/src/ontology/analysis/analyze_mondo_stats` as: 
 ```
-robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_human_disease_mondo_classes_with_xref-equivalentTo_ORDO-disorders-subtypes.ru data/output/all_human_disease_mondo_class_xref_count-equivalentTo_ORDO-disorders-subtypes.tsv
+robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_human_disease_mondo_classes_with_xref-equivalentTo_ORDO-disorders-subtypes.ru data/output/all_human_disease_mondo_classes_with_xref-equivalentTo_ORDO-disorders-subtypes.tsv
 ```
 
-#### Alignment to the source NCIT - Number of terms from the sources that are in Mondo (as Mondo:equivalent)
+#### Alignment to the source NCIT - Number of terms from the sources that are in Mondo (as MONDO:equivalentTo)
 - Query Mondo for a _list_ of all Mondo classes that are in the human disease branch, i.e. children of MONDO:0700096 'human disease' and have an xref to NCIT and also have an xref source annotation of `MONDO:equivalentTo`. Run from `mondo/src/ontology/analysis/analyze_mondo_stats` as: 
 ```
 robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_mondo_class_list_with_ncit_xref-equivalentTo.ru data/input/all_mondo_classes_with_ncit_xref-equivalentTo.tsv
@@ -110,14 +120,14 @@ $ wc data/output/all_mondo_classes_with_ncit_xref_neoplasm-branch-equivalentTo.t
     3452   18507  210236 data/output/all_mondo_classes_with_ncit_xref_neoplasm-branch-equivalentTo.tsv
 ```
 
-#### Results for Alignment with the source - Number of terms from the sources that are in Mondo (as Mondo:equivalent)
-- DOID	11185
+#### Results for Alignment with the source - Number of terms from the sources that are in Mondo (as MONDO:equivalentTo)
+- DOID	11184
 - ICD10CM	1116
 - NCIT	3452
 - OMIM	9141
 - Orphanet	8176
 - Orphanet 7218 (ordo_disorder and ordo_subtype_of_a_disorder subsets)
-- UMLS	20738
+- UMLS	20737
 
 ### Get the total number of Mondo classes in the Mondo human neoplasm branch, e.g. children of MONDO:0005070
 From `mondo/src/ontology/analysis/analyze_mondo_stats` run as:
@@ -131,7 +141,7 @@ For Mondo terms are in the human disease branch, i.e. children of MONDO:0700096 
 
 - Run from `mondo/src/ontology/analysis/analyze_mondo_stats` as: 
 ```
-robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_human_disease_mondo_classes_with_EMC_xref.ru data/output/all_human_disease_mondo_class_xref_EMC_count.tsv
+robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_human_disease_mondo_classes_with_EMC_xref.ru data/output/all_human_disease_mondo_classes_with_EMC_xref.tsv
 ```
 
 #### Externally Managed Content
@@ -148,7 +158,7 @@ robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_all_h
 
 #### Results for Externally Managed Content
 GARD	10719
-MedGen	20738
+MedGen	20737
 NANDO	1499
 NORD	911
 
@@ -212,7 +222,7 @@ robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_human
 robot reason -i ../../mondo-edit.obo query --use-graphs true -q sparql/get_exact_synonyms.ru data/output/exact_synonyms.tsv
 ```
 
-- To extract a list of unique sources, run as:
+- To extract a list of unique sources from `exact_synonyms.tsv`, run as:
 ```
 awk -F'\t' '
 NR > 1 {
