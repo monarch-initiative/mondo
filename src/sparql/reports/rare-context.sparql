@@ -1,0 +1,36 @@
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX pattern: <http://purl.obolibrary.org/obo/mondo/patterns/>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?entity ?label ?entity2 ?entity2label ?parent ?parentlabel WHERE {
+  
+  ?entity rdfs:label ?label .
+  
+  ?entity rdfs:subClassOf+ MONDO:0003847 .
+  ?entity2 rdfs:subClassOf+ MONDO:0003847 .
+  ?entity oio:inSubset <http://purl.obolibrary.org/obo/mondo#rare> .
+  ?entity rdfs:subClassOf ?parent .
+  ?entity2 rdfs:subClassOf ?parent .
+  ?entity2 rdfs:label ?entity2label .
+  ?parent rdfs:label ?parentlabel .
+  
+    FILTER NOT EXISTS {
+        ?entity2 oio:inSubset <http://purl.obolibrary.org/obo/mondo#rare> .
+    }
+  
+   #FILTER NOT EXISTS {
+   # ?entity2child rdfs:subClassOf ?entity2 .
+  #	?entity2child oio:inSubset <http://purl.obolibrary.org/obo/mondo#rare> .
+  #}
+  
+  FILTER(?entity!=?entity2 && ?entity!=?parent)
+  
+  FILTER(
+      (?parent!=MONDO:0003847) 
+      && (?parent!= MONDO:0000001)
+      && (?parent!= MONDO:0700096)
+      && (?parent!= MONDO:0008577)
+      ) 
+}
