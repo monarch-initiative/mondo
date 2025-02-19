@@ -649,8 +649,9 @@ reports/mondo_branch_edit_diff.md: mondo-edit.obo tmp/mondo-main-edit.owl
 reports/mondo_unsats.md: mondo-edit.obo
 	$(ROBOT) explain -i $< -M unsatisfiability --unsatisfiable random:10 --explanation $@
 
-.PHONY: mondo_branch_diff
+.PHONY: mondo_branch_diff reports/mondo_branch_edit_diff.md reports/mondo_unsats.md tmp/mondo-main-edit.owl
 mondo_branch_diff: reports/mondo_branch_edit_diff.md reports/mondo_unsats.md
+	@echo "** Process is complete. See report files at: reports/mondo_branch_edit_diff.md and reports/mondo_unsats.md"
 
 .PHONY: mondo_feature_diff
 mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
