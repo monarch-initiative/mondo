@@ -40,7 +40,7 @@ Latest version at: [https://github.com/monarch-initiative/mondo/releases/tag/v20
 
 ### Overall Mondo Statistics
 
-Disease term feature | Count
+Disease term feature | Count (Classes)
 -- | -- 
 Total number of terms | 25,600
 Database cross references | 127,741
@@ -50,11 +50,11 @@ Related synonyms | 30,514
 Narrow (more specific) synonyms | 2,545
 Broad (more general) synonyms | 1,399
 
-### Disease concept statistics for select disease categories 
+### Statistics for select disease categories 
 
 Note that these groupings are overlapping.
 
-Disease type | Count (Concepts)
+Disease type | Count (Classes)
 -- | --
 Rare diseases | 15,648
 Infectious diseases  | 1,071
