@@ -227,3 +227,19 @@ If you make changes to a Mondo term based on requests on a GitHub ticket, please
 ## Susceptibility terms
 
 Susceptibility to diseases should be classified under MONDO:0042489 'disease susceptibility' (or MONDO:0020573 'inherited disease susceptibility', as appropriate). We should group any OMIM susceptibility terms under a susceptibility to disease term. We will not add OMIM xrefs to these, even if the term is part of the OMIMPS. For example, https://www.omim.org/phenotypicSeries/PS161400 - we will create a new class called narcolepsy, susceptibility but will NOT refer back to the OMIMPS. (See related ticket: [https://github.com/monarch-initiative/mondo/issues/5511](https://github.com/monarch-initiative/mondo/issues/5511)).
+
+## Disease characteristic
+
+MONDO:0021125 disease characteristic describes attributes of a disease and these terms are used in logical axioms in Mondo.
+
+To add a Disjoint Union Of axiom to disease characteristic terms, follow the instructions below:
+1. In Protege, select the term (eg 'classic or non-classic genetic disease presentation')
+2. In the Description box, click the + next to the 'Disjoint Union Of' axiom
+3. Click the Expression editor tab
+4. Create a commna separated list of the terms that are subclasses of the class (eg 'classic presentation', 'non-classic presentation')
+5. Click OK
+6. Move the axiom to the 'axioms' file. Click on the new axiom that you created (so it is highlighted in blue)
+7. Right click and select move axiom(s) to ontology
+8. Select an ontology: axioms
+9. Click OK
+10. Save the file and commit
