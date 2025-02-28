@@ -1,0 +1,17 @@
+name: Monthly Data Workflows Checklist Issue
+
+on:
+  schedule:
+    - cron: "0 14 15-21 * 1" # Runs the third Monday of the Month at 6:00am PT
+  workflow_dispatch: # Allows manual trigger from GitHub Actions UI
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Monthly Data Workflows Checklist Issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/ISSUE_TEMPLATE/data-workflows-checklist.md
