@@ -1,0 +1,62 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+
+SELECT DISTINCT ?animalDisease ?animalDiseaseLabel ?crossSpeciesDisease ?crossSpeciesDiseaseLabel ?gene ?property ?propertyLabel
+WHERE {
+    # Retrieve all subclasses of MONDO:0005583 (non-human animal diseases)
+    ?animalDisease rdfs:subClassOf* obo:MONDO_0005583 .
+
+    # Ensure the disease has an Equivalent Class (EC)
+    ?animalDisease owl:equivalentClass ?ec .
+
+    # The EC must include a restriction for "cross-species analog" (MONDO:0700097)
+    ?ec owl:intersectionOf ?list .
+    ?list rdf:rest*/rdf:first [
+        a owl:Restriction ;
+        owl:onProperty obo:MONDO_0700097 ;
+        owl:someValuesFrom ?crossSpeciesDisease
+    ] .
+
+    # Retrieve gene-disease associations (OPTIONAL so that we don't exclude diseases without gene links)
+    OPTIONAL {
+        ?crossSpeciesDisease rdfs:subClassOf [
+            rdf:type owl:Restriction ;
+            owl:onProperty ?property ;
+            owl:someValuesFrom ?gene
+        ] .
+
+        # Filter only germline-related properties
+        VALUES ?property { 
+            RO:0004021  # has germline mutation in
+            RO:0004028  # has somatic mutation in
+            RO:0004001  # has phenotype
+            RO:0004004  # is model of
+            RO:0004025  # has material basis in germline mutation in
+            RO:0004020  # has material basis in somatic mutation in
+            RO:0004003  # is a model for
+        }
+    }
+
+    # Retrieve human-readable labels
+    OPTIONAL { ?animalDisease rdfs:label ?animalDiseaseLabel }
+    OPTIONAL { ?crossSpeciesDisease rdfs:label ?crossSpeciesDiseaseLabel }
+    OPTIONAL { ?property rdfs:label ?propertyLabel }
+}
+ORDER BY ?animalDiseaseLabel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
