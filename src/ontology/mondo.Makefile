@@ -265,9 +265,6 @@ create-mondo-stats:
 	$(MAKE) create-mondo-stats-summary-file -B
 
 
-
-
-
 #######################################
 # Create General Statistics for Mondo #
 #######################################
@@ -283,8 +280,6 @@ GENERAL_STATISTICS_QUERIES = \
 
 TMP_RESULTS_DIR = reports/mondo-general-stats/results
 REPORTS_DIR = reports/mondo-general-stats
-# Ensure directories exist
-$(shell mkdir -p $(TMP_RESULTS_DIR) $(REPORTS_DIR))
 
 # Define output files for each query
 OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_RESULTS_DIR)/%.tsv, $(GENERAL_STATISTICS_QUERIES))
@@ -297,7 +292,8 @@ create-general-mondo-stats-all: create-general-mondo-stats combine clean-temp
 
 create-general-mondo-stats: $(OUTPUTS)
 
-$(TMP_RESULTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql $(SRC)
+$(TMP_RESULTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql mondo.owl
+	mkdir -p $(TMP_RESULTS_DIR) $(REPORTS_DIR)
 	@echo "Running query $< ..."
 	$(ROBOT) reason -i mondo.owl query --use-graphs true  -f tsv --query $< $@
 
