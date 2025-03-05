@@ -278,22 +278,19 @@ GENERAL_STATISTICS_QUERIES = \
 	$(SPARQLDIR)/reports/COUNT-human-genetic-diseases.sparql \
 	$(SPARQLDIR)/reports/COUNT-non-human-genetic-diseases.sparql
 
-TMP_RESULTS_DIR = reports/mondo-general-stats/results
-REPORTS_DIR = reports/mondo-general-stats
+TMP_RESULTS_DIR = $(MONDO_STATS_REPORTS_DIR)/tmp
+GEN_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-general-stats
 
-# Define output files for each query
 OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_RESULTS_DIR)/%.tsv, $(GENERAL_STATISTICS_QUERIES))
 
-# Define final combined report file
-COMBINED_REPORT = $(REPORTS_DIR)/mondo_general_statistics.tsv
+COMBINED_REPORT = $(GEN_STATS_REPORTS_DIR)/mondo_general_statistics.tsv
 
-# Default goal to run everything
 create-general-mondo-stats-all: create-general-mondo-stats combine clean-temp
 
 create-general-mondo-stats: $(OUTPUTS)
 
 $(TMP_RESULTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql mondo.owl
-	mkdir -p $(TMP_RESULTS_DIR) $(REPORTS_DIR)
+	mkdir -p $(TMP_RESULTS_DIR) $(GEN_STATS_REPORTS_DIR)
 	@echo "Running query $< ..."
 	$(ROBOT) reason -i mondo.owl query --use-graphs true  -f tsv --query $< $@
 
@@ -314,6 +311,7 @@ clean-stats:
 	rm -f $(TMP_RESULTS_DIR)/*.tsv $(COMBINED_REPORT)
 	@echo "Cleaned all generated files."
 
+all: create-general-mondo-stats-all
 
 
 
