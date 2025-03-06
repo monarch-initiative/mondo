@@ -42,13 +42,13 @@ Latest version at: [https://github.com/monarch-initiative/mondo/releases/tag/v20
 
 Disease term feature | Count (Classes)
 -- | -- 
-Total number of terms | 25,600
-Database cross references | 127,741
-Term definitions | 17,688
-Exact synonyms | 73,455
-Related synonyms | 30,514
-Narrow (more specific) synonyms | 2,545
-Broad (more general) synonyms | 1,399
+Total number of terms | 25,661
+Database cross references | 127,750
+Term definitions | 17,710
+Exact synonyms | 73,496
+Related synonyms | 30,489
+Narrow (more specific) synonyms | 2,552
+Broad (more general) synonyms | 1,398
 
 ### Statistics for select disease categories 
 
@@ -56,10 +56,10 @@ Note that these groupings are overlapping.
 
 Disease type | Count (Classes)
 -- | --
-Rare diseases | 15,648
-Infectious diseases  | 1,071
+Rare diseases | 15,682
+Infectious diseases  | 1,074
 Cancers (including neoplasms) | 4,711
-Mendelian diseases |  11,434
+Mendelian diseases |  11,468
 
 <a name="created"></a> 
 ## How was Mondo created?    
