@@ -243,3 +243,5 @@ To add a Disjoint Union Of axiom to disease characteristic terms, follow the ins
 8. Select an ontology: axioms
 9. Click OK
 10. Save the file and commit
+
+A video describing this workflow is [here](<iframe width="560" height="315" src="https://www.youtube.com/embed/ZeBv-MgAf00?si=48FD1LuaisaVUlJb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>)
