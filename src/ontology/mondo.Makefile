@@ -266,6 +266,14 @@ create-mondo-stats:
 
 
 #############################################
+# Dump Mondo Terms for Delphi curation tool #
+#############################################
+dump-mondo-terms: reasoned.owl
+	$(ROBOT) query --input reasoned.owl  --query $(SPARQLDIR)/reports/dump-mondo-terms.ru reports/mondo_term_dump.tsv
+	@echo "** All Mondo terms extracted"
+
+
+#############################################
 ##### One-time scripts ######################
 #############################################
 # MedGen conflicts (Aug 2023) pipeline
