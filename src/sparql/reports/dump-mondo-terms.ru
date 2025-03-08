@@ -1,0 +1,71 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+# Get all Mondo terms and specific properties for Delphi
+
+SELECT DISTINCT ?mondoIRI ?mondoLabel ?definition ?comment 
+                (GROUP_CONCAT(DISTINCT ?exactSynonym; separator=" | ") AS ?exactSynonyms)
+                (GROUP_CONCAT(DISTINCT ?parentIRI; separator=" | ") AS ?parentIRIs)
+                (GROUP_CONCAT(DISTINCT ?parentLabel; separator=" | ") AS ?parentLabels)
+                (GROUP_CONCAT(DISTINCT ?xrefCURIE; separator=" | ") AS ?xrefCURIEs)
+WHERE {
+  # Find MONDO disease classes
+  ?mondoIRI a owl:Class ;
+            rdfs:label ?mondoLabel .
+
+  # Ensure mondoIRI is only MONDO terms
+  FILTER(STRSTARTS(STR(?mondoIRI), "http://purl.obolibrary.org/obo/MONDO_"))
+
+  # Ensure the class is not obsolete
+  FILTER NOT EXISTS { ?mondoIRI owl:deprecated "true"^^xsd:boolean }
+
+  # Get Definition and Comment
+  OPTIONAL { ?mondoIRI IAO:0000115 ?definition }
+  OPTIONAL { ?mondoIRI rdfs:comment ?comment }
+
+  # Get Exact Synonyms
+  OPTIONAL { ?mondoIRI oboInOwl:hasExactSynonym ?exactSynonym }
+
+  # Get direct rdfs:subClassOf parents
+  OPTIONAL {
+    ?mondoIRI rdfs:subClassOf ?parentIRI .
+    
+    # Ensure parent is not a restriction
+    FILTER NOT EXISTS { ?parentIRI rdf:type owl:Restriction . }
+
+    OPTIONAL { ?parentIRI rdfs:label ?parentLabel }
+  }
+
+  # Get parents from owl:Restriction (logical definitions)
+  OPTIONAL {
+    ?mondoIRI rdfs:subClassOf ?restriction .
+    ?restriction rdf:type owl:Restriction ;
+                 owl:onProperty ?relation ;
+                 owl:someValuesFrom ?parentIRI .
+    
+    OPTIONAL { ?parentIRI rdfs:label ?parentLabel }
+  }
+
+  # Get OMIM or Orphanet xrefs that have the annotation MONDO:equivalentTo
+  OPTIONAL {
+    ?xrefAxiom a owl:Axiom ;
+               owl:annotatedSource ?mondoIRI ;
+               owl:annotatedProperty oboInOwl:hasDbXref ;
+               owl:annotatedTarget ?xref ;
+               oboInOwl:source "MONDO:equivalentTo" .
+
+    # Filter only OMIM or Orphanet xrefs
+    FILTER(STRSTARTS(STR(?xref), "OMIM:") || STRSTARTS(STR(?xref), "Orphanet:"))
+
+    # Convert to CURIE format
+    BIND(STR(?xref) AS ?xrefCURIE)
+  }
+}
+GROUP BY ?mondoIRI ?mondoLabel ?definition ?comment
+ORDER BY ?mondoIRI
