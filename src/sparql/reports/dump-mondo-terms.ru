@@ -7,7 +7,7 @@ PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 
-# Get all Mondo terms and specific properties for Delphi
+# Get all Mondo terms and specific properties for Delphi curation tool from reasoned.owl
 
 SELECT DISTINCT ?mondoIRI ?mondoLabel ?definition ?comment 
                 (GROUP_CONCAT(DISTINCT ?exactSynonym; separator=" | ") AS ?exactSynonyms)
@@ -15,7 +15,7 @@ SELECT DISTINCT ?mondoIRI ?mondoLabel ?definition ?comment
                 (GROUP_CONCAT(DISTINCT ?parentLabel; separator=" | ") AS ?parentLabels)
                 (GROUP_CONCAT(DISTINCT ?xrefCURIE; separator=" | ") AS ?xrefCURIEs)
 WHERE {
-  # Find MONDO disease classes
+  # Get all classes
   ?mondoIRI a owl:Class ;
             rdfs:label ?mondoLabel .
 
@@ -39,16 +39,6 @@ WHERE {
     # Ensure parent is not a restriction
     FILTER NOT EXISTS { ?parentIRI rdf:type owl:Restriction . }
 
-    OPTIONAL { ?parentIRI rdfs:label ?parentLabel }
-  }
-
-  # Get parents from owl:Restriction (logical definitions)
-  OPTIONAL {
-    ?mondoIRI rdfs:subClassOf ?restriction .
-    ?restriction rdf:type owl:Restriction ;
-                 owl:onProperty ?relation ;
-                 owl:someValuesFrom ?parentIRI .
-    
     OPTIONAL { ?parentIRI rdfs:label ?parentLabel }
   }
 
