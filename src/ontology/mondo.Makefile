@@ -268,9 +268,15 @@ create-mondo-stats:
 #############################################
 # Dump Mondo Terms for Delphi curation tool #
 #############################################
-dump-mondo-terms: reasoned.owl
-	$(ROBOT) query --input reasoned.owl  --query $(SPARQLDIR)/reports/dump-mondo-terms.ru reports/mondo_term_dump.tsv
-	@echo "** All Mondo terms extracted"
+.PHONY: clean_dump-mondo-terms
+.PHONY: dump-mondo-terms
+
+clean_dump-mondo-terms:
+	rm -rf reports/mondo_term_dump.tsv
+
+dump-mondo-terms: clean_dump-mondo-terms reasoned.owl
+	$(ROBOT) query --input reasoned.owl  --format tsv --query $(SPARQLDIR)/reports/dump-mondo-terms.ru reports/mondo_term_dump.tsv
+	@echo "** All Mondo terms extracted. See file: reports/mondo_term_dump.tsv."
 
 
 #############################################
