@@ -281,13 +281,13 @@ GENERAL_STATISTICS_QUERIES = \
 TMP_MONDO_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/tmp
 GEN_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-general-stats
 
-OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(GENERAL_STATISTICS_QUERIES))
+GEN_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(GENERAL_STATISTICS_QUERIES))
 
 COMBINED_REPORT = $(GEN_STATS_REPORTS_DIR)/mondo_general_statistics.tsv
 
 create-general-mondo-stats-all: create-general-mondo-stats combine clean-temp
 
-create-general-mondo-stats: $(OUTPUTS)
+create-general-mondo-stats: $(GEN_STATS_OUTPUTS)
 
 $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql mondo.owl
 	mkdir -p $(TMP_MONDO_STATS_RESULTS_DIR) $(GEN_STATS_REPORTS_DIR)
