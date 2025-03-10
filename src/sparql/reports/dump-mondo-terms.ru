@@ -65,5 +65,6 @@ WHERE {
     BIND(STR(?xref) AS ?xrefCURIE)
   }
 }
+
 GROUP BY ?mondoCURIE ?mondoLabel ?definition ?comment
 ORDER BY ?mondoCURIE
