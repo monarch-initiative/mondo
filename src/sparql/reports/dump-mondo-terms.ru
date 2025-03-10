@@ -10,10 +10,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 # Get all Mondo terms and specific properties for Delphi curation tool from reasoned.owl
 
 SELECT DISTINCT ?mondoIRI ?mondoLabel ?definition ?comment 
-                (GROUP_CONCAT(DISTINCT ?exactSynonym; separator=" | ") AS ?exactSynonyms)
-                (GROUP_CONCAT(DISTINCT ?parentIRI; separator=" | ") AS ?parentIRIs)
-                (GROUP_CONCAT(DISTINCT ?parentLabel; separator=" | ") AS ?parentLabels)
-                (GROUP_CONCAT(DISTINCT ?xrefCURIE; separator=" | ") AS ?xrefCURIEs)
+                (GROUP_CONCAT(DISTINCT ?formattedExactSynonym; separator=",") AS ?exactSynonyms)
+                (GROUP_CONCAT(DISTINCT ?parentIRI; separator=",") AS ?parentIRIs)
+                (GROUP_CONCAT(DISTINCT ?formattedParentLabel; separator=",") AS ?parentLabels)
+                (GROUP_CONCAT(DISTINCT ?xrefCURIE; separator=",") AS ?xrefCURIEs)
 WHERE {
   # Get all classes
   ?mondoIRI a owl:Class ;
@@ -30,7 +30,10 @@ WHERE {
   OPTIONAL { ?mondoIRI rdfs:comment ?comment }
 
   # Get Exact Synonyms
-  OPTIONAL { ?mondoIRI oboInOwl:hasExactSynonym ?exactSynonym }
+  OPTIONAL { 
+    ?mondoIRI oboInOwl:hasExactSynonym ?exactSynonym 
+    BIND(CONCAT('"', STR(?exactSynonym), '[Exact]"') AS ?formattedExactSynonym)
+  }
 
   # Get direct rdfs:subClassOf parents
   OPTIONAL {
@@ -39,7 +42,10 @@ WHERE {
     # Ensure parent is not a restriction
     FILTER NOT EXISTS { ?parentIRI rdf:type owl:Restriction . }
 
-    OPTIONAL { ?parentIRI rdfs:label ?parentLabel }
+    OPTIONAL { 
+      ?parentIRI rdfs:label ?parentLabel 
+      BIND(CONCAT('"', STR(?parentLabel), '"') AS ?formattedParentLabel)
+    }
   }
 
   # Get OMIM or Orphanet xrefs that have the annotation MONDO:equivalentTo
