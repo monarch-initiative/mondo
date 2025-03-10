@@ -292,7 +292,7 @@ create-general-mondo-stats: $(OUTPUTS)
 $(TMP_RESULTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql mondo.owl
 	mkdir -p $(TMP_RESULTS_DIR) $(GEN_STATS_REPORTS_DIR)
 	@echo "Running query $< ..."
-	$(ROBOT) reason -i mondo.owl query --use-graphs true  -f tsv --query $< $@
+	$(ROBOT) query -i mondo.owl --use-graphs true  -f tsv --query $< $@
 
 # Combine all results into a single report
 combine: create-general-mondo-stats
