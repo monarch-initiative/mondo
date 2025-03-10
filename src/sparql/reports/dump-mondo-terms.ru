@@ -7,9 +7,9 @@ PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 
-# Get all Mondo terms and specific properties for Delphi curation tool from reasoned.owl
+# Get all Mondo terms and specific properties for Delphi curation tool from mondo.owl (which is already reasoned)
 
-SELECT DISTINCT ?mondoIRI ?mondoLabel ?definition ?comment 
+SELECT DISTINCT ?mondoCURIE ?mondoLabel ?definition ?comment 
                 (GROUP_CONCAT(DISTINCT ?formattedExactSynonym; separator=",") AS ?exactSynonyms)
                 (GROUP_CONCAT(DISTINCT ?parentIRI; separator=",") AS ?parentIRIs)
                 (GROUP_CONCAT(DISTINCT ?formattedParentLabel; separator=",") AS ?parentLabels)
@@ -21,6 +21,8 @@ WHERE {
 
   # Ensure mondoIRI is only MONDO terms
   FILTER(STRSTARTS(STR(?mondoIRI), "http://purl.obolibrary.org/obo/MONDO_"))
+
+  BIND(REPLACE(STR(?mondoIRI), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") AS ?mondoCURIE)
 
   # Ensure the class is not obsolete
   FILTER NOT EXISTS { ?mondoIRI owl:deprecated "true"^^xsd:boolean }
@@ -63,5 +65,5 @@ WHERE {
     BIND(STR(?xref) AS ?xrefCURIE)
   }
 }
-GROUP BY ?mondoIRI ?mondoLabel ?definition ?comment
-ORDER BY ?mondoIRI
+GROUP BY ?mondoCURIE ?mondoLabel ?definition ?comment
+ORDER BY ?mondoCURIE
