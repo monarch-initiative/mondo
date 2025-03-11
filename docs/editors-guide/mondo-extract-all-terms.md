@@ -1,7 +1,7 @@
 ## Extract All Mondo terms
 Get all Mondo terms and the following information: 
 
-- term ID (formatted as an IRI)
+- term ID (formatted as a CURIE)
 - label
 - definition
 - comment
@@ -9,7 +9,7 @@ Get all Mondo terms and the following information:
 - synonyms (exact synonyms only)
 - xrefs to OMIM and Orphanet where there is a MONDO:equivalentTo annotation
 
-The query is run against the `reasoned.owl` file, which corresponds to the Mondo content from the latest Mondo release.
+The query is run against the `mondo.owl` file, which is already reasoned and corresponds to the Mondo content from the latest Mondo release.
 
 ## Extract all Mondo terms
 To extract all Mondo terms, run the command below from the `mondo/src/ontology` directory as:  
