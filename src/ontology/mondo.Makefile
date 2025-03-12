@@ -266,6 +266,20 @@ create-mondo-stats:
 
 
 #############################################
+# Dump Mondo Terms for Delphi curation tool #
+#############################################
+.PHONY: clean_dump-mondo-terms
+.PHONY: dump-mondo-terms
+
+clean_dump-mondo-terms:
+	rm -rf reports/mondo_term_dump.csv
+
+dump-mondo-terms: clean_dump-mondo-terms reasoned.owl
+	$(ROBOT) query --input reasoned.owl  --format csv --query $(SPARQLDIR)/reports/dump-mondo-terms.ru reports/mondo_term_dump.csv
+	@echo "** All Mondo terms extracted. See file: reports/mondo_term_dump.csv"
+
+
+#############################################
 ##### One-time scripts ######################
 #############################################
 # MedGen conflicts (Aug 2023) pipeline
@@ -640,9 +654,18 @@ tmp/mondo-lastbase.owl:
 reports/mondo_diff.md: mondo-base.owl tmp/mondo-lastbase.owl
 	$(ROBOT) diff --left tmp/mondo-lastbase.owl --right $< -f markdown -o $@
 
-reports/mondo_unsats.md: mondo.obo
-	$(ROBOT) explain -i $< --reasoner ELK -M unsatisfiability --unsatisfiable all --explanation $@ \
-		annotate --ontology-iri "http://purl.obolibrary.org/obo/$@" -o $@.owl
+tmp/mondo-main-edit.owl:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo/refs/heads/master/src/ontology/mondo-edit.obo" -O $@
+
+reports/mondo_branch_edit_diff.md: mondo-edit.obo tmp/mondo-main-edit.owl
+	$(ROBOT) diff --left tmp/mondo-main-edit.owl --right $< -f markdown -o $@
+
+reports/mondo_unsats.md: mondo-edit.obo
+	$(ROBOT) explain -i $< -M unsatisfiability --unsatisfiable random:10 --explanation $@
+
+.PHONY: mondo_branch_diff reports/mondo_branch_edit_diff.md reports/mondo_unsats.md tmp/mondo-main-edit.owl
+mondo_branch_diff: reports/mondo_branch_edit_diff.md reports/mondo_unsats.md
+	@echo "** Process is complete. See report files at: reports/mondo_branch_edit_diff.md and reports/mondo_unsats.md"
 
 .PHONY: mondo_feature_diff
 mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
@@ -955,7 +978,7 @@ kgcl-diff-release-base: reports/difference_release_base.yaml \
 						reports/difference_release_base.md
 
 tmp/mondo-released.obo: .FORCE
-	wget http://purl.obolibrary.org/obo/mondo/$(KGCL_ONTOLOGY) -O $@
+	wget http://purl.obolibrary.org/obo/mondo/mondo-base.obo -O $@
 
 reports/difference_release_base.md: tmp/mondo-released.obo $(KGCL_ONTOLOGY)
 	runoak -i simpleobo:tmp/mondo-released.obo diff -X simpleobo:$(KGCL_ONTOLOGY) -o $@ --output-type md
