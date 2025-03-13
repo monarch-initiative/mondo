@@ -1288,11 +1288,14 @@ all: config/exclusion_reasons.tsv
 $(TMPDIR)/subclass-confirmed.robot.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/reports/sync-subClassOf.confirmed.tsv" -O $@
 
+# TODO: try this out
+# SYN_SYNC_SRC=qc-duplicate-exact-synonym-no-abbrev--updates--mini-build-5  # fail
+SYN_SYNC_SRC=_main_data-build-10Mar2025
 $(TMPDIR)/synonyms-confirmed.robot.tsv:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/main/src/ontology/reports/sync-synonym/sync-synonyms.confirmed.robot.tsv" -O $@
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/$(SYN_SYNC_SRC)/src/ontology/reports/sync-synonym/sync-synonyms.confirmed.robot.tsv" -O $@
 
 $(TMPDIR)/synonyms-added.robot.tsv:
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/main/src/ontology/reports/sync-synonym/sync-synonyms.added.robot.tsv" -O $@
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/$(SYN_SYNC_SRC)/src/ontology/reports/sync-synonym/sync-synonyms.added.robot.tsv" -O $@
 
 $(TMPDIR)/new-exact-matches-%.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/lexmatch/unmapped_$*_lex_exact.tsv" -O $@
