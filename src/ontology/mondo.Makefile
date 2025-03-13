@@ -1312,9 +1312,9 @@ $(TMPDIR)/subclass-confirmed.robot.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/main/src/ontology/reports/sync-subClassOf.confirmed.tsv" -O $@
 
 # TODO: Run QC by fetching -confirmed from different branches and see results
-# TODO: SYN_SYNC_SRC=main
-# TODO: SYN_SYNC_SRC=_main_data-build-10Mar2025
-SYN_SYNC_SRC=qc-duplicate-exact-synonym-no-abbrev--updates--mini-build-5
+# TODO: SYN_SYNC_SRC=main? prolly not
+SYN_SYNC_SRC=_main_data-build-10Mar2025
+# SYN_SYNC_SRC=qc-duplicate-exact-synonym-no-abbrev--updates--mini-build-5  # fail
 $(TMPDIR)/synonyms-confirmed.robot.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/$(SYN_SYNC_SRC)/src/ontology/reports/sync-synonym/sync-synonyms.confirmed.robot.tsv" -O $@
 
