@@ -1,0 +1,45 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX mondo: <http://purl.obolibrary.org/obo/mondo#>
+PREFIX mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+
+# Get classes that have more than 1 gene association (either subClassOf or equivalentClass) with RO:0004003 property
+
+SELECT DISTINCT ?entity ?label (GROUP_CONCAT(DISTINCT ?geneIdentifier; separator=", ") AS ?geneIdentifiers)
+WHERE {
+  {
+    # subClassOf association
+    ?entity rdfs:subClassOf ?restriction ;
+            rdfs:label ?label .
+    
+    ?restriction rdf:type owl:Restriction ;
+                 owl:onProperty obo:RO_0004003 ;
+                 owl:someValuesFrom ?geneIdentifier .
+
+    # Exclusion filter for mondo and mondo-base namespaces to account for qc checks after roundtrip
+    FILTER NOT EXISTS {
+      ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-multiple-gene-associations.sparql .
+    }
+  }
+  UNION
+  {
+    # equivalentClass association
+    ?entity owl:equivalentClass ?equivClass ;
+            rdfs:label ?label .
+    
+    ?equivClass owl:intersectionOf/rdf:rest*/rdf:first ?component .
+    
+    ?component rdf:type owl:Restriction ;
+               owl:onProperty obo:RO_0004003 ;
+               owl:someValuesFrom ?geneIdentifier .
+    
+    # Exclusion filter for mondo and mondo-base namespaces to account for qc checks after roundtrip
+    FILTER NOT EXISTS {
+      ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-multiple-gene-associations.sparql .
+    }
+  }
+}
+GROUP BY ?entity ?label
+HAVING (COUNT(DISTINCT ?geneIdentifier) > 1)

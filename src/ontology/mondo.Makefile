@@ -75,7 +75,6 @@ pattern_ontology: ../patterns/pattern.owl
 	filter --select "<http://purl.obolibrary.org/obo/mondo/patterns*>" --select "self annotations" --signature true --trim true -o ../patterns/pattern-simple.owl
 
 ../patterns/dosdp-patterns/README.md: .FORCE
-	pip install tabulate
 	python ../scripts/patterns_create_overview.py "../patterns/dosdp-patterns" "../patterns/data/matches" $@
 
 pattern_readmes: ../patterns/dosdp-patterns/README.md
@@ -113,7 +112,6 @@ list: $(MYDIR)/*
 qc_docs: ../../docs/editors-guide/quality-control-tests.md
 
 pattern_mkdocs:
-	pip install tabulate
 	python ../scripts/patterns_create_docs.py
 
 .PHONY: pattern_docs
@@ -265,6 +263,20 @@ create-mondo-stats-summary-file: reasoned.owl | $(MONDO_STATS_REPORTS_DIR)
 .PHONY: create-mondo-stats
 create-mondo-stats:
 	$(MAKE) create-mondo-stats-summary-file -B
+
+
+#############################################
+# Dump Mondo Terms for Delphi curation tool #
+#############################################
+.PHONY: clean_dump-mondo-terms
+.PHONY: dump-mondo-terms
+
+clean_dump-mondo-terms:
+	rm -rf reports/mondo_term_dump.csv
+
+dump-mondo-terms: clean_dump-mondo-terms reasoned.owl
+	$(ROBOT) query --input reasoned.owl  --format csv --query $(SPARQLDIR)/reports/dump-mondo-terms.ru reports/mondo_term_dump.csv
+	@echo "** All Mondo terms extracted. See file: reports/mondo_term_dump.csv"
 
 
 #############################################
@@ -561,7 +573,7 @@ subset-metrics:
 
 SOURCE_VERSION = $(TODAY)
 # snomed
-SOURCE_IDS = doid ncit ordo omim gard
+SOURCE_IDS = doid ncit ordo omim
 SOURCE_IDS_INCL_MONDO = $(SOURCE_IDS) mondo equivalencies
 ALL_SOURCES_JSON = $(patsubst %, sources/$(SOURCE_VERSION)/%.json, $(SOURCE_IDS_INCL_MONDO))
 ALL_SOURCES_JSON_GZ = $(patsubst %, sources/$(SOURCE_VERSION)/%.json.gz, $(SOURCE_IDS_INCL_MONDO))
@@ -642,9 +654,18 @@ tmp/mondo-lastbase.owl:
 reports/mondo_diff.md: mondo-base.owl tmp/mondo-lastbase.owl
 	$(ROBOT) diff --left tmp/mondo-lastbase.owl --right $< -f markdown -o $@
 
-reports/mondo_unsats.md: mondo.obo
-	$(ROBOT) explain -i $< --reasoner ELK -M unsatisfiability --unsatisfiable all --explanation $@ \
-		annotate --ontology-iri "http://purl.obolibrary.org/obo/$@" -o $@.owl
+tmp/mondo-main-edit.owl:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo/refs/heads/master/src/ontology/mondo-edit.obo" -O $@
+
+reports/mondo_branch_edit_diff.md: mondo-edit.obo tmp/mondo-main-edit.owl
+	$(ROBOT) diff --left tmp/mondo-main-edit.owl --right $< -f markdown -o $@
+
+reports/mondo_unsats.md: mondo-edit.obo
+	$(ROBOT) explain -i $< -M unsatisfiability --unsatisfiable random:10 --explanation $@
+
+.PHONY: mondo_branch_diff reports/mondo_branch_edit_diff.md reports/mondo_unsats.md tmp/mondo-main-edit.owl
+mondo_branch_diff: reports/mondo_branch_edit_diff.md reports/mondo_unsats.md
+	@echo "** Process is complete. See report files at: reports/mondo_branch_edit_diff.md and reports/mondo_unsats.md"
 
 .PHONY: mondo_feature_diff
 mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
@@ -957,7 +978,7 @@ kgcl-diff-release-base: reports/difference_release_base.yaml \
 						reports/difference_release_base.md
 
 tmp/mondo-released.obo: .FORCE
-	wget http://purl.obolibrary.org/obo/mondo/$(KGCL_ONTOLOGY) -O $@
+	wget http://purl.obolibrary.org/obo/mondo/mondo-base.obo -O $@
 
 reports/difference_release_base.md: tmp/mondo-released.obo $(KGCL_ONTOLOGY)
 	runoak -i simpleobo:tmp/mondo-released.obo diff -X simpleobo:$(KGCL_ONTOLOGY) -o $@ --output-type md
@@ -1083,6 +1104,8 @@ deprecated_annotation_merging:
 	sed -i 's/source="MONDO:equivalentObsolete",\ source="MONDO:obsoleteEquivalentObsolete"/source="MONDO:obsoleteEquivalentObsolete"/g' mondo-edit.obo || true
 	sed -i 's/source="MONDO:equivalentObsolete",\ source="MONDO:equivalentTo"/source="MONDO:equivalentObsolete"/g' mondo-edit.obo || true
 	sed -i 's/\(.*\)source="MONDO:equivalentObsolete"\(.*\)source="MONDO:obsoleteEquivalentObsolete"\(.*\)/\1source="MONDO:obsoleteEquivalentObsolete"\2\3/g' mondo-edit.obo || true
+	sed -i '/source="MONDO:equivalentObsolete"/ s/, source="MONDO:equivalentTo"//g' mondo-edit.obo || true
+	sed -i 's/source="MONDO:equivalentObsolete",\ source="MONDO:obsoleteEquivalent"/source="MONDO:obsoleteEquivalentObsolete"/g' mondo-edit.obo || true
 	sed -i 's/, }/}/g' mondo-edit.obo || true
 	sed -i 's/, ,/,/g' mondo-edit.obo || true
 	echo "NOTE: There are still some broken cases that need to be manually fixed. Search for `quivalent.*quivalent` (no E) in case sensitive regex mode in Atom or Visual Studio"
