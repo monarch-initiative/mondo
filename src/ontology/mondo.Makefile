@@ -266,6 +266,20 @@ create-mondo-stats:
 
 
 #############################################
+# Dump Mondo Terms for Delphi curation tool #
+#############################################
+.PHONY: clean_dump-mondo-terms
+.PHONY: dump-mondo-terms
+
+clean_dump-mondo-terms:
+	rm -rf reports/mondo_term_dump.csv
+
+dump-mondo-terms: clean_dump-mondo-terms reasoned.owl
+	$(ROBOT) query --input reasoned.owl  --format csv --query $(SPARQLDIR)/reports/dump-mondo-terms.ru reports/mondo_term_dump.csv
+	@echo "** All Mondo terms extracted. See file: reports/mondo_term_dump.csv"
+
+
+#############################################
 ##### One-time scripts ######################
 #############################################
 # MedGen conflicts (Aug 2023) pipeline
@@ -964,7 +978,7 @@ kgcl-diff-release-base: reports/difference_release_base.yaml \
 						reports/difference_release_base.md
 
 tmp/mondo-released.obo: .FORCE
-	wget http://purl.obolibrary.org/obo/mondo/$(KGCL_ONTOLOGY) -O $@
+	wget http://purl.obolibrary.org/obo/mondo/mondo-base.obo -O $@
 
 reports/difference_release_base.md: tmp/mondo-released.obo $(KGCL_ONTOLOGY)
 	runoak -i simpleobo:tmp/mondo-released.obo diff -X simpleobo:$(KGCL_ONTOLOGY) -o $@ --output-type md
