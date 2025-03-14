@@ -265,6 +265,56 @@ create-mondo-stats:
 	$(MAKE) create-mondo-stats-summary-file -B
 
 
+#######################################
+# Create General Statistics for Mondo #
+#######################################
+GENERAL_STATISTICS_QUERIES = \
+	$(SPARQLDIR)/reports/COUNT-all_disease_excluding_susceptibility.sparql \
+	$(SPARQLDIR)/reports/COUNT-all_human_diseases.sparql \
+	$(SPARQLDIR)/reports/COUNT-all_non-human_diseases.sparql \
+	$(SPARQLDIR)/reports/COUNT-rare-diseases-classes.sparql \
+	$(SPARQLDIR)/reports/COUNT-human_diseases_infectious.sparql \
+	$(SPARQLDIR)/reports/COUNT-non-human_diseases_infectious.sparql \
+	$(SPARQLDIR)/reports/COUNT-human-genetic-diseases.sparql \
+	$(SPARQLDIR)/reports/COUNT-non-human-genetic-diseases.sparql
+
+TMP_MONDO_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/tmp
+GEN_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-general-stats
+
+GEN_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(GENERAL_STATISTICS_QUERIES))
+
+COMBINED_REPORT = $(GEN_STATS_REPORTS_DIR)/mondo_general_statistics.tsv
+
+create-general-mondo-stats-all: create-general-mondo-stats combine clean-temp
+
+create-general-mondo-stats: $(GEN_STATS_OUTPUTS)
+
+$(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql mondo.owl
+	mkdir -p $(TMP_MONDO_STATS_RESULTS_DIR) $(GEN_STATS_REPORTS_DIR)
+	@echo "Running query $< ..."
+	$(ROBOT) query -i mondo.owl --use-graphs true  -f tsv --query $< $@
+
+# Combine all results into a single report
+combine: create-general-mondo-stats
+	@echo "Combining results into $(COMBINED_REPORT)..."
+	@echo "All Mondo General Statistics created on: $(current_date)" > $(COMBINED_REPORT)
+	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_REPORT)
+	@echo "** Combined report saved to $(COMBINED_REPORT)"
+
+# Remove temporary result files after combining
+clean-temp:
+	rm -f $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv
+	@echo "Cleaned up temporary result files."
+
+# Clean everything (temporary + reports)
+clean-stats:
+	rm -f $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv $(COMBINED_REPORT)
+	@echo "Cleaned all generated files."
+
+all: create-general-mondo-stats-all
+
+
+
 #############################################
 # Dump Mondo Terms for Delphi curation tool #
 #############################################
