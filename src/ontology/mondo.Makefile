@@ -275,7 +275,7 @@ clean_dump-mondo-terms:
 	rm -rf reports/mondo_term_dump.csv
 
 dump-mondo-terms: clean_dump-mondo-terms mondo.owl
-	$(ROBOT) query --input mondo.owl  --format csv --query $(SPARQLDIR)/reports/dump-mondo-terms.ru reports/mondo_term_dump.csv
+	$(ROBOT) query --input mondo.owl  --format csv --query $(SPARQLDIR)/reports/dump-mondo-terms.sparql reports/mondo_term_dump.csv
 	@echo "** All Mondo terms extracted. See file: reports/mondo_term_dump.csv"
 
 
