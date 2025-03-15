@@ -1,15 +1,19 @@
 ## Extract All Mondo terms
+
+by Trish Whetzel
+_updated Mar 14, 2025_
+
 Get all Mondo terms and the following information: 
 
-- term ID (formatted as an IRI)
+- term ID (formatted as a CURIE)
 - label
 - definition
 - comment
-- parents (direct parents only) - the labels and IRIs
+- parents (direct parents only) - the labels and CURIEs
 - synonyms (exact synonyms only)
 - xrefs to OMIM and Orphanet where there is a MONDO:equivalentTo annotation
 
-The query is run against the `reasoned.owl` file, which corresponds to the Mondo content from the latest Mondo release.
+The query is run against the `mondo.owl` file, which is already reasoned and corresponds to the Mondo content from the latest Mondo release.
 
 ## Extract all Mondo terms
 To extract all Mondo terms, run the command below from the `mondo/src/ontology` directory as:  
