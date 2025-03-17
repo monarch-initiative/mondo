@@ -1,4 +1,4 @@
-# MONFO Ontology Project Guide
+# MONDO Ontology Project Guide
 
 ## Project Layout
 - Main development file is `src/ontology/mondo-edit.obo`
