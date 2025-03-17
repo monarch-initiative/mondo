@@ -13,6 +13,11 @@ CONSTRUCT {
      <http://purl.org/dc/terms/description> ?description . 
 }
 WHERE {
+
+   VALUES ?gene {
+
+   }
+
  ?gene <https://w3id.org/biolink/vocab/category> <https://w3id.org/biolink/vocab/Gene> ;
      <https://w3id.org/biolink/vocab/in_taxon> ?taxon_xref ;
      <https://w3id.org/biolink/vocab/symbol> ?symbol .
