@@ -558,6 +558,12 @@ update-medgen:
 subset-metrics:
 	$(ROBOT) query -f tsv -i $(SRC) --query $(SPARQLDIR)/reports/count-subsets.sparql $(TMPDIR)/$@.tsv
 
+.PHONY: update-omim-genes
+rm-excluded-asserted:
+	$(ROBOT) merge -i $(SRC) --collapse-import-closure false \
+		query --update ../sparql/update/rm-excluded-subclassof.ru \
+		convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
 #############################################
 ##### Mondo analysis ########################
