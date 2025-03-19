@@ -9,6 +9,9 @@ jobs:
   create_issue:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       - name: Create Monthly Data Workflows Checklist Issue
         uses: JasonEtco/create-an-issue@v2
         env:
