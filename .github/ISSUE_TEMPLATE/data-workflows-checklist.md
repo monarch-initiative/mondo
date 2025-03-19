@@ -1,6 +1,6 @@
 ---
 name: Tracking issue
-title: "Monthly Data Workflows Checklist - {{ date }}"
+title: "Monthly Data Workflows Checklist"
 about: List of workflows to run for Week 3 of the Mondo release cycle.
 labels: ["tech"]
 assignees: ["@twhetzel"]
