@@ -9,6 +9,15 @@ jobs:
   create_issue:
     runs-on: ubuntu-latest
     steps:
+      - name: Check if today is the third Monday
+        run: |
+          if [ "$(date '+%d')" -ge 15 ] && [ "$(date '+%d')" -le 21 ] && [ "$(date '+%u')" -eq 1 ]; then
+            echo "This is the third Monday. Proceeding with issue creation."
+          else
+            echo "Not the third Monday. Skipping workflow."
+            exit 0
+          fi
+
       - name: Checkout Repository
         uses: actions/checkout@v4
 
