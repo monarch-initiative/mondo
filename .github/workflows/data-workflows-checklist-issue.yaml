@@ -8,16 +8,25 @@ on:
 jobs:
   create_issue:
     runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.check_day.outputs.should_run }}
     steps:
-      - name: Check if today is the third Monday
+      - name: Check if Today is the Third Monday
+        id: check_day
         run: |
           if [ "$(date '+%d')" -ge 15 ] && [ "$(date '+%d')" -le 21 ] && [ "$(date '+%u')" -eq 1 ]; then
             echo "This is the third Monday. Proceeding with issue creation."
+            echo "should_run=true" >> $GITHUB_ENV
           else
             echo "Not the third Monday. Skipping workflow."
-            exit 0
-          fi
+            echo "should_run=false" >> $GITHUB_ENV
+        shell: bash
 
+  create_issue_if_third_monday:
+    needs: create_issue
+    if: ${{ env.should_run == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
