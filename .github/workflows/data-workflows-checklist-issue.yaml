@@ -20,6 +20,7 @@ jobs:
           else
             echo "Not the third Monday. Skipping workflow."
             echo "should_run=false" >> $GITHUB_OUTPUT
+          fi
         shell: bash
 
   create_issue:
