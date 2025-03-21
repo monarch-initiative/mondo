@@ -247,9 +247,9 @@ Examples: [autosomal dominant cerebellar ataxia](http://purl.obolibrary.org/obo/
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/autosomal_dominant.yaml |
 | Name | autosomal_dominant |
-| Classes | HP:0000006, MONDO:0000001,  |
-| Variables | disease (MONDO:0000001),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Classes | HP:0000006, MONDO:0700096,  |
+| Variables | disease (MONDO:0700096),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432), [0000-0002-5002-8648](https://orcid.org/0000-0002-5002-8648),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autosomal_dominant.tsv) |
 
 #### Data preview: 
@@ -270,9 +270,9 @@ Examples: [autosomal recessive brachyolmia](http://purl.obolibrary.org/obo/MONDO
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/autosomal_recessive.yaml |
 | Name | autosomal_recessive |
-| Classes | HP:0000007, MONDO:0000001,  |
-| Variables | disease (MONDO:0000001),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432),  |
+| Classes | HP:0000007, MONDO:0700096,  |
+| Variables | disease (MONDO:0700096),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432), [0000-0002-5002-8648](https://orcid.org/0000-0002-5002-8648),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/autosomal_recessive.tsv) |
 
 #### Data preview: 
@@ -1411,6 +1411,54 @@ Examples: [carcinoid tumor (disease)](http://purl.obolibrary.org/obo/MONDO_00053
 | MONDO:0006162 | colorectal neuroendocrine tumor G1      | UBERON:0012652 | colorectum         |
 
 See full table [here](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/neuroendocrine_neoplasm_grade1.tsv)
+### Non-human animal x linked
+*This pattern is applied to x-linked forms of an inherited non-human animal disease.*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/non_human_animal_x_linked.yaml |
+| Name | non_human_animal_x_linked |
+| Classes | HP:0001417, MONDO:0005583,  |
+| Variables | disease (MONDO:0005583),  |
+| Contributors | [0000-0002-5002-8648](https://orcid.org/0000-0002-5002-8648),  |
+| Examples |  |
+
+### Non human animal autosomal dominant
+*This pattern is applied to autosomal dominant forms of an inherited non-human animal disease.*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/non_human_animal_autosomal_dominant.yaml |
+| Name | non_human_animal_autosomal_dominant |
+| Classes | HP:0000006, MONDO:0005583,  |
+| Variables | disease (MONDO:0005583),  |
+| Contributors | [0000-0002-5002-8648](https://orcid.org/0000-0002-5002-8648),  |
+| Examples |  |
+
+### Non human animal autosomal recessive
+*This pattern is applied to autosomal recessive forms of an inherited non-human animal disease.*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/non_human_animal_autosomal_recessive.yaml |
+| Name | non_human_animal_autosomal_recessive |
+| Classes | HP:0000007, MONDO:0005583,  |
+| Variables | disease (MONDO:0005583),  |
+| Contributors | [0000-0002-5002-8648](https://orcid.org/0000-0002-5002-8648),  |
+| Examples |  |
+
+### Non human animal y linked
+*This pattern is applied to y-linked forms of an inherited non-human animal disease.*
+
+| Attribute | Info |
+|----------|----------|
+| IRI | http://purl.obolibrary.org/obo/mondo/patterns/non_human_animal_y_linked.yaml |
+| Name | non_human_animal_y_linked |
+| Classes | HP:0001450, MONDO:0005583,  |
+| Variables | disease (MONDO:0005583),  |
+| Contributors | [0000-0002-5002-8648](https://orcid.org/0000-0002-5002-8648),  |
+| Examples |  |
+
 ### Nonhuman disease
 *This pattern should be used for diseases affecting non-human animal which have a corresponding/an analog disease in human, AND the taxon affected is NOT known. Examples: [leukemia, non-human animal](http://purl.obolibrary.org/obo/MONDO_0700100), [hepatitis, viral, animal](http://purl.obolibrary.org/obo/MONDO_0025085)*
 
@@ -2042,9 +2090,9 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/x_linked.yaml |
 | Name | x_linked |
-| Classes | HP:0001417, MONDO:0000001,  |
-| Variables | disease (MONDO:0000001),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Classes | HP:0001417, MONDO:0700096,  |
+| Variables | disease (MONDO:0700096),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0002-5002-8648](https://orcid.org/0000-0002-5002-8648),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/x_linked.tsv) |
 
 #### Data preview: 
@@ -2064,9 +2112,9 @@ See full table [here](https://github.com/monarch-initiative/mondo/blob/master/sr
 |----------|----------|
 | IRI | http://purl.obolibrary.org/obo/mondo/patterns/y_linked.yaml |
 | Name | y_linked |
-| Classes | HP:0001450, MONDO:0000001,  |
-| Variables | disease (MONDO:0000001),  |
-| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165),  |
+| Classes | HP:0001450, MONDO:0700096,  |
+| Variables | disease (MONDO:0700096),  |
+| Contributors | [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165), [0000-0002-5002-8648](https://orcid.org/0000-0002-5002-8648),  |
 | Examples | [mondo](https://github.com/monarch-initiative/mondo/blob/master/src/patterns/data/matches/y_linked.tsv) |
 
 #### Data preview: 
