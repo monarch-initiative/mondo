@@ -1329,7 +1329,7 @@ TRANSLATE_PREDICATES=rdfs:label
 
 
 $(TRANSLATIONSDIR)/mondo-jp.babelon.tsv:
-	test -f $@
+	wget https://raw.githubusercontent.com/dbcls/mondo-japanese/refs/heads/main/babelon/mondo-jp.babelon.tsv -O $@
 
 
 $(TRANSLATIONSDIR)/mondo-jp-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/mondo-jp.babelon.tsv
