@@ -72,7 +72,7 @@ _NOTE:_ Since the web site is maintained on a branch, when changes are pushed to
 5. Run `jekyll serve -l` to have a continuous build so that the local web site shows changes without having to refresh your browser (live reload).  
 _NOTE_: Run `jekyll build` if you want a one time build
 
-6. Open your browser to: `http://0.0.0.0:4000/`.   
+6. Open your browser to: [http://0.0.0.0:4000/](http://0.0.0.0:4000/)   
  Try to edit a doc file and you'll see the build update happening in the terminal. Once you see something like `...done in 3.704351825 seconds.` in the terminal, the browser should refresh automatically.  
 
 7. To exit from the `jekyll serve` mode, use `CTRL+C` to exit.

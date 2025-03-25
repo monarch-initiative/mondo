@@ -1,10 +1,23 @@
-_Last updated 2-Jan-2025_
+_Last updated 2025-02-15_
 
 ## Import terms into Mondo for use in logical axioms
 
 This workflow is for adding classes from external ontologies (e.g. GO, CHEBI, HGNC, or NCBI) and is much more streamlined compared to [MIREOTing](https://github.com/obophenotype/human-phenotype-ontology/wiki/Editor-Guide#mireoting).
 
 As a Mondo curator, when you have a ticket that requires a term from an external ontology, create a new git feature branch to include _only_ the changes for the refresh of the imports following the steps below. Also, ask on Slack if other curators need other terms imported. 
+
+### Add new term via ROBOT template
+_Updated 2025-02-15_: This the preferred workflow currently to add a new gene for use in a subclassOf axiom.
+
+1. Create a ROBOT template, such as [this](https://docs.google.com/spreadsheets/d/1rJsEEi47oysRnO5LJ8rlTy5_NxnDLZawRPn-Rgtmyek/edit?gid=835348843#gid=835348843)
+1. Add the term ID in Column A for the term you want to add a subclass axiom to
+1. In the subclassOf Axiom column (column L on this spreadsheet), add the IRI for the term you want to add, for example: http://identifiers.org/hgnc/23017. Note, this will add a new sublcassOf axiom: 
+1. Run the ROBOT merge template command (See [Merging a ROBOT template into Mondo](https://mondo.readthedocs.io/en/latest/editors-guide/robot-template/#merging-a-robot-template-into-mondo_1))
+1. You will see the new subclassOf axiom with the gene ID. Before the Mondo release, the imports will be refreshed (using the `refresh-merged` make goal as described below) and this will bring in the label
+1. Alternatively, if only a few new genes are being added, these can be added at the root of the ontology and then reference the entity in the subclassOf axiom as compared to merging in a ROBOT template
+1. Commit your changes and create a PR.
+
+## Alternative workflows
 
 ### Prepare your environment
 - Set the memory in Docker to 28 GB. See [instructions](/editors-guide/imports/#increase-memory-in-docker-mac-specific-instructions) below on how to change the memory setting.
@@ -14,17 +27,12 @@ As a Mondo curator, when you have a ticket that requires a term from an external
 ### Refresh Imports 
 1. Fetch the latest changes from `master` in the "mondo" repo
 1. Create a new git feature branch
-1. Open the `src/ontology/imports/manual_seed.txt` file
-1. Add the IRI of the term(s) you want to add to the ontology to this document (`manual_seed.txt`) and save the file
-    - IRIs for any entity can be added into the `manual_seed.txt` file, e.g. HGNC gene, NCBI gene (for non-human genes), NCBITaxon, etc.
-    - The IRIs to add to the `manual_seed.txt` file can be found in the <a href="https://docs.google.com/spreadsheets/d/1UME3pTeR42hwNt1I6RPl0nvJKVfTIeJqhx80laAlD50/edit?pli=1&gid=0#gid=0" target="_blank">terms required for import</a> Google Sheet.
-1. In the Terminal, run: `export "MEMORY_GB=28"`
+1. In the Terminal, run: `export "MEMORY_GB=28"` (this is the least amount of memory needed)
 1. Then refresh the imports: 
     - From `src/ontology/` run the command: `sh run.sh make refresh-merged` (Note: takes ~20 minutes)
     - All the imports will be updated, which means that you might see changes in your GitHub diff in the following files:
         - `src/ontology/imports/*_terms.txt`
         - `src/ontology/imports/merged_import.owl`
-    - The terms added in the `manual_seed.txt` file will be added to the appropriate import file (e.g human genes will be added to hgnc_terms.txt; NCBITaxon will be added to ncbitaxon_terms.txt). 
 1. Close Protege and open `mondo-edit.obo` in Protege again and use the "Save as..." option under the "File" menu to save the ontology as OBO Format (.obo).
     - One needs to save the `mondo-edit.obo` file in order for the updates from the refresh import update process (e.g. updated names) to be visible in the ontology file 
     - Therefore, changes such as updated names of imported entities might be shown in the git diff. 
