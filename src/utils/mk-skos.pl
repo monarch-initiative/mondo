@@ -77,6 +77,12 @@ while (<>) {
         elsif ($prefix eq 'ICD10CM') {
             $uri = 'http://purl.bioontology.org/ontology/ICD10CM/';
         }
+        elsif ($prefix eq 'icd11.foundation') {
+            $uri = 'http://purl.obolibrary.org/obo/mondo/sources/icd11foundation/';
+        }
+        elsif ($prefix eq 'EFO') {
+            $uri = 'http://www.ebi.ac.uk/efo/EFO_';
+        }
 
         if ($uri) {
             my $tgt = "$uri$x";

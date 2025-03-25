@@ -1,0 +1,45 @@
+pattern_name: non_human_animal_autosomal_recessive
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/non_human_animal_autosomal_recessive.yaml
+
+description: 'This pattern is applied to autosomal recessive forms of an inherited non-human animal disease.'
+
+Examples: TBD
+
+contributors:
+- https://orcid.org/0000-0002-5002-8648
+
+classes:
+  autosomal recessive inheritance: HP:0000007
+  non-human animal disease: MONDO:0005583
+
+relations:
+  has characteristic: RO:0000053
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+  
+vars:
+  disease: '''non-human animal disease'''
+
+name:
+  text: autosomal recessive %s
+  vars:
+  - disease
+
+annotations:
+- annotationProperty: exact_synonym
+  text: '%s, autosomal recessive'
+  vars:
+  - disease
+
+def:
+  text: Autosomal recessive form of %s.
+  vars:
+  - disease
+
+equivalentTo:
+  text: '%s and ''has characteristic'' some ''autosomal recessive inheritance'''
+  vars:
+  - disease

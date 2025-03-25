@@ -1,0 +1,39 @@
+name: Update Subclass Evidence
+
+on:
+#  schedule:
+#    - cron: '0 14 * * 1'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.5.4
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+      
+      - name: Update Subclass evidence
+        run: |
+          cd src/ontology
+          make GITHUB_ACTION=true IMP=false PAT=false update-subclass-sync -B
+    
+        # This is important if we are out of sync between Mondo and Mondo Ingest:
+        # We need to eventually add a check to ensure that no subclass axioms have been added or removed
+        # We should consider to create a seperate curation workflows with a table with previously supported and now not anymore supported subclass axioms
+      - name: QC to ensure that nothing other than provenance has changed
+        run: cd src/ontology; make GITHUB_ACTION=true IMP=false PAT=false test -B
+        continue-on-error: true  # Allow QC to fail but continue
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch-suffix: short-commit-hash
+          labels: automated
+          body: "Update the confirmed subclass axiom annotation."
+          title: "Monthly confirmed subclass evidence update"
+          base: ${{ github.head_ref }}
+          branch: "confirmed_subclass_evidence"
+          token: ${{ secrets.GH_TOKEN }}
+          #reviewers: "sabrinatoro"

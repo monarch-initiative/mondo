@@ -1,0 +1,46 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+PREFIX OMO: <http://purl.obolibrary.org/obo/OMO_>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+# description: Ensure that preferredExternal annotations are used correctly
+
+SELECT ?entity ?property ?value WHERE {
+    VALUES ?property { oboInOwl:hasDbXref }
+    {
+        # Check for cases where there is a preferredExternal annotation
+        # but no MONDO:equivalentTo
+        [] owl:annotatedSource ?entity ;
+            owl:annotatedProperty ?property ;
+            owl:annotatedTarget ?value ;
+            oboInOwl:source "MONDO:preferredExternal" .
+        FILTER NOT EXISTS {
+            [] owl:annotatedSource ?entity ;
+            owl:annotatedProperty ?property ;
+            owl:annotatedTarget ?value ;
+            oboInOwl:source "MONDO:equivalentTo" .
+        }
+    } UNION {
+        # Check for cases where there is a preferredExternal annotation
+        # but no MONDO:equivalentTo to a different class
+        # This indicates that there is no point to saying "preferredExternal"
+        # as there is nothing this can be preferred to.
+        [] owl:annotatedSource ?entity ;
+            owl:annotatedProperty ?property ;
+            owl:annotatedTarget ?value ;
+            oboInOwl:source "MONDO:preferredExternal" .
+        FILTER NOT EXISTS {
+            [] owl:annotatedSource ?entity2 ;
+            owl:annotatedProperty ?property ;
+            owl:annotatedTarget ?value ;
+            oboInOwl:source "MONDO:equivalentTo" .
+        }
+        FILTER(?entity!=?entity2)
+        FILTER (isIRI(?entity2) && STRSTARTS(str(?entity2), "http://purl.obolibrary.org/obo/MONDO_"))
+    }
+  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+}

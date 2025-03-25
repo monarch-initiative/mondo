@@ -5,11 +5,16 @@ prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-#classes with the axiom "'bearer of' some rare" AND/OR "has subset :‘gard_rare’" AND limited to disease branch (ie not including the disease susceptibility branch
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 CONSTRUCT {
   ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#orphanet_rare> .
+  [] rdf:type owl:Axiom ;
+           owl:annotatedSource ?cls ;
+           owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#inSubset> ;
+           owl:annotatedTarget <http://purl.obolibrary.org/obo/mondo#orphanet_rare> ;
+           oboInOwl:source ?xref .
 }
 
 WHERE
@@ -17,22 +22,27 @@ WHERE
   ?cls a owl:Class .
 
   { 
+    # Match the XREF and the fact this term belongs to the ordo_disorder subset
     ?cls <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?xref .
+
+    # Only ordo_disorder is included as per request by Orphanet: these are the diseases they truly consider rare
+    ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#ordo_disorder> .
     
+    # For safety reasons, we only consider the case that the evidence of the subset corresponds exactly to the xref
+    # This is probably redundant, but it is possible that a class has two ORDO xrefs, one exact, one not
+    # and we only want to record the exact xref as evidence for the rare subset
     ?a <http://www.w3.org/2002/07/owl#annotatedSource> ?cls .
-    ?a <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> .
-    ?a <http://www.w3.org/2002/07/owl#annotatedTarget> ?xref .
-    ?a <http://www.geneontology.org/formats/oboInOwl#source> ?source .
+    ?a <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.geneontology.org/formats/oboInOwl#inSubset> .
+    ?a <http://www.w3.org/2002/07/owl#annotatedTarget> <http://purl.obolibrary.org/obo/mondo#ordo_disorder> .
+    ?a <http://www.geneontology.org/formats/oboInOwl#source> ?xref .
   
   }
- 
-  FILTER (?cls NOT IN (MONDO:0000001))
-  FILTER (?source="MONDO:equivalentTo")
-  FILTER (strStarts(?xref,"Orphanet:"))
 
   FILTER NOT EXISTS {
     ?cls owl:deprecated "true"^^xsd:boolean
   }
  FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+ FILTER( STR(?xref) != "Orphanet:377788")
+ # See https://github.com/monarch-initiative/mondo/issues/7704, some specific mappings should be excluded
 }
   

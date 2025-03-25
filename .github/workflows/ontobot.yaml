@@ -3,13 +3,16 @@ name: Create new pull request
 on:
   workflow_dispatch:
   issues:
-    types: [ opened, edited ]
+    types: [opened, edited]
+  issue_comment:
+    types: [created, edited]
 
 jobs:
   check:
     runs-on: ubuntu-latest
     outputs:
-      phraseExists: ${{ steps.check-body.outputs.result }}
+      phraseExists: ${{ steps.check-body.outputs.phraseExists }}
+      commentId: ${{ steps.check-body.outputs.commentId }}
     steps:
       - name: Check if issue body contains 'Hey ontobot'
         id: check-body
@@ -21,12 +24,60 @@ jobs:
               repo: context.repo.repo,
               issue_number: context.issue.number
             });
-            if (!issue.data.body) {
-              console.log('Issue body is empty or null');
-              return false;
+            let bodyText = issue.data.body ? issue.data.body.toLowerCase() : '';
+            let commentId = null;
+
+            // Fetch all comments for the issue
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number
+            });
+
+            // Function to check for the phrase in bodyText and comments
+            function checkForPhrase(bodyText, comments) {
+              const phrase = 'hey ontobot';
+              
+              // Check if bodyText includes the phrase
+              let result = bodyText.includes(phrase);
+              
+              // If not found in bodyText, check each comment
+              
+              for (let comment of comments.reverse()) { // Reverse to give precedence to the latest comment
+                if (comment.body.toLowerCase().includes(phrase)) {
+                  result = true;
+                  commentId = comment.id;
+                  break;
+                }
+              }
+              
+
+              return {
+                result: result,
+                commentId: result ? commentId : null
+              };
             }
-            return issue.data.body.toLowerCase().includes('hey ontobot');
-  
+
+            const checkResult = checkForPhrase(bodyText, comments.data);
+
+            console.log(`Result: ${checkResult.result}`);
+            console.log(`Comment ID: ${checkResult.commentId}`);
+            console.log(`Check Result: ${JSON.stringify(checkResult)}`);
+
+            core.setOutput('phraseExists', checkResult.result);
+            core.setOutput('commentId', checkResult.commentId);
+
+      - name: Log phraseExists output
+        run: |
+          echo "phraseExists: ${{ steps.check-body.outputs.phraseExists }}"
+          echo "commentId: ${{ steps.check-body.outputs.commentId }}"
+          echo "Outputs: $(echo '${{ toJSON(steps.check-body.outputs) }}')"
+    
+      - name: Conditional step based on result
+        if: ${{ steps.check-body.outputs.phraseExists == 'true' }}
+        run: echo "The phrase 'Hey ontobot' was found."
+      
+
   build:
     needs: check
     if: needs.check.outputs.phraseExists == 'true'
@@ -34,10 +85,10 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.9"]
-        os: [ ubuntu-latest ]
+        os: [ubuntu-latest]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v3
         with:
@@ -47,20 +98,17 @@ jobs:
         id: gh-script-issue
         uses: actions/github-script@v6
         with:
-          # github-token: ${{ secrets.GH_TOKEN }}
           script: |
-            const issue_number = context.issue.number
-            const repo = context.repo.owner+"/"+context.repo.repo
+            const issue_number = context.issue.number;
             return issue_number
-      
+
       - name: Return repository name
         id: gh-script-repo
         uses: actions/github-script@v6
         with:
-          # github-token: ${{ secrets.GH_TOKEN }}
           script: |
-            const repo = context.repo.owner+"/"+context.repo.repo
-            return repo
+            const repo = context.repo.owner + "/" + context.repo.repo;
+            return repo;
 
       - name: Set branch name
         id: vars
@@ -75,15 +123,28 @@ jobs:
       - name: Run ochange
         id: ochange
         run: |
-          ochange process-issue ${{ env.resource }} \
+          cmd="ochange process-issue ${{ env.resource }} \
           -r ${{ steps.gh-script-repo.outputs.result }} \
           -n ${{ steps.gh-script-issue.outputs.result }} \
           -g ${{ secrets.GH_TOKEN }} \
-          -p MONDO
+          -p MONDO"
+
+          if [ "${{ needs.check.outputs.commentId }}" != "" ]; then
+            cmd="$cmd -c ${{ needs.check.outputs.commentId }}"
+          fi
+
+          echo "Running command: $cmd"
+          eval $cmd
+
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.ONTOBOT_APP_ID }}
+          private-key: ${{ secrets.ONTOBOT_APP_PRIVATE_KEY }}
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-        if: ${{ env.PR_TITLE}}
+        uses: peter-evans/create-pull-request@v5
+        if: ${{ env.PR_TITLE }}
         with:
           branch-suffix: short-commit-hash
           labels: Automated
@@ -93,4 +154,4 @@ jobs:
           title: ${{ env.PR_TITLE }}
           base: ${{ github.head_ref }}
           branch: ${{ env.branch-name }}
-          # token: ${{ secrets.GH_TOKEN }}
+          token: ${{ steps.app-token.outputs.token }}

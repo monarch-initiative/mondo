@@ -16,7 +16,7 @@ SELECT DISTINCT ?entity ?xref WHERE {
     }
     # 20.06.2024: had to remove Orphanet and NCIT as they actually had too many errors
     # strstarts(str(?xref), "Orphanet:") || strstarts(str(?xref), "ORDO:") || strstarts(str(?xref), "NCIT:")
-    FILTER (strstarts(str(?xref), "OMIM:") || strstarts(str(?xref), "OMIMPS:") || strstarts(str(?xref), "DOID:"))
+    FILTER (strstarts(str(?xref), "OMIM:") || strstarts(str(?xref), "OMIMPS:") || strstarts(str(?xref), "DOID:") || strstarts(str(?xref), "OMIA:"))
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
 }
 ORDER BY ?entity

@@ -1,0 +1,13 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?mondo_id ?property ?synonym WHERE {
+    ?axiom rdf:type owl:Axiom .
+    ?axiom owl:annotatedSource ?mondo_id .
+    ?axiom owl:annotatedProperty ?property .
+    ?axiom owl:annotatedTarget ?synonym .
+    ?axiom oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#EXCLUDE> .
+    
+    FILTER(STRSTARTS(STR(?mondo_id), "http://purl.obolibrary.org/obo/MONDO_"))
+}

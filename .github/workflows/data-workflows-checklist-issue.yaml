@@ -1,0 +1,39 @@
+name: Monthly Data Workflows Checklist Issue
+
+on:
+  schedule:
+    - cron: "0 14 15-21 * 1" # Third Monday of the month at 6:00am PT
+  workflow_dispatch:
+
+jobs:
+  check_day:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.set_output.outputs.should_run }}
+    steps:
+      - name: Check if Today is the Third Monday
+        id: set_output
+        run: |
+          if [ "$(date '+%d')" -ge 15 ] && [ "$(date '+%d')" -le 21 ] && [ "$(date '+%u')" -eq 1 ]; then
+            echo "This is the third Monday. Proceeding with issue creation."
+            echo "should_run=true" >> $GITHUB_OUTPUT
+          else
+            echo "Not the third Monday. Skipping workflow."
+            echo "should_run=false" >> $GITHUB_OUTPUT
+          fi
+        shell: bash
+
+  create_issue:
+    needs: check_day
+    if: ${{ needs.check_day.outputs.should_run == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Create Monthly Data Workflows Checklist Issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/ISSUE_TEMPLATE/data-workflows-checklist.md

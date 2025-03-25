@@ -11,5 +11,5 @@ Examples: [holoprosencephaly](http://purl.obolibrary.org/obo/MONDO_0016296) [OMI
 * [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 ## Name 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
+{[disease](http://purl.obolibrary.org/obo/MONDO_0700096)}
 
