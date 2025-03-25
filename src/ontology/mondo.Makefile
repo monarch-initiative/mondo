@@ -1315,10 +1315,8 @@ all: config/exclusion_reasons.tsv
 # ----------------------------------------
 
 BABELONPY=babelon -q
-TRANSLATIONSDIR=../translations
 TRANSLATIONS_OWL=$(TRANSLATIONSDIR)/mondo-jp.babelon.owl
 TRANSLATIONS_TSV=$(TRANSLATIONSDIR)/mondo-jp-preprocessed.babelon.tsv
-TRANSLATION_FILES=$(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv $(TRANSLATIONSDIR)/$(ONT)-all.babelon.json
 
 translations:
 	$(MAKE) $(TRANSLATION_FILES)

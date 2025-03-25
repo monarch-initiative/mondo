@@ -25,6 +25,7 @@ OWLTOOLS= owltools
 USECAT= --use-catalog
 SPARQLDIR = ../sparql
 PATTERNDIR = ../patterns
+TRANSLATIONSDIR=../translations
 TMPDIR = tmp
 
 CONSTRUCTS= embedded-definition
@@ -97,6 +98,7 @@ ADDITIONAL_REPORT_FILES = reports/semantic-xref-pairs.tsv
 REPORT_FILES = $(MAIN_REPORT_FILES) $(ADDITIONAL_REPORT_FILES)
 
 
+TRANSLATION_FILES=$(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv $(TRANSLATIONSDIR)/$(ONT)-all.babelon.json
 MAIN_PRODUCTS = $(ONT) $(ONT)-base $(ONT)-simple $(ONT)-international.owl
 MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json) $(ONT)_nodes.tsv $(ONT)_edges.tsv
 EQUIVALENTS_FILES=imports/equivalencies
@@ -107,7 +109,8 @@ ARTEFACTS = \
   $(EQUIVALENTS) \
   $(REPORT_FILES) \
   $(COMPONENT_FILES) \
-  $(SUBSET_FILES)
+  $(SUBSET_FILES) \
+  $(TRANSLATION_FILES)
 
 REPORT_FILES_RELEASE = reports/mondo_release_diff_changed_terms.tsv \
   reports/mondo_release_diff_new_terms.tsv \
