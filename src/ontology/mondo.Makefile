@@ -1317,10 +1317,6 @@ all: config/exclusion_reasons.tsv
 BABELONPY=babelon -q
 TRANSLATIONS_OWL=$(TRANSLATIONSDIR)/mondo-jp.babelon.owl
 TRANSLATIONS_TSV=$(TRANSLATIONSDIR)/mondo-jp-preprocessed.babelon.tsv
-
-translations:
-	$(MAKE) $(TRANSLATION_FILES)
-
 TRANSLATIONS_ADAPTER=simpleobo:mondo-simple.obo
 TRANSLATIONS_ONTOLOGY=mondo-simple.obo
 TRANSLATE_PREDICATES=rdfs:label 
