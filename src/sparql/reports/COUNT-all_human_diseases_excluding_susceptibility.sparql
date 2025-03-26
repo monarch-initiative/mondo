@@ -3,13 +3,13 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 
 
-# Count of all non-obsolete 'disease' classes excluding 'disease susceptibility' subclasses
+# Count of all non-obsolete 'human disease' classes excluding 'disease susceptibility' subclasses
 
-SELECT (COUNT(DISTINCT ?class) AS ?countAllDiseaseExcludingSusceptibility)
+SELECT (COUNT(DISTINCT ?class) AS ?countHumanDiseaseExcludingSusceptibility)
 WHERE {
   {
     SELECT DISTINCT ?class WHERE {
-      ?class rdfs:subClassOf* obo:MONDO_0000001 .
+      ?class rdfs:subClassOf* obo:MONDO_0700096 .
       FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
       FILTER NOT EXISTS { ?class owl:deprecated true }
     }

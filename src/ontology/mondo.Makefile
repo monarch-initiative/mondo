@@ -270,13 +270,16 @@ create-mondo-stats:
 #######################################
 GENERAL_STATISTICS_QUERIES = \
 	$(SPARQLDIR)/reports/COUNT-all_disease_excluding_susceptibility.sparql \
-	$(SPARQLDIR)/reports/COUNT-all_human_diseases.sparql \
+	$(SPARQLDIR)/reports/COUNT-all_human_diseases_excluding_susceptibility.sparql \
 	$(SPARQLDIR)/reports/COUNT-all_non-human_diseases.sparql \
-	$(SPARQLDIR)/reports/COUNT-rare-diseases-classes.sparql \
-	$(SPARQLDIR)/reports/COUNT-human_diseases_infectious.sparql \
-	$(SPARQLDIR)/reports/COUNT-non-human_diseases_infectious.sparql \
+	$(SPARQLDIR)/reports/COUNT-human-rare-diseases.sparql \
 	$(SPARQLDIR)/reports/COUNT-human-genetic-diseases.sparql \
-	$(SPARQLDIR)/reports/COUNT-non-human-genetic-diseases.sparql
+	$(SPARQLDIR)/reports/COUNT-human_diseases_infectious.sparql \
+	$(SPARQLDIR)/reports/COUNT-human-cancer-diseases.sparql \
+	$(SPARQLDIR)/reports/COUNT-non-human-genetic-diseases.sparql \
+	$(SPARQLDIR)/reports/COUNT-non-human_diseases_infectious.sparql \
+	$(SPARQLDIR)/reports/COUNT-non-human_diseases_cancer.sparql
+	
 
 TMP_MONDO_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/tmp
 GEN_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-general-stats
@@ -299,12 +302,12 @@ combine: create-general-mondo-stats
 	@echo "Combining results into $(COMBINED_REPORT)..."
 	@echo "All Mondo General Statistics created on: $(current_date)" > $(COMBINED_REPORT)
 	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_REPORT)
-	@echo "** Combined report saved to $(COMBINED_REPORT)"
+	@echo "\n** Combined report saved to: $(COMBINED_REPORT)\n"
 
 # Remove temporary result files after combining
 clean-temp:
 	rm -f $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv
-	@echo "Cleaned up temporary result files."
+	@echo "(Cleaned up temporary result files)"
 
 # Clean everything (temporary + reports)
 clean-stats:

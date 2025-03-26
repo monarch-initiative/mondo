@@ -3,11 +3,11 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-# Count the total number of unique non-obsolete Mondo non-human animal diseases that are an infectious disease
+# Count all non-obsolete 'infectious disease, non-human animal' classes
 
 SELECT (COUNT(DISTINCT ?class) AS ?countNonHumanDiseaseInfectious)
 WHERE {
-  #  'infectious disease, non-human animal'
+  #  MONDO:0700049 'infectious disease, non-human animal'
   ?class rdfs:subClassOf* obo:MONDO_0700049 .
   
   FILTER NOT EXISTS {

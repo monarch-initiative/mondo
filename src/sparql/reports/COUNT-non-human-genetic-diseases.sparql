@@ -2,19 +2,18 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 
-# Get count of NON-human genetic diseases
+# Count all non-obsolete 'hereditary disease, non-human animal' classes
 
-SELECT (COUNT(DISTINCT ?class) AS ?countHumanGeneticDiseases)
+SELECT (COUNT(DISTINCT ?class) AS ?countNonHumanGeneticDiseases)
 WHERE {
-  # Find subclasses of MONDO:1011321 'hereditary disease, non-human animal'
+  # MONDO:1011321 'hereditary disease, non-human animal'
   ?class rdfs:subClassOf* obo:MONDO_1011321 .
 
   # Exclude deprecated terms
   FILTER NOT EXISTS {
-    ?class owl:deprecated "true"^^xsd:boolean
+    ?class owl:deprecated true
   }
 
   # Ensure the class is a MONDO term
