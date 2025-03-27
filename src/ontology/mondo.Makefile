@@ -288,7 +288,8 @@ GEN_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_
 
 COMBINED_REPORT = $(GEN_STATS_REPORTS_DIR)/mondo_general_statistics.tsv
 
-create-general-mondo-stats-all: create-general-mondo-stats combine clean-temp
+# Create General stats
+create-general-mondo-stats-all: create-general-mondo-stats combine-general-stats-reports clean-temp-stats
 
 create-general-mondo-stats: $(GEN_STATS_OUTPUTS)
 
@@ -298,14 +299,14 @@ $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql mondo.owl
 	$(ROBOT) query -i mondo.owl --use-graphs true  -f tsv --query $< $@
 
 # Combine all results into a single report
-combine: create-general-mondo-stats
+combine-general-stats-reports: create-general-mondo-stats
 	@echo "Combining results into $(COMBINED_REPORT)..."
 	@echo "All Mondo General Statistics created on: $(current_date)" > $(COMBINED_REPORT)
 	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_REPORT)
 	@echo "\n** Combined report saved to: $(COMBINED_REPORT)\n"
 
 # Remove temporary result files after combining
-clean-temp:
+clean-temp-stats:
 	rm -f $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv
 	@echo "(Cleaned up temporary result files)"
 
@@ -315,6 +316,39 @@ clean-stats:
 	@echo "Cleaned all generated files."
 
 all: create-general-mondo-stats-all
+
+
+
+#######################################
+# Create Synonym Statistics for Mondo #
+#######################################
+SYNONYM_STATISTICS_QUERIES = \
+	$(SPARQLDIR)/reports/COUNT-synonym-stats-human-disease-excluding-susceptibility.sparql
+
+SYNONYM_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-synonym-stats
+COMBINED_SYNONYM_REPORT = $(SYNONYM_STATS_REPORTS_DIR)/mondo_synonym_statistics.tsv
+
+SYNONYM_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(SYNONYM_STATISTICS_QUERIES))
+
+# Create Synonym stats
+create-synonym-mondo-stats-all: create-synonym-mondo-stats combine-synonym-stats-reports clean-temp-stats
+
+create-synonym-mondo-stats: $(SYNONYM_STATS_OUTPUTS)
+
+$(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql mondo.owl
+	mkdir -p $(TMP_MONDO_STATS_RESULTS_DIR) $(SYNONYM_STATS_REPORTS_DIR)
+	@echo "Running query $< "
+	$(ROBOT) query -i mondo.owl --use-graphs true  -f tsv --query $< $@
+
+# Combine results into a single report
+combine-synonym-stats-reports: create-synonym-mondo-stats
+	@echo "Combining results into $(COMBINED_SYNONYM_REPORT)..."
+	@echo "All Mondo Synonym Statistics created on: $(current_date)" > $(COMBINED_SYNONYM_REPORT)
+	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_SYNONYM_REPORT)
+	@echo "\n** Combined report saved to: $(COMBINED_SYNONYM_REPORT)\n"
+
+
+all: create-synonym-mondo-stats-all
 
 
 
