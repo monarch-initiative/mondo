@@ -325,6 +325,7 @@ all: create-general-mondo-stats-all
 SYNONYM_STATISTICS_QUERIES = \
 	$(SPARQLDIR)/reports/COUNT-synonym-stats-human-disease-excluding-susceptibility.sparql
 
+TMP_MONDO_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/tmp
 SYNONYM_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-synonym-stats
 COMBINED_SYNONYM_REPORT = $(SYNONYM_STATS_REPORTS_DIR)/mondo_synonym_statistics.tsv
 
