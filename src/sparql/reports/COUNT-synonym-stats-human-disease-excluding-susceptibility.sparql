@@ -4,6 +4,8 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX mondo: <http://purl.obolibrary.org/obo/mondo#>
 
+# Get synonym statistics
+
 SELECT ?category (COUNT(DISTINCT ?synonym) AS ?count)
 WHERE {
   {
