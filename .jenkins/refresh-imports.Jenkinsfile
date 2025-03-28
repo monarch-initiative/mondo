@@ -5,7 +5,7 @@ pipeline {
     }
     environment {
         HOME = "${env.WORKSPACE}"
-        MEMORY_GB = 28
+        MEMORY_GB = 40
     }
     stages {
         stage('setup') {
