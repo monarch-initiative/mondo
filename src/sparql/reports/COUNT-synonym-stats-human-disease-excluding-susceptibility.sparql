@@ -4,7 +4,7 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX mondo: <http://purl.obolibrary.org/obo/mondo#>
 
-# Get synonym statistics for MONDO:0000001 'disease' subclasses excluding susceptibility
+# Get synonym statistics for MONDO:0000001 'disease' subclasses excluding susceptibility by scope and by xref for exact synonyms
 
 SELECT ?category (COUNT(DISTINCT ?synonym) AS ?count)
 WHERE {
