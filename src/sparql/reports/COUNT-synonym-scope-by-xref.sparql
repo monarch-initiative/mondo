@@ -3,7 +3,7 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
-# Get count of synonyms by scope by xref for MONDO:0000001 'disease' excluding susceptibility
+# Get count of synonyms by scope by xref for MONDO:0000001 'disease' subclasses excluding susceptibility
 
 SELECT ?scope ?xrefPrefix (COUNT(DISTINCT ?axiom) AS ?synonymCount)
 WHERE {
