@@ -27,4 +27,4 @@ if [ x$ODK_DEBUG = xyes ]; then
     TIMECMD="/usr/bin/time -f ### DEBUG STATS ###\nElapsed time: %E\nPeak memory: %M kb"
 fi
 
-docker run --memory=${MEMORY_GB}g  -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS=${MEMORY_JAVA} -e JAVA_OPTS=${MEMORY_JAVA} --rm -ti obolibrary/$IMAGE $TIMECMD "$@"
+docker run --memory=${MEMORY_GB}g  -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS=${MEMORY_JAVA} -e JAVA_OPTS=${MEMORY_JAVA} --rm obolibrary/$IMAGE $TIMECMD "$@"
