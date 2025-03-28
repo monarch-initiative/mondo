@@ -294,7 +294,7 @@ create-general-mondo-stats-all: create-general-mondo-stats combine-general-stats
 create-general-mondo-stats: $(GEN_STATS_OUTPUTS)
 
 $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql mondo.owl
-	mkdir -p $(TMP_MONDO_STATS_RESULTS_DIR) $(GEN_STATS_REPORTS_DIR)
+	mkdir -p $(GEN_STATS_REPORTS_DIR)
 	@echo "Running query $< ..."
 	$(ROBOT) query -i mondo.owl --use-graphs true  -f tsv --query $< $@
 
@@ -337,7 +337,7 @@ create-synonym-mondo-stats-all: create-synonym-mondo-stats combine-synonym-stats
 create-synonym-mondo-stats: $(SYNONYM_STATS_OUTPUTS)
 
 $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql mondo.owl
-	mkdir -p $(TMP_MONDO_STATS_RESULTS_DIR) $(SYNONYM_STATS_REPORTS_DIR)
+	mkdir -p $(SYNONYM_STATS_REPORTS_DIR)
 	@echo "Running query $< "
 	$(ROBOT) query -i mondo.owl --use-graphs true  -f tsv --query $< $@
 
@@ -347,6 +347,39 @@ combine-synonym-stats-reports: create-synonym-mondo-stats
 	@echo "All Mondo Synonym Statistics created on: $(current_date)" > $(COMBINED_SYNONYM_REPORT)
 	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_SYNONYM_REPORT)
 	@echo "\n** Combined report saved to: $(COMBINED_SYNONYM_REPORT)\n"
+
+
+all: create-synonym-mondo-stats-all
+
+
+####################################
+# Create Rare Statistics for Mondo #
+####################################
+RARE_SATISTICS_QUERIES = \
+	$(SPARQLDIR)/reports/COUNT-rare_subsets.sparql
+
+TMP_MONDO_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/tmp
+RARE_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-rare-stats
+COMBINED_RARE_REPORT = $(RARE_STATS_REPORTS_DIR)/mondo_rare_statistics.tsv
+
+RARE_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(RARE_SATISTICS_QUERIES))
+
+# Create Rare stats
+create-rare-mondo-stats-all: create-rare-mondo-stats combine-rare-stats-reports clean-temp-stats
+
+create-rare-mondo-stats: $(RARE_STATS_OUTPUTS)
+
+$(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql mondo.owl
+	mkdir -p $(RARE_STATS_REPORTS_DIR)
+	@echo "Running query $< "
+	$(ROBOT) query -i mondo.owl --use-graphs true  -f tsv --query $< $@
+
+# Combine results into a single report
+combine-rare-stats-reports: create-rare-mondo-stats
+	@echo "Combining results into $(COMBINED_RARE_REPORT)..."
+	@echo "All Mondo Synonym Statistics created on: $(current_date)" > $(COMBINED_RARE_REPORT)
+	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_RARE_REPORT)
+	@echo "\n** Combined report saved to: $(COMBINED_RARE_REPORT)\n"
 
 
 all: create-synonym-mondo-stats-all
