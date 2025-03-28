@@ -4,27 +4,30 @@ pipeline {
         cron('H H * * 7')  //sometime on Sundays
     }
     environment {
-        HOME = "${env.WORKSPACE}"       
+        HOME = "${env.WORKSPACE}"
+        MEMORY_GB = 28
     }
     stages {
         stage('setup') {
             steps {
                 sh '''
-                echo "I'm setting myself up!"
+                echo "I'm setting up"    
                 '''
             }
         }
         stage('do-stuff') {
             steps {
-                sh '''
-                echo "I'm doing stuff!"
-                '''
+                dir("src/ontology") {
+                    sh '''
+                    sh run.sh make refresh-merged
+                    '''
+                }
             }
         }
         stage('upload') {
             steps {
                 sh '''
-                    echo "I'm uploading!"
+                    echo "In this step, in the future, I will make a new branch, commit the changes and push. I'll need permissions first"
                 '''
             }
         }
