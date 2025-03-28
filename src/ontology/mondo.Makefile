@@ -1324,8 +1324,7 @@ TRANSLATE_PREDICATES=rdfs:label
 
 # The iconv hack is only needed until https://github.com/dbcls/mondo-japanese/issues/1 is resolved
 $(TRANSLATIONSDIR)/mondo-jp.babelon.tsv:
-	wget -O - "https://raw.githubusercontent.com/dbcls/mondo-japanese/refs/heads/main/babelon/mondo-jp.babelon.tsv" | iconv -f UTF-16LE -t UTF-8 > $@
-
+	wget "https://raw.githubusercontent.com/dbcls/mondo-japanese/refs/heads/main/babelon/mondo-jp.babelon.tsv" -O $@
 
 $(TRANSLATIONSDIR)/mondo-jp-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/mondo-jp.babelon.tsv
 	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/mondo-jp.babelon.tsv \
