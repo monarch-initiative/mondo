@@ -3,7 +3,7 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 
-# Get counts for various rare subsets for MONDO:0000001 'disease' subclasses excluding susceptibility
+# Get counts for various rare subsets for MONDO:0000001 'disease'
 
 SELECT ?subsetLabel (COUNT(DISTINCT ?class) AS ?count)
 WHERE {
@@ -11,10 +11,6 @@ WHERE {
          oboInOwl:inSubset ?subset .
 
   FILTER NOT EXISTS { ?class owl:deprecated true }
-
-  FILTER NOT EXISTS {
-    ?class rdfs:subClassOf* obo:MONDO_0042489 .
-  }
 
   FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
 
