@@ -269,8 +269,8 @@ create-mondo-stats:
 # Create General Statistics for Mondo #
 #######################################
 GENERAL_STATISTICS_QUERIES = \
-	$(SPARQLDIR)/reports/COUNT-all_disease_excluding_susceptibility.sparql \
-	$(SPARQLDIR)/reports/COUNT-all_human_diseases_excluding_susceptibility.sparql \
+	$(SPARQLDIR)/reports/COUNT-all_diseases.sparql \
+	$(SPARQLDIR)/reports/COUNT-all_human_diseases.sparql \
 	$(SPARQLDIR)/reports/COUNT-all_non-human_diseases.sparql \
 	$(SPARQLDIR)/reports/COUNT-human-rare-diseases.sparql \
 	$(SPARQLDIR)/reports/COUNT-human-genetic-diseases.sparql \
@@ -323,7 +323,7 @@ all: create-general-mondo-stats-all
 # Create Synonym Statistics for Mondo #
 #######################################
 SYNONYM_STATISTICS_QUERIES = \
-	$(SPARQLDIR)/reports/COUNT-synonym-stats-human-disease-excluding-susceptibility.sparql
+	$(SPARQLDIR)/reports/COUNT-all_diseases_synonym_stats.sparql
 
 TMP_MONDO_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/tmp
 SYNONYM_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-synonym-stats
