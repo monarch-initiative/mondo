@@ -1,0 +1,19 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+
+# Count all non-obsolete 'human disease' classes that are in the rare subset
+
+SELECT (COUNT(DISTINCT ?class) AS ?countHumanRareSubset)
+WHERE {
+  ?class rdfs:subClassOf* obo:MONDO_0700096 ;
+         oboInOwl:inSubset <http://purl.obolibrary.org/obo/mondo#rare> .
+  
+  FILTER NOT EXISTS {
+    ?class owl:deprecated true
+  }
+
+  FILTER (isIRI(?class) && STRSTARTS(str(?class), "http://purl.obolibrary.org/obo/MONDO_"))
+}
