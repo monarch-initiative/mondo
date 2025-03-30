@@ -5,6 +5,13 @@ on:
     branches:
       - issue-7344
   workflow_dispatch:
+    inputs:
+      from_date:
+        description: "Start date (YYYY-MM-DD) — optional"
+        required: false
+      to_date:
+        description: "End date (YYYY-MM-DD) — optional"
+        required: false
 
 jobs:
   export:
@@ -27,7 +34,15 @@ jobs:
         run: pip install PyGithub tqdm
 
       - name: Run export (testing)
-        run: make test-github-issue-stats
+        # run: make test-github-issue-stats # Change to github-issue-stats when in `master`
+        run: |
+          if [[ -n "${{ inputs.from_date }}" && -n "${{ inputs.to_date }}" ]]; then
+            echo "Using manually entered dates"
+            make test-github-issue-stats FROM_DATE=${{ inputs.from_date }} TO_DATE=${{ inputs.to_date }}
+          else
+            echo "Using auto-calculated dates from git tags"
+            make test-github-issue-stats
+          fi
         working-directory: src/ontology
 
       - name: Upload stats report
