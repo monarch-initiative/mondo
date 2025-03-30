@@ -392,6 +392,11 @@ all: create-synonym-mondo-stats-all
 COMMUNITY_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-community-stats
 COMMUNITY_STATS_REPORT = $(COMMUNITY_STATS_REPORTS_DIR)/mondo_community_statistics-report.tsv
 
+.PHONY: test-github-issue-stats
+test-github-issue-stats:
+	make github-issue-stats FROM_DATE=2025-3-02 TO_DATE=2025-03-01
+
+
 .PHONY: calculate-last-two-tags
 calculate-last-two-github-tags:
 	@echo "Today's date: $$(date +%Y-%m-%d)"

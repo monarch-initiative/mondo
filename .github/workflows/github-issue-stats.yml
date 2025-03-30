@@ -16,8 +16,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
-          fetch-depth: 0
-          fetch-tags: true
+          fetch-depth: 1
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -27,8 +26,8 @@ jobs:
       - name: Install dependencies
         run: pip install PyGithub tqdm
 
-      - name: Run export
-        run: make github-issue-stats
+      - name: Run export (testing)
+        run: make test-github-issue-stats
         working-directory: src/ontology
 
       - name: Upload stats report
