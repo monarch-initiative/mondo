@@ -37,7 +37,7 @@ def main(repo_name: str, token: str, from_date: str, to_date: str, outpath: str)
     closed_labels = Counter()
 
     # Process issues
-    for issue in tqdm(issues, desc="Processing issues", total=issues.totalCount, ncols=80, colour="green"):
+    for issue in tqdm(issues, desc="Processing issues", total=issues.totalCount, miniters=20, ncols=80, colour="green"):
         if issue.pull_request:
             continue  # Skip PRs
 
