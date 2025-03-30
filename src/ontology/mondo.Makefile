@@ -394,7 +394,7 @@ COMMUNITY_STATS_REPORT = $(COMMUNITY_STATS_REPORTS_DIR)/mondo_community_statisti
 
 .PHONY: test-github-issue-stats
 test-github-issue-stats:
-	make github-issue-stats FROM_DATE=2025-3-02 TO_DATE=2025-03-01
+	make github-issue-stats FROM_DATE=2025-03-15 TO_DATE=2025-03-21
 
 
 .PHONY: calculate-last-two-tags

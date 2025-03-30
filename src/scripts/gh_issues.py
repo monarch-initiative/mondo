@@ -81,7 +81,7 @@ if __name__ == "__main__":
     parser.add_argument("--token", required=True, help="GitHub Personal Access Token")
     parser.add_argument("--from", dest="from_date", required=True, help="Start date (YYYY-MM-DD)")
     parser.add_argument("--to", dest="to_date", required=True, help="End date (YYYY-MM-DD)")
-    parser.add_argument("--outpath", required=True, help="Path to save the community statistics report (e.g., reports/mondo-stats/mondo-community-stats/...)")
+    parser.add_argument("--outpath", required=True, help="Path to save the community statistics report (e.g., reports/mondo_stats/mondo-community-stats/...)")
     args = parser.parse_args()
 
     main(args.repo, args.token, args.from_date, args.to_date, args.outpath)
