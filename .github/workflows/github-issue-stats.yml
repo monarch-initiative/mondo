@@ -1,0 +1,31 @@
+name: Generate GitHub Issue Statistics
+
+on:
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install PyGithub tqdm
+
+      - name: Run export
+        run: make github-issue-stats
+
+      - name: Upload stats report
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-issue-stats
+          path: reports/mondo-stats/mondo-community-stats/mondo_community_statistics-report.tsv
+

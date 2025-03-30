@@ -1,0 +1,87 @@
+from github import Github
+import argparse
+from datetime import datetime, timezone
+from collections import Counter
+from tqdm import tqdm
+from pathlib import Path
+import csv
+
+
+def get_date_obj(date_str: str) -> datetime:
+    """ Get today's date. """
+    return datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+
+
+def main(repo_name: str, token: str, from_date: str, to_date: str, outpath: str) -> None:
+    """ 
+    Get all closed and opened GitHub issues between two dates and get the 
+    count of all tags for each of these groups of issues.
+    """
+    g = Github(token)
+    repo = g.get_repo(repo_name)
+
+    from_dt = get_date_obj(from_date)
+    to_dt = get_date_obj(to_date)
+
+    output_path = Path(args.outpath)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    print(f"\nAnalyzing issues in {repo_name} from {from_date} to {to_date}...\n")
+
+    # Get GitHub issues
+    issues = repo.get_issues(state="all", since=from_dt)
+
+    new_issues = []
+    closed_issues = []
+    new_labels = Counter()
+    closed_labels = Counter()
+
+    # Process issues
+    for issue in tqdm(issues, desc="Processing issues", total=issues.totalCount, ncols=80, colour="green"):
+        if issue.pull_request:
+            continue  # Skip PRs
+
+        if from_dt <= issue.created_at <= to_dt:
+            new_issues.append(issue)
+            new_labels.update([label.name for label in issue.labels])
+
+        if issue.closed_at and from_dt <= issue.closed_at <= to_dt:
+            closed_issues.append(issue)
+            closed_labels.update([label.name for label in issue.labels])
+
+    # Prepare data to save to file
+    rows = [
+        {"type": "new_issue", "label": "", "count": len(new_issues)},
+        {"type": "closed_issue", "label": "", "count": len(closed_issues)},
+    ]
+
+    for label, count in sorted(new_labels.items()):
+        rows.append({"type": "label_new", "label": label, "count": count})
+
+    for label, count in sorted(closed_labels.items()):
+        rows.append({"type": "label_closed", "label": label, "count": count})
+
+    # Prepare metadata for file
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%SZ")
+    metadata_line = f"# Stats generated on {timestamp} for GitHub issues from {from_date} to {to_date}\n"
+
+    # Save data to file
+    with open(outpath, "w", newline="") as f:
+        f.write(metadata_line)
+        writer = csv.DictWriter(f, fieldnames=["type", "label", "count"])
+        writer.writeheader()
+        writer.writerows(rows)
+
+    print(f"GitHub Issue Stats written to: {outpath}")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Analyze GitHub issues in a date range.")
+    parser.add_argument("--repo", required=True, help="e.g. monarch-initiative/mondo")
+    parser.add_argument("--token", required=True, help="GitHub Personal Access Token")
+    parser.add_argument("--from", dest="from_date", required=True, help="Start date (YYYY-MM-DD)")
+    parser.add_argument("--to", dest="to_date", required=True, help="End date (YYYY-MM-DD)")
+    parser.add_argument("--outpath", required=True, help="Path to save the community statistics report (e.g., reports/mondo-stats/mondo-community-stats/...)")
+    args = parser.parse_args()
+
+    main(args.repo, args.token, args.from_date, args.to_date, args.outpath)

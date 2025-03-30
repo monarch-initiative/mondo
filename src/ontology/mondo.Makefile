@@ -385,6 +385,41 @@ combine-rare-stats-reports: create-rare-mondo-stats
 all: create-synonym-mondo-stats-all
 
 
+###############################
+# Create Community Statistics #
+###############################
+
+COMMUNITY_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-community-stats
+COMMUNITY_STATS_REPORT = $(COMMUNITY_STATS_REPORTS_DIR)/mondo_community_statistics-report.tsv
+
+.PHONY: calculate-last-two-tags
+calculate-last-two-github-tags:
+	@echo "Today's date: $$(date +%Y-%m-%d)"
+	@echo "Last two tagged releases before today:"
+	$(eval TAG_DATES := $(shell git for-each-ref --sort=-creatordate --format='%(creatordate:short)' refs/tags | awk -v today="$$(date +%Y-%m-%d)" '$$1 < today' | head -n 2))
+	$(eval TO_DATE := $(word 1, $(TAG_DATES)))
+	$(eval FROM_DATE := $(word 2, $(TAG_DATES)))
+	@echo "From date: $(FROM_DATE)"
+	@echo "To date: $(TO_DATE)"
+
+
+.PHONY: github-issue-stats
+github-issue-stats: calculate-last-two-github-tags
+	mkdir -p $(COMMUNITY_STATS_REPORTS_DIR)
+	@echo "Using the last two release dates before today..."
+	@echo "From date: $(FROM_DATE)"
+	@echo "To date: $(TO_DATE)"
+	@echo "Report file: $(COMMUNITY_STATS_REPORT)"
+
+	@echo "Calulating GitHub issue metrics..."
+	python ../scripts/gh_issues.py \
+		--repo=monarch-initiative/mondo \
+		--token=$(GITHUB_TOKEN) \
+		--from=$(FROM_DATE) \
+		--to=$(TO_DATE) \
+		--outpath=$(COMMUNITY_STATS_REPORT)
+
+
 
 #############################################
 ##### One-time scripts ######################
