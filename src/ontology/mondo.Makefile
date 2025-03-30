@@ -391,10 +391,12 @@ all: create-synonym-mondo-stats-all
 
 COMMUNITY_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-community-stats
 COMMUNITY_STATS_REPORT = $(COMMUNITY_STATS_REPORTS_DIR)/mondo_community_statistics-report.tsv
+COMMUNITY_USER_REPORT = $(COMMUNITY_STATS_REPORTS_DIR)/mondo_community_usernames-report.tsv
+
 
 .PHONY: test-github-issue-stats
 test-github-issue-stats:
-	make github-issue-stats FROM_DATE=2025-03-15 TO_DATE=2025-03-21
+	make github-issue-stats FROM_DATE=2025-03-15 TO_DATE=2025-03-18
 
 
 .PHONY: calculate-last-two-tags
@@ -422,7 +424,8 @@ github-issue-stats: calculate-last-two-github-tags
 		--token=$(GITHUB_TOKEN) \
 		--from=$(FROM_DATE) \
 		--to=$(TO_DATE) \
-		--outpath=$(COMMUNITY_STATS_REPORT)
+		--outpath=$(COMMUNITY_STATS_REPORT) \
+		--user-report=$(COMMUNITY_USER_REPORT)
 
 
 

@@ -1,7 +1,7 @@
 from github import Github
 import argparse
 from datetime import datetime, timezone
-from collections import Counter
+from collections import Counter, defaultdict
 from tqdm import tqdm
 from pathlib import Path
 import csv
@@ -12,7 +12,7 @@ def get_date_obj(date_str: str) -> datetime:
     return datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
 
 
-def main(repo_name: str, token: str, from_date: str, to_date: str, outpath: str) -> None:
+def main(repo_name: str, token: str, from_date: str, to_date: str, outpath: str, user_report: str) -> None:
     """ 
     Get all closed and opened GitHub issues between two dates and get the 
     count of all tags for each of these groups of issues.
@@ -20,11 +20,20 @@ def main(repo_name: str, token: str, from_date: str, to_date: str, outpath: str)
     g = Github(token)
     repo = g.get_repo(repo_name)
 
+    opened_usernames = Counter()
+    closed_usernames = Counter()
+
+    opened_user_labels = defaultdict(set)
+    closed_user_labels = defaultdict(set)
+
     from_dt = get_date_obj(from_date)
     to_dt = get_date_obj(to_date)
 
-    output_path = Path(args.outpath)
+    output_path = Path(outpath)
     output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    user_report_path = Path(user_report)
+    user_report_path.parent.mkdir(parents=True, exist_ok=True)
 
     print(f"\nAnalyzing issues in {repo_name} from {from_date} to {to_date}...\n")
 
@@ -41,13 +50,21 @@ def main(repo_name: str, token: str, from_date: str, to_date: str, outpath: str)
         if issue.pull_request:
             continue  # Skip PRs
 
+        label_names = [label.name for label in issue.labels]
+
         if from_dt <= issue.created_at <= to_dt:
             new_issues.append(issue)
-            new_labels.update([label.name for label in issue.labels])
+            new_labels.update(label_names)
+            if issue.user:
+                opened_usernames[issue.user.login] += 1
+                opened_user_labels[issue.user.login].update(label_names)
 
         if issue.closed_at and from_dt <= issue.closed_at <= to_dt:
             closed_issues.append(issue)
-            closed_labels.update([label.name for label in issue.labels])
+            closed_labels.update(label_names)
+            if issue.user:
+                closed_usernames[issue.user.login] += 1
+                closed_user_labels[issue.user.login].update(label_names)
 
     # Prepare data to save to file
     rows = [
@@ -75,6 +92,24 @@ def main(repo_name: str, token: str, from_date: str, to_date: str, outpath: str)
     print(f"GitHub Issue Stats written to: {outpath}")
 
 
+    # Write unique usernames and counts to a new file
+    with open(user_report_path, "w") as f:
+        f.write(metadata_line)
+        f.write("type\tgithub_handle\tcount\tlabels\n")
+
+        for username, count in opened_usernames.most_common():
+            labels = ",".join(sorted(opened_user_labels[username]))
+            f.write(f"opened\t{username}\t{count}\t{labels}\n")
+
+        for username, count in closed_usernames.most_common():
+            labels = ",".join(sorted(closed_user_labels[username]))
+            f.write(f"closed\t{username}\t{count}\t{labels}\n")
+
+    print(f"GitHub Usernames written to: {user_report_path}")
+
+
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Analyze GitHub issues in a date range.")
     parser.add_argument("--repo", required=True, help="e.g. monarch-initiative/mondo")
@@ -82,6 +117,9 @@ if __name__ == "__main__":
     parser.add_argument("--from", dest="from_date", required=True, help="Start date (YYYY-MM-DD)")
     parser.add_argument("--to", dest="to_date", required=True, help="End date (YYYY-MM-DD)")
     parser.add_argument("--outpath", required=True, help="Path to save the community statistics report (e.g., reports/mondo_stats/mondo-community-stats/...)")
+    parser.add_argument("--user-report", required=True, help="Path to save the GitHub usernames report (e.g., reports/mondo_stats/.../mondo_community_usernames.tsv)"
+)
+
     args = parser.parse_args()
 
-    main(args.repo, args.token, args.from_date, args.to_date, args.outpath)
+    main(args.repo, args.token, args.from_date, args.to_date, args.outpath, args.user_report)
