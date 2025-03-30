@@ -1,7 +1,7 @@
 name: Generate GitHub Issue Statistics
 
 on:
-  push:
+  push:  # remove when merged into `master`
     branches:
       - issue-7344
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
+        with: # Remove with and below when in `master`
           ref: ${{ github.ref }}
           fetch-depth: 1
 
@@ -34,7 +34,7 @@ jobs:
         run: pip install PyGithub tqdm
 
       - name: Run export (testing)
-        # run: make test-github-issue-stats # Change to github-issue-stats when in `master`
+        # run: make test-github-issue-stats # Change run to github-issue-stats when in `master`
         run: |
           if [[ -n "${{ inputs.from_date }}" && -n "${{ inputs.to_date }}" ]]; then
             echo "Using manually entered dates"

@@ -85,7 +85,7 @@ def main(repo_name: str, token: str, from_date: str, to_date: str, outpath: str,
     # Save data to file
     with open(outpath, "w", newline="") as f:
         f.write(metadata_line)
-        writer = csv.DictWriter(f, fieldnames=["type", "label", "count"])
+        writer = csv.DictWriter(f, fieldnames=["type", "label", "count"],delimiter="\t")
         writer.writeheader()
         writer.writerows(rows)
 
