@@ -265,124 +265,103 @@ create-mondo-stats:
 	$(MAKE) create-mondo-stats-summary-file -B
 
 
-#######################################
-# Create General Statistics for Mondo #
-#######################################
-GENERAL_STATISTICS_QUERIES = \
-	$(SPARQLDIR)/reports/COUNT-all_diseases.sparql \
-	$(SPARQLDIR)/reports/COUNT-all_human_diseases.sparql \
-	$(SPARQLDIR)/reports/COUNT-all_non-human_diseases.sparql \
-	$(SPARQLDIR)/reports/COUNT-human-rare-diseases.sparql \
-	$(SPARQLDIR)/reports/COUNT-human-genetic-diseases.sparql \
-	$(SPARQLDIR)/reports/COUNT-human_diseases_infectious.sparql \
-	$(SPARQLDIR)/reports/COUNT-human-cancer-diseases.sparql \
-	$(SPARQLDIR)/reports/COUNT-non-human-genetic-diseases.sparql \
-	$(SPARQLDIR)/reports/COUNT-non-human_diseases_infectious.sparql \
-	$(SPARQLDIR)/reports/COUNT-non-human_diseases_cancer.sparql
-	
+###################################
+# Create Mondo Stats for Releases #
+###################################
 
+# Define directories
+MONDO_STATS_REPORTS_DIR := reports/mondo_stats
 TMP_MONDO_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/tmp
 GEN_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-general-stats
+RARE_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-rare-stats
+SYNONYM_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-synonym-stats
 
+# Define report queries
+GENERAL_STATISTICS_QUERIES = \
+    $(SPARQLDIR)/reports/COUNT-all_diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-all_human_diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-all_non-human_diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-human-rare-diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-human-genetic-diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-human_diseases_infectious.sparql \
+    $(SPARQLDIR)/reports/COUNT-human-cancer-diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-non-human-genetic-diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-non-human_diseases_infectious.sparql \
+    $(SPARQLDIR)/reports/COUNT-non-human_diseases_cancer.sparql
+
+RARE_SATISTICS_QUERIES = \
+    $(SPARQLDIR)/reports/COUNT-rare_subsets.sparql
+
+SYNONYM_STATISTICS_QUERIES = \
+    $(SPARQLDIR)/reports/COUNT-all_diseases_synonym_stats.sparql
+
+# Define output file names
 GEN_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(GENERAL_STATISTICS_QUERIES))
+RARE_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(RARE_SATISTICS_QUERIES))
+SYNONYM_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(SYNONYM_STATISTICS_QUERIES))
 
+# Combined report files
 COMBINED_REPORT = $(GEN_STATS_REPORTS_DIR)/mondo_general_statistics.tsv
+COMBINED_RARE_REPORT = $(RARE_STATS_REPORTS_DIR)/mondo_rare_statistics.tsv
+COMBINED_SYNONYM_REPORT = $(SYNONYM_STATS_REPORTS_DIR)/mondo_synonym_statistics.tsv
 
-# Create General stats
+# General stats target
 create-general-mondo-stats-all: create-general-mondo-stats combine-general-stats-reports clean-temp-stats
 
+# Rare stats target
+create-rare-mondo-stats-all: create-rare-mondo-stats combine-rare-stats-reports clean-temp-stats
+
+# Synonym stats target
+create-synonym-mondo-stats-all: create-synonym-mondo-stats combine-synonym-stats-reports clean-temp-stats
+
+# Create the individual general stats
 create-general-mondo-stats: $(GEN_STATS_OUTPUTS)
 
-$(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql mondo.owl
-	mkdir -p $(GEN_STATS_REPORTS_DIR)
-	@echo "Running query $< ..."
-	$(ROBOT) query -i mondo.owl --use-graphs true  -f tsv --query $< $@
+# Create the individual rare stats
+create-rare-mondo-stats: $(RARE_STATS_OUTPUTS)
 
-# Combine all results into a single report
+# Create the individual synonym stats
+create-synonym-mondo-stats: $(SYNONYM_STATS_OUTPUTS)
+
+# Reusable rule to create necessary directories
+create-directories:
+	mkdir -p $(MONDO_STATS_REPORTS_DIR) $(GEN_STATS_REPORTS_DIR) $(RARE_STATS_REPORTS_DIR) $(SYNONYM_STATS_REPORTS_DIR) $(TMP_MONDO_STATS_REPORTS_DIR)
+
+# Rule for generating .tsv files from the queries (general, rare, synonym stats)
+$(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql mondo.owl | create-directories
+	@echo "Running query $< ..."
+	$(ROBOT) query -i mondo.owl --use-graphs true -f tsv --query $< $@
+
+# Combine the general stats results into one report
 combine-general-stats-reports: create-general-mondo-stats
 	@echo "Combining results into $(COMBINED_REPORT)..."
 	@echo "All Mondo General Statistics created on: $(current_date)" > $(COMBINED_REPORT)
 	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_REPORT)
 	@echo "\n** Combined report saved to: $(COMBINED_REPORT)\n"
 
-# Remove temporary result files after combining
-clean-temp-stats:
-	rm -f $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv
-	@echo "(Cleaned up temporary result files)"
+# Combine the rare stats results into one report
+combine-rare-stats-reports: create-rare-mondo-stats
+	@echo "Combining results into $(COMBINED_RARE_REPORT)..."
+	@echo "All Mondo Rare Statistics created on: $(current_date)" > $(COMBINED_RARE_REPORT)
+	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_RARE_REPORT)
+	@echo "\n** Combined report saved to: $(COMBINED_RARE_REPORT)\n"
 
-# Clean everything (temporary + reports)
-clean-stats:
-	rm -f $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv $(COMBINED_REPORT)
-	@echo "Cleaned all generated files."
-
-all: create-general-mondo-stats-all
-
-
-
-#######################################
-# Create Synonym Statistics for Mondo #
-#######################################
-SYNONYM_STATISTICS_QUERIES = \
-	$(SPARQLDIR)/reports/COUNT-all_diseases_synonym_stats.sparql
-
-TMP_MONDO_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/tmp
-SYNONYM_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-synonym-stats
-COMBINED_SYNONYM_REPORT = $(SYNONYM_STATS_REPORTS_DIR)/mondo_synonym_statistics.tsv
-
-SYNONYM_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(SYNONYM_STATISTICS_QUERIES))
-
-# Create Synonym stats
-create-synonym-mondo-stats-all: create-synonym-mondo-stats combine-synonym-stats-reports clean-temp-stats
-
-create-synonym-mondo-stats: $(SYNONYM_STATS_OUTPUTS)
-
-$(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql mondo.owl
-	mkdir -p $(SYNONYM_STATS_REPORTS_DIR)
-	@echo "Running query $< "
-	$(ROBOT) query -i mondo.owl --use-graphs true  -f tsv --query $< $@
-
-# Combine results into a single report
+# Combine the synonym stats results into one report
 combine-synonym-stats-reports: create-synonym-mondo-stats
 	@echo "Combining results into $(COMBINED_SYNONYM_REPORT)..."
 	@echo "All Mondo Synonym Statistics created on: $(current_date)" > $(COMBINED_SYNONYM_REPORT)
 	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_SYNONYM_REPORT)
 	@echo "\n** Combined report saved to: $(COMBINED_SYNONYM_REPORT)\n"
 
+# Clean up the temporary .tsv files
+clean-temp-stats:
+	rm -f $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv
+	@echo "(Cleaned up temporary result files)"
 
-all: create-synonym-mondo-stats-all
-
-
-####################################
-# Create Rare Statistics for Mondo #
-####################################
-RARE_SATISTICS_QUERIES = \
-	$(SPARQLDIR)/reports/COUNT-rare_subsets.sparql
-
-TMP_MONDO_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/tmp
-RARE_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-rare-stats
-COMBINED_RARE_REPORT = $(RARE_STATS_REPORTS_DIR)/mondo_rare_statistics.tsv
-
-RARE_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(RARE_SATISTICS_QUERIES))
-
-# Create Rare stats
-create-rare-mondo-stats-all: create-rare-mondo-stats combine-rare-stats-reports clean-temp-stats
-
-create-rare-mondo-stats: $(RARE_STATS_OUTPUTS)
-
-$(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql mondo.owl
-	mkdir -p $(RARE_STATS_REPORTS_DIR)
-	@echo "Running query $< "
-	$(ROBOT) query -i mondo.owl --use-graphs true  -f tsv --query $< $@
-
-# Combine results into a single report
-combine-rare-stats-reports: create-rare-mondo-stats
-	@echo "Combining results into $(COMBINED_RARE_REPORT)..."
-	@echo "All Mondo Synonym Statistics created on: $(current_date)" > $(COMBINED_RARE_REPORT)
-	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_RARE_REPORT)
-	@echo "\n** Combined report saved to: $(COMBINED_RARE_REPORT)\n"
-
-
-all: create-synonym-mondo-stats-all
+# Clean everything (temporary + reports)
+clean-stats:
+	rm -f $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv $(COMBINED_REPORT) $(COMBINED_RARE_REPORT) $(COMBINED_SYNONYM_REPORT)
+	@echo "Cleaned all generated files."
 
 
 ###############################
