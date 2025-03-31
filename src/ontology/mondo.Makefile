@@ -390,8 +390,8 @@ all: create-synonym-mondo-stats-all
 ###############################
 
 COMMUNITY_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-community-stats
-COMMUNITY_STATS_REPORT = $(COMMUNITY_STATS_REPORTS_DIR)/mondo_community_statistics-report.tsv
-COMMUNITY_USER_REPORT = $(COMMUNITY_STATS_REPORTS_DIR)/mondo_community_usernames-report.tsv
+COMMUNITY_STATS_REPORT = $(COMMUNITY_STATS_REPORTS_DIR)/gh_issue_status.csv
+COMMUNITY_USER_REPORT = $(COMMUNITY_STATS_REPORTS_DIR)/gh_issue_usernames.csv
 
 
 .PHONY: test-github-issue-stats

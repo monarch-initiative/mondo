@@ -82,28 +82,38 @@ def main(repo_name: str, token: str, from_date: str, to_date: str, outpath: str,
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%SZ")
     metadata_line = f"# Stats generated on {timestamp} for GitHub issues from {from_date} to {to_date}\n"
 
-    # Save data to file
+    # Save issue stats to file
     with open(outpath, "w", newline="") as f:
         f.write(metadata_line)
-        writer = csv.DictWriter(f, fieldnames=["type", "label", "count"],delimiter="\t")
+        writer = csv.DictWriter(f, fieldnames=["type", "label", "count"])
         writer.writeheader()
         writer.writerows(rows)
 
     print(f"GitHub Issue Stats written to: {outpath}")
 
 
-    # Write unique usernames and counts to a new file
-    with open(user_report_path, "w") as f:
+    # Save username stats to file
+    with open(user_report_path, "w", newline="") as f:
         f.write(metadata_line)
-        f.write("type\tgithub_handle\tcount\tlabels\n")
+        fieldnames = ["type", "github_handle", "count", "labels"]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
 
         for username, count in opened_usernames.most_common():
-            labels = ",".join(sorted(opened_user_labels[username]))
-            f.write(f"opened\t{username}\t{count}\t{labels}\n")
+            writer.writerow({
+                "type": "opened",
+                "github_handle": username,
+                "count": count,
+                "labels": ",".join(sorted(opened_user_labels[username]))
+            })
 
         for username, count in closed_usernames.most_common():
-            labels = ",".join(sorted(closed_user_labels[username]))
-            f.write(f"closed\t{username}\t{count}\t{labels}\n")
+            writer.writerow({
+                "type": "closed",
+                "github_handle": username,
+                "count": count,
+                "labels": ",".join(sorted(closed_user_labels[username]))
+            })
 
     print(f"GitHub Usernames written to: {user_report_path}")
 
