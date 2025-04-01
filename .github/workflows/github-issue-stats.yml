@@ -1,9 +1,6 @@
 name: Generate GitHub Issue Statistics
 
 on:
-  push:  # remove when merged into `master`
-    branches:
-      - issue-7344
   workflow_dispatch:
     inputs:
       from_date:
@@ -21,9 +18,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with: # Remove with and below when in `master`
-          ref: ${{ github.ref }}
-          fetch-depth: 1
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -33,15 +27,14 @@ jobs:
       - name: Install dependencies
         run: pip install PyGithub tqdm
 
-      - name: Run export (testing)
-        # run: make test-github-issue-stats # Change run to github-issue-stats when in `master`
+      - name: Run export
         run: |
           if [[ -n "${{ inputs.from_date }}" && -n "${{ inputs.to_date }}" ]]; then
             echo "Using manually entered dates"
-            make test-github-issue-stats FROM_DATE=${{ inputs.from_date }} TO_DATE=${{ inputs.to_date }}
+            make github-issue-stats FROM_DATE=${{ inputs.from_date }} TO_DATE=${{ inputs.to_date }}
           else
             echo "Using auto-calculated dates from git tags"
-            make test-github-issue-stats
+            make github-issue-stats
           fi
         working-directory: src/ontology
 
