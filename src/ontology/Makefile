@@ -300,7 +300,7 @@ $(ONT)-simple.json: $(ONT)-simple.owl
 	$(ROBOT) convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
 
 $(ONT)-international.obo: $(ONT)-international.owl
-	$(OWL2OBO)
+	$(ROBOT) convert -i $< --check false -o $@.tmp.obo && mv $@.tmp.obo $@
 
 $(ONT)-international.json: $(ONT)-international.owl
 	$(ROBOT) convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
