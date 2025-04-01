@@ -299,6 +299,12 @@ $(ONT)-simple.obo: $(ONT)-simple.owl
 $(ONT)-simple.json: $(ONT)-simple.owl
 	$(ROBOT) convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
 
+$(ONT)-international.obo: $(ONT)-international.owl
+	$(OWL2OBO)
+
+$(ONT)-international.json: $(ONT)-international.owl
+	$(ROBOT) convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
+
 
 #$(ONT)-atomic.owl: $(ONT).owl
 #	owltools --use-catalog $< --remove-imports-declarations --set-ontology-id $(OBO)/$(ONT)/$@ -o $@.tmp && mv $@.tmp $@
