@@ -276,6 +276,16 @@ GEN_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-general-stats
 RARE_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-rare-stats
 SYNONYM_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-synonym-stats
 
+# Define the most recent tag for mondo.owl (default is latest tag)
+MONDO_TAG := $(shell git for-each-ref --sort=-creatordate --format '%(refname:short)' refs/tags | head -n 1)
+MONDO_OWL_GH_TAG := mondo.owl
+
+# Define the path where mondo.owl will be saved
+MONDO_OWL_PATH := tmp/$(MONDO_OWL_GH_TAG)
+
+# Define the URL to download mondo.owl from the GitHub release
+MONDO_OWL_URL := https://github.com/monarch-initiative/mondo/releases/download/$(MONDO_TAG)/mondo.owl
+
 # Define report queries
 GENERAL_STATISTICS_QUERIES = \
     $(SPARQLDIR)/reports/COUNT-all_diseases.sparql \
@@ -306,13 +316,13 @@ COMBINED_RARE_REPORT = $(RARE_STATS_REPORTS_DIR)/mondo_rare_statistics.tsv
 COMBINED_SYNONYM_REPORT = $(SYNONYM_STATS_REPORTS_DIR)/mondo_synonym_statistics.tsv
 
 # General stats target
-create-general-mondo-stats-all: create-general-mondo-stats combine-general-stats-reports clean-temp-stats
+create-general-mondo-stats-all: move-mondo-owl create-general-mondo-stats combine-general-stats-reports clean-temp-stats
 
 # Rare stats target
-create-rare-mondo-stats-all: create-rare-mondo-stats combine-rare-stats-reports clean-temp-stats
+create-rare-mondo-stats-all: move-mondo-owl create-rare-mondo-stats combine-rare-stats-reports clean-temp-stats
 
 # Synonym stats target
-create-synonym-mondo-stats-all: create-synonym-mondo-stats combine-synonym-stats-reports clean-temp-stats
+create-synonym-mondo-stats-all: move-mondo-owl create-synonym-mondo-stats combine-synonym-stats-reports clean-temp-stats
 
 # Create the individual general stats
 create-general-mondo-stats: $(GEN_STATS_OUTPUTS)
@@ -327,8 +337,18 @@ create-synonym-mondo-stats: $(SYNONYM_STATS_OUTPUTS)
 create-directories:
 	mkdir -p $(MONDO_STATS_REPORTS_DIR) $(GEN_STATS_REPORTS_DIR) $(RARE_STATS_REPORTS_DIR) $(SYNONYM_STATS_REPORTS_DIR) $(TMP_MONDO_STATS_REPORTS_DIR)
 
+# Rule to download mondo.owl if it doesn't exist
+$(MONDO_OWL_PATH):
+	wget $(MONDO_OWL_URL) -O $@
+	@echo "Downloaded $(MONDO_OWL) from $(MONDO_OWL_URL) to $(MONDO_OWL_PATH)"
+
+# Move the mondo.owl file to the desired directory
+move-mondo-owl: $(MONDO_OWL_PATH)
+	@echo "[INFO] - Moving $(MONDO_OWL_PATH) to ./$(MONDO_OWL_GH_TAG)"
+	mv $(MONDO_OWL_PATH) ./$(MONDO_OWL_GH_TAG)
+
 # Rule for generating .tsv files from the queries (general, rare, synonym stats)
-$(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql mondo.owl | create-directories
+$(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql | create-directories
 	@echo "Running query $< ..."
 	$(ROBOT) query -i mondo.owl --use-graphs true -f tsv --query $< $@
 
