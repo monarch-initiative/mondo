@@ -275,6 +275,7 @@ TMP_MONDO_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/tmp
 GEN_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-general-stats
 RARE_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-rare-stats
 SYNONYM_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-synonym-stats
+EMC_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/emc-stats
 
 # Define the most recent tag for mondo.owl (default is latest tag)
 MONDO_TAG := $(shell git for-each-ref --sort=-creatordate --format '%(refname:short)' refs/tags | head -n 1)
@@ -305,15 +306,20 @@ RARE_SATISTICS_QUERIES = \
 SYNONYM_STATISTICS_QUERIES = \
     $(SPARQLDIR)/reports/COUNT-all_diseases_synonym_stats.sparql
 
+EMC_STATISTICS_QUERIES = \
+	$(SPARQLDIR)/reports/COUNT-emc-xrefs.sparql
+
 # Define output file names
 GEN_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(GENERAL_STATISTICS_QUERIES))
 RARE_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(RARE_SATISTICS_QUERIES))
 SYNONYM_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(SYNONYM_STATISTICS_QUERIES))
+EMC_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(EMC_STATISTICS_QUERIES))
 
 # Combined report files
 COMBINED_REPORT = $(GEN_STATS_REPORTS_DIR)/mondo_general_statistics.tsv
 COMBINED_RARE_REPORT = $(RARE_STATS_REPORTS_DIR)/mondo_rare_statistics.tsv
 COMBINED_SYNONYM_REPORT = $(SYNONYM_STATS_REPORTS_DIR)/mondo_synonym_statistics.tsv
+COMBINED_EMC_REPORT = $(EMC_STATS_REPORTS_DIR)/mondo_emc_statistics.tsv
 
 # General stats target
 create-general-mondo-stats-all: move-mondo-owl create-general-mondo-stats combine-general-stats-reports clean-temp-stats
@@ -324,6 +330,9 @@ create-rare-mondo-stats-all: move-mondo-owl create-rare-mondo-stats combine-rare
 # Synonym stats target
 create-synonym-mondo-stats-all: move-mondo-owl create-synonym-mondo-stats combine-synonym-stats-reports clean-temp-stats
 
+# EMC stats target
+create-emc-mondo-stats-all: move-mondo-owl create-emc-mondo-stats combine-emc-stats-reports clean-temp-stats
+
 # Create the individual general stats
 create-general-mondo-stats: $(GEN_STATS_OUTPUTS)
 
@@ -333,9 +342,13 @@ create-rare-mondo-stats: $(RARE_STATS_OUTPUTS)
 # Create the individual synonym stats
 create-synonym-mondo-stats: $(SYNONYM_STATS_OUTPUTS)
 
+# Create the individual emc stats
+create-emc-mondo-stats: $(EMC_STATS_OUTPUTS)
+
 # Reusable rule to create necessary directories
 create-directories:
-	mkdir -p $(MONDO_STATS_REPORTS_DIR) $(GEN_STATS_REPORTS_DIR) $(RARE_STATS_REPORTS_DIR) $(SYNONYM_STATS_REPORTS_DIR) $(TMP_MONDO_STATS_REPORTS_DIR)
+	mkdir -p $(MONDO_STATS_REPORTS_DIR) $(GEN_STATS_REPORTS_DIR) $(RARE_STATS_REPORTS_DIR) $(SYNONYM_STATS_REPORTS_DIR) \
+		$(EMC_STATS_REPORTS_DIR) $(TMP_MONDO_STATS_REPORTS_DIR)
 
 # Rule to download mondo.owl if it doesn't exist
 $(MONDO_OWL_PATH):
@@ -372,6 +385,13 @@ combine-synonym-stats-reports: create-synonym-mondo-stats
 	@echo "All Mondo Synonym Statistics created on: $(current_date)" > $(COMBINED_SYNONYM_REPORT)
 	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_SYNONYM_REPORT)
 	@echo "\n** Combined report saved to: $(COMBINED_SYNONYM_REPORT)\n"
+
+# Combine the emc stats results into one report
+combine-emc-stats-reports: create-emc-mondo-stats
+	@echo "Combining results into $(COMBINED_EMC_REPORT)..."
+	@echo "All Mondo EMC Statistics created on: $(current_date)" > $(COMBINED_EMC_REPORT)
+	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_EMC_REPORT)
+	@echo "\n** Combined report saved to: $(COMBINED_EMC_REPORT)\n"
 
 # Clean up the temporary .tsv files
 clean-temp-stats:

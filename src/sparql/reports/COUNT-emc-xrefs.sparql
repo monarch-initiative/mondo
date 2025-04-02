@@ -1,0 +1,46 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+# Count xrefs to non-obsolete 'disease' MONDO:0000001 classes
+# that have a source of GARD, MEDGEN, NANDO or NORD and whether or not
+# the xref also has a MONDO:equivalentTo annotation
+
+SELECT ?source ?xrefPrefix ?hasEquivalentTo (COUNT(DISTINCT ?class) AS ?classCount)
+WHERE {
+  {
+    SELECT DISTINCT ?class ?source ?xrefPrefix ?hasEquivalentTo WHERE {
+      ?class rdfs:subClassOf* obo:MONDO_0000001 .
+      FILTER NOT EXISTS { ?class owl:deprecated true }
+      FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
+
+      ?axiom a owl:Axiom ;
+             owl:annotatedSource ?class ;
+             owl:annotatedProperty oboInOwl:hasDbXref ;
+             owl:annotatedTarget ?xref ;
+             oboInOwl:source ?source .
+
+      VALUES ?source {
+        "MONDO:MEDGEN"
+        "MONDO:NORD"
+        "MONDO:GARD"
+        "MONDO:NANDO"
+      }
+
+      # Check if MONDO:equivalentTo is also present
+      BIND(EXISTS {
+        ?axiom oboInOwl:source "MONDO:equivalentTo"
+      } AS ?hasEq)
+
+      BIND(IF(?hasEq, "with_equivalentTo", "without_equivalentTo") AS ?hasEquivalentTo)
+
+      # Extract real xref prefix from the CURIE
+      BIND(STRBEFORE(STR(?xref), ":") AS ?xrefPrefix)
+    }
+  }
+}
+GROUP BY ?source ?xrefPrefix ?hasEquivalentTo
+ORDER BY ?source ?xrefPrefix ?hasEquivalentTo
+
+
