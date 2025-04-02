@@ -392,37 +392,31 @@ COMMUNITY_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-community-stats
 COMMUNITY_STATS_REPORT = $(COMMUNITY_STATS_REPORTS_DIR)/gh_issue_status.csv
 COMMUNITY_USER_REPORT = $(COMMUNITY_STATS_REPORTS_DIR)/gh_issue_usernames.csv
 
-
 .PHONY: test-github-issue-stats
 test-github-issue-stats:
 	make github-issue-stats FROM_DATE=2025-03-15 TO_DATE=2025-03-18
 
-
-.PHONY: calculate-last-two-tags
-calculate-last-two-github-tags:
-	@echo "Today's date: $$(date +%Y-%m-%d)"
-	@echo "Last two tagged releases before today:"
-	$(eval TAG_DATES := $(shell git for-each-ref --sort=-creatordate --format='%(creatordate:short)' refs/tags | awk -v today="$$(date +%Y-%m-%d)" '$$1 < today' | head -n 2))
-	$(eval TO_DATE := $(word 1, $(TAG_DATES)))
-	$(eval FROM_DATE := $(word 2, $(TAG_DATES)))
-	@echo "From date: $(FROM_DATE)"
-	@echo "To date: $(TO_DATE)"
-
-
 .PHONY: github-issue-stats
-github-issue-stats: calculate-last-two-github-tags
-	mkdir -p $(COMMUNITY_STATS_REPORTS_DIR)
-	@echo "Using the last two release dates before today..."
-	@echo "From date: $(FROM_DATE)"
-	@echo "To date: $(TO_DATE)"
-	@echo "Report file: $(COMMUNITY_STATS_REPORT)"
-
-	@echo "Calulating GitHub issue metrics..."
+github-issue-stats:
+	@echo "Today's date: $$(date +%Y-%m-%d)"
+	@mkdir -p $(COMMUNITY_STATS_REPORTS_DIR)
+	@FROM_DATE="$(FROM_DATE)"; \
+	TO_DATE="$(TO_DATE)"; \
+	if [ -z "$$FROM_DATE" ] || [ -z "$$TO_DATE" ]; then \
+		echo "No dates provided. Auto-detecting from git tags..."; \
+		TAG_DATES=$$(git for-each-ref --sort=-creatordate --format='%(creatordate:short)' refs/tags | awk -v today="$$(date +%Y-%m-%d)" '$$1 < today' | head -n 2); \
+		TO_DATE=$$(echo "$$TAG_DATES" | head -n 1); \
+		FROM_DATE=$$(echo "$$TAG_DATES" | tail -n 1); \
+	fi; \
+	echo "From date: $$FROM_DATE"; \
+	echo "To date: $$TO_DATE"; \
+	echo "Report file: $(COMMUNITY_STATS_REPORT)"; \
+	echo "Calculating GitHub issue metrics..."; \
 	python ../scripts/gh_issues.py \
 		--repo=monarch-initiative/mondo \
 		--token=$(GITHUB_TOKEN) \
-		--from=$(FROM_DATE) \
-		--to=$(TO_DATE) \
+		--from=$$FROM_DATE \
+		--to=$$TO_DATE \
 		--outpath=$(COMMUNITY_STATS_REPORT) \
 		--user-report=$(COMMUNITY_USER_REPORT)
 
