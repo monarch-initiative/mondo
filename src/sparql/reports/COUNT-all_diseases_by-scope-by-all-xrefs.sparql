@@ -1,0 +1,34 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+# Get count of synonyms by scope by xref for MONDO:0000001 'disease' classes
+
+SELECT ?scope ?xrefPrefix (COUNT(DISTINCT ?axiom) AS ?synonymCount)
+WHERE {
+  ?class rdfs:subClassOf* obo:MONDO_0000001 ;
+         ?synonymProp ?synonym .
+
+  FILTER NOT EXISTS { ?class owl:deprecated true }
+
+  VALUES (?synonymProp ?scope ?scopeOrder) {
+    (oboInOwl:hasExactSynonym "exact" 1)
+    (oboInOwl:hasBroadSynonym "broad" 2)
+    (oboInOwl:hasNarrowSynonym "narrow" 3)
+    (oboInOwl:hasRelatedSynonym "related" 4)
+  }
+
+  ?axiom a owl:Axiom ;
+         owl:annotatedSource ?class ;
+         owl:annotatedProperty ?synonymProp ;
+         owl:annotatedTarget ?synonym .
+
+  OPTIONAL {
+    ?axiom oboInOwl:hasDbXref ?xref .
+  }
+
+  BIND(COALESCE(STRBEFORE(STR(?xref), ":"), "NO PROVENANCE") AS ?xrefPrefix)
+}
+GROUP BY ?scope ?scopeOrder ?xrefPrefix
+ORDER BY ?scopeOrder ?xrefPrefix
