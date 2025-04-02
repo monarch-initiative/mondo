@@ -265,9 +265,9 @@ create-mondo-stats:
 	$(MAKE) create-mondo-stats-summary-file -B
 
 
-###################################
-# Create Mondo Stats for Releases #
-###################################
+############################################
+# Create Stats based on Mondo Release Tags #
+############################################
 
 # Define directories
 MONDO_STATS_REPORTS_DIR := reports/mondo_stats
