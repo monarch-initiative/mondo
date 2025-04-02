@@ -18,6 +18,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Fetch tags only
+        run: git fetch --tags
+
+      - name: Debug - show tags
+        run: git tag --sort=-creatordate
 
       - name: Set up Python
         uses: actions/setup-python@v5
