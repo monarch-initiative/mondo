@@ -299,7 +299,7 @@ GENERAL_STATISTICS_QUERIES = \
     $(SPARQLDIR)/reports/COUNT-non-human_diseases_infectious.sparql \
     $(SPARQLDIR)/reports/COUNT-non-human_diseases_cancer.sparql
 
-RARE_SATISTICS_QUERIES = \
+RARE_STATISTICS_QUERIES = \
     $(SPARQLDIR)/reports/COUNT-rare_subsets.sparql
 
 SYNONYM_STATISTICS_QUERIES = \
@@ -307,7 +307,7 @@ SYNONYM_STATISTICS_QUERIES = \
 
 # Define output file names
 GEN_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(GENERAL_STATISTICS_QUERIES))
-RARE_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(RARE_SATISTICS_QUERIES))
+RARE_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(RARE_STATISTICS_QUERIES))
 SYNONYM_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(SYNONYM_STATISTICS_QUERIES))
 
 # Combined report files
