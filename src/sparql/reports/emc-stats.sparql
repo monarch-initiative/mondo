@@ -1,0 +1,30 @@
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX pattern: <http://purl.obolibrary.org/obo/mondo/patterns/>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?property ?source (COUNT(DISTINCT ?group) AS ?count) WHERE {
+  
+  VALUES ?property { oio:hasDbXref oio:hasExactSynonym oio:inSubset <http://purl.obolibrary.org/obo/mondo#curated_content_resource> }
+  VALUES ?p { oio:hasDbXref oio:source }
+  ?ax a owl:Axiom ;
+    owl:annotatedSource ?entity ;
+    owl:annotatedProperty ?property ;
+    owl:annotatedTarget ?value ;
+    ?p ?source .
+  FILTER(
+    ?source = "MONDO:NORD" || 
+    ?source = "MONDO:CLINGEN" ||
+    ?source = "MONDO:EFO" ||
+    ?source = "MONDO:OTAR" ||
+    ?source = "MONDO:GARD" ||
+    ?source = "MONDO:NANDO" ||
+    ?source = "MONDO:OMIM" ||
+    ?source = "MONDO:MEDGEN"
+  )
+  FILTER(STRSTARTS(STR(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND(CONCAT(STR(?entity), STR(?property), STR(?value)) as ?group)
+  
+} GROUP BY ?property ?source
