@@ -516,11 +516,17 @@ update-external-content:
 	$(MAKE) update-ordo-subsets -B
 	$(MAKE) update-nando -B
 	$(MAKE) update-medgen -B
+	$(MAKE) update-emc-synonym-prov -B
 	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-after.tsv
 	@echo "Subset metrics before..."
 	cat $(TMPDIR)/subset-metrics-before.tsv
 	@echo "Subset metrics after..."
 	cat $(TMPDIR)/subset-metrics-after.tsv
+
+update-emc-synonym-prov:
+	$(ROBOT) merge -i $(SRC) --collapse-import-closure false \
+		query --update ../sparql/update/insert_emc_synonym_provenance.ru \
+		convert -f obo --check false -o $(SRC).obo && mv $(SRC).obo $(SRC)
 
 # This is the main pipeline to update both externally managed content and rare disease subsets
 update-external-content-incl-rare:
