@@ -12,9 +12,9 @@ Stable release versions
 
 File | Link | Description
 --- | --- | ---
-Main OWL edition | [mondo.owl](http://purl.obolibrary.org/obo/mondo.owl)| Complete ontology, plus inter-ontology equivalence axioms. Uses Mondo IDs.
-obo-format edition | [mondo.obo](http://purl.obolibrary.org/obo/mondo.obo) | As OWL, but omits equivalence axioms. xrefs can be used as proxy for equivalence. Uses Mondo IDs.
-json edition | [mondo.json](http://purl.obolibrary.org/obo/mondo.json) | Equivalent to the OWL edition.
+Main OWL edition | [mondo.owl](https://purl.obolibrary.org/obo/mondo.owl)| Complete ontology, plus inter-ontology equivalence axioms. Uses Mondo IDs.
+obo-format edition | [mondo.obo](https://purl.obolibrary.org/obo/mondo.obo) | As OWL, but omits equivalence axioms. xrefs can be used as proxy for equivalence. Uses Mondo IDs.
+json edition | [mondo.json](https://purl.obolibrary.org/obo/mondo.json) | Equivalent to the OWL edition.
  
 
 See [Changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md) for more details
