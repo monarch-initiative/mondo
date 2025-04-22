@@ -1,6 +1,8 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
 
-SELECT ?rd ?rd_label (GROUP_CONCAT(STR(?parent); separator="; ") AS ?parents) (GROUP_CONCAT(STR(?parent_label); separator="; ") AS ?parent_labels)
+
+SELECT ?rd_curie ?rd_label (GROUP_CONCAT(STR(?parent_curie); separator="; ") AS ?parents) (GROUP_CONCAT(STR(?parent_label); separator="; ") AS ?parent_labels)
 WHERE {
   VALUES ?rd {
     MONDO:0000070
@@ -2312,9 +2314,7 @@ WHERE {
     MONDO:0005045
     MONDO:0019249
     MONDO:0032798
-    NEED TERM:ACADSB
     MONDO:0007390
-    NEED TERM:HBFQTL1
     MONDO:0007798
     MONDO:0100046
     MONDO:0100460
@@ -2405,9 +2405,6 @@ WHERE {
     MONDO:0971043
     MONDO:0975705
     MONDO:0975797
-    NEED TERM:cblD TYPE HMAD
-    NEED TERM:cblD TYPE MACD
-    NEED TERM:Morimoto
     MONDO:0975848
     MONDO:0976232
     MONDO:0008698
@@ -3123,7 +3120,10 @@ WHERE {
   ?rd rdfs:label ?rd_label .
   ?parent rdfs:label ?parent_label .
 
+  BIND(REPLACE(STR(?rd), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") AS ?rd_curie)
+  BIND(REPLACE(STR(?parent), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") AS ?parent_curie)
+
   FILTER(?rd != ?parent)
 
-} GROUP BY ?rd ?rd_label
+} GROUP BY ?rd_curie ?rd_label
 
