@@ -97,8 +97,8 @@ ADDITIONAL_REPORT_FILES = reports/semantic-xref-pairs.tsv
 #ADDITIONAL_REPORT_FILES = reports/release/mondo-obo-report.yaml reports/release/mondo-owl-report.yaml reports/release/semantic-xref-pairs.tsv
 REPORT_FILES = $(MAIN_REPORT_FILES) $(ADDITIONAL_REPORT_FILES)
 
-
-TRANSLATION_FILES=$(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv $(TRANSLATIONSDIR)/$(ONT)-all.babelon.json
+# Not copying translation files now as they we cany use rsync -R
+TRANSLATION_FILES=#$(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv $(TRANSLATIONSDIR)/$(ONT)-all.babelon.json
 MAIN_PRODUCTS = $(ONT) $(ONT)-base $(ONT)-simple $(ONT)-international
 MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json) $(ONT)_nodes.tsv $(ONT)_edges.tsv
 EQUIVALENTS_FILES=imports/equivalencies
@@ -297,6 +297,12 @@ $(ONT)-simple.obo: $(ONT)-simple.owl
 	$(OWL2OBO)
 
 $(ONT)-simple.json: $(ONT)-simple.owl
+	$(ROBOT) convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
+
+$(ONT)-international.obo: $(ONT)-international.owl
+	$(ROBOT) convert -i $< --check false -o $@.tmp.obo && mv $@.tmp.obo $@
+
+$(ONT)-international.json: $(ONT)-international.owl
 	$(ROBOT) convert -i $< -o $@.tmp.json && mv $@.tmp.json $@
 
 

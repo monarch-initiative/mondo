@@ -265,6 +265,163 @@ create-mondo-stats:
 	$(MAKE) create-mondo-stats-summary-file -B
 
 
+############################################
+# Create Stats based on Mondo Release Tags #
+############################################
+
+# Define directories
+MONDO_STATS_REPORTS_DIR := reports/mondo_stats
+TMP_MONDO_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/tmp
+GEN_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-general-stats
+RARE_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-rare-stats
+SYNONYM_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-synonym-stats
+
+# Define the most recent tag for mondo.owl (default is latest tag)
+MONDO_TAG := $(shell git for-each-ref --sort=-creatordate --format '%(refname:short)' refs/tags | head -n 1)
+MONDO_OWL_GH_TAG := mondo.owl
+
+# Define the path where mondo.owl will be saved
+MONDO_OWL_PATH := tmp/$(MONDO_OWL_GH_TAG)
+
+# Define the URL to download mondo.owl from the GitHub release
+MONDO_OWL_URL := https://github.com/monarch-initiative/mondo/releases/download/$(MONDO_TAG)/mondo.owl
+
+# Define report queries
+GENERAL_STATISTICS_QUERIES = \
+    $(SPARQLDIR)/reports/COUNT-all_diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-all_human_diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-all_non-human_diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-human-rare-diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-human-genetic-diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-human_diseases_infectious.sparql \
+    $(SPARQLDIR)/reports/COUNT-human-cancer-diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-non-human-genetic-diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-non-human_diseases_infectious.sparql \
+    $(SPARQLDIR)/reports/COUNT-non-human_diseases_cancer.sparql
+
+RARE_STATISTICS_QUERIES = \
+    $(SPARQLDIR)/reports/COUNT-rare_subsets.sparql
+
+SYNONYM_STATISTICS_QUERIES = \
+    $(SPARQLDIR)/reports/COUNT-all_diseases_synonym_stats.sparql
+
+# Define output file names
+GEN_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(GENERAL_STATISTICS_QUERIES))
+RARE_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(RARE_STATISTICS_QUERIES))
+SYNONYM_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(SYNONYM_STATISTICS_QUERIES))
+
+# Combined report files
+COMBINED_REPORT = $(GEN_STATS_REPORTS_DIR)/mondo_general_statistics.tsv
+COMBINED_RARE_REPORT = $(RARE_STATS_REPORTS_DIR)/mondo_rare_statistics.tsv
+COMBINED_SYNONYM_REPORT = $(SYNONYM_STATS_REPORTS_DIR)/mondo_synonym_statistics.tsv
+
+# General stats target
+create-general-mondo-stats-all: move-mondo-owl create-general-mondo-stats combine-general-stats-reports clean-temp-stats
+
+# Rare stats target
+create-rare-mondo-stats-all: move-mondo-owl create-rare-mondo-stats combine-rare-stats-reports clean-temp-stats
+
+# Synonym stats target
+create-synonym-mondo-stats-all: move-mondo-owl create-synonym-mondo-stats combine-synonym-stats-reports clean-temp-stats
+
+# Create the individual general stats
+create-general-mondo-stats: $(GEN_STATS_OUTPUTS)
+
+# Create the individual rare stats
+create-rare-mondo-stats: $(RARE_STATS_OUTPUTS)
+
+# Create the individual synonym stats
+create-synonym-mondo-stats: $(SYNONYM_STATS_OUTPUTS)
+
+# Reusable rule to create necessary directories
+create-directories:
+	mkdir -p $(MONDO_STATS_REPORTS_DIR) $(GEN_STATS_REPORTS_DIR) $(RARE_STATS_REPORTS_DIR) $(SYNONYM_STATS_REPORTS_DIR) $(TMP_MONDO_STATS_REPORTS_DIR)
+
+# Rule to download mondo.owl if it doesn't exist
+$(MONDO_OWL_PATH):
+	wget $(MONDO_OWL_URL) -O $@
+	@echo "Downloaded $(MONDO_OWL) from $(MONDO_OWL_URL) to $(MONDO_OWL_PATH)"
+
+# Move the mondo.owl file to the desired directory
+move-mondo-owl: $(MONDO_OWL_PATH)
+	@echo "[INFO] - Moving $(MONDO_OWL_PATH) to ./$(MONDO_OWL_GH_TAG)"
+	mv $(MONDO_OWL_PATH) ./$(MONDO_OWL_GH_TAG)
+
+# Rule for generating .tsv files from the queries (general, rare, synonym stats)
+$(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql | create-directories
+	@echo "Running query $< ..."
+	$(ROBOT) query -i mondo.owl --use-graphs true -f tsv --query $< $@
+
+# Combine the general stats results into one report
+combine-general-stats-reports: create-general-mondo-stats
+	@echo "Combining results into $(COMBINED_REPORT)..."
+	@echo "All Mondo General Statistics created on: $(current_date)" > $(COMBINED_REPORT)
+	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_REPORT)
+	@echo "\n** Combined report saved to: $(COMBINED_REPORT)\n"
+
+# Combine the rare stats results into one report
+combine-rare-stats-reports: create-rare-mondo-stats
+	@echo "Combining results into $(COMBINED_RARE_REPORT)..."
+	@echo "All Mondo Rare Statistics created on: $(current_date)" > $(COMBINED_RARE_REPORT)
+	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_RARE_REPORT)
+	@echo "\n** Combined report saved to: $(COMBINED_RARE_REPORT)\n"
+
+# Combine the synonym stats results into one report
+combine-synonym-stats-reports: create-synonym-mondo-stats
+	@echo "Combining results into $(COMBINED_SYNONYM_REPORT)..."
+	@echo "All Mondo Synonym Statistics created on: $(current_date)" > $(COMBINED_SYNONYM_REPORT)
+	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_SYNONYM_REPORT)
+	@echo "\n** Combined report saved to: $(COMBINED_SYNONYM_REPORT)\n"
+
+# Clean up the temporary .tsv files
+clean-temp-stats:
+	rm -f $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv
+	@echo "(Cleaned up temporary result files)"
+
+# Clean everything (temporary + reports)
+clean-stats:
+	rm -f $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv $(COMBINED_REPORT) $(COMBINED_RARE_REPORT) $(COMBINED_SYNONYM_REPORT)
+	@echo "Cleaned all generated files."
+
+
+###############################
+# Create Community Statistics #
+###############################
+
+COMMUNITY_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-community-stats
+COMMUNITY_STATS_REPORT = $(COMMUNITY_STATS_REPORTS_DIR)/gh_issue_status.csv
+COMMUNITY_USER_REPORT = $(COMMUNITY_STATS_REPORTS_DIR)/gh_issue_usernames.csv
+
+.PHONY: test-github-issue-stats
+test-github-issue-stats:
+	make github-issue-stats FROM_DATE=2025-03-15 TO_DATE=2025-03-18
+
+.PHONY: github-issue-stats
+github-issue-stats:
+	@echo "Today's date: $$(date +%Y-%m-%d)"
+	@mkdir -p $(COMMUNITY_STATS_REPORTS_DIR)
+	@FROM_DATE="$(FROM_DATE)"; \
+	TO_DATE="$(TO_DATE)"; \
+	if [ -z "$$FROM_DATE" ] || [ -z "$$TO_DATE" ]; then \
+		echo "No dates provided. Auto-detecting from git tags..."; \
+		TAG_DATES=$$(git for-each-ref --sort=-creatordate --format='%(creatordate:short)' refs/tags | awk -v today="$$(date +%Y-%m-%d)" '$$1 < today' | head -n 2); \
+		TO_DATE=$$(echo "$$TAG_DATES" | head -n 1); \
+		FROM_DATE=$$(echo "$$TAG_DATES" | tail -n 1); \
+	fi; \
+	echo "From date: $$FROM_DATE"; \
+	echo "To date: $$TO_DATE"; \
+	echo "Report file: $(COMMUNITY_STATS_REPORT)"; \
+	echo "Calculating GitHub issue metrics..."; \
+	python ../scripts/gh_issues.py \
+		--repo=monarch-initiative/mondo \
+		--token=$(GITHUB_TOKEN) \
+		--from=$$FROM_DATE \
+		--to=$$TO_DATE \
+		--outpath=$(COMMUNITY_STATS_REPORT) \
+		--user-report=$(COMMUNITY_USER_REPORT)
+
+
+
 #############################################
 # Dump Mondo Terms for Delphi curation tool #
 #############################################
