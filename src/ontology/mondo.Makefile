@@ -307,7 +307,8 @@ SYNONYM_STATISTICS_QUERIES = \
     $(SPARQLDIR)/reports/COUNT-all_diseases_synonym_stats.sparql
 
 EMC_STATISTICS_QUERIES = \
-	$(SPARQLDIR)/reports/COUNT-emc-xrefs.sparql
+	$(SPARQLDIR)/reports/COUNT-emc-xrefs.sparql \
+	$(SPARQLDIR)/reports/COUNT-emc-total-usage.sparql
 
 # Define output file names
 GEN_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(GENERAL_STATISTICS_QUERIES))
@@ -331,7 +332,7 @@ create-rare-mondo-stats-all: move-mondo-owl create-rare-mondo-stats combine-rare
 create-synonym-mondo-stats-all: move-mondo-owl create-synonym-mondo-stats combine-synonym-stats-reports clean-temp-stats
 
 # EMC stats target
-create-emc-mondo-stats-all: move-mondo-owl create-emc-mondo-stats combine-emc-stats-reports clean-temp-stats
+create-emc-mondo-stats-all: move-mondo-owl create-emc-mondo-stats finalize-emc-stats-reports clean-temp-stats 
 
 # Create the individual general stats
 create-general-mondo-stats: $(GEN_STATS_OUTPUTS)
@@ -357,7 +358,6 @@ $(MONDO_OWL_PATH):
 
 # Move the mondo.owl file to the desired directory
 move-mondo-owl: $(MONDO_OWL_PATH)
-	@echo "[INFO] - Moving $(MONDO_OWL_PATH) to ./$(MONDO_OWL_GH_TAG)"
 	mv $(MONDO_OWL_PATH) ./$(MONDO_OWL_GH_TAG)
 
 # Rule for generating .tsv files from the queries (general, rare, synonym stats)
@@ -386,12 +386,18 @@ combine-synonym-stats-reports: create-synonym-mondo-stats
 	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_SYNONYM_REPORT)
 	@echo "\n** Combined report saved to: $(COMBINED_SYNONYM_REPORT)\n"
 
-# Combine the emc stats results into one report
-combine-emc-stats-reports: create-emc-mondo-stats
-	@echo "Combining results into $(COMBINED_EMC_REPORT)..."
-	@echo "All Mondo EMC Statistics created on: $(current_date)" > $(COMBINED_EMC_REPORT)
-	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_EMC_REPORT)
-	@echo "\n** Combined report saved to: $(COMBINED_EMC_REPORT)\n"
+# Move the emc stats results files and tag with date created
+finalize-emc-stats-reports: create-emc-mondo-stats
+	@echo "Finalizing EMC reports with current date header and moving to $(EMC_STATS_REPORTS_DIR)"
+	mkdir -p $(EMC_STATS_REPORTS_DIR)
+	@for f in $(EMC_STATS_OUTPUTS); do \
+		filename=$$(basename $$f); \
+		cleanname=$$(echo $$filename | sed 's/^COUNT-//'); \
+		outf="$(EMC_STATS_REPORTS_DIR)/$$cleanname"; \
+		echo "All Mondo EMC Statistics created on: $(current_date)" > $$outf; \
+		cat $$f >> $$outf; \
+		echo "** Saved file to: $$outf"; \
+	done
 
 # Clean up the temporary .tsv files
 clean-temp-stats:
