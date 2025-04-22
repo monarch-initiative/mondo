@@ -6,6 +6,11 @@ PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX mondo: <http://purl.obolibrary.org/obo/mondo#>
 
+# Count of unique MONDO classes (?classCount) and the number of distinct annotations (?annotationCount)
+# for various annotation properties (hasDbXref, inSubset, curated_content_resource) across various
+# external sources included in Mondo and whether the count is from obsolete Mondo classes and also 
+# the Mondo class has the tag MONDO:equivalentTo (related to hasDbXref)
+
 SELECT ?property ?source ?obsoletionStatus ?hasEquivalentTo (COUNT(DISTINCT ?entity) AS ?classCount) (COUNT(DISTINCT ?group) AS ?annotationCount)
 WHERE {
   VALUES ?property { 
