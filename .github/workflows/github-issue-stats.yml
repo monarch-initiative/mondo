@@ -18,6 +18,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Fetch tag metadata only
+        run: git fetch --tags --depth=1
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -42,12 +47,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: github-issue-stats
-          path: src/ontology/reports/mondo_stats/mondo-community-stats/mondo_community_statistics-report.tsv
+          path: src/ontology/reports/mondo_stats/mondo-community-stats/gh_issue_status.csv
       
       - name: Upload usernames report
         uses: actions/upload-artifact@v4
         with:
           name: github-issue-usernames
-          path: src/ontology/reports/mondo_stats/mondo-community-stats/mondo_community_usernames-report.tsv
-
-
+          path: src/ontology/reports/mondo_stats/mondo-community-stats/gh_issue_usernames.csv
