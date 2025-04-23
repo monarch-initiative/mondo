@@ -49,7 +49,7 @@ Vanessa Boulanger | [NORD](https://rarediseases.org/) | [vanessaboulanger](https
 PJ Brooks | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [pjbrooksphd](https://github.com/pjbrooksphd)
 Matt Brush | [Monarch Initiative](http://monarchinitiative.org/) | [mbrush ](https://github.com/mbrush)
 Orion Buske            |    [Phenotips](https://phenotips.com/)                    | [buske](https://github.com/buske)  
-Gully    Burns          | [Chan Zuckerberg Initiative\](https://chanzuckerberg.com)                    | [GullyBurns](https://github.com/GullyBurns)               
+Gully    Burns| [Chan Zuckerberg Initiative](https://chanzuckerberg.com)                    | [GullyBurns](https://github.com/GullyBurns)               
 Tiffany Callahan | [SandboxAQ](https://www.sandboxaq.com/) | [callahantiff](https://github.com/callahantiff)
 Leigh Carmody | [Monarch Initiative](http://monarchinitiative.org/) | [LCCarmody](https://github.com/LCCarmody)
 Luca Cappelletti       |                         | [LucaCappelletti94](https://github.com/LucaCappelletti94)   |
