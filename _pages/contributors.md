@@ -181,14 +181,32 @@ N/A                    | N/A | [dst1](https://github.com/dst1)
 | N/A | N/A | [EstherCha7](www.github.com/EstherCha7) |
 N/A                    | N/A                     | [ewilcox19](https://github.com/ewilcox19)                   |
 N/A                    | N/A                     | [fjlogrono](https://github.com/fjlogrono)                   |
+| N/A | N/A | [frdougal](www.github.com/frdougal) |
+| N/A | N/A | [gabbysantos](www.github.com/gabbysantos) |
+| N/A | N/A | [GenomiskDiagnostik](www.github.com/GenomiskDiagnostik) |
+| N/A | N/A | [gleon98](www.github.com/gleon98) |
 N/A                    | N/A                     | [groliver](https://github.com/groliver)                     |
 N/A                    | N/A                     | [gtsueng](https://github.com/gtsueng)                       |
-N/A                    | N/A                     | [jahilton](https://github.com/jahilton)                     |
+| N/A | N/A | [hibaontoforce](www.github.com/hibaontoforce) |
+| N/A | N/A | [ikeseler](www.github.com/ikeseler) |
+| N/A | N/A | [inuli-create](www.github.com/inuli-create) |
+| N/A | N/A | [jahilton](https://github.com/jahilton) |
+| N/A | N/A | [Jciesielka1](www.github.com/Jciesielka1) |
+| N/A | N/A | [jdesaphy](www.github.com/jdesaphy) |
 N/A                    | N/A                     | [jmcglaughon](https://github.com/jmcglaughon)               |
 N/A                    | N/A                     | [johannaest](https://github.com/johannaest)                 |
+| N/A | N/A | [J-Siew](www.github.com/J-Siew) |
 N/A                    | N/A                     | [justyneross](https://github.com/justyneross)               |
+| N/A | N/A | [kara-liu](www.github.com/kara-liu) |
 N/A                    | N/A                     | [kellytoner](https://github.com/kellytoner)                 |
+| N/A | N/A | [keparis](www.github.com/keparis) |
+| N/A | N/A | [klaasMensaert](www.github.com/klaasMensaert) |
+| N/A | N/A | [laraholtes](www.github.com/laraholtes) |
 N/A                    | N/A                     | [lefailla](https://github.com/lefailla)                     |
+| N/A | N/A | [LengUNC](www.github.com/LengUNC) |
+| N/A | N/A | [lindsworls](www.github.com/lindsworls) |
+| N/A | N/A | [mafaldacst](www.github.com/mafaldacst)
+| N/A | N/A | [MarcyERichardson](www.github.com/MarcyERichardson)
 N/A                    | N/A                     | [mayherpatel](https://github.com/mayherpatel)               |
 N/A                    | N/A                     | [mbalzotti](https://github.com/mbalzotti)                   |
 N/A                    | N/A                     | [megood1](https://github.com/megood1)                       |
