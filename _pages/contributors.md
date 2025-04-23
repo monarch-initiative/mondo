@@ -14,10 +14,10 @@ Mondo is developed by members of the [Monarch Initiative](https://monarchinitiat
 
 Name | Affiliation | GitHub | Curation team? | Technical team?
 --- | --- | --- | --- | ---
-[Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | Critical Path Institute | [nicolevasilevsky](https://github.com/nicolevasilevsky) | Y | Y
-[Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | semanticly, Ltd | [matentzn](https://github.com/matentzn) | N | Y
 [Sabrina  Toro](https://orcid.org/0000-0002-4142-7153) | University of North Carolina at Chapel Hill | [sabrinatoro](https://github.com/sabrinatoro) | Y | Y
 [Trish Whetzel](https://orcid.org/0000-0002-3458-4839) | University of North Carolina at Chapel Hill | [twhetzel](https://github.com/twhetzel) | Y | Y
+[Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | Critical Path Institute | [nicolevasilevsky](https://github.com/nicolevasilevsky) | Y | Y
+[Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | semanticly, Ltd | [matentzn](https://github.com/matentzn) | N | Y
 [Katie Mullen](https://orcid.org/0000-0002-5002-8648) | University of Colorado Anschutz Medical Campus | [katiermullen](https://github.com/katiermullen) | Y | N
 [Joe Flack](https://orcid.org/0000-0002-2906-7319) | Johns Hopkins University | [joeflack4](https://github.com/joeflack4) | N | Y
 [Ada Hamosh](https://orcid.org/0000-0002-1780-5230) | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh) | medical expert | N
