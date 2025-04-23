@@ -158,28 +158,28 @@ Colleen Xu             |                        | [colleenXu](https://github.com
 Fuqi Xu                | EMBL-EBI                | [FuqiX](https://github.com/FuqiX) 
 Andreas Zankl          | University of Sydney   | [azankl](https://github.com/azankl) 
 Aaron Zhang | [Monarch Initiative](http://monarchinitiative.org/) | [kingmanzhang](https://github.com/kingmanzhang)
-| N/A | N/A | [A-84](https://github.com/A-84) |
-| N/A | N/A | [abernique](https://github.com/abernique) |
-| N/A | N/A | [anjaf](https://github.com/anjaf) |
-| N/A | N/A | [aoifemcm](https://github.com/aoifemcm) |
-| N/A | N/A | [Ari-ana-G](https://github.com/Ari-ana-G) |
-| N/A | N/A | [awaddell01](https://github.com/awaddell01) |
-| N/A | N/A | [benmclean1](https://github.com/benmclean1) |
-| N/A | N/A | [Bryannavanhoute](https://github.com/Bryannavanhoute) |
-| N/A | N/A | [carriewelch](https://github.com/carriewelch) | 
-| N/A | N/A | [CCooney03](https://github.com/CCooney03) |
-| N/A | N/A | [clauseMDM](https://github.com/clauseMDM) |
-| N/A | N/A | [CPaulMorrey](https://github.com/CPaulMorrey) |
+N/A | N/A | [A-84](https://github.com/A-84)
+N/A | N/A | [abernique](https://github.com/abernique)
+N/A | N/A | [anjaf](https://github.com/anjaf)
+N/A | N/A | [aoifemcm](https://github.com/aoifemcm)
+N/A | N/A | [Ari-ana-G](https://github.com/Ari-ana-G)
+N/A | N/A | [awaddell01](https://github.com/awaddell01)
+N/A | N/A | [benmclean1](https://github.com/benmclean1)
+N/A | N/A | [Bryannavanhoute](https://github.com/Bryannavanhoute)
+N/A | N/A | [carriewelch](https://github.com/carriewelch)
+N/A | N/A | [CCooney03](https://github.com/CCooney03)
+N/A | N/A | [clauseMDM](https://github.com/clauseMDM)
+N/A | N/A | [CPaulMorrey](https://github.com/CPaulMorrey)
 N/A                    | N/A | [dancingline](https://github.com/dancingline)     
 N/A                    | N/A | [darintay](https://github.com/darintay)  
-N/A                    | N/A | [dst1](https://github.com/dst1) 
-| N/A | N/A | [eedoh01](https://github.com/eedoh01) |
-| N/A | N/A | [ehurwitz](https://github.com/ehurwitz) |
-| N/A | N/A | [ekendall2](https://github.com/ekendall2) |
-| N/A | N/A | [ekyle23](https://github.com/ekyle23) |
-| N/A | N/A | [elv-sb](https://github.com/elv-sb) |
-| N/A | N/A | [EMRutherford](https://github.com/EMRutherford) |
-| N/A | N/A | [EstherCha7](https://github.com/EstherCha7) |
+N/A | N/A | [dst1](https://github.com/dst1) 
+N/A | N/A | [eedoh01](https://github.com/eedoh01)
+N/A | N/A | [ehurwitz](https://github.com/ehurwitz)
+N/A | N/A | [ekendall2](https://github.com/ekendall2)
+N/A | N/A | [ekyle23](https://github.com/ekyle23)
+N/A | N/A | [elv-sb](https://github.com/elv-sb)
+N/A | N/A | [EMRutherford](https://github.com/EMRutherford)
+N/A | N/A | [EstherCha7](https://github.com/EstherCha7)
 N/A                    | N/A                     | [ewilcox19](https://github.com/ewilcox19)                   |
 N/A                    | N/A                     | [fjlogrono](https://github.com/fjlogrono)                   |
 | N/A | N/A | [frdougal](https://github.com/frdougal) |
