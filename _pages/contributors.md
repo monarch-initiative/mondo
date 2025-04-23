@@ -18,7 +18,7 @@ Name | Affiliation | GitHub | Curation team? | Technical team?
 [Trish Whetzel](https://orcid.org/0000-0002-3458-4839) | University of North Carolina at Chapel Hill | [twhetzel](https://github.com/twhetzel) | Y | Y
 [Nicole Vasilevsky](https://orcid.org/0000-0001-5208-3432) | Critical Path Institute | [nicolevasilevsky](https://github.com/nicolevasilevsky) | Y | Y
 [Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | semanticly, Ltd | [matentzn](https://github.com/matentzn) | N | Y
-[Katie Mullen](https://orcid.org/0000-0002-5002-8648) | University of Colorado Anschutz Medical Campus | [katiermullen](https://github.com/katiermullen) | Y | N
+[Katie Mullen](https://orcid.org/0000-0002-5002-8648) | University of North Carolina at Chapel Hill | [katiermullen](https://github.com/katiermullen) | Y | N
 [Joe Flack](https://orcid.org/0000-0002-2906-7319) | Johns Hopkins University | [joeflack4](https://github.com/joeflack4) | N | Y
 [Yousif Shwetar](https://tislab.org/members/yousif-shwetar.html) | University of North Carolina at Chapel Hill | [yshwetar](https://github.com/yshwetar) | Y | N |
 [Ada Hamosh](https://orcid.org/0000-0002-1780-5230) | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh) | medical expert | N
@@ -49,7 +49,7 @@ Vanessa Boulanger | [NORD](https://rarediseases.org/) | [vanessaboulanger](https
 PJ Brooks | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [pjbrooksphd](https://github.com/pjbrooksphd)
 Matt Brush | [Monarch Initiative](http://monarchinitiative.org/) | [mbrush ](https://github.com/mbrush)
 Orion Buske            |    [Phenotips](https://phenotips.com/)                    | [buske](https://github.com/buske)  
-Gully    Burns          | [Chan Zuckerberg Initiative\](https://chanzuckerberg.com)                    | [GullyBurns](https://github.com/GullyBurns)               
+Gully    Burns| [Chan Zuckerberg Initiative](https://chanzuckerberg.com)                    | [GullyBurns](https://github.com/GullyBurns)               
 Tiffany Callahan | [SandboxAQ](https://www.sandboxaq.com/) | [callahantiff](https://github.com/callahantiff)
 Leigh Carmody | [Monarch Initiative](http://monarchinitiative.org/) | [LCCarmody](https://github.com/LCCarmody)
 Luca Cappelletti       |                         | [LucaCappelletti94](https://github.com/LucaCappelletti94)   |
@@ -129,7 +129,6 @@ Kathy Reinold | [Broad Institute](https://www.broadinstitute.org/) | [kreinold](
 Erin Riggs | [ClinGen](https://clinicalgenome.org/) | [erinriggs](https://github.com/erinriggs)
 [Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson) |
 Paola Roncaglia | [EBI](https://www.ebi.ac.uk/) | [paolaroncaglia](https://github.com/paolaroncaglia)
-Paola Roncaglia | [EBI](https://www.ebi.ac.uk/) | [paolaroncaglia](https://github.com/paolaroncaglia)
 Sirarat Sarntivijai | [ELIXIR](https://elixiruknode.org/) | [siiraa](https://github.com/siiraa)
 Andy Schroeder         |                        | [aschroed](https://github.com/aschroed)           
 Kent Shefchek  | [Monarch Initiative](http://monarchinitiative.org/) | [kshefchek](https://github.com/kshefchek)
@@ -158,97 +157,97 @@ Colleen Xu             |                        | [colleenXu](https://github.com
 Fuqi Xu                | EMBL-EBI                | [FuqiX](https://github.com/FuqiX) 
 Andreas Zankl          | University of Sydney   | [azankl](https://github.com/azankl) 
 Aaron Zhang | [Monarch Initiative](http://monarchinitiative.org/) | [kingmanzhang](https://github.com/kingmanzhang)
-| N/A | N/A | [A-84](https://github.com/A-84) |
-| N/A | N/A | [abernique](https://github.com/abernique) |
-| N/A | N/A | [anjaf](https://github.com/anjaf) |
-| N/A | N/A | [aoifemcm](https://github.com/aoifemcm) |
-| N/A | N/A | [Ari-ana-G](https://github.com/Ari-ana-G) |
-| N/A | N/A | [awaddell01](https://github.com/awaddell01) |
-| N/A | N/A | [benmclean1](https://github.com/benmclean1) |
-| N/A | N/A | [Bryannavanhoute](https://github.com/Bryannavanhoute) |
-| N/A | N/A | [carriewelch](https://github.com/carriewelch) | 
-| N/A | N/A | [CCooney03](https://github.com/CCooney03) |
-| N/A | N/A | [clauseMDM](https://github.com/clauseMDM) |
-| N/A | N/A | [CPaulMorrey](https://github.com/CPaulMorrey) |
+N/A | N/A | [A-84](https://github.com/A-84)
+N/A | N/A | [abernique](https://github.com/abernique)
+N/A | N/A | [anjaf](https://github.com/anjaf)
+N/A | N/A | [aoifemcm](https://github.com/aoifemcm)
+N/A | N/A | [Ari-ana-G](https://github.com/Ari-ana-G)
+N/A | N/A | [awaddell01](https://github.com/awaddell01)
+N/A | N/A | [benmclean1](https://github.com/benmclean1)
+N/A | N/A | [Bryannavanhoute](https://github.com/Bryannavanhoute)
+N/A | N/A | [carriewelch](https://github.com/carriewelch)
+N/A | N/A | [CCooney03](https://github.com/CCooney03)
+N/A | N/A | [clauseMDM](https://github.com/clauseMDM)
+N/A | N/A | [CPaulMorrey](https://github.com/CPaulMorrey)
 N/A                    | N/A | [dancingline](https://github.com/dancingline)     
 N/A                    | N/A | [darintay](https://github.com/darintay)  
-N/A                    | N/A | [dst1](https://github.com/dst1) 
-| N/A | N/A | [eedoh01](https://github.com/eedoh01) |
-| N/A | N/A | [ehurwitz](https://github.com/ehurwitz) |
-| N/A | N/A | [ekendall2](https://github.com/ekendall2) |
-| N/A | N/A | [ekyle23](https://github.com/ekyle23) |
-| N/A | N/A | [elv-sb](https://github.com/elv-sb) |
-| N/A | N/A | [EMRutherford](https://github.com/EMRutherford) |
-| N/A | N/A | [EstherCha7](https://github.com/EstherCha7) |
+N/A | N/A | [dst1](https://github.com/dst1) 
+N/A | N/A | [eedoh01](https://github.com/eedoh01)
+N/A | N/A | [ehurwitz](https://github.com/ehurwitz)
+N/A | N/A | [ekendall2](https://github.com/ekendall2)
+N/A | N/A | [ekyle23](https://github.com/ekyle23)
+N/A | N/A | [elv-sb](https://github.com/elv-sb)
+N/A | N/A | [EMRutherford](https://github.com/EMRutherford)
+N/A | N/A | [EstherCha7](https://github.com/EstherCha7)
 N/A                    | N/A                     | [ewilcox19](https://github.com/ewilcox19)                   |
 N/A                    | N/A                     | [fjlogrono](https://github.com/fjlogrono)                   |
-| N/A | N/A | [frdougal](https://github.com/frdougal) |
-| N/A | N/A | [gabbysantos](https://github.com/gabbysantos) |
-| N/A | N/A | [GenomiskDiagnostik](https://github.com/GenomiskDiagnostik) |
-| N/A | N/A | [gleon98](https://github.com/gleon98) |
+N/A | N/A | [frdougal](https://github.com/frdougal) |
+N/A | N/A | [gabbysantos](https://github.com/gabbysantos) |
+N/A | N/A | [GenomiskDiagnostik](https://github.com/GenomiskDiagnostik) |
+N/A | N/A | [gleon98](https://github.com/gleon98) |
 N/A                    | N/A                     | [groliver](https://github.com/groliver)                     |
 N/A                    | N/A                     | [gtsueng](https://github.com/gtsueng)                       |
-| N/A | N/A | [hibaontoforce](https://github.com/hibaontoforce) |
-| N/A | N/A | [ikeseler](https://github.com/ikeseler) |
-| N/A | N/A | [inuli-create](https://github.com/inuli-create) |
-| N/A | N/A | [jahilton](https://github.com/jahilton) |
-| N/A | N/A | [Jciesielka1](https://github.com/Jciesielka1) |
-| N/A | N/A | [jdesaphy](https://github.com/jdesaphy) |
+N/A | N/A | [hibaontoforce](https://github.com/hibaontoforce) |
+N/A | N/A | [ikeseler](https://github.com/ikeseler) |
+N/A | N/A | [inuli-create](https://github.com/inuli-create) |
+N/A | N/A | [jahilton](https://github.com/jahilton) |
+N/A | N/A | [Jciesielka1](https://github.com/Jciesielka1) |
+N/A | N/A | [jdesaphy](https://github.com/jdesaphy) |
 N/A                    | N/A                     | [jmcglaughon](https://github.com/jmcglaughon)               |
 N/A                    | N/A                     | [johannaest](https://github.com/johannaest)                 |
-| N/A | N/A | [J-Siew](https://github.com/J-Siew) |
+N/A | N/A | [J-Siew](https://github.com/J-Siew) |
 N/A                    | N/A                     | [justyneross](https://github.com/justyneross)               |
-| N/A | N/A | [kara-liu](https://github.com/kara-liu) |
+N/A | N/A | [kara-liu](https://github.com/kara-liu) |
 N/A                    | N/A                     | [kellytoner](https://github.com/kellytoner)                 |
-| N/A | N/A | [keparis](https://github.com/keparis) |
-| N/A | N/A | [klaasMensaert](https://github.com/klaasMensaert) |
-| N/A | N/A | [laraholtes](https://github.com/laraholtes) |
+N/A | N/A | [keparis](https://github.com/keparis) |
+N/A | N/A | [klaasMensaert](https://github.com/klaasMensaert) |
+N/A | N/A | [laraholtes](https://github.com/laraholtes) |
 N/A                    | N/A                     | [lefailla](https://github.com/lefailla)                     |
-| N/A | N/A | [LengUNC](https://github.com/LengUNC) |
-| N/A | N/A | [lindsworls](https://github.com/lindsworls) |
-| N/A | N/A | [mafaldacst](https://github.com/mafaldacst)
-| N/A | N/A | [MarcyERichardson](https://github.com/MarcyERichardson)
-| N/A | N/A | [MariaLivia](https://github.com/MariaLivia) |
+N/A | N/A | [LengUNC](https://github.com/LengUNC) |
+N/A | N/A | [lindsworls](https://github.com/lindsworls) |
+N/A | N/A | [mafaldacst](https://github.com/mafaldacst)
+N/A | N/A | [MarcyERichardson](https://github.com/MarcyERichardson)
+N/A | N/A | [MariaLivia](https://github.com/MariaLivia) |
 N/A                    | N/A                     | [mayherpatel](https://github.com/mayherpatel)               |
-| N/A | N/A | [may-lim](https://github.com/may-lim) |
+N/A | N/A | [may-lim](https://github.com/may-lim) |
 N/A                    | N/A                     | [mbalzotti](https://github.com/mbalzotti)                   |
-| N/A | N/A | [mccormickem](https://github.com/mccormickem) |
+N/A | N/A | [mccormickem](https://github.com/mccormickem) |
 N/A                    | N/A                     | [megood1](https://github.com/megood1)                       |
-| N/A | N/A | [Megfrone](https://github.com/Megfrone) |
-| N/A | N/A | [melnel000](https://github.com/melnel000) |
+N/A | N/A | [Megfrone](https://github.com/Megfrone) |
+N/A | N/A | [melnel000](https://github.com/melnel000) |
 N/A                    | N/A                     | [mhughes5](https://github.com/mhughes5)                     |
-| N/A | N/A | [mibenito](https://github.com/mibenito) |
-| N/A | N/A | [MichaelaEBI](https://github.com/MichaelaEBI) |
-| N/A | N/A | [michellepaczosa](https://github.com/michellepaczosa) |
-| N/A | N/A | [MLYBrownReeves](https://github.com/MLYBrownReeves) |
-| N/A | N/A | [mnzelnic](https://github.com/mnzelnic) |
+N/A | N/A | [mibenito](https://github.com/mibenito) |
+N/A | N/A | [MichaelaEBI](https://github.com/MichaelaEBI) |
+N/A | N/A | [michellepaczosa](https://github.com/michellepaczosa) |
+N/A | N/A | [MLYBrownReeves](https://github.com/MLYBrownReeves) |
+N/A | N/A | [mnzelnic](https://github.com/mnzelnic) |
 N/A                    | N/A                     | [mshadbolt](https://github.com/mshadbolt)                   |
-| N/A | N/A | [mweaver88](https://github.com/mweaver88) |
-| N/A | N/A | [nataliedeuitch](https://github.com/nataliedeuitch) |
-| N/A | N/A | [nbosc](https://github.com/nbosc) |
+N/A | N/A | [mweaver88](https://github.com/mweaver88) |
+N/A | N/A | [nataliedeuitch](https://github.com/nataliedeuitch) |
+N/A | N/A | [nbosc](https://github.com/nbosc) |
 N/A                    | N/A                     | [need47](https://github.com/need47)                       |
-| N/A | N/A | [nklsbckmnn](https://github.com/nklsbckmnn) |
-| N/A | N/A | [Odemsh](https://github.com/Odemsh) |
-| N/A | N/A | [Odessit007](https://github.com/Odessit007) |
+N/A | N/A | [nklsbckmnn](https://github.com/nklsbckmnn) |
+N/A | N/A | [Odemsh](https://github.com/Odemsh) |
+N/A | N/A | [Odessit007](https://github.com/Odessit007) |
 N/A                    | N/A                     | [paulacarrio](https://github.com/paulacarrio)                |
-| N/A | N/A | [plweller3](https://github.com/plweller3) |
-| N/A | N/A | [poppies700](https://github.com/poppies700) |
-| N/A | N/A | [reality](https://github.com/reality) |
-| N/A | N/A | [rlarson1015](https://github.com/rlarson1015) |
-| N/A | N/A | [RP3201](https://github.com/RP3201) |
-| N/A | N/A | [schmidtj1](https://github.com/schmidtj1) |
-| N/A | N/A | [Sean-Ontoforce](https://github.com/Sean-Ontoforce) |
+N/A | N/A | [plweller3](https://github.com/plweller3) |
+N/A | N/A | [poppies700](https://github.com/poppies700) |
+N/A | N/A | [reality](https://github.com/reality) |
+N/A | N/A | [rlarson1015](https://github.com/rlarson1015) |
+N/A | N/A | [RP3201](https://github.com/RP3201) |
+N/A | N/A | [schmidtj1](https://github.com/schmidtj1) |
+N/A | N/A | [Sean-Ontoforce](https://github.com/Sean-Ontoforce) |
 N/A                    | N/A                     | [seoanezonjic](https://github.com/seoanezonjic)             |
 N/A                    | N/A                     | [sgblanch](https://github.com/sgblanch)                |
-| N/A | N/A | [sh-ikeda](https://github.com/sh-ikeda) |
+N/A | N/A | [sh-ikeda](https://github.com/sh-ikeda) |
 N/A                    | N/A                     | [smcnulty13](https://github.com/smcnulty13)                  |
-| N/A | N/A | [sng2140](https://github.com/sng2140) |
-| N/A | N/A | [springnar](https://github.com/springnar) |
-| N/A | N/A | [sRobertsNORD](https://github.com/sRobertsNORD) |
-| N/A | N/A | [stromulus](https://github.com/stromulus) |
+N/A | N/A | [sng2140](https://github.com/sng2140) |
+N/A | N/A | [springnar](https://github.com/springnar) |
+N/A | N/A | [sRobertsNORD](https://github.com/sRobertsNORD) |
+N/A | N/A | [stromulus](https://github.com/stromulus) |
 N/A                    | N/A                     | [tnavatar](https://github.com/tnavatar)                      |
-| N/A | N/A | [tzukuo-evotec](https://github.com/tzukuo-evotec) |
-| N/A | N/A | [vgitau](https://github.com/vgitau) |
+N/A | N/A | [tzukuo-evotec](https://github.com/tzukuo-evotec) |
+N/A | N/A | [vgitau](https://github.com/vgitau) |
 N/A                    | N/A                     | [WallaceKa](https://github.com/WallaceKa)                    |
 N/A                    | N/A                     | [kristyleelowdermilk](https://github.com/kristyleelowdermilk) | 
-| N/A | N/A |[wchankey](https://github.com/wchankey) |
+N/A | N/A |[wchankey](https://github.com/wchankey) |
