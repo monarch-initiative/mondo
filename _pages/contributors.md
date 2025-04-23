@@ -172,6 +172,13 @@ Aaron Zhang | [Monarch Initiative](http://monarchinitiative.org/) | [kingmanzhan
 N/A                    | N/A | [dancingline](https://github.com/dancingline)     
 N/A                    | N/A | [darintay](https://github.com/darintay)  
 N/A                    | N/A | [dst1](https://github.com/dst1) 
+| N/A | N/A | [eedoh01](www.github.com/eedoh01) |
+| N/A | N/A | [ehurwitz](www.github.com/ehurwitz) |
+| N/A | N/A | [ekendall2](www.github.com/ekendall2) |
+| N/A | N/A | [ekyle23](www.github.com/ekyle23) |
+| N/A | N/A | [elv-sb](www.github.com/elv-sb) |
+| N/A | N/A | [EMRutherford](www.github.com/EMRutherford) |
+| N/A | N/A | [EstherCha7](www.github.com/EstherCha7) |
 N/A                    | N/A                     | [ewilcox19](https://github.com/ewilcox19)                   |
 N/A                    | N/A                     | [fjlogrono](https://github.com/fjlogrono)                   |
 N/A                    | N/A                     | [groliver](https://github.com/groliver)                     |
