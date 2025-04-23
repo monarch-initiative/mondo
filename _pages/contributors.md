@@ -157,6 +157,18 @@ Colleen Xu             |                        | [colleenXu](https://github.com
 Fuqi Xu                | EMBL-EBI                | [FuqiX](https://github.com/FuqiX) 
 Andreas Zankl          | University of Sydney   | [azankl](https://github.com/azankl) 
 Aaron Zhang | [Monarch Initiative](http://monarchinitiative.org/) | [kingmanzhang](https://github.com/kingmanzhang)
+| N/A | N/A | [A-84](www.github.com/A-84) |
+| N/A | N/A | [abernique](www.github.com/abernique) |
+| N/A | N/A | [anjaf](www.github.com/anjaf) |
+| N/A | N/A | [aoifemcm](www.github.com/aoifemcm) |
+| N/A | N/A | [Ari-ana-G](www.github.com/Ari-ana-G) |
+| N/A | N/A | [awaddell01](www.github.com/awaddell01) |
+| N/A | N/A | [benmclean1](www.github.com/benmclean1) |
+| N/A | N/A | [Bryannavanhoute](www.github.com/Bryannavanhoute) |
+| N/A | N/A | [carriewelch](www.github.com/carriewelch) | 
+| N/A | N/A | [CCooney03](www.github.com/CCooney03) |
+| N/A | N/A | [clauseMDM](www.github.com/clauseMDM) |
+| N/A | N/A | [CPaulMorrey](www.github.com/CPaulMorrey) |
 N/A                    | N/A | [dancingline](https://github.com/dancingline)     
 N/A                    | N/A | [darintay](https://github.com/darintay)  
 N/A                    | N/A | [dst1](https://github.com/dst1) 
