@@ -20,6 +20,7 @@ Name | Affiliation | GitHub | Curation team? | Technical team?
 [Nico Matentzoglu](https://orcid.org/0000-0002-7356-1779) | semanticly, Ltd | [matentzn](https://github.com/matentzn) | N | Y
 [Katie Mullen](https://orcid.org/0000-0002-5002-8648) | University of Colorado Anschutz Medical Campus | [katiermullen](https://github.com/katiermullen) | Y | N
 [Joe Flack](https://orcid.org/0000-0002-2906-7319) | Johns Hopkins University | [joeflack4](https://github.com/joeflack4) | N | Y
+[Yousif Shwetar](https://tislab.org/members/yousif-shwetar.html) | University of North Carolina at Chapel Hill | [yshwetar](https://github.com/yshwetar) | Y | N |
 [Ada Hamosh](https://orcid.org/0000-0002-1780-5230) | [OMIM](https://omim.org/) | [ahamosh](https://github.com/ahamosh) | medical expert | N
 [Melissa Haendel](https://orcid.org/0000-0001-9114-8737) | University of North Carolina at Chapel Hill | [mellybelly](https://github.com/mellybelly) | Y | N
 [Chris Mungall](http://biosciences.lbl.gov/profiles/chris-mungall/) | Lawrence Berkeley National Lab | [cmungall](https://github.com/cmungall) | Y | Y
