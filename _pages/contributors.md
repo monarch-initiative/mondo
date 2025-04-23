@@ -129,7 +129,6 @@ Kathy Reinold | [Broad Institute](https://www.broadinstitute.org/) | [kreinold](
 Erin Riggs | [ClinGen](https://clinicalgenome.org/) | [erinriggs](https://github.com/erinriggs)
 [Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson) |
 Paola Roncaglia | [EBI](https://www.ebi.ac.uk/) | [paolaroncaglia](https://github.com/paolaroncaglia)
-Paola Roncaglia | [EBI](https://www.ebi.ac.uk/) | [paolaroncaglia](https://github.com/paolaroncaglia)
 Sirarat Sarntivijai | [ELIXIR](https://elixiruknode.org/) | [siiraa](https://github.com/siiraa)
 Andy Schroeder         |                        | [aschroed](https://github.com/aschroed)           
 Kent Shefchek  | [Monarch Initiative](http://monarchinitiative.org/) | [kshefchek](https://github.com/kshefchek)
@@ -202,7 +201,7 @@ N/A | N/A | [kara-liu](https://github.com/kara-liu) |
 N/A                    | N/A                     | [kellytoner](https://github.com/kellytoner)                 |
 N/A | N/A | [keparis](https://github.com/keparis) |
 N/A | N/A | [klaasMensaert](https://github.com/klaasMensaert) |
-| N/A | N/A | [laraholtes](https://github.com/laraholtes) |
+N/A | N/A | [laraholtes](https://github.com/laraholtes) |
 N/A                    | N/A                     | [lefailla](https://github.com/lefailla)                     |
 N/A | N/A | [LengUNC](https://github.com/LengUNC) |
 N/A | N/A | [lindsworls](https://github.com/lindsworls) |
