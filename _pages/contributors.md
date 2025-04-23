@@ -29,7 +29,7 @@ Name | Affiliation | GitHub | Curation team? | Technical team?
 
 Name | Affiliation | Role | GitHub 
 --- | --- | --- | 
-Sarah Gehrke | University of North Carolina at Chapel Hill | Project Manager | [sagehrke](https://github.com/sagehrke)
+Sarah Gehrke | University of North Carolina at Chapel Hill | Project Manager | [sagehrke](https://github.com/sagehrke) |
 
 # Contributors
 
