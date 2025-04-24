@@ -35,6 +35,9 @@ Sarah Gehrke | University of North Carolina at Chapel Hill | Project Manager | [
 
 Name | Affiliation | GitHub
 --- | --- | ---
+Tobi | | [Tobi1kenobi](https://github.com/Tobi1kenobi) |
+Robert | Sage Bioinformatics | [allaway](https://github.com/allaway) |
+Blessing | EBI | [ashimiblessing](https://github.com/ashimiblessing) |
 Gioconda Alyea | [NORD](https://rarediseases.org/) | [galyea123](https://github.com/galyea123), [galyea-gard](https://github.com/galyea-gard)
 Joanna Amberger | [OMIM](https://omim.org/) | [jamberger](https://github.com/jamberger)
 Larry Babb | [ClinGen](https://clinicalgenome.org/) | [larrybabb](https://github.com/larrybabb)
