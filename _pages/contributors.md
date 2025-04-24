@@ -149,7 +149,7 @@ Sirarat Sarntivijai | [ELIXIR](https://elixiruknode.org/) | [siiraa](https://git
 Andy Schroeder         |                        | [aschroed](https://github.com/aschroed)           
 Kent Shefchek  | [Monarch Initiative](http://monarchinitiative.org/) | [kshefchek](https://github.com/kshefchek)
 Sangeeta Shukla | [Childrens Hospital of Philadelphia](https://www.chop.edu/)
-Eric Sid | [NIH NCATS](National Center for Advancing Translational Sciences ) | [ericsid](https://github.com/ericsid)
+Eric Sid | [NIH NCATS](https://ncats.nih.gov/) | [ericsid](https://github.com/ericsid)
 Rebecca Siegert | [Broad Institute](https://www.broadinstitute.org/) | [rebecca-siegert](https://github.com/rebecca-siegert)
 Morgan Similuk | [NIH NHGRI](https://www.genome.gov/) | [MorganSimiluk](https://github.com/MorganSimiluk)
 Tam Sneddon | [ClinGen](https://clinicalgenome.org/) | [tsneddon](https://github.com/tsneddon)
