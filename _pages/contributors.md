@@ -150,7 +150,7 @@ David Ochoa            | EMBL-EBI               | [d0choa](https://github.com/d0
 Annie Olry | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [annieolry](https://github.com/annieolry)
 Daniel Olson | [Critical Path Institute](https://c-path.org/) | [Vineyardintern](https://github.com/Vineyardintern], [Daniel-Olson](https://github.com/Daniel-Olson)
 Tudor Oprea            |                         | [TudorOprea](https://github.com/TudorOprea)
-David Osumi-Sutherland | [Wellcome Trust Sanger Institute ](https://www.sanger.ac.uk/) | [dosumis](https://github.com/dosumis
+David Osumi-Sutherland | [Wellcome Trust Sanger Institute ](https://www.sanger.ac.uk/) | [dosumis](https://github.com/dosumis)
 Sumir Pandit |  | [sumirp](https://github.com/sumirp) |
 Kalliopi Panoutsopoulou |  | [kallia-p](https://github.com/kallia-p)
 Brooke Palus | [ClinGen](https://clinicalgenome.org/) | [brookepalus](https://github.com/brookepalus)
