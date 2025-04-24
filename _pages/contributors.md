@@ -106,7 +106,7 @@ Charles Tapley Hoyt    | Harvard Medical School | [cthoyt](https://github.com/ct
 Madeline Hughes | [Broad Institute](https://www.broadinstitute.org/) | [madelinehughes](https://github.com/madelinehughes)
 Dazhi Jiao | Amazon | [jiaola ](https://github.com/jiaola)
 Simon Jupp | [EBI](https://www.ebi.ac.uk/) | [simonjupp](https://github.com/simonjupp)
-Megan Kane | [NCBI](National Center for Biotechnology Information) | [kanems](https://github.com/kanems)
+Megan Kane | [NCBI](https://www.ncbi.nlm.nih.gov/) | [kanems](https://github.com/kanems)
 Anneli Karlsson        | SciBite ltd            | [AnneliK](https://github.com/AnneliK)        | 
 Avi Kelman | [CHOP](https://www.chop.edu/) | [fiendish](https://github.com/fiendish)
 HyeongSik Kim | [Robert Bosch LLC](https://www.bosch.us/) | [yy20716](https://github.com/yy20716)
