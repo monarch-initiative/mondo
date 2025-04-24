@@ -59,7 +59,7 @@ Leigh Carmody | [Monarch Initiative](http://monarchinitiative.org/) | [LCCarmody
 Luca Cappelletti       |                         | [LucaCappelletti94](https://github.com/LucaCappelletti94)   |
 Harry Caufield | [Monarch Initiative](http://monarchinitiative.org/) | [caufieldjh](https://github.com/caufieldjh) |
 Lauren Chan | [Monarch Initiative](http://monarchinitiative.org/) | [laurenechan](https://github.com/laurenechan)
-Alice Chen | NIH National Center for Advancing Translational Sciences (NCATS) | [achenNCATS](https://github.com/achenNCATS)
+Alice Chen | [NIH NCATS](https://ncats.nih.gov/) | [achenNCATS](https://github.com/achenNCATS)
 Jennifer Chien |  | [jychien](https://github.com/jychien) |
 Elena Cibrian |  | [ens-ecibrian](https://github.com/ens-ecibrian) |
 Alison Coffey | ClinGen | [acoffey26](https://github.com/acoffey26) |
