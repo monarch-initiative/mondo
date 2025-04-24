@@ -118,7 +118,7 @@ Austin Letcher | [CoRDS-Sanford](http://www.sanfordresearch.org/specialprograms/
 Janine Lewis | [NORD](https://rarediseases.org/) | [janinelewis3](https://github.com/janinelewis3)
 Antonia Lock           | UniProt Consortium     | [Antonialock](https://github.com/Antonialock)    | 
 Irene López            | EMBL-EBI                | [ireneisdoomed](https://github.com/ireneisdoomed)
-Donna Maglott | [NCBI](National Center for Biotechnology Information) | [maglott](https://github.com/maglott)
+Donna Maglott | [NCBI](https://www.ncbi.nlm.nih.gov/) | [maglott](https://github.com/maglott)
 Andrea Martinez Vernon | University of Warwick  | [asmvernon](https://github.com/asmvernon)  
 Julie McMurry | [Monarch Initiative](http://monarchinitiative.org/) | [jmcmurry](https://github.com/jmcmurry)
 Birgit Meldal          | [Pfizer](https://www.pfizer.com/)  
