@@ -165,7 +165,7 @@ Kathy Reinold | [Broad Institute](https://www.broadinstitute.org/) | [kreinold](
 Erin Riggs | [ClinGen](https://clinicalgenome.org/) | [erinriggs](https://github.com/erinriggs)
 Sean Roberts |  | [skm16](https://github.com/skm16) |
 [Peter Robinson](https://www.jax.org/research-and-faculty/faculty/peter-robinson) | The Jackson Laboratory | [pnrobinson](https://github.com/pnrobinson) |
-Paola Roncaglia | [EBI](https://www.ebi.ac.uk/) | [paolaroncaglia](https://github.com/paolaroncaglia), [paola-scibite](https://github.com/paola-
+Paola Roncaglia | [EBI](https://www.ebi.ac.uk/) | [paolaroncaglia](https://github.com/paolaroncaglia), [paola-scibite](https://github.com/paola-scibite)
 Allison Rossel | ClinGen | [ARosselClinGen](https://github.com/ARosselClinGen) |
 Dilshan Sandhu |  | [dilshans2k](https://github.com/dilshans2k) |
 Sirarat Sarntivijai | [ELIXIR](https://elixiruknode.org/) | [siiraa](https://github.com/siiraa)
