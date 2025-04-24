@@ -35,9 +35,9 @@ Sarah Gehrke | University of North Carolina at Chapel Hill | Project Manager | [
 
 Name | Affiliation | GitHub
 --- | --- | ---
-Tobi | | [Tobi1kenobi](https://github.com/Tobi1kenobi) |
-Robert | Sage Bioinformatics | [allaway](https://github.com/allaway) |
-Blessing | EBI | [ashimiblessing](https://github.com/ashimiblessing) |
+Tobi Alegbe | | [Tobi1kenobi](https://github.com/Tobi1kenobi) |
+Robert Allaway | Sage Bioinformatics | [allaway](https://github.com/allaway) |
+Blessing Ashimi | EBI | [ashimiblessing](https://github.com/ashimiblessing) |
 Gioconda Alyea | [NORD](https://rarediseases.org/) | [galyea123](https://github.com/galyea123), [galyea-gard](https://github.com/galyea-gard)
 Joanna Amberger | [OMIM](https://omim.org/) | [jamberger](https://github.com/jamberger)
 Larry Babb | [ClinGen](https://clinicalgenome.org/) | [larrybabb](https://github.com/larrybabb)
@@ -49,6 +49,7 @@ Taylor Bingaman | [ClinGen](https://clinicalgenome.org/) | [tibingaman](https://
 Chris Bizon            |                        | [cbizon](https://github.com/cbizon)  
 Neal Boerkoel | [The University of British Columbia](https://www.ubc.ca/) | [cboerkoel ](https://github.com/cboerkoel)
 Vanessa Boulanger | [NORD](https://rarediseases.org/) | [vanessaboulanger](https://github.com/vanessaboulanger)
+Ellie Broeren | ClinGen | [elliebroeren](https://github.com/elliebroeren) |
 PJ Brooks | [GARD](https://rarediseases.info.nih.gov/about-gard/pages/23/about-gard) | [pjbrooksphd](https://github.com/pjbrooksphd)
 Matt Brush | [Monarch Initiative](http://monarchinitiative.org/) | [mbrush ](https://github.com/mbrush)
 Orion Buske            |    [Phenotips](https://phenotips.com/)                    | [buske](https://github.com/buske)  
@@ -56,11 +57,22 @@ Gully    Burns| [Chan Zuckerberg Initiative](https://chanzuckerberg.com)        
 Tiffany Callahan | [SandboxAQ](https://www.sandboxaq.com/) | [callahantiff](https://github.com/callahantiff)
 Leigh Carmody | [Monarch Initiative](http://monarchinitiative.org/) | [LCCarmody](https://github.com/LCCarmody)
 Luca Cappelletti       |                         | [LucaCappelletti94](https://github.com/LucaCappelletti94)   |
+Harry Caufield | [Monarch Initiative](http://monarchinitiative.org/) | [caufieldjh](https://github.com/caufieldjh) |
 Lauren Chan | [Monarch Initiative](http://monarchinitiative.org/) | [laurenechan](https://github.com/laurenechan)
 Alice Chen | [NIH NCATS](National Center for Advancing Translational Sciences ) | [achenNCATS](https://github.com/achenNCATS)
+Jennifer Chien |  | [jychien](https://github.com/jychien) |
+Elena Cibrian |  | [ens-ecibrian](https://github.com/ens-ecibrian) |
+Alison Coffey | ClinGen | [acoffey26](https://github.com/acoffey26) |
+Ineke Cordova |  | [icordovaG](https://github.com/icordovaG) |
+Martin Coste |  | [mcoste-bsci](https://github.com/mcoste-bsci) |
 Louise Daugherty       | Healx                   | [lcdaugherty](https://github.com/lcdaugherty)               |
+Vinícius de Souza |  | [souzadevinicius](https://github.com/souzadevinicius) |
+Spiros Denaxas |  | [spiros](https://github.com/spiros) |
+Hang Dong |  | [acadTags](https://github.com/acadTags) |
+Paula Duek Roggli |  | [paulacalipho](https://github.com/paulacalipho) |
 Michel Dumontier       | Maastricht University   | [micheldumontier](https://github.com/micheldumontier)       |
 Nathan Dunn            |                         | [nathandunn](https://github.com/nathandunn)               |
+Marwa Elnagheeb |  | [marwa-elnagheeb](https://github.com/marwa-elnagheeb) |
 Shahim Essaid | [Monarch Initiative](http://monarchinitiative.org/) | [ShahimEssaid](https://github.com/ShahimEssaid)
 Christopher G Chute | [Johns Hopkins](https://www.jhu.edu/) | [chute](https://github.com/chute)
 Tom Conlin | [Oregon State University](https://oregonstate.edu/)| [TomConlin ](https://github.com/TomConlin) 
