@@ -74,6 +74,7 @@ Robert Fullem | [NIH NHGRI](https://www.genome.gov/) | [melluf](https://github.c
 Jenny Goldstein | [ClinGen](https://clinicalgenome.org/) | [jennygoldstein](https://github.com/jennygoldstein)
 Asier Gonzalez         |                        | [AsierGonzalez](https://github.com/AsierGonzalez)
 JP Gourdine            |    [Lewis and Clark College](https://www.lclark.edu/)                    | [jpgourdine](https://github.com/jpgourdine) 
+Adam Graefe | | [aslgraefe](https://github.com/aslgraefe) |
 Andrew Grant | [Broad Institute](https://www.broadinstitute.org/) | [agrant9394](https://github.com/agrant9394)
 Dylan Gration          |                         | [peupeubangbang](https://github.com/peupeubangbang)
 Marc Hanauer | [Orphanet](https://www.orpha.net/consor/cgi-bin/index.php) | [Orphanet](https://github.com/Orphanet)
