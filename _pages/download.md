@@ -13,14 +13,20 @@ Stable release versions
 File | Link | Description
 --- | --- | ---
 Main OWL edition | [mondo.owl](https://purl.obolibrary.org/obo/mondo.owl)| Complete ontology, plus inter-ontology equivalence axioms. Uses Mondo IDs.
+International edition | [mondo-international.owl](https://purl.obolibrary.org/obo/mondo/mondo-international.owl)| Like the Main OWL version, but with language translations, see [below](#international) .
 obo-format edition | [mondo.obo](https://purl.obolibrary.org/obo/mondo.obo) | As OWL, but omits equivalence axioms. xrefs can be used as proxy for equivalence. Uses Mondo IDs.
 json edition | [mondo.json](https://purl.obolibrary.org/obo/mondo.json) | Equivalent to the OWL edition.
  
+<a id="international"></a>
 
-See [Changes.md](https://github.com/monarch-initiative/mondo/blob/master/Changes.md) for more details
+## International Edition
 
+The Mondo international edition was created in 2025 to accomodate for the first community-curated language translation, Japanese.
 
-## View Mondo:
+The [Japanese language translation](https://github.com/dbcls/mondo-japanese) is led by
+Toyofumi Fujiwara and Terue Takatsuki for the [Database Center for Life Science](https://dbcls.rois.ac.jp/index-en.html) (DBCLS).
+
+## View Mondo
 
 - **Ontology Lookup Service**: [https://www.ebi.ac.uk/ols4/ontologies/mondo](https://www.ebi.ac.uk/ols4/ontologies/mondo). _Note: OLS is uploaded approximately one week after the Mondo release._
 - **Monarch Initiative**: [https://monarchinitiative.org/disease/MONDO:0000001](https://monarchinitiative.org/disease/MONDO:0000001) _Note: Monarch does not always have the latest Mondo release. We recommend searching in OLS for the latest changes._
