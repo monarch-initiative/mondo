@@ -1,0 +1,43 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+
+# Get all obsolete Mondo terms, their xref mappings, and equivalenceTag value for selected xref sources
+
+SELECT DISTINCT ?mondo_curie ?xref ?xref_source ?mondoSource
+WHERE {
+  # MONDO class must be explicitly declared
+  ?mondoClass a owl:Class .
+
+  # Restrict to MONDO classes
+  FILTER(STRSTARTS(STR(?mondoClass), "http://purl.obolibrary.org/obo/MONDO_"))
+
+  # Only include obsolete classes
+  ?mondoClass owl:deprecated true .
+
+  # Label as CURIE
+  BIND(REPLACE(STR(?mondoClass), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") AS ?mondo_curie)
+
+  # Get xref
+  ?mondoClass oboInOwl:hasDbXref ?xref .
+  FILTER(REGEX(STR(?xref), "OMIM:|OMIMPS:|Orphanet:|DOID:|NCIT:|ICD10CM:|icd11.foundation:|OMIA:"))
+
+  # Extract prefix for reporting
+  BIND(STRBEFORE(STR(?xref), ":") AS ?xref_source)
+
+  # Get all MONDO:* provenance tags if present
+  OPTIONAL {
+    ?axiom a owl:Axiom ;
+           owl:annotatedSource ?mondoClass ;
+           owl:annotatedProperty oboInOwl:hasDbXref ;
+           owl:annotatedTarget ?xref ;
+           oboInOwl:source ?mondoSourceRaw .
+    FILTER(STRSTARTS(STR(?mondoSourceRaw), "MONDO:"))
+  }
+
+  # If found, keep source, else set to "none"
+  BIND(COALESCE(?mondoSourceRaw, "none") AS ?mondoSource)
+}
+ORDER BY ?xref_source ?mondo_curie
