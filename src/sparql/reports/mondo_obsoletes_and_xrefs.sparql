@@ -4,40 +4,34 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 
-# Get all obsolete Mondo terms, their xref mappings, and equivalenceTag value for selected xref sources
+# Get all obsolete Mondo terms, their xref mappings, and equivalenceTag values
 
-SELECT DISTINCT ?mondo_curie ?xref ?xref_source ?mondoSource
+SELECT ?mondo_curie ?xref ?xref_source (GROUP_CONCAT(DISTINCT ?mondoSource; separator="; ") AS ?mondoSources)
 WHERE {
-  # MONDO class must be explicitly declared
   ?mondoClass a owl:Class .
-
-  # Restrict to MONDO classes
   FILTER(STRSTARTS(STR(?mondoClass), "http://purl.obolibrary.org/obo/MONDO_"))
-
+  
   # Only include obsolete classes
   ?mondoClass owl:deprecated true .
 
-  # Label as CURIE
   BIND(REPLACE(STR(?mondoClass), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") AS ?mondo_curie)
 
-  # Get xref
-  ?mondoClass oboInOwl:hasDbXref ?xref .
-  FILTER(REGEX(STR(?xref), "OMIM:|OMIMPS:|Orphanet:|DOID:|NCIT:|ICD10CM:|icd11.foundation:|OMIA:"))
-
-  # Extract prefix for reporting
-  BIND(STRBEFORE(STR(?xref), ":") AS ?xref_source)
-
-  # Get all MONDO:* provenance tags if present
+  # Get xref if present
   OPTIONAL {
-    ?axiom a owl:Axiom ;
-           owl:annotatedSource ?mondoClass ;
-           owl:annotatedProperty oboInOwl:hasDbXref ;
-           owl:annotatedTarget ?xref ;
-           oboInOwl:source ?mondoSourceRaw .
-    FILTER(STRSTARTS(STR(?mondoSourceRaw), "MONDO:"))
-  }
+    ?mondoClass oboInOwl:hasDbXref ?xref .
+    BIND(STRBEFORE(STR(?xref), ":") AS ?xref_source)
 
-  # If found, keep source, else set to "none"
-  BIND(COALESCE(?mondoSourceRaw, "none") AS ?mondoSource)
+    # Get source annotation on xref if it exists and starts with "MONDO:"
+    OPTIONAL {
+      ?axiom a owl:Axiom ;
+             owl:annotatedSource ?mondoClass ;
+             owl:annotatedProperty oboInOwl:hasDbXref ;
+             owl:annotatedTarget ?xref ;
+             oboInOwl:source ?src .
+      FILTER(STRSTARTS(STR(?src), "MONDO:"))
+      BIND(STR(?src) AS ?mondoSource)
+    }
+  }
 }
-ORDER BY ?xref_source ?mondo_curie
+GROUP BY ?mondo_curie ?xref ?xref_source
+ORDER BY ?mondo_curie
