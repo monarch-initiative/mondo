@@ -46,7 +46,7 @@ Date | Time | Presenter (Organization)| Topic | Recording
 -- | -- | -- | -- | -- 
 June 27 | 9AM PT/12PM ET | Mallory Freeberg  and Team ([Gene2Phenotype](https://www.ebi.ac.uk/gene2phenotype/) and [DECIPHER](https://www.deciphergenomics.org/)) | coming soon |
 May 2 | 9AM PT/12PM ET | ClinGen and Mondo | Lumping and Splitting | 
-Apr 4 | 9AM PT/12PM ET | Isabelle Cooperstein | SimPheny: Automated patient matching for genetic diagnosis in rare disease cohorts | 
+Apr 4 | 9AM PT/12PM ET | Isabelle Cooperstein | SimPheny: Automated patient matching for genetic diagnosis in rare disease cohorts | [Here](https://drive.google.com/file/d/1bxTEp7YefQ5tSVJYyoJoCB784lS3TFS2/view?usp=sharing)
 Feb 7 | 9AM PT/12PM ET | Elliott Sharp ([Every Cure](https://everycure.org/)) | [Mondo for drug repurposing](https://everycure.org/every-cure-to-receive-48-3m-from-arpa-h-to-develop-ai-driven-platform-to-revolutionize-future-of-drug-development-and-repurposing/) | [Here](https://drive.google.com/file/d/1DLDFOj_fcP_h37z6u23jJdlQoGgV_LAE/view?usp=sharing)
 
 <div style="background-color: lightgray; text-align: center;">
