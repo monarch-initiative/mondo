@@ -1,0 +1,32 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX pattern: <http://purl.obolibrary.org/obo/mondo/patterns/>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?x ?xlabel ?entity ?elabel 
+       (GROUP_CONCAT(CONCAT(STR(?p), ": ", STR(?z)); separator=" | ") AS ?pzinfo)
+
+WHERE {
+  ?x rdfs:subClassOf* ?entity .
+  ?x rdfs:label ?xlabel .
+  ?x <http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> ?entity .
+  ?entity rdfs:label ?elabel .
+
+  OPTIONAL {
+    ?ax a owl:Axiom ;
+         owl:annotatedSource ?x ;
+         owl:annotatedProperty rdfs:subClassOf ;
+         owl:annotatedTarget ?entity ;
+         ?p ?z .
+    FILTER(?p!=owl:annotatedSource 
+      && ?p!=owl:annotatedTarget
+      && ?p!=owl:annotatedProperty
+      && ?p!=rdf:type
+    )
+  }
+} 
+GROUP BY ?x ?xlabel ?entity ?elabel
