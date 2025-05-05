@@ -412,11 +412,12 @@ $(SUBSETDIR)/mondo-rare.owl: $(ONT)-base.owl $(TMPDIR)/hgnc_import.owl  tmp/rare
 
 ########## Clingen Subset ######
 
+# CURRENTLY NOT USED, ONLY REMOVING NON-HUMAN ANIMAL DISEASES
 $(TMPDIR)/clingen-seed.txt: $(SRC)
 	$(ROBOT) merge -i $< query --query ../sparql/signature/clingen-subset.sparql $@
-.PRECIOUS: $(TMPDIR)/rare-seed-entities.txt
+.PRECIOUS: $(TMPDIR)/clingen-seed.txt
 
-$(SUBSETDIR)/mondo-clingen.owl: $(ONT)-base.owl $(TMPDIR)/clingen-seed.txt | $(SUBSETDIR)
+$(SUBSETDIR)/mondo-clingen.owl: $(ONT)-base.owl | $(SUBSETDIR)
 	$(ROBOT) merge -i $< \
 		query --update ../sparql/update/clingen-labels.ru \
 		remove --term MONDO:0005583 --select "self descendants" \
