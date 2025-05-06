@@ -7,7 +7,7 @@ Documentation of project management tasks in Mondo.
 ## Communication
 Mondo developers can communicate using:
 - the [Mondo Developer google group](https://groups.google.com/a/monarchinitiative.org/g/mondo-developers)
-- Slack channels in the Monarch Organization including #mondo, #mondo-ingest, #mondo-outreach, #mondo-paper, (internal use only) #mondo-private, (leadership use only) #mondo-strategic-planning
+- Slack channels in the Monarch Organization including #mondo, #mondo-ingest, #mondo-outreach, etc
 - Virtual meetings 
 
 ## Mondo roles
