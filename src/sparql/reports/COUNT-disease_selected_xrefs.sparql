@@ -14,7 +14,7 @@ WHERE {
 
   # Check for xrefs
   ?mondoClass oboInOwl:hasDbXref ?xref .
-  FILTER(REGEX(STR(?xref), "OMIM:|OMIMPS:|Orphanet:|DOID:|ICD10CM:|icd11.foundation:|OMIA:"))
+  FILTER(REGEX(STR(?xref), "OMIM:|OMIMPS:|Orphanet:|DOID:|ICD10CM:|icd11.foundation:|OMIA:|SCTID:"))
 
   # Ensure MONDO:equivalentTo is present in the annotation
   ?annotation a owl:Axiom ;
