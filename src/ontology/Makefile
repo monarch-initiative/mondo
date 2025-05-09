@@ -15,6 +15,7 @@ ONTURI=$(OBO)/$(ONT)
 ONTBASE=$(OBO)/$(ONT)
 MIRRORDIR=mirror
 IMPORTDIR=imports
+SUBSETDIR=subsets
 
 
 SRC=$(ONT)-edit.obo
@@ -86,7 +87,7 @@ all_imports: $(IMPORT_FILES)
 COMPONENTS = mondo-tags
 COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
 
-SUBSETS = mondo-rare
+SUBSETS = mondo-rare mondo-clingen
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json $(n)_nodes.tsv $(n)_edges.tsv)
 
@@ -404,22 +405,36 @@ tmp/rare-seed.txt: tmp/rare-seed-entities.txt tmp/rare-seed-classes.txt config/r
 	cat $^ | sort | uniq > $@
 .PRECIOUS: tmp/rare-seed.txt
 
-subsets/mondo-rare.owl: $(ONT)-base.owl $(TMPDIR)/hgnc_import.owl  tmp/rare-seed.txt | $(SUBSETDIR)
+$(SUBSETDIR)/mondo-rare.owl: $(ONT)-base.owl $(TMPDIR)/hgnc_import.owl  tmp/rare-seed.txt | $(SUBSETDIR)
 	$(ROBOT) merge -i $< -i $(TMPDIR)/hgnc_import.owl extract --method subset -T tmp/rare-seed.txt --output $@ &&\
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: $(SUBSETDIR)/mondo-rare.owl
 
-subsets/%.json: subsets/%.owl
+########## Clingen Subset ######
+
+# CURRENTLY NOT USED, ONLY REMOVING NON-HUMAN ANIMAL DISEASES
+$(TMPDIR)/clingen-seed.txt: $(SRC)
+	$(ROBOT) merge -i $< query --query ../sparql/signature/clingen-subset.sparql $@
+.PRECIOUS: $(TMPDIR)/clingen-seed.txt
+
+$(SUBSETDIR)/mondo-clingen.owl: $(ONT)-base.owl | $(SUBSETDIR)
+	$(ROBOT) merge -i $< \
+		query --update ../sparql/update/clingen-labels.ru \
+		remove --term MONDO:0005583 --select "self descendants" \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: $(SUBSETDIR)/mondo-clingen.owl
+
+$(SUBSETDIR)/%.json: $(SUBSETDIR)/%.owl
 	$(ROBOT) convert -i $< -o $@
 
-subsets/%_nodes.tsv subsets/%_edges.tsv: subsets/%.json
-	kgx transform --input-format obojson --output-format tsv --output subsets/$* $< && test -f subsets/$*_nodes.tsv
+$(SUBSETDIR)/%_nodes.tsv $(SUBSETDIR)/%_edges.tsv: $(SUBSETDIR)/%.json
+	kgx transform --input-format obojson --output-format tsv --output $(SUBSETDIR)/$* $< && test -f $(SUBSETDIR)/$*_nodes.tsv
 
-subsets/%.obo: subsets/%.owl
+$(SUBSETDIR)/%.obo: $(SUBSETDIR)/%.owl
 	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms: $@.tmp.obo > $@ && rm $@.tmp.obo
 
 rare_subset:
-	$(MAKE) IMP=false MIR=false COMP=false subsets/mondo-rare.owl subsets/mondo-rare.json subsets/mondo-rare.obo
+	$(MAKE) IMP=false MIR=false COMP=false $(SUBSETDIR)/mondo-rare.owl $(SUBSETDIR)/mondo-rare.json $(SUBSETDIR)/mondo-rare.obo
 
 # ----------------------------------------
 # DOSDP Modules
