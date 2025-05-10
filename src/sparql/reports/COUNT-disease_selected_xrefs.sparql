@@ -1,0 +1,38 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+
+# Count unique, non-obsolete Mondo classes that have an xref to the selected source
+# and also have the annotation MONDO:equivalentTo
+
+SELECT DISTINCT ?xref_source (COUNT(DISTINCT ?mondoClass) AS ?count)
+WHERE {
+  # Find all MONDO classes
+  ?mondoClass a owl:Class .
+
+  # Check for xrefs
+  ?mondoClass oboInOwl:hasDbXref ?xref .
+  FILTER(REGEX(STR(?xref), "OMIM:|OMIMPS:|Orphanet:|DOID:|ICD10CM:|icd11.foundation:|OMIA:|SCTID:"))
+
+  # Ensure MONDO:equivalentTo is present in the annotation
+  ?annotation a owl:Axiom ;
+              owl:annotatedSource ?mondoClass ;
+              owl:annotatedProperty oboInOwl:hasDbXref ;
+              owl:annotatedTarget ?xref ;
+              oboInOwl:source "MONDO:equivalentTo" .
+
+  # Extract xref source for grouping
+  BIND(STRBEFORE(STR(?xref), ":") AS ?xref_source)
+
+  FILTER(STRSTARTS(STR(?mondoClass), "http://purl.obolibrary.org/obo/MONDO_"))
+  
+  # Filter out obsolete Mondo classes
+  FILTER NOT EXISTS { ?mondoClass owl:deprecated true }
+
+  BIND(REPLACE(STR(?mondoClass), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") AS ?mondo_curie)
+
+}
+GROUP BY ?xref_source
+ORDER BY ?xref_source

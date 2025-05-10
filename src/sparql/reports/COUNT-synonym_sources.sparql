@@ -1,0 +1,49 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+# Get a count of all synonyms by scope and count sources
+
+SELECT ?category (GROUP_CONCAT(DISTINCT ?sourcePrefix; separator="; ") AS ?uniqueSources) (COUNT(DISTINCT ?sourcePrefix) AS ?sourceCount)
+WHERE {
+  VALUES (?synonymProp ?category) {
+    (oboInOwl:hasExactSynonym "exact")
+    (oboInOwl:hasNarrowSynonym "narrow")
+    (oboInOwl:hasBroadSynonym "broad")
+    (oboInOwl:hasRelatedSynonym "related")
+  }
+
+  ?class a owl:Class ;
+         ?synonymProp ?synonym .
+
+  FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER NOT EXISTS { ?class owl:deprecated true }
+
+  ?axiom a owl:Axiom ;
+         owl:annotatedSource ?class ;
+         owl:annotatedProperty ?synonymProp ;
+         owl:annotatedTarget ?synonym ;
+         oboInOwl:hasDbXref ?xref .
+
+  BIND(
+    IF(STRSTARTS(STR(?xref), "https://orcid.org/"), "ORCID",
+      IF(STRSTARTS(STR(?xref), "https://www.clinicalgenome.org") || STRSTARTS(STR(?xref), "https://clinicalgenome.org"), "CLINGEN",
+        IF(STRSTARTS(STR(?xref), "https://doi.org/"), "DOI",
+          IF(STRSTARTS(STR(?xref), "https://rarediseases.org/"), "NORD",
+            IF(STRSTARTS(STR(?xref), "https://rarediseases.info.nih.gov/diseases/"), "GARD",
+              IF(STRSTARTS(STR(?xref), "https://www.ncbi.nlm.nih.gov/books"), "PMID",
+                IF(STRSTARTS(STR(?xref), "https://www.ncbi.nlm.nih.gov/pmc/articles/"), "PMC",
+                  IF(STRSTARTS(STR(?xref), "http://") || STRSTARTS(STR(?xref), "https://"), "WebResource",
+                    IF(CONTAINS(STR(?xref), ":"), STRBEFORE(STR(?xref), ":"), STR(?xref))
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+    ) AS ?sourcePrefix
+  )
+}
+GROUP BY ?category
+ORDER BY ?category

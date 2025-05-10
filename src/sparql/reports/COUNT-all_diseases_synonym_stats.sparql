@@ -4,14 +4,16 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX mondo: <http://purl.obolibrary.org/obo/mondo#>
 
-# Get synonym statistics for MONDO:0000001 'disease' classes by scope and by xref for exact synonyms
+# Get synonym statistics for all MONDO classes by scope and by xref for exact synonyms
 
-SELECT ?category (COUNT(DISTINCT ?synonym) AS ?count)
+SELECT ?category (COUNT(?synonym) AS ?count)
 WHERE {
   {
     # Synonym counts by scope
-    ?class rdfs:subClassOf* obo:MONDO_0000001 ;
-           ?synonymProp ?synonym .
+    ?class a owl:Class ;
+         ?synonymProp ?synonym .
+
+    FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
 
     FILTER NOT EXISTS { ?class owl:deprecated true }
 
@@ -25,8 +27,10 @@ WHERE {
   UNION
   {
     # Exact synonyms xref source analysis
-    ?class rdfs:subClassOf* obo:MONDO_0000001 ;
-           oboInOwl:hasExactSynonym ?synonym .
+    ?class a owl:Class ;
+         ?synonymProp ?synonym .
+
+    FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
 
     FILTER NOT EXISTS { ?class owl:deprecated true }
 
@@ -36,21 +40,32 @@ WHERE {
            owl:annotatedTarget ?synonym ;
            oboInOwl:hasDbXref ?xref .
 
-    BIND(
-      IF(STRSTARTS(STR(?xref), "OMIM:"), "exact_OMIM",
-      IF(STRSTARTS(STR(?xref), "Orphanet:"), "exact_Orphanet",
-      IF(STRSTARTS(STR(?xref), "NCIT:"), "exact_NCIT",
-      IF(STRSTARTS(STR(?xref), "DOID:"), "exact_DO",
-      IF(STRSTARTS(STR(?xref), "ICD10CM:"), "exact_ICD10CM",
-      IF(STRSTARTS(STR(?xref), "icd11.foundation:"), "exact_ICD11", "exact_other")))))) AS ?category)
+    # Map known xref prefixes to categories
+    VALUES (?xref_prefix ?category) {
+      ("OMIM" "exact_OMIM")
+      ("Orphanet" "exact_Orphanet")
+      ("NCIT" "exact_NCIT")
+      ("DOID" "exact_DOID")
+      ("ICD10CM" "exact_ICD10CM")
+      ("MEDGEN" "exact_MEDGEN")
+      ("UMLS" "exact_UMLS")
+      ("NORD" "exact_NORD")
+      ("ClinGen" "exact_ClinGen")
+      ("icd11.foundation" "exact_ICD11")
+      ("OMIA" "exact_OMIA")
+      ("SCTID" "exact_SCTID")
+    }
 
-    FILTER(?category != "exact_other")
+    BIND(STRBEFORE(STR(?xref), ":") AS ?actual_prefix)
+    FILTER(?actual_prefix = ?xref_prefix)
   }
   UNION
   {
     # Abbreviation-tagged synonyms
-    ?class rdfs:subClassOf* obo:MONDO_0000001 ;
-           ?synonymProp ?synonym .
+    ?class a owl:Class ;
+         ?synonymProp ?synonym .
+
+    FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
 
     FILTER NOT EXISTS { ?class owl:deprecated true }
 
@@ -66,6 +81,24 @@ WHERE {
       (oboInOwl:hasBroadSynonym "broad_abbreviation")
       (oboInOwl:hasRelatedSynonym "related_abbreviation")
     }
+  }
+  UNION
+  {
+    # Count exact synonyms tagged as CLINGEN_LABEL
+    ?class a owl:Class ;
+         ?synonymProp ?synonym .
+
+    FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
+
+    FILTER NOT EXISTS { ?class owl:deprecated true }
+
+    ?axiom a owl:Axiom ;
+           owl:annotatedSource ?class ;
+           owl:annotatedProperty oboInOwl:hasExactSynonym ;
+           owl:annotatedTarget ?synonym ;
+           oboInOwl:hasSynonymType mondo:CLINGEN_LABEL .
+
+    BIND("exact_ClinGen_label" AS ?category)
   }
 }
 GROUP BY ?category
