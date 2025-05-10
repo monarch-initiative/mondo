@@ -6,7 +6,7 @@ PREFIX mondo: <http://purl.obolibrary.org/obo/mondo#>
 
 # Get synonym statistics for all MONDO classes by scope and by xref for exact synonyms
 
-SELECT ?category (COUNT(DISTINCT ?synonym) AS ?count)
+SELECT ?category (COUNT(?synonym) AS ?count)
 WHERE {
   {
     # Synonym counts by scope
