@@ -35,31 +35,50 @@ Mondo is generously supported by the NIH National Human Genome Research Institut
 ### Summary statistics across all Mondo concepts
 See each release and statistics at: [MONDO Releases](https://github.com/monarch-initiative/mondo/tags)
 
-Latest version at: [https://github.com/monarch-initiative/mondo/releases/tag/v2025-04-01](https://github.com/monarch-initiative/mondo/releases/tag/v2025-04-01)
+Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/tag/v2025-05-06](https://github.com/monarch-initiative/mondo/releases/tag/v2025-05-06)
+
+### Ontology Metrics
+
+| Metric | Count |
+| :--- | ---: |
+| **Total number of diseases**                         | 25,718  |
+| &nbsp;&nbsp;&nbsp;&nbsp;Database cross references    | 127,799 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Term definitions             | 17,732  |
+| &nbsp;&nbsp;&nbsp;&nbsp;Exact synonyms<sup>1</sup>   | 73,584  |
+| &nbsp;&nbsp;&nbsp;&nbsp;Narrow synonyms<sup>2</sup>  | 2,552   |
+| &nbsp;&nbsp;&nbsp;&nbsp;Broad synonyms<sup>3</sup>   | 1,407   |
+| &nbsp;&nbsp;&nbsp;&nbsp;Related synonyms<sup>4</sup> | 30,423  |
 
 
-### Overall Mondo Statistics
+<small>
+<sup>1</sup><i>Exact synonym</i>: The definition of the synonym is exactly the same as the primary term label and definition. This is used when the same class can have more than one name. For example, MONDO:0003321 <a href="https://www.ebi.ac.uk/ols4/ontologies/mondo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FMONDO_0003321" target="_blank">hereditary Wilms tumor</a> has_exact_synonym &quot;familial Wilms tumor&quot;.
+<br>
+<sup>2</sup><i>Narrow synonym</i>: The synonym is more specific or more narrow than the primary label and definition. For example, MONDO:0004979 <a href="https://www.ebi.ac.uk/ols4/ontologies/mondo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FMONDO_0004979" target="_blank">asthma</a> has_narrow_synonym &quot;exercise-induced asthma&quot;.
+<br>
+<sup>3</sup><i>Broad synonym</i>: The primary definition accurately describes the synonym, but the meaning/definition of the synonym may encompass other structures as well. In some cases where a broad synonym is given, it will be a broad synonym for more than one ontology term. For example, MONDO:0016264 <a href="https://www.ebi.ac.uk/ols4/ontologies/mondo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FMONDO_0016264" target="_blank">autoimmune hepatitis</a> has_broad_synonym &quot;autoimmune liver disease&quot;.
+<br>
+<sup>4</sup><i>Related synonym</i>: This scope is applied when a word or phrase has been used synonymously with the primary term name in the literature, but the usage is not strictly correct. That is, the synonym, in fact, has a slightly different meaning than the primary term name. Since users may not be aware that the synonym was being used incorrectly when searching for a term, related synonyms are included. For example, MONDO:0015263 <a href="https://www.ebi.ac.uk/ols4/ontologies/mondo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FMONDO_0015263" target="_blank">Brugada syndrome</a> has_related_synonym &quot;sudden unexpected nocturnal death syndrome&quot;.
+</small>
 
-Disease term feature | Count (Classes)
--- | -- 
-Total number of terms | 25,699
-Database cross references | 127,282
-Term definitions | 17,726
-Exact synonyms | 73,561
-Related synonyms | 30,419
-Narrow (more specific) synonyms | 2,552
-Broad (more general) synonyms | 1,402
 
-### Statistics for select disease categories 
+### Representation of disease types
 
-Note that these groupings are overlapping.
+| Category                                                       | Count (classes) |
+|:---------------------------------------------------------------|----------------:|
+| **Total number of diseases**                                   | 25,718          |
+| &nbsp;&nbsp;&nbsp;&nbsp;**Human diseases**                     | 22,758          |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cancer         | 4,713           |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Infectious     | 1,074           |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mendelian      | 11,539          |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rare           | 15,722          |
+| &nbsp;&nbsp;&nbsp;&nbsp;**Non-human diseases**                 | 2,959           |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cancer         | 217             |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Infectious     | 87              |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mendelian      | 1,028           |
 
-Disease type | Count (Classes)
--- | --
-Rare diseases | 15,679
-Infectious diseases  | 1,074
-Cancers (including neoplasms) | 4,711
-Mendelian diseases |  11,517
+<small><i>Note: susceptibilities are not included in these counts.</i></small>
+
+
 
 <a name="created"></a> 
 ## How was Mondo created?    
