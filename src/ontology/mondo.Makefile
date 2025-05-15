@@ -549,6 +549,7 @@ update-external-content:
 	$(MAKE) update-ordo-subsets -B
 	$(MAKE) update-nando -B
 	$(MAKE) update-medgen -B
+	$(MAKE) update-malacards -B
 	$(MAKE) update-emc-synonym-prov -B
 	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-after.tsv
 	@echo "Subset metrics before..."
@@ -702,12 +703,12 @@ update-ordo-subsets:
 
 .PHONY: update-malacards
 update-malacards:
-	# TODO BEFOR MERGING replace this next download line with the commented line right afterwards.
-	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/malacards-emc/src/ontology/external/mondo-malacards.robot.owl" -O $(TMPDIR)/external/processed-malacards-subsets.robot.owl
-	#$(MAKE) $(TMPDIR)/external/processed-malacards-subsets.robot.owl -B
+	# TODO BEFORE MERGING replace this next download line with the commented line right afterwards.
+	#wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/main/src/ontology/external/mondo-malacards.robot.owl" -O $(TMPDIR)/external/processed-malacards.robot.owl
+	$(MAKE) $(TMPDIR)/external/processed-mondo-malacards.robot.owl -B
 	grep -vE '^(relationship: curated_content_resource.*MalaCards)' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
 	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
-	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-malacards-subsets.robot.owl --collapse-import-closure false -o $(SRC).obo
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-mondo-malacards.robot.owl --collapse-import-closure false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
 ####################################
