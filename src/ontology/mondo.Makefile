@@ -703,8 +703,6 @@ update-ordo-subsets:
 
 .PHONY: update-malacards
 update-malacards:
-	# TODO BEFORE MERGING replace this next download line with the commented line right afterwards.
-	#wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/main/src/ontology/external/mondo-malacards.robot.owl" -O $(TMPDIR)/external/processed-malacards.robot.owl
 	$(MAKE) $(TMPDIR)/external/processed-mondo-malacards.robot.owl -B
 	grep -vE '^(relationship: curated_content_resource.*MalaCards)' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
 	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
