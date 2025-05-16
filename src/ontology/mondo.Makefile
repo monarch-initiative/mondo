@@ -299,8 +299,8 @@ GENERAL_STATISTICS_QUERIES = \
     $(SPARQLDIR)/reports/COUNT-human-cancer-diseases.sparql \
     $(SPARQLDIR)/reports/COUNT-non-human-genetic-diseases.sparql \
     $(SPARQLDIR)/reports/COUNT-non-human_diseases_infectious.sparql \
-    $(SPARQLDIR)/reports/COUNT-non-human_diseases_cancer.sparql
-
+    $(SPARQLDIR)/reports/COUNT-non-human_diseases_cancer.sparql \
+	$(SPARQLDIR)/reports/COUNT-disease_selected_xrefs.sparql
 
 RARE_STATISTICS_QUERIES = \
     $(SPARQLDIR)/reports/COUNT-rare_subsets.sparql
@@ -549,6 +549,7 @@ update-external-content:
 	$(MAKE) update-ordo-subsets -B
 	$(MAKE) update-nando -B
 	$(MAKE) update-medgen -B
+	$(MAKE) update-malacards -B
 	$(MAKE) update-emc-synonym-prov -B
 	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-after.tsv
 	@echo "Subset metrics before..."
@@ -696,6 +697,18 @@ update-ordo-subsets:
 	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-ordo-subsets.robot.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 	
+####################################
+##### MalaCards #####################
+####################################
+
+.PHONY: update-malacards
+update-malacards:
+	$(MAKE) $(TMPDIR)/external/processed-mondo-malacards.robot.owl -B
+	grep -vE '^(relationship: curated_content_resource.*MalaCards)' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
+	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-mondo-malacards.robot.owl --collapse-import-closure false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
 ####################################
 ##### NANDO #########################
 ####################################
