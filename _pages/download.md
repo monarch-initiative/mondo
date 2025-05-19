@@ -14,6 +14,7 @@ File | Link | Description
 --- | --- | ---
 Main OWL edition | [mondo.owl](https://purl.obolibrary.org/obo/mondo.owl)| Complete ontology, plus inter-ontology equivalence axioms. Uses Mondo IDs.
 International edition | [mondo-international.owl](https://purl.obolibrary.org/obo/mondo/mondo-international.owl)| Like the Main OWL version, but with language translations, see [below](#international) .
+Rare Disease subset | [mondo-rare.owl](https://purl.obolibrary.org/obo/mondo/subsets/mondo-rare.owl)| A subset of mondo.owl including only rare diseases, see [below](#rare).
 obo-format edition | [mondo.obo](https://purl.obolibrary.org/obo/mondo.obo) | As OWL, but omits equivalence axioms. xrefs can be used as proxy for equivalence. Uses Mondo IDs.
 json edition | [mondo.json](https://purl.obolibrary.org/obo/mondo.json) | Equivalent to the OWL edition.
  
@@ -25,6 +26,22 @@ The Mondo international edition was created in 2025 to accomodate for the first 
 
 The [Japanese language translation](https://github.com/dbcls/mondo-japanese) is led by
 Toyofumi Fujiwara and Terue Takatsuki for the [Database Center for Life Science](https://dbcls.rois.ac.jp/index-en.html) (DBCLS).
+
+<a id="rare"></a>
+
+## Rare Disease Subset
+
+The [Mondo Rare Disease](rare-disease.md) subset comprises all human Rare Diseases as designated by a Rare Disease authoritiative resource.
+
+Rare disease authorities include:
+
+| Rare disease authority | Link | Annotation in Mondo |
+| --- | --- | --- |
+| GARD | [https://rarediseases.info.nih.gov/](https://rarediseases.info.nih.gov/) | gard_rare |
+| NORD | [https://rarediseases.org/](https://rarediseases.org/) | nord_rare |
+| Orphanet | [https://www.orpha.net/](https://www.orpha.net/) | orphanet_rare |
+
+Find out more [here](rare-disease.md).
 
 ## View Mondo
 
