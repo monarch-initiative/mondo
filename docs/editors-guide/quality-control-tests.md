@@ -480,6 +480,7 @@ WHERE
   	?cls owl:deprecated ?deprecated .
   }
   FILTER( STRBEFORE(str(?value),":") not in (
+      "birnlex",
       "CSP",
       "DECIPHER",
       "DOID",
@@ -509,6 +510,7 @@ WHERE
       "NCIT",
       "NDFRT",
       "NIFSTD",
+      "nlxdys",
       "NORD",
       "OBI",
       "OGMS",
