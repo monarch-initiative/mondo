@@ -132,7 +132,7 @@ Pierre Lindenbaum |  | [lindenb](https://github.com/lindenb) |
 Pierrette Lo | [University of Colorado](https://www.cuanschutz.edu/) | [lopierra](https://github.com/lopierra) |
 Antonia Lock           | UniProt Consortium     | [Antonialock](https://github.com/Antonialock)    | 
 Irene López            | EMBL-EBI                | [ireneisdoomed](https://github.com/ireneisdoomed)
-Donna Maglott | [NCBI](https://www.ncbi.nlm.nih.gov/) | [maglott](https://github.com/maglott)
+Donna Maglott |  | [maglott](https://github.com/maglott)
 Silvia Matentzoglu |  | [Silvia113-SM](https://github.com/Silvia113-SM) |
 Andrea Martinez Vernon | University of Warwick  | [asmvernon](https://github.com/asmvernon)  
 Marius Mather |  | [marius-mather](https://github.com/marius-mather) |
