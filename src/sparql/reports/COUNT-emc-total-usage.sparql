@@ -1,0 +1,61 @@
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX pattern: <http://purl.obolibrary.org/obo/mondo/patterns/>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX mondo: <http://purl.obolibrary.org/obo/mondo#>
+
+# Count of unique MONDO classes (?classCount) and the number of distinct annotations (?annotationCount)
+# for various annotation properties (hasDbXref, inSubset, curated_content_resource) across various
+# external sources included in Mondo and whether the count is from obsolete Mondo classes and also 
+# the Mondo class has the tag MONDO:equivalentTo (related to hasDbXref)
+
+SELECT ?property ?source ?obsoletionStatus ?hasEquivalentTo (COUNT(DISTINCT ?entity) AS ?classCount) (COUNT(DISTINCT ?group) AS ?annotationCount)
+WHERE {
+  VALUES ?property { 
+    oio:hasDbXref 
+    oio:hasExactSynonym 
+    oio:inSubset 
+    mondo:curated_content_resource 
+  }
+
+  VALUES ?p { oio:hasDbXref oio:source }
+
+  VALUES ?source {
+    "MONDO:NORD" 
+    "MONDO:CLINGEN"
+    "MONDO:EFO"
+    "MONDO:OTAR"
+    "MONDO:GARD"
+    "MONDO:NANDO"
+    "MONDO:OMIM"
+    "MONDO:MEDGEN"
+  }
+
+  ?ax a owl:Axiom ;
+      owl:annotatedSource ?entity ;
+      owl:annotatedProperty ?property ;
+      owl:annotatedTarget ?value ;
+      ?p ?source .
+
+  FILTER(STRSTARTS(STR(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+
+  # Check obsoletion status of class
+  BIND(EXISTS { ?entity owl:deprecated true } AS ?isObsolete)
+  BIND(IF(?isObsolete, "obsolete", "nonobsolete") AS ?obsoletionStatus)
+
+  # Check if the axiom has MONDO:equivalentTo as a source as well
+  BIND(EXISTS {
+    ?ax oio:source "MONDO:equivalentTo"
+  } AS ?hasEq)
+
+  BIND(IF(?hasEq, "with_equivalentTo", "without_equivalentTo") AS ?hasEquivalentTo)
+
+  # Count each unique class-property-value annotation
+  BIND(CONCAT(STR(?entity), STR(?property), STR(?value)) AS ?group)
+}
+GROUP BY ?property ?source ?obsoletionStatus ?hasEquivalentTo
+ORDER BY ?property ?source ?obsoletionStatus ?hasEquivalentTo
+
+

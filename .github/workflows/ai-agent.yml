@@ -1,0 +1,219 @@
+name: Dragon AI Agent GitHub Mentions
+
+env:
+  ROBOT_VERSION: v1.9.7
+  TOOLS_DIR: ${{ github.workspace }}/tools
+
+on:
+  issues:
+    types: [opened, edited]
+  issue_comment:
+    types: [created, edited]
+  pull_request:
+    types: [opened, edited]
+  pull_request_review_comment:
+    types: [created, edited]
+
+jobs:
+  check-mention:
+    runs-on: ubuntu-latest
+    outputs:
+      result: ${{ steps.check.outputs.result }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Check for qualifying mention
+        id: check
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.PAT_FOR_PR }}  # Use PAT instead of default token
+          script: |
+            // Load allowed users from config
+            const fs = require('fs');
+            let allowedUsers = [];
+            try {
+              const configContent = fs.readFileSync('.github/ai-controllers.json', 'utf8');
+              allowedUsers = JSON.parse(configContent);
+            } catch (error) {
+              console.log('Error loading allowed users:', error);
+              allowedUsers = ['cmungall']; // Fallback
+            }
+            
+            // Get content and user from event payload directly to avoid API calls when possible
+            let content = '';
+            let userLogin = '';
+            let itemType = '';
+            let itemNumber = 0;
+            
+            if (context.eventName === 'issues') {
+              content = context.payload.issue.body || '';
+              userLogin = context.payload.issue.user.login;
+              itemType = 'issue';
+              itemNumber = context.payload.issue.number;
+            } else if (context.eventName === 'pull_request') {
+              content = context.payload.pull_request.body || '';
+              userLogin = context.payload.pull_request.user.login;
+              itemType = 'pull_request';
+              itemNumber = context.payload.pull_request.number;
+            } else if (context.eventName === 'issue_comment') {
+              content = context.payload.comment.body || '';
+              userLogin = context.payload.comment.user.login;
+              itemType = 'issue';
+              itemNumber = context.payload.issue.number;
+            } else if (context.eventName === 'pull_request_review_comment') {
+              content = context.payload.comment.body || '';
+              userLogin = context.payload.comment.user.login;
+              itemType = 'pull_request';
+              itemNumber = context.payload.pull_request.number;
+            }
+            
+            // Check if user is allowed and mention exists
+            const isAllowed = allowedUsers.includes(userLogin);
+            const mentionRegex = /@dragon-ai-agent\s+please\s+(.*)/i;
+            const mentionMatch = content.match(mentionRegex);
+            
+            const qualifiedMention = isAllowed && mentionMatch !== null;
+            const prompt = qualifiedMention ? mentionMatch[1].trim() : '';
+            
+            console.log(`User: ${userLogin}, Allowed: ${isAllowed}, Has mention: ${mentionMatch !== null}`);
+            
+            return {
+              qualifiedMention,
+              itemType,
+              itemNumber,
+              prompt,
+              user: userLogin,
+              controllers: allowedUsers.map(u => '@' + u).join(', ')
+            };
+
+  respond-to-mention:
+    needs: check-mention
+    if: fromJSON(needs.check-mention.outputs.result).qualifiedMention == true
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PAT_FOR_PR }}  # Use PAT for checkout to allow committing later
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "Dragon-AI Agent"
+          git config --global user.email "dragon-ai-agent[bot]@users.noreply.github.com"
+      
+      - name: Create tools directory
+        run: mkdir -p ${{ env.TOOLS_DIR }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: install claude
+        run: |
+          npm install -g @anthropic-ai/claude-code
+
+      - name: Cache ROBOT JAR files
+        uses: actions/cache@v3
+        with:
+          path: ~/.jar-cache
+          key: ${{ runner.os }}-robot-${{ env.ROBOT_VERSION }}
+          restore-keys: ${{ runner.os }}-robot-
+  
+      - name: Download ROBOT JAR if not cached
+        run: |
+          mkdir -p ~/.jar-cache
+          if [ ! -f ~/.jar-cache/robot.jar ]; then
+            curl -L https://github.com/ontodev/robot/releases/download/${{ env.ROBOT_VERSION }}/robot.jar -o ~/.jar-cache/robot.jar
+          fi
+      
+      - name: Download ROBOT command line wrapper
+        run: |
+          cp ~/.jar-cache/robot.jar ${{ env.TOOLS_DIR }}/robot.jar
+          curl -L https://raw.githubusercontent.com/ontodev/robot/${{ env.ROBOT_VERSION }}/bin/robot -o ${{ env.TOOLS_DIR }}/robot
+          chmod +x ${{ env.TOOLS_DIR }}/robot
+          ${{ env.TOOLS_DIR }}/robot --help
+
+      - name: Add tools to PATH
+        run: |
+          echo "${{ env.TOOLS_DIR }}" >> $GITHUB_PATH
+          ls -alt ${{ github.workspace }}
+          ls -alt ${{ env.TOOLS_DIR }}
+
+      - name: Add obo-scripts to PATH
+        run: |
+          git clone https://github.com/cmungall/obo-scripts.git ${{ env.TOOLS_DIR }}/obo-scripts
+          echo "${{ env.TOOLS_DIR }}/obo-scripts" >> $GITHUB_PATH
+
+      - name: Set up environment
+        run: |
+          echo "BRANCH_NAME=dragon_ai_agent_${{ fromJSON(needs.check-mention.outputs.result).itemNumber }}" >> $GITHUB_ENV
+          # Safely write prompt to file
+          mkdir -p /tmp/claude-input
+          echo "${{ fromJSON(needs.check-mention.outputs.result).prompt }}" > /tmp/claude-input/prompt.txt
+          
+      - name: Set up Anthropic API key and GitHub token
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_TOKEN: ${{ secrets.PAT_FOR_PR }}  # Kept PAT as requested
+        run: |
+          echo "ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY" >> $GITHUB_ENV
+          echo "GH_TOKEN=$GH_TOKEN" >> $GITHUB_ENV
+          echo "LOGFIRE_SEND_TO_LOGFIRE=false" >> $GITHUB_ENV
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+          
+      - name: Install python tools
+        run: |
+          uv venv
+          source .venv/bin/activate
+          uv pip install aurelian jinja2-cli "wrapt>=1.17.2"
+        
+      - name: Create structured Claude prompt
+        run: |
+          cat > /tmp/claude-input/claude_prompt.txt << EOL
+          You are @dragon-ai-agent.
+          You're responding to a request from or relayed by @${{ fromJSON(needs.check-mention.outputs.result).user }} on GitHub ${{ fromJSON(needs.check-mention.outputs.result).itemType }} #${{ fromJSON(needs.check-mention.outputs.result).itemNumber }}.
+          You only respond to requests from the following authorized controllers: ${{ fromJSON(needs.check-mention.outputs.result).controllers }}.
+
+          You should use \`gh\` to communicate with the user via the GitHub issue/ticket.
+          If instructed to modify files, you should make changes on a branch and submit a PR, communicating clearly and in
+          detail on the PR.
+
+          Always end by informing the user what you did (or were not able to do) with a message, either on an issue or a PR,
+          as appropriate.
+          
+          The request is below, enclosed in triple backticks:
+          \`\`\`
+          $(cat /tmp/claude-input/prompt.txt)
+          \`\`\`
+
+          However, you should use `gh` to read the complete context of the request, and look at any linked issues or PRs
+          that provide additional context.
+
+          EOL
+      
+      
+      - name: Run Claude Code in headless mode
+        id: claude-response
+        run: |
+          obo-grep.pl --help
+          obo-checkin.pl --help
+
+          export PATH="${{ env.TOOLS_DIR }}:$PATH"
+          # Python env
+          source .venv/bin/activate
+
+          # Run Claude with proper permissions
+          claude -p "$(cat /tmp/claude-input/claude_prompt.txt)" \
+            --output-format stream-json \
+            --allowedTools "Bash(git:*)" "Bash(gh:*)" "FileSystem(*)" \
+            --verbose 
+          

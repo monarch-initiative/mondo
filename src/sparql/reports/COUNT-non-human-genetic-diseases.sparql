@@ -1,0 +1,21 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+
+# Count all non-obsolete 'hereditary disease, non-human animal' classes
+
+SELECT (COUNT(DISTINCT ?class) AS ?countNonHumanGeneticDiseases)
+WHERE {
+  # MONDO:1011321 'hereditary disease, non-human animal'
+  ?class rdfs:subClassOf* obo:MONDO_1011321 .
+
+  # Exclude deprecated terms
+  FILTER NOT EXISTS {
+    ?class owl:deprecated true
+  }
+
+  # Ensure the class is a MONDO term
+  FILTER (isIRI(?class) && STRSTARTS(str(?class), "http://purl.obolibrary.org/obo/MONDO_"))
+}
