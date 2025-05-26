@@ -28,6 +28,7 @@ jobs:
         continue-on-error: true  # Allow QC to fail but continue
 
       - name: Create Pull Request
+        id: create-pr
         uses: peter-evans/create-pull-request@v5
         with:
           branch-suffix: short-commit-hash
@@ -37,4 +38,4 @@ jobs:
           base: ${{ github.head_ref }}
           branch: "externally_managed_content"
           token: ${{ secrets.GH_TOKEN }}
-          #reviewers: "twhetzel"
+          reviewers: "twhetzel"

@@ -1,0 +1,21 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX mondo: <http://purl.obolibrary.org/obo/mondo#>
+
+# Get all non-obsolete Mondo classes annotated as "rare"
+
+SELECT DISTINCT ?curie ?label
+WHERE {
+  ?class rdfs:subClassOf* obo:MONDO_0000001 ;
+         oboInOwl:inSubset mondo:rare .
+
+  FILTER NOT EXISTS { ?class owl:deprecated true }
+  FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
+
+  OPTIONAL { ?class rdfs:label ?label }
+
+  BIND(REPLACE(STR(?class), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") AS ?curie)
+}
+ORDER BY ?curie
