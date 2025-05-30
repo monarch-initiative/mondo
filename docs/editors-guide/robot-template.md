@@ -8,6 +8,7 @@ _Updated 2021-08-05_
 1. Click File->Share->Publish to the Web
 1. Publish the specific sheet as TSV
 1. Copy the link to the TSV
+1. In the Terminal, navigate to the folder where the Mondo ontology is (usually in Documents/GitHub/mondo/src/ontology)
 1. Run `git checkout master — mondo-edit.obo`  to revert mondo-edit.obo to the state it is on the master branch. This is only important if you have run the template command before.
 1. Run `sh run.sh make TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_G0rImuYa8o72cgQ97bH7xIq_V4TF6YfHkQaQY7HJUElcolO2RSh4bE7d50HTlSL1Vq7LoRJSkKBD/pub?gid=875350397&single=true&output=tsv" merge_template -B`  (the `TEMPLATE_URL`  should be your template link you have copied)
 1. **Note** - If you just want to module a tsv you have edited locally, place it somewhere into the `src` directory and run:
