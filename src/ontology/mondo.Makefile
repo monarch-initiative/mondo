@@ -1532,9 +1532,10 @@ TRANSLATIONS_ONTOLOGY=mondo-simple.obo
 TRANSLATE_PREDICATES=rdfs:label 
 
 
-# The iconv hack is only needed until https://github.com/dbcls/mondo-japanese/issues/1 is resolved
+# SKIPPED until https://github.com/dbcls/mondo-japanese/issues/3 is resolved
 $(TRANSLATIONSDIR)/mondo-jp.babelon.tsv:
-	wget "https://raw.githubusercontent.com/dbcls/mondo-japanese/refs/heads/main/babelon/mondo-jp.babelon.tsv" -O $@
+	@echo "DOWNLOADING JAPANESE TRANSLATION IS SKIPPED"
+	#wget "https://raw.githubusercontent.com/dbcls/mondo-japanese/refs/heads/main/babelon/mondo-jp.babelon.tsv" -O $@
 
 $(TRANSLATIONSDIR)/mondo-jp-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/mondo-jp.babelon.tsv
 	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/mondo-jp.babelon.tsv \
