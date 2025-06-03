@@ -622,6 +622,17 @@ update-nord:
 	grep -vE '^(xref: NORD:|subset: nord_rare)' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
 	mv $(TMPDIR)/mondo-edit.tmp mondo-edit.obo
 	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-nord.robot.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	# Report synonyms with existing synonymtypedef, e.g. ABBREVIATION, and NORD xref
+	@grep -E '^synonym: ".*" EXACT [A-Z_]+.*\[.*NORD:' $(SRC) > nord_synonymtypedef_conflicts.txt || true
+	@count=$$(wc -l < nord_synonymtypedef_conflicts.txt); \
+	if [ "$$count" -gt 0 ]; then \
+	  echo "\n** [WARNING] NORD_LABEL and other synonymtypedef conflict for $$count synonym(s):"; \
+	  cat nord_synonymtypedef_conflicts.txt; \
+	  echo ""; \
+	fi
+	# Add NORD_LABEL if no other synonymtypedef is present, only one synonymtypedef allowed per OBO spec
+	sed -i -E '/^synonym:.*EXACT( [A-Z_]+)? \[[^]]*NORD:/ {/EXACT [A-Z_]+/! s/^(synonym: "[^"]+" EXACT)( )/\1 NORD_LABEL\2/}' $(SRC).obo
+	# Note - NORM step merges synonyms so any existing synonymtypedef is lost for synonym where NORD_LABEL added
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
 ##### Inferred #####################
