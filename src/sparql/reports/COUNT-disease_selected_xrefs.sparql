@@ -7,7 +7,7 @@ PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 # Count unique, non-obsolete Mondo classes that have an xref to the selected source
 # and also have the annotation MONDO:equivalentTo
 
-SELECT DISTINCT ?xref_source (COUNT(DISTINCT ?mondoClass) AS ?count)
+SELECT DISTINCT ?xref_source (COUNT(DISTINCT ?mondoClass) AS ?distinct_mondo_count)
 WHERE {
   # Find all MONDO classes
   ?mondoClass a owl:Class .
