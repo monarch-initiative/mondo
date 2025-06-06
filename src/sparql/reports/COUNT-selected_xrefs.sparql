@@ -1,0 +1,26 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+
+# Get the total count of xrefs for the list of selected sources.
+
+SELECT ?xref_source (COUNT(*) AS ?xref_count)
+WHERE {
+  ?class a owl:Class ;
+         oboInOwl:hasDbXref ?xref .
+
+  FILTER(REGEX(STR(?xref), "OMIM:|OMIMPS:|Orphanet:|DOID:|ICD10CM:|icd11.foundation:|OMIA:|SCTID:"))
+  FILTER NOT EXISTS { ?class owl:deprecated true }
+  FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
+
+  ?annotation a owl:Axiom ;
+      owl:annotatedSource ?class ;
+      owl:annotatedProperty oboInOwl:hasDbXref ;
+      owl:annotatedTarget ?xref ;
+      oboInOwl:source "MONDO:equivalentTo" .
+
+  # Extract xref source for grouping
+  BIND(STRBEFORE(STR(?xref), ":") AS ?xref_source)
+}
+GROUP BY ?xref_source
+ORDER BY DESC(?xref_count)

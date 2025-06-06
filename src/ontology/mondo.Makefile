@@ -300,7 +300,8 @@ GENERAL_STATISTICS_QUERIES = \
     $(SPARQLDIR)/reports/COUNT-non-human-genetic-diseases.sparql \
     $(SPARQLDIR)/reports/COUNT-non-human_diseases_infectious.sparql \
     $(SPARQLDIR)/reports/COUNT-non-human_diseases_cancer.sparql \
-	$(SPARQLDIR)/reports/COUNT-disease_selected_xrefs.sparql
+	$(SPARQLDIR)/reports/COUNT-disease_selected_xrefs.sparql \
+	$(SPARQLDIR)/reports/COUNT-selected_xrefs.sparql
 
 RARE_STATISTICS_QUERIES = \
     $(SPARQLDIR)/reports/COUNT-rare_subsets.sparql
