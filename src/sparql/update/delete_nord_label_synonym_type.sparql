@@ -1,0 +1,21 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+# Delete NORD_LABEL annotation represented as synonymtypedef. OBO spec supports only one synonymtypedef per synonym.
+# This query is run after "insert_nord_label.sparql".
+
+DELETE {
+  ?axiom oboInOwl:hasSynonymType ?syn_type .
+}
+WHERE {
+  ?class a owl:Class ;
+         oboInOwl:hasExactSynonym ?syn_value .
+
+  ?axiom a owl:Axiom ;
+         owl:annotatedSource ?class ;
+         owl:annotatedProperty oboInOwl:hasExactSynonym ;
+         owl:annotatedTarget ?syn_value ;
+         oboInOwl:hasSynonymType ?syn_type .
+
+  FILTER(STR(?syn_type) = "http://purl.obolibrary.org/obo/mondo#NORD_LABEL")
+}

@@ -619,9 +619,20 @@ update-gard:
 .PHONY: update-nord
 update-nord:
 	make $(TMPDIR)/external/processed-nord.robot.owl -B
+	# Update NORD_LABEL modeling to use source annotation of MONDO:NORD_LABEL on synonym
+	$(ROBOT) query -i $(TMPDIR)/external/processed-nord.robot.owl \
+		--update ../sparql/update/insert_nord_label.sparql \
+		-o $(TMPDIR)/external/processed-nord.robot.tmp.owl
+	mv $(TMPDIR)/external/processed-nord.robot.tmp.owl $(TMPDIR)/external/processed-nord.robot.owl
+	# Remove NORD_LABEL modeled as synonym type, only one synonymtypedef allowed per OBO spec
+	$(ROBOT) query -i $(TMPDIR)/external/processed-nord.robot.owl \
+		--update ../sparql/update/delete_nord_label_synonym_type.sparql \
+		-o $(TMPDIR)/external/processed-nord.robot.tmp.owl
+	mv $(TMPDIR)/external/processed-nord.robot.tmp.owl $(TMPDIR)/external/processed-nord.robot.owl
 	grep -vE '^(xref: NORD:|subset: nord_rare)' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
 	mv $(TMPDIR)/mondo-edit.tmp mondo-edit.obo
-	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-nord.robot.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-nord.robot.owl --collapse-import-closure false \
+		convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
 ##### Inferred #####################
