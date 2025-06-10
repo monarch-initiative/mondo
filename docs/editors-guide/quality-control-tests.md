@@ -262,6 +262,62 @@ WHERE
 ORDER BY ?entity
 ```
 
+###  qc-gene-identifier-mismatch.sparql
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+# Find classes with mismatched gene identifiers added as equivalentTo and subClassOf
+
+SELECT DISTINCT ?entity ?label ?sortedEquivGeneIdentifiers ?sortedSubClassGeneIdentifiers
+WHERE {
+  ?entity rdf:type owl:Class ;
+          rdfs:label ?label .
+
+  # Equivalent class restrictions
+  {
+    SELECT ?entity (GROUP_CONCAT(DISTINCT ?sortedEquivGeneIdentifier; separator=", ") AS ?sortedEquivGeneIdentifiers)
+    WHERE {
+      ?entity owl:equivalentClass ?equivClass .
+      ?equivClass owl:intersectionOf/rdf:rest*/rdf:first ?equivComponent .
+      ?equivComponent rdf:type owl:Restriction ;
+                      owl:onProperty obo:RO_0004003 ;
+                      owl:someValuesFrom ?equivGeneIdentifier .
+      FILTER(
+        STRSTARTS(STR(?equivGeneIdentifier), "http://identifiers.org/hgnc/") || 
+        STRSTARTS(STR(?equivGeneIdentifier), "http://identifiers.org/ncbigene/")
+      )
+    }
+    GROUP BY ?entity
+    ORDER BY ?sortedEquivGeneIdentifier
+  }
+
+  # subClassOf restrictions
+  {
+    SELECT ?entity (GROUP_CONCAT(DISTINCT ?sortedSubClassGeneIdentifier; separator=", ") AS ?sortedSubClassGeneIdentifiers)
+    WHERE {
+      ?entity rdfs:subClassOf ?subClassRestriction .
+      ?subClassRestriction rdf:type owl:Restriction ;
+                           owl:onProperty obo:RO_0004003 ;
+                           owl:someValuesFrom ?subClassGeneIdentifier .
+      FILTER(
+        STRSTARTS(STR(?subClassGeneIdentifier), "http://identifiers.org/hgnc/") || 
+        STRSTARTS(STR(?subClassGeneIdentifier), "http://identifiers.org/ncbigene/")
+      )
+    }
+    GROUP BY ?entity
+    ORDER BY ?sortedSubClassGeneIdentifier
+  }
+
+  # Compare sorted identifiers
+  FILTER(?sortedEquivGeneIdentifiers != ?sortedSubClassGeneIdentifiers)
+}
+
+```
+
 ###  qc-germline-somatic-gene-associations.sparql
 
 ```
@@ -424,6 +480,7 @@ WHERE
   	?cls owl:deprecated ?deprecated .
   }
   FILTER( STRBEFORE(str(?value),":") not in (
+      "birnlex",
       "CSP",
       "DECIPHER",
       "DOID",
@@ -453,6 +510,7 @@ WHERE
       "NCIT",
       "NDFRT",
       "NIFSTD",
+      "nlxdys",
       "NORD",
       "OBI",
       "OGMS",
@@ -472,6 +530,57 @@ WHERE
 
 } ORDER BY ?cls
 
+
+```
+
+###  qc-multiple-gene-associations.sparql
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX mondo: <http://purl.obolibrary.org/obo/mondo#>
+PREFIX mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+
+# Get classes that have more than 1 gene association (either subClassOf or equivalentClass) with RO:0004003 property
+
+SELECT DISTINCT ?entity ?label (GROUP_CONCAT(DISTINCT ?geneIdentifier; separator=", ") AS ?geneIdentifiers)
+WHERE {
+  {
+    # subClassOf association
+    ?entity rdfs:subClassOf ?restriction ;
+            rdfs:label ?label .
+    
+    ?restriction rdf:type owl:Restriction ;
+                 owl:onProperty obo:RO_0004003 ;
+                 owl:someValuesFrom ?geneIdentifier .
+
+    # Exclusion filter for mondo and mondo-base namespaces to account for qc checks after roundtrip
+    FILTER NOT EXISTS {
+      ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-multiple-gene-associations.sparql .
+    }
+  }
+  UNION
+  {
+    # equivalentClass association
+    ?entity owl:equivalentClass ?equivClass ;
+            rdfs:label ?label .
+    
+    ?equivClass owl:intersectionOf/rdf:rest*/rdf:first ?component .
+    
+    ?component rdf:type owl:Restriction ;
+               owl:onProperty obo:RO_0004003 ;
+               owl:someValuesFrom ?geneIdentifier .
+    
+    # Exclusion filter for mondo and mondo-base namespaces to account for qc checks after roundtrip
+    FILTER NOT EXISTS {
+      ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-multiple-gene-associations.sparql .
+    }
+  }
+}
+GROUP BY ?entity ?label
+HAVING (COUNT(DISTINCT ?geneIdentifier) > 1)
 
 ```
 
@@ -1630,6 +1739,32 @@ SELECT DISTINCT ?term ?property WHERE
 	)
 }
 
+```
+
+###  qc-pipe-source.sparql
+
+```
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?entity ?property ?value
+WHERE 
+{ 
+  VALUES ?property {
+    oboInOwl:source
+    oboInOwl:hasDbXref
+  }
+    ?entity ?p ?x ;
+      a owl:Class .
+      ?anno a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty ?p ;
+           owl:annotatedTarget ?x ;
+            ?property ?value .  
+    FILTER(CONTAINS(STR(?value),"|"))
+   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+}
 ```
 
 ###  qc-provenance-missing.sparql

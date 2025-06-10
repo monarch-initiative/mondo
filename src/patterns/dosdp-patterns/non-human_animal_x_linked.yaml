@@ -1,0 +1,43 @@
+pattern_name: non_human_animal_x_linked
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/non_human_animal_x_linked.yaml
+
+description: 'This pattern is applied to x-linked forms of an inherited non-human animal disease.'
+
+contributors:
+- https://orcid.org/0000-0002-5002-8648
+
+classes:
+  x_linked_inheritance: HP:0001417
+  non-human animal disease: MONDO:0005583
+
+relations:
+  has characteristic: RO:0000053
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  disease: '''non-human animal disease'''
+
+name:
+  text: X-linked %s
+  vars:
+  - disease
+
+annotations:
+- annotationProperty: exact_synonym
+  text: '%s, X-linked'
+  vars:
+  - disease
+
+def:
+  text: X-linked form of %s.
+  vars:
+  - disease
+
+equivalentTo:
+  text: '%s and ''has characteristic'' some ''x_linked_inheritance'''
+  vars:
+  - disease
