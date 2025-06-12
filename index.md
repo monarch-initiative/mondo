@@ -41,13 +41,13 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/t
 
 | Metric | Count |
 | :--- | ---: |
-| **Total number of diseases**                         | 25,718  |
-| &nbsp;&nbsp;&nbsp;&nbsp;Database cross references    | 127,799 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Term definitions             | 17,732  |
-| &nbsp;&nbsp;&nbsp;&nbsp;Exact synonyms<sup>1</sup>   | 73,584  |
-| &nbsp;&nbsp;&nbsp;&nbsp;Narrow synonyms<sup>2</sup>  | 2,552   |
-| &nbsp;&nbsp;&nbsp;&nbsp;Broad synonyms<sup>3</sup>   | 1,407   |
-| &nbsp;&nbsp;&nbsp;&nbsp;Related synonyms<sup>4</sup> | 30,423  |
+| **Total number of diseases**                         | 25,782  |
+| &nbsp;&nbsp;&nbsp;&nbsp;Database cross references    | 128,739 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Term definitions             | 17,774  |
+| &nbsp;&nbsp;&nbsp;&nbsp;Exact synonyms<sup>1</sup>   | 73,635  |
+| &nbsp;&nbsp;&nbsp;&nbsp;Narrow synonyms<sup>2</sup>  | 2,559   |
+| &nbsp;&nbsp;&nbsp;&nbsp;Broad synonyms<sup>3</sup>   | 1,417   |
+| &nbsp;&nbsp;&nbsp;&nbsp;Related synonyms<sup>4</sup> | 30,404  |
 
 
 <small>
