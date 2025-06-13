@@ -27,7 +27,7 @@ The General statistics include the following counts:
 
 <h3>Usage:</h3> 
 The General statistics can be run on the most recent tagged release as:  
-`sh make run.sh create-general-mondo-stats-all`
+`sh run.sh make create-general-mondo-stats-all`
 
 The General statistics can be run on a specific tagged release as:  
 `sh run.sh make MONDO_TAG=v2025-02-04 create-general-mondo-stats-all`
