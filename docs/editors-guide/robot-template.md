@@ -1,8 +1,22 @@
-# Merging a ROBOT template into Mondo
+# Preparing and merging a ROBOT template into Mondo
 
-_Updated 2021-08-05_
+_Updated 2025-06-10_
 
-## Merging a ROBOT template into Mondo:
+## Preparing and merging a ROBOT template into Mondo:
+
+<iframe width="1239" height="697" src="https://www.youtube.com/embed/x-w7NHinJMQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+0:00:00 - 0:01:37 Intro and resources
+
+0:01:38 - 0:23:59 preparing ROBOT template (simple example)
+
+0:24:00 - 0:34:10 merging ROBOT template
+
+0:34:11 - 0:42:00 preparing ROBOT template (extended example)
+
+0:48:44 - 0:51:34 examples of error
+
+0:56:42 - 1:05:22 preparing ROBOT template (examples for axioms)
 
 1. Create Google sheet with ROBOT template. See example Mondo ROBOT templates [here](https://github.com/monarch-initiative/mondo/tree/master/src/templates). See more details about ROBOT templates [here](https://oboacademy.github.io/obook/lesson/templates-for-obo/#robot-template-vs-dosdp-template).
 1. Click File->Share->Publish to the Web
