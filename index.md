@@ -66,7 +66,7 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/t
 | Category                                                       | Count (classes) |
 |:---------------------------------------------------------------|----------------:|
 | **Total number of diseases**                                   | 25,739          |
-| &nbsp;&nbsp;&nbsp;&nbsp;**Human diseases**                     | 22,2779         |
+| &nbsp;&nbsp;&nbsp;&nbsp;**Human diseases**                     | 22,779         |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cancer         | 4,715           |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Infectious     | 1,074           |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mendelian      | 11,552          |
