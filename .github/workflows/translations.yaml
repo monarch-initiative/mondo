@@ -1,0 +1,33 @@
+name: Update Mondo translations and test them
+
+on:
+  schedule:
+    - cron: '0 14 * * 1'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.5.4
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+      
+      - name: Update Translations
+        run: cd src/ontology; make GITHUB_ACTION=true IMP=false PAT=false update-mondo-japanese-translation -B
+    
+      - name: QC
+        run: cd src/ontology; make GITHUB_ACTION=true IMP=false PAT=false validate-translations
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch-suffix: short-commit-hash
+          labels: automated
+          body: "Update Language Translations."
+          title: "Update Language Translations"
+          base: ${{ github.head_ref }}
+          branch: "language_translations"
+          token: ${{ secrets.GH_TOKEN }}
+          reviewers: "sabrinatoro"
