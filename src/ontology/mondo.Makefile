@@ -1505,17 +1505,30 @@ all: config/exclusion_reasons.tsv
 # ----------------------------------------
 
 BABELONPY=babelon -q
+TRANSLATIONS=mondo-jp
 TRANSLATIONS_OWL=$(TRANSLATIONSDIR)/mondo-jp.babelon.owl
 TRANSLATIONS_TSV=$(TRANSLATIONSDIR)/mondo-jp-preprocessed.babelon.tsv
 TRANSLATIONS_ADAPTER=simpleobo:mondo-simple.obo
 TRANSLATIONS_ONTOLOGY=mondo-simple.obo
 TRANSLATE_PREDICATES=rdfs:label 
 
-
-# SKIPPED until https://github.com/dbcls/mondo-japanese/issues/3 is resolved
-$(TRANSLATIONSDIR)/mondo-jp.babelon.tsv:
+.PHONY: update-mondo-japanese-translation
+update-mondo-japanese-translation:
 	@echo "DOWNLOADING JAPANESE TRANSLATION IS SKIPPED"
-	#wget "https://raw.githubusercontent.com/dbcls/mondo-japanese/refs/heads/main/babelon/mondo-jp.babelon.tsv" -O $@
+	wget "https://raw.githubusercontent.com/dbcls/mondo-japanese/refs/heads/main/babelon/mondo-jp.babelon.tsv" -O $@
+
+validate-%: $(TRANSLATIONSDIR)/%.babelon.tsv
+	@output=$$(tsvalid $(TRANSLATIONSDIR)/$*.babelon.tsv --skip "W1" --skip "E1"); \
+	if echo "$$output" | grep -Eq 'E[0-9]+:[ ]'; then \
+		echo "Error detected in hp-$*.babelon.tsv: $$output"; \
+		exit 1; \
+	fi
+	babelon convert $(TRANSLATIONSDIR)/$*.babelon.tsv --output-format owl -o tmp/$*-babelon.owl
+
+.PHONY: validate-translations
+validate-translations:
+	$(MAKE) $(foreach lang, $(TRANSLATIONS), validate-$(lang))
+
 
 $(TRANSLATIONSDIR)/mondo-jp-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/mondo-jp.babelon.tsv
 	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/mondo-jp.babelon.tsv \
