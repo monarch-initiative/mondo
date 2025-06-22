@@ -1,0 +1,67 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+# Count xrefs to MONDO classes that have a 
+# source of ClinGen, EFO, GARD, MEDGEN, NANDO, NORD, OMIM, or OTAR
+# and whether or not the xref also has a MONDO:equivalentTo annotation.
+# Also, check if the source prefix, e.g. MEDGEN of MONDO:MEDGEN matches the xref value. This 
+# can be used to get counts for MedGen provided xrefs to MEDGEN or UMLS. 
+
+SELECT ?source ?xrefPrefix ?matchSourcePrefix ?xrefCountCategory ?hasEquivalentTo ?obsoletionStatus (COUNT(DISTINCT ?class) AS ?classCount)
+WHERE {
+  {
+    SELECT ?class ?source ?xrefPrefix ?matchSourcePrefix ?hasEquivalentTo ?obsoletionStatus (COUNT(?xref) AS ?xrefCount)
+    WHERE {
+      FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
+
+      ?axiom a owl:Axiom ;
+             owl:annotatedSource ?class ;
+             owl:annotatedProperty oboInOwl:hasDbXref ;
+             owl:annotatedTarget ?xref ;
+             oboInOwl:source ?source .
+
+      VALUES ?source {
+        "MONDO:CLINGEN"
+        "MONDO:EFO"
+        "MONDO:GARD"
+        "MONDO:MEDGEN"
+        "MONDO:NANDO"
+        "MONDO:NORD"
+        "MONDO:OMIM"
+        "MONDO:OTAR"
+      }
+
+      # Extract xref prefix
+      BIND(STRBEFORE(STR(?xref), ":") AS ?xrefPrefix)
+
+      # Extract provenance source prefix
+      BIND(STRAFTER(?source, "MONDO:") AS ?sourcePrefix)
+
+      # Compare source prefix and xref prefix
+      BIND(LCASE(?xrefPrefix) = LCASE(?sourcePrefix) AS ?matchSourcePrefix)
+
+      # EquivalentTo tag check
+      BIND(EXISTS {
+        ?axiom oboInOwl:source "MONDO:equivalentTo"
+      } AS ?hasEq)
+
+      BIND(IF(?hasEq, "with_equivalentTo", "without_equivalentTo") AS ?hasEquivalentTo)
+
+      # Check if class is obsolete
+      BIND(EXISTS {
+        ?class owl:deprecated true
+      } AS ?isObsolete)
+
+      BIND(IF(?isObsolete, "obsolete", "nonobsolete") AS ?obsoletionStatus)
+    }
+    GROUP BY ?class ?source ?xrefPrefix ?matchSourcePrefix ?hasEquivalentTo ?obsoletionStatus
+  }
+
+  BIND(
+    IF(?xrefCount = 1, "xref_count_1", "xref_count_greaterThan_1") AS ?xrefCountCategory
+  )
+}
+GROUP BY ?source ?xrefPrefix ?matchSourcePrefix ?xrefCountCategory ?hasEquivalentTo ?obsoletionStatus
+ORDER BY ?source ?xrefPrefix ?xrefCountCategory ?hasEquivalentTo ?obsoletionStatus
