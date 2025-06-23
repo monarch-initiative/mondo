@@ -26,6 +26,7 @@ Ontological parents pass their characteristics (here: axioms) to their children.
 The Mondo rare disease subset represents the UNION of rare diseases according to all authority sources, manual curation, and ontology inference. It should be noted that most of the diseases in this subset will be viewed as “rare” by _most_ authorities, but some will be viewed as “rare” by _only some_ authorities. 
 
 Rare disease terms in Mondo are annotated with `in_subset: rare` (see arrowhead in image above), and include
+
 - terms with the annotation in_subset ‘X_rare’ (which includes ALL the rare disease authorities represented in Mondo)
 - terms with the annotation in_subset ‘mondo_rare’ (representing the manually curated rare diseases)
 - terms with the annotation in_subset 'inferred_rare' (representing the diseases  ontologically inferred as rare based on their parents)
@@ -36,6 +37,10 @@ Users should decide which subset they want to use for their applications. They c
 The Mondo rare disease can be found as a product of the Mondo release, available in .obo and .json formats
 - [http://purl.obolibrary.org/obo/mondo/subsets/mondo-rare.obo](http://purl.obolibrary.org/obo/mondo/subsets/mondo-rare.obo)
 - [http://purl.obolibrary.org/obo/mondo/subsets/mondo-rare.json](http://purl.obolibrary.org/obo/mondo/subsets/mondo-rare.json)
+
+It should be noted that these rare disease subset files include, in addition to the "rare diseases" (as defined above), the ontological parents (ie subclasses) of these rare diseases. These ontological parents allow to view the rare disease subset in a higher classification. 
+
+To get **only** the rare diseases, one should filter the subset files for terms annotated with "subset:rare" (or the subset annotation refering to the rare disease authoritative source of choice).
 
 #### What happens when a rare disease term is obsoleted or loses its "rare" characteristic?
 Terms in Mondo can be obsoleted for multiple reasons (see obsoletion documents [here](https://mondo.readthedocs.io/en/latest/editors-guide/merging-and-obsoleting/)). It is possible that some of these terms to be obsoleted are in the rare disease subset. 
