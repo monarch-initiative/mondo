@@ -1,0 +1,34 @@
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+# Find non-human animal diseases with cross-species analogs to a human disease
+
+SELECT DISTINCT ?animalDiseaseCURIE ?animalDiseaseLabel ?crossSpeciesDiseaseCURIE ?crossSpeciesDiseaseLabel
+WHERE {
+    # Retrieve all subclasses of MONDO:0005583 (non-human animal diseases)
+    ?animalDisease rdfs:subClassOf* obo:MONDO_0005583 .
+
+    # Find cross-species restriction linking to human disease
+    ?animalDisease owl:equivalentClass/owl:intersectionOf/rdf:rest*/rdf:first ?restriction .
+    
+    ?restriction rdf:type owl:Restriction ;
+               owl:onProperty obo:MONDO_0700097 ;
+               owl:someValuesFrom ?crossSpeciesDisease .
+
+    # Ensure the human disease is a subclass of MONDO:0700096 'human disease'
+    FILTER EXISTS {
+        ?crossSpeciesDisease rdfs:subClassOf* obo:MONDO_0700096 .
+    }
+
+    # Retrieve human-readable labels
+    OPTIONAL { ?animalDisease rdfs:label ?animalDiseaseLabel }
+    OPTIONAL { ?crossSpeciesDisease rdfs:label ?crossSpeciesDiseaseLabel }
+
+    BIND(REPLACE(STR(?animalDisease), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") AS ?animalDiseaseCURIE)
+    BIND(REPLACE(STR(?crossSpeciesDisease), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") AS ?crossSpeciesDiseaseCURIE)
+
+}
+ORDER BY ?animalDiseaseLabel
