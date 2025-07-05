@@ -270,6 +270,75 @@ GENERAL_STATISTICS_QUERIES = \
 	$(SPARQLDIR)/reports/COUNT-broad-synonyms.sparql \
 	$(SPARQLDIR)/reports/COUNT-related-synonyms.sparql
 
+# Statistics for the Mondo Community Web site (these are a subset of the General Statistics)
+ONTOLOGY_METRICS_TABLE = reports/mondo_stats/mondo-general-stats/ontology-metrics-table.md
+DISEASE_TYPES_METRICS_TABLE = reports/mondo_stats/mondo-general-stats/disease-types-metrics-table.md
+
+ontology-metrics-table: $(MONDO_OWL_PATH)
+	# Creating data for the Ontology metrics table
+	@echo "| Metric | Count |" > $(ONTOLOGY_METRICS_TABLE)
+	@echo "| :--- | ---: |" >> $(ONTOLOGY_METRICS_TABLE)
+	# Creating stats for Total diseases
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-all_diseases.sparql tmp/results.tsv
+	@echo "| **Total number of diseases** | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(ONTOLOGY_METRICS_TABLE)
+	# Creating stats for Xrefs
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-xrefs.sparql tmp/results.tsv
+	@echo "| &nbsp;&nbsp;&nbsp;&nbsp;Database cross references | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(ONTOLOGY_METRICS_TABLE)
+	# Creating stats for Definitions
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-classes-with-definitions.sparql tmp/results.tsv
+	@echo "| &nbsp;&nbsp;&nbsp;&nbsp;Term definitions | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(ONTOLOGY_METRICS_TABLE)
+	# Creating stats for Exact synonyms
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-exact-synonyms.sparql  tmp/results.tsv
+	@echo "| &nbsp;&nbsp;&nbsp;&nbsp;Exact synonyms<sup>1</sup> | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(ONTOLOGY_METRICS_TABLE)
+	# Creating stats for Narrow synonyms 
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-narrow-synonyms.sparql tmp/results.tsv
+	@echo "| &nbsp;&nbsp;&nbsp;&nbsp;Narrow synonyms<sup>2</sup> | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(ONTOLOGY_METRICS_TABLE)
+	# Creating stats for Broad synonyms
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-broad-synonyms.sparql tmp/results.tsv
+	@echo "| &nbsp;&nbsp;&nbsp;&nbsp;Broad synonyms<sup>3</sup> | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(ONTOLOGY_METRICS_TABLE)
+	# Creating stats for Related synonyms
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-related-synonyms.sparql tmp/results.tsv
+	@echo "| &nbsp;&nbsp;&nbsp;&nbsp;Related synonyms<sup>4</sup> | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(ONTOLOGY_METRICS_TABLE)
+	@echo "\n** Report saved to: $(ONTOLOGY_METRICS_TABLE)\n"
+
+disease-types-metrics-table: $(MONDO_OWL_PATH)
+	# Creating data for the Representation of disease types table
+	@echo "| Category | Count (classes) |" > $(DISEASE_TYPES_METRICS_TABLE)
+	@echo "| :--- | ---: |" >> $(DISEASE_TYPES_METRICS_TABLE)
+	# Creating stats for Total diseases
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-all_diseases.sparql tmp/results.tsv
+	@echo "| **Total number of diseases** | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(DISEASE_TYPES_METRICS_TABLE)
+	# Creating stats for Human diseases
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-all_human_diseases.sparql tmp/results.tsv
+	@echo "|&nbsp;&nbsp;&nbsp;&nbsp; **Human diseases** | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(DISEASE_TYPES_METRICS_TABLE)
+	# Creating stats for Human Cancer diseases
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-human-cancer-diseases.sparql tmp/results.tsv
+	@echo "|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancer | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(DISEASE_TYPES_METRICS_TABLE)
+	# Creating stats for Human Infectious diseases
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-human_diseases_infectious.sparql tmp/results.tsv
+	@echo "|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Infectious | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(DISEASE_TYPES_METRICS_TABLE)
+	# Creating stats for Human Mendelian diseases
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-human-genetic-diseases.sparql tmp/results.tsv
+	@echo "|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mendelian | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(DISEASE_TYPES_METRICS_TABLE)
+	# Creating stats for Human Rare diseases
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-human-rare-diseases.sparql tmp/results.tsv
+	@echo "|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rare | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(DISEASE_TYPES_METRICS_TABLE)
+	# Creating stats for Non-Human Animal diseases
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-all_non-human_diseases.sparql tmp/results.tsv
+	@echo "|&nbsp;&nbsp;&nbsp;&nbsp; **Non-human diseases** | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(DISEASE_TYPES_METRICS_TABLE)
+	# Creating stats for Non-Human Animal Cancer diseases
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-non-human_diseases_cancer.sparql tmp/results.tsv
+	@echo "|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancer | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(DISEASE_TYPES_METRICS_TABLE)
+	# Creating stats for Non-Human Infectious diseases
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-non-human_diseases_infectious.sparql tmp/results.tsv
+	@echo "|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Infectious | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(DISEASE_TYPES_METRICS_TABLE)
+	# Creating stats for Non-Human Animal Mendelian diseases
+	@robot query -i $(MONDO_OWL_PATH) --use-graphs true --format tsv --query $(SPARQLDIR)/reports/COUNT-non-human-genetic-diseases.sparql tmp/results.tsv
+	@echo "|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mendelian | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(DISEASE_TYPES_METRICS_TABLE)
+	@echo "\n** Report saved to: $(DISEASE_TYPES_METRICS_TABLE)\n"
+
+all-metrics-tables: ontology-metrics-table disease-types-metrics-table
+	@echo "All metrics tables have been generated."
 
 RARE_STATISTICS_QUERIES = \
     $(SPARQLDIR)/reports/COUNT-rare_subsets.sparql
