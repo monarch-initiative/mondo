@@ -124,3 +124,53 @@ _To be added_
 
 ## Third party maintained - other Statistics
 _To be added_
+
+
+## Ontology and Disease types metrics for the Mondo Community web site
+The [Mondo Community web site](https://mondo.monarchinitiative.org/#stats) lists two sections of Mondo statistics, "Ontology metrics" and "Representation of disease types". These statisitics are a subset of the statistics generated for the [General Statistics](#General Statistics). 
+
+These statistics are generated from the `make` goals `ontology-metrics-table` and `disease-types-metrics-table`. These should be created in the mondo `master` branch and then the updated statistics should be added to the Mondo community web site (in a feature branch created from the `gh-pages` branch).
+
+These are the statistics needed on the Mondo Community Web site and the SPARQL query for each statistic:
+##### Ontology metrics
+**Total number of diseases** -- src/sparql/reports/COUNT-all_diseases.sparql 
+Database cross references -- src/sparql/reports/COUNT-xrefs.sparql
+Term definitions -- src/sparql/reports/COUNT-classes-with-definitions.sparql
+Exact synonyms -- src/sparql/reports/COUNT-exact-synonyms.sparql 
+Narrow synonyms -- src/sparql/reports/COUNT-narrow-synonyms.sparql
+Broad synonyms -- src/sparql/reports/COUNT-broad-synonyms.sparql
+Related synonyms -- src/sparql/reports/COUNT-related-synonyms.sparql
+
+##### Representation of disease types
+**Total number of diseases** -- src/sparql/reports/COUNT-all_diseases.sparql
+  **Human diseases** -- src/sparql/reports/COUNT-all_human_diseases.sparql
+    Cancer -- src/sparql/reports/COUNT-human-cancer-diseases.sparql
+    Infectious -- src/sparql/reports/COUNT-human_diseases_infectious.sparql 
+    Mendelian -- src/sparql/reports/COUNT-human-genetic-diseases.sparql
+    Rare -- src/sparql/reports/COUNT-human-rare-diseases.sparql 
+  **Non-human diseases** -- src/sparql/reports/COUNT-all_non-human_diseases.sparql
+    Cancer -- src/sparql/reports/COUNT-non-human_diseases_cancer.sparql 
+    Infectious -- src/sparql/reports/COUNT-non-human_diseases_infectious.sparql
+    Mendelian -- src/sparql/reports/COUNT-non-human-genetic-diseases.sparql
+
+
+Here are the steps to run the `make` goals and update the web site:
+1. Navigate to your local copy of the mondo repo and from the `master` branch, pull the latest updates from GitHub
+1. Both tables can be generated from a single command from `mondo/src/ontology` as: 
+`sh run.sh make all-metrics-tables` 
+or 
+`sh run.sh make MONDO_TAG=v2025-02-04 all-metrics-tables` to specify a specific tagged Mondo release version 
+The result files are saved to `reports/mondo_stats/mondo-general-stats/ontology-metrics-table.md` and `reports/mondo_stats/mondo-general-stats/disease-types-metrics-table.md` and these file locations are displayed in the final message when running the make goal. These files are not under git version control so they do not appear as changed files by git.
+NOTE: By default, the statistics will be generated for the most recent Mondo release. However, they can also be generated for any [tagged Mondo release version](https://github.com/monarch-initiative/mondo/tags).
+1. Alternatively, each table can be created separately:
+	1. To generate the "Ontology metrics" statistics, from `mondo/src/ontology` run:
+  `sh run.sh make ontology-metrics-table`
+	1. To generate the "Representation of disease types" statistics, from `mondo/src/ontology` run:
+  `sh run.sh make disease-types-metrics-table`
+1. Checkout the `gh-pages` branch and create a new feature branch from this branch, e.g. `issue-9281_gh-pages`
+1. Update the stats in the file `index.md` (this file is found at the root level)
+1. Also update the data and link to the latest Mondo release in this line in the `index.md` file: 
+Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/tag/v2025-07-01](https://github.com/monarch-initiative/mondo/releases/tag/v2025-07-01). 
+If this link is changed to the "latest", e.g. https://github.com/monarch-initiative/mondo/releases/latest/download/mondo.owl, then make sure to add the Mondo release version on the Mondo community web site page.
+1. Commit the changes and create a PR. Be sure to set the branch to merge into as the `gh-pages` branch.
+
