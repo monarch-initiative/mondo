@@ -127,9 +127,9 @@ _To be added_
 
 
 ## Ontology and Disease types metrics for the Mondo Community web site
-The [Mondo Community web site](https://mondo.monarchinitiative.org/#stats) lists two sections of Mondo statistics, "Ontology metrics" and "Representation of disease types". These statisitics are a subset of the statistics generated for the [General Statistics](#General Statistics). 
+The [Mondo Community web site](https://mondo.monarchinitiative.org/#stats) lists two sections of Mondo statistics, "Ontology metrics" and "Representation of disease types". These statistics are a subset of the statistics generated for the [General Statistics](#general-statistics). 
 
-These statistics are generated from the `make` goals `ontology-metrics-table` and `disease-types-metrics-table`. These should be created in the mondo `master` branch and then the updated statistics should be added to the Mondo community web site (in a feature branch created from the `gh-pages` branch).
+These statistics are generated from the `make` goals `ontology-metrics-table` and `disease-types-metrics-table` (see detailed [usage instructions](#usage-instructions) below). These should be created in the mondo `master` branch and then the updated statistics should be added to the Mondo community web site (in a feature branch created from the `gh-pages` branch).
 
 These are the statistics needed on the Mondo Community Web site and the SPARQL query for each statistic:
 ##### Ontology metrics
@@ -153,7 +153,7 @@ Related synonyms -- src/sparql/reports/COUNT-related-synonyms.sparql
     Infectious -- src/sparql/reports/COUNT-non-human_diseases_infectious.sparql
     Mendelian -- src/sparql/reports/COUNT-non-human-genetic-diseases.sparql
 
-
+### Usage instructions
 Here are the steps to run the `make` goals and update the web site:
 1. Navigate to your local copy of the mondo repo and from the `master` branch, pull the latest updates from GitHub
 1. Both tables can be generated from a single command from `mondo/src/ontology` as: 
