@@ -274,7 +274,7 @@ GENERAL_STATISTICS_QUERIES = \
 ONTOLOGY_METRICS_TABLE = reports/mondo_stats/mondo-general-stats/ontology-metrics-table.md
 DISEASE_TYPES_METRICS_TABLE = reports/mondo_stats/mondo-general-stats/disease-types-metrics-table.md
 
-ontology-metrics-table: $(MONDO_OWL_PATH)
+ontology-metrics-table: create-directories $(MONDO_OWL_PATH)
 	# Creating data for the Ontology metrics table
 	@echo "| Metric | Count |" > $(ONTOLOGY_METRICS_TABLE)
 	@echo "| :--- | ---: |" >> $(ONTOLOGY_METRICS_TABLE)
@@ -301,7 +301,7 @@ ontology-metrics-table: $(MONDO_OWL_PATH)
 	@echo "| &nbsp;&nbsp;&nbsp;&nbsp;Related synonyms<sup>4</sup> | $$(tail -n +2 tmp/results.tsv | tr -d '\r') |" >> $(ONTOLOGY_METRICS_TABLE)
 	@echo "\n** Report saved to: $(ONTOLOGY_METRICS_TABLE)\n"
 
-disease-types-metrics-table: $(MONDO_OWL_PATH)
+disease-types-metrics-table: create-directories $(MONDO_OWL_PATH)
 	# Creating data for the Representation of disease types table
 	@echo "| Category | Count (classes) |" > $(DISEASE_TYPES_METRICS_TABLE)
 	@echo "| :--- | ---: |" >> $(DISEASE_TYPES_METRICS_TABLE)
@@ -392,6 +392,7 @@ create-synonym-mondo-stats: $(SYNONYM_STATS_OUTPUTS)
 create-emc-mondo-stats: $(EMC_STATS_OUTPUTS)
 
 # Reusable rule to create necessary directories
+.PHONY: create-directories
 create-directories:
 	mkdir -p $(MONDO_STATS_REPORTS_DIR) $(GEN_STATS_REPORTS_DIR) $(RARE_STATS_REPORTS_DIR) $(SYNONYM_STATS_REPORTS_DIR) \
 		$(EMC_STATS_REPORTS_DIR) $(TMP_MONDO_STATS_REPORTS_DIR)
