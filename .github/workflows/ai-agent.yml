@@ -1,0 +1,62 @@
+name: Dragon AI Agent GitHub Mentions
+
+on:
+  issues:
+    types: [opened, edited]
+  issue_comment:
+    types: [created, edited]
+  pull_request:
+    types: [opened, edited]
+  pull_request_review_comment:
+    types: [created, edited]
+
+jobs:
+  check-mention:
+    runs-on: ubuntu-latest
+    outputs:
+      qualified-mention: ${{ steps.detect.outputs.qualified-mention }}
+      prompt: ${{ steps.detect.outputs.prompt }}
+      user: ${{ steps.detect.outputs.user }}
+      item-type: ${{ steps.detect.outputs.item-type }}
+      item-number: ${{ steps.detect.outputs.item-number }}
+      controllers: ${{ steps.detect.outputs.controllers }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Detect AI mention
+        id: detect
+        uses: dragon-ai-agent/github-mention-detector@v1.0.0
+        with:
+          github-token: ${{ secrets.PAT_FOR_PR }}
+          fallback-controllers: 'cmungall'
+
+  respond-to-mention:
+    needs: check-mention
+    if: needs.check-mention.outputs.qualified-mention == 'true'
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PAT_FOR_PR }}
+
+      - name: Respond with AI Agent
+        uses: dragon-ai-agent/run-goose-obo@v1.0.4
+        with:
+          anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
+          openai-api-key: ${{ secrets.CBORG_API_KEY }}
+          github-token: ${{ secrets.PAT_FOR_PR }}
+          prompt: ${{ needs.check-mention.outputs.prompt }}
+          user: ${{ needs.check-mention.outputs.user }}
+          item-type: ${{ needs.check-mention.outputs.item-type }}
+          item-number: ${{ needs.check-mention.outputs.item-number }}
+          controllers: ${{ needs.check-mention.outputs.controllers }}
+          agent-name: 'Dragon-AI Agent'
+          branch-prefix: 'dragon_ai_agent'
+          robot-version: 'v1.9.7'
