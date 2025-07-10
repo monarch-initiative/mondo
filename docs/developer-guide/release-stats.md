@@ -23,11 +23,16 @@ The General statistics include the following counts:
 - Total number of cancer diseases (human) 
 - Total number of genetic diseases (non-human)
 - Total number of infectious diseases (non-human) 
-- Total number of cancer diseases (non-human)  
+- Total number of cancer diseases (non-human)
+- Total number of exact, narrow, broad, and related synonyms
+- Total number of terms with definitions
+- Total number of terms with database cross-references
+
+These general statistics are often used in presentations about Mondo.
 
 <h3>Usage:</h3> 
 The General statistics can be run on the most recent tagged release as:  
-`sh make run.sh create-general-mondo-stats-all`
+`sh run.sh make create-general-mondo-stats-all`
 
 The General statistics can be run on a specific tagged release as:  
 `sh run.sh make MONDO_TAG=v2025-02-04 create-general-mondo-stats-all`
