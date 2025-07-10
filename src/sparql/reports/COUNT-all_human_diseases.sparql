@@ -1,0 +1,15 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+
+# Count of all non-obsolete MONDO:0700096 'human disease' classes
+
+SELECT (COUNT(DISTINCT ?class) AS ?countHumanDisease)
+WHERE {
+  ?class rdfs:subClassOf* obo:MONDO_0700096 .
+  
+  FILTER (isIRI(?class) && STRSTARTS(str(?class), "http://purl.obolibrary.org/obo/MONDO_"))
+  
+  FILTER NOT EXISTS { ?class owl:deprecated true }
+}

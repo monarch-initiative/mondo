@@ -227,42 +227,201 @@ rare-disease-reports: reports/old-rare-diseases.tsv reports/new-rare-diseases.ts
 	python ../scripts/filter_rare_disease_list.py reports/old-rare-diseases.tsv reports/new-rare-diseases.tsv reports/added-rare-disases.tsv reports/removed-rare-diseases.tsv
 
 
-#########################################
-######### Create Mondo Stats ############
-#########################################
-# Create overview Mondo stats as needed for presentations. This includes: count of disease classes, terms w/definitions, xrefs,
-# exact, related, narrow, and broad synonyms, and count of rare disease, cancer, infectious, and hereditary disease classes.
+############################################
+# Create Stats based on Mondo Release Tags #
+############################################
 
-# Get the current date including the timezone
-current_date := $(shell date)
+# Define directories
+MONDO_STATS_REPORTS_DIR := reports/mondo_stats
+TMP_MONDO_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/tmp
+GEN_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-general-stats
+RARE_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-rare-stats
+SYNONYM_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-synonym-stats
+EMC_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/emc-stats
 
-# Create the directory if it does not already exist
-$(MONDO_STATS_REPORTS_DIR):
-	mkdir -p $@
+# Define the most recent tag for mondo.owl (default is latest tag)
+MONDO_TAG := $(shell git for-each-ref --sort=-creatordate --format '%(refname:short)' refs/tags | head -n 1)
+MONDO_OWL_GH_TAG := mondo.owl
 
-# Create the Mondo Stats Summary file
-.PHONY: create-mondo-stats-summary-file
-create-mondo-stats-summary-file: reasoned.owl | $(MONDO_STATS_REPORTS_DIR)
-	$(ROBOT) query --input reasoned.owl \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-classes.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_01_class_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-classes-with-definitions.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_03_classDefinition_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-xrefs.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_02_xref_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-exact-synonyms.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_04_exactSynonym_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-related-synonyms.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_05_relatedSynonym_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-narrow-synonyms.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_06_narrowSynonym_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-broad-synonyms.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_07_broadSynonym_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-rare-diseases-classes.sparql  $(MONDO_STATS_REPORTS_DIR)/tmp_08_rareDiseaseClass_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-infectious-diseases.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_09_infectiousDiseaseClass_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-cancer-diseases.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_10_cancerDiseaseClass_count.tsv \
-		--query $(MONDO_STATS_SPARQLDIR)/COUNT-hereditary-diseases.sparql $(MONDO_STATS_REPORTS_DIR)/tmp_11_hereditaryDiseaseClass_count.tsv
-	echo "All Mondo Stats created on: $(current_date)" > $(MONDO_STATS_REPORTS_DIR)/all_mondo_stats.txt
-	cat $(MONDO_STATS_REPORTS_DIR)/tmp_* >> $(MONDO_STATS_REPORTS_DIR)/all_mondo_stats.txt
-	rm $(MONDO_STATS_REPORTS_DIR)/tmp_*
+# Define the path where mondo.owl will be saved
+MONDO_OWL_PATH := tmp/$(MONDO_OWL_GH_TAG)
 
-# Create general Mondo Stats
-.PHONY: create-mondo-stats
-create-mondo-stats:
-	$(MAKE) create-mondo-stats-summary-file -B
+# Define the URL to download mondo.owl from the GitHub release
+MONDO_OWL_URL := https://github.com/monarch-initiative/mondo/releases/download/$(MONDO_TAG)/mondo.owl
+
+# Define report queries
+GENERAL_STATISTICS_QUERIES = \
+    $(SPARQLDIR)/reports/COUNT-all_diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-all_human_diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-all_non-human_diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-human-rare-diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-human-genetic-diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-human_diseases_infectious.sparql \
+    $(SPARQLDIR)/reports/COUNT-human-cancer-diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-non-human-genetic-diseases.sparql \
+    $(SPARQLDIR)/reports/COUNT-non-human_diseases_infectious.sparql \
+    $(SPARQLDIR)/reports/COUNT-non-human_diseases_cancer.sparql \
+	$(SPARQLDIR)/reports/COUNT-disease_selected_xrefs.sparql \
+	$(SPARQLDIR)/reports/COUNT-selected_xrefs.sparql \
+	$(SPARQLDIR)/reports/COUNT-classes-with-definitions.sparql \
+	$(SPARQLDIR)/reports/COUNT-xrefs.sparql \
+	$(SPARQLDIR)/reports/COUNT-exact-synonyms.sparql \
+	$(SPARQLDIR)/reports/COUNT-narrow-synonyms.sparql \
+	$(SPARQLDIR)/reports/COUNT-broad-synonyms.sparql \
+	$(SPARQLDIR)/reports/COUNT-related-synonyms.sparql
+
+
+RARE_STATISTICS_QUERIES = \
+    $(SPARQLDIR)/reports/COUNT-rare_subsets.sparql
+
+SYNONYM_STATISTICS_QUERIES = \
+    $(SPARQLDIR)/reports/COUNT-all_diseases_synonym_stats.sparql
+
+EMC_STATISTICS_QUERIES = \
+	$(SPARQLDIR)/reports/COUNT-emc-xrefs.sparql \
+	$(SPARQLDIR)/reports/COUNT-emc-total-usage.sparql
+
+# Define output file names
+GEN_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(GENERAL_STATISTICS_QUERIES))
+RARE_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(RARE_SATISTICS_QUERIES))
+SYNONYM_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(SYNONYM_STATISTICS_QUERIES))
+EMC_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(EMC_STATISTICS_QUERIES))
+
+# Define output file names
+GEN_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(GENERAL_STATISTICS_QUERIES))
+RARE_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(RARE_STATISTICS_QUERIES))
+SYNONYM_STATS_OUTPUTS = $(patsubst $(SPARQLDIR)/reports/%.sparql, $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv, $(SYNONYM_STATISTICS_QUERIES))
+
+# Combined report files
+COMBINED_REPORT = $(GEN_STATS_REPORTS_DIR)/mondo_general_statistics.tsv
+COMBINED_RARE_REPORT = $(RARE_STATS_REPORTS_DIR)/mondo_rare_statistics.tsv
+COMBINED_SYNONYM_REPORT = $(SYNONYM_STATS_REPORTS_DIR)/mondo_synonym_statistics.tsv
+COMBINED_EMC_REPORT = $(EMC_STATS_REPORTS_DIR)/mondo_emc_statistics.tsv
+
+# General stats target
+create-general-mondo-stats-all: move-mondo-owl create-general-mondo-stats combine-general-stats-reports clean-temp-stats
+
+# Rare stats target
+create-rare-mondo-stats-all: move-mondo-owl create-rare-mondo-stats combine-rare-stats-reports clean-temp-stats
+
+# Synonym stats target
+create-synonym-mondo-stats-all: move-mondo-owl create-synonym-mondo-stats combine-synonym-stats-reports clean-temp-stats
+
+# EMC stats target
+create-emc-mondo-stats-all: move-mondo-owl create-emc-mondo-stats finalize-emc-stats-reports clean-temp-stats 
+
+# Create the individual general stats
+create-general-mondo-stats: $(GEN_STATS_OUTPUTS)
+
+# Create the individual rare stats
+create-rare-mondo-stats: $(RARE_STATS_OUTPUTS)
+
+# Create the individual synonym stats
+create-synonym-mondo-stats: $(SYNONYM_STATS_OUTPUTS)
+
+# Create the individual emc stats
+create-emc-mondo-stats: $(EMC_STATS_OUTPUTS)
+
+# Reusable rule to create necessary directories
+create-directories:
+	mkdir -p $(MONDO_STATS_REPORTS_DIR) $(GEN_STATS_REPORTS_DIR) $(RARE_STATS_REPORTS_DIR) $(SYNONYM_STATS_REPORTS_DIR) \
+		$(EMC_STATS_REPORTS_DIR) $(TMP_MONDO_STATS_REPORTS_DIR)
+
+# Rule to download mondo.owl if it doesn't exist
+$(MONDO_OWL_PATH):
+	wget $(MONDO_OWL_URL) -O $@
+	@echo "Downloaded $(MONDO_OWL) from $(MONDO_OWL_URL) to $(MONDO_OWL_PATH)"
+
+# Move the mondo.owl file to the desired directory
+move-mondo-owl: $(MONDO_OWL_PATH)
+	mv $(MONDO_OWL_PATH) ./$(MONDO_OWL_GH_TAG)
+
+# Rule for generating .tsv files from the queries (general, rare, synonym stats)
+$(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql | create-directories
+	@echo "Running query $< ..."
+	$(ROBOT) query -i mondo.owl --use-graphs true -f tsv --query $< $@
+
+# Combine the general stats results into one report
+combine-general-stats-reports: create-general-mondo-stats
+	@echo "Combining results into $(COMBINED_REPORT)..."
+	@echo "All Mondo General Statistics created on: $(current_date)" > $(COMBINED_REPORT)
+	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_REPORT)
+	@echo "\n** Combined report saved to: $(COMBINED_REPORT)\n"
+
+# Combine the rare stats results into one report
+combine-rare-stats-reports: create-rare-mondo-stats
+	@echo "Combining results into $(COMBINED_RARE_REPORT)..."
+	@echo "All Mondo Rare Statistics created on: $(current_date)" > $(COMBINED_RARE_REPORT)
+	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_RARE_REPORT)
+	@echo "\n** Combined report saved to: $(COMBINED_RARE_REPORT)\n"
+
+# Combine the synonym stats results into one report
+combine-synonym-stats-reports: create-synonym-mondo-stats
+	@echo "Combining results into $(COMBINED_SYNONYM_REPORT)..."
+	@echo "All Mondo Synonym Statistics created on: $(current_date)" > $(COMBINED_SYNONYM_REPORT)
+	cat $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv >> $(COMBINED_SYNONYM_REPORT)
+	@echo "\n** Combined report saved to: $(COMBINED_SYNONYM_REPORT)\n"
+
+# Move the emc stats results files and tag with date created
+finalize-emc-stats-reports: create-emc-mondo-stats
+	@echo "Finalizing EMC reports with current date header and moving to $(EMC_STATS_REPORTS_DIR)"
+	mkdir -p $(EMC_STATS_REPORTS_DIR)
+	@for f in $(EMC_STATS_OUTPUTS); do \
+		filename=$$(basename $$f); \
+		cleanname=$$(echo $$filename | sed 's/^COUNT-//'); \
+		outf="$(EMC_STATS_REPORTS_DIR)/$$cleanname"; \
+		echo "All Mondo EMC Statistics created on: $(current_date)" > $$outf; \
+		cat $$f >> $$outf; \
+		echo "** Saved file to: $$outf"; \
+	done
+
+# Clean up the temporary .tsv files
+clean-temp-stats:
+	rm -f $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv
+	@echo "(Cleaned up temporary result files)"
+
+# Clean everything (temporary + reports)
+clean-stats:
+	rm -f $(TMP_MONDO_STATS_REPORTS_DIR)/*.tsv $(COMBINED_REPORT) $(COMBINED_RARE_REPORT) $(COMBINED_SYNONYM_REPORT)
+	@echo "Cleaned all generated files."
+
+
+###############################
+# Create Community Statistics #
+###############################
+
+COMMUNITY_STATS_REPORTS_DIR = $(MONDO_STATS_REPORTS_DIR)/mondo-community-stats
+COMMUNITY_STATS_REPORT = $(COMMUNITY_STATS_REPORTS_DIR)/gh_issue_status.csv
+COMMUNITY_USER_REPORT = $(COMMUNITY_STATS_REPORTS_DIR)/gh_issue_usernames.csv
+
+.PHONY: test-github-issue-stats
+test-github-issue-stats:
+	make github-issue-stats FROM_DATE=2025-03-15 TO_DATE=2025-03-18
+
+.PHONY: github-issue-stats
+github-issue-stats:
+	@echo "Today's date: $$(date +%Y-%m-%d)"
+	@mkdir -p $(COMMUNITY_STATS_REPORTS_DIR)
+	@FROM_DATE="$(FROM_DATE)"; \
+	TO_DATE="$(TO_DATE)"; \
+	if [ -z "$$FROM_DATE" ] || [ -z "$$TO_DATE" ]; then \
+		echo "No dates provided. Auto-detecting from git tags..."; \
+		TAG_DATES=$$(git for-each-ref --sort=-creatordate --format='%(creatordate:short)' refs/tags | awk -v today="$$(date +%Y-%m-%d)" '$$1 < today' | head -n 2); \
+		TO_DATE=$$(echo "$$TAG_DATES" | head -n 1); \
+		FROM_DATE=$$(echo "$$TAG_DATES" | tail -n 1); \
+	fi; \
+	echo "From date: $$FROM_DATE"; \
+	echo "To date: $$TO_DATE"; \
+	echo "Report file: $(COMMUNITY_STATS_REPORT)"; \
+	echo "Calculating GitHub issue metrics..."; \
+	python ../scripts/gh_issues.py \
+		--repo=monarch-initiative/mondo \
+		--token=$(GITHUB_TOKEN) \
+		--from=$$FROM_DATE \
+		--to=$$TO_DATE \
+		--outpath=$(COMMUNITY_STATS_REPORT) \
+		--user-report=$(COMMUNITY_USER_REPORT)
+
 
 
 #############################################
@@ -359,11 +518,18 @@ update-external-content:
 	$(MAKE) update-ordo-subsets -B
 	$(MAKE) update-nando -B
 	$(MAKE) update-medgen -B
+	$(MAKE) update-malacards -B
+	$(MAKE) update-emc-synonym-prov -B
 	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-after.tsv
 	@echo "Subset metrics before..."
 	cat $(TMPDIR)/subset-metrics-before.tsv
 	@echo "Subset metrics after..."
 	cat $(TMPDIR)/subset-metrics-after.tsv
+
+update-emc-synonym-prov:
+	$(ROBOT) merge -i $(SRC) --collapse-import-closure false \
+		query --update ../sparql/update/insert_emc_synonym_provenance.ru \
+		convert -f obo --check false -o $(SRC).obo && mv $(SRC).obo $(SRC)
 
 # This is the main pipeline to update both externally managed content and rare disease subsets
 update-external-content-incl-rare:
@@ -422,9 +588,20 @@ update-gard:
 .PHONY: update-nord
 update-nord:
 	make $(TMPDIR)/external/processed-nord.robot.owl -B
+	# Update NORD_LABEL modeling to use source annotation of MONDO:NORD_LABEL on synonym
+	$(ROBOT) query -i $(TMPDIR)/external/processed-nord.robot.owl \
+		--update ../sparql/update/insert_nord_label.sparql \
+		-o $(TMPDIR)/external/processed-nord.robot.tmp.owl
+	mv $(TMPDIR)/external/processed-nord.robot.tmp.owl $(TMPDIR)/external/processed-nord.robot.owl
+	# Remove NORD_LABEL modeled as synonym type, only one synonymtypedef allowed per OBO spec
+	$(ROBOT) query -i $(TMPDIR)/external/processed-nord.robot.owl \
+		--update ../sparql/update/delete_nord_label_synonym_type.sparql \
+		-o $(TMPDIR)/external/processed-nord.robot.tmp.owl
+	mv $(TMPDIR)/external/processed-nord.robot.tmp.owl $(TMPDIR)/external/processed-nord.robot.owl
 	grep -vE '^(xref: NORD:|subset: nord_rare)' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
 	mv $(TMPDIR)/mondo-edit.tmp mondo-edit.obo
-	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-nord.robot.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-nord.robot.owl --collapse-import-closure false \
+		convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
 ##### Inferred #####################
@@ -484,6 +661,7 @@ update-omim-genes:
 	$(ROBOT) remove -i $(SRC) --term RO:0004003 --axioms SubClassOf --preserve-structure false --trim true \
 		merge -i $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl -i $(TMPDIR)/mondo-genes-axioms.owl --collapse-import-closure false \
 		query --update ../sparql/update/omim-gene-equivalence.ru \
+		query --update ../sparql/update/remove_gene_associations_from_obsolete.ru \
 		convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
@@ -499,6 +677,18 @@ update-ordo-subsets:
 	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-ordo-subsets.robot.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 	
+####################################
+##### MalaCards #####################
+####################################
+
+.PHONY: update-malacards
+update-malacards:
+	$(MAKE) $(TMPDIR)/external/processed-mondo-malacards.robot.owl -B
+	grep -vE '^(relationship: curated_content_resource.*MalaCards)' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
+	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-mondo-malacards.robot.owl --collapse-import-closure false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
 ####################################
 ##### NANDO #########################
 ####################################
@@ -1309,6 +1499,69 @@ config/exclusion_reasons.tsv:
 	wget "https://docs.google.com/spreadsheets/d/e/2PACX-1vTuZlr1P4ZUwdEnet_wN0RShGa8_9MYX-dAFva_xslNuiDrLP_MuIXPu0rzClq-xZQ47QhqzK2p74AA/pub?gid=1644570180&single=true&output=tsv" -O $@
 
 all: config/exclusion_reasons.tsv
+
+# ----------------------------------------
+# Babelon Translation Files
+# ----------------------------------------
+
+BABELONPY=babelon -q
+TRANSLATIONS_OWL=$(TRANSLATIONSDIR)/mondo-jp.babelon.owl
+TRANSLATIONS_TSV=$(TRANSLATIONSDIR)/mondo-jp-preprocessed.babelon.tsv
+TRANSLATIONS_ADAPTER=simpleobo:mondo-simple.obo
+TRANSLATIONS_ONTOLOGY=mondo-simple.obo
+TRANSLATE_PREDICATES=rdfs:label 
+
+
+# SKIPPED until https://github.com/dbcls/mondo-japanese/issues/3 is resolved
+$(TRANSLATIONSDIR)/mondo-jp.babelon.tsv:
+	@echo "DOWNLOADING JAPANESE TRANSLATION IS SKIPPED"
+	#wget "https://raw.githubusercontent.com/dbcls/mondo-japanese/refs/heads/main/babelon/mondo-jp.babelon.tsv" -O $@
+
+$(TRANSLATIONSDIR)/mondo-jp-preprocessed.babelon.tsv: $(TRANSLATIONS_ONTOLOGY) $(TRANSLATIONSDIR)/mondo-jp.babelon.tsv
+	$(BABELONPY) prepare-translation $(TRANSLATIONSDIR)/mondo-jp.babelon.tsv \
+		--oak-adapter $(TRANSLATIONS_ADAPTER) \
+		--language-code jp \
+		$(foreach n,$(TRANSLATE_PREDICATES), --field $(n)) \
+		--output-source-changed $(TRANSLATIONSDIR)/mondo-jp-changed.babelon.tsv  \
+		--output-not-translated $(TRANSLATIONSDIR)/mondo-jp-not-translated.babelon.tsv \
+		--include-not-translated false \
+		--update-translation-status true \
+		--drop-unknown-columns true \
+		-o $@
+
+
+$(TRANSLATIONSDIR)/%.synonyms.owl: $(TRANSLATIONSDIR)/%.synonyms.tsv
+	$(ROBOT) template --template $< \
+		annotate \
+			--ontology-iri $(ONTBASE)/translations/$*.synonyms.owl \
+			-V $(ONTBASE)/releases/$(VERSION)/translations/$*.synonyms.owl \
+			--annotation owl:versionInfo $(VERSION) \
+		convert -f owl --output $@
+.PRECIOUS: $(TRANSLATIONSDIR)/%.synonyms.owl
+
+$(TRANSLATIONSDIR)/%.babelon.owl: $(TRANSLATIONSDIR)/%-preprocessed.babelon.tsv
+	$(BABELONPY) convert $< --output-format owl -o $@.tmp
+	$(ROBOT) merge -i $@.tmp \
+		annotate \
+			--ontology-iri $(ONTBASE)/translations/$*.babelon.owl \
+			-V $(ONTBASE)/releases/$(VERSION)/translations/$*.babelon.owl \
+			--annotation owl:versionInfo $(VERSION) \
+		convert -f owl --output $@
+	@rm $@.tmp
+.PRECIOUS: $(TRANSLATIONSDIR)/%.babelon.owl
+
+$(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv: $(TRANSLATIONS_TSV)
+	$(BABELONPY) merge $^ -o $@
+
+$(TRANSLATIONSDIR)/%.babelon.json: $(TRANSLATIONSDIR)/%.babelon.tsv
+	$(BABELONPY) convert $< --output-format json -o $@
+
+
+$(ONT)-international.owl: $(ONT).owl $(TRANSLATIONS_OWL)
+	$(ROBOT) merge $(patsubst %, -i %, $^) \
+		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		--output $@.tmp.owl && mv $@.tmp.owl $@
+
 
 ##################################
 ##### Scheduled GH Actions #######

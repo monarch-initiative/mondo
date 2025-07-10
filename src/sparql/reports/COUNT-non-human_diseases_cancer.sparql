@@ -1,0 +1,17 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+# Count of all non-obsolete 'cancer or benign tumor, non-human animal' classes
+
+SELECT (COUNT(DISTINCT ?class) AS ?countNonHumanCancerDiseases)
+WHERE {
+    # MONDO:1011305 'cancer or benign tumor, non-human animal'
+    ?class rdfs:subClassOf* obo:MONDO_1011305 .
+  
+    FILTER NOT EXISTS {
+        ?class owl:deprecated true
+    }
+
+    FILTER (isIRI(?class) && STRSTARTS(str(?class), "http://purl.obolibrary.org/obo/MONDO_"))
+}
