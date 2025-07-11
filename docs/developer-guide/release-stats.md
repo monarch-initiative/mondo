@@ -160,7 +160,7 @@ Here are the steps to run the `make` goals and update the web site:
 `sh run.sh make all-metrics-tables` 
 or 
 `sh run.sh make MONDO_TAG=v2025-02-04 all-metrics-tables` to specify a specific tagged Mondo release version 
-The result files are saved to `reports/mondo_stats/mondo-general-stats/ontology-metrics-table.md` and `reports/mondo_stats/mondo-general-stats/disease-types-metrics-table.md` and these file locations are displayed in the final message when running the make goal. These files are not under git version control so they do not appear as changed files by git.
+The result files are saved to `mondo/src/ontology/reports/mondo_stats/mondo-general-stats/ontology-metrics-table.md` and `mondo/src/ontology/reports/mondo_stats/mondo-general-stats/disease-types-metrics-table.md` and these file locations are displayed in the final message when running the make goal. These files are not under git version control so they do not appear as changed files by git.
 NOTE: By default, the statistics will be generated for the most recent Mondo release. However, they can also be generated for any [tagged Mondo release version](https://github.com/monarch-initiative/mondo/tags).
 1. Alternatively, each table can be created separately:
 	1. To generate the "Ontology metrics" statistics, from `mondo/src/ontology` run:
