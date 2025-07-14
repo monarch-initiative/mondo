@@ -39,6 +39,7 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/t
 
 ### Ontology Metrics
 
+<!-- START:TABLE1 -->
 | Metric | Count |
 | :--- | ---: |
 | **Total number of diseases**                         | 25,803  |
@@ -48,7 +49,7 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/t
 | &nbsp;&nbsp;&nbsp;&nbsp;Narrow synonyms<sup>2</sup>  | 2,568   |
 | &nbsp;&nbsp;&nbsp;&nbsp;Broad synonyms<sup>3</sup>   | 1,417   |
 | &nbsp;&nbsp;&nbsp;&nbsp;Related synonyms<sup>4</sup> | 30,390  |
-
+<!-- END:TABLE1 -->
 
 <small>
 <sup>1</sup><i>Exact synonym</i>: The definition of the synonym is exactly the same as the primary term label and definition. This is used when the same class can have more than one name. For example, MONDO:0003321 <a href="https://www.ebi.ac.uk/ols4/ontologies/mondo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FMONDO_0003321" target="_blank">hereditary Wilms tumor</a> has_exact_synonym &quot;familial Wilms tumor&quot;.
@@ -63,6 +64,7 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/t
 
 ### Representation of disease types
 
+<!-- START:TABLE2 -->
 | Category                                                       | Count (classes) |
 |:---------------------------------------------------------------|----------------:|
 | **Total number of diseases**                                   | 25,803          |
@@ -75,6 +77,7 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/t
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cancer         | 217             |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Infectious     | 87              |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mendelian      | 1,028           |
+<!-- END:TABLE2 -->
 
 <small><i>Note: susceptibilities are not included in these counts.</i></small>
 
