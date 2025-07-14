@@ -20,8 +20,8 @@ jobs:
       - name: Set up cache paths
         id: vars
         run: |
-          echo "cache1=reports/mondo_stats/mondo-general-stats/ontology-metrics-table.md" >> $GITHUB_OUTPUT
-          echo "cache2=reports/mondo_stats/mondo-general-stats/disease-types-metrics-table.md" >> $GITHUB_OUTPUT
+          echo "cache1=src/ontology/reports/mondo_stats/mondo-general-stats/ontology-metrics-table.md" >> $GITHUB_OUTPUT
+          echo "cache2=src/ontology/reports/mondo_stats/mondo-general-stats/disease-types-metrics-table.md" >> $GITHUB_OUTPUT
 
       - name: Build metrics tables
         run: cd src/ontology && make all-metrics-tables
