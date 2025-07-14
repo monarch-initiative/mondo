@@ -44,11 +44,11 @@ jobs:
           cp "${{ steps.vars.outputs.cache1 }}" /tmp/table1.md
           cp "${{ steps.vars.outputs.cache2 }}" /tmp/table2.md
 
-      - name: Checkout gh-pages
+      - name: Checkout gh-pages branch as root
         uses: actions/checkout@v4
         with:
           ref: gh-pages
-          path: gh-pages
+          clean: true
 
       - name: Replace tables in index.md
         run: |
@@ -69,9 +69,9 @@ jobs:
               }
               if (!in_table) print
           }
-          ' gh-pages/index.md > gh-pages/index.tmp
+          ' index.md > index.tmp
 
-          mv gh-pages/index.tmp gh-pages/index.md
+          mv index.tmp index.md
 
           awk -v new_table="/tmp/table2.md" '
           BEGIN { in_table = 0 }
@@ -90,9 +90,9 @@ jobs:
               }
               if (!in_table) print
           }
-          ' gh-pages/index.md > gh-pages/index2.tmp
+          ' index.md > index2.tmp
 
-          mv gh-pages/index2.tmp gh-pages/index.md
+          mv index2.tmp index.md
 
       - name: Create Pull Request
         id: create-pr
