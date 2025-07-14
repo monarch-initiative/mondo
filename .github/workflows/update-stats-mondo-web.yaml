@@ -1,0 +1,94 @@
+name: Update The Stats for Mondo Website
+
+on:
+#  schedule:
+#    - cron: '0 14 * * 1'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.5.4
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Set up cache paths
+        id: vars
+        run: |
+          echo "cache1=reports/mondo_stats/mondo-general-stats/ontology-metrics-table.md" >> $GITHUB_OUTPUT
+          echo "cache2=reports/mondo_stats/mondo-general-stats/disease-types-metrics-table.md" >> $GITHUB_OUTPUT
+
+      - name: Build metrics tables
+        run: cd src/ontology && make ontology-metrics-table
+
+      - name: Save tables to temporary location
+        run: |
+          cp "${{ steps.vars.outputs.cache1 }}" /tmp/table1.md
+          cp "${{ steps.vars.outputs.cache2 }}" /tmp/table2.md
+
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Replace tables in index.md
+        run: |
+          awk -v new_table="/tmp/table1.md" '
+          BEGIN { in_table = 0 }
+          {
+              if ($0 ~ /<!-- START:TABLE1 -->/) {
+                  print
+                  while ((getline line < new_table) > 0) print line
+                  close(new_table)
+                  in_table = 1
+                  next
+              }
+              if ($0 ~ /<!-- END:TABLE1 -->/) {
+                  in_table = 0
+                  print
+                  next
+              }
+              if (!in_table) print
+          }
+          ' gh-pages/index.md > gh-pages/index.tmp
+
+          mv gh-pages/index.tmp gh-pages/index.md
+
+          awk -v new_table="/tmp/table2.md" '
+          BEGIN { in_table = 0 }
+          {
+              if ($0 ~ /<!-- START:TABLE2 -->/) {
+                  print
+                  while ((getline line < new_table) > 0) print line
+                  close(new_table)
+                  in_table = 1
+                  next
+              }
+              if ($0 ~ /<!-- END:TABLE2 -->/) {
+                  in_table = 0
+                  print
+                  next
+              }
+              if (!in_table) print
+          }
+          ' gh-pages/index.md > gh-pages/index2.tmp
+
+          mv gh-pages/index2.tmp gh-pages/index.md
+
+      - name: Create Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch-suffix: short-commit-hash
+          labels: Automated
+          body: "Update the stats on Mondo website."
+          title: "Update the stats on Mondo website."
+          base: ${{ github.head_ref }}
+          branch: "externally_managed_content"
+          token: ${{ secrets.GH_TOKEN }}
+          reviewers: "twhetzel"
