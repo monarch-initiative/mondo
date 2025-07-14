@@ -89,7 +89,6 @@ jobs:
           labels: Automated
           body: "Update the stats on Mondo website."
           title: "Update the stats on Mondo website."
-          base: ${{ github.head_ref }}
-          branch: "externally_managed_content"
+          base: gh-pages
+          branch: "gh-pages_update-web-site-stats"
           token: ${{ secrets.GH_TOKEN }}
-          reviewers: "twhetzel"
