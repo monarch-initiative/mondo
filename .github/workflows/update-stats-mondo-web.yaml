@@ -23,7 +23,7 @@ jobs:
           echo "cache2=reports/mondo_stats/mondo-general-stats/disease-types-metrics-table.md" >> $GITHUB_OUTPUT
 
       - name: Build metrics tables
-        run: cd src/ontology && make ontology-metrics-table
+        run: cd src/ontology && make all-metrics-tables
 
       - name: Save tables to temporary location
         run: |
