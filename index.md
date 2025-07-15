@@ -40,6 +40,7 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/t
 ### Ontology Metrics
 
 <!-- START:TABLE1 -->
+
 | Metric | Count |
 | :--- | ---: |
 | **Total number of diseases**                         | 25,803  |
@@ -49,6 +50,7 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/t
 | &nbsp;&nbsp;&nbsp;&nbsp;Narrow synonyms<sup>2</sup>  | 2,568   |
 | &nbsp;&nbsp;&nbsp;&nbsp;Broad synonyms<sup>3</sup>   | 1,417   |
 | &nbsp;&nbsp;&nbsp;&nbsp;Related synonyms<sup>4</sup> | 30,390  |
+
 <!-- END:TABLE1 -->
 
 <small>
@@ -65,6 +67,7 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/t
 ### Representation of disease types
 
 <!-- START:TABLE2 -->
+
 | Category                                                       | Count (classes) |
 |:---------------------------------------------------------------|----------------:|
 | **Total number of diseases**                                   | 25,803          |
@@ -77,6 +80,7 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/t
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cancer         | 217             |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Infectious     | 87              |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mendelian      | 1,028           |
+
 <!-- END:TABLE2 -->
 
 <small><i>Note: susceptibilities are not included in these counts.</i></small>
