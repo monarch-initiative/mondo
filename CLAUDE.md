@@ -300,7 +300,7 @@ Multiple sources can be cited for the same relationship.
 ```markdown
 ## Gene Identifiers
 
-**CRITICAL**: Always verify gene identifiers using the official HGNC database:
+**CRITICAL**: Always verify gene identifiers for human diseases use the official HGNC database:
 - Search at https://www.genenames.org/
 - Use format: `http://identifiers.org/hgnc/[HGNC_ID]`
 - NEVER guess gene identifiers
