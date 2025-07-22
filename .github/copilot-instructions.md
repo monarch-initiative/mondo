@@ -191,9 +191,9 @@ synonym: "term name" EXACT []  # INCORRECT
 ```
 
 ### ClinGen Label Handling
-When ClinGen provides preferred labels, use the CLINGEN_LABEL qualifier:
+When ClinGen provides preferred labels, add a "preferred label for community" (OMO:0002001) annotation on the term:
 ```
-synonym: "Hajdu-Cheney syndrome-NOTCH2" EXACT CLINGEN_LABEL [https://clinicalgenome.org/affiliation/40066/]
+synonym: "Hajdu-Cheney syndrome-NOTCH2" EXACT [https://clinicalgenome.org/affiliation/40066/]  {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 ```
 ```
 

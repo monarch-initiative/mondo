@@ -28,7 +28,7 @@ WHERE {
   [] owl:annotatedSource ?entity ;
          owl:annotatedProperty ?synonym_property ;
          owl:annotatedTarget ?clingen_label ;
-         oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#CLINGEN_LABEL> .
+         OMO:0002001 <https://w3id.org/information-resource-registry/clingen> .
 
   FILTER(STR(?label)!=STR(?clingen_label))
 
