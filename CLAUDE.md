@@ -306,6 +306,13 @@ Multiple sources can be cited for the same relationship.
 - NEVER guess gene identifiers
 
 Example: For MYCBP2 gene, use `http://identifiers.org/hgnc/23386`, NOT `http://identifiers.org/hgnc/7557`
+
+**CRITICAL**: Always verify gene identifiers for non-human animal diseases, use gene identifiers from NCBI gene:
+- Search at: https://www.ncbi.nlm.nih.gov/gene
+- Use format: `http://identifiers.org/ncbigene/[NCBI_GENE_ID]`
+- Never guess at gene identifiers
+
+Example: For MAP9 gene from Canis lupus familiaris (dog), use `http://identifiers.org/ncbigene/482662`.
 ```
 
 ## 7. Susceptibility vs Disease Relationships
