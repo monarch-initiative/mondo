@@ -308,7 +308,7 @@ Multiple sources can be cited for the same relationship.
 Example: For MYCBP2 gene, use `http://identifiers.org/hgnc/23386`, NOT `http://identifiers.org/hgnc/7557`
 
 **CRITICAL**: Always verify gene identifiers for non-human animal diseases, use gene identifiers from NCBI gene:
-- Search at: https://www.ncbi.nlm.nih.gov/gene
+- To search for a gene within a species, e.g. dog, use a search URL like https://www.ncbi.nlm.nih.gov/gene/?term=Canis+lupus+familiaris+MAP9
 - Use format: `http://identifiers.org/ncbigene/[NCBI_GENE_ID]`
 - Never guess at gene identifiers
 
