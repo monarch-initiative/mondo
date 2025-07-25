@@ -224,7 +224,7 @@ REMOVE_DECLARATIONS=
 # all necessary ones are implicitly added back when converting back to OWL
 # see: https://github.com/owlcs/owlapi/pull/761
 filtered.owl: filtered.obo skos.ttl
-	owltools --use-catalog $< $(REMOVE_DECLARATIONS) skos.ttl --merge-support-ontologies -o $@
+	$(ROBOT) merge -i filtered.obo -i skos.ttl --collapse-import-closure false -o $@
 
 # perform reasoning on source
 # PREVIOUS: SKIP FOR NOW: assume pre-asserted, but run reasoner to check
@@ -470,7 +470,22 @@ $(IMPORTDIR)/merged_terms_combined.txt: $(ALL_TERMS_COMBINED)
 
 $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/merged_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
-		remove  --select "<http://purl.obolibrary.org/obo/GOCHE_*>" remove  --select "<http://purl.obolibrary.org/obo/NCBITaxon_Union_*>" remove  --select "<http://www.informatics.jax.org/marker/MGI:*>" remove  --select "<http://purl.obolibrary.org/obo/OBI_*>" remove  --select "<http://purl.obolibrary.org/obo/CARO_*>" remove  --select "<http://purl.obolibrary.org/obo/RnorDv_*>" remove  --select "<http://purl.obolibrary.org/obo/PR_*>" remove  --select "<http://purl.obolibrary.org/obo/PCO_*>" remove  --select "<http://purl.obolibrary.org/obo/ExO_*>" remove  --select "<http://purl.obolibrary.org/obo/FAO_*>" remove  --select "<http://purl.obolibrary.org/obo/UPHENO_*>" remove  --select "<http://purl.obolibrary.org/obo/COB_*>" remove  --select "<http://purl.obolibrary.org/obo/MPATH_*>" remove  --select "<http://purl.obolibrary.org/obo/PO_*>" remove  --select "<http://purl.obolibrary.org/obo/ENVO_01001055*>"  \
+		remove  --select "<http://purl.obolibrary.org/obo/GOCHE_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/NCBITaxon_Union_*>" \
+		remove  --select "<http://www.informatics.jax.org/marker/MGI:*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/OBI_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/CARO_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/RnorDv_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/PR_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/PCO_*>"\
+		remove  --select "<http://purl.obolibrary.org/obo/ExO_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/FAO_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/UPHENO_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/COB_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/MPATH_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/PO_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/OGMS_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/ENVO_01001055*>"  \
 		extract -T $(IMPORTDIR)/merged_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
 		remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T $(IMPORTDIR)/merged_terms_combined.txt --select complement --select "annotation-properties" \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
