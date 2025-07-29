@@ -24,8 +24,13 @@ jobs:
           cd src/ontology
           make GITHUB_ACTION=true IMP=false PAT=false MIR=false add_redundant_subclass_annotations -B
     
+      - name: Normalise ontology
+        run: |
+          cd src/ontology
+          make GITHUB_ACTION=true IMP=false PAT=false MIR=false NORM && mv NORM mondo-edit.obo
+
       - name: QC
-        run: cd src/ontology; make GITHUB_ACTION=true IMP=false PAT=false test -B
+        run: cd src/ontology; make GITHUB_ACTION=true IMP=false PAT=false MIR=false test -B
         continue-on-error: true  # Allow QC to fail but continue
 
       - name: Create Pull Request
