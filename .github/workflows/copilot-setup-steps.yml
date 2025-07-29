@@ -1,0 +1,86 @@
+name: "Copilot Setup Steps"
+inputs:
+  robot-version:
+    description: 'Version of ROBOT tool to install'
+    required: false
+    default: 'v1.9.7'
+
+
+# Automatically run the setup steps when they are changed to allow for easy validation, and
+# allow manual testing through the repository's "Actions" tab
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+  pull_request:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+
+jobs:
+  # The job MUST be called `copilot-setup-steps` or it will not be picked up by Copilot.
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+
+    # Set the permissions to the lowest permissions possible needed for your steps.
+    # Copilot will be given its own token for its operations.
+    permissions:
+      # If you want to clone the repository as part of your setup steps, for example to install dependencies, you'll need the `contents: read` permission. If you don't clone the repository in your setup steps, Copilot will do this for you automatically after the steps complete.
+      contents: read
+
+    # You can define any steps you want, and they will run before the agent starts.
+    # If you do not check out your code, Copilot will do this for you.
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Create tools directory
+      run: mkdir -p ${{ github.workspace }}/tools
+      shell: bash
+
+    - name: Cache ROBOT JAR files
+      uses: actions/cache@v4
+      with:
+        path: ~/.jar-cache
+        key: ${{ runner.os }}-robot-v1.9.7
+        restore-keys: ${{ runner.os }}-robot-
+
+    - name: Download ROBOT JAR if not cached
+      run: |
+        mkdir -p ~/.jar-cache
+        if [ ! -f ~/.jar-cache/robot.jar ]; then
+          curl -L https://github.com/ontodev/robot/releases/download/v1.9.7/robot.jar -o ~/.jar-cache/robot.jar
+        fi
+      shell: bash
+    
+    - name: Setup ROBOT tools
+      run: |
+        cp ~/.jar-cache/robot.jar ${{ github.workspace }}/tools/robot.jar
+        curl -L https://raw.githubusercontent.com/ontodev/robot/v1.9.7/bin/robot -o ${{ github.workspace }}/tools/robot
+        chmod +x ${{ github.workspace }}/tools/robot
+        ${{ github.workspace }}/tools/robot --help
+      shell: bash
+
+    - name: Add tools to PATH
+      run: |
+        echo "${{ github.workspace }}/tools" >> $GITHUB_PATH
+        ls -alt ${{ github.workspace }}
+        ls -alt ${{ github.workspace }}/tools
+      shell: bash
+
+    - name: Add obo-scripts to PATH
+      run: |
+        git clone https://github.com/cmungall/obo-scripts.git ${{ github.workspace }}/tools/obo-scripts
+        echo "${{ github.workspace }}/tools/obo-scripts" >> $GITHUB_PATH
+      shell: bash
+      
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
+
+    - name: Install Python tools
+      run: |
+        uv venv
+        source .venv/bin/activate
+        uv pip install aurelian jinja2-cli "wrapt>=1.17.2"
+      shell: bash
+      

@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.5.4
+    container: obolibrary/odkfull:v1.6
 
     steps:
       - name: Checkout main branch
@@ -38,4 +38,3 @@ jobs:
           base: ${{ github.head_ref }}
           branch: "externally_managed_content"
           token: ${{ secrets.GH_TOKEN }}
-          reviewers: "twhetzel"
