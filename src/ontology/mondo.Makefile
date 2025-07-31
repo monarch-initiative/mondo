@@ -702,6 +702,14 @@ update-rare-subset:
 ####################################
 ##### OMIM #####################
 ####################################
+$(TMPDIR)/keep-susceptibility-gene-assocation-axioms.owl: $(SRC)
+	$(ROBOT) filter --input $(SRC) \
+		--term MONDO:0042489 \
+		--select "self descendants" \
+		--term RO:0004003 \
+		--axioms SubClassOf \
+		--trim false \
+		-o $@
 
 $(TMPDIR)/mondo-genes-axioms.owl: $(SRC)
 	$(ROBOT) filter --input $(SRC) \
@@ -712,14 +720,18 @@ $(TMPDIR)/mondo-genes-axioms.owl: $(SRC)
 		--drop-axiom-annotations "oboInOwl:source=~'(OMIM):.*'" \
 		-o $@
 
-
 .PHONY: update-omim-genes
 update-omim-genes:
-	$(MAKE) $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl $(TMPDIR)/mondo-genes-axioms.owl -B
+	$(MAKE) $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl \
+	$(TMPDIR)/keep-susceptibility-gene-assocation-axioms.owl \
+	$(TMPDIR)/mondo-genes-axioms.owl -B
 	# We need to be less aggressive here, as some gene relations were not originally sourced
 	# from OMIM, and were added, for example, for ClinGen.
 	$(ROBOT) remove -i $(SRC) --term RO:0004003 --axioms SubClassOf --preserve-structure false --trim true \
-		merge -i $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl -i $(TMPDIR)/mondo-genes-axioms.owl --collapse-import-closure false \
+		merge -i $(TMPDIR)/external/processed-mondo-omim-genes.robot.owl \
+		-i $(TMPDIR)/mondo-genes-axioms.owl \
+		-i $(TMPDIR)/keep-susceptibility-gene-assocation-axioms.owl \
+		--collapse-import-closure false \
 		query --update ../sparql/update/omim-gene-equivalence.ru \
 		query --update ../sparql/update/remove_gene_associations_from_obsolete.ru \
 		convert -f obo --check false -o $(SRC).obo
