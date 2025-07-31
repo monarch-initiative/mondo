@@ -480,6 +480,7 @@ WHERE
   	?cls owl:deprecated ?deprecated .
   }
   FILTER( STRBEFORE(str(?value),":") not in (
+      "birnlex",
       "CSP",
       "DECIPHER",
       "DOID",
@@ -509,6 +510,7 @@ WHERE
       "NCIT",
       "NDFRT",
       "NIFSTD",
+      "nlxdys",
       "NORD",
       "OBI",
       "OGMS",
@@ -1119,6 +1121,19 @@ WHERE
         )
     )
 
+    # Ignore "preferred by community" annotations on synonyms
+    FILTER(
+        !(?provenance = <http://purl.obolibrary.org/obo/OMO_0002001> && 
+            (
+                ?property IN (
+                    oio:hasExactSynonym, 
+                    oio:hasRelatedSynonym, 
+                    oio:hasBroadSynonym, 
+                    oio:hasNarrowSynonym)
+            )
+        )
+    )
+
     # Xrefs are allowed on definitions and synonyms
     FILTER (
         !( 
@@ -1468,7 +1483,11 @@ WHERE
       ] .
     FILTER(?property!=rdfs:subClassOf && ?value!=rdfs:comment)
   	FILTER(?y!=?x && ?y!=?property && ?y!=?entity && ?y!=owl:Axiom)
-  	FILTER ((?value != oboInOwl:source) && (?value != oboInOwl:hasDbXref) && (?value != oboInOwl:hasSynonymType)) .
+  	FILTER (
+        (?value != oboInOwl:source) 
+        && (?value != oboInOwl:hasDbXref) 
+        && (?value != oboInOwl:hasSynonymType) 
+        && (?value != <http://purl.obolibrary.org/obo/OMO_0002001>)) .
     FILTER (isIRI(?entity) && regex(str(?entity), "^http://purl.obolibrary.org/obo/MONDO_"))
 
 }
