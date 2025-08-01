@@ -1,0 +1,56 @@
+name: Generate GitHub Issue Statistics
+
+on:
+  workflow_dispatch:
+    inputs:
+      from_date:
+        description: "Start date (YYYY-MM-DD) — optional"
+        required: false
+      to_date:
+        description: "End date (YYYY-MM-DD) — optional"
+        required: false
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Fetch tag metadata only
+        run: git fetch --tags --depth=1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install PyGithub tqdm
+
+      - name: Run export
+        run: |
+          if [[ -n "${{ inputs.from_date }}" && -n "${{ inputs.to_date }}" ]]; then
+            echo "Using manually entered dates"
+            make github-issue-stats FROM_DATE=${{ inputs.from_date }} TO_DATE=${{ inputs.to_date }}
+          else
+            echo "Using auto-calculated dates from git tags"
+            make github-issue-stats
+          fi
+        working-directory: src/ontology
+
+      - name: Upload stats report
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-issue-stats
+          path: src/ontology/reports/mondo_stats/mondo-community-stats/gh_issue_status.csv
+      
+      - name: Upload usernames report
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-issue-usernames
+          path: src/ontology/reports/mondo_stats/mondo-community-stats/gh_issue_usernames.csv

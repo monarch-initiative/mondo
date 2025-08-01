@@ -82,7 +82,8 @@ For example, MONDO:0003321-hereditary Wilms' tumor : ‘has_exact_synonym’ ‘
 
 #### Narrow
 
-The definition of the synonym is the same as the primary definition, but has additional qualifiers.
+The definition of the synonym is the same as the primary definition, but has additional qualifiers. **Note** - ClinGen curators will sometimes request narrow synoyms that are actually subclasses of the term. We can add narrow synonyms to help the users find the right term when it makes sense. For instance, when the synonym refers to another disease that is more specific, but in practice, people would use the more general term.
+This is exactly the use case for ClinGen: since they lump 2 diseases, they would suspect that the narrow synonyms refer to the lumped term. See example: MONDO:0100582 'TOR1AIP1-related myopathy' (ticket: https://github.com/monarch-initiative/mondo/issues/8593).
 
 For example, MONDO:0004979 asthma : ‘has_narrow_synonym’ ‘exercise-induced asthma’
 
