@@ -1,0 +1,33 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+CONSTRUCT {
+  ?disease rdfs:subClassOf ?r .
+
+  ?axiom a owl:Axiom ;
+         owl:annotatedSource ?disease ;
+         owl:annotatedProperty rdfs:subClassOf ;
+         owl:annotatedTarget ?r ;
+         oboInOwl:source ?source .
+         
+  ?r a owl:Restriction ;
+     owl:onProperty <http://purl.obolibrary.org/obo/RO_0004003> ;
+     owl:someValuesFrom ?gene .
+}
+WHERE {
+  ?disease rdfs:subClassOf* obo:MONDO_0042489 .
+  ?disease rdfs:subClassOf ?r .
+  ?r a owl:Restriction ;
+     owl:onProperty <http://purl.obolibrary.org/obo/RO_0004003> ;
+     owl:someValuesFrom ?gene .
+
+  OPTIONAL {
+    ?axiom a owl:Axiom ;
+           owl:annotatedSource ?disease ;
+           owl:annotatedProperty rdfs:subClassOf ;
+           owl:annotatedTarget ?r ;
+           oboInOwl:source ?source .
+  }
+}

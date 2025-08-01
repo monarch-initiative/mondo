@@ -699,9 +699,43 @@ update-rare-subset:
 ##### Mondo Externally Managed Content Pipeline ######
 ######################################################
 
+################################################################
+###### Patch Mondo susceptibility gene assocations #############
+####### Backfill run in July 2025 ##############################
+## The OMIM gene ingest pipeline was frst run in January 2025 ##
+################################################################
+
+MONDO_VERSIONS := v2024-12-03 
+#v2025-01-07 v2025-02-04 v2025-03-04 v2025-04-01 v2025-05-06 v2025-06-03
+
+PATCH_DIR := $(TMPDIR)/susceptibility-patches
+SPARQL := ../sparql/construct/construct-susceptibility-term-gene-associations.sparql
+EDIT_FILE := mondo-edit.obo
+
+.PHONY: extract-susceptibility-patches
+extract-susceptibility-patches: $(foreach v,$(MONDO_VERSIONS),$(PATCH_DIR)/susceptibility-$(v).ttl)
+
+# Download each tagged mondo.owl version
+$(TMPDIR)/mondo-%.owl:
+	mkdir -p $(TMPDIR)
+	wget https://github.com/monarch-initiative/mondo/releases/download/$*/mondo.owl -O $@
+
+# Extract gene associations for susceptibility terms with source info
+$(PATCH_DIR)/susceptibility-%.ttl: $(TMPDIR)/mondo-%.owl $(SPARQL)
+	mkdir -p $(PATCH_DIR)
+	$(ROBOT) query --format ttl --input $< --query $(SPARQL) $@	
+
+
 ####################################
 ##### OMIM #####################
 ####################################
+$(TMPDIR)/mondo-patched.owl: $(TMPDIR)/mondo.owl $(TMPDIR)/keep-susceptibility-gene-assocation-axioms.owl
+	$(ROBOT) merge \
+		-i $(TMPDIR)/mondo.owl \
+		-i $(TMPDIR)/keep-susceptibility-gene-assocation-axioms.owl \
+		--collapse-import-closure false \
+		-o $@
+
 $(TMPDIR)/keep-susceptibility-gene-assocation-axioms.owl: $(SRC)
 	$(ROBOT) filter --input $(SRC) \
 		--term MONDO:0042489 \
