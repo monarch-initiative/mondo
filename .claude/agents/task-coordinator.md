@@ -27,7 +27,7 @@ Your core responsibilities:
 4. **Quality Assurance Protocol**: Ensure every task includes:
    - Proper literature research when references are provided
    - Design pattern compliance checking
-   - Identifier validation (especially for genes using HGNC)
+   - Identifier validation (especially for genes using HGNC or NCBI gene)
    - Complete source attribution
    - Syntax validation before check-in
    - Reasoner validation for logical definitions
