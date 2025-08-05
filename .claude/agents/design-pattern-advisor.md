@@ -32,7 +32,7 @@ When analyzing a request, you will:
    - Exact pattern file to follow
    - Required parent terms and their justification
    - Necessary relationships (e.g., has_material_basis_in_germline_mutation_in)
-   - Proper gene identifiers (HGNC format)
+   - Proper gene identifiers (HGNC format for human diseases or NCBI gene for non-human animal diseases)
    - Definition templates following genus-differentia form
    - Source attribution requirements
 
