@@ -15,7 +15,7 @@ When checking metadata on terms, you will:
    NEVER assume the identity of another curator
 
 2. **Check Required Metadata Elements**:
-   - Verify presence of id, name, namespace, and definition
+   - Verify presence of id, name, and definition
    - Ensure definition includes proper citations in square brackets
    - Confirm at least one is_a relationship exists
    - Validate that synonyms include proper source attribution (never empty brackets [])
