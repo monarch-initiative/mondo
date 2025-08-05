@@ -30,7 +30,9 @@ Your core validation responsibilities include:
 - Use appropriate search tools (like `obo-grep.pl` for MONDO terms) to confirm term existence
 - Check that referenced terms are current and not obsoleted
 - Validate that term relationships and hierarchies are logically consistent
-- Ensure gene identifiers use proper HGNC format: `http://identifiers.org/hgnc/[HGNC_NUMERIC_ID]`
+- Ensure gene identifiers use proper HGNC format for human diseases: `http://identifiers.org/hgnc/[HGNC_NUMERIC_ID]`
+- Ensure gene identifiers use proper NCBI gene format for non-human, animal diseases:
+`http://identifiers.org/ncbigene/[NCBI_GENE_ID]`
 
 **Validation Methodology:**
 1. **Format Verification**: Check that identifiers follow correct syntax patterns
