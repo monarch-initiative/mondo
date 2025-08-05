@@ -1693,7 +1693,7 @@ $(TMPDIR)/subclass-named-axioms.owl: $(SRC)
 		--preserve-structure false \
 		--trim false \
 		remove --select "object-properties" \
-		--drop-axiom-annotations "oboInOwl:source=~'($(SOURCES_REGEX)):.*'" \
+		--drop-axiom-annotations "oboInOwl:source=~'($(SUBCLASS_SOURCES_REGEX)):.*'" \
 		-o $@
 
 # This command updates mondo-edit with all the confirmed subclass evidence from the mondo-ingest repo
@@ -1712,9 +1712,11 @@ update-subclass-sync:
 
 # All the synchronized sources
 SYNCED_SOURCES := DOID ICD10CM ICD10WHO icd11.foundation NCIT OMIM OMIMPS Orphanet
+SUBCLASS_SYNCED_SOURCES := DOID ICD10CM ICD10WHO icd11.foundation NCIT OMIM Orphanet
 
 # Join the sources with '|' to form a regex for use in commands
 SOURCES_REGEX := $(shell IFS='|'; echo "$(SYNCED_SOURCES)" | sed 's/ /|/g')
+SUBCLASS_SOURCES_REGEX := $(shell IFS='|'; echo "$(SUBCLASS_SYNCED_SOURCES)" | sed 's/ /|/g')
 
 # This target extracts all synonyms from mondo edit and then drops all axiom
 # annotations related to the sources that are in the list of curated sources
