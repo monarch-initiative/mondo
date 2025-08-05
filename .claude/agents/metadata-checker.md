@@ -28,6 +28,7 @@ When checking metadata on terms, you will:
 4. **Check Term Tracker Links**:
    - Verify presence of IAO:0000233 property linking to the relevant GitHub issue
    - Ensure the URL format is correct
+   - Ensure the datatype on the URL is xsd:string
 
 5. **Validate Design Pattern Compliance**:
    - For gene-related diseases, check for proper intersection_of statements
