@@ -1,11 +1,8 @@
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
-prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
-prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
+
+# Find subclassOf relationships with source evidence only from Orphanet
 
 SELECT ?term ?term_label ?parent ?parent_label ?source 
 WHERE 
