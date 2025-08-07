@@ -1,7 +1,7 @@
 OBOBASE=                    http://purl.obolibrary.org/obo
 URIBASE=                    http://purl.obolibrary.org/obo
 VERSION=                    $(TODAY)
-ANNOTATION_PROPERTIES=		rdfs:label IAO:0000115 IAO:0000116 IAO:0100001 owl:deprecated 
+ANNOTATION_PROPERTIES=		rdfs:label IAO:0000115 IAO:0000116 IAO:0100001 owl:deprecated RO:0002175
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
 
@@ -15,6 +15,7 @@ ONTURI=$(OBO)/$(ONT)
 ONTBASE=$(OBO)/$(ONT)
 MIRRORDIR=mirror
 IMPORTDIR=imports
+SUBSETDIR=subsets
 
 
 SRC=$(ONT)-edit.obo
@@ -86,7 +87,7 @@ all_imports: $(IMPORT_FILES)
 COMPONENTS = mondo-tags
 COMPONENT_FILES = $(foreach n, $(COMPONENTS), components/$(n).owl)
 
-SUBSETS = mondo-rare
+SUBSETS = mondo-rare mondo-clingen
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).owl $(n).obo $(n).json $(n)_nodes.tsv $(n)_edges.tsv)
 
@@ -223,7 +224,7 @@ REMOVE_DECLARATIONS=
 # all necessary ones are implicitly added back when converting back to OWL
 # see: https://github.com/owlcs/owlapi/pull/761
 filtered.owl: filtered.obo skos.ttl
-	owltools --use-catalog $< $(REMOVE_DECLARATIONS) skos.ttl --merge-support-ontologies -o $@
+	$(ROBOT) merge -i filtered.obo -i skos.ttl --collapse-import-closure false -o $@
 
 # perform reasoning on source
 # PREVIOUS: SKIP FOR NOW: assume pre-asserted, but run reasoner to check
@@ -404,22 +405,36 @@ tmp/rare-seed.txt: tmp/rare-seed-entities.txt tmp/rare-seed-classes.txt config/r
 	cat $^ | sort | uniq > $@
 .PRECIOUS: tmp/rare-seed.txt
 
-subsets/mondo-rare.owl: $(ONT)-base.owl $(TMPDIR)/hgnc_import.owl  tmp/rare-seed.txt | $(SUBSETDIR)
+$(SUBSETDIR)/mondo-rare.owl: $(ONT)-base.owl $(TMPDIR)/hgnc_import.owl  tmp/rare-seed.txt | $(SUBSETDIR)
 	$(ROBOT) merge -i $< -i $(TMPDIR)/hgnc_import.owl extract --method subset -T tmp/rare-seed.txt --output $@ &&\
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: $(SUBSETDIR)/mondo-rare.owl
 
-subsets/%.json: subsets/%.owl
+########## Clingen Subset ######
+
+# CURRENTLY NOT USED, ONLY REMOVING NON-HUMAN ANIMAL DISEASES
+$(TMPDIR)/clingen-seed.txt: $(SRC)
+	$(ROBOT) merge -i $< query --query ../sparql/signature/clingen-subset.sparql $@
+.PRECIOUS: $(TMPDIR)/clingen-seed.txt
+
+$(SUBSETDIR)/mondo-clingen.owl: $(ONT)-base.owl | $(SUBSETDIR)
+	$(ROBOT) merge -i $< \
+		query --update ../sparql/update/clingen-labels.ru \
+		remove --term MONDO:0005583 --select "self descendants" \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: $(SUBSETDIR)/mondo-clingen.owl
+
+$(SUBSETDIR)/%.json: $(SUBSETDIR)/%.owl
 	$(ROBOT) convert -i $< -o $@
 
-subsets/%_nodes.tsv subsets/%_edges.tsv: subsets/%.json
-	kgx transform --input-format obojson --output-format tsv --output subsets/$* $< && test -f subsets/$*_nodes.tsv
+$(SUBSETDIR)/%_nodes.tsv $(SUBSETDIR)/%_edges.tsv: $(SUBSETDIR)/%.json
+	kgx transform --input-format obojson --output-format tsv --output $(SUBSETDIR)/$* $< && test -f $(SUBSETDIR)/$*_nodes.tsv
 
-subsets/%.obo: subsets/%.owl
+$(SUBSETDIR)/%.obo: $(SUBSETDIR)/%.owl
 	$(ROBOT) convert -i $< -o $@.tmp.obo && grep -v ^owl-axioms: $@.tmp.obo > $@ && rm $@.tmp.obo
 
 rare_subset:
-	$(MAKE) IMP=false MIR=false COMP=false subsets/mondo-rare.owl subsets/mondo-rare.json subsets/mondo-rare.obo
+	$(MAKE) IMP=false MIR=false COMP=false $(SUBSETDIR)/mondo-rare.owl $(SUBSETDIR)/mondo-rare.json $(SUBSETDIR)/mondo-rare.obo
 
 # ----------------------------------------
 # DOSDP Modules
@@ -455,7 +470,22 @@ $(IMPORTDIR)/merged_terms_combined.txt: $(ALL_TERMS_COMBINED)
 
 $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/merged_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
-		remove  --select "<http://purl.obolibrary.org/obo/GOCHE_*>" remove  --select "<http://purl.obolibrary.org/obo/NCBITaxon_Union_*>" remove  --select "<http://www.informatics.jax.org/marker/MGI:*>" remove  --select "<http://purl.obolibrary.org/obo/OBI_*>" remove  --select "<http://purl.obolibrary.org/obo/CARO_*>" remove  --select "<http://purl.obolibrary.org/obo/RnorDv_*>" remove  --select "<http://purl.obolibrary.org/obo/PR_*>" remove  --select "<http://purl.obolibrary.org/obo/PCO_*>" remove  --select "<http://purl.obolibrary.org/obo/ExO_*>" remove  --select "<http://purl.obolibrary.org/obo/FAO_*>" remove  --select "<http://purl.obolibrary.org/obo/UPHENO_*>" remove  --select "<http://purl.obolibrary.org/obo/COB_*>" remove  --select "<http://purl.obolibrary.org/obo/MPATH_*>" remove  --select "<http://purl.obolibrary.org/obo/PO_*>" remove  --select "<http://purl.obolibrary.org/obo/ENVO_01001055*>"  \
+		remove  --select "<http://purl.obolibrary.org/obo/GOCHE_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/NCBITaxon_Union_*>" \
+		remove  --select "<http://www.informatics.jax.org/marker/MGI:*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/OBI_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/CARO_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/RnorDv_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/PR_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/PCO_*>"\
+		remove  --select "<http://purl.obolibrary.org/obo/ExO_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/FAO_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/UPHENO_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/COB_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/MPATH_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/PO_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/OGMS_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/ENVO_01001055*>"  \
 		extract -T $(IMPORTDIR)/merged_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
 		remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T $(IMPORTDIR)/merged_terms_combined.txt --select complement --select "annotation-properties" \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \

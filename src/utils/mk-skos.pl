@@ -78,7 +78,7 @@ while (<>) {
             $uri = 'http://purl.bioontology.org/ontology/ICD10CM/';
         }
         elsif ($prefix eq 'icd11.foundation') {
-            $uri = 'http://purl.obolibrary.org/obo/mondo/sources/icd11foundation/';
+            $uri = 'http://id.who.int/icd/entity/';
         }
         elsif ($prefix eq 'EFO') {
             $uri = 'http://www.ebi.ac.uk/efo/EFO_';

@@ -1,0 +1,25 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Find all subclasses that do not have any source evidence
+
+SELECT ?term ?term_label ?parent ?parent_label 
+WHERE 
+{ 
+
+  ?term rdfs:subClassOf ?parent ;
+        rdfs:label ?term_label .
+  
+  ?parent rdfs:label ?parent_label .
+  
+  FILTER NOT EXISTS { 
+      ?exp owl:annotatedSource ?term ;
+       owl:annotatedProperty rdfs:subClassOf ;
+       owl:annotatedTarget ?parent;
+       oboInOwl:source ?source .
+  }
+  
+  FILTER (isIRI(?term) && STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/MONDO_"))
+  FILTER (isIRI(?parent) && STRSTARTS(str(?parent), "http://purl.obolibrary.org/obo/MONDO_"))
+}
