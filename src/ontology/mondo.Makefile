@@ -955,6 +955,13 @@ rm_xref_without_source:
 rm_confidence_annotation:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/update/rm-confidence_annotation.ru -o $(SRC)
 
+add_redundant_subclass_annotations:
+	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/update/add-flag-redundant-subclass-axioms.ru -o $(SRC)
+
+remove_redundant_subclass_annotations:
+	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/update/rm-redundant-subclass-axioms.ru -o $(SRC)
+
+
 report-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
 
