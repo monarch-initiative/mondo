@@ -39,17 +39,18 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/t
 
 ### Ontology Metrics
 
+
 <!-- START:TABLE1 -->
 
 | Metric | Count |
 | :--- | ---: |
-| **Total number of diseases**                         | 25,803  |
-| &nbsp;&nbsp;&nbsp;&nbsp;Database cross references    | 129,193 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Term definitions             | 17,802  |
-| &nbsp;&nbsp;&nbsp;&nbsp;Exact synonyms<sup>1</sup>   | 73,657  |
-| &nbsp;&nbsp;&nbsp;&nbsp;Narrow synonyms<sup>2</sup>  | 2,568   |
-| &nbsp;&nbsp;&nbsp;&nbsp;Broad synonyms<sup>3</sup>   | 1,417   |
-| &nbsp;&nbsp;&nbsp;&nbsp;Related synonyms<sup>4</sup> | 30,390  |
+| **Total number of diseases** | 25814 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Database cross references | 129387 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Term definitions | 17874 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Exact synonyms<sup>1</sup> | 73780 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Narrow synonyms<sup>2</sup> | 2569 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Broad synonyms<sup>3</sup> | 1415 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Related synonyms<sup>4</sup> | 30330 |
 
 <!-- END:TABLE1 -->
 
@@ -66,20 +67,21 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/t
 
 ### Representation of disease types
 
+
 <!-- START:TABLE2 -->
 
-| Category                                                       | Count (classes) |
-|:---------------------------------------------------------------|----------------:|
-| **Total number of diseases**                                   | 25,803          |
-| &nbsp;&nbsp;&nbsp;&nbsp;**Human diseases**                     | 22,843         |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cancer         | 4,733           |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Infectious     | 1,074           |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mendelian      | 11,566          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rare           | 15,733          |
-| &nbsp;&nbsp;&nbsp;&nbsp;**Non-human diseases**                 | 2,959          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cancer         | 217             |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Infectious     | 87              |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mendelian      | 1,028           |
+| Category | Count (classes) |
+| :--- | ---: |
+| **Total number of diseases** | 25814 |
+|&nbsp;&nbsp;&nbsp;&nbsp; **Human diseases** | 22853 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancer | 4739 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Infectious | 1074 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mendelian | 11600 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rare | 15810 |
+|&nbsp;&nbsp;&nbsp;&nbsp; **Non-human diseases** | 2960 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancer | 217 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Infectious | 87 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mendelian | 1029 |
 
 <!-- END:TABLE2 -->
 
