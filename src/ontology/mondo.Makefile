@@ -32,11 +32,15 @@ owlaxioms_check:
 obo_validator:
 	fastobo-validator mondo-edit.obo
 
+oak_pronto_parser: mondo.obo
+	runoak -i pronto:mondo.obo ontology-metadata > tmp/mondo-metadata.txt
+
 test: pattern_schema_checks
 test: owlaxioms_check
 test: test_reason_equivalence
 test: test_reason_equivalence_hermit
 test: obo_validator
+test: oak_pronto_parser
 
 test_reason_equivalence_hermit: $(ONT)-base.obo
 	$(ROBOT) reason -i $< --equivalent-classes-allowed none -r hermit
