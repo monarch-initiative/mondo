@@ -233,31 +233,54 @@ WHERE {
 }
 ```
 
+###  qc-excluded-subclass-is-asserted.sparql
+
+```
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+
+# Tests if an excluded-subclass-of axiom is asserted
+
+SELECT DISTINCT ?entity ?property ?value  
+WHERE 
+{ 
+  VALUES ?property { <http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> }
+  ?entity ?property ?value .
+
+  ?entity rdfs:subClassOf ?value .
+
+  FILTER NOT EXISTS {
+    ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-excluded-subclass-is-asserted.sparql .
+  }
+}
+ORDER BY ?entity
+```
+
 ###  qc-excluded-subsumption-is-inferred.sparql
 
 ```
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
-prefix mondoSparqlQcGeneral: <http://purl.obolibrary.org/obo/mondo/sparql/qc/general/>
 prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+
+# Tests if an excluded-subclass-of axiom is inferred
 
 SELECT DISTINCT ?entity ?property ?value  
 WHERE 
 { 
-  ?entity mondo:excluded_subClassOf ?parent ;
-      rdfs:subClassOf* ?parent .
-  
-    FILTER NOT EXISTS {
-       ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-excluded-subsumption-is-inferred.sparql .
-    }
-  
-  FILTER (isIRI(?parent) && STRSTARTS(str(?parent), "http://purl.obolibrary.org/obo/MONDO_"))
-  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
-  FILTER( ?entity=?parent)
-  BIND(mondo:excluded_subClassOf as ?property)
-  BIND(str(?parent) as ?value)
+  VALUES ?property { <http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> }
+  ?entity ?property ?value .
+
+  ?entity rdfs:subClassOf+ ?value .
+
+  FILTER NOT EXISTS {
+    ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-excluded-subclass-is-inferred.sparql .
+  }
 }
 ORDER BY ?entity
 ```
@@ -1436,31 +1459,6 @@ ORDER BY ?entity
 
 ```
 
-###  qc-excluded-subclass.sparql
-
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
-prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
-prefix owl: <http://www.w3.org/2002/07/owl#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
-
-
-# Tests if an animal disease made it into the rare disease subset
-
-SELECT DISTINCT ?entity ?property ?value WHERE
-{
-  VALUES ?property { <http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> }
-  ?entity ?property ?value .
-  FILTER(!isIRI(?value) || !STRSTARTS(STR(?value),"http://purl.obolibrary.org/obo/MONDO_"))
-  FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
-}
-
-```
-
 ###  qc-illegal-axiom-annotation.sparql
 
 ```
@@ -1797,7 +1795,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 
-# Tests if an animal disease made it into the rare disease subset
+# Tests if an excluded subclass of axiom exists which does not have
+# at least 1 ORCID as provenance
 
 SELECT DISTINCT ?entity ?property ?value WHERE
 {
