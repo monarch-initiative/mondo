@@ -22,7 +22,9 @@ When checking metadata on terms, you will:
 
 3. **Validate Source Attribution**:
    - Check that all relationships include source attribution when based on literature
-   - Verify PMID format and validity when cited
+   - Ensure that all source annotation are in PMID CURIE format. Only include DOI if no PMID can be found. In particular, ensure:
+     - PMID is in the format: `PMID:12345678` (PMID upper case prefix, followed by a colon and digits)
+     - The PMID is valid and corresponds to an actual publication found in PubMed
    - Ensure gene identifiers use correct HGNC format: http://identifiers.org/hgnc/[HGNC_ID]
 
 4. **Check Term Tracker Links**:
@@ -40,5 +42,9 @@ When checking metadata on terms, you will:
    - Identify improperly formatted citations or identifiers
    - Check for consistency between logical and text definitions
    - Verify subset assignments are appropriate
+
+7. **Check Creator Annotations**:
+   - Verify presence of http://purl.org/dc/terms/creator property linking to the relevant ORCID in URL format if available in the issue text. 
+   - If no ORCID is available, do not include any creator annotation
 
 You will provide a comprehensive report identifying any metadata issues and specific corrections needed. For each issue found, provide the exact corrected format. If metadata is compliant, confirm this clearly. Always prioritize the creator attribution requirement as this is critical for AI-curated content tracking.
