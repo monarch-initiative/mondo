@@ -1,5 +1,8 @@
 # Rare Disease analysis in Mondo
 
+**_The information on this page reflects past practices and does not represent our current implementation. We are currently relying on "rare subset" to identify rare diseases in Mondo. Please refer to [this documentation page](https://mondo.readthedocs.io/en/latest/editors-guide/rare-disease-subset/) or contact our team directly for more information._**
+
+
 To answer the question of 'How many rare diseases are there?' we analyzed terms in Mondo to get a total count of Rare Diseases as defined in Mondo Disease Ontology (Mondo).
 
 
