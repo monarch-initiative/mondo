@@ -25,6 +25,6 @@ WHERE {
         owl:annotatedProperty rdfs:subClassOf ;
         owl:annotatedTarget   ?restr ;
         # any recognised evidence predicate
-        (oboInOwl:hasDbXref | oboInOwl:source | eco:hasEvidence) ?evidence .
+        oboInOwl:source ?evidence .
   }
 }
