@@ -32,11 +32,15 @@ owlaxioms_check:
 obo_validator:
 	fastobo-validator mondo-edit.obo
 
+oak_pronto_parser: mondo.obo
+	runoak -i pronto:mondo.obo ontology-metadata > tmp/mondo-metadata.txt
+
 test: pattern_schema_checks
 test: owlaxioms_check
 test: test_reason_equivalence
 test: test_reason_equivalence_hermit
 test: obo_validator
+test: oak_pronto_parser
 
 test_reason_equivalence_hermit: $(ONT)-base.obo
 	$(ROBOT) reason -i $< --equivalent-classes-allowed none -r hermit
@@ -955,6 +959,13 @@ rm_xref_without_source:
 rm_confidence_annotation:
 	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/update/rm-confidence_annotation.ru -o $(SRC)
 
+add_redundant_subclass_annotations:
+	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/update/add-flag-redundant-subclass-axioms.ru -o $(SRC)
+
+remove_redundant_subclass_annotations:
+	$(ROBOT) query --use-graphs false -i $(SRC) --update $(SPARQLDIR)/update/rm-redundant-subclass-axioms.ru -o $(SRC)
+
+
 report-query-%:
 	$(ROBOT) query --use-graphs true -i $(SRC) -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-$*.tsv
 
@@ -1693,7 +1704,7 @@ $(TMPDIR)/subclass-named-axioms.owl: $(SRC)
 		--preserve-structure false \
 		--trim false \
 		remove --select "object-properties" \
-		--drop-axiom-annotations "oboInOwl:source=~'($(SOURCES_REGEX)):.*'" \
+		--drop-axiom-annotations "oboInOwl:source=~'($(SUBCLASS_SOURCES_REGEX)):.*'" \
 		-o $@
 
 # This command updates mondo-edit with all the confirmed subclass evidence from the mondo-ingest repo
@@ -1712,9 +1723,11 @@ update-subclass-sync:
 
 # All the synchronized sources
 SYNCED_SOURCES := DOID ICD10CM ICD10WHO icd11.foundation NCIT OMIM OMIMPS Orphanet
+SUBCLASS_SYNCED_SOURCES := DOID ICD10CM ICD10WHO icd11.foundation NCIT OMIM Orphanet
 
 # Join the sources with '|' to form a regex for use in commands
 SOURCES_REGEX := $(shell IFS='|'; echo "$(SYNCED_SOURCES)" | sed 's/ /|/g')
+SUBCLASS_SOURCES_REGEX := $(shell IFS='|'; echo "$(SUBCLASS_SYNCED_SOURCES)" | sed 's/ /|/g')
 
 # This target extracts all synonyms from mondo edit and then drops all axiom
 # annotations related to the sources that are in the list of curated sources

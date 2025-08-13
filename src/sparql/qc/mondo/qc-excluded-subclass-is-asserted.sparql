@@ -1,0 +1,21 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+
+# Tests if an excluded-subclass-of axiom is asserted
+
+SELECT DISTINCT ?entity ?property ?value  
+WHERE 
+{ 
+  VALUES ?property { <http://purl.obolibrary.org/obo/mondo#excluded_subClassOf> }
+  ?entity ?property ?value .
+
+  ?entity rdfs:subClassOf ?value .
+
+  FILTER NOT EXISTS {
+    ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-excluded-subclass-is-asserted.sparql .
+  }
+}
+ORDER BY ?entity
