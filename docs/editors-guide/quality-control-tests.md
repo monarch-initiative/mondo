@@ -1973,6 +1973,42 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
 ORDER BY ?entity
 ```
 
+###  qc-subclass-relation-no-source.sparql
+
+```
+PREFIX owl:        <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs:       <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oboInOwl:   <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX eco:        <http://purl.obolibrary.org/obo/eco#>
+PREFIX RO:         <http://purl.obolibrary.org/obo/RO_>
+
+SELECT ?entity ?property ?value
+WHERE {
+
+  VALUES ?property { 
+    RO:0004003 
+  }
+  ?entity rdfs:subClassOf ?restr .
+
+  ?restr a owl:Restriction ;
+         owl:onProperty   ?property ;
+         owl:someValuesFrom ?value .
+
+  FILTER isIRI(?entity)
+  FILTER STRSTARTS(STR(?entity), "http://purl.obolibrary.org/obo/MONDO_")
+
+  FILTER NOT EXISTS {
+    ?ax a owl:Axiom ;
+        owl:annotatedSource   ?entity ;
+        owl:annotatedProperty rdfs:subClassOf ;
+        owl:annotatedTarget   ?restr ;
+        # any recognised evidence predicate
+        oboInOwl:source ?evidence .
+  }
+}
+
+```
+
 ###  qc-syn-equal-label.sparql
 
 ```
