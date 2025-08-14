@@ -85,22 +85,23 @@ WHERE {
   }
   UNION
   {
-    # Count exact synonyms tagged as clingen label
     ?class a owl:Class ;
-         ?synonymProp ?synonym .
+          oboInOwl:hasExactSynonym ?synonym .
 
     FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
-
     FILTER NOT EXISTS { ?class owl:deprecated true }
 
     ?axiom a owl:Axiom ;
-           owl:annotatedSource ?class ;
-           owl:annotatedProperty oboInOwl:hasExactSynonym ;
-           owl:annotatedTarget ?synonym ;
-           OMO:0002001 <https://w3id.org/information-resource-registry/clingen> .
+          owl:annotatedSource ?class ;
+          owl:annotatedProperty oboInOwl:hasExactSynonym ;
+          owl:annotatedTarget ?synonym ;
+          OMO:0002001 ?provIRI .
+
+    FILTER(STR(?provIRI) = "https://w3id.org/information-resource-registry/clingen")
 
     BIND("exact_ClinGen_label" AS ?category)
   }
+
 }
 GROUP BY ?category
 ORDER BY ?category
