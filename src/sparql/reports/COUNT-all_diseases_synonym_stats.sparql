@@ -85,6 +85,7 @@ WHERE {
   }
   UNION
   {
+    # the query for the clingen label only works on OWL format files
     ?class a owl:Class ;
           oboInOwl:hasExactSynonym ?synonym .
 
