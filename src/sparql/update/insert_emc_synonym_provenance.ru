@@ -1,6 +1,5 @@
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
-PREFIX mondo: <http://purl.obolibrary.org/obo/mondo#>
-prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX OMO: <http://purl.obolibrary.org/obo/OMO_>
 
 INSERT {
@@ -8,8 +7,8 @@ INSERT {
 }
 WHERE {
     VALUES ?syn_type {  
-      <https://w3id.org/information-resource-registry/nord>
-      <https://w3id.org/information-resource-registry/clingen>
+      "https://w3id.org/information-resource-registry/nord"
+      "https://w3id.org/information-resource-registry/clingen"
     }
   ?entity oboInOwl:hasExactSynonym ?syn_value .
   ?syn_annot a owl:Axiom ;
