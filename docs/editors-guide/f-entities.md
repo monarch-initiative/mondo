@@ -109,7 +109,6 @@ A synonym that is historic and discouraged | DEPRECATE | We mark synonyms with D
 A synonym that is recorded for consistency with another source but is a misspelling | MISSPELLING | The source term has a misspelling | MONDO:0011154 acrofacial dysostosis, Palagonia type
 abbreviation | ABBREVIATION | Abbreviations of the primary label | MONDO:0004976 'amyotrophic lateral sclerosis'
 ambiguous | AMBIGUOUS | A synonym that is unclear or inexact | MONDO:0021636 'astrocytic tumor'
-clingen label | CLINGEN_LABEL | Added to gene-based names/synonyms that were requested by ClinGen, and other terms that are the preferred terms for ClinGen. | MONDO:0700000 'ALG9-associated autosomal dominant polycystic kidney disease'
 dubious synonym | DUBIOUS | Not to be relied upon or suspect | MONDO:0002776 'external ear disease'
 Synonym to be removed from public release but maintained in edit version as record of external usage | EXCLUDE | Some synonyms are annotated with EXCLUDE, e.g. “NOS” (not otherwise specified) synonyms. It is useful to have these in the edit version, but these are filtered on release. | MONDO:0011088 congenital myasthenic syndrome 1A, MONDO:0002679 cerebral infarction, MONDO:0008170 'ovarian cancer'
 
