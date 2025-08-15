@@ -1657,6 +1657,7 @@ $(TRANSLATIONSDIR)/%.babelon.json: $(TRANSLATIONSDIR)/%.babelon.tsv
 
 $(ONT)-international.owl: $(ONT).owl $(TRANSLATIONS_OWL)
 	$(ROBOT) merge $(patsubst %, -i %, $^) \
+		query --update $(SPARQLDIR)/update/insert-community-lang-tags.ru \
 		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		--output $@.tmp.owl && mv $@.tmp.owl $@
 
