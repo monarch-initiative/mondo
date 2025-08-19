@@ -15,6 +15,7 @@ jobs:
   # The job MUST be called `copilot-setup-steps` or it will not be picked up by Copilot.
   copilot-setup-steps:
     runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.6
 
     # Set the permissions to the lowest permissions possible needed for your steps.
     # Copilot will be given its own token for its operations.
@@ -27,40 +28,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
-    - name: Create tools directory
-      run: mkdir -p ${{ github.workspace }}/tools
-      shell: bash
-
-    - name: Cache ROBOT JAR files
-      uses: actions/cache@v4
-      with:
-        path: ~/.jar-cache
-        key: ${{ runner.os }}-robot-v1.9.7
-        restore-keys: ${{ runner.os }}-robot-
-
-    - name: Download ROBOT JAR if not cached
-      run: |
-        mkdir -p ~/.jar-cache
-        if [ ! -f ~/.jar-cache/robot.jar ]; then
-          curl -L https://github.com/ontodev/robot/releases/download/v1.9.7/robot.jar -o ~/.jar-cache/robot.jar
-        fi
-      shell: bash
-    
-    - name: Setup ROBOT tools
-      run: |
-        cp ~/.jar-cache/robot.jar ${{ github.workspace }}/tools/robot.jar
-        curl -L https://raw.githubusercontent.com/ontodev/robot/v1.9.7/bin/robot -o ${{ github.workspace }}/tools/robot
-        chmod +x ${{ github.workspace }}/tools/robot
-        ${{ github.workspace }}/tools/robot --help
-      shell: bash
-
-    - name: Add tools to PATH
-      run: |
-        echo "${{ github.workspace }}/tools" >> $GITHUB_PATH
-        ls -alt ${{ github.workspace }}
-        ls -alt ${{ github.workspace }}/tools
-      shell: bash
 
     - name: Add obo-scripts to PATH
       run: |
