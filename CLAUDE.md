@@ -28,18 +28,12 @@ This includes instructions for editing the npso ontology.
 
 ## Edits
 - IMPORTANT: Do not edit the edit file directly, it's large
-- Add edits should be made in the `terms/` folder
-- check out a term into `terms/`: `obo-checkout.pl src/ontology/mondo-edit.obo MONDO:1234567 [OTHER IDS]`
-- This will create a single stanza obo files `terms/npso_1234567.obo` which you can easily edit
-     - (note the colon is replaced with an underscore)
-- You can go ahead and edit the smallers files in the `terms/` folder
-- After edits, check back in: `obo-checkin.pl src/ontology/mondo-edit.obo MONDO:1234567 [OTHER IDS]`
-- if you like you can edit multiple terms in one batch, e.g. `terms/my_batch.obo`
-     - `obo-checkout.pl src/ontology/mondo-edit.obo terms/my_batch.obo`
-- checking in will update the edit file and remove the file from `terms/`
+- We want you to be using ROBOT templates instead of directly editing the text file in the ontology
+- Use the template file src/templates/Mondo_bulk_submission.tsv
+- Read the example to understand it, then remove the example
+`robot convert --catalog src/ontology/catalog-v001.xml -i src/ontology/mondo-edit.obo -f obo -o mondo-edit.TMP.obo`
+- Run `robot template --catalog src/ontology/catalog-v001.xml -i src/ontology/mondo-edit.obo  --merge-before --template src/templates/Mondo_bulk_submission.tsv convert -f obo -o src/ontology/mondo-edit.obo` to add the term to Mondo
 - Commits are then made on src/ontology/mondo-edit.obo as appropriate
-- Note that `obo-checkin.pl` and `obo-checkin.pl` are in your PATH, no need to search for it    
-
 
 ## OBO Format Guidelines
 - Term ID format: MONDO:NNNNNNN (7-digit number)
