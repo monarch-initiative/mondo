@@ -32,4 +32,5 @@ With the `OMO:0002001` annotation we express:
     1. For NORD (though these are rarely added manually): https://w3id.org/information-resource-registry/nord
 
 This is what an annotation looks like:
+<img width="749" height="350" alt="Screenshot 2025-08-20 at 3 24 58 PM" src="https://github.com/user-attachments/assets/45847e6c-eda5-4b64-9c77-2eb8c7afaafd" />
 
