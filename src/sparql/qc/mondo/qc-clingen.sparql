@@ -15,17 +15,17 @@ WHERE {
  {
   ?ax owl:annotatedSource ?entity ;
          owl:annotatedProperty ?property ;
-         oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#CLINGEN_LABEL> .
+         OMO:0002001 <https://w3id.org/information-resource-registry/clingen> .
   ?ax2 owl:annotatedSource ?entity ;
          owl:annotatedProperty ?property ;
          owl:annotatedTarget ?value ;
-         oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#CLINGEN_LABEL> .
+         OMO:0002001 <https://w3id.org/information-resource-registry/clingen> .
   FILTER(?ax!=?ax2)
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
   } UNION {
     ?ax owl:annotatedSource ?entity ;
          owl:annotatedProperty ?property ;
-         oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#CLINGEN_LABEL> .
+         OMO:0002001 <https://w3id.org/information-resource-registry/clingen> .
     FILTER(?property!=oboInOwl:hasExactSynonym)
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
   }
