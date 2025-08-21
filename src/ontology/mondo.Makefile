@@ -785,8 +785,10 @@ update-nando:
 update-clingen:
 	$(MAKE) $(TMPDIR)/external/processed-mondo-clingen.robot.owl
 	grep -vE '^(relationship: curated_content_resource https://search.clinicalgenome.org|subset: clingen)' $(SRC) > $(TMPDIR)/mondo-edit.tmp
-	#CAREFUL, this needs to be uncommented when we just to include CLINGEN LABELs
-	#sed -i 's/EXACT CLINGEN_LABEL/EXACT/g' $(TMPDIR)/mondo-edit.tmp || true
+	#CAREFUL, this needs to be uncommented when we import CLINGEN LABELs as EMC
+	#sed -i 's#OMO:0002001="https://w3id\.org/information-resource-registry/clingen"##g' "$TMPDIR/mondo-edit.tmp" || true
+	# The next line is needed because an empty metadata record is illegal OBO syntax
+	#sed -i 's#[{][}]##g' "$TMPDIR/mondo-edit.tmp" || true
 	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
 	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-mondo-clingen.robot.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
