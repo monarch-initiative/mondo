@@ -1,4 +1,4 @@
-name: Update Mondo translations and test them
+name: Update Language Translations
 
 on:
   schedule:
@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.5.4
+    container: obolibrary/odkfull:v1.6
 
     steps:
       - name: Checkout main branch
@@ -25,7 +25,7 @@ jobs:
         with:
           branch-suffix: short-commit-hash
           labels: automated
-          body: "Update Language Translations."
+          body: "Update Language Translations. PR automatically created by GH Action."
           title: "Update Language Translations"
           base: ${{ github.head_ref }}
           branch: "language_translations"
