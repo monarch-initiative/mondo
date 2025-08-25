@@ -611,6 +611,7 @@ update-external-content-incl-rare:
 	$(MAKE) update-efo-subset -B
 	$(MAKE) update-clingen -B
 	$(MAKE) update-ordo-subsets -B
+	$(MAKE) update-omim-subsets -B
 	$(MAKE) update-nando -B
 	$(MAKE) update-medgen -B
 	$(MAKE) update-orphanet-rare -B
@@ -706,10 +707,14 @@ update-rare-subset:
 ####################################
 ##### OMIM #####################
 ####################################
+
 $(TMPDIR)/keep-susceptibility-gene-assocation-axioms.owl: $(SRC)
+	$(MAKE) report-query-omim-susceptibilities
+	sed -i 's/"//g' reports/report-omim-susceptibilities.tsv
 	$(ROBOT) filter --input $(SRC) \
-		--term MONDO:0042489 \
-		--select "self descendants" \
+		-T reports/report-omim-susceptibilities.tsv \
+		--trim false \
+		filter \
 		--term RO:0004003 \
 		--axioms SubClassOf \
 		--trim false \
@@ -740,6 +745,15 @@ update-omim-genes:
 		query --update ../sparql/update/remove_gene_associations_from_obsolete.ru \
 		convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+.PHONY: update-omim-subsets
+update-omim-subsets:
+	$(MAKE) $(TMPDIR)/external/processed-mondo-omim-susceptibility-subset.robot.owl -B
+	grep -vE '^(subset: omim_susceptibility)' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
+	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-mondo-omim-susceptibility-subset.robot.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
 
 ####################################
 ##### Orphanet #####################
