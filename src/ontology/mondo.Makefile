@@ -590,6 +590,7 @@ update-external-content:
 	$(MAKE) update-efo-subset -B
 	$(MAKE) update-clingen -B
 	$(MAKE) update-ordo-subsets -B
+	$(MAKE) update-omim-subsets -B
 	$(MAKE) update-nando -B
 	$(MAKE) update-medgen -B
 	$(MAKE) update-malacards -B
