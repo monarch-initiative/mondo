@@ -137,6 +137,26 @@ Press Enter to open github.com in your browser...
 With each release, a TSV should be generated with obsoletion candidates. Check that this tsv file is up-to-date here:
 https://github.com/monarch-initiative/mondo/blob/master/src/ontology/reports/mondo_obsoletioncandidates.tsv
 
+## Review release PR
+
+Check the following:
+
+1. There should be about 106 files changed (at least over 100 files changed)
+
+2. Compare the file list for the new release compared to a previous successful release and make sure each have the same files included in the PR
+
+3. Review the contents of these files:
+
+    1. reports/basic-report.tsv 
+        - Make sure the number of MONDO classes has increased since the last release and that any other number changes make sense (generally any change should reflect an increase since the previous release)
+    2. reports/obsoletion_candidates.tsv
+        - Make sure the newly added obsoletion candidates total new additions is the same number of all terms from the google sheet (obsolete, split, merge) candidates
+    3. src/ontology/mappings/*
+        - Quick look to make sure all dates are updated to the Mondo release date in the file
+    4. src/ontology/reports/mondo_obsoletioncandidates.tsv
+        - Make sure the newly added obsoletion candidates total new additions is the same number of all terms from the google sheet (obsolete, split, merge) candidates
+
+
 ## Announce released
 
 ### Mastodon
