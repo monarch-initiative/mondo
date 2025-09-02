@@ -40,17 +40,18 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/t
 ### Ontology Metrics
 
 
+
 <!-- START:TABLE1 -->
 
 | Metric | Count |
 | :--- | ---: |
-| **Total number of diseases** | 25814 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Database cross references | 129387 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Term definitions | 17874 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Exact synonyms<sup>1</sup> | 73780 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Narrow synonyms<sup>2</sup> | 2569 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Broad synonyms<sup>3</sup> | 1415 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Related synonyms<sup>4</sup> | 30330 |
+| **Total number of diseases** | 25824 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Database cross references | 129391 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Term definitions | 17893 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Exact synonyms<sup>1</sup> | 73810 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Narrow synonyms<sup>2</sup> | 2567 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Broad synonyms<sup>3</sup> | 1420 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Related synonyms<sup>4</sup> | 30304 |
 
 <!-- END:TABLE1 -->
 
@@ -68,16 +69,17 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/t
 ### Representation of disease types
 
 
+
 <!-- START:TABLE2 -->
 
 | Category | Count (classes) |
 | :--- | ---: |
-| **Total number of diseases** | 25814 |
-|&nbsp;&nbsp;&nbsp;&nbsp; **Human diseases** | 22853 |
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancer | 4739 |
+| **Total number of diseases** | 25824 |
+|&nbsp;&nbsp;&nbsp;&nbsp; **Human diseases** | 22863 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancer | 4740 |
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Infectious | 1074 |
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mendelian | 11600 |
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rare | 15810 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mendelian | 11596 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rare | 15827 |
 |&nbsp;&nbsp;&nbsp;&nbsp; **Non-human diseases** | 2960 |
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancer | 217 |
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Infectious | 87 |
