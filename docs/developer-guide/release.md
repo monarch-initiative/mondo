@@ -143,7 +143,7 @@ Check the following:
 
 1. There should be about 106 files changed (at least over 100 files changed)
 
-2. Compare the file list for the new release compared to a previous successful release and make sure each have the same files included in the PR
+2. Compare the file list for the new release compared to a previous successful release and make sure each generally have the same files included in the PR
 
 3. Review the contents of these files:
 
@@ -154,7 +154,7 @@ Check the following:
     3. src/ontology/mappings/*
         - Quick look to make sure all dates are updated to the Mondo release date in the file
     4. src/ontology/reports/mondo_obsoletioncandidates.tsv
-        - Make sure the newly added obsoletion candidates total new additions is the same number of all terms from the google sheet (obsolete, split, merge) candidates
+        - Make sure the newly added obsoletion candidates total new additions is the same number of all terms from the Candidates for Obsoletion google sheet [here](https://docs.google.com/spreadsheets/d/1h8_3g4GWzFyC0jhvCVFBx6CTd6PUBsHCoZ-HX1iCQvQ/edit?gid=848705321#gid=848705321) (obsolete, split, merge) candidates
 
 
 ## Announce released
