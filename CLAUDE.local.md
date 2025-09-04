@@ -1,0 +1,1 @@
+- IMPORTANT: When running .pl scripts like obo-grep.pl, always just run them using perl and dont assume they are on the path (`perl ./obo-grepl.pl`)
