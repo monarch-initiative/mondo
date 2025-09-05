@@ -1,6 +1,6 @@
 ## Related documentation
 
-A lot of documentation for Mondo is scattered across various Google docs.
+The majority of in-depth Mondo documentation is in Google Docs within the Mondo gDrive [Documentation](https://drive.google.com/drive/folders/1PfUBAOqUN76ETGSiu2ATA0ZMuqfv6X2U) folder.
 The purpose of this page is to make it easier for Mondo editors to find the relevant documentation.
 
 
