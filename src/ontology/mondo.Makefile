@@ -555,6 +555,8 @@ $(TEMPLATES_DIR)/ROBOT_addMedGen_fromIngest.tsv:
 #############################################
 ###### Mondo Ingest Source Versions #########
 #############################################
+all: reports/source-versions.tsv
+
 reports/source-versions.tsv:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/main/src/ontology/reports/source-versions.tsv" -O $@
 
