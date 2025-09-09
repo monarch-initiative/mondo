@@ -44,7 +44,6 @@ Notes are available [here](https://docs.google.com/document/d/16eMB-x3iANHfiTxw7
 
 Date | Time | Presenter (Organization)| Topic | Recording 
 -- | -- | -- | -- | -- 
-July-August |-- | Enjoy Summer Break!|-- | --|
 June 27 | 9AM PT/12PM ET | Elena Cibrian ([Gene2Phenotype](https://www.ebi.ac.uk/gene2phenotype/)) | The Gene2Phenotype Project | [Here](https://drive.google.com/file/d/1PRkVDHRc8PXIemDVtBTuLB7uxDIyfPvO/view?usp=sharing)
 May 2 | 9AM PT/12PM ET | Courtney Thaxton with [ClinGen](https://clinicalgenome.org/) and Sabrina Toro with Mondo |  - ClinGen Guidance and Recommendations for Defining and Disease Entity and Monogenic Disease Nomenclature <br> - Mondo Curation Best Practices: Lumping and Splitting, Disease Naming | [Here](https://youtu.be/KlLthEYLa9Y?si=cM38_Tai80ZrmAp8)
 Apr 4 | 9AM PT/12PM ET | Isabelle Cooperstein | SimPheny: Automated patient matching for genetic diagnosis in rare disease cohorts | [Here](https://drive.google.com/file/d/1bxTEp7YefQ5tSVJYyoJoCB784lS3TFS2/view?usp=sharing)
