@@ -17,7 +17,7 @@ This document summarizes how OMIM terms are integrated into Mondo. This document
 It should be noted that while this document summarizes the most recent workflows and decisions regarding the representation of OMIM terms in Mondo, these practices have evolved over time. As a result, revisions to the representation of OMIM terms are still in progress, and some instances may not yet fully align with the approach described here. We encourage community members and users to report any errors or inconsistencies they encounter, as such feedback helps to accelerate the refinement process.
 
 ## OMIM terms included in Mondo
-All OMIM entries representing disease concepts are represented in Mondo, that is all OMIM entries except the one reported below. The following terms might be removed (ie, obsoleted) or excluded from Mondo after curator review, often based on community feedback and report:
+All OMIM entries representing disease concepts are represented in Mondo, that is all OMIM entries except the ones reported below. The following terms might be removed (ie, obsoleted) or excluded from Mondo after curator review, often based on community feedback and report:
 -  OMIM entries representing genes/loci (MONDO:excludeGene). These OMIM entry types are excluded from the alignment workflow based on metadata in the OMIM files.
 - OMIM entries representing a phenotype (MONDO:excludePhenotype; MONDO:excludeNonDisease). _For example: 'anosmia for butyl mercaptan' - MONDO:0010034 (obsolete) - OMIM:270350_
 - OMIM entries representing a trait (MONDO:excludeTrait ; MONDO:excludeNonDisease). _For example: ‘blood group, mn’ - OMIM:111300_
