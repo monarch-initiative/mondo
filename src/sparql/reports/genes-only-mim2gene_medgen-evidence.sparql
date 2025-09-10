@@ -1,0 +1,31 @@
+PREFIX rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:       <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:        <http://www.w3.org/2002/07/owl#>
+PREFIX oboInOwl:   <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT DISTINCT ?sub ?label ?gene ?gene_label (GROUP_CONCAT(DISTINCT ?xref; SEPARATOR=", ") as ?xrefs)
+WHERE {
+?sub rdfs:label ?label . 
+?sub oboInOwl:hasDbXref ?xref.
+
+?axiom a owl:Axiom ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ?sub ;
+    owl:annotatedTarget ?target ;
+    oboInOwl:source "MONDO:mim2gene_medgen" .
+
+  ?target a owl:Restriction ;
+    owl:onProperty ?p ;
+    owl:someValuesFrom ?gene  .
+  
+  OPTIONAL {
+  ?gene rdfs:label ?gene_label .
+  }
+
+  # No other oboInOwl:source values than the required one
+  FILTER NOT EXISTS {
+    ?axiom oboInOwl:source ?s .
+    FILTER (?s != "MONDO:mim2gene_medgen")
+  }
+} GROUP BY ?sub ?label ?gene ?gene_label
+

@@ -92,7 +92,7 @@ NOTE: The GitHub UI shows issues based on your system settings timezone and the 
   1. Alternatively, to run with custom dates, e.g. from 2025-02-22 to 2025-03-03, use:  
   `make github-issue-stats FROM_DATE=2025-02-22 TO_DATE=2025-03-01`
   
-<h4>From the GitHub Action:</h4>
+<h4>From the GitHub Action (preferred):</h4>
 
   1. Go to the GitHub Action called [Generate GitHub Issue Statistics](https://github.com/monarch-initiative/mondo/actions/workflows/github-issue-stats.yml)
   1. Click on "Run workflow" and select the branch "master" 
@@ -124,3 +124,64 @@ _To be added_
 
 ## Third party maintained - other Statistics
 _To be added_
+
+
+## Mondo Community web site statistics 
+The [Mondo Community web site](https://mondo.monarchinitiative.org/#stats) lists two sections of Mondo statistics, "Ontology metrics" and "Representation of disease types". These statistics are a subset of the statistics generated for the [General Statistics](#general-statistics). 
+
+These statistics are generated from the `make` goals `ontology-metrics-table` and `disease-types-metrics-table` (see detailed [usage instructions](#usage-instructions) below). These should be created in the mondo `master` branch and then the updated statistics should be added to the Mondo community web site (in a feature branch created from the `gh-pages` branch).
+
+These are the statistics needed on the Mondo Community Web site and the SPARQL query for each statistic:
+<h4>Ontology metrics</h4>
+- **Total number of diseases** -- `src/sparql/reports/COUNT-all_diseases.sparql` 
+- Database cross references -- `src/sparql/reports/COUNT-xrefs.sparql`
+- Term definitions -- `src/sparql/reports/COUNT-classes-with-definitions.sparql`
+- Exact synonyms -- `src/sparql/reports/COUNT-exact-synonyms.sparql` 
+- Narrow synonyms -- `src/sparql/reports/COUNT-narrow-synonyms.sparql`
+- Broad synonyms -- `src/sparql/reports/COUNT-broad-synonyms.sparql`
+- Related synonyms -- `src/sparql/reports/COUNT-related-synonyms.sparql`
+</br></br>
+<h4>Representation of disease types</h4>
+- **Total number of diseases** -- `src/sparql/reports/COUNT-all_diseases.sparql`
+  - **Human diseases** -- `src/sparql/reports/COUNT-all_human_diseases.sparql`
+    - Cancer -- `src/sparql/reports/COUNT-human-cancer-diseases.sparql`
+    - Infectious -- `src/sparql/reports/COUNT-human_diseases_infectious.sparql `
+    - Mendelian -- `src/sparql/reports/COUNT-human-genetic-diseases.sparql`
+    - Rare -- `src/sparql/reports/COUNT-human-rare-diseases.sparql`
+  - **Non-human diseases** -- `src/sparql/reports/COUNT-all_non-human_diseases.sparql`
+    - Cancer -- `src/sparql/reports/COUNT-non-human_diseases_cancer.sparql`
+    - Infectious -- `src/sparql/reports/COUNT-non-human_diseases_infectious.sparql`
+    - Mendelian -- `src/sparql/reports/COUNT-non-human-genetic-diseases.sparql`
+
+<h3>Usage instructions</h3>
+<h4>GitHub Action (preferred):</h4>
+The Mondo statistics and PR to update the Mondo web site can be done with the [Update The Stats for Mondo Website](https://github.com/monarch-initiative/mondo/actions/workflows/update-stats-mondo-web.yaml) GitHub Action. 
+
+1. Go to the GitHub Action called [Update The Stats for Mondo Website](https://github.com/monarch-initiative/mondo/actions/workflows/update-stats-mondo-web.yaml)
+1. By default, the GitHub Action to generate the web site statistics will use the latest Mondo tag release date
+1. Click on "Run workflow" and select the branch "master" (see screenshot below) ![Generate Mondo stats for Web site ](../images/update-web-site-stats.png). 
+1. Click the green "Run workflow" button 
+1. Once complete, a PR will be created to update the statistics tables on the Mondo community web site. The PR is created to merge into the `gh-pages` branch.
+</br></br>
+<h4>From the commandline:</h4>
+Here are the steps to run the `make` goals and update the web site:
+
+1. Navigate to your local copy of the mondo repo and from the `master` branch, pull the latest updates from GitHub
+1. The statistics for the latest Mondo tag release date can be generated from `mondo/src/ontology` as:  
+`sh run.sh make all-metrics-tables`  
+1. Alternatively, to create the statistics for a specific tagged Mondo release version from `mondo/src/ontology` run:  
+`sh run.sh make MONDO_TAG=v2025-02-04 all-metrics-tables`
+1. The result files are saved to `mondo/src/ontology/reports/mondo_stats/mondo-general-stats/ontology-metrics-table.md` and `mondo/src/ontology/reports/mondo_stats/mondo-general-stats/disease-types-metrics-table.md` (these file locations are displayed in the final message when running the make goal). These files are _not_ under git version control so they do not appear as changed files by git.
+  NOTE: By default, the statistics will be generated for the most recent Mondo release. However, they can also be generated for any [tagged Mondo release version](https://github.com/monarch-initiative/mondo/tags).
+1. Alternatively, each table can be created separately:
+	1. To generate the "Ontology metrics" statistics, from `mondo/src/ontology` run:  
+  `sh run.sh make ontology-metrics-table`
+	1. To generate the "Representation of disease types" statistics, from `mondo/src/ontology` run:  
+  `sh run.sh make disease-types-metrics-table`
+1. Checkout the `gh-pages` branch and create a new feature branch from this branch, e.g. `issue-9281_gh-pages`
+1. Update the stats in the file `index.md` (this file is found at the root level)
+1. Also update the data and link to the latest Mondo release in this line in the `index.md` file: 
+Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/tag/v2025-07-01](https://github.com/monarch-initiative/mondo/releases/tag/v2025-07-01). 
+If this link is changed to the "latest", e.g. https://github.com/monarch-initiative/mondo/releases/latest/download/mondo.owl, then make sure to add the Mondo release version on the Mondo community web site page.
+1. Commit the changes and create a PR. Be sure to set the branch to merge into as the `gh-pages` branch.
+
