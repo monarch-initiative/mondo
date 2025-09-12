@@ -11,6 +11,7 @@ from datetime import datetime
 from argparse import ArgumentParser
 import yaml
 
+from curies.dataframe import get_df_unique_prefixes
 from sssom.util import sort_df_rows_columns
 from sssom.parsers import (
     from_sssom_dataframe,
@@ -88,10 +89,9 @@ subject_prefixes_allowed = meta["subject_prefixes"]
 relations_allowed = meta["relations"]
 
 
-subject_prefixes = set(
-    msdf_main.df["subject_id"].str.split(pat=":", n=1, expand=True)[0]
-)
-object_prefixes = set(msdf_main.df["object_id"].str.split(pat=":", n=1, expand=True)[0])
+# TODO pass msdf_main.converter to get_df_unique_prefixes to get validation
+subject_prefixes = get_df_unique_prefixes(msdf_main.df, column="subject_id")
+object_prefixes = get_df_unique_prefixes(msdf_main.df, column="object_id")
 relations = set(msdf_main.df["predicate_id"])
 
 msdf_main.df = replace_temporary_prefixes(subject_prefixes, msdf_main.df)
