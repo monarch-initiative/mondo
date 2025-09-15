@@ -552,6 +552,13 @@ $(TEMPLATES_DIR)/ROBOT_addMedGen_fromConflictResolution.tsv: tmp/July2023_CUIRep
 $(TEMPLATES_DIR)/ROBOT_addMedGen_fromIngest.tsv:
 	wget "https://github.com/monarch-initiative/medgen/releases/latest/download/medgen-xrefs.robot.template.tsv" -O $@
 
+#############################################
+###### Mondo Ingest Source Versions #########
+#############################################
+all: reports/source-versions.tsv
+
+reports/source-versions.tsv:
+	wget "https://raw.githubusercontent.com/monarch-initiative/mondo-ingest/refs/heads/main/src/ontology/reports/source-versions.tsv" -O $@
 
 ######################################################
 ##### Mondo Ingest Update Pipelines ##################
