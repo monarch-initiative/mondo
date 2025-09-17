@@ -267,6 +267,10 @@ def: "Any [parent disease class] in which the cause of the disease is a mutation
 ```
 ```
 
+IMPORTANT: WHEN REMOVING A SUBCLASS (isa) AXIOM add a corresponding "excludedSubClassOf" annotation!
+
+IMPORTANT: Before finalising an edit for a session we need to run `sh run.sh make NORM && mv NORM mondo-edit.obo`. As the user for confirmation!
+
 ## 4. Parent Term Selection Guidelines
 
 ```markdown
