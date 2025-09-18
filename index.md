@@ -35,7 +35,7 @@ Mondo is generously supported by the NIH National Human Genome Research Institut
 ### Summary statistics across all Mondo concepts
 See each release and statistics at: [MONDO Releases](https://github.com/monarch-initiative/mondo/tags)
 
-Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/tag/v2025-07-01](https://github.com/monarch-initiative/mondo/releases/tag/v2025-07-01)
+Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/latest](https://github.com/monarch-initiative/mondo/releases/latest)
 
 ### Ontology Metrics
 
