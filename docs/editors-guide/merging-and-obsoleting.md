@@ -23,7 +23,7 @@ See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/
 ### Tag Term for Obsolete/Merge
 1. Mondo users need to be notified before we obsolete, merge or [split](https://mondo.readthedocs.io/en/latest/editors-guide/splitting-classes/) a Mondo class.
 1. If there is a request to obsolete a Mondo class, check [Monarch Initiative](https://monarchinitiative.org/) to determine if the disease term is used for Monarch annotations. For example, [discitis](https://monarchinitiative.org/disease/MONDO:0006728) (see ticket [here](https://github.com/monarch-initiative/mondo/issues/501)) does not have any annotations in Monarch. (_This is something that we hope to automate in the future_).
-3. If a term is to be obsoleted, in a new row in the [ROBOT_ObsoleteTag spreadsheet template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=505727337), add the following information for the term-to-be-obsoleted:
+3. If a term is to be obsoleted, in a new row in the [ROBOT_ObsoleteTag spreadsheet template](https://docs.google.com/spreadsheets/d/1h8_3g4GWzFyC0jhvCVFBx6CTd6PUBsHCoZ-HX1iCQvQ/edit?gid=0#gid=0), add the following information for the term-to-be-obsoleted:
     1. ID for term to be obsoleted 
     1. Label for term to be obsoleted 
     1. 'term tracker item': GitHub ticket that describes the obsoletion request
