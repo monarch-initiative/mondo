@@ -496,6 +496,18 @@ github-issue-stats:
 		--outpath=$(COMMUNITY_STATS_REPORT) \
 		--user-report=$(COMMUNITY_USER_REPORT)
 
+#############################################
+# Update scripts #
+#############################################
+
+.PHONY: update-scripts
+update-scripts: obo-checkout.pl obo-checkin.pl
+
+obo-checkout.pl:
+	wget "https://raw.githubusercontent.com/cmungall/obo-scripts/refs/heads/master/obo-checkout.pl" -O $@
+
+obo-checkin.pl:
+	wget "https://raw.githubusercontent.com/cmungall/obo-scripts/refs/heads/master/obo-checkin.pl" -O $@
 
 
 #############################################
