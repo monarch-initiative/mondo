@@ -1,0 +1,46 @@
+pattern_name: cancer_predisposition
+
+pattern_iri: http://purl.obolibrary.org/obo/mondo/patterns/cancer_predisposition.yaml
+
+description: 'This pattern should be used to refer to predisposition to cancer where the predisposition is inherited and the causal gene is known. The predisposed cancer/tumor is often variable dependent of the gene variations themselves. Therefore they are not always included in the definition and/or logical axioms. Examples: [BRCA1-related cancer predisposition](http://purl.obolibrary.org/obo/MONDO_0100096),
+  [TP53-related cancer predisposition](http://purl.obolibrary.org/obo/MONDO_0100097)'
+
+contributors:
+- https://orcid.org/0000-0002-7638-4659
+- https://orcid.org/0000-0002-4142-7153
+
+classes:
+  cancer or benign tumor: MONDO:0045024
+  hereditary neoplastic syndrome: MONDO:0015356
+  gene: SO:0000704
+
+relations:
+  has material basis in germline mutation in: RO:0004003
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+vars:
+  gene: '''gene'''
+  cancer: '''cancer or benign tumor'''
+  
+name:
+  text: '%s-related cancer predisposition'
+  vars:
+  - gene
+
+
+def:
+  text: Any hereditary cancer predisposition due to variation(s) in %s, which confers a predisposition to %s.
+  vars:
+  - gene
+  - cancer
+#note that the cancer variable is not always known, or might be variable (ie their could be more than one term)
+
+
+equivalentTo:
+  text: '''hereditary neoplastic syndrome'' and (''has material basis in germline mutation in'' some %s)'
+  vars:
+  - gene
+  - cancer
