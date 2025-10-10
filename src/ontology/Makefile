@@ -411,15 +411,6 @@ $(SUBSETDIR)/mondo-rare.owl: $(ONT)-base.owl $(TMPDIR)/hgnc_import.owl  tmp/rare
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: $(SUBSETDIR)/mondo-rare.owl
 
-tmp/clingen-seed.txt: $(SRC)
-	$(ROBOT) merge -i $< query --query ../sparql/signature/clingen-subset.sparql $@
-.PRECIOUS: tmp/rare-seed-entities.txt
-
-subsets/mondo-clingen.owl: $(ONT)-base.owl tmp/clingen-seed.txt | $(SUBSETDIR)
-	$(ROBOT) merge -i $< query --update ../sparql/update/clingen-labels.ru extract --method subset -T tmp/clingen-seed.txt --copy-ontology-annotations true --output $@ &&\
-	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
-.PRECIOUS: $(SUBSETDIR)/mondo-rare.owl
-
 ########## Clingen Subset ######
 
 # CURRENTLY NOT USED, ONLY REMOVING NON-HUMAN ANIMAL DISEASES
