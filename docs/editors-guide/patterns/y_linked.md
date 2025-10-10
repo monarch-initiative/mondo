@@ -6,21 +6,22 @@
 TBD.
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
+* [https://orcid.org/0000-0002-5002-8648](https://orcid.org/0000-0002-5002-8648) 
 ## Name 
 
-Y-linked {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
+Y-linked {[disease](http://purl.obolibrary.org/obo/MONDO_0700096)}
 
 ## Annotations 
 
-* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}, Y-linked
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[disease](http://purl.obolibrary.org/obo/MONDO_0700096)}, Y-linked
 
 ## Definition 
 
-Y-linked form of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}.
+Y-linked form of {[disease](http://purl.obolibrary.org/obo/MONDO_0700096)}.
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [y_linked_inheritance](http://purl.obolibrary.org/obo/HP_0001450)
+{[disease](http://purl.obolibrary.org/obo/MONDO_0700096)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [y_linked_inheritance](http://purl.obolibrary.org/obo/HP_0001450)
 
 ## Data preview 
 | defined_class                                | defined_class_label           | disease                                      | disease_label        |

@@ -1,0 +1,108 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX mondo: <http://purl.obolibrary.org/obo/mondo#>
+PREFIX OMO: <http://purl.obolibrary.org/obo/OMO_>
+
+# Get synonym statistics for all MONDO classes by scope and by xref for exact synonyms
+
+SELECT ?category (COUNT(?synonym) AS ?count)
+WHERE {
+  {
+    # Synonym counts by scope
+    ?class a owl:Class ;
+         ?synonymProp ?synonym .
+
+    FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
+
+    FILTER NOT EXISTS { ?class owl:deprecated true }
+
+    VALUES (?synonymProp ?category) {
+      (oboInOwl:hasExactSynonym "exact")
+      (oboInOwl:hasNarrowSynonym "narrow")
+      (oboInOwl:hasBroadSynonym "broad")
+      (oboInOwl:hasRelatedSynonym "related")
+    }
+  }
+  UNION
+  {
+    # Exact synonyms xref source analysis
+    ?class a owl:Class ;
+         ?synonymProp ?synonym .
+
+    FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
+
+    FILTER NOT EXISTS { ?class owl:deprecated true }
+
+    ?axiom a owl:Axiom ;
+           owl:annotatedSource ?class ;
+           owl:annotatedProperty oboInOwl:hasExactSynonym ;
+           owl:annotatedTarget ?synonym ;
+           oboInOwl:hasDbXref ?xref .
+
+    # Map known xref prefixes to categories
+    VALUES (?xref_prefix ?category) {
+      ("OMIM" "exact_OMIM")
+      ("Orphanet" "exact_Orphanet")
+      ("NCIT" "exact_NCIT")
+      ("DOID" "exact_DOID")
+      ("ICD10CM" "exact_ICD10CM")
+      ("MEDGEN" "exact_MEDGEN")
+      ("UMLS" "exact_UMLS")
+      ("NORD" "exact_NORD")
+      ("ClinGen" "exact_ClinGen")
+      ("icd11.foundation" "exact_ICD11")
+      ("OMIA" "exact_OMIA")
+      ("SCTID" "exact_SCTID")
+    }
+
+    BIND(STRBEFORE(STR(?xref), ":") AS ?actual_prefix)
+    FILTER(?actual_prefix = ?xref_prefix)
+  }
+  UNION
+  {
+    # Abbreviation-tagged synonyms
+    ?class a owl:Class ;
+         ?synonymProp ?synonym .
+
+    FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
+
+    FILTER NOT EXISTS { ?class owl:deprecated true }
+
+    ?axiom a owl:Axiom ;
+           owl:annotatedSource ?class ;
+           owl:annotatedProperty ?synonymProp ;
+           owl:annotatedTarget ?synonym ;
+           oboInOwl:hasSynonymType mondo:ABBREVIATION .
+
+    VALUES (?synonymProp ?category) {
+      (oboInOwl:hasExactSynonym "exact_abbreviation")
+      (oboInOwl:hasNarrowSynonym "narrow_abbreviation")
+      (oboInOwl:hasBroadSynonym "broad_abbreviation")
+      (oboInOwl:hasRelatedSynonym "related_abbreviation")
+    }
+  }
+  UNION
+  {
+    # the query for the clingen label only works on OWL format files
+    ?class a owl:Class ;
+          oboInOwl:hasExactSynonym ?synonym .
+
+    FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
+    FILTER NOT EXISTS { ?class owl:deprecated true }
+
+    ?axiom a owl:Axiom ;
+          owl:annotatedSource ?class ;
+          owl:annotatedProperty oboInOwl:hasExactSynonym ;
+          owl:annotatedTarget ?synonym ;
+          OMO:0002001 ?provIRI .
+
+    FILTER(STR(?provIRI) = "https://w3id.org/information-resource-registry/clingen")
+
+    BIND("exact_ClinGen_label" AS ?category)
+  }
+
+}
+GROUP BY ?category
+ORDER BY ?category

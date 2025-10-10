@@ -9,21 +9,22 @@ Examples: [autosomal dominant cerebellar ataxia](http://purl.obolibrary.org/obo/
 ## Contributors 
 * [https://orcid.org/0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
 * [https://orcid.org/0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
+* [https://orcid.org/0000-0002-5002-8648](https://orcid.org/0000-0002-5002-8648) 
 ## Name 
 
-autosomal dominant {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}
+autosomal dominant {[disease](http://purl.obolibrary.org/obo/MONDO_0700096)}
 
 ## Annotations 
 
-* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}, autosomal dominant
+* [exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym): {[disease](http://purl.obolibrary.org/obo/MONDO_0700096)}, autosomal dominant
 
 ## Definition 
 
-Autosomal dominant form of {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)}.
+Autosomal dominant form of {[disease](http://purl.obolibrary.org/obo/MONDO_0700096)}.
 
 ## Equivalent to 
 
-{[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [autosomal dominant inheritance](http://purl.obolibrary.org/obo/HP_0000006)
+{[disease](http://purl.obolibrary.org/obo/MONDO_0700096)} and [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [autosomal dominant inheritance](http://purl.obolibrary.org/obo/HP_0000006)
 
 ## Data preview 
 | defined_class                                | defined_class_label                                      | disease                                      | disease_label                         |

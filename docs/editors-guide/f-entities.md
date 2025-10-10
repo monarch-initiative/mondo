@@ -82,7 +82,8 @@ For example, MONDO:0003321-hereditary Wilms' tumor : ‘has_exact_synonym’ ‘
 
 #### Narrow
 
-The definition of the synonym is the same as the primary definition, but has additional qualifiers.
+The definition of the synonym is the same as the primary definition, but has additional qualifiers. **Note** - ClinGen curators will sometimes request narrow synoyms that are actually subclasses of the term. We can add narrow synonyms to help the users find the right term when it makes sense. For instance, when the synonym refers to another disease that is more specific, but in practice, people would use the more general term.
+This is exactly the use case for ClinGen: since they lump 2 diseases, they would suspect that the narrow synonyms refer to the lumped term. See example: MONDO:0100582 'TOR1AIP1-related myopathy' (ticket: https://github.com/monarch-initiative/mondo/issues/8593).
 
 For example, MONDO:0004979 asthma : ‘has_narrow_synonym’ ‘exercise-induced asthma’
 
@@ -108,7 +109,6 @@ A synonym that is historic and discouraged | DEPRECATE | We mark synonyms with D
 A synonym that is recorded for consistency with another source but is a misspelling | MISSPELLING | The source term has a misspelling | MONDO:0011154 acrofacial dysostosis, Palagonia type
 abbreviation | ABBREVIATION | Abbreviations of the primary label | MONDO:0004976 'amyotrophic lateral sclerosis'
 ambiguous | AMBIGUOUS | A synonym that is unclear or inexact | MONDO:0021636 'astrocytic tumor'
-clingen label | CLINGEN_LABEL | Added to gene-based names/synonyms that were requested by ClinGen, and other terms that are the preferred terms for ClinGen. | MONDO:0700000 'ALG9-associated autosomal dominant polycystic kidney disease'
 dubious synonym | DUBIOUS | Not to be relied upon or suspect | MONDO:0002776 'external ear disease'
 Synonym to be removed from public release but maintained in edit version as record of external usage | EXCLUDE | Some synonyms are annotated with EXCLUDE, e.g. “NOS” (not otherwise specified) synonyms. It is useful to have these in the edit version, but these are filtered on release. | MONDO:0011088 congenital myasthenic syndrome 1A, MONDO:0002679 cerebral infarction, MONDO:0008170 'ovarian cancer'
 
@@ -227,3 +227,21 @@ If you make changes to a Mondo term based on requests on a GitHub ticket, please
 ## Susceptibility terms
 
 Susceptibility to diseases should be classified under MONDO:0042489 'disease susceptibility' (or MONDO:0020573 'inherited disease susceptibility', as appropriate). We should group any OMIM susceptibility terms under a susceptibility to disease term. We will not add OMIM xrefs to these, even if the term is part of the OMIMPS. For example, https://www.omim.org/phenotypicSeries/PS161400 - we will create a new class called narcolepsy, susceptibility but will NOT refer back to the OMIMPS. (See related ticket: [https://github.com/monarch-initiative/mondo/issues/5511](https://github.com/monarch-initiative/mondo/issues/5511)).
+
+## Disease characteristic
+
+MONDO:0021125 disease characteristic describes attributes of a disease and these terms are used in logical axioms in Mondo.
+
+To add a Disjoint Union Of axiom to disease characteristic terms, follow the instructions below:
+1. In Protege, select the term (eg 'classic or non-classic genetic disease presentation')
+2. In the Description box, click the + next to the 'Disjoint Union Of' axiom
+3. Click the Expression editor tab
+4. Create a commna separated list of the terms that are subclasses of the class (eg 'classic presentation', 'non-classic presentation')
+5. Click OK
+6. Move the axiom to the 'axioms' file. Click on the new axiom that you created (so it is highlighted in blue)
+7. Right click and select move axiom(s) to ontology
+8. Select an ontology: axioms
+9. Click OK
+10. Save the file and commit
+
+A video describing this workflow is [here](<iframe width="560" height="315" src="https://www.youtube.com/embed/ZeBv-MgAf00?si=48FD1LuaisaVUlJb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>)

@@ -7,7 +7,7 @@
 the new ID for that term in advance.
 1. Check to see if the term is being used by EFO, ClinGen or other users, where 
 possible.
-1. Notify users of the the users that the term will be split.
+1. Notify users that the term will be split.
 1. If there are no objections, make the changes after two release cycles have
 passed.
 1. The workflow involves two steps:
@@ -41,11 +41,11 @@ template
 1. Follow the instructions to [Merge a ROBOT template into Mondo](https://mondo.readthedocs.io/en/latest/editors-guide/robot-template/).
 1. At the time of the release, generate the sparql report for obsoletion candidates and 
 share with the Mondo users list: 
-1. In terminal, run `sh run.sh make report-obsoletioncandidates-withcomment`
+1. In Terminal, run `sh run.sh make report-obsoletioncandidates-withcomment`
 1. The report will be in the src/sparql/reports folder
 
 ### Tips
-- Tip 1: If you want to look a the report quickly, type in Terminal `atom reports/report-disease-labeled-terms.tsv`. This will open it in Atom.
+- Tip 1: If you want to look at the report quickly, type in Terminal `atom reports/report-disease-labeled-terms.tsv`. This will open it in Atom.
 - Tip 2: In Terminal, `open reports` - this will open the file in Finder.
 
 ## Split Terms
