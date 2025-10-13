@@ -26,13 +26,14 @@ curie_map:
   # ICD10CM__2: https://icd.codes/icd10cm/
   # ICD10WHO: https://icd.who.int/browse10/2019/en#/
   # ICD10WHO__2: http://apps.who.int/classifications/icd10/browse/2010/en#/
-  icd11.foundation: http://purl.obolibrary.org/obo/mondo/sources/icd11foundation/
+  icd11.foundation: http://id.who.int/icd/entity/
   OMIMPS: https://omim.org/phenotypicSeries/PS
   MEDGEN: http://identifiers.org/medgen/
   MedDRA: http://identifiers.org/meddra/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   owl: http://www.w3.org/2002/07/owl#
   semapv: https://w3id.org/semapv/vocab/
+  infores: https://w3id.org/information-resource-registry/
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   sssom: https://w3id.org/sssom/
   # oio: http://www.geneontology.org/formats/oboInOwl#
@@ -58,7 +59,6 @@ curie_map:
   IEDB: "http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/IEDB/"
   PMID: "http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/PMID/"
   KEGG: "http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/KEGG/"
-  ICD11: "http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/ICD11/"
   DECIPHER: "http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/DECIPHER/"
   CSP: "http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/CSP/"
   Wikipedia: "http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/Wikipedia/"
@@ -70,7 +70,7 @@ curie_map:
   # ICD10: "http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/ICD10/"
   ICD10EXP: "http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/ICD10EXP/"
   DERMO: "http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/DERMO/"
-  GARD: "http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/GARD/"
+  GARD: "https://rarediseases.info.nih.gov/diseases/"
   # SNOMEDCT_US: "http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/SNOMEDCT_US/"
   # MSH: "http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/MSH/"
   GC_ID: "http://purl.obolibrary.org/obo/mondo/mappings/unknown_prefix/GC_ID/"
@@ -97,51 +97,51 @@ relations:
   - skos:closeMatch
   - skos:relatedMatch
 global_metadata:
-  subject_source: http://purl.obolibrary.org/obo/mondo.owl
+  subject_source: infores:mondo
   license: "https://creativecommons.org/publicdomain/zero/1.0/"
-  mapping_date: "2017-09-20"
+  #mapping_date: "2017-09-20"
   mapping_set_id: "GLOBAL" # Apparently this is the one that matters.
 source_metadata:
   - from: MONDO
     to: OMIM
     metadata:
-      object_source: https://www.omim.org/
+      object_source: infores:omim
       object_source_version: http://www.orphadata.org/data/ORDO/ordo_orphanet_3.1.owl
-      mapping_date: "2022-02-11"
+      #mapping_date: "2022-02-11"
       comment: "The latest OMIM is integrated with every Mondo release."
   - from: MONDO
     to: UMLS
     metadata:
-      object_source: https://uts.nlm.nih.gov/uts/
+      object_source: infores:umls
   - from: MONDO
     to: EFO
     metadata:
-      object_source: http://www.ebi.ac.uk/efo/efo.owl
+      object_source: infores:efo
   - from: MONDO
     to: ICD10CM
     metadata:
-      object_source: https://www.icd10data.com/
-      mapping_date: "2017-09-20"
+      object_source: infores:icd10cm
+      #mapping_date: "2017-09-20"
   - from: MONDO
     to: Orphanet
     metadata:
-      object_source: https://www.orpha.net/
+      object_source: infores:orphanet
       object_source_version: http://www.orphadata.org/data/ORDO/ordo_orphanet_3.1.owl
-      mapping_date: "2021-07-06"
+      #mapping_date: "2021-07-06"
       comment: "The latest Orphanet is integrated with every Mondo release."
   - from: MONDO
     to: NCIT
     metadata:
-      object_source: http://purl.obolibrary.org/obo/ncit.owl
+      object_source: infores:ncit
       object_source_version: http://purl.obolibrary.org/obo/ncit/releases/2018-06-14/ncit.owl
-      mapping_date: "2018-06-14"
+      #mapping_date: "2018-06-14"
   - from: MONDO
     to: DOID
     metadata:
-      object_source: http://purl.obolibrary.org/obo/doid.owl
+      object_source: infores:disease-ontology
       object_source_version: http://purl.obolibrary.org/obo/doid/releases/2018-07-05/doid.owl
-      mapping_date: "2018-07-05"
+      #mapping_date: "2018-07-05"
   - from: MONDO
     to: icd11.foundation
     metadata:
-      object_source: http://purl.obolibrary.org/obo/mondo/sources/icd11foundation.owl
+      object_source: infores:icd11-foundation

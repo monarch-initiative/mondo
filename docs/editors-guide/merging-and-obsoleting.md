@@ -23,7 +23,7 @@ See [GitHub Discussion](https://github.com/monarch-initiative/mondo/discussions/
 ### Tag Term for Obsolete/Merge
 1. Mondo users need to be notified before we obsolete, merge or [split](https://mondo.readthedocs.io/en/latest/editors-guide/splitting-classes/) a Mondo class.
 1. If there is a request to obsolete a Mondo class, check [Monarch Initiative](https://monarchinitiative.org/) to determine if the disease term is used for Monarch annotations. For example, [discitis](https://monarchinitiative.org/disease/MONDO:0006728) (see ticket [here](https://github.com/monarch-initiative/mondo/issues/501)) does not have any annotations in Monarch. (_This is something that we hope to automate in the future_).
-3. If a term is to be obsoleted, in a new row in the [ROBOT_ObsoleteTag spreadsheet template](https://docs.google.com/spreadsheets/d/1tt1Wk70j9XiHLV1vKQyNiHhaazh286pobpJk1ecSCCg/edit#gid=505727337), add the following information for the term-to-be-obsoleted:
+3. If a term is to be obsoleted, in a new row in the [ROBOT_ObsoleteTag spreadsheet template](https://docs.google.com/spreadsheets/d/1h8_3g4GWzFyC0jhvCVFBx6CTd6PUBsHCoZ-HX1iCQvQ/edit?gid=0#gid=0), add the following information for the term-to-be-obsoleted:
     1. ID for term to be obsoleted 
     1. Label for term to be obsoleted 
     1. 'term tracker item': GitHub ticket that describes the obsoletion request
@@ -143,7 +143,7 @@ There are 2 ways to merge classes:
 1. Rename label to: obsolete [class name]
 1. Add annotation **owl:deprecated** and indicate true (in literal)
 1. Add annotation **term replaced by** and add ID of term which replaced it (in CURIE format, such as MONDO:0010684). If the disease term is being obsoleted and an HPO term should be used instead, do not use **term replaced by**, rather use the annotation **consider.** For example, see MONDO:0001445.
-1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and add `OMO:0001000` in the IRI editor (`OMO:0001000` = out of scope). Add a source annotation to the obsolescence reason that comes from this [list of exclusion reasons](https://mondo.readthedocs.io/en/latest/editors-guide/exclusion-reasons/). It should look something like: `property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}`.
+1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and add (http://purl.obolibrary.org/obo/OMO_0001000) in the IRI editor (`OMO:0001000` = out of scope). Add a source annotation to the obsolescence reason that comes from this [list of exclusion reasons](https://mondo.readthedocs.io/en/latest/editors-guide/exclusion-reasons/). It should look something like: `property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}`.
 1. _Optional:_ Add an additional comment (rdfs:comment) explaining why the terms were merged.
 1. Add annotation 'term tracker item' (type xsd:anyURI) with a link to the GitHub issue that requested the obsoletion.
 1. Remove superclass axioms
@@ -162,7 +162,7 @@ Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:e
 1. Search for the class to be obsoleted.
 1. In the Protege edit menu-> Make entity obsolete
 1. Prepend the definition with OBSOLETE. For example, OBSOLETE. Chronic form of myeloproliferative neoplasm. 
-1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and add `OMO:0001000` in the IRI editor (`OMO:0001000` = out of scope). Add a source annotation to the obsolescence reason that comes from this [list of exclusion reasons](https://mondo.readthedocs.io/en/latest/editors-guide/exclusion-reasons/). It should look something like: `property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}`.
+1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and add (http://purl.obolibrary.org/obo/OMO_0001000) in the IRI editor (`OMO:0001000` = out of scope). Add a source annotation to the obsolescence reason that comes from this [list of exclusion reasons](https://mondo.readthedocs.io/en/latest/editors-guide/exclusion-reasons/). It should look something like: `property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}`.
 1. Add annotation 'term tracker item' (type xsd:anyURI) with a link to the GitHub issue that requested the obsoletion.
 1. If the term has **database_cross_reference annotations** and the **source** is annotated as MONDO:equivalentTo, change the source to **source** MONDO:obsoleteEquivalent (in the literal tab). Obsolete terms should never be equivalent.
 1. Add annotation consider, add the CURIE for the term that should be considered as a replacement.
@@ -174,7 +174,7 @@ Note: An obsolete Mondo class should not have an xref axiom tagged with "MONDO:e
 1. Rename label to: obsolete [class name].
 1. Add annotation **owl:deprecated** and indicate true (in literal).
 1. Prepend the definition with OBSOLETE. For example, OBSOLETE. Chronic form of myeloproliferative neoplasm. 
-1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and add `OMO:0001000` in the IRI editor (`OMO:0001000` = out of scope). Add a source annotation to the obsolescence reason that comes from this [list of exclusion reasons](https://mondo.readthedocs.io/en/latest/editors-guide/exclusion-reasons/). It should look something like: `property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}`.
+1. Add an obsoletion reason: use the annotation property 'has obsolescence reason' and add (http://purl.obolibrary.org/obo/OMO_0001000) in the IRI editor (`OMO:0001000` = out of scope). Add a source annotation to the obsolescence reason that comes from this [list of exclusion reasons](https://mondo.readthedocs.io/en/latest/editors-guide/exclusion-reasons/). It should look something like: `property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}`.
 1. Add annotation 'term tracker item' (type xsd:anyURI) with a link to the GitHub issue that requested the obsoletion.
 1. Remove superclass axioms.
 1. If the class has children, remove the superclass assertions for the children.

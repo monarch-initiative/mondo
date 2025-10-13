@@ -15,20 +15,20 @@ tmp/ncit.db:
 tmp/mondo_paper.owl:
 	wget "http://purl.obolibrary.org/obo/mondo.owl" -O $@
 
-tmp/prefixes.csv:
-	mkdir -p tmp
-	cp ../../ontology/config/prefixes.csv $@
+#tmp/prefixes.csv:
+#	mkdir -p tmp
+#	cp ../../ontology/config/prefixes.csv $@
 
-tmp/mondo_paper.db: tmp/mondo_paper.owl #tmp/prefixes.csv
+tmp/mondo_paper.db: tmp/mondo_paper.owl tmp/prefixes.csv
 	@rm -f .template.db
 	@rm -f .template.db.tmp
 	RUST_BACKTRACE=full semsql make $@ -P tmp/prefixes.csv
 	@rm -f .template.db
 	@rm -f .template.db.tmp	
 
-tmp/mondo.db:
-	mkdir -p tmp
-	cp $(PATH_MONDO_INGEST)/src/ontology/tmp/mondo.db $@
+#tmp/mondo.db:
+#	mkdir -p tmp
+#	cp $(PATH_MONDO_INGEST)/src/ontology/tmp/mondo.db $@
 
 tmp/mondo.sssom.tsv:
 	mkdir -p tmp

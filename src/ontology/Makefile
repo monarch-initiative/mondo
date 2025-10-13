@@ -1,7 +1,7 @@
 OBOBASE=                    http://purl.obolibrary.org/obo
 URIBASE=                    http://purl.obolibrary.org/obo
 VERSION=                    $(TODAY)
-ANNOTATION_PROPERTIES=		rdfs:label IAO:0000115 IAO:0000116 IAO:0100001 owl:deprecated 
+ANNOTATION_PROPERTIES=		rdfs:label IAO:0000115 IAO:0000116 IAO:0100001 owl:deprecated RO:0002175
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
 
@@ -73,7 +73,7 @@ all: test all_artefacts mappings
 # Artefacts
 # ----------------------------------------
 
-IMPORTS =  uberon cl go pato envo ro hp mf ncbitaxon chebi ncit hgnc foodon so ecto omo chr hsapdv nbo maxo mfomd ncbigene
+IMPORTS =  uberon cl go pato envo ro hp mf ncbitaxon chebi ncit hgnc foodon so ecto omo chr hsapdv nbo maxo mfomd ncbigene bfo
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -115,7 +115,8 @@ ARTEFACTS = \
 
 REPORT_FILES_RELEASE = reports/mondo_release_diff_changed_terms.tsv \
   reports/mondo_release_diff_new_terms.tsv \
-  reports/mondo_obsoletioncandidates.tsv
+  reports/mondo_obsoletioncandidates.tsv \
+  reports/source-versions.tsv
 
 ASSETS = $(MAIN_FILES) $(SUBSET_FILES) $(EQUIVALENTS) \
   ../../README.md \
@@ -224,7 +225,7 @@ REMOVE_DECLARATIONS=
 # all necessary ones are implicitly added back when converting back to OWL
 # see: https://github.com/owlcs/owlapi/pull/761
 filtered.owl: filtered.obo skos.ttl
-	owltools --use-catalog $< $(REMOVE_DECLARATIONS) skos.ttl --merge-support-ontologies -o $@
+	$(ROBOT) merge -i filtered.obo -i skos.ttl --collapse-import-closure false -o $@
 
 # perform reasoning on source
 # PREVIOUS: SKIP FOR NOW: assume pre-asserted, but run reasoner to check
@@ -470,7 +471,23 @@ $(IMPORTDIR)/merged_terms_combined.txt: $(ALL_TERMS_COMBINED)
 
 $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/merged_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
-		remove  --select "<http://purl.obolibrary.org/obo/GOCHE_*>" remove  --select "<http://purl.obolibrary.org/obo/NCBITaxon_Union_*>" remove  --select "<http://www.informatics.jax.org/marker/MGI:*>" remove  --select "<http://purl.obolibrary.org/obo/OBI_*>" remove  --select "<http://purl.obolibrary.org/obo/CARO_*>" remove  --select "<http://purl.obolibrary.org/obo/RnorDv_*>" remove  --select "<http://purl.obolibrary.org/obo/PR_*>" remove  --select "<http://purl.obolibrary.org/obo/PCO_*>" remove  --select "<http://purl.obolibrary.org/obo/ExO_*>" remove  --select "<http://purl.obolibrary.org/obo/FAO_*>" remove  --select "<http://purl.obolibrary.org/obo/UPHENO_*>" remove  --select "<http://purl.obolibrary.org/obo/COB_*>" remove  --select "<http://purl.obolibrary.org/obo/MPATH_*>" remove  --select "<http://purl.obolibrary.org/obo/PO_*>" remove  --select "<http://purl.obolibrary.org/obo/ENVO_01001055*>"  \
+		remove  --select "<http://purl.obolibrary.org/obo/GOCHE_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/NCBITaxon_Union_*>" \
+		remove  --select "<http://www.informatics.jax.org/marker/MGI:*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/OBI_*>" \
+		remove  --select "<http://identifiers.org/ensembl/ENSG*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/CARO_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/RnorDv_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/PR_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/PCO_*>"\
+		remove  --select "<http://purl.obolibrary.org/obo/ExO_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/FAO_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/UPHENO_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/COB_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/MPATH_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/PO_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/OGMS_*>" \
+		remove  --select "<http://purl.obolibrary.org/obo/ENVO_01001055*>"  \
 		extract -T $(IMPORTDIR)/merged_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
 		remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T $(IMPORTDIR)/merged_terms_combined.txt --select complement --select "annotation-properties" \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
@@ -516,6 +533,14 @@ IMP=true # Global parameter to bypass import generation
 MIR=true # Global parameter to bypass mirror generation
 IMP_LARGE=true # Global parameter to bypass handling of large imports
 
+## ONTOLOGY: bfo
+.PHONY: mirror-bfo
+.PRECIOUS: $(MIRRORDIR)/bfo.owl
+mirror-bfo: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(OBOBASE)/bfo.owl --create-dirs -o $(MIRRORDIR)/bfo.owl --retry 4 --max-time 400 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/bfo.owl -o $@.tmp.owl && \
+		$(ROBOT) remove -i $@.tmp.owl --base-iri http://purl.obolibrary.org/obo/BFO_ --axioms external --preserve-structure false --trim false -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
 
 ## ONTOLOGY: uberon
@@ -827,7 +852,7 @@ SPARQL_EDIT_EXCLUDE=
 # the ontology begin looking like this: http://purl.obolibrary.org/obo/mondo/mondo-base#... This
 # will cause the query to fail because it expects the IRI  http://purl.obolibrary.org/obo/mondo#ABREVIATION
 # for the duplicate-exact-synonym-no-abbrev check.
-SPARQL_OBO_EXCLUDE=qc-single-child qc-omimps-should-be-inherited qc-omim-subsumption qc-permitted-properties qc-duplicate-exact-synonym-no-abbrev qc-multiple-gene-associations
+SPARQL_OBO_EXCLUDE=qc-single-child qc-omimps-should-be-inherited qc-omim-subsumption qc-permitted-properties qc-duplicate-exact-synonym-no-abbrev qc-multiple-gene-associations qc-subclass-relation-no-source
 SPARQL_OWL_EXCLUDE=qc-permitted-properties
 SPARQL_GENERAL_QC_EDIT=$(filter-out $(SPARQL_EDIT_EXCLUDE),$(SPARQL_GENERAL_QC))
 SPARQL_GENERAL_QC_OWL=$(filter-out $(SPARQL_OWL_EXCLUDE),$(SPARQL_GENERAL_QC))

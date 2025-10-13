@@ -3,6 +3,7 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX mondo: <http://purl.obolibrary.org/obo/mondo#>
+PREFIX OMO: <http://purl.obolibrary.org/obo/OMO_>
 
 # Get synonym statistics for all MONDO classes by scope and by xref for exact synonyms
 
@@ -84,22 +85,24 @@ WHERE {
   }
   UNION
   {
-    # Count exact synonyms tagged as CLINGEN_LABEL
+    # the query for the clingen label only works on OWL format files
     ?class a owl:Class ;
-         ?synonymProp ?synonym .
+          oboInOwl:hasExactSynonym ?synonym .
 
     FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/MONDO_"))
-
     FILTER NOT EXISTS { ?class owl:deprecated true }
 
     ?axiom a owl:Axiom ;
-           owl:annotatedSource ?class ;
-           owl:annotatedProperty oboInOwl:hasExactSynonym ;
-           owl:annotatedTarget ?synonym ;
-           oboInOwl:hasSynonymType mondo:CLINGEN_LABEL .
+          owl:annotatedSource ?class ;
+          owl:annotatedProperty oboInOwl:hasExactSynonym ;
+          owl:annotatedTarget ?synonym ;
+          OMO:0002001 ?provIRI .
+
+    FILTER(STR(?provIRI) = "https://w3id.org/information-resource-registry/clingen")
 
     BIND("exact_ClinGen_label" AS ?category)
   }
+
 }
 GROUP BY ?category
 ORDER BY ?category
