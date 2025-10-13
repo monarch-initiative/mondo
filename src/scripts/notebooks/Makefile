@@ -15,9 +15,9 @@ tmp/ncit.db:
 tmp/mondo_paper.owl:
 	wget "http://purl.obolibrary.org/obo/mondo.owl" -O $@
 
-#tmp/prefixes.csv:
-#	mkdir -p tmp
-#	cp ../../ontology/config/prefixes.csv $@
+tmp/prefixes.csv:
+	mkdir -p tmp
+	cp ../../ontology/config/prefixes.csv $@
 
 tmp/mondo_paper.db: tmp/mondo_paper.owl tmp/prefixes.csv
 	@rm -f .template.db
