@@ -1,0 +1,711 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+
+SELECT ?mondo_curie ?label ?deprecated
+       (IF(BOUND(?subset_rare), "yes", "no") AS ?rare)
+       (IF(BOUND(?subset_gard_rare), "yes", "no") AS ?gard)
+       (IF(BOUND(?subset_orphanet_rare), "yes", "no") AS ?orphanet)
+       (IF(BOUND(?subset_nord_rare), "yes", "no") AS ?nord)
+       (IF(BOUND(?subset_mondo_rare), "yes", "no") AS ?mondo_rare)
+       (IF(BOUND(?subset_clingen), "yes", "no") AS ?clingen)
+	   (IF(BOUND(?subset_disease_grouping), "yes", "no") AS ?general_grouping)
+       (IF(BOUND(?subset_rare_grouping), "yes", "no") AS ?rare_grouping)
+       (IF(BOUND(?subset_inferred_rare), "yes", "no") AS ?inferred_rare)
+       (IF(BOUND(?subset_obsoletion_candidate), "yes", "no") AS ?obsoletion_candidate)
+       (IF(BOUND(?subset_ordo_clinical_subtype), "yes", "no") AS ?ordo_disorder_subtype)
+       (IF(BOUND(?subset_ordo_group_of_disorders), "yes", "no") AS ?ordo_group_of_disorders)
+       (IF(BOUND(?subset_ordo_disorder), "yes", "no") AS ?ordo_disorder)
+       (GROUP_CONCAT(DISTINCT STR(?xref); separator="|") as ?xrefs)
+       (GROUP_CONCAT(DISTINCT STR(?ancestor_label); separator=", ") as ?ancestors)
+	   
+WHERE {
+  
+  # These are 636 or so Mondo
+  # VALUES ?mondo_id {
+  #   MONDO:0100569
+  #   MONDO:0100161
+  #   MONDO:0958303
+  #   MONDO:0020813
+  #   MONDO:0011163
+  #   MONDO:0005361
+  #   MONDO:0016312
+  #   MONDO:0017975
+  #   MONDO:0005550
+  #   MONDO:0958328
+  #   MONDO:0013920
+  #   MONDO:0957991
+  #   MONDO:0700242
+  #   MONDO:0021500
+  #   MONDO:0013253
+  #   MONDO:0019722
+  #   MONDO:0011450
+  #   MONDO:0000927
+  #   MONDO:0018738
+  #   MONDO:0700234
+  #   MONDO:0013092
+  #   MONDO:0019288
+  #   MONDO:0957993
+  #   MONDO:0014680
+  #   MONDO:0958197
+  #   MONDO:0957912
+  #   MONDO:0023179
+  #   MONDO:0006215
+  #   MONDO:0012933
+  #   MONDO:0800480
+  #   MONDO:0958356
+  #   MONDO:0012763
+  #   MONDO:0700261
+  #   MONDO:0958017
+  #   MONDO:0957922
+  #   MONDO:0800464
+  #   MONDO:0021154
+  #   MONDO:0100564
+  #   MONDO:0011739
+  #   MONDO:0007810
+  #   MONDO:0018230
+  #   MONDO:0012042
+  #   MONDO:0040671
+  #   MONDO:0012134
+  #   MONDO:0020725
+  #   MONDO:0968944
+  #   MONDO:0005071
+  #   MONDO:0018102
+  #   MONDO:0011917
+  #   MONDO:0800419
+  #   MONDO:0023910
+  #   MONDO:0004397
+  #   MONDO:0012952
+  #   MONDO:0957953
+  #   MONDO:0013108
+  #   MONDO:0012823
+  #   MONDO:0005267
+  #   MONDO:0011941
+  #   MONDO:0700228
+  #   MONDO:0018548
+  #   MONDO:0009741
+  #   MONDO:0024573
+  #   MONDO:0958179
+  #   MONDO:0800183
+  #   MONDO:0020010
+  #   MONDO:0957807
+  #   MONDO:0011741
+  #   MONDO:0968959
+  #   MONDO:0007190
+  #   MONDO:0013568
+  #   MONDO:0015714
+  #   MONDO:0800468
+  #   MONDO:0016017
+  #   MONDO:0014429
+  #   MONDO:0007488
+  #   MONDO:0800463
+  #   MONDO:0002409
+  #   MONDO:0957809
+  #   MONDO:0012935
+  #   MONDO:0002281
+  #   MONDO:0010640
+  #   MONDO:0017902
+  #   MONDO:0012936
+  #   MONDO:0019146
+  #   MONDO:0016005
+  #   MONDO:0012843
+  #   MONDO:0012842
+  #   MONDO:0700244
+  #   MONDO:0800187
+  #   MONDO:0007028
+  #   MONDO:0004995
+  #   MONDO:0958332
+  #   MONDO:0014710
+  #   MONDO:0700041
+  #   MONDO:0957319
+  #   MONDO:0013084
+  #   MONDO:0020120
+  #   MONDO:0019755
+  #   MONDO:0013427
+  #   MONDO:0003250
+  #   MONDO:0957572
+  #   MONDO:0956993
+  #   MONDO:0014774
+  #   MONDO:0043537
+  #   MONDO:0013340
+  #   MONDO:0700236
+  #   MONDO:0958174
+  #   MONDO:0008067
+  #   MONDO:0957780
+  #   MONDO:0000088
+  #   MONDO:0859050
+  #   MONDO:0008856
+  #   MONDO:0012953
+  #   MONDO:0016330
+  #   MONDO:0013639
+  #   MONDO:0013957
+  #   MONDO:0700237
+  #   MONDO:0958233
+  #   MONDO:0045044
+  #   MONDO:0012655
+  #   MONDO:0958235
+  #   MONDO:0957872
+  #   MONDO:0100559
+  #   MONDO:0003939
+  #   MONDO:0956987
+  #   MONDO:0013096
+  #   MONDO:0007275
+  #   MONDO:0017901
+  #   MONDO:0017863
+  #   MONDO:0958176
+  #   MONDO:0800483
+  #   MONDO:0006065
+  #   MONDO:0006217
+  #   MONDO:0021522
+  #   MONDO:0003749
+  #   MONDO:0005385
+  #   MONDO:0005093
+  #   MONDO:0002356
+  #   MONDO:0957921
+  #   MONDO:0005137
+  #   MONDO:0010564
+  #   MONDO:0011164
+  #   MONDO:0023865
+  #   MONDO:0016677
+  #   MONDO:0012606
+  #   MONDO:0005150
+  #   MONDO:0016064
+  #   MONDO:0017772
+  #   MONDO:0008226
+  #   MONDO:0958183
+  #   MONDO:0000645
+  #   MONDO:0013086
+  #   MONDO:0004067
+  #   MONDO:0019040
+  #   MONDO:0016231
+  #   MONDO:0004298
+  #   MONDO:0957577
+  #   MONDO:0001479
+  #   MONDO:0013094
+  #   MONDO:0957822
+  #   MONDO:0957870
+  #   MONDO:0023243
+  #   MONDO:0013193
+  #   MONDO:0005172
+  #   MONDO:0100536
+  #   MONDO:0013633
+  #   MONDO:0003832
+  #   MONDO:0958162
+  #   MONDO:0100553
+  #   MONDO:0013045
+  #   MONDO:0021515
+  #   MONDO:0018173
+  #   MONDO:0957874
+  #   MONDO:0800479
+  #   MONDO:0007783
+  #   MONDO:0958354
+  #   MONDO:0957984
+  #   MONDO:0022454
+  #   MONDO:0958236
+  #   MONDO:0012934
+  #   MONDO:0957813
+  #   MONDO:0700003
+  #   MONDO:0041052
+  #   MONDO:0006476
+  #   MONDO:0017903
+  #   MONDO:0100301
+  #   MONDO:0957871
+  #   MONDO:0956984
+  #   MONDO:0700238
+  #   MONDO:0013088
+  #   MONDO:0060671
+  #   MONDO:0956995
+  #   MONDO:0007573
+  #   MONDO:0012595
+  #   MONDO:0035547
+  #   MONDO:0014241
+  #   MONDO:0006107
+  #   MONDO:0013510
+  #   MONDO:0012161
+  #   MONDO:0850126
+  #   MONDO:0013908
+  #   MONDO:0100570
+  #   MONDO:0100537
+  #   MONDO:0005066
+  #   MONDO:0012942
+  #   MONDO:0005411
+  #   MONDO:0956990
+  #   MONDO:0010833
+  #   MONDO:0700259
+  #   MONDO:0021001
+  #   MONDO:0013921
+  #   MONDO:0007966
+  #   MONDO:0958018
+  #   MONDO:0012141
+  #   MONDO:0002081
+  #   MONDO:0000816
+  #   MONDO:0019278
+  #   MONDO:0100173
+  #   MONDO:0021512
+  #   MONDO:0011361
+  #   MONDO:0021484
+  #   MONDO:0958330
+  #   MONDO:0021468
+  #   MONDO:0700273
+  #   MONDO:0957954
+  #   MONDO:0958241
+  #   MONDO:0007476
+  #   MONDO:0012144
+  #   MONDO:0958199
+  #   MONDO:0006104
+  #   MONDO:0958189
+  #   MONDO:0005039
+  #   MONDO:0054754
+  #   MONDO:0958161
+  #   MONDO:0016103
+  #   MONDO:0019632
+  #   MONDO:0013235
+  #   MONDO:0020581
+  #   MONDO:0001761
+  #   MONDO:0021511
+  #   MONDO:0700233
+  #   MONDO:0006823
+  #   MONDO:0013956
+  #   MONDO:0016037
+  #   MONDO:0958226
+  #   MONDO:0016105
+  #   MONDO:0000631
+  #   MONDO:0100561
+  #   MONDO:0015967
+  #   MONDO:0015925
+  #   MONDO:0958234
+  #   MONDO:0958023
+  #   MONDO:0700257
+  #   MONDO:0011607
+  #   MONDO:0002602
+  #   MONDO:0012951
+  #   MONDO:0011696
+  #   MONDO:0100544
+  #   MONDO:0700232
+  #   MONDO:0958326
+  #   MONDO:0958035
+  #   MONDO:0024623
+  #   MONDO:0000259
+  #   MONDO:0800470
+  #   MONDO:0029000
+  #   MONDO:0957935
+  #   MONDO:0700260
+  #   MONDO:0700253
+  #   MONDO:0011742
+  #   MONDO:0958012
+  #   MONDO:0958185
+  #   MONDO:0100542
+  #   MONDO:0958188
+  #   MONDO:0021759
+  #   MONDO:0013383
+  #   MONDO:0700231
+  #   MONDO:0958184
+  #   MONDO:0024458
+  #   MONDO:0958333
+  #   MONDO:0013954
+  #   MONDO:0012466
+  #   MONDO:0013876
+  #   MONDO:0002451
+  #   MONDO:0005061
+  #   MONDO:0020058
+  #   MONDO:0020636
+  #   MONDO:0004335
+  #   MONDO:0015713
+  #   MONDO:0958009
+  #   MONDO:0003220
+  #   MONDO:0957524
+  #   MONDO:0012159
+  #   MONDO:0013257
+  #   MONDO:0100199
+  #   MONDO:0957875
+  #   MONDO:0700262
+  #   MONDO:0700248
+  #   MONDO:0021166
+  #   MONDO:0045024
+  #   MONDO:0004994
+  #   MONDO:0013562
+  #   MONDO:0958180
+  #   MONDO:0010565
+  #   MONDO:0956967
+  #   MONDO:8000018
+  #   MONDO:0014502
+  #   MONDO:0012954
+  #   MONDO:0017256
+  #   MONDO:0000373
+  #   MONDO:0012318
+  #   MONDO:0958331
+  #   MONDO:0008608
+  #   MONDO:0800460
+  #   MONDO:0958182
+  #   MONDO:0958202
+  #   MONDO:0015914
+  #   MONDO:0700272
+  #   MONDO:0017204
+  #   MONDO:0957820
+  #   MONDO:0008399
+  #   MONDO:0958165
+  #   MONDO:0003620
+  #   MONDO:0958302
+  #   MONDO:0008685
+  #   MONDO:0004907
+  #   MONDO:0800424
+  #   MONDO:0013083
+  #   MONDO:0014902
+  #   MONDO:0021527
+  #   MONDO:0013669
+  #   MONDO:0044619
+  #   MONDO:0958352
+  #   MONDO:0957811
+  #   MONDO:0013185
+  #   MONDO:0958190
+  #   MONDO:0005570
+  #   MONDO:0100562
+  #   MONDO:0056805
+  #   MONDO:0957197
+  #   MONDO:0017014
+  #   MONDO:0007939
+  #   MONDO:0700224
+  #   MONDO:0700249
+  #   MONDO:0034212
+  #   MONDO:0012889
+  #   MONDO:0016226
+  #   MONDO:0043455
+  #   MONDO:0011775
+  #   MONDO:0700270
+  #   MONDO:0017900
+  #   MONDO:0000387
+  #   MONDO:0019290
+  #   MONDO:0021477
+  #   MONDO:0020530
+  #   MONDO:0958343
+  #   MONDO:0016242
+  #   MONDO:0019283
+  #   MONDO:0958351
+  #   MONDO:0012955
+  #   MONDO:0032667
+  #   MONDO:0100563
+  #   MONDO:0021443
+  #   MONDO:0958175
+  #   MONDO:0005775
+  #   MONDO:0100538
+  #   MONDO:0016225
+  #   MONDO:0009500
+  #   MONDO:0002118
+  #   MONDO:0023180
+  #   MONDO:0014017
+  #   MONDO:0001245
+  #   MONDO:0019544
+  #   MONDO:0956981
+  #   MONDO:0021048
+  #   MONDO:0007628
+  #   MONDO:0013109
+  #   MONDO:0012482
+  #   MONDO:0968951
+  #   MONDO:0004139
+  #   MONDO:0002145
+  #   MONDO:0957876
+  #   MONDO:0013095
+  #   MONDO:0016625
+  #   MONDO:0850144
+  #   MONDO:0032644
+  #   MONDO:0011954
+  #   MONDO:0957788
+  #   MONDO:0700258
+  #   MONDO:0005046
+  #   MONDO:0800434
+  #   MONDO:0958334
+  #   MONDO:0003333
+  #   MONDO:0700235
+  #   MONDO:0957999
+  #   MONDO:0700247
+  #   MONDO:0014281
+  #   MONDO:0700243
+  #   MONDO:0019056
+  #   MONDO:0968974
+  #   MONDO:0700227
+  #   MONDO:0004148
+  #   MONDO:0100539
+  #   MONDO:0958022
+  #   MONDO:0019296
+  #   MONDO:0011800
+  #   MONDO:0011348
+  #   MONDO:0006103
+  #   MONDO:0001357
+  #   MONDO:0100550
+  #   MONDO:0005349
+  #   MONDO:0035548
+  #   MONDO:0100543
+  #   MONDO:0017019
+  #   MONDO:0011931
+  #   MONDO:0956966
+  #   MONDO:0012132
+  #   MONDO:0957196
+  #   MONDO:0012822
+  #   MONDO:0018643
+  #   MONDO:0956992
+  #   MONDO:0956994
+  #   MONDO:0956964
+  #   MONDO:0007940
+  #   MONDO:0006858
+  #   MONDO:0958353
+  #   MONDO:0957825
+  #   MONDO:0019956
+  #   MONDO:0958006
+  #   MONDO:0957988
+  #   MONDO:0013384
+  #   MONDO:0005062
+  #   MONDO:0957783
+  #   MONDO:0002025
+  #   MONDO:0013097
+  #   MONDO:0700263
+  #   MONDO:0003900
+  #   MONDO:0044764
+  #   MONDO:0019293
+  #   MONDO:0100502
+  #   MONDO:0800433
+  #   MONDO:0007964
+  #   MONDO:0100567
+  #   MONDO:0019512
+  #   MONDO:0100546
+  #   MONDO:0956996
+  #   MONDO:0008410
+  #   MONDO:0958187
+  #   MONDO:0019054
+  #   MONDO:0956991
+  #   MONDO:0024498
+  #   MONDO:0016752
+  #   MONDO:0011207
+  #   MONDO:0015871
+  #   MONDO:0957978
+  #   MONDO:0800469
+  #   MONDO:0013653
+  #   MONDO:0009518
+  #   MONDO:0013665
+  #   MONDO:0007972
+  #   MONDO:0958000
+  #   MONDO:0958230
+  #   MONDO:0100534
+  #   MONDO:0010834
+  #   MONDO:0019530
+  #   MONDO:0700256
+  #   MONDO:0003924
+  #   MONDO:0020212
+  #   MONDO:0700239
+  #   MONDO:0005087
+  #   MONDO:0958013
+  #   MONDO:0011627
+  #   MONDO:0002051
+  #   MONDO:0019545
+  #   MONDO:0007723
+  #   MONDO:0957873
+  #   MONDO:0800435
+  #   MONDO:0700229
+  #   MONDO:0968955
+  #   MONDO:0100565
+  #   MONDO:0007845
+  #   MONDO:0019289
+  #   MONDO:0968946
+  #   MONDO:0005045
+  #   MONDO:0005020
+  #   MONDO:0011695
+  #   MONDO:0956965
+  #   MONDO:0968949
+  #   MONDO:0032867
+  #   MONDO:0014056
+  #   MONDO:0957958
+  #   MONDO:0014232
+  #   MONDO:0800462
+  #   MONDO:0021483
+  #   MONDO:0014251
+  #   MONDO:0001356
+  #   MONDO:0859310
+  #   MONDO:0014038
+  #   MONDO:0958335
+  #   MONDO:0008327
+  #   MONDO:0003847
+  #   MONDO:0957580
+  #   MONDO:0957819
+  #   MONDO:0020759
+  #   MONDO:0800484
+  #   MONDO:0017026
+  #   MONDO:0013236
+  #   MONDO:0012820
+  #   MONDO:0013955
+  #   MONDO:0017394
+  #   MONDO:0958201
+  #   MONDO:0016511
+  #   MONDO:0030781
+  #   MONDO:0012627
+  #   MONDO:0018908
+  #   MONDO:0003054
+  #   MONDO:0013685
+  #   MONDO:0044970
+  #   MONDO:0021439
+  #   MONDO:0700274
+  #   MONDO:0958324
+  #   MONDO:0011182
+  #   MONDO:0013085
+  #   MONDO:0958164
+  #   MONDO:0958277
+  #   MONDO:0044070
+  #   MONDO:0002280
+  #   MONDO:0956962
+  #   MONDO:0018741
+  #   MONDO:0018754
+  #   MONDO:0022714
+  #   MONDO:0100535
+  #   MONDO:0010389
+  #   MONDO:0700271
+  #   MONDO:0011896
+  #   MONDO:0958181
+  #   MONDO:0011860
+  #   MONDO:0957578
+  #   MONDO:0700250
+  #   MONDO:0017859
+  #   MONDO:0013759
+  #   MONDO:0018547
+  #   MONDO:0800418
+  #   MONDO:0012821
+  #   MONDO:0956988
+  #   MONDO:0000827
+  #   MONDO:0007745
+  #   MONDO:0020439
+  #   MONDO:0012931
+  #   MONDO:0002254
+  #   MONDO:0700245
+  #   MONDO:0008905
+  #   MONDO:0958034
+  #   MONDO:0700240
+  #   MONDO:0015337
+  #   MONDO:0013631
+  #   MONDO:0008570
+  #   MONDO:0016010
+  #   MONDO:0700096
+  #   MONDO:0100566
+  #   MONDO:0016004
+  #   MONDO:0002667
+  #   MONDO:0800472
+  #   MONDO:0700241
+  #   MONDO:0001703
+  #   MONDO:0000499
+  #   MONDO:0017168
+  #   MONDO:0013577
+  #   MONDO:0957928
+  #   MONDO:0800420
+  #   MONDO:0958192
+  #   MONDO:0958195
+  #   MONDO:0012710
+  #   MONDO:0958177
+  #   MONDO:0700268
+  #   MONDO:0019294
+  #   MONDO:0007963
+  #   MONDO:0800467
+  #   MONDO:0035350
+  #   MONDO:0012898
+  #   MONDO:0957992
+  #   MONDO:0100488
+  #   MONDO:0957595
+  #   MONDO:0019268
+  #   MONDO:0958204
+  #   MONDO:0004149
+  #   MONDO:0012888
+  #   MONDO:0700269
+  #   MONDO:0100317
+  #   MONDO:0957812
+  #   MONDO:0010282
+  #   MONDO:0100003
+  #   MONDO:0958228
+  #   MONDO:0009335
+  #   MONDO:0000638
+  #   MONDO:0017905
+  #   MONDO:0958194
+  #   MONDO:0958232
+  #   MONDO:0013093
+  #   MONDO:0956997
+  #   MONDO:0000070
+  #   MONDO:0958239
+  #   MONDO:0008231
+  #   MONDO:0012673
+  #   MONDO:0800485
+  #   MONDO:0957303
+  #   MONDO:0014494
+  #   MONDO:0958200
+  #   MONDO:0054750
+  #   MONDO:0800423
+  #   MONDO:0012183
+  #   MONDO:0700267
+  #   MONDO:0005151
+  #   MONDO:0010893
+  #   MONDO:0100242
+  #   MONDO:0012839
+  #   MONDO:0957824
+  #   MONDO:0023178
+  #   MONDO:0958357
+  #   MONDO:0800458
+  #   MONDO:0020637
+  #   MONDO:0024462
+  #   MONDO:0958355
+  #   MONDO:0800465
+  #   MONDO:0958325
+  #   MONDO:0001341
+  #   MONDO:0013133
+  #   MONDO:0033619
+  #   MONDO:0006220
+  #   MONDO:0956983
+  #   MONDO:0013020
+  #   MONDO:0030376
+  #   MONDO:0021147
+  #   MONDO:0012682
+  # }
+  
+  OPTIONAL { ?mondo_id rdfs:label ?label . }
+  OPTIONAL { 
+    VALUES ?rare_ancestor_subset { 
+      <http://purl.obolibrary.org/obo/mondo#gard_rare>
+      <http://purl.obolibrary.org/obo/mondo#orphanet_rare>
+      <http://purl.obolibrary.org/obo/mondo#nord_rare>
+      <http://purl.obolibrary.org/obo/mondo#mondo_rare>
+     }
+    ?mondo_id rdfs:subClassOf* ?ancestor . ?ancestor rdfs:label ?ancestor_label . ?ancestor oio:inSubset ?rare_ancestor_subset . 
+    FILTER(STRSTARTS(str(?ancestor), "http://purl.obolibrary.org/obo/MONDO_")) }
+  OPTIONAL { ?mondo_id oio:hasDbXref ?xref . }
+  OPTIONAL { ?mondo_id oio:inSubset ?subset_rare . FILTER(STR(?subset_rare) = "http://purl.obolibrary.org/obo/mondo#rare") }
+  OPTIONAL { ?mondo_id oio:inSubset ?subset_gard_rare . FILTER(STR(?subset_gard_rare) = "http://purl.obolibrary.org/obo/mondo#gard_rare") }
+  OPTIONAL { ?mondo_id oio:inSubset ?subset_orphanet_rare . FILTER(STR(?subset_orphanet_rare) = "http://purl.obolibrary.org/obo/mondo#orphanet_rare") }
+  OPTIONAL { ?mondo_id oio:inSubset ?subset_mondo_rare . FILTER(STR(?subset_mondo_rare) = "http://purl.obolibrary.org/obo/mondo#mondo_rare") }
+  OPTIONAL { ?mondo_id oio:inSubset ?subset_nord_rare . FILTER(STR(?subset_nord_rare) = "http://purl.obolibrary.org/obo/mondo#nord_rare") }
+  OPTIONAL { ?mondo_id oio:inSubset ?subset_disease_grouping . FILTER(STR(?subset_disease_grouping) = "http://purl.obolibrary.org/obo/mondo#disease_grouping") }
+  OPTIONAL { ?mondo_id oio:inSubset ?subset_inferred_rare . FILTER(STR(?subset_inferred_rare) = "http://purl.obolibrary.org/obo/mondo#inferred_rare") }
+  OPTIONAL { ?mondo_id oio:inSubset ?subset_obsoletion_candidate . FILTER(STR(?subset_obsoletion_candidate) = "http://purl.obolibrary.org/obo/mondo#obsoletion_candidate") }
+  OPTIONAL { ?mondo_id oio:inSubset ?subset_rare_grouping . FILTER(STR(?subset_rare_grouping) = "http://purl.obolibrary.org/obo/mondo#rare_grouping") }
+  OPTIONAL { ?mondo_id owl:deprecated ?deprecated .  }
+  OPTIONAL { ?mondo_id oio:inSubset ?subset_ordo_clinical_subtype . FILTER(STR(?subset_ordo_clinical_subtype) = "http://purl.obolibrary.org/obo/mondo#ordo_clinical_subtype") }
+  OPTIONAL { ?mondo_id oio:inSubset ?subset_ordo_group_of_disorders . FILTER(STR(?subset_ordo_group_of_disorders) = "http://purl.obolibrary.org/obo/mondo#ordo_group_of_disorders") }
+  OPTIONAL { ?mondo_id oio:inSubset ?subset_clingen . FILTER(STR(?subset_clingen) = "http://purl.obolibrary.org/obo/mondo#clingen") }
+  OPTIONAL { ?mondo_id oio:inSubset ?subset_ordo_disorder . FILTER(STR(?subset_ordo_disorder) = "http://purl.obolibrary.org/obo/mondo#ordo_disorder") }
+  BIND(REPLACE(REPLACE(STR(?mondo_id),"http://purl.obolibrary.org/obo/",""),"_",":") as ?mondo_curie)  
+  FILTER (isIRI(?mondo_id) && STRSTARTS(str(?mondo_id), "http://purl.obolibrary.org/obo/MONDO_"))
+} GROUP BY ?mondo_curie ?label ?deprecated 
+?rare 
+?gard 
+?orphanet 
+?nord 
+?mondo_rare
+?clingen 
+?general_grouping ?rare_grouping ?inferred_rare ?obsoletion_candidate ?ordo_disorder_subtype ?ordo_group_of_disorders ?ordo_disorder
+?subset_rare
+?subset_gard_rare
+?subset_orphanet_rare
+?subset_nord_rare
+?subset_clingen
+?subset_disease_grouping
+?subset_rare_grouping
+?subset_inferred_rare
+?subset_obsoletion_candidate
+?subset_ordo_clinical_subtype
+?subset_ordo_group_of_disorders
+?subset_ordo_disorder
+?subset_mondo_rare

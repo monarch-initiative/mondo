@@ -186,6 +186,9 @@ reports/mondo_analysis.md: $(QC_REPORTS)
 	# This is a hack to get rid of <style> tags that are rendered very ugly by github.
 	perl -0777 -i.original -pe 's#<style[^<]*<\/style>##igs' $@
 
+reports/all_synonym_data.tsv: mondo.owl
+	$(ROBOT) query -i mondo.owl --query ../sparql/reports/all_synonym_data.sparql $@
+
 reports/mondo_analysis.pdf: $(QC_REPORTS)
 	jupyter nbconvert --execute --to pdf --TemplateExporter.exclude_input=True reports/mondo_analysis.ipynb
 
@@ -215,6 +218,9 @@ clean:
 		debug.owl roundtrip.obo test_nomerge sparql_test_* disjoint_sibs.obo \
 		reasoned-plus-equivalents.owl reasoned.owl tmp/*
 
+##########################################
+##### RARE REPORT ########################
+##########################################
 
 reports/new-rare-diseases.txt: $(ONT)-base.owl
 	$(ROBOT) query -i $(ONT)-base.owl --query ../sparql/signature/rare-subset.sparql $@
@@ -997,7 +1003,7 @@ report-base-query-%: mondo-base.owl
 	$(ROBOT) query --use-graphs true -i mondo-base.owl -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-base-$*.tsv
 
 report-reason-query-%:
-	$(ROBOT) reason -i $(SRC) query --use-graphs true  -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-reason-$*.tsv
+	$(ROBOT) reason -i $(SRC) relax reduce query --use-graphs true  -f tsv --query $(SPARQLDIR)/reports/$*.sparql reports/report-reason-$*.tsv
 
 report-reason-materialise-query-%:
 	$(ROBOT) reason -i $(SRC) materialize --term RO:0002573 \
@@ -1430,6 +1436,15 @@ mondo_obo:
 tmp/mondo-ingest.owl:
 	curl https://github.com/monarch-initiative/mondo-ingest/releases/latest/download/mondo-ingest.owl -L --output $@
 
+tmp/mondo_paper.owl: mondo.owl
+	cp $< $@
+
+tmp/mondo_paper.db: tmp/mondo_paper.owl
+	@rm -f .template.db
+	@rm -f .template.db.tmp
+	RUST_BACKTRACE=full semsql make $@ -P config/prefixes.csv
+	@rm -f .template.db
+	@rm -f .template.db.tmp
 
 tmp/mondo-ingest.db: tmp/mondo-ingest.owl
 	@rm -f .template.db
@@ -1458,7 +1473,6 @@ tmp/harrisons_seed.txt: mondo.owl
 mondo-harrisons-view.owl: mondo.owl tmp/harrisons_seed.txt
 	$(ROBOT) remove -i $< -T tmp/harrisons_seed.txt --select complement --select classes --select "MONDO:*" \
 	annotate -V $(ONTBASE)/releases/`date +%Y-%m-%d`/$@ annotate --ontology-iri $(ONTBASE)/$@ -o $@
-
 
 ######################################
 ### Mondo managing major use ids #####
@@ -1552,13 +1566,6 @@ americanize: $(SRC) tmp/british_english_dictionary.csv
 	python ../scripts/clean-british-english.py $^
 
 
-.PHONY: update-gard-mappings
-update-gard-mappings:
-	grep -v '^xref: GARD:' mondo-edit.obo > TT || true
-	mv TT mondo-edit.obo
-	# make NORM
-	# mv NORM $(SRC)
-
 
 #######################################
 ### New Pattern merge pipeline ########
@@ -1607,6 +1614,7 @@ config/exclusion_reasons.tsv:
 
 all: config/exclusion_reasons.tsv
 
+#################################
 # ----------------------------------------
 # Babelon Translation Files
 # ----------------------------------------
