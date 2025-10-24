@@ -13,16 +13,29 @@ When handling GitHub issues:
 1. **View the issue**: Use `gh issue view [number]` to read the issue
 2. **Analyze validity**: Assess if the request is medically and terminologically valid
 3. **Search for improvements**: Look, for example, for more specific parents/terms that might be better
-4. **Present findings** in the following format. Print the findings on the terminal, but also write them to a file @src/ontology/tmp/issue_x_analysis.md, where "x" should be the issue number:Collapse commentComment on line R433matentzn commented on Sep 4, 2025 matentznon Sep 4, 2025MemberAuthorMore actionsSee here for an example.ReactWrite a replyResolve commentCode has comments. Press enter to view.
+   - As usual, use obo-grepl.obo for the search
+4. **Present findings** in the following format. Print the findings on the terminal, but also write them to a file @src/ontology/tmp/issue_x_analysis.md, where "x" should be the issue number
 
 ### Model information
 
-- Write a clearly visible warning that the report is AI generated
-- Write which model you are using for generating the report
+Include at the top of your report:
+
+```
+⚠️ **WARNING: This report is AI-generated**
+**Model:** [Retrieve programmatically - check environment context or system information]
+**Generated:** [Use date command to get current timestamp in UTC]
+```
+
+**IMPORTANT:**
+- NEVER write the model name from memory or training data
+- Look for the model information in the system environment or context provided at the start of the conversation
+- If the exact model ID is provided in your system context (e.g., "claude-sonnet-4-5-20250929"), use that
+- If unavailable, state "Model information unavailable"
+- Always generate the timestamp programmatically using `date -u +"%Y-%m-%d %H:%M:%S UTC"` or similar
 
 ### ✅ Why the user request is valid:
 
-- Mermaid diagram that describes SPECIFICALLY THE USER REQUESTED changeExpand commentComment on line R442ResolvedCode has comments. Press enter to view.
+- Mermaid diagram that describes SPECIFICALLY THE USER REQUESTED change.
   - Use bottom UP (BT) for arrow direction
   - Use `-.->|PROPOSED<br/>NEW PARENT|` for proposed new parents and `-.->|PROPOSED<br/>REMOVED PARENT|` for proposed removed parents
   - Example:
