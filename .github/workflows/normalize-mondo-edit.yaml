@@ -31,8 +31,7 @@ jobs:
 
       - name: Run normalization
         run: |
-          cd src/ontology
-          make NORM && mv NORM mondo-edit.obo
+          cd src/ontology && make NORM && mv NORM mondo-edit.obo
 
       - name: Check for changes
         id: check_changes
