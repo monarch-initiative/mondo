@@ -40,6 +40,9 @@ This includes instructions for editing the npso ontology.
 - Commits are then made on src/ontology/mondo-edit.obo as appropriate
 - Note that `obo-checkin.pl` and `obo-checkin.pl` are in your PATH, no need to search for it    
 
+## Specific Guidelines for MONDO Curation
+- When processing a request to add a more specific parent (is_a, subclass) to a term, do not remove existing parents unless _explicitly instructed_ to do so.
+
 
 ## OBO Format Guidelines
 - Term ID format: MONDO:NNNNNNN (7-digit number)
