@@ -40,6 +40,14 @@ This includes instructions for editing the npso ontology.
 - Commits are then made on src/ontology/mondo-edit.obo as appropriate
 - Note that `obo-checkin.pl` and `obo-checkin.pl` are in your PATH, no need to search for it    
 
+## Specific Guidelines for MONDO Curation
+- When processing a request to add a more specific parent (is_a, subclass) to a term, do not remove existing parents unless _explicitly instructed_ to do so.
+- When removing a subclass (is_a) axiom, add a corresponding "excludedSubClassOf" annotation which includes the source of the removed axiom, and the ORCID of the curator, if available. Example:
+
+```
+relationship: excluded_subClassOf MONDO:0002129 {source="https://orcid.org/0000-0001-5208-3432"} ! bone cancer
+```
+- Before finalising an edit for a session, we need to run `sh run.sh make NORM && mv NORM mondo-edit.obo` to normalise the serialisation.
 
 ## OBO Format Guidelines
 - Term ID format: MONDO:NNNNNNN (7-digit number)
