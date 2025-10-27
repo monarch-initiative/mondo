@@ -14,7 +14,8 @@ When handling GitHub issues:
 2. **Analyze validity**: Assess if the request is medically and terminologically valid
 3. **Search for improvements**: Look, for example, for more specific parents/terms that might be better
    - As usual, use obo-grepl.obo for the search
-4. **Present findings** in the following format. Print the findings on the terminal, but also write them to a file @src/ontology/tmp/issue_x_analysis.md, where "x" should be the issue number
+4. **Present findings** in the following format (see below). Write them to a file @src/ontology/tmp/issue_x_analysis.md, where "x" should be the issue number.
+5. **Post comment**. ALWAYS ASK FOR PERMISSION TO DO THIS. Offer to post the the file created as a comment to the issue being analysed (using gh). ALWAYS ASK FOR PERMISSION TO DO THIS.
 
 ### Model information
 
