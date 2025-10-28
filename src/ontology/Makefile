@@ -833,7 +833,11 @@ NORM: mondo-edit.obo
 roundtrip.obo: mondo-edit.obo
 	owltools --use-catalog  mondo-edit.obo -o -f obo $@.tmp && mv $@.tmp $@
 
+test: test_obsolete
 
+test_obsolete: mondo-edit.obo
+	grep -v excluded_subClassOf $< > tmp/mondo-wo-obsoleted.obo 
+	! grep "! obsolete" tmp/mondo-wo-obsoleted.obo
 
 NEWAXTEST: mondo-edit.owl new.owl
 #	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m z.owl -o $@
