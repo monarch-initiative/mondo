@@ -248,10 +248,14 @@ reasoned-plus-equivalents.owl: reasoned.owl imports/equivalencies.owl
 #
 # by default we use Elk to perform a reason-relax-reduce chain
 # after that we annotate the ontology with the release versionInfo
-$(ONT).owl: reasoned.owl
-	$(ROBOT) merge -i $< annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
+$(ONT).owl tmp/mondo.owl.ofn: reasoned.owl
+	$(ROBOT) merge -i $< \
+		annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@ \
+		convert \
+			--add-prefixes config/prefixes.jsonld \
+			-f ofn -o tmp/mondo.owl.ofn
 
-$(ONT).obo: $(ONT).owl
+$(ONT).obo: tmp/mondo.owl.ofn
 	$(ROBOT) annotate -i $< \
 			-V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl \
 			--ontology-iri $(OBO)/$(ONT).owl \
