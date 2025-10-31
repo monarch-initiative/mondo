@@ -1,0 +1,67 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?not_in_branch ?not_in_branch_label
+
+WHERE {
+?not_in_branch rdfs:subClassOf* MONDO:0000001 .
+  FILTER NOT EXISTS {
+    {
+      SELECT ?descendant
+      WHERE
+      { 
+        VALUES ?branch {
+          MONDO:0002409
+          MONDO:0002657
+          MONDO:0045024
+          MONDO:0004995
+          MONDO:0019040
+          MONDO:0003900
+          MONDO:0004335
+          MONDO:0021147
+          MONDO:0002022
+          MONDO:0024458
+          MONDO:0005151
+          MONDO:0005570
+          MONDO:0003847
+          MONDO:0043543
+          MONDO:0700007
+          MONDO:0005046
+          MONDO:0005550
+          MONDO:0021166
+          MONDO:0002051
+          MONDO:0005066
+          MONDO:0044970
+          MONDO:0006858
+          MONDO:0002081
+          MONDO:0005071
+          MONDO:0005137
+          MONDO:0700003
+          MONDO:0100366
+          MONDO:0024623
+          MONDO:0100086
+          MONDO:0029000
+          MONDO:0021669
+          MONDO:0002025
+          MONDO:0043459
+          MONDO:0005039
+          MONDO:0005087
+          MONDO:0002254
+          MONDO:0043839
+          MONDO:0044991
+          MONDO:0002118
+        } 
+
+        ?descendant rdfs:subClassOf* ?branch .
+
+      }
+    }
+  FILTER(?not_in_branch = ?descendant)
+  }
+}

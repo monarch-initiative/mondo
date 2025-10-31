@@ -1692,6 +1692,45 @@ $(ONT)-international.owl: $(ONT).owl $(TRANSLATIONS_OWL)
 
 
 ##################################
+#### SPARQL Curation pipeline ####
+##################################
+
+# reports/mondo-curation-branch-review.tsv:
+# 	$(ROBOT) query -i tmp/mondo-curation-inferred.ttl --query ../sparql/curation/curate-branch-review.sparql $@
+
+# tmp/mondo-edit-branchreview.owl: $(SRC)
+# 	$(ROBOT) merge -i $(SRC) -i $< -o $@
+
+tmp/mondo-relaxed-branchreview.owl: $(SRC)
+	$(ROBOT) merge -i $(SRC) -i $< relax -o $@
+
+tmp/mondo-reasoned-branchreview.owl: $(SRC)
+	$(ROBOT) merge -i $(SRC) -i $< reason -o $@
+
+
+tmp/mondo-%.db: tmp/mondo-%.owl
+	semsql make $@
+
+
+obsoletion_tables: tmp/mondo-relaxed-branchreview.db  tmp/mondo-reasoned-branchreview.db
+	for id in $(shell cat ../../branch_ids_2.tsv); do \
+        python ../scripts/branch_review.py create-review-table -i tmp/mondo-reasoned-branchreview.db -o tmp/mondo-reasoned-branch-$$id-review_2.tsv -f ../../obsoletion_terms.tsv -b $$id;\
+		python ../scripts/branch_review.py create-review-table -i tmp/mondo-relaxed-branchreview.db -o tmp/mondo-relaxed-branch-$$id-review_2.tsv -f ../../obsoletion_terms.tsv -b $$id;\
+		python ../scripts/branch_review.py relax-and-reason -i tmp/mondo-reasoned-branch-$$id-review_2.tsv -i tmp/mondo-relaxed-branch-$$id-review_2.tsv -r tmp/mondo-relaxed-branchreview.db   -f ../../obsoletion_terms.tsv -o reports/mondo-combined-branch-$$id-review_2.tsv;\
+    done
+
+#	python ../scripts/branch_review.py create-review-table -i tmp/mondo-reasoned-branchreview.db -o reports/mondo-reasoned-branch-review.tsv -f ../../obsoletion_terms.tsv -B ../../branch_ids.tsv
+#	python ../scripts/branch_review.py create-review-table -i tmp/mondo-relaxed-branchreview.db -o reports/mondo-relaxed-branch-review.tsv -f ../../obsoletion_terms.tsv -B ../../branch_ids.tsv
+
+#	python ../scripts/branch_review.py create-review-table -i tmp/mondo-reasoned-branchreview.db -o reports/mondo-reasoned-branch-review.tsv -f ../../obsoletion_terms.tsv -b MONDO:0005151
+#	python ../scripts/branch_review.py create-review-table -i tmp/mondo-relaxed-branchreview.db -o reports/mondo-relaxed-branch-review.tsv -f ../../obsoletion_terms.tsv -b MONDO:0005151
+
+#	python ../scripts/branch_review.py create-review-table -o $@ -f ../../obsoletion_terms.tsv -B ../../branch_ids.tsv 
+
+not-in-branch:
+	$(ROBOT) query -i tmp/mondo-reasoned-branchreview.owl --query ../sparql/signature/not-in-branch.sparql not_in_branch.csv
+
+##################################
 ##### Scheduled GH Actions #######
 ##################################
 
@@ -1812,3 +1851,4 @@ help:
 	echo "sh run.sh make americanize"
 	echo "Update british english synonyms"
 	echo "sh run.sh make add_british_language_synonyms"
+
