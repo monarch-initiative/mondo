@@ -444,7 +444,6 @@ WHERE
       "MFOMD",
       "MONDO",
       "NORD",
-      "MONDORULE",
       "MP",
       "MPATH",
       "MTH",
