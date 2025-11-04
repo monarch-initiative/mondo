@@ -12,7 +12,7 @@ When handling GitHub issues:
 
 1. **View the issue**: Use `gh issue view [number]` to read the issue
 2. **Analyze validity**: Assess if the request is medically and terminologically valid (this is NOT always the case, so please be careful)
-  - Try to understand the specific pattern a disease belongs to. Do that by looking at similar classes, and by carefully considering the yaml files in src/patterns/dosdp-patterns/, which define patterns.
+  - Try to understand the specific design pattern a disease belongs to. Do that by looking at similar classes, and by carefully considering the yaml files in src/patterns/dosdp-patterns/, which define design patterns.
   - If a suitable pattern exists, but you think its underspecified, you may suggest improvements to the pattern (as part of your final report, read on)
   - If no suitable pattern exists, you should propose one, at least in a rough outline, as part of the final report (read on)
 3. **Search for improvements**: Look, for example, for more specific parents/terms that might be better
