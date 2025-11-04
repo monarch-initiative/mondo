@@ -1812,3 +1812,11 @@ help:
 	echo "sh run.sh make americanize"
 	echo "Update british english synonyms"
 	echo "sh run.sh make add_british_language_synonyms"
+
+################################################
+
+openai-validate-%: tmp/issue_%_analysis.md
+	cat $< | uv run openai api chat.completions.create \
+		-m gpt-5 \
+		-g system "You are a strict medical terminology expert that formats responses in Markdown." \
+		-g user "Provide a succinct but strict review of the following analysis:\n\n$$(cat $<)" | tee tmp/issue_$*_analysis_review.md
