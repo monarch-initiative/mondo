@@ -42,17 +42,18 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/l
 
 
 
+
 <!-- START:TABLE1 -->
 
 | Metric | Count |
 | :--- | ---: |
-| **Total number of diseases** | 25842 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Database cross references | 129389 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Term definitions | 17907 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Exact synonyms<sup>1</sup> | 73846 |
+| **Total number of diseases** | 25880 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Database cross references | 129785 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Term definitions | 17946 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Exact synonyms<sup>1</sup> | 73878 |
 | &nbsp;&nbsp;&nbsp;&nbsp;Narrow synonyms<sup>2</sup> | 2554 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Broad synonyms<sup>3</sup> | 1423 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Related synonyms<sup>4</sup> | 30239 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Broad synonyms<sup>3</sup> | 1420 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Related synonyms<sup>4</sup> | 30224 |
 
 <!-- END:TABLE1 -->
 
@@ -72,18 +73,19 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/l
 
 
 
+
 <!-- START:TABLE2 -->
 
 | Category | Count (classes) |
 | :--- | ---: |
-| **Total number of diseases** | 25842 |
-|&nbsp;&nbsp;&nbsp;&nbsp; **Human diseases** | 22881 |
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancer | 4741 |
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Infectious | 1072 |
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mendelian | 11566 |
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rare | 15836 |
+| **Total number of diseases** | 25880 |
+|&nbsp;&nbsp;&nbsp;&nbsp; **Human diseases** | 22919 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancer | 4727 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Infectious | 1074 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mendelian | 11601 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rare | 15857 |
 |&nbsp;&nbsp;&nbsp;&nbsp; **Non-human diseases** | 2960 |
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancer | 217 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancer | 215 |
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Infectious | 87 |
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mendelian | 1023 |
 
