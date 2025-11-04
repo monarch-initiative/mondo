@@ -11,9 +11,13 @@ description: Analyze MONDO GitHub issues for validity, suggest improvements, and
 When handling GitHub issues:
 
 1. **View the issue**: Use `gh issue view [number]` to read the issue
-2. **Analyze validity**: Assess if the request is medically and terminologically valid
+2. **Analyze validity**: Assess if the request is medically and terminologically valid (this is NOT always the case, so please be careful)
+  - Try to understand the specific pattern a disease belongs to. Do that by looking at similar classes, and by carefully considering the yaml files in src/patterns/dosdp-patterns/, which define patterns.
+  - If a suitable pattern exists, but you think its underspecified, you may suggest improvements to the pattern (as part of your final report, read on)
+  - If no suitable pattern exists, you should propose one, at least in a rough outline, as part of the final report (read on)
 3. **Search for improvements**: Look, for example, for more specific parents/terms that might be better
    - As usual, use obo-grepl.obo for the search
+   - If any of the diseases analysed as part of this issue belongs to a design pattern (as determined above) but lacks a logical definition and human readable definition, you may propose one as part of the issue
 4. **Present findings** in the following format (see below). Write them to a file @src/ontology/tmp/issue_x_analysis.md, where "x" should be the issue number.
 5. **Post comment**. ALWAYS ASK FOR PERMISSION TO DO THIS. Offer to post the the file created as a comment to the issue being analysed (using gh). ALWAYS ASK FOR PERMISSION TO DO THIS.
 
@@ -33,6 +37,7 @@ Include at the top of your report:
 - If the exact model ID is provided in your system context (e.g., "claude-sonnet-4-5-20250929"), use that
 - If unavailable, state "Model information unavailable"
 - Always generate the timestamp programmatically using `date -u +"%Y-%m-%d %H:%M:%S UTC"` or similar
+- Always check if an example you give is valid by using obo-grepl.obo. Be very very careful not to hallucinate subclass (is_a) relations.
 
 ### ✅ Why the user request is valid:
 
