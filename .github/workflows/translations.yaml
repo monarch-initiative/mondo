@@ -25,8 +25,8 @@ jobs:
         with:
           branch-suffix: short-commit-hash
           labels: automated
-          body: "Update Language Translations. PR automatically created by GH Action."
-          title: "Update Language Translations"
+          body: "Update Language Translations. PR automatically created by GH Action. No review necessary - QC has run."
+          title: "Update Language Translations (no review necessary)"
           base: ${{ github.head_ref }}
           branch: "language_translations"
           token: ${{ secrets.GH_TOKEN }}
