@@ -1,0 +1,23 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX mondo: <http://purl.obolibrary.org/obo/MONDO_>
+PREFIX xref: <http://www.geneontology.org/formats/oboInOwl#>
+
+#this is a query to find all non-human animal disease terms with OMIA x-refs
+
+SELECT DISTINCT ?mondoTerm ?mondoLabel ?omiaXref
+WHERE {
+    # Find all diseases that are subclasses of MONDO:0005583 (non-human animal disease)
+    ?mondoTerm rdfs:subClassOf* mondo:0005583 .
+
+    # Retrieve the disease label
+    OPTIONAL { ?mondoTerm rdfs:label ?mondoLabel }
+
+    # Find db-xrefs that reference OMIA terms
+    ?mondoTerm xref:hasDbXref ?omiaXref .
+    
+    # Filter only OMIA cross-references
+    FILTER(CONTAINS(?omiaXref, "OMIA:"))
+}
+ORDER BY ?mondoLabel

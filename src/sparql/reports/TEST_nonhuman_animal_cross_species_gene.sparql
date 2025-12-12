@@ -1,0 +1,66 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+# Get cases where non-human animal disease has a 'cross-species analog' restriction to a 'human disease' class 
+# and the 'human disease' class also has a gene association or other specific property
+
+SELECT DISTINCT ?animalDiseaseCURIE ?animalDiseaseLabel ?crossSpeciesDiseaseCURIE ?crossSpeciesDiseaseLabel ?geneCURIE ?propertyCURIE ?propertyLabel
+WHERE {
+  # Get subclasses of 'non-human animal disease' MONDO_0005583
+  ?animalDisease rdfs:subClassOf* obo:MONDO_0005583 .
+
+  # Find cross-species restriction linking to human disease
+  ?animalDisease owl:equivalentClass/owl:intersectionOf/rdf:rest*/rdf:first ?restriction .
+  
+  ?restriction rdf:type owl:Restriction ;
+               owl:onProperty obo:MONDO_0700097 ;
+               owl:someValuesFrom ?crossSpeciesDisease .
+
+  # Ensure the human disease is a subclass of MONDO:0700096 'human disease'
+  FILTER EXISTS {
+    ?crossSpeciesDisease rdfs:subClassOf* obo:MONDO_0700096 .
+  }
+
+  # Confirm which properties are needed
+  VALUES ?property { 
+    obo:RO_0004001
+    obo:RO_0004003
+    obo:RO_0004004
+    obo:RO_0004020
+    obo:RO_0004021
+    obo:RO_0004025
+    obo:RO_0004028
+  } 
+
+  # Ensure the human disease has at least one gene association (via subclass restriction OR equivalent class)
+  {
+    # Subclass restriction (rdfs:subClassOf)
+    ?crossSpeciesDisease rdfs:subClassOf ?geneRestriction .
+    ?geneRestriction rdf:type owl:Restriction ;
+                     owl:onProperty ?property ;
+                     owl:someValuesFrom ?gene .
+  }
+  UNION
+  {
+    # Equivalent class restriction (owl:equivalentClass)
+    ?crossSpeciesDisease owl:equivalentClass/owl:intersectionOf/rdf:rest*/rdf:first ?geneComponent .
+    ?geneComponent rdf:type owl:Restriction ;
+                   owl:onProperty ?property ;
+                   owl:someValuesFrom ?gene .
+  }
+
+  OPTIONAL { ?animalDisease rdfs:label ?animalDiseaseLabel }
+  OPTIONAL { ?crossSpeciesDisease rdfs:label ?crossSpeciesDiseaseLabel }
+  OPTIONAL { ?gene rdfs:label ?geneLabel }
+  OPTIONAL { ?property rdfs:label ?propertyLabel }
+
+  BIND(REPLACE(STR(?animalDisease), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") AS ?animalDiseaseCURIE)
+  BIND(REPLACE(STR(?crossSpeciesDisease), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") AS ?humanCURIE)
+  BIND(REPLACE(STR(?property), "http://purl.obolibrary.org/obo/RO_", "RO:") as ?propertyCURIE)
+  BIND(REPLACE(STR(?gene), "http://identifiers.org/hgnc/", "HGNC:") AS ?geneCURIE)
+}
+ORDER BY ?animalDiseaseLabel
+
