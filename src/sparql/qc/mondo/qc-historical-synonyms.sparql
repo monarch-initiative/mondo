@@ -1,0 +1,51 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
+prefix mondoSparql: <http://purl.obolibrary.org/obo/mondo/sparql/>
+prefix mondoPatterns: <http://purl.obolibrary.org/obo/mondo/patterns/>
+prefix mondoSparqlQcMondo: <http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/>
+
+# description: This QC checks aims at identifying historical syonyms 
+# that are now considered harmful or derogatory, see https://github.com/monarch-initiative/mondo/issues/7148
+
+SELECT ?entity ?property ?value
+
+WHERE {
+    VALUES ?property { 
+        rdfs:label 
+        oboInOwl:hasRelatedSynonym
+        oboInOwl:hasNarrowSynonym
+        oboInOwl:hasBroadSynonym
+        oboInOwl:hasExactSynonym
+    }
+
+    ?entity ?property ?value .
+
+    FILTER NOT EXISTS {
+        ?entity mondo:excluded_from_qc_check mondoSparqlQcMondo:qc-historical-synonyms.sparql .
+    }
+
+    FILTER (
+        CONTAINS(LCASE(?value), "addict") || # While still in common use, there is a growing movement in the medical community to use person-first language like "person with a substance use disorder" to reduce stigma.
+        CONTAINS(LCASE(?value), " cretin") || # An old term for someone with cretinism, a condition resulting from a thyroid hormone deficiency. It is now considered derogatory.
+        CONTAINS(LCASE(?value), "dumb") || # Outdated and offensive terms for individuals who are deaf and do not speak. "Deaf" or "hard of hearing" are appropriate terms.
+        CONTAINS(LCASE(?value), "deaf-mute") || # Outdated and offensive terms for individuals who are deaf and do not speak. "Deaf" or "hard of hearing" are appropriate terms.
+        CONTAINS(LCASE(?value), "dwarfism") || # While still used in some medical contexts, it can be considered derogatory. "Short stature" or specific medical terms like "achondroplasia" are preferred.
+        CONTAINS(LCASE(?value), "feeble-minded") || # An archaic and offensive term for someone with intellectual disabilities.
+        CONTAINS(LCASE(?value), "hysteria") || # Originally used to describe a variety of psychological disorders or symptoms believed to be specific to women, derived from the Greek word for uterus. It reflected gender bias and misunderstanding of mental health.
+        CONTAINS(LCASE(?value), "idiot") || # These were once actual diagnostic terms used to describe people with intellectual disabilities or low IQs. They are deeply offensive today.
+        CONTAINS(LCASE(?value), "imbecile") || # These were once actual diagnostic terms used to describe people with intellectual disabilities or low IQs. They are deeply offensive today.
+        CONTAINS(LCASE(?value), "moron") || # These were once actual diagnostic terms used to describe people with intellectual disabilities or low IQs. They are deeply offensive today.
+        CONTAINS(LCASE(?value), "inebriate") || # An old term for someone addicted to alcohol, replaced by terms like "alcohol use disorder" or "alcoholism."
+        CONTAINS(LCASE(?value), "lunatic") || # Used historically for those with mental health issues, especially those thought to be influenced by the moon's phases. It's now seen as derogatory and insensitive.
+        CONTAINS(LCASE(?value), "manic-depressive") || # Previously used to describe what is now known as bipolar disorder. The old term is considered stigmatizing and simplistic.
+        CONTAINS(LCASE(?value), "midget") || # A derogatory term for a person of unusually short stature, often replaced by "person with dwarfism" or specific medical diagnoses.
+        CONTAINS(LCASE(?value), "mongolism") || # An outdated term for Down syndrome. This term is offensive and has been replaced with Down syndrome.
+        CONTAINS(LCASE(?value), "retarded") # Once a clinical term for delayed or stunted intellectual development, it is now widely regarded as a derogatory insult.
+    )
+
+    FILTER( !isBlank(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+}
