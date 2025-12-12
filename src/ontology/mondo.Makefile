@@ -225,8 +225,8 @@ clean:
 reports/new-rare-diseases.txt: $(ONT)-base.owl
 	$(ROBOT) query -i $(ONT)-base.owl --query ../sparql/signature/rare-subset.sparql $@
 
-reports/old-rare-diseases.txt: tmp/mondo-lastbase.owl
-	$(ROBOT) query -i tmp/mondo-lastbase.owl --query ../sparql/signature/rare-subset.sparql $@
+reports/old-rare-diseases.txt: tmp/mondo-release-latest-base.owl
+	$(ROBOT) query -i tmp/mondo-release-latest-base.owl --query ../sparql/signature/rare-subset.sparql $@
 
 reports/%-rare-diseases.tsv: $(ONT)-base.owl reports/%-rare-diseases.txt
 	$(ROBOT) filter --input $(ONT)-base.owl  -T reports/$*-rare-diseases.txt --select "annotations self" \
@@ -950,11 +950,31 @@ components:
 reports/robot_diff.md: mondo.obo mondo-lastbuild.obo
 	$(ROBOT) diff --left mondo-lastbuild.obo --right $< -f markdown -o $@
 
-tmp/mondo-lastbase.owl:
+tmp/mondo-release-latest-base.owl:
 	mkdir -p tmp && wget "http://purl.obolibrary.org/obo/mondo/mondo-base.owl" -O $@
 
-reports/mondo_diff.md: mondo-base.owl tmp/mondo-lastbase.owl
-	$(ROBOT) diff --left tmp/mondo-lastbase.owl --right $< -f markdown -o $@
+tmp/mondo-release-%-base.owl:
+	mkdir -p tmp && wget "http://purl.obolibrary.org/obo/mondo/releases/$*/mondo-base.owl" -O $@
+
+tmp/mondo-branch-main-base.owl: mondo-base.owl
+	cp $< $@
+
+tmp/mondo-branch-%-base.owl:
+	# NOTE: This will create a ".db" ontology sqlite file from any branch
+	rm -rf tmp/mondo-git && mkdir -p tmp && mkdir -p tmp/mondo-git && cd tmp/mondo-git &&\
+	git clone --branch $* https://github.com/monarch-initiative/mondo.git --depth=1 &&\
+	cd mondo/src/ontology/ && $(MAKE) mondo-base.owl
+	cp tmp/mondo-git/mondo/src/ontology/mondo-base.owl $@ 
+
+tmp/mondo-%.db: tmp/mondo-%.owl
+	@rm -f .template.db
+	@rm -f .template.db.tmp
+	RUST_BACKTRACE=full semsql make $@ -P config/prefixes.csv
+	@rm -f .template.db
+	@rm -f .template.db.tmp
+
+reports/mondo_diff.md: mondo-base.owl tmp/mondo-release-latest-base.owl
+	$(ROBOT) diff --left tmp/mondo-release-latest-base.owl --right $< -f markdown -o $@
 
 tmp/mondo-main-edit.owl:
 	wget "https://raw.githubusercontent.com/monarch-initiative/mondo/refs/heads/master/src/ontology/mondo-edit.obo" -O $@
@@ -968,6 +988,13 @@ reports/mondo_unsats.md: mondo-edit.obo
 .PHONY: mondo_branch_diff reports/mondo_branch_edit_diff.md reports/mondo_unsats.md tmp/mondo-main-edit.owl
 mondo_branch_diff: reports/mondo_branch_edit_diff.md reports/mondo_unsats.md
 	@echo "** Process is complete. See report files at: reports/mondo_branch_edit_diff.md and reports/mondo_unsats.md"
+
+# Mondo custom diff (class obsoletion)
+reports/mondo_custom_diff.md: tmp/mondo-branch-main-base.db tmp/mondo-mainbase.db config/branches.tsv
+	@echo "Create custom diff of obsolete terms and their branch status."
+	# TODO: Extend to allow comparison on arbitrary branches
+	# Create a mondo-base.db and a mondo-main.db for OAK to work with 
+	python ../scripts/mondo_custom_diff.py create-custom-diff-table -i tmp/mondo-branch-main-base.db -m tmp/mondo-mainbase.db -b config/branches.tsv -o $@
 
 .PHONY: mondo_feature_diff
 mondo_feature_diff: reports/robot_diff.md reports/mondo_unsats.md
@@ -1238,8 +1265,8 @@ test: tmp/omim-gene-matches.txt
 reports/mondo_base_current_%.tsv: mondo-base.owl
 	$(ROBOT) query --use-graphs true -i mondo-base.owl -f tsv --tdb true --query $(SPARQLDIR)/reports/$*.sparql $@
 
-reports/mondo_base_last_%.tsv: tmp/mondo-lastbase.owl
-	$(ROBOT) query --use-graphs true -i tmp/mondo-lastbase.owl -f tsv --tdb true --query $(SPARQLDIR)/reports/$*.sparql $@
+reports/mondo_base_last_%.tsv: tmp/mondo-release-latest-base.owl
+	$(ROBOT) query --use-graphs true -i tmp/mondo-release-latest-base.owl -f tsv --tdb true --query $(SPARQLDIR)/reports/$*.sparql $@
 
 tmp/mondo-versioned-base.owl:
 	$(ROBOT) convert -I http://purl.obolibrary.org/obo/mondo/releases/$(COMPARE_VERSION)/mondo-base.owl -f owl -o $@
