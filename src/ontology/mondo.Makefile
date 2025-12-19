@@ -1039,6 +1039,18 @@ construct-unmerge-query-%: construct-query-%
 	make NORM
 	mv NORM $(SRC)
 
+
+SIMPLE_MERGE=tmp/e123.ttl
+
+simple-merge: $(SIMPLE_MERGE)
+	$(ROBOT) -vvv merge -i $(SRC) -i $< --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC)
+	make NORM
+	mv NORM $(SRC)
+
+obsolete-replace-test: #cp-odk-plug
+	$(ROBOT) odk:obsolete-replace --input $(SRC) --obsolete MONDO:0032564 --replacement MONDO:0032565 -o $(SRC)
+
 TMP_TEMPLATE_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8cszVqBNOeClD6uFif3QRHn0Ud_Cyt_gylyTTFJ-RoJaOwNWS7Qv3c516bJoTBaKT1WLagSQ7CQqS/pub?gid=0&single=true&output=tsv"
 TMP_TEMPLATE_FILE=tmp/temporary.tsv
 TMP_TEMPLATE_OWL=tmp/temporary.owl

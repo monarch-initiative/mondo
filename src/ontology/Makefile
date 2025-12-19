@@ -70,6 +70,46 @@ all: test all_artefacts mappings
 	echo "release finished"
 
 # ----------------------------------------
+# ODK-managed ROBOT plugins
+# ----------------------------------------
+
+# Make sure ROBOT knows where to find plugins
+export ROBOT_PLUGINS_DIRECTORY=$(TMPDIR)/plugins
+
+# Override this rule in hp.Makefile to install custom plugins
+.PHONY: custom_robot_plugins
+custom_robot_plugins:
+
+
+.PHONY: extra_robot_plugins
+extra_robot_plugins:  $(ROBOT_PLUGINS_DIRECTORY)/odk.jar  $(ROBOT_PLUGINS_DIRECTORY)/sssom.jar 
+
+
+# Install all ROBOT plugins to the runtime plugins directory
+.PHONY: all_robot_plugins
+all_robot_plugins: $(foreach plugin,$(notdir $(wildcard /tools/robot-plugins/*.jar)),$(ROBOT_PLUGINS_DIRECTORY)/$(plugin)) \
+		   $(foreach plugin,$(notdir $(wildcard ../../plugins/*.jar)),$(ROBOT_PLUGINS_DIRECTORY)/$(plugin)) \
+		   custom_robot_plugins extra_robot_plugins  \
+
+# Default rule to install plugins
+$(ROBOT_PLUGINS_DIRECTORY)/%.jar:
+	@mkdir -p $(ROBOT_PLUGINS_DIRECTORY)
+	@if [ -f ../../plugins/$*.jar ]; then        \
+		ln ../../plugins/$*.jar $@ ;         \
+	elif [ -f /tools/robot-plugins/$*.jar ]; then \
+		cp /tools/robot-plugins/$*.jar $@ ;  \
+	fi
+
+# Specific rules for supplementary plugins defined in configuration
+
+$(ROBOT_PLUGINS_DIRECTORY)/odk.jar:
+	#cp /Users/matentzn/ws/odk-robot-plugin/target/odk.jar $@
+	echo uncommentme
+
+$(ROBOT_PLUGINS_DIRECTORY)/sssom.jar:
+	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-1.9.1/sssom-robot-plugin-1.9.1.jar
+
+# ----------------------------------------
 # Artefacts
 # ----------------------------------------
 
