@@ -9,7 +9,7 @@ An estimated **300 million people worldwide**—nearly 4% of the global populati
 
 Consider fibrodysplasia ossificans progressiva (FOP), also known as "Stoneman syndrome" ([MONDO:0007606](https://monarchinitiative.org/disease/MONDO:0007606)): with an estimated prevalence of 1 in 2 million and only about 700 reported cases worldwide, FOP patients endure a high rate of initial misdiagnosis (87%), with many undergoing unnecessary biopsies (67%) and receiving inappropriate therapies (68%).
 
-**Mondo brings together the world's rare disease resources to help end diagnostic odysseys.**
+**Mondo brings together the world's rare disease resources to help shorten the diagnostic odysseys.**
 
 ---
 
@@ -19,7 +19,7 @@ There is no universal definition of "rare disease." The concept is typically def
 
 | Region | Prevalence Threshold | Equivalent |
 |--------|---------------------|------------|
-| United States | Fewer than 200,000 people | ~1 in 1,500 |
+| United States | Fewer than 200,000 people in the US | ~1 in 1,500 |
 | European Union | Fewer than 1 in 2,000 | ~250,000 in EU |
 | Japan | Fewer than 1 in 2,500 | ~50,000 in Japan |
 
@@ -161,14 +161,14 @@ The term will not appear in the rare disease subset. The relevant authoritative 
 Only that source's annotation is removed (e.g., `gard_rare`). Other source annotations remain unchanged.
 
 ### If two Mondo terms are merged
-Rare disease annotations transfer to the surviving term.
+Rare disease annotations will be transferred to the surviving term as soon as the update is made at the authoritative source.
 
 ---
 
 ## Get Involved
 
 ### Report a Missing Rare Disease
-If you know of a rare disease not represented in Mondo or missing from the rare disease subset, [open a GitHub issue](https://github.com/monarch-initiative/mondo/issues/new?template=rare_disease_request.md).
+If you know of a rare disease not represented in Mondo or missing from the rare disease subset, please [open a GitHub issue](https://github.com/monarch-initiative/mondo/issues/new?template=rare_disease_request.md).
 
 ### Connect with Rare Disease Communities
 Mondo works closely with rare disease organizations worldwide. Contact us to discuss collaboration opportunities.
