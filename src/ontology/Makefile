@@ -210,7 +210,9 @@ filtered.obo: $(SRC)
 		--update ../sparql/update/delete-axiom-annotations-by-prefix.ru \
 		--update ../sparql/update/inject-cross-species-analog.ru \
 		remove --term-file config/remove-annotations-before-release.txt \
-		convert -f obo --check false -o $@.obo && mv $@.obo $@; fi
+		convert -f obo --check false -o $@.obo \
+	perl -ne 'print unless (m@^xref: (Orphanet|OMIM|OMIMPS|DOID|EFO|NCIT):@ && !(m@(obsoleteEquivalent|equivalentObsolete|equivalentTo)@i))' $@.obo > $@.tmp && mv $@.tmp $@; fi
+
 #egrep -v 'MONDO:(subClassOf|superClassOf|relatedTo)' $< > $@
 
 skos.ttl: filtered.obo
