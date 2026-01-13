@@ -7,7 +7,7 @@ title: Rare Diseases
 
 An estimated **300 million people worldwide**—nearly 4% of the global population—are affected by a rare disease. Despite this enormous collective impact, the majority of rare conditions have only a handful of recorded cases. This limited representation means there is often scarce information about symptoms, causes, and disease progression, leading many patients through a "diagnostic odyssey" of incorrect diagnoses, unnecessary tests, and delayed care.
 
-Consider fibrodysplasia ossificans progressiva (FOP), also known as "Stoneman syndrome" ([MONDO:0007606](https://monarchinitiative.org/disease/MONDO:0007606)): with an estimated prevalence of 1 in 2 million and only about 700 reported cases worldwide, FOP patients endure a high rate of initial misdiagnosis (87%), with many undergoing unnecessary biopsies (67%) and receiving inappropriate therapies (68%).
+Consider fibrodysplasia ossificans progressiva (FOP), also known as "Stoneman syndrome" ([MONDO:0007606](https://monarchinitiative.org/disease/MONDO:0007606)): with an estimated prevalence of 1 in 2 million and only about 700 reported cases worldwide, FOP patients endure a high rate of initial misdiagnosis (87%), with many undergoing unnecessary biopsies (67%) and receiving inappropriate therapies (68%) ([PMID:31785620](https://pubmed.ncbi.nlm.nih.gov/31785620/), [PMID:16230464](https://pubmed.ncbi.nlm.nih.gov/16230464/)).
 
 **Mondo brings together the world's rare disease resources to help shorten the diagnostic odysseys.**
 
@@ -19,11 +19,11 @@ There is no universal definition of "rare disease." The concept is typically def
 
 | Region | Prevalence Threshold | Equivalent |
 |--------|---------------------|------------|
-| United States | Fewer than 200,000 people in the US | ~1 in 1,500 |
+| United States | Fewer than 1 in 1,650 | ~200,000 in US |
 | European Union | Fewer than 1 in 2,000 | ~250,000 in EU |
 | Japan | Fewer than 1 in 2,500 | ~50,000 in Japan |
 
-Beyond different thresholds, **disease prevalence itself varies by geography**. For example, Kawasaki disease affects approximately 1 in 6,500-20,500 children under 5 in Europe (considered "rare"), but 1 in 324 in Japan (considered "common").
+Beyond different thresholds, **disease prevalence itself varies by geography**. For example, Kawasaki disease affects approximately 1 in 6,500-20,500 children under 5 in Europe (considered "rare"), but 1 in 324 in Japan (considered "common")([PMID:22307434](https://pmc.ncbi.nlm.nih.gov/articles/PMC3798585/), [PMID:30786118](https://pubmed.ncbi.nlm.nih.gov/30786118/)).
 
 Some organizations also require additional criteria, such as the disease being "life-threatening or chronically debilitating" (EU criterion).
 
