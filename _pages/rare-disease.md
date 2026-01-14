@@ -15,17 +15,17 @@ Consider fibrodysplasia ossificans progressiva (FOP), also known as "Stoneman sy
 
 ## What Makes a Disease "Rare"?
 
-There is no universal definition of "rare disease." The concept is typically defined by **prevalence**—the number of affected individuals per population—but these thresholds vary significantly:
+There is no universal definition of "rare disease." The concept is typically defined by **prevalence**—the number of affected individuals per population—but these thresholds vary significantly [PMID:39261914](https://pubmed.ncbi.nlm.nih.gov/39261914/):
 
 | Region | Prevalence Threshold | Equivalent |
 |--------|---------------------|------------|
-| United States | Fewer than 1 in 1,650 | ~200,000 in US |
-| European Union | Fewer than 1 in 2,000 | ~250,000 in EU |
-| Japan | Fewer than 1 in 2,500 | ~50,000 in Japan |
+| United States | Fewer than 200,000 people | ~1 in 1,500 | 
+| European Union | Fewer than 1 in 2,000 | ~250,000 |
+| Japan | Fewer than 1 in 2,500 | ~50,000 |
 
 Beyond different thresholds, **disease prevalence itself varies by geography**. For example, Kawasaki disease affects approximately 1 in 6,500-20,500 children under 5 in Europe (considered "rare"), but 1 in 324 in Japan (considered "common")([PMID:22307434](https://pmc.ncbi.nlm.nih.gov/articles/PMC3798585/), [PMID:30786118](https://pubmed.ncbi.nlm.nih.gov/30786118/)).
 
-Some organizations also require additional criteria, such as the disease being "life-threatening or chronically debilitating" (EU criterion).
+Some organizations also require additional criteria, such as the disease being "life-threatening or chronically debilitating" [(EU Orphan Drug Regulation (EC No 141/2000))](https://eur-lex.europa.eu/eli/reg/2000/141/2019-07-26/eng?).
 
 ### Why This Matters
 
