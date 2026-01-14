@@ -171,7 +171,7 @@ Rare disease annotations will be transferred to the surviving term as soon as th
 If you know of a rare disease not represented in Mondo or missing from the rare disease subset, please [open a GitHub issue](https://github.com/monarch-initiative/mondo/issues/new?template=rare_disease_request.md).
 
 ### Connect with Rare Disease Communities
-Mondo works closely with rare disease organizations worldwide. Contact us to discuss collaboration opportunities.
+Mondo works closely with rare disease organizations worldwide. [Contact us](info@monarchinitiative.org) to discuss collaboration opportunities.
 
 ### Rare Disease Day
 Join us in recognizing [Rare Disease Day](https://www.rarediseaseday.org/) on the last day of February each year, raising awareness for the 300 million people living with rare diseases worldwide.
