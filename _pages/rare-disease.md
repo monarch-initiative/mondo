@@ -92,7 +92,7 @@ The Mondo rare disease subset includes all diseases considered rare by at least 
 
 #### Filter by Source
 
-To get diseases rare according to a specific authority, filter by the `in_subset` annotation:
+To get rare diseases according to a specific authority, filter by the `in_subset` annotation:
 
 ```
 # Example: Get only Orphanet rare diseases
