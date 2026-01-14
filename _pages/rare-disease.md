@@ -132,7 +132,7 @@ Tools like [Exomiser](https://exomiser.monarchinitiative.org/) use Mondo's rare 
 
 ### Drug Repurposing
 
-Mondo's integration of rare diseases with broader disease classifications enables researchers to identify common biological pathways between rare and common diseases—opening opportunities for drug repurposing.
+Mondo's integration of rare diseases with broader disease classifications enables researchers to identify common biological pathways between rare and common diseases—opening opportunities for drug repurposing. [Every Cure](https://everycure.org/), for example, is [using Mondo as the backbone for their drug-disease research](https://docs.dev.everycure.org/releases/attribution/#mondo).
 
 ---
 
