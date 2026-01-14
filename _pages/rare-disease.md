@@ -193,6 +193,7 @@ Join us in recognizing [Rare Disease Day](https://www.rarediseaseday.org/) on th
 ## Further Reading
 
 - [Mondo Disease Ontology Documentation](https://mondo.readthedocs.io/)
+- [Mondo: Integrating Disease Terminology Across Communities (Genetics, 2025)](https://doi.org/10.1093/genetics/iyaf215)
 - [Orphanet - The portal for rare diseases](https://www.orpha.net/)
 - [GARD - Genetic and Rare Diseases Information Center](https://rarediseases.info.nih.gov/)
 - [NORD - National Organization for Rare Disorders](https://rarediseases.org/)
