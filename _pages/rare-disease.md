@@ -76,7 +76,7 @@ This reflects genuine scientific and policy disagreement—not a problem to solv
 If you're looking for information about a specific rare disease:
 
 1. **Search on Monarch Initiative**: Visit [monarchinitiative.org](https://monarchinitiative.org/) and search for your disease
-3. **Follow links to authoritative sources**: Each Mondo term links to original sources (Orphanet, GARD, NORD, OMIM, etc.) for detailed information
+1. **Follow links to authoritative sources**: Each Mondo term links to original sources (Orphanet, GARD, NORD, OMIM, etc.) for detailed information
 
 ### For Researchers and Developers
 
