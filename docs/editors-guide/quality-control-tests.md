@@ -532,7 +532,6 @@ WHERE
       "NCIT",
       "NDFRT",
       "NIFSTD",
-      "nlxdys",
       "NORD",
       "OBI",
       "OGMS",
