@@ -1181,21 +1181,43 @@ sssom:
 oaklib:
 	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall oaklib
 
-tmp/%.sssom.tsv: tmp/mirror-%.json
-	sssom parse tmp/mirror-$*.json --no-strict-clean-prefixes -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -C merged -o $@
+$(TMPDIR)/mondo-extracted.sssom.tsv: $(TMPDIR)/mirror-mondo.json
+	sssom parse $< --no-strict-clean-prefixes -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -C merged -o $@
 
+$(TMPDIR)/sssom-cli.jar:
+	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-1.10.0/sssom-cli-1.10.0.jar
 
-$(MAPPINGSDIR)/mondo.sssom.tsv: tmp/mondo.sssom.tsv tmp/mondo-ingest.db
-	python ../scripts/add_object_label.py run $<
-	python ../scripts/split_sssom_by_source.py -s $< -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
-	sssom dosql -Q "SELECT * FROM df WHERE predicate_id IN (\"skos:exactMatch\", \"skos:broadMatch\")" $< -o $@
-	sssom annotate $@ -o $@ --mapping_set_id "http://purl.obolibrary.org/obo/mondo/mappings/mondo.sssom.tsv"
-	sssom sort $@ -o $@
-	sssom validate $@
+$(TMPDIR)/all-labels.nt: $(TMPDIR)/mondo-ingest.owl
+	python ../scripts/extract_all_labels.py > $@
 
-#$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
-#	sssom convert -i $< -o $@
-#	#python ../scripts/split_sssom_by_source.py $@
+$(TMPDIR)/mondo.sssom.tsv: tmp/mondo-extracted.sssom.tsv $(TMPDIR)/all-labels.nt $(TMPDIR)/sssom-cli.jar
+	java -jar $(TMPDIR)/sssom-cli.jar \
+		--update-from-ontology=$(TMPDIR)/all-labels.nt:object,label \
+		--no-sorting \
+		--catalog=none \
+		--prefix-map-from-input \
+		--rule "subject==MONDO:* -> include()" \
+		--output=$@ \
+		$<
+
+$(MAPPINGSDIR)/mondo.sssom.tsv: $(TMPDIR)/mondo.sssom.tsv $(TMPDIR)/sssom-cli.jar
+	java -jar $(TMPDIR)/sssom-cli.jar \
+		--no-sorting \
+		--catalog=none \
+		--split=$(MAPPINGSDIR) \
+		--split-by="%{subject_id|prefix|lower}_%{predicate_id|suffix|lower}_%{object_id|prefix|lower}" \
+		$<
+	sed -i -e 's/\tsemapv:UnspecifiedMatching/\tsemapv:ManualMappingCuration/' $(MAPPINGSDIR)/mondo_*.sssom.tsv
+	java -jar $(TMPDIR)/sssom-cli.jar \
+		--no-sorting \
+		--catalog=none \
+		--rule "(predicate==skos:exactMatch || predicate==skos:broadMatch) -> include()" \
+		--output=$@ \
+		$<
+	# sssom annotate $@ -o $@ --mapping_set_id "http://purl.obolibrary.org/obo/mondo/mappings/mondo.sssom.tsv"
+	# sssom sort $@ -o $@
+	# sssom validate $@
+
 
 .PHONY: clean_mappings
 .PHONY: mappings mappings_fast
@@ -1433,20 +1455,13 @@ open_%_report:
 mondo_obo:
 	robot convert -i mondo-edit.obo -f obo -o mondo-edit.obo
 
-tmp/mondo-ingest.owl:
+$(TMPDIR)/mondo-ingest.owl:
 	curl https://github.com/monarch-initiative/mondo-ingest/releases/latest/download/mondo-ingest.owl -L --output $@
 
 tmp/mondo_paper.owl: mondo.owl
 	cp $< $@
 
 tmp/mondo_paper.db: tmp/mondo_paper.owl
-	@rm -f .template.db
-	@rm -f .template.db.tmp
-	RUST_BACKTRACE=full semsql make $@ -P config/prefixes.csv
-	@rm -f .template.db
-	@rm -f .template.db.tmp
-
-tmp/mondo-ingest.db: tmp/mondo-ingest.owl
 	@rm -f .template.db
 	@rm -f .template.db.tmp
 	RUST_BACKTRACE=full semsql make $@ -P config/prefixes.csv
