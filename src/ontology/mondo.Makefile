@@ -1792,6 +1792,18 @@ update-synonyms-sync: $(TMPDIR)/synonyms-confirmed.robot.owl tmp/synonyms-axioms
 	make NORM
 	mv NORM $(SRC)
 
+#############################################
+# Update scripts #
+#############################################
+
+.PHONY: update-scripts
+update-scripts: obo-checkout.pl obo-checkin.pl
+
+obo-checkout.pl:
+	wget "https://raw.githubusercontent.com/cmungall/obo-scripts/refs/heads/master/obo-checkout.pl" -O $@
+
+obo-checkin.pl:
+	wget "https://raw.githubusercontent.com/cmungall/obo-scripts/refs/heads/master/obo-checkin.pl" -O $@
 
 .PHONY: help
 help:
@@ -1800,3 +1812,11 @@ help:
 	echo "sh run.sh make americanize"
 	echo "Update british english synonyms"
 	echo "sh run.sh make add_british_language_synonyms"
+
+################################################
+
+openai-validate-%: tmp/issue_%_analysis.md
+	cat $< | uv run openai api chat.completions.create \
+		-m gpt-5 \
+		-g system "You are a strict medical terminology expert that formats responses in Markdown." \
+		-g user "Provide a succinct but strict review of the following analysis:\n\n$$(cat $<)" | tee tmp/issue_$*_analysis_review.md

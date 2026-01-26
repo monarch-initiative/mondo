@@ -444,7 +444,6 @@ WHERE
       "MFOMD",
       "MONDO",
       "NORD",
-      "MONDORULE",
       "MP",
       "MPATH",
       "MTH",
@@ -533,7 +532,6 @@ WHERE
       "NCIT",
       "NDFRT",
       "NIFSTD",
-      "nlxdys",
       "NORD",
       "OBI",
       "OGMS",
@@ -1272,6 +1270,8 @@ ORDER BY ?entity
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix IAO: <http://purl.obolibrary.org/obo/IAO_>
+prefix mondoSparqlQcGeneral: <http://purl.obolibrary.org/obo/mondo/sparql/qc/general/>
+prefix mondo: <http://purl.obolibrary.org/obo/mondo#>
 
 SELECT DISTINCT ?entity ?property ?value WHERE 
 {
@@ -1281,6 +1281,9 @@ SELECT DISTINCT ?entity ?property ?value WHERE
   ?entity ?property ?value .
   FILTER( regex(STR(?value), "_"))
   FILTER (!isBlank(?entity))
+  FILTER NOT EXISTS {
+       ?entity mondo:excluded_from_qc_check mondoSparqlQcGeneral:qc-definition-containing-underscore.sparql .
+    }
 }
 ORDER BY ?entity
 

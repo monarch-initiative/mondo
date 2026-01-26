@@ -248,10 +248,14 @@ reasoned-plus-equivalents.owl: reasoned.owl imports/equivalencies.owl
 #
 # by default we use Elk to perform a reason-relax-reduce chain
 # after that we annotate the ontology with the release versionInfo
-$(ONT).owl: reasoned.owl
-	$(ROBOT) merge -i $< annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@
+$(ONT).owl tmp/mondo.owl.ofn: reasoned.owl
+	$(ROBOT) merge -i $< \
+		annotate -V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl -o $@ \
+		convert \
+			--add-prefixes config/prefixes.jsonld \
+			-f ofn -o tmp/mondo.owl.ofn
 
-$(ONT).obo: $(ONT).owl
+$(ONT).obo: tmp/mondo.owl.ofn
 	$(ROBOT) annotate -i $< \
 			-V $(ONTURI)/releases/`date +%Y-%m-%d`/$(ONT).owl \
 			--ontology-iri $(OBO)/$(ONT).owl \
@@ -634,7 +638,7 @@ mirror-ncbitaxon: | $(TMPDIR)
 .PHONY: mirror-chebi
 .PRECIOUS: $(MIRRORDIR)/chebi.owl
 mirror-chebi: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl -o $@.tmp.owl && \
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I http://purl.obolibrary.org/obo/upheno/chebi_slim.owl -o $@.tmp.owl && \
 		$(ROBOT) remove -i $@.tmp.owl --base-iri $(URIBASE)/CHEBI --axioms external --preserve-structure false --trim false -o $@.tmp.owl &&\
 		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
@@ -833,7 +837,11 @@ NORM: mondo-edit.obo
 roundtrip.obo: mondo-edit.obo
 	owltools --use-catalog  mondo-edit.obo -o -f obo $@.tmp && mv $@.tmp $@
 
+test: test_obsolete
 
+test_obsolete: mondo-edit.obo
+	grep -v excluded_subClassOf $< > tmp/mondo-wo-obsoleted.obo 
+	! grep "! obsolete" tmp/mondo-wo-obsoleted.obo
 
 NEWAXTEST: mondo-edit.owl new.owl
 #	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m z.owl -o $@
@@ -852,7 +860,7 @@ SPARQL_EDIT_EXCLUDE=
 # the ontology begin looking like this: http://purl.obolibrary.org/obo/mondo/mondo-base#... This
 # will cause the query to fail because it expects the IRI  http://purl.obolibrary.org/obo/mondo#ABREVIATION
 # for the duplicate-exact-synonym-no-abbrev check.
-SPARQL_OBO_EXCLUDE=qc-single-child qc-omimps-should-be-inherited qc-omim-subsumption qc-permitted-properties qc-duplicate-exact-synonym-no-abbrev qc-multiple-gene-associations qc-subclass-relation-no-source
+SPARQL_OBO_EXCLUDE=qc-single-child qc-omimps-should-be-inherited qc-omim-subsumption qc-permitted-properties qc-duplicate-exact-synonym-no-abbrev qc-multiple-gene-associations qc-subclass-relation-no-source qc-definition-containing-underscore
 SPARQL_OWL_EXCLUDE=qc-permitted-properties
 SPARQL_GENERAL_QC_EDIT=$(filter-out $(SPARQL_EDIT_EXCLUDE),$(SPARQL_GENERAL_QC))
 SPARQL_GENERAL_QC_OWL=$(filter-out $(SPARQL_OWL_EXCLUDE),$(SPARQL_GENERAL_QC))

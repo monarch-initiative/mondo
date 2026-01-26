@@ -1,0 +1,56 @@
+name: Normalize mondo-edit.obo
+
+on:
+  # Trigger on pushes that modify mondo-edit.obo
+  push:
+    paths:
+      - 'src/ontology/mondo-edit.obo'
+    branches:
+      - '**'  # Run on all branches
+
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.6
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Run normalization
+        run: |
+          cd src/ontology && make NORM && mv NORM mondo-edit.obo
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          cd src/ontology
+          if git diff --quiet mondo-edit.obo; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes detected after normalization"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Changes detected after normalization"
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git add src/ontology/mondo-edit.obo
+          git commit -m "Normalize mondo-edit.obo
+
+          Automated normalization via GitHub Actions"
+          git pull --rebase
+          git push
