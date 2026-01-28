@@ -876,7 +876,8 @@ rm-excluded-asserted:
 SOURCE_VERSION = $(TODAY)
 # snomed
 SOURCE_IDS = doid ncit ordo omim
-SOURCE_IDS_INCL_MONDO = $(SOURCE_IDS) mondo equivalencies
+# NOTE: equivalencies removed, replaced by mondo.sssom.tsv and mondo.sssom.owl
+SOURCE_IDS_INCL_MONDO = $(SOURCE_IDS) mondo
 ALL_SOURCES_JSON = $(patsubst %, sources/$(SOURCE_VERSION)/%.json, $(SOURCE_IDS_INCL_MONDO))
 ALL_SOURCES_JSON_GZ = $(patsubst %, sources/$(SOURCE_VERSION)/%.json.gz, $(SOURCE_IDS_INCL_MONDO))
 ALL_SOURCES_OWL_GZ = $(patsubst %, sources/$(SOURCE_VERSION)/%.owl.gz, $(SOURCE_IDS_INCL_MONDO))
@@ -910,8 +911,9 @@ sources/$(SOURCE_VERSION)/medgen.owl: | source_release_dir
 sources/$(SOURCE_VERSION)/ordo.owl: build-orphanet | source_release_dir
 	robot merge -i sources/orphanet/ordo_orphanet.owl -o $@
 
-sources/$(SOURCE_VERSION)/equivalencies.owl: | source_release_dir
-	curl -L -s $(OBO)/mondo/imports/equivalencies.owl > $@.tmp && mv $@.tmp $@
+# OBSOLETE: equivalencies replaced by SSSOM mappings
+#sources/$(SOURCE_VERSION)/equivalencies.owl: | source_release_dir
+#	curl -L -s $(OBO)/mondo/imports/equivalencies.owl > $@.tmp && mv $@.tmp $@
 
 #sources/CTD_diseases.obo:
 #	curl -L -s http://ctdbase.org/reports/CTD_diseases.obo.gz  | gzip -dc | perl -npe 's@alt_id@xref@' > $@.tmp && mv $@.tmp $@
@@ -1192,6 +1194,10 @@ $(MAPPINGSDIR)/mondo.sssom.tsv: tmp/mondo.sssom.tsv tmp/mondo-ingest.db
 	sssom annotate $@ -o $@ --mapping_set_id "http://purl.obolibrary.org/obo/mondo/mappings/mondo.sssom.tsv"
 	sssom sort $@ -o $@
 	sssom validate $@
+
+# Generate OWL version of SSSOM mappings for use as equivalencies
+$(MAPPINGSDIR)/mondo.sssom.owl: $(MAPPINGSDIR)/mondo.sssom.tsv
+	sssom convert $< --output-format owl -o $@
 
 #$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
 #	sssom convert -i $< -o $@

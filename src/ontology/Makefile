@@ -102,12 +102,12 @@ REPORT_FILES = $(MAIN_REPORT_FILES) $(ADDITIONAL_REPORT_FILES)
 TRANSLATION_FILES=#$(TRANSLATIONSDIR)/$(ONT)-all.babelon.tsv $(TRANSLATIONSDIR)/$(ONT)-all.babelon.json
 MAIN_PRODUCTS = $(ONT) $(ONT)-base $(ONT)-simple $(ONT)-international
 MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json) $(ONT)_nodes.tsv $(ONT)_edges.tsv
-EQUIVALENTS_FILES=imports/equivalencies
-EQUIVALENTS = $(foreach n, $(EQUIVALENTS_FILES), $(n).owl $(n).obo $(n).json)
+# SSSOM mappings files (replaces old equivalencies)
+SSSOM_FILES = mappings/mondo.sssom.tsv mappings/mondo.sssom.owl
 ARTEFACTS = \
   $(IMPORT_FILES) \
   $(MAIN_FILES) \
-  $(EQUIVALENTS) \
+  $(SSSOM_FILES) \
   $(REPORT_FILES) \
   $(COMPONENT_FILES) \
   $(SUBSET_FILES) \
@@ -118,7 +118,7 @@ REPORT_FILES_RELEASE = reports/mondo_release_diff_changed_terms.tsv \
   reports/mondo_obsoletioncandidates.tsv \
   reports/source-versions.tsv
 
-ASSETS = $(MAIN_FILES) $(SUBSET_FILES) $(EQUIVALENTS) \
+ASSETS = $(MAIN_FILES) $(SUBSET_FILES) $(SSSOM_FILES) \
   ../../README.md \
   $(REPORT_FILES_RELEASE)
 
@@ -237,8 +237,8 @@ reasoned.owl: filtered.owl
 
 #test: reasoned-plus-equivalents.owl
 
-# merged = reasoned + equivalencies
-reasoned-plus-equivalents.owl: reasoned.owl imports/equivalencies.owl
+# merged = reasoned + SSSOM mappings (replaces old equivalencies)
+reasoned-plus-equivalents.owl: reasoned.owl mappings/mondo.sssom.owl
 	owltools --use-catalog $^ --merge-support-ontologies -o $@
 	#$(ROBOT) reason -i $@ --equivalent-classes-allowed asserted-only -o $(TMPDIR)/$@_test_equivalents.owl
 
@@ -981,8 +981,9 @@ reports/mondo-edit-report.html: $(SRC_TAGS_REASONED)
 
 mondo_edit_report: reports/mondo-edit-report.html
 
-common_map.tsv:
-	blip-findall -debug index -goal ix -i imports/equivalencies.obo -i d2p.pro  -r mondoe -c ../utils/all_genetic.pro common_to_mondo/2 -label -no_pred -use_tabs | cut -f1,3,4 > $@
+# OBSOLETE: depends on old equivalencies.obo format
+#common_map.tsv:
+#	blip-findall -debug index -goal ix -i imports/equivalencies.obo -i d2p.pro  -r mondoe -c ../utils/all_genetic.pro common_to_mondo/2 -label -no_pred -use_tabs | cut -f1,3,4 > $@
 
 # ----------------------------------------
 # Sparql constructs
@@ -998,11 +999,13 @@ imports/external_definitions.owl: ../sparql/construct/construct-embedded-definit
 
 FIX_URIS_IN_PLACE = perl -pi -ne $(FIX_URI_EXPR)
 
-all_equivalencies: imports/equivalencies.owl  imports/equivalencies.obo imports/equivalencies.json
-imports/equivalencies.owl: ../sparql/construct/construct-ecs-from-xrefs.sparql $(SRC)
-	$(ROBOT) merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && $(FIX_URIS_IN_PLACE)  $@.tmp.ttl && $(ROBOT) annotate -i $@.tmp.ttl -a $(PV_CC0) -O $(OBO)/mondo/$@ -o $@
-imports/equivalencies.obo: imports/equivalencies.owl
-	$(ROBOT) convert -i $< -o $@
+# OBSOLETE: equivalencies files replaced by SSSOM mappings (mondo.sssom.tsv, mondo.sssom.owl)
+# See https://github.com/monarch-initiative/mondo/issues/9889
+#all_equivalencies: imports/equivalencies.owl  imports/equivalencies.obo imports/equivalencies.json
+#imports/equivalencies.owl: ../sparql/construct/construct-ecs-from-xrefs.sparql $(SRC)
+#	$(ROBOT) merge -i $(SRC) query -c $< $@.tmp.ttl -f ttl && $(FIX_URIS_IN_PLACE)  $@.tmp.ttl && $(ROBOT) annotate -i $@.tmp.ttl -a $(PV_CC0) -O $(OBO)/mondo/$@ -o $@
+#imports/equivalencies.obo: imports/equivalencies.owl
+#	$(ROBOT) convert -i $< -o $@
 
 clean_imports: $(patsubst %, clean-mirror-%, $(ONTOLOGY_IMPORTS))
 clean-mirror-%:
@@ -1089,7 +1092,7 @@ mirror/omia-1.owl: mirror/omia.ttl
 mirror/omia-2.obo: mirror/omia-1.owl
 	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp | grep -v ^property_value | perl -npe 's@xref: OMIM:@relationship: RO:HOM0000001 OMIM:@' | perl -npe 's@is_a: MESH:@relationship: RO:HOM0000001 MESH:@' | obo-grep.pl --neg -r 'id: http' - | ../utils/fix-omia-names.pl > $@.tmp.obo && $(ROBOT) reduce -i $@.tmp.obo -o $@
 
-mirror/omia.owl: mirror/omia-2.obo imports/equivalencies.owl
+mirror/omia.owl: mirror/omia-2.obo mappings/mondo.sssom.owl
 	owltools $^ --add-imports-from-supports --reasoner elk --merge-equivalence-sets -s MONDO 20 --remove-imports-declarations  -o $@
 
 mirror/omia.obo: mirror/omia.owl
@@ -1143,26 +1146,26 @@ compare/%-plus-lsyns.owl: mirror/%.owl compare/lsyns-%.owl
 
 # logical merge, no duplicate axioms
 compare/axioms-%-nd.owl: compare/%-plus-lsyns.owl mondo-edit.obo
-	owltools --use-catalog mondo-edit.obo --copy-axioms -l -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+	owltools --use-catalog mondo-edit.obo --copy-axioms -l -m mappings/mondo.sssom.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: compare/axioms-%.owl
 
 # duplicate axioms, for provenance tagging
 compare/axioms-%-d.owl: compare/%-plus-lsyns.owl mondo-edit.obo
-	owltools --use-catalog mondo-edit.obo --copy-axioms -I -D -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+	owltools --use-catalog mondo-edit.obo --copy-axioms -I -D -m mappings/mondo.sssom.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: compare/axioms-%.owl
 
 # bring in strictly new literals in annotation axioms
 compare/ann-axioms-%-new.owl: compare/%-plus-lsyns.owl mondo-edit.obo
-	owltools --use-catalog mondo-edit.obo --copy-axioms -x -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+	owltools --use-catalog mondo-edit.obo --copy-axioms -x -m mappings/mondo.sssom.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: compare/axioms-%.owl
 
 compare/ann-axioms-ncit-disease-new.owl: mirror/ncit-disease.owl mondo-edit.obo
-	owltools --use-catalog mondo-edit.obo --copy-axioms -x -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+	owltools --use-catalog mondo-edit.obo --copy-axioms -x -m mappings/mondo.sssom.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: compare/axioms-%.owl
 
 # all axioms
 compare/axioms-%-all.owl: compare/%-plus-lsyns.owl mondo-edit.obo
-	owltools --use-catalog mondo-edit.obo --copy-axioms -d -m imports/equivalencies.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+	owltools --use-catalog mondo-edit.obo --copy-axioms -d -m mappings/mondo.sssom.owl -s $< -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 .PRECIOUS: compare/axioms-%.owl
 
 # tag axioms that are asserted but could be inferred
@@ -1180,7 +1183,7 @@ compare/main.obo: mondo-edit.obo
 	owltools --use-catalog $< --remove-axiom-annotations  --set-ontology-id $(OBO)/mondo/$@ -o -f obo $@.tmp && perl -npe 's@{source="direct"}@{source="MONDO:Redundant"}@' $@.tmp > $@
 
 #compare/axioms-%.owl:
-#	owltools --use-catalog mondo-edit.obo --copy-axioms -l -d -m imports/equivalencies.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
+#	owltools --use-catalog mondo-edit.obo --copy-axioms -l -d -m mappings/mondo.sssom.owl -s mirror/$*.owl -n --set-ontology-id $(OBO)/mondo/$@ -o $@
 #.PRECIOUS: compare/axioms-%.owl
 
 
@@ -1194,7 +1197,7 @@ compare/ann-axioms-%.obo: compare/ann-axioms-%.owl
 disjoint_sibs.owl: $(SRC)
 	$(ROBOT) query --format ttl -c ../sparql/construct/construct-disjoint-siblings.sparql $@ -i $<
 
-testcombo-%: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl mirror/%.owl disjoint_sibs.owl
+testcombo-%: mondo-edit.obo disjoint_sibs.owl mappings/mondo.sssom.owl mirror/%.owl disjoint_sibs.owl
 	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m compare/bad-$*.owl
 
 # FIXME remove --term http://purl.obolibrary.org/obo/CHEBI_50906 was added out of desparation because we 
@@ -1210,12 +1213,12 @@ explain_unsat.owl: debug.owl
 explain_unsat: $(SRC) 
 	$(ROBOT) explain -i $< -M unsatisfiability --unsatisfiable random:10 --explanation $(TMPDIR)/$@.md
 
-debug.owl: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl
+debug.owl: mondo-edit.obo disjoint_sibs.owl mappings/mondo.sssom.owl
 	owltools --no-logging --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@ | grep -v ^INFERENCE
-debug2.owl: mondo-edit.obo disjoint_sibs.owl imports/equivalencies.owl
+debug2.owl: mondo-edit.obo disjoint_sibs.owl mappings/mondo.sssom.owl
 	owltools --use-catalog  $^ --merge-support-ontologies --reasoner elk --merge-equivalence-sets -s MONDO 100 --run-reasoner -r elk -u -m $@ | grep -v ^INFERENCE
 
-debug-prod.owl: mondo.owl disjoint_sibs.owl imports/equivalencies.owl
+debug-prod.owl: mondo.owl disjoint_sibs.owl mappings/mondo.sssom.owl
 	owltools --use-catalog  $^ --merge-support-ontologies --run-reasoner -r elk -u -m $@ | grep -v ^INFERENCE
 
 # ----------------------------------------
@@ -1388,7 +1391,7 @@ seed.owl: mondo-edit.obo ext.obo
 
 #seed-ncit.owl: mondo-edit.obo imports/equivalencies-ncit.obo neoplasm-core-nd.obo
 #	owltools --use-catalog $^ --remove-imports-declarations --merge-support-ontologies -o $@
-seed-ncit.owl: mondo-edit.obo imports/equivalencies.owl mirror/ncit-disease.owl
+seed-ncit.owl: mondo-edit.obo mappings/mondo.sssom.owl mirror/ncit-disease.owl
 	owltools --use-catalog $^ --remove-imports-declarations --merge-support-ontologies --remove-disjoints -o $@
 
 ext.obo: ptable.tsv
@@ -1409,8 +1412,9 @@ v-%.png:
 	owltools v-$*.obo --remove-dangling -o -f obo v-$*-trim.obo && \
 	blip ontol-subset -u ontol_config_do -i v-$*-trim.obo -idfile $* -down 5 -to png > $@
 
-../../scratch/mondo-ncit-finding.tsv:
-	blip-findall -i imports/equivalencies.obo  -i mondo.obo -r neoplasm "(R='NCIT:R115';R='NCIT:R108'),parent(X,R,Y),equivalent_class(M,X)" -select "x(M,Y)" -no_pred -label -use_tabs  > $@.tmp && sort -u $@.tmp > $@
+# OBSOLETE: depends on old equivalencies.obo format
+#../../scratch/mondo-ncit-finding.tsv:
+#	blip-findall -i imports/equivalencies.obo  -i mondo.obo -r neoplasm "(R='NCIT:R115';R='NCIT:R108'),parent(X,R,Y),equivalent_class(M,X)" -select "x(M,Y)" -no_pred -label -use_tabs  > $@.tmp && sort -u $@.tmp > $@
 
 #../../scratch/mondo-ncit-finding.tsv:
 
