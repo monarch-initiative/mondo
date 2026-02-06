@@ -44,17 +44,18 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/l
 
 
 
+
 <!-- START:TABLE1 -->
 
 | Metric | Count |
 | :--- | ---: |
-| **Total number of diseases** | 25938 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Database cross references | 129914 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Term definitions | 17952 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Exact synonyms<sup>1</sup> | 73886 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Narrow synonyms<sup>2</sup> | 2554 |
+| **Total number of diseases** | 25955 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Database cross references | 130098 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Term definitions | 17980 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Exact synonyms<sup>1</sup> | 73928 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Narrow synonyms<sup>2</sup> | 2553 |
 | &nbsp;&nbsp;&nbsp;&nbsp;Broad synonyms<sup>3</sup> | 1420 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Related synonyms<sup>4</sup> | 30220 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Related synonyms<sup>4</sup> | 30173 |
 
 <!-- END:TABLE1 -->
 
@@ -76,16 +77,17 @@ Latest Mondo release at: [https://github.com/monarch-initiative/mondo/releases/l
 
 
 
+
 <!-- START:TABLE2 -->
 
 | Category | Count (classes) |
 | :--- | ---: |
-| **Total number of diseases** | 25938 |
-|&nbsp;&nbsp;&nbsp;&nbsp; **Human diseases** | 22977 |
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancer | 4728 |
+| **Total number of diseases** | 25955 |
+|&nbsp;&nbsp;&nbsp;&nbsp; **Human diseases** | 22994 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancer | 4729 |
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Infectious | 1075 |
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mendelian | 11639 |
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rare | 15901 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mendelian | 11653 |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rare | 15919 |
 |&nbsp;&nbsp;&nbsp;&nbsp; **Non-human diseases** | 2960 |
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancer | 215 |
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Infectious | 87 |
