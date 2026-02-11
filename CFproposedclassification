@@ -1,0 +1,38 @@
+
+Hereditary disease
+>MONDO:0009061 cystic fibrosis = mutation in the gene AND follow the diagnosis criteria (with or without pancreas feature)
+>>MONDO:0009062 cystic fibrosis-gastritis-megaloblastic anemia syndrome  [is_a CF]
+──MONDO:7770003 (new) cystic fibrosis-related diabetes (CFRD)  [complication of CF; is_a diabetes mellitus]
+──MONDO:7770005 (new) cystic fibrosis-related liver disease (CFLD)  [complication of CF; is_a liver disorder]
+
+>(new) CFTR-related disorder = mutation in the gene AND does not follow the diagnosis criteria, only 1 organ affected
+>>MONDO:0010178 congenital bilateral aplasia of vas deferens from CFTR mutation (CBAVD)  [is_a CFTR-RD]
+
+>MONDO:0100627 CRMS/CFSPID = mutation in the gene, but no symptoms (yet, since it is mostly found during screening)
+
+---
+
+## Note: Subtypes (is_a) vs Complications (disease_arises_from_feature)
+
+The tree above uses two different relationship types, shown by different indentation markers:
+
+- `>>` = **is_a** (true subtype): The child IS a form of the parent.
+  - CF-gastritis syndrome IS a form of cystic fibrosis (patients meet full CF diagnostic criteria plus additional features).
+  - CBAVD from CFTR IS a form of CFTR-related disorder (single-organ CFTR dysfunction not meeting CF criteria).
+
+- `──` = **disease_arises_from_feature** (complication): The condition arises as a consequence of the parent but is NOT a subtype of it.
+  - CFRD is NOT a form of cystic fibrosis — it is a form of **diabetes mellitus** that arises as a complication of CF.
+  - CFLD is NOT a form of cystic fibrosis — it is a form of **liver disorder** that arises as a complication of CF.
+
+### Why the distinction matters
+
+In the ontology, `is_a` means "is a subtype of." Saying CFRD `is_a` CF would mean "cystic fibrosis-related diabetes is a form of cystic fibrosis," which is clinically incorrect. CFRD is a form of diabetes that occurs in CF patients. Similarly, CFLD is a form of liver disease, not a form of CF.
+
+The `disease_arises_from_feature` relationship (RO:0004022) correctly captures the causal link without asserting subtype status. In the reasoner:
+
+| Term | Primary parent (is_a) | Relationship to CF |
+|------|----------------------|-------------------|
+| CF-gastritis syndrome | cystic fibrosis | is_a (subtype) |
+| CFRD | diabetes mellitus | disease_arises_from_feature (complication) |
+| CFLD | liver disorder | disease_arises_from_feature (complication) |
+| CBAVD from CFTR | CFTR-related disorder | is_a (subtype) |
