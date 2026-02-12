@@ -84,7 +84,6 @@ def read_metadata(filename):
 meta, curie_map = read_metadata(metadata_file)
 msdf_main = parse_sssom_table(sssom_file)
 msdf_main.df["mapping_justification"] = SEMAPV.ManualMappingCuration.value
-subject_prefixes_allowed = meta["subject_prefixes"]
 relations_allowed = meta["relations"]
 
 
@@ -103,7 +102,7 @@ new_msdf = from_sssom_dataframe(
 today = datetime.today().strftime("%Y-%m-%d")
 
 splitted = split_dataframe_by_prefix(
-    new_msdf, subject_prefixes_allowed, object_prefixes, relations_allowed
+    new_msdf, ["MONDO"], object_prefixes, relations_allowed
 )
 for msdf in splitted:
     fromS = msdf.split("_")[0].upper()
