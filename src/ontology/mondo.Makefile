@@ -1192,6 +1192,7 @@ $(TMPDIR)/mondo-with-object-labels.sssom.tsv: $(TMPDIR)/mondo-extracted.sssom.ts
 
 $(TMPDIR)/split_finished: $(TMPDIR)/mondo-with-object-labels.sssom.tsv
 	python ../scripts/split_sssom_by_source.py -s $< -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
+	touch $@
 
 .PHONY: split_mondo_mappings
 split_mondo_mappings: $(TMPDIR)/split_finished
