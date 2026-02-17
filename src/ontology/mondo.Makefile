@@ -1181,17 +1181,27 @@ sssom:
 oaklib:
 	python3 -m pip install --upgrade pip setuptools && python3 -m pip install --upgrade --force-reinstall oaklib
 
-tmp/%.sssom.tsv: tmp/mirror-%.json
-	sssom parse tmp/mirror-$*.json --no-strict-clean-prefixes -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -C merged -o $@
+$(TMPDIR)/mondo-labels.tsv:
+	curl -L https://github.com/monarch-initiative/mondo-ingest/releases/latest/download/mondo-labels.tsv -o $@
 
+$(TMPDIR)/mondo-extracted.sssom.tsv: $(TMPDIR)/mirror-mondo.json
+	sssom parse $< --no-strict-clean-prefixes -I obographs-json -m $(METADATADIR)/mondo.sssom.config.yml -C merged -o $@
 
-$(MAPPINGSDIR)/mondo.sssom.tsv: tmp/mondo.sssom.tsv tmp/mondo-ingest.db
-	python ../scripts/add_object_label.py run $<
+$(TMPDIR)/mondo-with-object-labels.sssom.tsv: $(TMPDIR)/mondo-extracted.sssom.tsv $(TMPDIR)/mondo-labels.tsv
+	python ../scripts/add_object_label.py run $< -o $@
+
+$(TMPDIR)/split_finished: $(TMPDIR)/mondo-with-object-labels.sssom.tsv
 	python ../scripts/split_sssom_by_source.py -s $< -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
+
+.PHONY: split_mondo_mappings
+split_mondo_mappings: $(TMPDIR)/split_finished
+
+$(MAPPINGSDIR)/mondo.sssom.tsv: $(TMPDIR)/mondo-with-object-labels.sssom.tsv
 	sssom dosql -Q "SELECT * FROM df WHERE predicate_id IN (\"skos:exactMatch\", \"skos:broadMatch\")" $< -o $@
 	sssom annotate $@ -o $@ --mapping_set_id "http://purl.obolibrary.org/obo/mondo/mappings/mondo.sssom.tsv"
 	sssom sort $@ -o $@
 	sssom validate $@
+
 
 #$(MAPPINGSDIR)/%.sssom.tsv: tmp/mirror-%.json
 #	sssom convert -i $< -o $@
@@ -1201,14 +1211,14 @@ $(MAPPINGSDIR)/mondo.sssom.tsv: tmp/mondo.sssom.tsv tmp/mondo-ingest.db
 .PHONY: mappings mappings_fast
 
 clean_mappings:
-	rm -rf $(MAPPINGSDIR)/*.sssom.tsv
+	rm -rf $(MAPPINGSDIR)/*.sssom.tsv $(TMPDIR)/*.sssom.tsv $(TMPDIR)/mondo-labels.tsv
 
-mappings: clean_mappings $(ALL_MAPPINGS)
+mappings: clean_mappings $(ALL_MAPPINGS) split_mondo_mappings
 
 mappings_fast:
 	$(MAKE) sssom -B
 	$(MAKE) clean_mappings -B
-	$(MAKE) mappings IMP=false MIR=false PAT=false -B
+	$(MAKE) mappings split_mondo_mappings IMP=false MIR=false PAT=false -B
 
 ###### OMIM Genes #########
 
@@ -1440,13 +1450,6 @@ tmp/mondo_paper.owl: mondo.owl
 	cp $< $@
 
 tmp/mondo_paper.db: tmp/mondo_paper.owl
-	@rm -f .template.db
-	@rm -f .template.db.tmp
-	RUST_BACKTRACE=full semsql make $@ -P config/prefixes.csv
-	@rm -f .template.db
-	@rm -f .template.db.tmp
-
-tmp/mondo-ingest.db: tmp/mondo-ingest.owl
 	@rm -f .template.db
 	@rm -f .template.db.tmp
 	RUST_BACKTRACE=full semsql make $@ -P config/prefixes.csv
