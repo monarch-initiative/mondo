@@ -1,0 +1,306 @@
+name: ClinGen new gene-disease term request
+description: Request a new gene-related disease term on behalf of a ClinGen gene curation group.
+title: "[ClinGen NTR] [GENE]-related [DISEASE]"
+labels: [ClinGen, New term request]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to request a new gene-related disease term for Mondo on behalf of a ClinGen gene curation group.
+
+        Mondo follows the naming pattern: `{GENE}-related {disease description}`.
+        The default definition pattern is: *"Any {parent disease} in which the cause of the disease is a variation in the gene {GENE}."*
+
+  - type: markdown
+    attributes:
+      value: "### Submitter information"
+  - type: textarea
+    id: submitters
+    attributes:
+      label: Submitter ORCID(s) or ClinGen affiliation URL(s)
+      description: "ORCID of the person(s) submitting, or ClinGen working group URL(s). One per line if multiple."
+      placeholder: |
+        https://orcid.org/0000-0001-5208-3432
+        https://clinicalgenome.org/affiliation/40072/
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "### Gene information"
+
+  - type: input
+    id: gene_name
+    attributes:
+      label: Causal gene name
+      description: Official HGNC gene symbol.
+      placeholder: e.g. FZD4
+    validations:
+      required: true
+
+  - type: input
+    id: hgnc_id
+    attributes:
+      label: Causal gene HGNC ID
+      description: "HGNC ID (number only). Find it at https://www.genenames.org/"
+      placeholder: e.g. 4042
+    validations:
+      required: true
+
+  - type: textarea
+    id: gene_disease_refs
+    attributes:
+      label: Reference(s) for gene-disease association
+      description: "PMIDs or other references in format PMID:####. One per line if multiple."
+      placeholder: |
+        PMID:12345
+        PMID:67890
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Classification (parent terms)
+        If more than 2 parent terms are needed, add additional entries in the **Additional comments** section at the bottom using the same format: label, Mondo ID, and reference.
+
+  - type: markdown
+    attributes:
+      value: "**Parent term 1**"
+
+  - type: input
+    id: parent_1_label
+    attributes:
+      label: "Parent term 1 — label"
+      description: "Name of the Mondo parent term."
+      placeholder: e.g. exudative vitreoretinopathy
+    validations:
+      required: true
+
+  - type: input
+    id: parent_1_id
+    attributes:
+      label: "Parent term 1 — Mondo ID"
+      description: "Mondo ID of the parent term."
+      placeholder: e.g. MONDO:0019516
+    validations:
+      required: true
+
+  - type: input
+    id: parent_1_ref
+    attributes:
+      label: "Parent term 1 — reference"
+      description: "PMID or other reference supporting this classification."
+      placeholder: e.g. PMID:12345
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: "**Parent term 2** (optional)"
+
+  - type: input
+    id: parent_2_label
+    attributes:
+      label: "Parent term 2 — label"
+      description: "Name of the second Mondo parent term, if applicable."
+      placeholder: e.g. retinal vasculopathy
+    validations:
+      required: false
+
+  - type: input
+    id: parent_2_id
+    attributes:
+      label: "Parent term 2 — Mondo ID"
+      description: "Mondo ID of the second parent term."
+      placeholder: e.g. MONDO:0004580
+    validations:
+      required: false
+
+  - type: input
+    id: parent_2_ref
+    attributes:
+      label: "Parent term 2 — reference"
+      description: "PMID or other reference supporting this classification."
+      placeholder: e.g. PMID:67890
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: "### Term label and synonyms"
+
+  - type: input
+    id: term_label
+    attributes:
+      label: Preferred term label
+      description: "The default pattern is `{GENE}-related {parent disease}`. If you want a different label, enter it here."
+      placeholder: e.g. FZD4-related exudative vitreoretinopathy
+    validations:
+      required: true
+
+  - type: input
+    id: synonyms
+    attributes:
+      label: Synonyms
+      description: "Any alternative names or abbreviations. Separate multiple with commas."
+      placeholder: e.g. FEVR2, FZD4 exudative vitreoretinopathy
+    validations:
+      required: false
+
+  - type: textarea
+    id: label_refs
+    attributes:
+      label: Reference(s) for label/synonyms
+      description: "PMIDs supporting the label or synonyms in format PMID:####. One per line if multiple."
+      placeholder: |
+        PMID:12345
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: "### Definition"
+
+  - type: textarea
+    id: definition
+    attributes:
+      label: Definition
+      description: "Provide a definition for this term."
+      placeholder: |
+        Any exudative vitreoretinopathy in which the cause of the disease is a variation in the gene FZD4. This disease is characterized by ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: definition_refs
+    attributes:
+      label: Reference(s) for definition
+      description: "PMIDs or other references supporting the definition in format PMID:####. One per line if multiple."
+      placeholder: |
+        PMID:12345
+        PMID:67890
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: "### Cross-references"
+
+  - type: textarea
+    id: xrefs
+    attributes:
+      label: Cross-references
+      description: "Identifiers for this disease in other databases (e.g. OMIM, Orphanet). One per line if multiple."
+      placeholder: |
+        OMIM:133780
+        Orphanet:519
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Child terms (subclasses)
+        If more than 3 child terms are needed, add additional entries in the **Additional comments** section at the bottom using the same format: label, Mondo ID, and reference.
+
+  - type: markdown
+    attributes:
+      value: "**Child term 1** (optional)"
+
+  - type: input
+    id: child_1_label
+    attributes:
+      label: "Child term 1 — label"
+      description: "Name of an existing Mondo term to reclassify as a subclass of this new term."
+      placeholder: e.g. some disease subtype
+    validations:
+      required: false
+
+  - type: input
+    id: child_1_id
+    attributes:
+      label: "Child term 1 — Mondo ID"
+      description: "Mondo ID of the child term."
+      placeholder: e.g. MONDO:0012345
+    validations:
+      required: false
+
+  - type: input
+    id: child_1_ref
+    attributes:
+      label: "Child term 1 — reference"
+      description: "PMID or other reference supporting this subclass relationship."
+      placeholder: e.g. PMID:12345
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: "**Child term 2** (optional)"
+
+  - type: input
+    id: child_2_label
+    attributes:
+      label: "Child term 2 — label"
+      description: "Name of an existing Mondo term to reclassify as a subclass of this new term."
+      placeholder: e.g. another disease subtype
+    validations:
+      required: false
+
+  - type: input
+    id: child_2_id
+    attributes:
+      label: "Child term 2 — Mondo ID"
+      description: "Mondo ID of the child term."
+      placeholder: e.g. MONDO:0067890
+    validations:
+      required: false
+
+  - type: input
+    id: child_2_ref
+    attributes:
+      label: "Child term 2 — reference"
+      description: "PMID or other reference supporting this subclass relationship."
+      placeholder: e.g. PMID:67890
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: "**Child term 3** (optional)"
+
+  - type: input
+    id: child_3_label
+    attributes:
+      label: "Child term 3 — label"
+      description: "Name of an existing Mondo term to reclassify as a subclass of this new term."
+      placeholder: e.g. a third disease subtype
+    validations:
+      required: false
+
+  - type: input
+    id: child_3_id
+    attributes:
+      label: "Child term 3 — Mondo ID"
+      description: "Mondo ID of the child term."
+      placeholder: e.g. MONDO:0011111
+    validations:
+      required: false
+
+  - type: input
+    id: child_3_ref
+    attributes:
+      label: "Child term 3 — reference"
+      description: "PMID or other reference supporting this subclass relationship."
+      placeholder: e.g. PMID:11111
+    validations:
+      required: false
+
+  - type: textarea
+    id: comments
+    attributes:
+      label: Additional comments
+      description: Any additional context, clinical information, or notes.
+    validations:
+      required: false
