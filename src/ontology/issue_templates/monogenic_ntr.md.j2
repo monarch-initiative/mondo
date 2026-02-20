@@ -1,0 +1,187 @@
+{# Template: monogenic_ntr.md.j2
+   ClinGen new gene-disease term request.
+
+   Render with Jinja2 and POST the result as a GitHub issue body.
+   The markdown section is human-readable; the YAML section is machine-parseable.
+
+   Required variables:
+     submitters        - list of ORCID or ClinGen affiliation URLs
+     gene_name         - HGNC gene symbol (e.g. "FZD4")
+     hgnc_id           - HGNC numeric ID (e.g. "4042")
+     gene_disease_refs - list of references (e.g. ["PMID:12345"])
+     parents           - list of dicts with keys: label, id, ref (ref optional)
+     term_label        - preferred label for the new term
+
+   Optional variables:
+     synonyms          - list of synonym strings
+     label_refs        - list of references for label/synonyms
+     definition        - definition text
+     definition_refs   - list of references for definition
+     xrefs             - list of cross-references (e.g. ["OMIM:133780"])
+     children          - list of dicts with keys: label, id, ref (ref optional)
+     comments          - free-text additional comments
+
+   Suggested issue title: "[ClinGen NTR] {gene_name}-related {disease}"
+   Suggested issue labels: ["ClinGen", "New term request"]
+
+Use this form to request a new gene-related disease term for Mondo on behalf of a ClinGen gene curation group.
+
+Mondo follows the naming pattern: `{GENE}-related {disease description}`.
+The default definition pattern is: *"Any {parent disease} in which the cause of the disease is a variation in the gene {GENE}."*
+
+#}
+
+---
+
+### Submitter information
+
+**Submitter ORCID(s) or ClinGen affiliation URL(s):**
+{% for s in submitters %}
+- {{ s }}
+{%- endfor %}
+
+---
+
+### Gene information
+
+| Field | Value |
+|---|---|
+| **Causal gene name** | {{ gene_name }} |
+| **Causal gene HGNC ID** | {{ hgnc_id }} |
+
+**Reference(s) for gene-disease association:**
+{% for r in gene_disease_refs %}
+- {{ r }}
+{%- endfor %}
+
+---
+
+### Classification (parent terms)
+
+{% for parent in parents %}
+**Parent term {{ loop.index }}{% if not loop.first %} (optional){% endif %}**
+
+| Field | Value |
+|---|---|
+| **Label** | {{ parent.label }} |
+| **Mondo ID** | {{ parent.id }} |
+{% if parent.ref is defined and parent.ref -%}
+| **Reference** | {{ parent.ref }} |
+{% endif %}
+{% endfor %}
+
+---
+
+### Term label and synonyms
+
+| Field | Value |
+|---|---|
+| **Preferred term label** | {{ term_label }} |
+{% if synonyms is defined and synonyms -%}
+| **Synonyms** | {{ synonyms | join(", ") }} |
+{% endif %}
+
+{% if label_refs is defined and label_refs -%}
+**Reference(s) for label/synonyms:**
+{% for r in label_refs %}
+- {{ r }}
+{%- endfor %}
+{% endif %}
+
+---
+
+### Definition
+
+{% if definition is defined and definition -%}
+{{ definition }}
+{% else -%}
+_No definition provided._
+{% endif %}
+
+{% if definition_refs is defined and definition_refs -%}
+**Reference(s) for definition:**
+{% for r in definition_refs %}
+- {{ r }}
+{%- endfor %}
+{% endif %}
+
+---
+
+### Cross-references
+
+{% if xrefs is defined and xrefs -%}
+{% for x in xrefs %}
+- {{ x }}
+{%- endfor %}
+{% else -%}
+_No cross-references provided._
+{% endif %}
+
+---
+
+### Child terms (subclasses)
+
+{% if children is defined and children -%}
+{% for child in children %}
+**Child term {{ loop.index }}**
+
+| Field | Value |
+|---|---|
+| **Label** | {{ child.label }} |
+| **Mondo ID** | {{ child.id }} |
+{% if child.ref is defined and child.ref -%}
+| **Reference** | {{ child.ref }} |
+{% endif %}
+{% endfor %}
+{% else -%}
+_No child terms specified._
+{% endif %}
+
+---
+
+{% if comments is defined and comments -%}
+### Additional comments
+
+{{ comments }}
+
+---
+
+{% endif -%}
+
+<details>
+<summary>YAML</summary>
+
+```yaml
+name: "ClinGen new gene-disease term request"
+labels:
+  - ClinGen
+  - New term request
+data:
+  submitters:{% for s in submitters %}
+    - "{{ s }}"{% endfor %}
+  gene_name: "{{ gene_name }}"
+  hgnc_id: "{{ hgnc_id }}"
+  gene_disease_refs:{% for r in gene_disease_refs %}
+    - "{{ r }}"{% endfor %}
+  parents:{% for parent in parents %}
+    - label: "{{ parent.label }}"
+      id: "{{ parent.id }}"{% if parent.ref is defined and parent.ref %}
+      ref: "{{ parent.ref }}"{% endif %}{% endfor %}
+  term_label: "{{ term_label }}"{% if synonyms is defined and synonyms %}
+  synonyms:{% for s in synonyms %}
+    - "{{ s }}"{% endfor %}{% endif %}{% if label_refs is defined and label_refs %}
+  label_refs:{% for r in label_refs %}
+    - "{{ r }}"{% endfor %}{% endif %}{% if definition is defined and definition %}
+  definition: "{{ definition | replace('"', '\\"') }}"{% endif %}{% if definition_refs is defined and definition_refs %}
+  definition_refs:{% for r in definition_refs %}
+    - "{{ r }}"{% endfor %}{% endif %}{% if xrefs is defined and xrefs %}
+  xrefs:{% for x in xrefs %}
+    - "{{ x }}"{% endfor %}{% endif %}{% if children is defined and children %}
+  children:{% for child in children %}
+    - label: "{{ child.label }}"
+      id: "{{ child.id }}"{% if child.ref is defined and child.ref %}
+      ref: "{{ child.ref }}"{% endif %}{% endfor %}{% endif %}{% if comments is defined and comments %}
+  comments: "{{ comments | replace('"', '\\"') | replace('\n', '\\n') }}"{% endif %}
+```
+
+</details>
