@@ -30,17 +30,38 @@ Mondo follows the naming pattern: `{GENE}-related {disease description}`.
 The default definition pattern is: *"Any {parent disease} in which the cause of the disease is a variation in the gene {GENE}."*
 
 #}
+This is a request for a new term, {{ term_label }}, by the ClinGen team.
 
----
+### Term label and synonyms
 
-### Submitter information
+| Field | Value |
+|---|---|
+| **Preferred term label** | {{ term_label }} |
+{% if synonyms is defined and synonyms -%}
+| **Synonyms** | {{ synonyms | join(", ") }} |
+{% endif -%}
 
-**Submitter ORCID(s) or ClinGen affiliation URL(s):**
-{% for s in submitters %}
-- {{ s }}
+{%- if label_refs is defined and label_refs -%}
+**Reference(s) for label/synonyms:**
+{% for r in label_refs %}
+- {{ r }}
 {%- endfor %}
+{%- endif %}
 
----
+### Definition
+
+{% if definition is defined and definition -%}
+{{ definition }}
+{% else -%}
+_No definition provided._
+{% endif -%}
+
+{% if definition_refs is defined and definition_refs -%}
+**Reference(s) for definition:**
+{% for r in definition_refs %}
+- {{ r }}
+{%- endfor %}
+{%- endif %}
 
 ### Gene information
 
@@ -54,8 +75,6 @@ The default definition pattern is: *"Any {parent disease} in which the cause of 
 - {{ r }}
 {%- endfor %}
 
----
-
 ### Classification (parent terms)
 
 {% for parent in parents %}
@@ -67,57 +86,8 @@ The default definition pattern is: *"Any {parent disease} in which the cause of 
 | **Mondo ID** | {{ parent.id }} |
 {% if parent.ref is defined and parent.ref -%}
 | **Reference** | {{ parent.ref }} |
-{% endif %}
-{% endfor %}
-
----
-
-### Term label and synonyms
-
-| Field | Value |
-|---|---|
-| **Preferred term label** | {{ term_label }} |
-{% if synonyms is defined and synonyms -%}
-| **Synonyms** | {{ synonyms | join(", ") }} |
-{% endif %}
-
-{% if label_refs is defined and label_refs -%}
-**Reference(s) for label/synonyms:**
-{% for r in label_refs %}
-- {{ r }}
+{%- endif %}
 {%- endfor %}
-{% endif %}
-
----
-
-### Definition
-
-{% if definition is defined and definition -%}
-{{ definition }}
-{% else -%}
-_No definition provided._
-{% endif %}
-
-{% if definition_refs is defined and definition_refs -%}
-**Reference(s) for definition:**
-{% for r in definition_refs %}
-- {{ r }}
-{%- endfor %}
-{% endif %}
-
----
-
-### Cross-references
-
-{% if xrefs is defined and xrefs -%}
-{% for x in xrefs %}
-- {{ x }}
-{%- endfor %}
-{% else -%}
-_No cross-references provided._
-{% endif %}
-
----
 
 ### Child terms (subclasses)
 
@@ -131,18 +101,33 @@ _No cross-references provided._
 | **Mondo ID** | {{ child.id }} |
 {% if child.ref is defined and child.ref -%}
 | **Reference** | {{ child.ref }} |
-{% endif %}
-{% endfor %}
+{%- endif %}
+{%- endfor %}
 {% else -%}
 _No child terms specified._
-{% endif %}
+{%- endif %}
 
----
+### Cross-references
+
+{% if xrefs is defined and xrefs -%}
+{% for x in xrefs %}
+- {{ x }}
+{%- endfor %}
+{% else -%}
+_No cross-references provided._
+{%- endif %}
 
 {% if comments is defined and comments -%}
 ### Additional comments
 
 {{ comments }}
+
+### Submitter information
+
+**Submitter ORCID(s) or ClinGen affiliation URL(s):**
+{% for s in submitters %}
+- {{ s }}
+{%- endfor %}
 
 ---
 
