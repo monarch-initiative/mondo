@@ -1192,6 +1192,7 @@ $(TMPDIR)/mondo-with-object-labels.sssom.tsv: $(TMPDIR)/mondo-extracted.sssom.ts
 
 $(TMPDIR)/split_finished: $(TMPDIR)/mondo-with-object-labels.sssom.tsv
 	python ../scripts/split_sssom_by_source.py -s $< -m $(METADATADIR)/mondo.sssom.config.yml -o $(MAPPINGSDIR)/
+	touch $@
 
 .PHONY: split_mondo_mappings
 split_mondo_mappings: $(TMPDIR)/split_finished
@@ -1633,7 +1634,7 @@ TRANSLATE_PREDICATES=rdfs:label
 .PHONY: update-mondo-japanese-translation
 update-mondo-japanese-translation:
 	@echo "DOWNLOADING JAPANESE TRANSLATION IS SKIPPED"
-	wget "https://raw.githubusercontent.com/dbcls/mondo-japanese/refs/heads/main/babelon/mondo-jp.babelon.tsv" -O $@
+	wget "https://raw.githubusercontent.com/dbcls/mondo-japanese/refs/heads/main/babelon/mondo-jp.babelon.tsv" -O ../translations/mondo-jp.babelon.tsv
 
 validate-%: $(TRANSLATIONSDIR)/%.babelon.tsv
 	@output=$$(tsvalid $(TRANSLATIONSDIR)/$*.babelon.tsv --skip "W1" --skip "E1"); \
