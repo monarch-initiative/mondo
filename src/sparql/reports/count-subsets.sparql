@@ -10,9 +10,10 @@ SELECT ?subset ?deprecated (COUNT(DISTINCT ?cls) as ?ct)
 WHERE
 {
     
-  VALUES ?subset { 
-    <http://purl.obolibrary.org/obo/mondo#gard_rare> 
-    <http://purl.obolibrary.org/obo/mondo#mondo_rare> 
+  VALUES ?subset {
+    <http://purl.obolibrary.org/obo/mondo#gard_rare>
+    <http://purl.obolibrary.org/obo/mondo#mondo_rare>
+    <http://purl.obolibrary.org/obo/mondo#ncit_rare>
     <http://purl.obolibrary.org/obo/mondo#inferred_rare>
     <http://purl.obolibrary.org/obo/mondo#orphanet_rare>
     <http://purl.obolibrary.org/obo/mondo#nord_rare>

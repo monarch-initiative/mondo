@@ -632,6 +632,7 @@ update-external-content-incl-rare:
 	$(MAKE) update-orphanet-rare -B
 	$(MAKE) update-gard -B
 	$(MAKE) update-nord -B
+	$(MAKE) update-ncit-rare -B
 	$(MAKE) update-inferred-subset -B
 	$(MAKE) update-rare-subset -B
 	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-after.tsv
