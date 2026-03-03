@@ -66,7 +66,7 @@ ADDTOTBD=../scripts/add-to-tbd.pl
 # Top-level targets
 # ----------------------------------------
 .PHONY: .FORCE
-all: test all_artefacts mappings
+all: test all_artefacts mappings all_release_reports
 	echo "release finished"
 
 # ----------------------------------------
