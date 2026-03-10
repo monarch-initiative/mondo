@@ -12,11 +12,11 @@ SELECT DISTINCT ?entity ?xref WHERE {
         owl:annotatedProperty oboInOwl:hasDbXref ;
         owl:annotatedTarget ?xref ;
         oboInOwl:source ?source .
-   	    FILTER (strstarts(str(?source), "MONDO:"))
+   	    FILTER ((str(?source)="MONDO:obsoleteEquivalent") || (str(?source)="MONDO:equivalentObsolete") || (str(?source)="MONDO:obsoleteEquivalentObsolete") || (str(?source)="MONDO:equivalentTo") || (str(?source)="MONDO:relatedTo") || (str(?source)="MONDO:mondoIsNarrowerThanSource") || (str(?source)="MONDO:mondoIsBroaderThanSource") || (str(?source)="MONDO:includedEntryInOMIM") || (str(?source)="MONDO:directSiblingOf"))
     }
     # 20.06.2024: had to remove Orphanet and NCIT as they actually had too many errors
     # strstarts(str(?xref), "Orphanet:") || strstarts(str(?xref), "ORDO:") || strstarts(str(?xref), "NCIT:")
-    FILTER (strstarts(str(?xref), "OMIM:") || strstarts(str(?xref), "OMIMPS:") || strstarts(str(?xref), "DOID:") || strstarts(str(?xref), "OMIA:"))
+    FILTER (strstarts(str(?xref), "OMIM:") || strstarts(str(?xref), "OMIMPS:") || strstarts(str(?xref), "DOID:") || strstarts(str(?xref), "Orphanet:") || strstarts(str(?xref), "OMIA:"))
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
 }
 ORDER BY ?entity
