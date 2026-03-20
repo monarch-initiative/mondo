@@ -10,7 +10,7 @@ SELECT ?mondo_curie ?label ?deprecated
        (IF(BOUND(?subset_gard_rare), "yes", "no") AS ?gard)
        (IF(BOUND(?subset_orphanet_rare), "yes", "no") AS ?orphanet)
        (IF(BOUND(?subset_nord_rare), "yes", "no") AS ?nord)
-       (IF(BOUND(?subset_mondo_rare), "yes", "no") AS ?mondo_rare)
+       (IF(BOUND(?subset_mondo_curated_rare), "yes", "no") AS ?mondo_curated_rare)
        (IF(BOUND(?subset_clingen), "yes", "no") AS ?clingen)
 	   (IF(BOUND(?subset_disease_grouping), "yes", "no") AS ?general_grouping)
        (IF(BOUND(?subset_rare_grouping), "yes", "no") AS ?rare_grouping)
@@ -667,7 +667,7 @@ WHERE {
       <http://purl.obolibrary.org/obo/mondo#gard_rare>
       <http://purl.obolibrary.org/obo/mondo#orphanet_rare>
       <http://purl.obolibrary.org/obo/mondo#nord_rare>
-      <http://purl.obolibrary.org/obo/mondo#mondo_rare>
+      <http://purl.obolibrary.org/obo/mondo#mondo_curated_rare>
      }
     ?mondo_id rdfs:subClassOf* ?ancestor . ?ancestor rdfs:label ?ancestor_label . ?ancestor oio:inSubset ?rare_ancestor_subset . 
     FILTER(STRSTARTS(str(?ancestor), "http://purl.obolibrary.org/obo/MONDO_")) }
@@ -675,7 +675,7 @@ WHERE {
   OPTIONAL { ?mondo_id oio:inSubset ?subset_rare . FILTER(STR(?subset_rare) = "http://purl.obolibrary.org/obo/mondo#rare") }
   OPTIONAL { ?mondo_id oio:inSubset ?subset_gard_rare . FILTER(STR(?subset_gard_rare) = "http://purl.obolibrary.org/obo/mondo#gard_rare") }
   OPTIONAL { ?mondo_id oio:inSubset ?subset_orphanet_rare . FILTER(STR(?subset_orphanet_rare) = "http://purl.obolibrary.org/obo/mondo#orphanet_rare") }
-  OPTIONAL { ?mondo_id oio:inSubset ?subset_mondo_rare . FILTER(STR(?subset_mondo_rare) = "http://purl.obolibrary.org/obo/mondo#mondo_rare") }
+  OPTIONAL { ?mondo_id oio:inSubset ?subset_mondo_curated_rare . FILTER(STR(?subset_mondo_curated_rare) = "http://purl.obolibrary.org/obo/mondo#mondo_curated_rare") }
   OPTIONAL { ?mondo_id oio:inSubset ?subset_nord_rare . FILTER(STR(?subset_nord_rare) = "http://purl.obolibrary.org/obo/mondo#nord_rare") }
   OPTIONAL { ?mondo_id oio:inSubset ?subset_disease_grouping . FILTER(STR(?subset_disease_grouping) = "http://purl.obolibrary.org/obo/mondo#disease_grouping") }
   OPTIONAL { ?mondo_id oio:inSubset ?subset_inferred_rare . FILTER(STR(?subset_inferred_rare) = "http://purl.obolibrary.org/obo/mondo#inferred_rare") }
@@ -693,7 +693,7 @@ WHERE {
 ?gard 
 ?orphanet 
 ?nord 
-?mondo_rare
+?mondo_curated_rare
 ?clingen 
 ?general_grouping ?rare_grouping ?inferred_rare ?obsoletion_candidate ?ordo_disorder_subtype ?ordo_group_of_disorders ?ordo_disorder
 ?subset_rare
@@ -708,4 +708,4 @@ WHERE {
 ?subset_ordo_clinical_subtype
 ?subset_ordo_group_of_disorders
 ?subset_ordo_disorder
-?subset_mondo_rare
+?subset_mondo_curated_rare

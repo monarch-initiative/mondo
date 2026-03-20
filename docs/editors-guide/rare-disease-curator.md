@@ -22,11 +22,11 @@ Until we have set a process with the sources to maintain this list automatically
 Note: rare diseases from Orphanet are maintained by a completely automated process. If an update is needed, please create a GitHub issue for the technical team.
 
 **2. Manually curated rare diseases.**
-These terms have an `in_subset` annotation `mondo_rare`, and should be added manually when they are reported in the literature as 'rare', but they are not reported in the rare disease authorities' list.
+These terms have an `in_subset` annotation `mondo_curated_rare`, and should be added manually when they are reported in the literature as 'rare', but they are not reported in the rare disease authorities' list.
 
 1. In Protege, go to the Mondo term, and add the following annotation:
    - Annotation property: in_subset
-   - Entity IRI: mondo_rare (note that this term is “subset_property” annotation property branch)
+   - Entity IRI: mondo_curated_rare (note that this term is “subset_property” annotation property branch)
 ![Screenshot 2023-08-07 at 2 24 46 PM](https://github.com/monarch-initiative/mondo/assets/12737987/18731ad9-3154-49fc-882c-0db4352a0c54)
 2. Add sources for this annotation (it is important to document how a term was determined as rare). Sources MUST include
    - Curator ORCID
@@ -40,7 +40,7 @@ This subset should **NOT** be manually curated.
 
 #### Note about rare disease subset during term obsoletion/merging.
 Specific rules exist surrounding obsoletion and merging of terms that are in the rare disease subset (see [here](https://mondo.readthedocs.io/en/latest/editors-guide/rare-disease-subset/) and below).
-Since rare disease subsets (except for the mondo_rare subset) are maintained automatically or semi-automatically, obsoleting/merging terms from the rare disease subset should be done with extreme caution.
+Since rare disease subsets (except for the mondo_curated_rare subset) are maintained automatically or semi-automatically, obsoleting/merging terms from the rare disease subset should be done with extreme caution.
 When obsoleting a term that has "rare" subset annotations, the "rare" subset annotations should be maintained on the obsoleted term.
 _(this section will be updated once clear SOPs are created)_
 
