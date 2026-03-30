@@ -24,7 +24,7 @@ SELECT DISTINCT ?entity ?property ?value WHERE
     <http://purl.obolibrary.org/obo/mondo#orphanet_rare>
     <http://purl.obolibrary.org/obo/mondo#gard_rare>
     <http://purl.obolibrary.org/obo/mondo#inferred_rare>
-    <http://purl.obolibrary.org/obo/mondo#mondo_rare>
+    <http://purl.obolibrary.org/obo/mondo#mondo_curated_rare>
   }
   VALUES ?property { 
     <http://www.geneontology.org/formats/oboInOwl#inSubset>

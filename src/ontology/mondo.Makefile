@@ -589,6 +589,7 @@ update-rare-disease-subset:
 	$(MAKE) update-orphanet-rare -B
 	$(MAKE) update-gard -B
 	$(MAKE) update-nord -B
+	$(MAKE) update-doid-rare -B
 	$(MAKE) update-ncit-rare -B
 	$(MAKE) update-inferred-subset -B
 	$(MAKE) update-rare-subset -B
@@ -605,6 +606,10 @@ update-external-content:
 	$(MAKE) update-clingen -B
 	$(MAKE) update-ordo-subsets -B
 	$(MAKE) update-omim-subsets -B
+	$(MAKE) update-omim-subset -B
+	$(MAKE) update-doid-subset -B
+	$(MAKE) update-orphanet-subset -B
+	$(MAKE) update-ncit-subset -B
 	$(MAKE) update-nando -B
 	$(MAKE) update-medgen -B
 	$(MAKE) update-malacards -B
@@ -627,11 +632,17 @@ update-external-content-incl-rare:
 	$(MAKE) update-clingen -B
 	$(MAKE) update-ordo-subsets -B
 	$(MAKE) update-omim-subsets -B
+	$(MAKE) update-omim-subset -B
+	$(MAKE) update-doid-subset -B
+	$(MAKE) update-orphanet-subset -B
+	$(MAKE) update-ncit-subset -B
 	$(MAKE) update-nando -B
 	$(MAKE) update-medgen -B
 	$(MAKE) update-orphanet-rare -B
 	$(MAKE) update-gard -B
 	$(MAKE) update-nord -B
+	$(MAKE) update-doid-rare -B
+	$(MAKE) update-ncit-rare -B
 	$(MAKE) update-inferred-subset -B
 	$(MAKE) update-rare-subset -B
 	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-after.tsv
@@ -654,6 +665,15 @@ update-ncit-rare:
 	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-ncit-rare.robot.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
+##### DOID Rare ################
+
+.PHONY: update-doid-rare
+update-doid-rare:
+	$(MAKE) $(TMPDIR)/external/processed-doid-rare.robot.owl -B
+	grep -vE '^(subset: doid_rare)' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
+	mv $(TMPDIR)/mondo-edit.tmp mondo-edit.obo
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-doid-rare.robot.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
 ##### Orphanet Rare ################
 
@@ -780,10 +800,50 @@ update-omim-subsets:
 	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-mondo-omim-susceptibility-subset.robot.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
+$(TMPDIR)/omim-subset.owl: $(SRC)
+	$(ROBOT) merge -i $(SRC) \
+		query --format ttl --query ../sparql/construct/construct-omim-subset.sparql $@
+
+.PHONY: update-omim-subset
+update-omim-subset:
+	$(MAKE) $(TMPDIR)/omim-subset.owl -B
+	grep -vE '^(subset: omim)$$' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
+	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/omim-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+
+####################################
+##### DOID #########################
+####################################
+
+$(TMPDIR)/doid-subset.owl: $(SRC)
+	$(ROBOT) merge -i $(SRC) \
+		query --format ttl --query ../sparql/construct/construct-doid-subset.sparql $@
+
+.PHONY: update-doid-subset
+update-doid-subset:
+	$(MAKE) $(TMPDIR)/doid-subset.owl -B
+	grep -vE '^(subset: doid)$$' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
+	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/doid-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
 ####################################
 ##### Orphanet #####################
 ####################################
+
+$(TMPDIR)/orphanet-subset.owl: $(SRC)
+	$(ROBOT) merge -i $(SRC) \
+		query --format ttl --query ../sparql/construct/construct-orphanet-subset.sparql $@
+
+.PHONY: update-orphanet-subset
+update-orphanet-subset:
+	$(MAKE) $(TMPDIR)/orphanet-subset.owl -B
+	grep -vE '^(subset: orphanet)$$' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
+	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/orphanet-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
 .PHONY: update-ordo-subsets
 update-ordo-subsets:
@@ -793,6 +853,22 @@ update-ordo-subsets:
 	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-ordo-subsets.robot.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 	
+####################################
+##### NCIT #########################
+####################################
+
+$(TMPDIR)/ncit-subset.owl: $(SRC)
+	$(ROBOT) merge -i $(SRC) \
+		query --format ttl --query ../sparql/construct/construct-ncit-subset.sparql $@
+
+.PHONY: update-ncit-subset
+update-ncit-subset:
+	$(MAKE) $(TMPDIR)/ncit-subset.owl -B
+	grep -vE '^(subset: ncit)$$' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
+	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/ncit-subset.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
 ####################################
 ##### MalaCards #####################
 ####################################
