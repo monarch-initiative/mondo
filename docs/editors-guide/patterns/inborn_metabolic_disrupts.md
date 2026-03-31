@@ -21,7 +21,7 @@ inborn disorder of {[process](http://www.w3.org/2002/07/owl#Thing)}
 
 ## Definition 
 
-An acquired metabolic disease that is has its basis in the disruption of {[process](http://www.w3.org/2002/07/owl#Thing)}.
+An inherited metabolic disease that has its basis in the disruption of {[process](http://www.w3.org/2002/07/owl#Thing)}.
 
 ## Equivalent to 
 
