@@ -1,26 +1,34 @@
 name: Normalize mondo-edit.obo
 
 on:
-  # Trigger on pushes that modify mondo-edit.obo
   push:
     paths:
       - 'src/ontology/mondo-edit.obo'
     branches:
-      - '**'  # Run on all branches
+      - '**'
 
-  # Allow manual triggering
   workflow_dispatch:
+
+concurrency:
+  group: normalize-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   normalize:
+    # Skip automated normalization on the default branch —
+    # those commits should arrive via PR.
+    if: github.ref != 'refs/heads/master'
     runs-on: ubuntu-latest
     container: obolibrary/odkfull:v1.6
+    outputs:
+      changed: ${{ steps.check_changes.outputs.changed }}
+      normalize_sha: ${{ steps.push_changes.outputs.normalize_sha }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 2
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configure git
@@ -46,6 +54,7 @@ jobs:
           fi
 
       - name: Commit and push changes
+        id: push_changes
         if: steps.check_changes.outputs.changed == 'true'
         run: |
           git add src/ontology/mondo-edit.obo
@@ -54,3 +63,30 @@ jobs:
           Automated normalization via GitHub Actions"
           git pull --rebase
           git push
+          echo "normalize_sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+
+  # Run QC after normalization push, since GITHUB_TOKEN pushes
+  # do not trigger other workflows (like CI). Without this,
+  # a normalize commit could make the PR appear mergeable
+  # even when QC checks would fail on the normalized content.
+  ontology_qc:
+    needs: normalize
+    if: needs.normalize.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.6
+
+    steps:
+      - name: Checkout normalized commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.normalize.outputs.normalize_sha }}
+          fetch-depth: 1
+
+      - name: Configure git
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Run ontology QC checks
+        env:
+          DEFAULT_BRANCH: master
+        run: cd src/ontology; make GITHUB_ACTION=true IMP=false PAT=false test -B
