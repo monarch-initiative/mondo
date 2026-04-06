@@ -1,0 +1,33 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+CONSTRUCT {
+  ?cls <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/mondo#omim> .
+  [] rdf:type owl:Axiom ;
+           owl:annotatedSource ?cls ;
+           owl:annotatedProperty <http://www.geneontology.org/formats/oboInOwl#inSubset> ;
+           owl:annotatedTarget <http://purl.obolibrary.org/obo/mondo#omim> ;
+           oboInOwl:source ?xref .
+}
+
+WHERE
+{
+  ?cls a owl:Class .
+  ?cls <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?xref .
+
+  FILTER(STRSTARTS(STR(?xref), "OMIM:") || STRSTARTS(STR(?xref), "OMIMPS:"))
+
+  ?a <http://www.w3.org/2002/07/owl#annotatedSource> ?cls .
+  ?a <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> .
+  ?a <http://www.w3.org/2002/07/owl#annotatedTarget> ?xref .
+  ?a <http://www.geneontology.org/formats/oboInOwl#source> "MONDO:equivalentTo" .
+
+  FILTER NOT EXISTS {
+    ?cls owl:deprecated "true"^^xsd:boolean
+  }
+  FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+}

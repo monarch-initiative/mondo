@@ -16,7 +16,7 @@ Example: 'calciphylaxis' (MONDO:0017215) is considered "rare" according to NORD,
 
 
 **2. manual curation**
-In some occasional cases, some diseases are reported in the literature as 'rare', though they are not reported in the rare disease authorities' list. In these cases, we record the disease as rare by manually adding the "mondo_rare" subset annotation to the term. These manually curated annotations must be supported by the literature. This new rare disease is reported to the rare disease authorities. 
+In some occasional cases, some diseases are reported in the literature as 'rare', though they are not reported in the rare disease authorities' list. In these cases, we record the disease as rare by manually adding the "mondo_curated_rare" subset annotation to the term. These manually curated annotations must be supported by the literature. This new rare disease is reported to the rare disease authorities. 
 
 **3. ontology inference**
 Ontological parents pass their characteristics (here: axioms) to their children. We leverage this ontological property for rare diseases: ontological children of a term that is considered "rare" according to the rules above are getting the "inferred_rare" subset annotation.
@@ -28,7 +28,7 @@ The Mondo rare disease subset represents the UNION of rare diseases according to
 Rare disease terms in Mondo are annotated with `in_subset: rare` (see arrowhead in image above), and include
 
 - terms with the annotation in_subset ‘X_rare’ (which includes ALL the rare disease authorities represented in Mondo)
-- terms with the annotation in_subset ‘mondo_rare’ (representing the manually curated rare diseases)
+- terms with the annotation in_subset ‘mondo_curated_rare’ (representing the manually curated rare diseases)
 - terms with the annotation in_subset 'inferred_rare' (representing the diseases  ontologically inferred as rare based on their parents)
 
 Users should decide which subset they want to use for their applications. They can do so by filtering the rare disease subset by any of the 'in_subset' annotations. 
