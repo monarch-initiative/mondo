@@ -6,7 +6,9 @@ This is a request for a new term, RNU12-related minor spliceopathy disorder, by 
 | Field | Value |
 |---|---|
 | **Preferred term label** | RNU12-related minor spliceopathy disorder |
-| **Synonyms** | craniosynostosis-anal anomalies-porokeratosis syndrome, CDAGS syndrome, spinocerebellar ataxia, autosomal recessive 33 |
+| **Synonym 1** | craniosynostosis-anal anomalies-porokeratosis syndrome (EXACT) |
+| **Synonym 2** | CDAGS syndrome (EXACT, ABBREVIATION) |
+| **Synonym 3** | spinocerebellar ataxia, autosomal recessive 33 (EXACT) |
 
 
 ### Definition
@@ -92,9 +94,13 @@ data:
       id: "MONDO:0002254"
   term_label: "RNU12-related minor spliceopathy disorder"
   synonyms:
-    - "craniosynostosis-anal anomalies-porokeratosis syndrome"
-    - "CDAGS syndrome"
-    - "spinocerebellar ataxia, autosomal recessive 33"
+    - value: "craniosynostosis-anal anomalies-porokeratosis syndrome"
+      synonym_precision: "EXACT"
+    - value: "CDAGS syndrome"
+      synonym_precision: "EXACT"
+      synonym_type: "ABBREVIATION"
+    - value: "spinocerebellar ataxia, autosomal recessive 33"
+      synonym_precision: "EXACT"
   definition: "Abnormal splicing of pre-mRNA caused by variants in the RNU12 gene. This term captures the disease spectrum. The term includes craniosynostosis-anal anomalies-porokeratosis, also known as CDAGS syndrome, and spinocerebellar ataxia, autosomal recessive 33."
   definition_refs:
     - "PMID:39802771"

@@ -13,7 +13,10 @@
      term_label        - preferred label for the new term
 
    Optional variables:
-     synonyms          - list of synonym strings
+     synonyms          - list of synonym objects with keys:
+                           value (required) - the synonym string
+                           synonym_precision (required) - EXACT, BROAD, or NARROW
+                           synonym_type (optional) - ABBREVIATION or LAYPERSON
      label_refs        - list of references for label/synonyms
      definition        - definition text
      definition_refs   - list of references for definition
@@ -38,7 +41,17 @@ This is a request for a new term, {{ term_label }}, by the ClinGen team.
 |---|---|
 | **Preferred term label** | {{ term_label }} |
 {% if synonyms is defined and synonyms -%}
-| **Synonyms** | {{ synonyms | join(", ") }} |
+{% for s in synonyms -%}
+{% if not s.value or not s.synonym_precision -%}
+| **Synonym {{ loop.index }}** | **ERROR: synonym must have non-empty value and synonym_precision** |
+{% elif s.synonym_precision not in ["EXACT", "BROAD", "NARROW"] -%}
+| **Synonym {{ loop.index }}** | **ERROR: invalid synonym_precision "{{ s.synonym_precision }}" (must be EXACT, BROAD, or NARROW)** |
+{% elif s.synonym_type is defined and s.synonym_type and s.synonym_type not in ["ABBREVIATION", "LAYPERSON"] -%}
+| **Synonym {{ loop.index }}** | **ERROR: invalid synonym_type "{{ s.synonym_type }}" (must be ABBREVIATION or LAYPERSON)** |
+{% else -%}
+| **Synonym {{ loop.index }}** | {{ s.value }} ({{ s.synonym_precision }}{% if s.synonym_type is defined and s.synonym_type %}, {{ s.synonym_type }}{% endif %}) |
+{% endif -%}
+{% endfor -%}
 {% endif -%}
 
 {%- if label_refs is defined and label_refs -%}
@@ -54,7 +67,7 @@ This is a request for a new term, {{ term_label }}, by the ClinGen team.
 {{ definition }}
 {% else -%}
 _No definition provided._
-{% endif -%}
+{% endif %}
 
 {% if definition_refs is defined and definition_refs -%}
 **Reference(s) for definition:**
@@ -154,7 +167,9 @@ data:
       ref: "{{ parent.ref }}"{% endif %}{% endfor %}
   term_label: "{{ term_label }}"{% if synonyms is defined and synonyms %}
   synonyms:{% for s in synonyms %}
-    - "{{ s }}"{% endfor %}{% endif %}{% if label_refs is defined and label_refs %}
+    - value: "{{ s.value }}"
+      synonym_precision: "{{ s.synonym_precision }}"{% if s.synonym_type is defined and s.synonym_type %}
+      synonym_type: "{{ s.synonym_type }}"{% endif %}{% endfor %}{% endif %}{% if label_refs is defined and label_refs %}
   label_refs:{% for r in label_refs %}
     - "{{ r }}"{% endfor %}{% endif %}{% if definition is defined and definition %}
   definition: "{{ definition | replace('"', '\\"') }}"{% endif %}{% if definition_refs is defined and definition_refs %}
