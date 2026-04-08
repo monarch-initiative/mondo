@@ -105,7 +105,12 @@ Statistics related to each release are recorded on the main Mondo website and on
 1. Update [this spreadsheet](https://docs.google.com/spreadsheets/d/1TGD1ta2RyoLMvAne1dp-b3LTj6b5Y_jTvsz04HPHmEk/edit?gid=1836451386#gid=1836451386) with the information from the "release_announcement_*.md" file (see "Generate the release description" section) and from the statistic report above.
 
 ### update the Mondo website with the latest statistics 
-1. _(to be updated)_
+
+This must be done AFTER the release is completed!
+
+1. Go [here](https://github.com/monarch-initiative/mondo/actions/workflows/update-stats-mondo-web.yaml)
+2. Hit "Run workflow" (from `master`)
+3. Wait until PR is created, sanity check, merge
 
 
 # Announcement 
