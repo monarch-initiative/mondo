@@ -466,6 +466,7 @@ WHERE
       "SCDO",
       "SCTID",
       "UMLS",
+      "VeNom",
       "Wikidata",
       "Wikipedia"
       )
@@ -545,6 +546,7 @@ WHERE
       "SCDO",
       "SCTID",
       "UMLS",
+      "VeNom",
       "Wikipedia"
     ))
   FILTER( !isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
