@@ -1,0 +1,22 @@
+name: Ontology QC
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  ontology_qc:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.6
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Run ontology QC checks
+        env:
+          DEFAULT_BRANCH: master
+        run: |
+          cd src/ontology
+          make GITHUB_ACTION=true IMP=false PAT=false test -B
