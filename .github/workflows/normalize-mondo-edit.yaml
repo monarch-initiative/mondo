@@ -19,46 +19,26 @@ jobs:
       pushed: ${{ steps.push.outputs.pushed }}
 
     steps:
-      - name: Check out trusted default branch
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.repository.default_branch }}
-          path: trusted
-          fetch-depth: 1
-
-      # Sparse checkout: only pull src/ontology/mondo-edit.obo from the PR branch
-      - name: Check out mondo-edit.obo from PR
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: ${{ inputs.pr_branch }}
-          path: pr
           fetch-depth: 1
           token: ${{ github.token }}
-          sparse-checkout: |
-            src/ontology/mondo-edit.obo
-          sparse-checkout-cone-mode: false
 
       - name: Configure git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global --add safe.directory "$GITHUB_WORKSPACE/trusted"
-          git config --global --add safe.directory "$GITHUB_WORKSPACE/pr"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
-      # Run normalization using code from the default branch (trusted), not
-      # the PR branch, to avoid executing potentially modified arbitrary code
-      # in Makefiles or scripts
-      - name: Normalize PR file using trusted code
+      - name: Normalize PR file
         run: |
-          cp pr/src/ontology/mondo-edit.obo trusted/src/ontology/mondo-edit.obo
-          cd trusted/src/ontology
+          cd src/ontology
           make NORM && mv NORM mondo-edit.obo
-          cp mondo-edit.obo "$GITHUB_WORKSPACE/pr/src/ontology/mondo-edit.obo"
 
       - name: Commit and push if changed
         id: push
         run: |
-          cd "$GITHUB_WORKSPACE/pr"
           if git diff --quiet -- src/ontology/mondo-edit.obo; then
             echo "pushed=false" >> "$GITHUB_OUTPUT"
           else
@@ -67,3 +47,9 @@ jobs:
             git push origin "HEAD:${{ inputs.pr_branch }}"
             echo "pushed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Run QC if normalization produced changes
+        if: ${{ steps.push.outputs.pushed == 'true' }}
+        run: |
+          cd src/ontology
+          make GITHUB_ACTION=true IMP=false PAT=false test -B
