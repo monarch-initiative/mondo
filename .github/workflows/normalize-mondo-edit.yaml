@@ -6,6 +6,9 @@ on:
       pr_branch:
         required: true
         type: string
+      same_repo:
+        required: true
+        type: boolean
     outputs:
       pushed:
         description: "Whether normalization pushed a new commit"
@@ -26,6 +29,7 @@ jobs:
           token: ${{ github.token }}
 
       - name: Configure git
+        if: ${{ inputs.same_repo }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -41,11 +45,16 @@ jobs:
         run: |
           if git diff --quiet -- src/ontology/mondo-edit.obo; then
             echo "pushed=false" >> "$GITHUB_OUTPUT"
-          else
+          elif ${{ inputs.same_repo }}; then
             git add src/ontology/mondo-edit.obo
             git commit -m "Normalize mondo-edit.obo"
             git push origin "HEAD:${{ inputs.pr_branch }}"
             echo "pushed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::error file=src/ontology/mondo-edit.obo::mondo-edit.obo is not normalized. Fork PRs cannot be auto-normalized; please run 'make NORM && mv NORM mondo-edit.obo' and commit the result."
+            git --no-pager diff -- src/ontology/mondo-edit.obo
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 1
           fi
 
       - name: Run QC if normalization produced changes
