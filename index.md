@@ -25,7 +25,7 @@ In order to address the lack of a unified disease terminology that provides prec
 
 Mondo’s development is coordinated with the [Human Phenotype Ontology (HPO)](https://hpo.jax.org/app/), which describes the individual phenotypic features that constitute a disease. Like the HPO, Mondo provides a hierarchical structure which can be used for classification or “rolling up” diseases to higher level groupings. It provides mappings to other disease resources, but in contrast to other mappings between ontologies, we precisely annotate each mapping using strict semantics, so that we know when two disease names or identifiers are equivalent or one-to-one, in contrast to simply being closely related.
 
-For more details, please see these [slides](https://docs.google.com/presentation/d/1piBa680WN4EmI2q5oGpXGeuurZNkP66E4iOSJtEM1Ro/edit#slide=id.p1).
+For more details on the Mondo Disease Ontology, please see these our 2025 publciation in Genetics titled [Mondo: integrating disease terminology across communities](https://doi.org/10.1093/genetics/iyaf215).
 
 Mondo is generously supported by the NIH National Human Genome Research Institute Phenomics First Resource, NIH-NHGRI # 1 RM1 HG010860-01, a Center of Excellence in Genomic Science.
 
