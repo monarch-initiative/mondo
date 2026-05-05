@@ -149,6 +149,15 @@ This system ensures:
 - Updates propagate to Mondo within one month
 - Full transparency about data provenance
 
+### Expert Curation Partners
+
+Beyond the subset annotations themselves, Mondo's rare disease content is substantially shaped by partnerships with expert curation groups. 
+ClinGen, the NIH-funded Clinical Genome Resource, is a key contributor: ClinGen provides expert-curated gene–disease validity assessments and disease definitions across a large portion of the genetic disease landscape — many of which are rare conditions.
+This curation flows into Mondo and helps ensure that rare genetic diseases are represented as true, distinct disease entities, informed by ClinGen's rigorous approach to lumping and splitting genetic conditions based on shared mechanism and clinical evidence.
+
+MedGen, NCBI's portal for medical genetics, supplies a large share of Mondo's mappings to UMLS and other clinical vocabularies, anchoring rare disease terms in the broader biomedical terminology landscape.
+MedGen curators also contribute hundreds of expert suggestions directly to Mondo, refining definitions, synonyms, and classifications for genetic and rare disease entries.
+
 ---
 
 ## When Terms Change
