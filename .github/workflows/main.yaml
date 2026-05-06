@@ -28,8 +28,24 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Normalize mondo-edit.obo
+        run: |
+          cd src/ontology
+          make NORM && mv NORM mondo-edit.obo
+
+      - name: Fail if mondo-edit.obo is not normalized
+        run: |
+          cd src/ontology
+          if ! git diff --quiet -- mondo-edit.obo; then
+            echo "::error file=src/ontology/mondo-edit.obo::mondo-edit.obo is not normalized. Comment /normalize-mondo-edit to run normalization, or run make NORM && mv NORM mondo-edit.obo yourself and commit the changes."
+            git --no-pager diff -- mondo-edit.obo
+            exit 1
+          fi
+
       - name: Run ontology QC checks
         env:
           DEFAULT_BRANCH: master
-        run: cd src/ontology; make GITHUB_ACTION=true IMP=false PAT=false test -B
+        run: |
+          cd src/ontology
+          make GITHUB_ACTION=true IMP=false PAT=false test -B
 
