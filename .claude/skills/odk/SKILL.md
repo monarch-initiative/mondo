@@ -36,13 +36,13 @@ docker run --memory=8g \
   -v /ABSOLUTE/PATH/TO/REPO:/work \
   -w /work/src/ontology \
   -e ROBOT_JAVA_ARGS=-Xmx8G -e JAVA_OPTS=-Xmx8G \
-  --rm -i obolibrary/odkfull:v1.6 \
+  --rm -i obolibrary/odkfull:<TAG-FROM-RUN.SH> \
   <command> <args...>
 ```
 
 Where:
 - `/ABSOLUTE/PATH/TO/REPO` = the repo root (the parent of `src/`).
-- `obolibrary/odkfull:v1.6` = whatever tag is set in `IMAGE=` in `src/ontology/run.sh`. **Always read `run.sh` first to confirm the current tag** — do not hardcode.
+- `<TAG-FROM-RUN.SH>` = whatever tag is set in `IMAGE=` in `src/ontology/run.sh`. **Always read `run.sh` first to look up the current tag** — do not hardcode `v1.6` or any other version.
 
 ## Reading the right image tag
 
@@ -55,7 +55,7 @@ grep '^IMAGE=' src/ontology/run.sh
 
 ## Common ODK commands you'll need
 
-| What | Command body (after `run.sh` or after the `docker run ... -i obolibrary/odkfull:v1.6` prefix) |
+| What | Command body (after `run.sh` or after the `docker run ... -i obolibrary/odkfull:<TAG>` prefix) |
 |---|---|
 | Normalize edit file | `make NORM` then `mv NORM mondo-edit.obo` (run from `src/ontology`) |
 | Convert / syntax check | `robot convert --catalog catalog-v001.xml -i mondo-edit.obo -f obo -o mondo-edit.TMP.obo` |

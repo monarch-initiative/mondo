@@ -81,18 +81,11 @@ owltools transfers content but several things need manual attention:
 
 3. **Decide which definition to keep.** Default = whichever the **issue** says is correct. If the issue is silent, keep the surviving term's existing definition. If the surviving term had no definition and the obsoleted one did, use the obsoleted one's. State the choice in the final summary so the user can override.
 
-4. **Verify content transferred.** Use the pre-merge file (e.g. via `git show HEAD:src/ontology/mondo-edit.obo` if you committed before merging) and compare:
+4. **Check for redundant `is_a`.** If a transferred `is_a` is a superclass of another `is_a` already on the surviving term (e.g. `MONDO:0000001` "disease" alongside a more specific class), remove the redundant one along with its source qualifiers.
 
-   ```bash
-   git show HEAD:src/ontology/mondo-edit.obo | obo-grep.pl --noheader -r 'id: MONDO:XXXXXXX' -
-   obo-grep.pl --noheader -r 'id: MONDO:YYYYYYY' src/ontology/mondo-edit.obo
-   ```
+5. **Check for an unwanted `alt_id`.** Some owltools versions add `alt_id: MONDO:XXXXXXX` to the surviving term. If present, remove it (Mondo policy: no `alt_id` for merges).
 
-   Confirm each `intersection_of:`, `relationship:`, `property_value:`, and any non-`MONDO:Lexical` xref on the obsoleted term has an equivalent on the surviving term.
-
-5. **Check for redundant `is_a`.** If a transferred `is_a` is a superclass of another `is_a` already on the surviving term (e.g. `MONDO:0000001` "disease" alongside a more specific class), remove the redundant one along with its source qualifiers.
-
-6. **Check for an unwanted `alt_id`.** Some owltools versions add `alt_id: MONDO:XXXXXXX` to the surviving term. If present, remove it (Mondo policy: no `alt_id` for merges).
+(Step 7.5 #8 will verify that all meaningful content from the obsolete stanza actually made it onto the surviving term — don't duplicate that check here.)
 
 ## Step 6 — Rewire children of the obsoleted term
 
@@ -117,7 +110,7 @@ For each hit outside the obsoleted stanza itself, checkout that term, repoint th
    ```
    then `mv NORM mondo-edit.obo`.
 
-3. Run targeted QC. The merge-relevant SPARQL checks live under `src/sparql/qc/general/`. Run them via `robot verify`:
+3. Run targeted QC. The merge-relevant SPARQL checks live under `src/sparql/qc/general/`. Run them via `robot verify` (this is a body — wrap with `sh run.sh` or docker per the warning at the top of the skill):
 
    ```
    robot verify --catalog catalog-v001.xml -i mondo-edit.obo \
@@ -162,9 +155,9 @@ grep "alt_id: MONDO:XXXXXXX" src/ontology/mondo-edit.obo
 
 # 5. No reference to the obsoleted ID outside its own stanza (catches missed children).
 obo-grep.pl --noheader -r 'MONDO:XXXXXXX' src/ontology/mondo-edit.obo
-# Expected output: ONLY the obsolete stanza's own `id:` and `replaced_by:` lines from the surviving stanza
-# pointing TO the obsolete (which there shouldn't be — replaced_by goes the OTHER direction). In practice:
-# only the `id: MONDO:XXXXXXX` line in its own stanza.
+# Expected: only the line "id: MONDO:XXXXXXX" inside the obsolete stanza itself.
+# Anything else (a leftover synonym evidence on the surviving term, an unrewired
+# child term still pointing at the obsolete) = failure, fix it before continuing.
 
 # 6. Flag any duplicate synonym text on the surviving term (different scopes, same text).
 obo-grep.pl --noheader -r 'id: MONDO:YYYYYYY' src/ontology/mondo-edit.obo \
@@ -184,7 +177,13 @@ obo-grep.pl --noheader -r 'id: MONDO:YYYYYYY' src/ontology/mondo-edit.obo \
    obo-grep.pl --noheader -r 'id: MONDO:YYYYYYY' src/ontology/mondo-edit.obo
    ```
 
-   Walk through every `xref:`, `synonym:`, `is_a:`, `relationship:`, `intersection_of:`, and `property_value:` on the obsolete stanza. Each must have an equivalent on the surviving term unless it was explicitly dropped (obsoletion-tracking metadata, redundant superclass parent, owltools-injected `[MONDO:XXXXXXX]` synonym evidence). If you can't account for a line, fix it.
+   Walk through every `xref:`, `synonym:`, `is_a:`, `relationship:`, `intersection_of:`, and `property_value:` on the obsolete stanza. Each must have an equivalent on the surviving term unless it was explicitly dropped. Allowed drops:
+   - obsoletion-tracking metadata (see Step 5.2)
+   - a redundant superclass `is_a` (see Step 5.4)
+   - the owltools-injected `[MONDO:XXXXXXX]` synonym evidence
+   - any `MONDO:Lexical`-qualified xref — these are auto-generated string-match cross-refs and don't need to survive a merge
+
+   If you can't account for a line, fix it.
 
 ## Step 8 — Show diff and summary checklist
 
