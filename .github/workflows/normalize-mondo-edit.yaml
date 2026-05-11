@@ -1,162 +1,74 @@
 name: Normalize mondo-edit.obo
 
 on:
-  # Triggers on comments that start with /normalize-mondo-edit
-  issue_comment:
-    types: [created]
+  pull_request:
+    branches: [ main ]
 
-permissions:
-  contents: write
-  pull-requests: read
-  issues: write
-  actions: write
+concurrency:
+  group: pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  PR_BRANCH: ${{ github.event.pull_request.head.ref }}
+  PR_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+  PR_NUMBER: ${{ github.event.pull_request.number }}
+  SAME_REPO: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
 
 jobs:
-  prepare:
-    if: >
-      github.event.issue.pull_request &&
-      startsWith(github.event.comment.body, '/normalize-mondo-edit')
-    runs-on: ubuntu-latest
-    outputs:
-      allowed: ${{ steps.perms.outputs.allowed }}
-      pr_number: ${{ steps.pr.outputs.pr_number }}
-      head_ref: ${{ steps.pr.outputs.head_ref }}
-      same_repo: ${{ steps.pr.outputs.same_repo }}
-    steps:
-      # Check if commenter has applicable permissions, to prevent untrusted
-      # repeated runs of the workflow.
-      - name: Check commenter permission
-        id: perms
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REPO: ${{ github.repository }}
-          ACTOR: ${{ github.event.comment.user.login }}
-        run: |
-          perm="$(gh api repos/$REPO/collaborators/$ACTOR/permission --jq .permission)"
-          case "$perm" in
-            push|write|maintain|admin) echo "allowed=true" >> "$GITHUB_OUTPUT" ;;
-            *) echo "allowed=false" >> "$GITHUB_OUTPUT" ;;
-          esac
-
-      - name: Comment if requester is not allowed
-        if: steps.perms.outputs.allowed != 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REPO: ${{ github.repository }}
-          PR: ${{ github.event.issue.number }}
-        run: |
-          gh pr comment "$PR" --repo "$REPO" \
-            --body "Normalization can only be requested by a collaborator with write access."
-
-      # Store the name of the PR branch, and whether the PR is from a fork
-      - name: Read PR metadata
-        id: pr
-        if: steps.perms.outputs.allowed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REPO: ${{ github.repository }}
-          PR: ${{ github.event.issue.number }}
-        run: |
-          echo "pr_number=$PR" >> "$GITHUB_OUTPUT"
-          echo "head_ref=$(gh pr view "$PR" --repo "$REPO" --json headRefName --jq .headRefName)" >> "$GITHUB_OUTPUT"
-          echo "same_repo=$(gh pr view "$PR" --repo "$REPO" --json isCrossRepository --jq 'if .isCrossRepository then "false" else "true" end')" >> "$GITHUB_OUTPUT"
-
-      # Fork PRs are not supported because we cannot safely push commits back to them
-      # using the repository GITHUB_TOKEN.
-      - name: Comment if PR is from a fork
-        if: steps.perms.outputs.allowed == 'true' && steps.pr.outputs.same_repo != 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REPO: ${{ github.repository }}
-          PR: ${{ github.event.issue.number }}
-        run: |
-          gh pr comment "$PR" --repo "$REPO" \
-            --body "This helper currently only supports same-repo PR branches. For fork PRs, please run normalization locally."
-
-  normalize:
-    needs: prepare
-    if: needs.prepare.outputs.allowed == 'true' && needs.prepare.outputs.same_repo == 'true'
+  normalize_mondo_edit:
     runs-on: ubuntu-latest
     container: obolibrary/odkfull:v1.6
-    outputs:
-      changed: ${{ steps.push.outputs.changed }}
+    permissions:
+      actions: write
+      contents: write
     steps:
-      - name: Check out trusted default branch
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
-          ref: ${{ github.event.repository.default_branch }}
-          path: trusted
+          repository: ${{ env.PR_REPO }}
+          ref: ${{ env.PR_BRANCH }}
           fetch-depth: 1
-
-      # Use a sparse checkout to only pull in mondo-edit.obo from the PR branch
-      - name: Check out mondo-edit.obo from PR
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ needs.prepare.outputs.head_ref }}
-          path: pr
-          fetch-depth: 1
-          token: ${{ github.token }}
-          sparse-checkout: |
-            src/ontology/mondo-edit.obo
-          sparse-checkout-cone-mode: false
 
       - name: Configure git
+        if: ${{ env.SAME_REPO == 'true' }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global --add safe.directory "$GITHUB_WORKSPACE/trusted"
-          git config --global --add safe.directory "$GITHUB_WORKSPACE/pr"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
-      # Run normalization using code from the default branch (trusted), not
-      # the PR branch, to avoid executing potentially modified arbitrary code
-      # in Makefiles or scripts
-      - name: Normalize PR file using trusted code
+      - name: Normalize PR file
         run: |
-          cp pr/src/ontology/mondo-edit.obo trusted/src/ontology/mondo-edit.obo
-          cd trusted/src/ontology
+          cd src/ontology
           make NORM && mv NORM mondo-edit.obo
-          cp mondo-edit.obo "$GITHUB_WORKSPACE/pr/src/ontology/mondo-edit.obo"
 
       - name: Commit and push if changed
         id: push
         run: |
-          cd "$GITHUB_WORKSPACE/pr"
           if git diff --quiet -- src/ontology/mondo-edit.obo; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
+            echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          elif [ "$SAME_REPO" = "true" ]; then
             git add src/ontology/mondo-edit.obo
             git commit -m "Normalize mondo-edit.obo"
-            git push origin "HEAD:${{ needs.prepare.outputs.head_ref }}"
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-  finish:
-    needs: [prepare, normalize]
-    if: needs.prepare.outputs.allowed == 'true' && needs.prepare.outputs.same_repo == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger CI if normalization changed the file
-        if: needs.normalize.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REPO: ${{ github.repository }}
-          HEAD_REF: ${{ needs.prepare.outputs.head_ref }}
-
-        # NOTE: This runs the main.yaml workflow on the *default branch*. If it
-        # has changed in the PR, those changes will not be reflected.
-        run: |
-          gh workflow run main.yaml --repo "$REPO" --ref "$HEAD_REF"
-
-      - name: Comment result
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REPO: ${{ github.repository }}
-          PR: ${{ needs.prepare.outputs.pr_number }}
-        run: |
-          if [ "${{ needs.normalize.outputs.changed }}" = "true" ]; then
-            gh pr comment "$PR" --repo "$REPO" \
-              --body "Applied normalization to src/ontology/mondo-edit.obo, pushed a commit to this PR branch, and triggered CI again."
+            git push origin "HEAD:${PR_BRANCH}"
+            echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           else
-            gh pr comment "$PR" --repo "$REPO" \
-              --body "No normalization changes were needed for src/ontology/mondo-edit.obo."
+            echo "::error file=src/ontology/mondo-edit.obo::mondo-edit.obo is not normalized. Fork PRs cannot be auto-normalized; please run 'make NORM && mv NORM mondo-edit.obo' and commit the result."
+            git --no-pager diff -- src/ontology/mondo-edit.obo
+            exit 1
           fi
+
+      # This uses `gh api` to trigger QC, rather than a reusable workflow
+      # with `needs:` because we want to be explicit about which ref to
+      # trigger it on. If normalization occurred, it will be run on the
+      # normalization commit. Otherwise, it will be run on the original commit
+      # that triggered this workflow.
+      - name: Trigger QC on HEAD ref
+        if: ${{ env.SAME_REPO == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api \
+            --method POST \
+            "repos/${GITHUB_REPOSITORY}/actions/workflows/qc.yaml/dispatches" \
+            -f "ref=${PR_BRANCH}" \
+            -f "inputs[sha]=${{ steps.push.outputs.sha }}" \
+            -f "inputs[pr_number]=${PR_NUMBER}"

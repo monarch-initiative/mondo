@@ -1,0 +1,93 @@
+name: Ontology QC
+run-name: "Ontology QC for PR #${{ github.event.inputs.pr_number }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      sha:
+        required: true
+        type: string
+      pr_number:
+        required: true
+        type: string
+
+env:
+  REQUIRED_QC_CHECK_NAME: required-qc-check
+
+jobs:
+  pending:
+    name: Mark required QC pending
+    runs-on: ubuntu-latest
+    permissions:
+      statuses: write
+
+    steps:
+      - name: Mark QC pending
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api \
+            --method POST \
+            "repos/${GITHUB_REPOSITORY}/statuses/${{ inputs.sha }}" \
+            -f state='pending' \
+            -f "context=${REQUIRED_QC_CHECK_NAME}" \
+            -f description='Ontology QC is running' \
+            -f target_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+
+  qc:
+    name: Run ontology QC
+    needs: pending
+    runs-on: ubuntu-latest
+    concurrency:
+      group: qc-pr-${{ github.event.inputs.pr_number }}
+      cancel-in-progress: true
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.sha }}
+          fetch-depth: 1
+
+      - name: Run ontology QC checks
+        id: qc
+        run: |
+          cd src/ontology
+          make test
+
+  report:
+    name: Report required QC status
+    needs: qc
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      statuses: write
+
+    steps:
+      - name: Report QC status
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          case "${{ needs.qc.result }}" in
+            success)
+              state="success"
+              description="Ontology QC passed"
+              ;;
+            cancelled)
+              state="error"
+              description="Ontology QC was cancelled"
+              ;;
+            *)
+              state="failure"
+              description="Ontology QC failed"
+              ;;
+          esac
+
+          gh api \
+            --method POST \
+            "repos/${GITHUB_REPOSITORY}/statuses/${{ inputs.sha }}" \
+            -f state="$state" \
+            -f "context=${REQUIRED_QC_CHECK_NAME}" \
+            -f description="$description" \
+            -f target_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
