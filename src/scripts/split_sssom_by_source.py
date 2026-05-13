@@ -5,6 +5,7 @@
 author: Nico Matentzoglu, 15 March 2021
 """
 
+import os
 import re
 from datetime import datetime
 
@@ -126,3 +127,66 @@ for msdf in splitted:
     )
 
 write_tables(splitted, mapping_dir)
+
+
+def metadata_referenced_prefixes(metadata, known_prefixes):
+    """Return prefixes referenced as `prefix:id` in any metadata value."""
+    referenced = set()
+    for value in metadata.values():
+        values = value if isinstance(value, list) else [value]
+        for v in values:
+            if not isinstance(v, str) or v.startswith(("http://", "https://")):
+                continue
+            prefix = v.split(":", 1)[0]
+            if prefix in known_prefixes:
+                referenced.add(prefix)
+    return referenced
+
+
+def patch_curie_map(file_path, missing_prefixes, curie_map):
+    """Insert any missing prefix declarations into the file's curie_map block.
+
+    sssom 0.4.0 derives the on-disk curie_map from data columns only, so
+    prefixes that appear only in metadata slots (e.g. subject_source:
+    infores:mondo) get silently dropped. This patches the file in place.
+    """
+    if not missing_prefixes:
+        return
+    with open(file_path, "r") as f:
+        lines = f.readlines()
+
+    cm_start = None
+    cm_end = None
+    for i, line in enumerate(lines):
+        if line.rstrip() == "# curie_map:":
+            cm_start = i + 1
+            continue
+        if cm_start is not None and not line.startswith("#   "):
+            cm_end = i
+            break
+    if cm_start is None or cm_end is None:
+        return
+
+    block = lines[cm_start:cm_end]
+    declared = set()
+    for entry in block:
+        match = re.match(r"^#   ([^:]+):\s", entry)
+        if match:
+            declared.add(match.group(1))
+    to_add = [p for p in missing_prefixes if p not in declared]
+    if not to_add:
+        return
+    for prefix in to_add:
+        block.append(f"#   {prefix}: {curie_map[prefix]}\n")
+    block.sort()
+    new_lines = lines[:cm_start] + block + lines[cm_end:]
+    with open(file_path, "w") as f:
+        f.writelines(new_lines)
+
+
+for msdf_name, msdf in splitted.items():
+    file_path = os.path.join(mapping_dir, f"{msdf_name}.sssom.tsv")
+    if not os.path.exists(file_path):
+        continue
+    needed = metadata_referenced_prefixes(msdf.metadata, curie_map)
+    patch_curie_map(file_path, needed, curie_map)
