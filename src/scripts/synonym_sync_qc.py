@@ -123,15 +123,25 @@ def pass1_diff_confined(pre_path: str, post_path: str) -> list[str]:
     return non_synonym_changes
 
 
-def extract_synonyms(path: str) -> dict[SynonymKey, SynonymRecord]:
-    """Return {SynonymKey: SynonymRecord} for all synonyms in `path`."""
+def extract_synonyms(
+    path: str,
+) -> tuple[dict[SynonymKey, SynonymRecord], dict[str, str]]:
+    """Return ({SynonymKey: SynonymRecord}, {term_id: name}) for `path`.
+
+    The second map carries each term's authoritative `name:` label for
+    report rendering — the QC logic itself uses only the synonym map.
+    """
     synonyms: dict[SynonymKey, SynonymRecord] = {}
+    term_labels: dict[str, str] = {}
     doc = fastobo.load(path)
     for frame in doc:
         if not isinstance(frame, fastobo.term.TermFrame):
             continue
         term_id = str(frame.id)
         for clause in frame:
+            if isinstance(clause, fastobo.term.NameClause):
+                term_labels[term_id] = clause.name
+                continue
             if not isinstance(clause, fastobo.term.SynonymClause):
                 continue
             syn = clause.synonym
@@ -149,7 +159,7 @@ def extract_synonyms(path: str) -> dict[SynonymKey, SynonymRecord]:
                 # fastobo 0.14 #     sorted(f"{q.key}={q.value}" for q in (clause.qualifiers or []))
                 # fastobo 0.14 # ),
             )
-    return synonyms
+    return synonyms, term_labels
 
 
 def pass2_structural(
@@ -228,6 +238,7 @@ def build_markdown(
     non_synonym_changes: list[str],
     violations: list[Violation],
     modifications: dict[str, list[Modification]],
+    term_labels: dict[str, str],
 ) -> str:
     out = []
     out.append("# Synonym sync QC report")
@@ -268,11 +279,13 @@ def build_markdown(
     if not violations:
         out.append("No synonyms were added or removed.")
     else:
-        out.append("| Action | Term | Literal |")
-        out.append("|---|---|---|")
+        out.append("| Action | Term | Label | Synonym |")
+        out.append("|---|---|---|---|")
         for cat, key, _ in violations:
             term, lit = key
-            out.append(f"| {cat} | `{term}` | {lit} |")
+            out.append(
+                f"| {cat} | `{term}` | {term_labels.get(term, '')} | {lit} |"
+            )
     out.append("")
 
     out.append("## Modifications by category")
@@ -307,7 +320,10 @@ def build_markdown(
         out.append("")
         for key, a, b in entries:
             term, lit = key
-            out.append(f"**`{term}`** — {lit}")
+            kind_parts = [b.scope] + ([b.type] if b.type else [])
+            kind = " ".join(f"`{k}`" for k in kind_parts)
+            out.append(f"**`{term}`** _{term_labels.get(term, '')}_")
+            out.append(f'- {kind} synonym: "{lit}"')
             out.append("")
             out.append("```diff")
             out.append(f"- {fmt_record(a, fields)}")
@@ -355,8 +371,8 @@ def main(file_a: str, file_b: str | None, report: str | None) -> None:
     print()
 
     print("Loading OBO files (fastobo)...")
-    pre_synonyms = extract_synonyms(pre_path)
-    post_synonyms = extract_synonyms(post_path)
+    pre_synonyms, _ = extract_synonyms(pre_path)
+    post_synonyms, post_labels = extract_synonyms(post_path)
     print(f"  pre:  {len(pre_synonyms)} synonyms")
     print(f"  post: {len(post_synonyms)} synonyms")
     print()
@@ -400,7 +416,10 @@ def main(file_a: str, file_b: str | None, report: str | None) -> None:
     if report:
         with open(report, "w") as f:
             f.write(
-                build_markdown(label, non_synonym_changes, violations, modifications)
+                build_markdown(
+                    label, non_synonym_changes, violations, modifications,
+                    post_labels,
+                )
             )
         print()
         print(f"Full markdown report written to {report}")
