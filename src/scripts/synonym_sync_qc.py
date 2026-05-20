@@ -16,6 +16,9 @@ Usage:
   # compare a file with local changes to its HEAD version in git
   qc_synonym_sync.py [-r PATH] FILE
 
+  # compare a file as committed at REF vs its parent (REF~1)
+  qc_synonym_sync.py [-r PATH] --ref REF FILE
+
   # compare two files directly
   qc_synonym_sync.py [-r PATH] PRE_FILE POST_FILE
 
@@ -73,8 +76,8 @@ Violation: TypeAlias = tuple[Literal["added", "deleted"], SynonymKey, SynonymRec
 Modification: TypeAlias = tuple[SynonymKey, SynonymRecord, SynonymRecord]
 
 
-def materialize_head_version(path: str) -> str:
-    """Write `git show HEAD:path` to a tempfile and return its path.
+def materialize_at_ref(path: str, ref: str) -> str:
+    """Write `git show {ref}:{path}` to a tempfile and return its path.
 
     Resolves `path` to a repo-root-relative path via `git ls-files
     --full-name` so the script works regardless of the current working
@@ -90,14 +93,15 @@ def materialize_head_version(path: str) -> str:
     repo_relative_path = ls.stdout.strip()
 
     r = subprocess.run(
-        ["git", "show", f"HEAD:{repo_relative_path}"],
+        ["git", "show", f"{ref}:{repo_relative_path}"],
         capture_output=True,
         text=True,
     )
     if r.returncode != 0:
-        sys.exit(f"git show HEAD:{repo_relative_path} failed: {r.stderr.strip()}")
+        sys.exit(f"git show {ref}:{repo_relative_path} failed: {r.stderr.strip()}")
+    safe_ref = ref.replace("/", "-").replace("~", "-").replace("^", "-")
     tmp = tempfile.NamedTemporaryFile(
-        mode="w", suffix=".obo", delete=False, prefix="qc-syn-head-"
+        mode="w", suffix=".obo", delete=False, prefix=f"qc-syn-{safe_ref}-"
     )
     tmp.write(r.stdout)
     tmp.close()
@@ -220,6 +224,17 @@ CATEGORY_FIELDS = {
 }
 
 
+def synonym_obo_line(literal: str, record: SynonymRecord) -> str:
+    """Reconstruct an OBO `synonym:` line from a SynonymRecord."""
+    parts: list[str] = [f'"{literal}"', record.scope]
+    if record.type is not None:
+        parts.append(record.type)
+    parts.append("[" + ", ".join(record.xrefs) + "]")
+    # fastobo 0.14 # if record.qualifiers:
+    # fastobo 0.14 #     parts.append("{" + ", ".join(record.qualifiers) + "}")
+    return "synonym: " + " ".join(parts)
+
+
 def fmt_record(r: SynonymRecord, fields: list[str]) -> str:
     parts = []
     for f in fields:
@@ -233,13 +248,13 @@ def fmt_record(r: SynonymRecord, fields: list[str]) -> str:
 STDOUT_DETAIL_CAP = 10
 
 
-def build_markdown(
+def build_summary_markdown(
     label: str,
     non_synonym_changes: list[str],
     violations: list[Violation],
     modifications: dict[str, list[Modification]],
-    term_labels: dict[str, str],
 ) -> str:
+    """Pass/fail status and category counts only — no per-entry listings."""
     out = []
     out.append("# Synonym sync QC report")
     out.append("")
@@ -263,30 +278,6 @@ def build_markdown(
         f"- **Number of modifications on existing synonyms**: {n_modifications}",
         "",
     ]
-
-    out.append("## Pass 1: non-synonym line changes")
-    out.append("")
-    if not non_synonym_changes:
-        out.append("No non-synonym lines changed.")
-    else:
-        out.append("```diff")
-        out.extend(non_synonym_changes)
-        out.append("```")
-    out.append("")
-
-    out.append("## Pass 2: synonym additions and deletions")
-    out.append("")
-    if not violations:
-        out.append("No synonyms were added or removed.")
-    else:
-        out.append("| Action | Term | Label | Synonym |")
-        out.append("|---|---|---|---|")
-        for cat, key, _ in violations:
-            term, lit = key
-            out.append(
-                f"| {cat} | `{term}` | {term_labels.get(term, '')} | {lit} |"
-            )
-    out.append("")
 
     out.append("## Modifications by category")
     out.append("")
@@ -312,24 +303,73 @@ def build_markdown(
             out.append(f"| `{pfx}` | {added.get(pfx, 0)} | {dropped.get(pfx, 0)} |")
         out.append("")
 
+    return "\n".join(out)
+
+
+def build_report_markdown(
+    label: str,
+    non_synonym_changes: list[str],
+    violations: list[Violation],
+    modifications: dict[str, list[Modification]],
+    term_labels: dict[str, str],
+) -> str:
+    """Full report: summary plus per-entry listings for every section."""
+    out = [
+        build_summary_markdown(label, non_synonym_changes, violations, modifications),
+        "## Pass 1: non-synonym line changes",
+        "",
+    ]
+    if not non_synonym_changes:
+        out.append("No non-synonym lines changed.")
+    else:
+        out.append("<details>")
+        out.append(f"<summary>Show {len(non_synonym_changes)} lines</summary>")
+        out.append("")
+        out.append("```diff")
+        out.extend(non_synonym_changes)
+        out.append("```")
+        out.append("")
+        out.append("</details>")
+    out.append("")
+
+    out.append("## Pass 2: synonym additions and deletions")
+    out.append("")
+    if not violations:
+        out.append("No synonyms were added or removed.")
+    else:
+        out.append("<details>")
+        out.append(f"<summary>Show {len(violations)} entries</summary>")
+        out.append("")
+        out.append("| Action | Term | Label | Synonym |")
+        out.append("|---|---|---|---|")
+        for cat, key, _ in violations:
+            term, lit = key
+            out.append(
+                f"| {cat} | `{term}` | {term_labels.get(term, '')} | {lit} |"
+            )
+        out.append("")
+        out.append("</details>")
+    out.append("")
+
     for cat, fields in CATEGORY_FIELDS.items():
         entries = modifications.get(cat, [])
         if not entries:
             continue
-        out.append(f"## {cat} ({len(entries)})")
+        out.append("<details>")
+        out.append(f"<summary>{cat} ({len(entries)})</summary>")
         out.append("")
         for key, a, b in entries:
             term, lit = key
-            kind_parts = [b.scope] + ([b.type] if b.type else [])
-            kind = " ".join(f"`{k}`" for k in kind_parts)
             out.append(f"**`{term}`** _{term_labels.get(term, '')}_")
-            out.append(f'- {kind} synonym: "{lit}"')
+            out.append(f"- `{synonym_obo_line(lit, b)}`")
             out.append("")
             out.append("```diff")
             out.append(f"- {fmt_record(a, fields)}")
             out.append(f"+ {fmt_record(b, fields)}")
             out.append("```")
             out.append("")
+        out.append("</details>")
+        out.append("")
 
     return "\n".join(out)
 
@@ -342,11 +382,36 @@ def build_markdown(
     "--report",
     metavar="PATH",
     type=click.Path(dir_okay=False, writable=True),
-    help="write a full markdown report to PATH (stdout still shows the summary)",
+    help="write the full markdown report (status + per-entry listings) to PATH",
 )
-def main(file_a: str, file_b: str | None, report: str | None) -> None:
-    if file_b is None:
-        pre_path = materialize_head_version(file_a)
+@click.option(
+    "-s",
+    "--summary",
+    metavar="PATH",
+    type=click.Path(dir_okay=False, writable=True),
+    help="write a markdown summary (status + category counts only) to PATH",
+)
+@click.option(
+    "--ref",
+    metavar="REF",
+    help="compare REF:FILE_A vs REF~1:FILE_A (single-file mode only)",
+)
+def main(
+    file_a: str,
+    file_b: str | None,
+    report: str | None,
+    summary: str | None,
+    ref: str | None,
+) -> None:
+    if ref is not None and file_b is not None:
+        sys.exit("--ref cannot be combined with two file arguments")
+
+    if ref is not None:
+        pre_path = materialize_at_ref(file_a, f"{ref}~1")
+        post_path = materialize_at_ref(file_a, ref)
+        label = f"{ref}~1:{file_a} -> {ref}:{file_a}"
+    elif file_b is None:
+        pre_path = materialize_at_ref(file_a, "HEAD")
         post_path = file_a
         label = f"HEAD:{file_a} -> {file_a}"
     else:
@@ -413,10 +478,20 @@ def main(file_a: str, file_b: str | None, report: str | None) -> None:
         for pfx in all_prefixes:
             print(f"  {pfx:30s} {added.get(pfx, 0):>8d} {dropped.get(pfx, 0):>8d}")
 
+    if summary:
+        with open(summary, "w") as f:
+            f.write(
+                build_summary_markdown(
+                    label, non_synonym_changes, violations, modifications,
+                )
+            )
+        print()
+        print(f"Markdown summary written to {summary}")
+
     if report:
         with open(report, "w") as f:
             f.write(
-                build_markdown(
+                build_report_markdown(
                     label, non_synonym_changes, violations, modifications,
                     post_labels,
                 )

@@ -20,15 +20,31 @@ jobs:
           make GITHUB_ACTION=true IMP=false PAT=false update-synonyms-sync -B
     
       - name: QC to ensure that only synonym axiom annotations have changed
-        run: cd src/ontology; python ../scripts/synonym_sync_qc.py mondo-edit.obo -r tmp/synonym-sync-report.md
+        run: cd src/ontology; python ../scripts/synonym_sync_qc.py mondo-edit.obo -s tmp/synonym-sync-summary.md -r tmp/synonym-sync-report.md
         continue-on-error: true
+
+      - name: Upload full QC report as artifact
+        id: upload-report
+        uses: actions/upload-artifact@v4
+        with:
+          name: synonym-sync-report
+          path: src/ontology/tmp/synonym-sync-report.md
+
+      - name: Append artifact link to PR summary
+        run: |
+          {
+            echo ""
+            echo "---"
+            echo ""
+            echo "Full QC report: [synonym-sync-report.md](${{ steps.upload-report.outputs.artifact-url }})"
+          } >> src/ontology/tmp/synonym-sync-summary.md
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
         with:
           branch-suffix: short-commit-hash
           labels: automated
-          body-path: src/ontology/tmp/synonym-sync-report.md
+          body-path: src/ontology/tmp/synonym-sync-summary.md
           title: "Monthly confirmed synonyms evidence update"
           base: ${{ github.head_ref }}
           branch: "confirmed_synonyms_evidence"
