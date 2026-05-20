@@ -1665,6 +1665,33 @@ americanize: $(SRC) tmp/british_english_dictionary.csv
 	python ../scripts/clean-british-english.py $^
 
 
+#######################################################
+##### Lexical variants pipeline (issue #10259) ########
+#######################################################
+# Strips out any synonym whose only source is MONDO:LexicalVariation and
+# regenerates the full set from current labels via the rules implemented in
+# scripts/lexical_variants.py. Designed to be idempotent: re-running on every
+# release is the intended workflow.
+
+.PHONY: lexical_variants lexical_variants_report test_lexical_variants
+
+lexical_variants: $(SRC)
+	python3 ../scripts/lexical_variants.py \
+	    --input $(SRC) --output $(SRC) --purge --generate \
+	    --report ../../reports/lexical_variants_proposed.tsv
+	make NORM
+	mv NORM $(SRC)
+
+# Dry-run: writes the report without touching the edit file.
+lexical_variants_report: $(SRC)
+	mkdir -p ../../reports tmp
+	python3 ../scripts/lexical_variants.py \
+	    --input $(SRC) --output tmp/mondo-edit-lex-dryrun.obo --generate \
+	    --report ../../reports/lexical_variants_proposed.tsv
+
+test_lexical_variants:
+	cd ../scripts && python3 test_lexical_variants.py
+
 
 #######################################
 ### New Pattern merge pipeline ########
