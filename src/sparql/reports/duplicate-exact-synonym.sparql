@@ -13,7 +13,14 @@ WHERE
       ?term2 oboInOwl:hasExactSynonym ?exact .
       ?term2 a owl:Class .
       FILTER (?term != ?term2)
-      ?term rdfs:subClassOf* <http://purl.obolibrary.org/obo/MONDO_0000001> .
+      # Scope to within the human (MONDO:0700096) or non-human animal
+      # (MONDO:0005583) disease branch. Cross-branch duplicates are allowed.
+      VALUES ?branch {
+        <http://purl.obolibrary.org/obo/MONDO_0700096>
+        <http://purl.obolibrary.org/obo/MONDO_0005583>
+      }
+      ?term rdfs:subClassOf* ?branch .
+      ?term2 rdfs:subClassOf* ?branch .
       FILTER (STRSTARTS(STR(?term), "http://purl.obolibrary.org/obo/MONDO_"))
       FILTER (STRSTARTS(STR(?term2), "http://purl.obolibrary.org/obo/MONDO_"))
     }
