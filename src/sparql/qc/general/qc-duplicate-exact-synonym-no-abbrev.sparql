@@ -4,41 +4,49 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?entity ?property ?value WHERE {
-  VALUES ?property1 {
-    obo:IAO_0000118
-    oboInOwl:hasExactSynonym
-    rdfs:label
+  {
+    SELECT ?entity1 ?property1 ?value1 (UCASE(str(?value1)) AS ?ukey) WHERE {
+      VALUES ?property1 {
+        obo:IAO_0000118
+        oboInOwl:hasExactSynonym
+        rdfs:label
+      }
+      ?entity1 ?property1 ?value1 .
+      FILTER (!isBlank(?entity1))
+      FILTER NOT EXISTS { ?entity1 owl:deprecated true }
+    }
   }
-  VALUES ?property2 {
-    obo:IAO_0000118
-    oboInOwl:hasExactSynonym
-    rdfs:label
+  {
+    SELECT ?entity2 ?property2 ?value2 (UCASE(str(?value2)) AS ?ukey) WHERE {
+      VALUES ?property2 {
+        obo:IAO_0000118
+        oboInOwl:hasExactSynonym
+        rdfs:label
+      }
+      ?entity2 ?property2 ?value2 .
+      FILTER (!isBlank(?entity2))
+      FILTER NOT EXISTS { ?entity2 owl:deprecated true }
+    }
   }
-  ?entity1 ?property1 ?value1.
-  ?entity2 ?property2 ?value2 .
-  FILTER (UCASE(str(?value1)) = UCASE(str(?value2)))
+
+  FILTER (?entity1 != ?entity2)
 
   FILTER NOT EXISTS {
-    ?axiom owl:annotatedSource ?entity1 ;
+    ?axiom1 owl:annotatedSource ?entity1 ;
          owl:annotatedProperty ?property1 ;
          owl:annotatedTarget ?value1 ;
          oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#ABBREVIATION> .
   }
 
   FILTER NOT EXISTS {
-    ?axiom owl:annotatedSource ?entity2 ;
+    ?axiom2 owl:annotatedSource ?entity2 ;
          owl:annotatedProperty ?property2 ;
          owl:annotatedTarget ?value2 ;
          oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/mondo#ABBREVIATION> .
   }
 
-  FILTER NOT EXISTS { ?entity1 owl:deprecated true }
-  FILTER NOT EXISTS { ?entity2 owl:deprecated true }
-  FILTER (?entity1 != ?entity2)
-  FILTER (!isBlank(?entity1))
-  FILTER (!isBlank(?entity2))
   BIND(?value1 as ?value)
   BIND(CONCAT(CONCAT(REPLACE(str(?entity1),"http://purl.obolibrary.org/obo/MONDO_","MONDO:"),"-"), REPLACE(str(?entity2),"http://purl.obolibrary.org/obo/MONDO_","MONDO:")) as ?entity)
   BIND(CONCAT(CONCAT(REPLACE(REPLACE(str(?property1),"http://www.w3.org/2000/01/rdf-schema#","rdfs:"),"http://www.geneontology.org/formats/oboInOwl#","oboInOwl:"),"-"), REPLACE(REPLACE(str(?property1),"http://www.w3.org/2000/01/rdf-schema#","rdfs:"),"http://www.geneontology.org/formats/oboInOwl#","oboInOwl:")) as ?property)
 }
-ORDER BY DESC(UCASE(str(?value)))
+ORDER BY DESC(?ukey)
