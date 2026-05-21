@@ -1,9 +1,20 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
 SELECT DISTINCT ?entity ?property ?value WHERE {
-?entity <http://www.w3.org/2000/01/rdf-schema#label> ?n0 .
-?c2 <http://www.w3.org/2000/01/rdf-schema#label> ?n0 .
-FILTER NOT EXISTS {?entity <http://www.w3.org/2002/07/owl#deprecated> ?value} .
-FILTER NOT EXISTS {?c2 <http://www.w3.org/2002/07/owl#deprecated> ?v2} .
-FILTER (?entity != ?c2)
-BIND(<http://www.w3.org/2002/07/owl#deprecated> as ?property)
+  {
+    SELECT ?entity (UCASE(str(?n1)) AS ?ukey) WHERE {
+      ?entity rdfs:label ?n1 .
+      FILTER NOT EXISTS { ?entity owl:deprecated ?d1 }
+    }
+  }
+  {
+    SELECT ?c2 (UCASE(str(?n2)) AS ?ukey) WHERE {
+      ?c2 rdfs:label ?n2 .
+      FILTER NOT EXISTS { ?c2 owl:deprecated ?d2 }
+    }
+  }
+  FILTER (?entity != ?c2)
+  BIND(owl:deprecated AS ?property)
 }
 ORDER BY ?entity
