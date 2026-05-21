@@ -72,6 +72,15 @@ def test_r1b_multi_char_X_still_works():
     assert "some syndrome 11" in out
 
 
+def test_r1b_skips_compound_numerals():
+    # Regression: "grade 1/2" must NOT become "grade 1/II". The trailing
+    # token must be standalone (preceded by whitespace or start-of-string).
+    out = variants_for("digestive system neuroendocrine tumor, grade 1/2")
+    assert "digestive system neuroendocrine tumor, grade 1/II" not in out
+    out2 = variants_for("cervical intraepithelial neoplasia grade 2/3")
+    assert "cervical intraepithelial neoplasia grade 2/III" not in out2
+
+
 def test_r2_comma_form_roman():
     out = variants_for(
         "cerebral arteriopathy, autosomal dominant, with subcortical infarcts and leukoencephalopathy, type 1"

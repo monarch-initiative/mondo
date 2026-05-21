@@ -111,12 +111,16 @@ def rule_r1b_suffix_arabic_roman(label: str) -> List[Tuple[str, str]]:
     Catches forms like 'glycogen storage disease I', 'orofaciodigital
     syndrome V', 'Fanconi anemia complementation group V'. Single-letter
     trailing X is excluded — see ROMAN_ALT_R1B.
+
+    The trailing token must be preceded by whitespace or start-of-string —
+    `(?<!\\S)` — so compound suffixes like 'grade 1/2' or '2,3' don't get
+    their last numeral half-converted.
     """
     out: List[Tuple[str, str]] = []
-    m = re.search(r"(?<![A-Za-z0-9])(\d{1,2})$", label)
+    m = re.search(r"(?<!\S)(\d{1,2})$", label)
     if m and 1 <= int(m.group(1)) <= 12:
         out.append((label[: m.start(1)] + INT_TO_ROMAN[int(m.group(1))], "R1b"))
-    m = re.search(r"(?<![A-Za-z0-9])(" + ROMAN_ALT_R1B + r")$", label)
+    m = re.search(r"(?<!\S)(" + ROMAN_ALT_R1B + r")$", label)
     if m:
         out.append((label[: m.start(1)] + str(ROMAN_TO_INT[m.group(1)]), "R1b"))
     return out
