@@ -195,11 +195,10 @@ def rule_r5_xlinked_reorder(label: str) -> List[Tuple[str, str]]:
 
 
 def rule_r6_type_hyphen_space(label: str) -> List[Tuple[str, str]]:
+    # Unidirectional: only fold `type-N` -> `type N`. The reverse direction
+    # (`type N` -> `type-N`) was generating noise; curator preference is the
+    # space form as canonical.
     out: List[Tuple[str, str]] = []
-    # "type N" -> "type-N" everywhere it appears as a coherent token pair
-    pat_space = re.compile(r"\btype (" + NUM_ALT + r")(?![A-Za-z0-9])")
-    if pat_space.search(label):
-        out.append((pat_space.sub(r"type-\1", label), "R6"))
     pat_hyphen = re.compile(r"\btype-(" + NUM_ALT + r")(?![A-Za-z0-9])")
     if pat_hyphen.search(label):
         out.append((pat_hyphen.sub(r"type \1", label), "R6"))
@@ -275,6 +274,135 @@ GENERATOR_RULES: List[Callable[[str], List[Tuple[str, str]]]] = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Lowercase-skip filters. These suppress the RL chain for strings that
+# would read poorly in fully-lowercased form: eponyms (Crohn, Ullrich, …)
+# and multi-character Roman numerals (II, III, IV, …).
+# ---------------------------------------------------------------------------
+
+# Romans to refuse to lowercase. Two cases:
+#   (1) multi-character romans anywhere — never want `type ii`, `type iii`,
+#       `complex iv`, etc.
+#   (2) single-letter I/V/X preceded by an indicator word (`type`, `stage`,
+#       `grade`, `class`, `complex`, `factor`, `group`) — when the context
+#       names the numeral explicitly, the single letter is a roman and
+#       lowercasing it reads as broken.
+# Single-letter I/V/X *without* an indicator prefix still lowercases — that
+# protects useful matches like `x chromosome`, `factor v leiden` text where
+# the letter is part of a name, not a numeral. (`factor V` standalone would
+# also fire via the indicator branch.)
+_INDICATOR_ALT = r"type|stage|grade|class|complex|factor|group"
+# Three branches:
+#   - Multi-char romans anywhere (incl. trailing letters: IIa, IIx, IIIb…).
+#   - Single-letter I/V/X preceded by an indicator word (type|stage|…).
+#   - Single-letter I or V at the END of the variant: in MONDO this is
+#     dominated by genuine roman usage (`glycogen storage disease I`,
+#     `orofaciodigital syndrome V`, and any arabic->roman output from R1b
+#     ending in `I`/`V`). Trailing `X` is intentionally excluded — that
+#     suffix is dominated by chromosome usage (`trisomy X`, `monosomy X`).
+MULTICHAR_ROMAN_RE = re.compile(
+    r"\b(?:II|III|IV|VI|VII|VIII|IX|XI|XII)[a-z]*\b"
+    r"|\b(?:" + _INDICATOR_ALT + r")\s+[IVXivx]\b"
+    r"|\b[IV]$"
+)
+
+# Token split for proper-noun checks. Hyphens are kept INSIDE tokens so
+# compound eponyms like `Boyadjiev-Jabs` survive as a single token; the
+# matcher then also tries the sub-tokens, so either form may sit in the
+# curated list. Apostrophes survive too — we strip a trailing `'s` at
+# lookup time so `Crohn's` matches `Crohn`.
+_TOKEN_SPLIT_RE = re.compile(r"[\s/,()\[\];:.]+")
+_POSSESSIVE_RE = re.compile(r"(?:'s|’s)$")
+
+PROPER_NOUN_FILE = Path(__file__).parent / "lexical_variant_proper_nouns.txt"
+
+
+def _load_proper_nouns(path: Path = PROPER_NOUN_FILE) -> frozenset:
+    """Load the proper-noun list, normalised to lowercase so the matcher
+    can do case-insensitive comparison (e.g. label `Charcot-Marie-tooth`
+    with a stray lowercase `t` still suppresses the lowercase chain)."""
+    if not path.exists():
+        return frozenset()
+    nouns = set()
+    with path.open(encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            nouns.add(line.lower())
+    return frozenset(nouns)
+
+
+_PROPER_NOUNS_CACHE: Optional[frozenset] = None
+
+
+def _proper_nouns() -> frozenset:
+    global _PROPER_NOUNS_CACHE
+    if _PROPER_NOUNS_CACHE is None:
+        _PROPER_NOUNS_CACHE = _load_proper_nouns()
+    return _PROPER_NOUNS_CACHE
+
+
+def _contains_proper_noun(text: str) -> bool:
+    nouns = _proper_nouns()  # already lowercased at load time
+    if not nouns:
+        return False
+    for tok in _TOKEN_SPLIT_RE.split(text):
+        if not tok:
+            continue
+        tok = _POSSESSIVE_RE.sub("", tok).lower()
+        if tok in nouns:
+            return True
+        # Hyphenated token: also try each component, so a curated list
+        # containing either the compound (`Boyadjiev-Jabs`) or the pieces
+        # (`Sertoli`, `Leydig`) will fire on `Sertoli-Leydig cell tumor`.
+        if "-" in tok:
+            for sub in tok.split("-"):
+                sub = _POSSESSIVE_RE.sub("", sub)
+                if sub in nouns:
+                    return True
+    return False
+
+
+def _should_skip_lowercase(text: str) -> bool:
+    if MULTICHAR_ROMAN_RE.search(text):
+        return True
+    if _contains_proper_noun(text):
+        return True
+    return False
+
+
+def _has_miscased_proper_noun(text: str) -> bool:
+    """True if `text` contains a token that case-insensitively matches a
+    curated proper noun but is not in its canonical (capital-first) form.
+
+    Used to suppress non-RL rule outputs that would PROPAGATE a mis-cased
+    eponym from a quirky source label — e.g. R8 turning the existing
+    `ovarian sertoli-stromal cell tumor` into `… tumour` and dragging the
+    lowercase `sertoli` into a new generated synonym.
+    """
+    nouns = _proper_nouns()
+    if not nouns:
+        return False
+    for tok in _TOKEN_SPLIT_RE.split(text):
+        if not tok:
+            continue
+        bare = _POSSESSIVE_RE.sub("", tok)
+        if not bare:
+            continue
+        low = bare.lower()
+        if low in nouns and not bare[:1].isupper():
+            return True
+        if "-" in bare:
+            for sub in bare.split("-"):
+                sub = _POSSESSIVE_RE.sub("", sub)
+                if not sub:
+                    continue
+                if sub.lower() in nouns and not sub[:1].isupper():
+                    return True
+    return False
+
+
 def generate_variants(label: str) -> List[Tuple[str, str]]:
     """Apply all rules to the label, then add lowercase forms.
 
@@ -288,12 +416,25 @@ def generate_variants(label: str) -> List[Tuple[str, str]]:
     for rule in GENERATOR_RULES:
         for v, rid in rule(label):
             v = v.strip()
-            if v and v not in seen:
-                seen.add(v)
-                variants.append((v, rid))
+            if not v or v in seen:
+                continue
+            # Don't propagate a mis-cased eponym from a quirky source label.
+            if _has_miscased_proper_noun(v):
+                continue
+            seen.add(v)
+            variants.append((v, rid))
 
     extras: List[Tuple[str, str]] = []
     for v, rid in [(label, "LABEL")] + variants:
+        if _should_skip_lowercase(v):
+            continue
+        # R1b is the only rule that PRODUCES a trailing single-letter roman
+        # from a trailing arabic numeral (`…, 10` -> `…, X`). The general
+        # filter intentionally lets trailing single-letter X lowercase
+        # (chromosome contexts), but in this provenance the X is definitely
+        # a roman, so block the chain.
+        if rid == "R1b" and re.search(r"\b[IVX]$", v):
+            continue
         low = v.lower()
         if low != v and low not in seen:
             seen.add(low)

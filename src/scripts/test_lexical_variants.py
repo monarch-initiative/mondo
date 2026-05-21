@@ -28,9 +28,12 @@ def test_r1_arabic_to_roman():
 
 def test_r1_roman_to_arabic():
     out = variants_for("Mobitz type II atrioventricular block")
-    # R1 is suffix-anchored, so "type II" here is NOT a suffix -> no R1 match
-    # but lowercase should still produce a variant.
-    assert "mobitz type ii atrioventricular block" in out
+    # R1 is suffix-anchored, so "type II" here is NOT a suffix -> no R1 match.
+    # The fully-lowercased variant is suppressed because the source contains
+    # the multi-char roman "II" (and "Mobitz" if it ends up in the proper-noun
+    # list). No assertion about positive output — see also
+    # test_rlower_skips_multichar_roman.
+    assert all("type ii" not in v for v in out)
 
 
 def test_r1_suffix_roman_to_arabic():
@@ -139,10 +142,83 @@ def test_r5_xlinked_reorder_skips_multi_comma():
 
 
 def test_r6_type_hyphen_space():
+    # Unidirectional: `type-N` -> `type N`, never the reverse.
     out = variants_for("disease type 2")
-    assert "disease type-2" in out
+    assert "disease type-2" not in out
     out2 = variants_for("disease type-II")
     assert "disease type II" in out2
+
+
+def test_rlower_skips_indicator_plus_single_letter_roman():
+    restore = _with_proper_nouns(set())
+    try:
+        # `type I` -> would lowercase to `type i`, which reads as a roman
+        # numeral in context. The indicator-prefix branch must suppress it.
+        out = variants_for("Hailey-Hailey disease type I")
+        assert "hailey-hailey disease type i" not in out
+        out2 = variants_for("ovarian cancer stage IV")
+        assert "ovarian cancer stage iv" not in out2  # multi-char also blocked
+        out3 = variants_for("complement factor V deficiency")
+        assert "complement factor v deficiency" not in out3
+    finally:
+        restore()
+
+
+def test_no_propagation_of_miscased_proper_noun():
+    # Source label has the eponym in lowercase ("sertoli") — quirky MONDO
+    # casing. R8 must NOT propagate it into a new "sertoli ... tumour".
+    restore = _with_proper_nouns({"Sertoli"})
+    try:
+        out = variants_for("ovarian sertoli-stromal cell tumor")
+        assert all("sertoli" not in v for v in out), out
+    finally:
+        restore()
+
+
+def test_rlower_skips_suffix_single_letter_roman():
+    restore = _with_proper_nouns(set())
+    try:
+        # Direct: label already ending in single-letter `I`.
+        out = variants_for("glycogen storage disease I")
+        assert "glycogen storage disease i" not in out
+        # Indirect: R1b converts the trailing `1` -> `I`, and the lowercase
+        # of THAT variant must also be blocked.
+        out2 = variants_for("vertigo, benign recurrent, 1")
+        assert "vertigo, benign recurrent, i" not in out2
+        # V at end
+        out3 = variants_for("orofaciodigital syndrome V")
+        assert "orofaciodigital syndrome v" not in out3
+        # R1b converting `, 10` -> `, X`: the trailing-X carve-out must
+        # NOT let this lowercase through.
+        out4 = variants_for("prostate cancer, hereditary, 10")
+        assert "prostate cancer, hereditary, x" not in out4
+        # But naturally-occurring trailing X (chromosome) still lowercases.
+        out5 = variants_for("trisomy X")
+        assert "trisomy x" in out5
+    finally:
+        restore()
+
+
+def test_multichar_roman_with_trailing_letters():
+    # `IIa`, `IIx`, `IIIb` etc. should also block the lowercase chain.
+    restore = _with_proper_nouns(set())
+    try:
+        out = variants_for("congenital disorder of glycosylation, type i/IIx")
+        assert "congenital disorder of glycosylation, type i/iix" not in out
+        out2 = variants_for("some condition IIIa")
+        assert "some condition iiia" not in out2
+    finally:
+        restore()
+
+
+def test_rlower_still_allows_single_letter_without_indicator():
+    restore = _with_proper_nouns(set())
+    try:
+        # `X chromosome` has X but no preceding indicator -> lowercase OK.
+        out = variants_for("X chromosome thing")
+        assert "x chromosome thing" in out
+    finally:
+        restore()
 
 
 def test_r7_susceptibility_reorder():
@@ -181,9 +257,82 @@ def test_r9_diacritics():
 
 
 def test_rlower_label_and_chain():
-    out = variants_for("Charcot-Marie-Tooth disease type II")
-    assert "charcot-marie-tooth disease type ii" in out
-    assert "charcot-marie-tooth disease type 2" in out  # R1+RL
+    # Pin the proper-noun set to empty so this test isolates the
+    # multi-char-roman lowercase filter and isn't sensitive to whatever's
+    # in lexical_variant_proper_nouns.txt on disk.
+    restore = _with_proper_nouns(set())
+    try:
+        out = variants_for("Charcot-Marie-Tooth disease type II")
+        # multi-char roman "II" in source -> RL chain skipped for that
+        # string, but R1+RL still fires because "type 2" is romanless.
+        assert "charcot-marie-tooth disease type ii" not in out
+        assert "charcot-marie-tooth disease type 2" in out
+    finally:
+        restore()
+
+
+def test_rlower_skips_multichar_roman():
+    out = variants_for("Mobitz type II atrioventricular block")
+    # source contains "II" -> never lowercase the form that still has II.
+    assert "mobitz type ii atrioventricular block" not in out
+
+
+def test_rlower_keeps_single_letter_X():
+    # Chromosome X / single-letter X should still get a lowercase variant.
+    out = variants_for("X chromosome thing")
+    assert "x chromosome thing" in out
+
+
+def _with_proper_nouns(nouns):
+    """Temporarily swap in a proper-noun set for a test. Returns a cleanup
+    callable. The matcher does case-insensitive lookup, so we lowercase
+    here too to match what `_load_proper_nouns` does on disk."""
+    saved = lv._PROPER_NOUNS_CACHE
+    lv._PROPER_NOUNS_CACHE = frozenset(n.lower() for n in nouns)
+    def restore():
+        lv._PROPER_NOUNS_CACHE = saved
+    return restore
+
+
+def test_rlower_skips_when_proper_noun_present():
+    restore = _with_proper_nouns({"Crohn"})
+    try:
+        out = variants_for("Crohn disease, type 4")
+        assert "crohn disease, type 4" not in out
+        # The "Crohn disease, type IV" R1 variant should still be present
+        # because R1 only swaps the digit, not the case.
+        assert "Crohn disease, type IV" in out
+    finally:
+        restore()
+
+
+def test_proper_noun_check_strips_possessive():
+    restore = _with_proper_nouns({"Crohn"})
+    try:
+        out = variants_for("Crohn's disease")
+        assert "crohn's disease" not in out
+    finally:
+        restore()
+
+
+def test_proper_noun_check_handles_hyphenated_tokens():
+    restore = _with_proper_nouns({"Sertoli", "Leydig"})
+    try:
+        out = variants_for("malignant Sertoli-Leydig cell tumor")
+        assert "malignant sertoli-leydig cell tumor" not in out
+    finally:
+        restore()
+
+
+def test_proper_noun_check_matches_compound_entry():
+    # With "Boyadjiev-Jabs" stored as a single compound entry, the matcher
+    # must still fire on a label that uses it.
+    restore = _with_proper_nouns({"Boyadjiev-Jabs"})
+    try:
+        out = variants_for("Boyadjiev-Jabs syndrome")
+        assert "boyadjiev-jabs syndrome" not in out
+    finally:
+        restore()
 
 
 def test_no_duplicates_from_label():
@@ -256,9 +405,12 @@ def test_generate_adds_for_live_terms_only(tmp_path):
     out_path = tmp_path / "out.obo"
     lv.run(in_path, out_path, do_purge=False, do_generate=True, report_path=None)
     text = out_path.read_text()
-    # MONDO:0000001 should get "Disease type 2" (R1) and lowercase variants.
+    # MONDO:0000001 should get "Disease type 2" (R1) and the R1+RL chain
+    # "disease type 2". The "disease type ii" RL variant is suppressed by
+    # the multi-char-roman lowercase filter.
     assert 'synonym: "Disease type 2" EXACT [MONDO:LexicalVariation]' in text
-    assert 'synonym: "disease type ii" EXACT [MONDO:LexicalVariation]' in text
+    assert 'synonym: "disease type 2" EXACT [MONDO:LexicalVariation]' in text
+    assert 'disease type ii' not in text
     # MONDO:0000002 is obsolete — no synonyms should be added to it. The
     # generated block should sit on the live term only.
     assert "obsolete thing" in text
