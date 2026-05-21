@@ -13,6 +13,6 @@ WHERE
           rdfs:label ?label ;
       	a owl:Class .
     
-  	FILTER(str(?label)=str(?related))
+  	FILTER(UCASE(str(?label))=UCASE(str(?related)))
     FILTER (isIRI(?term) && regex(str(?term), "^http://purl.obolibrary.org/obo/MONDO_"))
 }
