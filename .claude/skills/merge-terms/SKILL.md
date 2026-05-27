@@ -72,7 +72,7 @@ The obsoleted stanza must contain ONLY the lines below. Delete anything else owl
 
 owltools transfers content but several things need manual attention:
 
-1. **Fix synonym evidence.** owltools added a synonym like `synonym: "<obsoleted name>" EXACT [MONDO:XXXXXXX]`. Replace `MONDO:XXXXXXX` with one of the *transferred* xrefs (e.g. `[Orphanet:NNNNNN]`). If the obsoleted name is identical to an existing synonym with a different scope, reconcile manually — pick the correct scope, drop the duplicate.
+1. **Fix synonym evidence.** owltools added a synonym like `synonym: "<obsoleted name>" EXACT [MONDO:XXXXXXX]`. Replace `MONDO:XXXXXXX` with one of the *transferred* xrefs (e.g. `[Orphanet:NNNNNN]`) — but only if that source actually uses the name. Picking any xref at random fabricates evidence. To confirm: either reuse a citation from the pre-merge obsolete stanza if the same synonym was already cited there, or open the xref at source (`omim.org/entry/NNNNNN`, `orpha.net/en/disease/detail/NNNNNN`, etc.) and check the name appears as a label or synonym. If no transferred xref carries the name, leave `[]` and flag in the Step 8 summary. If the obsoleted name duplicates an existing synonym with a different scope, reconcile manually — pick the correct scope, drop the duplicate.
 
 2. **Remove obsoletion-tracking metadata** that came from the obsoleted term:
    - `subset: obsoletion_candidate`
@@ -110,7 +110,7 @@ For each hit outside the obsoleted stanza itself, checkout that term, repoint th
    ```
    then `mv NORM mondo-edit.obo`.
 
-3. Run targeted QC. The merge-relevant SPARQL checks live under `src/sparql/qc/general/`. Run them via `robot verify` (this is a body — wrap with `sh run.sh` or docker per the warning at the top of the skill):
+3. Run targeted QC. The merge-relevant SPARQL checks live under `src/sparql/qc/general/` and `src/sparql/qc/mondo/`. Run them via `robot verify` (this is a body — wrap with `sh run.sh` or docker per the warning at the top of the skill):
 
    ```
    robot verify --catalog catalog-v001.xml -i mondo-edit.obo \
@@ -121,10 +121,15 @@ For each hit outside the obsoleted stanza itself, checkout that term, repoint th
        ../sparql/qc/general/qc-deprecated-class-reference.sparql \
        ../sparql/qc/general/qc-xref-without-precision.sparql \
        ../sparql/qc/general/qc-duplicate-exact-synonym-no-abbrev.sparql \
+       ../sparql/qc/mondo/qc-omim-subsumption.sparql \
      -O reports/
    ```
 
-   Empty exit + `PASS Rule ... 0 violation(s)` per query = clean. **Note:** these queries do NOT catch a missing `IAO:0000231 MONDO:TermsMerged` on the obsoleted term — the Step 8 checklist is the real safety net.
+   Empty exit + `PASS Rule ... 0 violation(s)` per query = clean.
+
+   **On `qc-omim-subsumption.sparql`.** Flags a class and one of its ancestors both carrying the same `OMIM:NNNNNN` xref with `{source="MONDO:equivalentTo"}` — two classes can't both be the OMIM-equivalent. Often triggered by merges, since transferring an `equivalentTo` OMIM xref onto the surviving term may collide with the same xref already on an ancestor/descendant. Fix by demoting one side's source qualifier (`MONDO:equivalentTo` → `MONDO:obsoleteEquivalent` / `MONDO:Redundant` / a more specific mapping kind) on whichever class shouldn't claim equivalence, or dropping the duplicate xref from the descendant. Docs: <https://mondo.readthedocs.io/en/latest/editors-guide/quality-control-tests/#qc-omim-subsumptionsparql>.
+
+   **Note:** these queries do NOT catch a missing `IAO:0000231 MONDO:TermsMerged` on the obsoleted term — the Step 8 checklist is the real safety net.
 
 ## Step 7.5 — Self-verify
 
