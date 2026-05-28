@@ -50,6 +50,15 @@ jobs:
           ref: ${{ inputs.sha }}
           fetch-depth: 1
 
+      - name: Verify mondo-edit.obo is normalized
+        run: |
+          cd src/ontology
+          make NORM
+          if ! cmp -s NORM mondo-edit.obo; then
+            echo "::error file=src/ontology/mondo-edit.obo::mondo-edit.obo is not normalized. Run 'make NORM && mv NORM mondo-edit.obo' and commit the result."
+            exit 1
+          fi
+
       - name: Run ontology QC checks
         id: qc
         run: |

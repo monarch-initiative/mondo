@@ -10,12 +10,13 @@ concurrency:
 
 env:
   PR_BRANCH: ${{ github.event.pull_request.head.ref }}
-  PR_REPO: ${{ github.event.pull_request.head.repo.full_name }}
   PR_NUMBER: ${{ github.event.pull_request.number }}
-  SAME_REPO: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
 
 jobs:
   normalize_mondo_edit:
+    # Only run on PRs opened from a branch in this repo. Fork PRs are
+    # handled by `fork-pull-orchestrator.yaml`.
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
     container: obolibrary/odkfull:v1.6
     permissions:
@@ -24,12 +25,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          repository: ${{ env.PR_REPO }}
           ref: ${{ env.PR_BRANCH }}
           fetch-depth: 1
 
       - name: Configure git
-        if: ${{ env.SAME_REPO == 'true' }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -43,26 +42,14 @@ jobs:
       - name: Commit and push if changed
         id: push
         run: |
-          if git diff --quiet -- src/ontology/mondo-edit.obo; then
-            echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-          elif [ "$SAME_REPO" = "true" ]; then
+          if ! git diff --quiet -- src/ontology/mondo-edit.obo; then
             git add src/ontology/mondo-edit.obo
             git commit -m "Normalize mondo-edit.obo"
             git push origin "HEAD:${PR_BRANCH}"
-            echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-          else
-            echo "::error file=src/ontology/mondo-edit.obo::mondo-edit.obo is not normalized. Fork PRs cannot be auto-normalized; please run 'make NORM && mv NORM mondo-edit.obo' and commit the result."
-            git --no-pager diff -- src/ontology/mondo-edit.obo
-            exit 1
           fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-      # This uses `gh api` to trigger QC, rather than a reusable workflow
-      # with `needs:` because we want to be explicit about which ref to
-      # trigger it on. If normalization occurred, it will be run on the
-      # normalization commit. Otherwise, it will be run on the original commit
-      # that triggered this workflow.
-      - name: Trigger QC on HEAD ref
-        if: ${{ env.SAME_REPO == 'true' }}
+      - name: Trigger QC on normalized branch
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
