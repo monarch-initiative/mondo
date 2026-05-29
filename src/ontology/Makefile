@@ -760,7 +760,7 @@ $(MIRRORDIR)/%.owl: mirror-% | $(MIRRORDIR)
 ###### END PARTIAL ODK MIGRATION ##############
 ###### BEGIN CUSTOM IMPORTS ###################
 mirror/hgnc_gene.nt: | $(MIRRORDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://data.monarchinitiative.org/monarch-kg/latest/rdf/hgnc_gene.nt.gz | gzip -d > $@.tmp &&\
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/monarch-initiative/hgnc-ingest/releases/latest/download/hgnc_gene.nt.gz | gzip -d > $@.tmp &&\
 		perl -npe 's@https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:@http://identifiers.org/hgnc/@g' $@.tmp > $@; fi
 .PRECIOUS: mirror/hgnc_gene.nt
 
