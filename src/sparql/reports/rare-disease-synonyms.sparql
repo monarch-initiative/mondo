@@ -1,0 +1,50 @@
+PREFIX rdfs:      <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:       <http://www.w3.org/2002/07/owl#>
+PREFIX obo:       <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl:  <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX mondo:     <http://purl.obolibrary.org/obo/mondo#>
+
+SELECT
+  ?ID
+  ?LABEL
+  ?definition
+  (GROUP_CONCAT(DISTINCT ?exact;   SEPARATOR="|") AS ?hasExactSynonym)
+  (GROUP_CONCAT(DISTINCT ?broad;   SEPARATOR="|") AS ?hasBroadSynonym)
+  (GROUP_CONCAT(DISTINCT ?narrow;  SEPARATOR="|") AS ?hasNarrowSynonym)
+  (GROUP_CONCAT(DISTINCT ?related; SEPARATOR="|") AS ?hasRelatedSynonym)
+  ?rare_ordo
+  ?rare_nord
+  ?rare_gard
+WHERE {
+  # Everything is read ONLY from the mondo.owl named graph
+
+    # MONDO classes only, excluding obsolete terms
+    ?cls rdfs:subClassOf+ <http://purl.obolibrary.org/obo/MONDO_0700096> ;
+         rdfs:label ?LABEL .
+    FILTER(STRSTARTS(STR(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+    FILTER NOT EXISTS { ?cls owl:deprecated true }
+
+
+    # CURIE-style ID (e.g. MONDO:0017215)
+    BIND(REPLACE(STR(?cls), "http://purl.obolibrary.org/obo/MONDO_", "MONDO:") AS ?ID)
+
+    # Rare-disease subset membership per authority
+    # NOTE: Orphanet/ORDO is annotated as "orphanet_rare" in Mondo
+    BIND(EXISTS { ?cls oboInOwl:inSubset mondo:orphanet_rare } AS ?rare_ordo)
+    BIND(EXISTS { ?cls oboInOwl:inSubset mondo:nord_rare }     AS ?rare_nord)
+    BIND(EXISTS { ?cls oboInOwl:inSubset mondo:gard_rare }     AS ?rare_gard)
+
+    # Keep only diseases considered rare by at least one authority
+    FILTER(?rare_ordo || ?rare_nord || ?rare_gard)
+
+    # Definition (IAO:0000115) and scoped synonyms
+    OPTIONAL { ?cls obo:IAO_0000115            ?definition }
+    OPTIONAL { ?cls oboInOwl:hasExactSynonym   ?exact }
+    OPTIONAL { ?cls oboInOwl:hasBroadSynonym   ?broad }
+    OPTIONAL { ?cls oboInOwl:hasNarrowSynonym  ?narrow }
+    OPTIONAL { ?cls oboInOwl:hasRelatedSynonym ?related }
+
+  }
+
+GROUP BY ?ID ?LABEL ?definition ?rare_ordo ?rare_nord ?rare_gard
+ORDER BY ?ID

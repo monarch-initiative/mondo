@@ -416,6 +416,10 @@ $(MONDO_OWL_PATH):
 move-mondo-owl: $(MONDO_OWL_PATH)
 	mv $(MONDO_OWL_PATH) ./$(MONDO_OWL_GH_TAG)
 
+reports/rare-disease-synonyms.tsv: $(MONDO_OWL_PATH)
+	$(ROBOT) query -i $(MONDO_OWL_PATH) --query ../sparql/reports/rare-disease-synonyms.sparql $@
+	sed -i.bak '1s/?//g' $@ && rm -f $@.bak
+
 # Rule for generating .tsv files from the queries (general, rare, synonym stats)
 $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql | create-directories
 	@echo "Running query $< ..."

@@ -84,6 +84,22 @@ def test_r1b_skips_compound_numerals():
     assert "cervical intraepithelial neoplasia grade 2/III" not in out2
 
 
+def test_r1b_skips_multi_numeral_label():
+    # Regression for #10259: labels with multiple standalone numerals
+    # (arabic 1-12 or roman I-XII) must not have only the trailing one
+    # converted, which produces mixed-system nonsense.
+    out = variants_for(
+        "microcephalic osteodysplastic primordial dwarfism types I and III"
+    )
+    assert all(
+        "types I and 3" not in v and "types 1 and III" not in v for v in out
+    ), out
+    # Reverse direction: arabic at end with arabic earlier — also skip.
+    out2 = variants_for("foo 1 and 3")
+    assert "foo 1 and III" not in out2
+    assert "foo I and 3" not in out2
+
+
 def test_r2_comma_form_roman():
     out = variants_for(
         "cerebral arteriopathy, autosomal dominant, with subcortical infarcts and leukoencephalopathy, type 1"
@@ -94,6 +110,18 @@ def test_r2_comma_form_roman():
 def test_r3_comma_drop():
     out = variants_for("disease X, type 2")
     assert "disease X type 2" in out
+
+
+def test_r3_skips_multi_clause_label():
+    # Regression for #10259: multi-comma labels must not have their boundary
+    # comma dropped — "combined deficiency of, type 1" -> "of type 1" leaves
+    # a dangling preposition.
+    out = variants_for(
+        "vitamin K-dependent clotting factors, combined deficiency of, type 1"
+    )
+    assert all(
+        "combined deficiency of type 1" not in v for v in out
+    ), out
 
 
 def test_r4_x_linked_hyphen_space():

@@ -105,6 +105,22 @@ def rule_r1_type_arabic_roman(label: str) -> List[Tuple[str, str]]:
 ROMAN_ALT_R1B = "|".join([r for r in ROMAN_NUMERALS if r != "X"])
 
 
+# Standalone numerals anywhere in the label (whitespace-delimited). Used by
+# R1b to detect multi-numeral labels and refuse to half-convert them.
+_STANDALONE_ARABIC_RE = re.compile(r"(?<!\S)\d{1,2}(?!\S)")
+_STANDALONE_ROMAN_RE = re.compile(r"(?<!\S)(?:" + ROMAN_ALT + r")(?!\S)")
+
+
+def _has_multiple_numerals(label: str) -> bool:
+    """True if the label contains more than one standalone arabic-1-12 or
+    roman-I-XII token. R1b refuses to fire on these labels because partial
+    conversion produces mixed-system nonsense like 'types I and 3'."""
+    arabic = [a for a in _STANDALONE_ARABIC_RE.findall(label)
+              if 1 <= int(a) <= 12]
+    roman = _STANDALONE_ROMAN_RE.findall(label)
+    return (len(arabic) + len(roman)) > 1
+
+
 def rule_r1b_suffix_arabic_roman(label: str) -> List[Tuple[str, str]]:
     """Suffix-anchored arabic <-> roman without requiring a 'type ' prefix.
 
@@ -115,8 +131,15 @@ def rule_r1b_suffix_arabic_roman(label: str) -> List[Tuple[str, str]]:
     The trailing token must be preceded by whitespace or start-of-string —
     `(?<!\\S)` — so compound suffixes like 'grade 1/2' or '2,3' don't get
     their last numeral half-converted.
+
+    Labels with multiple standalone numerals are skipped entirely: e.g.
+    'microcephalic osteodysplastic primordial dwarfism types I and III'
+    would otherwise convert only the trailing 'III' and produce the
+    mixed-system 'types I and 3'. See issue #10259 (ericsid).
     """
     out: List[Tuple[str, str]] = []
+    if _has_multiple_numerals(label):
+        return out
     m = re.search(r"(?<!\S)(\d{1,2})$", label)
     if m and 1 <= int(m.group(1)) <= 12:
         out.append((label[: m.start(1)] + INT_TO_ROMAN[int(m.group(1))], "R1b"))
@@ -138,9 +161,19 @@ def rule_r2_comma_type_arabic_roman(label: str) -> List[Tuple[str, str]]:
 
 
 def rule_r3_comma_drop_type(label: str) -> List[Tuple[str, str]]:
+    """Drop the comma before a trailing 'type N' clause.
+
+    Restricted to single-clause labels: if the prefix before ', type N'
+    already contains a comma, dropping the boundary comma can produce a
+    broken reading. Example from issue #10259 (ericsid):
+        'vitamin K-dependent clotting factors, combined deficiency of, type 1'
+        -> '... combined deficiency of type 1'  (dangling preposition)
+    The conservative form mirrors the single-comma constraint already used
+    by R5.
+    """
     out: List[Tuple[str, str]] = []
     m = re.search(r"(.*),\s*type (" + NUM_ALT + r")$", label)
-    if m:
+    if m and "," not in m.group(1):
         out.append((f"{m.group(1)} type {m.group(2)}", "R3"))
     return out
 
