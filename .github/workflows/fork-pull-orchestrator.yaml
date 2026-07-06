@@ -1,0 +1,50 @@
+# Fork pull orchestrator
+#
+# Handles FORK PULL REQUESTS ONLY. Same-repo PRs short-circuit at the
+# job-level `if:` and are handled by `normalize-mondo-edit.yaml` instead.
+#
+# This workflow runs on `pull_request_target` (NOT `pull_request`) so
+# that it has the write permissions needed to dispatch the QC workflow
+# on fork PRs. The `pull_request` event would give a read-only token
+# when the PR head is in a fork.
+#
+# SAFETY: this workflow never checks out the fork's code and never
+# executes anything from it. It only makes an API call to dispatch
+# qc.yaml. That is the trust boundary that makes `pull_request_target`
+# safe to use here. The dispatched QC workflow is always loaded from the
+# default branch, so a fork cannot rewrite it. The dispatched `qc.yaml`
+# *will* check out the fork's code, but only with a read-only token.
+#
+# First-time contributors are gated by GitHub's built-in "Approve and
+# run workflows" prompt before any of this fires.
+
+name: Fork pull orchestrator
+run-name: "Fork pull orchestrator for PR #${{ github.event.pull_request.number }}"
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+
+concurrency:
+  group: fork-orch-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  dispatch_qc:
+    # Fork PRs only. Same-repo PRs are handled by normalize-mondo-edit.yaml.
+    if: github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+
+    steps:
+      - name: Dispatch QC
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api \
+            --method POST \
+            "repos/${GITHUB_REPOSITORY}/actions/workflows/qc.yaml/dispatches" \
+            -f "ref=${{ github.event.repository.default_branch }}" \
+            -f "inputs[sha]=${{ github.event.pull_request.head.sha }}" \
+            -f "inputs[pr_number]=${{ github.event.pull_request.number }}"
