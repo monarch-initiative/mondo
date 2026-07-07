@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout master
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: master
           fetch-depth: 1
@@ -45,7 +45,7 @@ jobs:
           cp "${{ steps.vars.outputs.cache2 }}" /tmp/table2.md
 
       - name: Checkout gh-pages branch as root
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: gh-pages
           clean: true
@@ -98,7 +98,7 @@ jobs:
 
       - name: Create Pull Request
         id: create-pr
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v8
         with:
           branch-suffix: short-commit-hash
           labels: Automated

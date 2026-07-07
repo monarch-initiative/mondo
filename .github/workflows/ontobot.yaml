@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Check if issue body contains 'Hey ontobot'
         id: check-body
-        uses: actions/github-script@v6
+        uses: actions/github-script@v9
         with:
           script: |
             const issue = await github.rest.issues.get({
@@ -88,15 +88,15 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
 
       - name: Return issue number
         id: gh-script-issue
-        uses: actions/github-script@v6
+        uses: actions/github-script@v9
         with:
           script: |
             const issue_number = context.issue.number;
@@ -104,7 +104,7 @@ jobs:
 
       - name: Return repository name
         id: gh-script-repo
-        uses: actions/github-script@v6
+        uses: actions/github-script@v9
         with:
           script: |
             const repo = context.repo.owner + "/" + context.repo.repo;
@@ -136,14 +136,14 @@ jobs:
           echo "Running command: $cmd"
           eval $cmd
 
-      - uses: actions/create-github-app-token@v1
+      - uses: actions/create-github-app-token@v3
         id: app-token
         with:
           app-id: ${{ vars.ONTOBOT_APP_ID }}
           private-key: ${{ secrets.ONTOBOT_APP_PRIVATE_KEY }}
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v8
         if: ${{ env.PR_TITLE }}
         with:
           branch-suffix: short-commit-hash
