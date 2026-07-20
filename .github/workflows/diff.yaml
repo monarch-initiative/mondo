@@ -13,11 +13,11 @@ jobs:
       max-parallel: 1
     steps:
       - name: Checkout main branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Run diff
         run: cd src/ontology/ && make IMP=false PAT=false MIR=false GITHUB_ACTION=true all_release_reports
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: Update Mondo diff reports
           title: 'Mondo Diff reports'
