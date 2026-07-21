@@ -19,7 +19,7 @@ Examples - [autism, susceptibility to, X-linked 5](http://purl.obolibrary.org/ob
 
 ## Definition 
 
-A susceptibility or predisposition to {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} in which the cause of the disease is a mutation in the {[gene](http://purl.obolibrary.org/obo/SO_0000704)} gene.
+A susceptibility or predisposition to {[disease](http://purl.obolibrary.org/obo/MONDO_0000001)} in which the cause of the predisposition is a mutation in the {[gene](http://purl.obolibrary.org/obo/SO_0000704)} gene.
 
 ## Equivalent to 
 
