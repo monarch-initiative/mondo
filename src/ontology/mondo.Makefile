@@ -613,6 +613,8 @@ update-external-content:
 	$(MAKE) update-nando -B
 	$(MAKE) update-medgen -B
 	$(MAKE) update-malacards -B
+	$(MAKE) update-dismech -B
+	$(MAKE) update-monarch-linkouts -B
 	$(MAKE) update-emc-synonym-prov -B
 	$(MAKE) subset-metrics -B && cp $(TMPDIR)/subset-metrics.tsv $(TMPDIR)/subset-metrics-after.tsv
 	@echo "Subset metrics before..."
@@ -1922,3 +1924,41 @@ openai-validate-%: tmp/issue_%_analysis.md
 		-m gpt-5 \
 		-g system "You are a strict medical terminology expert that formats responses in Markdown." \
 		-g user "Provide a succinct but strict review of the following analysis:\n\n$$(cat $<)" | tee tmp/issue_$*_analysis_review.md
+
+####################################
+##### DisMech ######################
+####################################
+
+# dismech (Disorder Mechanisms Knowledge Base, https://dismech.monarchinitiative.org)
+# publishes curated_content_resource linkouts as Externally Managed Content. The TSV->OWL
+# transform lives in mondo-ingest (processed-mondo-dismech.robot.owl); here we just pull
+# it and merge, exactly like update-malacards. Linkouts carry source="MONDO:DisMech".
+.PHONY: update-dismech
+update-dismech:
+	$(MAKE) $(TMPDIR)/external/processed-mondo-dismech.robot.owl -B
+	grep -vE 'curated_content_resource "https://dismech\.monarchinitiative\.org' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
+	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-mondo-dismech.robot.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+####################################
+##### Monarch linkouts #############
+####################################
+
+# Every MONDO class gets a curated_content_resource linkout to its Monarch Initiative
+# node page (https://monarchinitiative.org/MONDO:<id>), tagged source="MONDO:Monarch".
+# This is derived from Mondo's own class list (not external content), so it is generated
+# locally with a SPARQL construct rather than pulled from mondo-ingest. Obsolete classes
+# are excluded by the construct query.
+.PHONY: update-monarch-linkouts
+update-monarch-linkouts:
+	$(MAKE) $(TMPDIR)/monarch-linkouts.owl -B
+	grep -vE 'curated_content_resource "https://monarchinitiative\.org/MONDO:' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
+	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/monarch-linkouts.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
+	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
+
+$(TMPDIR)/monarch-linkouts.owl: ../sparql/construct/construct-monarch-linkouts.sparql $(SRC) | dirs
+	$(ROBOT) query -i $(SRC) --use-graphs false -c $< $@.tmp.ttl -f ttl && \
+	$(ROBOT) annotate -i $@.tmp.ttl -O $(OBO)/mondo/components/monarch-linkouts.owl -o $@ && \
+	rm -f $@.tmp.ttl
