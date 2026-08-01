@@ -181,6 +181,38 @@ broadMatch SSSOM export. Corrected.
 draft of this list but is **not** a defect: it carries `equivalentToOther`,
 not `equivalentTo`, so it never asserted an equivalence.
 
+### PR2 — new exactMatches and promotions (16 xrefs, done)
+
+13 new `MONDO:equivalentTo` xrefs on codes that had none, and 3 promotions of
+provenance-only xrefs that were already 1:1 with label agreement
+(`Q10.0` congenital ptosis, `Q32.0` congenital tracheomalacia, `Q83.1`
+accessory breast — each already carried the Orphanet `/e` exact qualifier).
+
+**Superseded-parent pattern.** 10 of the 13 target terms already xreffed the
+*parent* ICD code with pure Orphanet/DOID provenance:
+
+| Mondo term | had | now also has |
+|---|---|---|
+| Bardet-Biedl syndrome | Q87.8, Q87.89 | **Q87.83** |
+| Laurence-Moon syndrome | Q87.8 | **Q87.84** |
+| MED13L syndrome | Q87.8 | **Q87.85** |
+| Kleefstra syndrome | Q87.8 | **Q87.86** |
+| von Hippel-Lindau disease | Q85.8 | **Q85.83** |
+| Alagille syndrome | Q44.7 | **Q44.71** |
+| Phelan-McDermid syndrome | Q93.5 | **Q93.52** |
+| complete / partial septate uterus | Q51.2 | **Q51.21 / Q51.22** |
+
+ICD-10-CM has been carving named syndromes out of residual buckets
+(`Q87.8 Other specified congenital malformation syndromes, NEC`) into their
+own codes. Mondo's inherited mappings still point at the superseded parent.
+
+The parent xrefs were **left untouched** in PR2. They are unqualified, so they
+export as `oboInOwl:hasDbXref` rather than as a semantic mapping, and
+therefore do not contradict the new `exactMatch`. Deciding whether they should
+become `broadMatch` or be retired belongs with the bulk pass (step 4), not
+scattered across per-organ batches. Worth searching the other 2412
+`KEEP-as-broadMatch` rows for the same pattern when that pass happens.
+
 ## Suggested order of work
 
 1. **Fix the 9 demotions** — small, unambiguous, they are asserted errors.
