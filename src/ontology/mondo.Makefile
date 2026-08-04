@@ -1930,13 +1930,13 @@ openai-validate-%: tmp/issue_%_analysis.md
 ####################################
 
 # dismech (Disorder Mechanisms Knowledge Base, https://dismech.monarchinitiative.org)
-# publishes curated_content_resource linkouts as Externally Managed Content. The TSV->OWL
-# transform lives in mondo-ingest (processed-mondo-dismech.robot.owl); here we just pull
-# it and merge, exactly like update-malacards. Linkouts carry source="MONDO:DisMech".
+# publishes rdfs:seeAlso backlinks as Externally Managed Content. The TSV->OWL transform
+# lives in mondo-ingest (processed-mondo-dismech.robot.owl); here we just pull it and
+# merge, exactly like update-malacards. Backlinks carry source="MONDO:DisMech".
 .PHONY: update-dismech
 update-dismech:
 	$(MAKE) $(TMPDIR)/external/processed-mondo-dismech.robot.owl -B
-	grep -vE 'curated_content_resource "https://dismech\.monarchinitiative\.org' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
+	grep -vE 'seeAlso "https://dismech\.monarchinitiative\.org' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
 	mv $(TMPDIR)/mondo-edit.tmp $(SRC)
 	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-mondo-dismech.robot.owl --collapse-import-closure false convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
