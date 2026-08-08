@@ -416,6 +416,10 @@ $(MONDO_OWL_PATH):
 move-mondo-owl: $(MONDO_OWL_PATH)
 	mv $(MONDO_OWL_PATH) ./$(MONDO_OWL_GH_TAG)
 
+reports/rare-disease-synonyms.tsv: $(MONDO_OWL_PATH)
+	$(ROBOT) query -i $(MONDO_OWL_PATH) --query ../sparql/reports/rare-disease-synonyms.sparql $@
+	sed -i.bak '1s/?//g' $@ && rm -f $@.bak
+
 # Rule for generating .tsv files from the queries (general, rare, synonym stats)
 $(TMP_MONDO_STATS_REPORTS_DIR)/%.tsv: $(SPARQLDIR)/reports/%.sparql | create-directories
 	@echo "Running query $< ..."
@@ -1664,6 +1668,33 @@ add_british_language_synonyms: $(SRC) tmp/british_synonyms.owl
 americanize: $(SRC) tmp/british_english_dictionary.csv
 	python ../scripts/clean-british-english.py $^
 
+
+#######################################################
+##### Lexical variants pipeline (issue #10259) ########
+#######################################################
+# Strips out any synonym whose only source is MONDO:LexicalVariation and
+# regenerates the full set from current labels via the rules implemented in
+# scripts/lexical_variants.py. Designed to be idempotent: re-running on every
+# release is the intended workflow.
+
+.PHONY: lexical_variants lexical_variants_report test_lexical_variants
+
+lexical_variants: $(SRC)
+	python3 ../scripts/lexical_variants.py \
+	    --input $(SRC) --output $(SRC) --purge --generate \
+	    --report ../../reports/lexical_variants_proposed.tsv
+	make NORM
+	mv NORM $(SRC)
+
+# Dry-run: writes the report without touching the edit file.
+lexical_variants_report: $(SRC)
+	mkdir -p ../../reports tmp
+	python3 ../scripts/lexical_variants.py \
+	    --input $(SRC) --output tmp/mondo-edit-lex-dryrun.obo --generate \
+	    --report ../../reports/lexical_variants_proposed.tsv
+
+test_lexical_variants:
+	cd ../scripts && python3 test_lexical_variants.py
 
 
 #######################################
