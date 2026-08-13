@@ -10,22 +10,26 @@ prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 
 # description: This QC check ensures that no class ever has two clingen labels, and that there are only exact preferred labels
 
-SELECT ?entity ?property ?value
+SELECT DISTINCT ?entity ?property ?value
 WHERE {
  {
   ?ax owl:annotatedSource ?entity ;
          owl:annotatedProperty ?property ;
-         OMO:0002001 <https://w3id.org/information-resource-registry/clingen> .
+         OMO:0002001 ?clingen1 .
   ?ax2 owl:annotatedSource ?entity ;
          owl:annotatedProperty ?property ;
          owl:annotatedTarget ?value ;
-         OMO:0002001 <https://w3id.org/information-resource-registry/clingen> .
+         OMO:0002001 ?clingen2 .
+  FILTER(STR(?clingen1) = "https://w3id.org/information-resource-registry/clingen")
+  FILTER(STR(?clingen2) = "https://w3id.org/information-resource-registry/clingen")
   FILTER(?ax!=?ax2)
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
   } UNION {
     ?ax owl:annotatedSource ?entity ;
          owl:annotatedProperty ?property ;
-         OMO:0002001 <https://w3id.org/information-resource-registry/clingen> .
+         owl:annotatedTarget ?value ;
+         OMO:0002001 ?clingen1 .
+    FILTER(STR(?clingen1) = "https://w3id.org/information-resource-registry/clingen")
     FILTER(?property!=oboInOwl:hasExactSynonym)
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
   }
