@@ -3,11 +3,15 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX OMO: <http://purl.obolibrary.org/obo/OMO_>
 
 # Remove all axioms derived from NORD externally managed content.
-
+#
+# NORD attribution can be detected by two different signals:
+#   1) a NORD oboInOwl:hasDbXref
+#   2) an OMO:0002001 community label marker pointing at a NORD resource
+# Most synonyms carry both, but some only carry one.
+#
 # The four operations execute in order. Reordering breaks correctness:
-# operations (2) and (3) erase the NORD signal needed by (1a)/(1b) to
+# operations (2) and (3) erase the NORD signals needed by (1a)/(1b) to
 # identify which synonyms were previously NORD-attributed.
-
 
 # 1a. Drop synonym axioms whose only evidence is from NORD.
 DELETE {
@@ -26,9 +30,15 @@ WHERE {
   ?axiom a owl:Axiom ;
       owl:annotatedSource ?term ;
       owl:annotatedProperty ?syn_type ;
-      owl:annotatedTarget ?syn_str ;
-      oboInOwl:hasDbXref ?nord_term .
-  FILTER(STRSTARTS(STR(?nord_term), "NORD:"))
+      owl:annotatedTarget ?syn_str .
+
+  {
+    ?axiom oboInOwl:hasDbXref ?nord_term .
+    FILTER(STRSTARTS(STR(?nord_term), "NORD:"))
+  } UNION {
+    ?axiom OMO:0002001 ?nord_marker .
+    FILTER(STR(?nord_marker) = "https://w3id.org/information-resource-registry/nord")
+  }
 
   # Leave synonyms with evidence from other sources
   FILTER NOT EXISTS {
@@ -51,10 +61,15 @@ WHERE {
   }
 
   ?axiom a owl:Axiom ;
-      owl:annotatedProperty ?syn_type ;
-      oboInOwl:hasDbXref ?nord_term .
+      owl:annotatedProperty ?syn_type .
 
-  FILTER(STRSTARTS(STR(?nord_term), "NORD:"))
+  {
+    ?axiom oboInOwl:hasDbXref ?nord_term .
+    FILTER(STRSTARTS(STR(?nord_term), "NORD:"))
+  } UNION {
+    ?axiom OMO:0002001 ?nord_marker .
+    FILTER(STR(?nord_marker) = "https://w3id.org/information-resource-registry/nord")
+  }
 
   FILTER NOT EXISTS {
     ?axiom oboInOwl:hasDbXref ?other_term .

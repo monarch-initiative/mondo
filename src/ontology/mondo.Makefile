@@ -706,6 +706,11 @@ update-gard:
 
 ##### NORD #########################
 
+# NOTE: the logic for removing the previous NORD contribution before re-merging
+# now lives in two places: the grep -v below (xrefs and subsets) and
+# cleanup-nord-synonym-attribution.ru (synonyms, their evidence, and community
+# label markers). If you change what NORD is allowed to contribute, both need
+# updating.
 .PHONY: update-nord
 update-nord:
 	make $(TMPDIR)/external/processed-nord.robot.owl -B
