@@ -85,17 +85,20 @@ WHERE {
  {
   ?ax owl:annotatedSource ?entity ;
          owl:annotatedProperty ?property ;
-         OMO:0002001 <https://w3id.org/information-resource-registry/clingen> .
+         OMO:0002001 "https://w3id.org/information-resource-registry/clingen" .
+
   ?ax2 owl:annotatedSource ?entity ;
          owl:annotatedProperty ?property ;
          owl:annotatedTarget ?value ;
-         OMO:0002001 <https://w3id.org/information-resource-registry/clingen> .
+         OMO:0002001 "https://w3id.org/information-resource-registry/clingen" .
+
   FILTER(?ax!=?ax2)
   FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
   } UNION {
     ?ax owl:annotatedSource ?entity ;
          owl:annotatedProperty ?property ;
-         OMO:0002001 <https://w3id.org/information-resource-registry/clingen> .
+         OMO:0002001 "https://w3id.org/information-resource-registry/clingen" .
+
     FILTER(?property!=oboInOwl:hasExactSynonym)
     FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))	
   }
@@ -1415,7 +1418,17 @@ SELECT DISTINCT ?entity ?property ?value WHERE {
   }
   ?entity1 ?property1 ?value.
   ?entity2 ?property2 ?value .
-  
+
+  # Scope uniqueness to within the human (MONDO:0700096) or non-human animal
+  # (MONDO:0005583) disease branch. Cross-branch duplicates are allowed
+  # (e.g. human "diabetes mellitus" vs feline "diabetes mellitus").
+  VALUES ?branch {
+    obo:MONDO_0700096
+    obo:MONDO_0005583
+  }
+  ?entity1 rdfs:subClassOf* ?branch .
+  ?entity2 rdfs:subClassOf* ?branch .
+
   FILTER NOT EXISTS {
     ?axiom owl:annotatedSource ?entity1 ;
          owl:annotatedProperty ?property1 ;
