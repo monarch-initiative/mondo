@@ -1,8 +1,7 @@
 name: Gene-related grouping term - Request a new grouping/umbrella term
 description: Request a new gene-related grouping (umbrella) term, to group existing Mondo terms related to the same gene.
 title: Request for gene-related grouping term [ADD NAME HERE]
-labels: [ "new term  gene-related grouping/umbrella" ]
-# assignees: sabrinatoro
+labels: [ "New term request" ]
 body:
   - type: markdown
     attributes:
@@ -25,14 +24,21 @@ body:
       value: |
         ### Gene-disease association
   - type: input
-    id: gene
+    id: gene_name
     attributes:
-      label: Gene name and HGNC identifier
-      description: |
-        The gene this umbrella term relates to. Please give the HGNC gene symbol and its HGNC identifier, which you can look up at https://www.genenames.org.
-      placeholder: ex. PEX1, HGNC:8850
+      label: Gene name
+      description: The HGNC gene symbol of the gene this umbrella term relates to.
+      placeholder: ex. PEX1
     validations:
       required: true
+  - type: input
+    id: gene_hgnc_id
+    attributes:
+      label: Gene HGNC identifier
+      description: The HGNC identifier for this gene, which you can look up at https://www.genenames.org.
+      placeholder: ex. HGNC:8850
+    validations:
+      required: false
   - type: textarea
     id: gene_disease_evidence
     attributes:
@@ -85,23 +91,99 @@ body:
         Please provide the reference(s) supporting the suggested classification, in the format PMID:####### or doi:########.
       placeholder: ex. PMID:26387595
     validations:
-      required: false
+      required: true
   - type: markdown
     attributes:
       value: |
         ## Terms to include under this term
-  - type: textarea
-    id: children
-    attributes:
-      label: Terms to include under this term
-      description: |
-        List the existing Mondo terms that should be grouped under this new umbrella term, **one per line**, in the format:
-        `MONDO:ID ; Mondo term label ; evidence for this term to be grouped under this umbrella term`
 
-        Please note that a grouping term is normally expected to have at least two children. If you only have one term to list, please explain why in the additional information below.
+        Please note that a grouping term is normally expected to group **at least 2 terms**. If you only have one term to list, please explain why in the "Additional terms" box at the end of this section.
+  - type: markdown
+    attributes:
+      value: |
+        ### Term 1
+  - type: input
+    id: term1_id
+    attributes:
+      label: "Term 1: Mondo ID"
+      placeholder: ex. MONDO:0008953
+    validations:
+      required: false
+  - type: input
+    id: term1_label
+    attributes:
+      label: "Term 1: Mondo term label"
+      placeholder: ex. peroxisome biogenesis disorder 1A (Zellweger)
+    validations:
+      required: false
+  - type: input
+    id: term1_evidence
+    attributes:
+      label: "Term 1: evidence for grouping this term under the umbrella term"
+      placeholder: ex. PMID:26387595
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ### Term 2
+  - type: input
+    id: term2_id
+    attributes:
+      label: "Term 2: Mondo ID"
+      placeholder: ex. MONDO:0011101
+    validations:
+      required: false
+  - type: input
+    id: term2_label
+    attributes:
+      label: "Term 2: Mondo term label"
+      placeholder: ex. peroxisome biogenesis disorder 1B
+    validations:
+      required: false
+  - type: input
+    id: term2_evidence
+    attributes:
+      label: "Term 2: evidence for grouping this term under the umbrella term"
+      placeholder: ex. PMID:26387595
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ### Term 3
+  - type: input
+    id: term3_id
+    attributes:
+      label: "Term 3: Mondo ID"
+      placeholder: ex. MONDO:0100259
+    validations:
+      required: false
+  - type: input
+    id: term3_label
+    attributes:
+      label: "Term 3: Mondo term label"
+      placeholder: ex. peroxisome biogenesis disorder due to PEX1 defect
+    validations:
+      required: false
+  - type: input
+    id: term3_evidence
+    attributes:
+      label: "Term 3: evidence for grouping this term under the umbrella term"
+      placeholder: ex. PMID:26387595
+    validations:
+      required: false
+  - type: textarea
+    id: additional_terms
+    attributes:
+      label: Additional terms
+      description: |
+        If more than 3 terms should be grouped under this umbrella term, please list them here, one per line, in the format:
+        `MONDO:ID ; Mondo term label ; evidence`
+
+        If you have listed fewer than 2 terms above, please explain why here.
       placeholder: |
-        ex. MONDO:0008953 ; peroxisome biogenesis disorder 1A (Zellweger) ; PMID:26387595
-        MONDO:0011101 ; peroxisome biogenesis disorder 1B ; PMID:26387595
+        ex. MONDO:0100260 ; peroxisome biogenesis disorder due to PEX2 defect ; PMID:26387595
     validations:
       required: false
   - type: markdown
