@@ -1,13 +1,12 @@
 name: Gene-related disease name - Request a new name for an existing term
 description: Request a new (gene-related) name for an existing Mondo term, optionally with definition and/or classification changes.
 title: Request for gene-related disease name [ADD NAME HERE]
-labels: [ "new gene-related name" ]
-# assignees: sabrinatoro
+labels: [ "synonym" ]
 body:
   - type: markdown
     attributes:
       value: |
-        Use this form to request that an **existing** Mondo term be renamed using a gene-related name.
+        Use this form to request a gene-related name synonym to an **existing** Mondo term.
 
         Mondo names gene-related diseases using the pattern `{GENE}-related {disease description}`, for example `ALG8-related autosomal dominant polycystic kidney and/or liver disease`.
 
@@ -39,7 +38,7 @@ body:
     id: requested_name
     attributes:
       label: Requested disease name
-      description: The new label you would like the term to have. Please use lowercase, unless the name contains a proper name or a gene symbol.
+      description: The new disease name you would like the term to have. Please use lowercase, unless the name contains a proper name or a gene symbol.
       placeholder: ex. PEX1-related peroxisome biogenesis disorder
     validations:
       required: true
@@ -48,10 +47,19 @@ body:
     attributes:
       label: Is the requested name a preferred label from a community or working group?
       description: |
-        For example a ClinGen preferred label. If yes, please tell us which community in the "Working group URL" field below, so we can record it with the "preferred label by community" qualifier.
+        For example a ClinGen preferred label. If yes, please give the name of the community or working group in the next field, so we can record it with the "preferred label by community" qualifier.
       options:
         - "No"
         - "Yes"
+    validations:
+      required: false
+  - type: input
+    id: preferred_label_community
+    attributes:
+      label: If yes, name of the community or ClinGen working group
+      description: |
+        The name of the community or ClinGen working group this preferred label comes from. Leave blank if you answered "No" above.
+      placeholder: ex. ClinGen Hereditary Cancer Gene Curation Expert Panel
     validations:
       required: false
   - type: markdown
@@ -59,14 +67,21 @@ body:
       value: |
         ## Gene-disease association
   - type: input
-    id: gene
+    id: gene_symbol
     attributes:
-      label: Gene symbol and HGNC identifier
-      description: |
-        The gene the requested name refers to. Please give the HGNC gene symbol and its HGNC identifier, which you can look up at https://www.genenames.org.
-      placeholder: ex. PEX1, HGNC:8850
+      label: Gene symbol
+      description: The HGNC gene symbol of the gene the requested name refers to.
+      placeholder: ex. PEX1
     validations:
       required: true
+  - type: input
+    id: gene_hgnc_id
+    attributes:
+      label: Gene HGNC identifier
+      description: The HGNC identifier for this gene, which you can look up at https://www.genenames.org.
+      placeholder: ex. HGNC:8850
+    validations:
+      required: false
   - type: textarea
     id: gene_disease_evidence
     attributes:
