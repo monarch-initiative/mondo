@@ -1,0 +1,156 @@
+name: Gene-related disease name - Request a new name for an existing term
+description: Request a new (gene-related) name for an existing Mondo term, optionally with definition and/or classification changes.
+title: Request for gene-related disease name [ADD NAME HERE]
+labels: [ "new gene-related name" ]
+# assignees: sabrinatoro
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to request that an **existing** Mondo term be renamed using a gene-related name.
+
+        Mondo names gene-related diseases using the pattern `{GENE}-related {disease description}`, for example `ALG8-related autosomal dominant polycystic kidney and/or liver disease`.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Term to be renamed
+  - type: input
+    id: mondo_id
+    attributes:
+      label: Mondo ID
+      description: The identifier of the existing Mondo term to be renamed.
+      placeholder: ex. MONDO:0100259
+    validations:
+      required: true
+  - type: input
+    id: current_label
+    attributes:
+      label: Mondo current label
+      description: The current label of the term, to help us confirm we have the right term.
+      placeholder: ex. peroxisome biogenesis disorder due to PEX1 defect
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ## Requested disease name
+  - type: input
+    id: requested_name
+    attributes:
+      label: Requested disease name
+      description: The new label you would like the term to have. Please use lowercase, unless the name contains a proper name or a gene symbol.
+      placeholder: ex. PEX1-related peroxisome biogenesis disorder
+    validations:
+      required: true
+  - type: dropdown
+    id: preferred_label
+    attributes:
+      label: Is the requested name a preferred label from a community or working group?
+      description: |
+        For example a ClinGen preferred label. If yes, please tell us which community in the "Working group URL" field below, so we can record it with the "preferred label by community" qualifier.
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ## Gene-disease association
+  - type: input
+    id: gene
+    attributes:
+      label: Gene symbol and HGNC identifier
+      description: |
+        The gene the requested name refers to. Please give the HGNC gene symbol and its HGNC identifier, which you can look up at https://www.genenames.org.
+      placeholder: ex. PEX1, HGNC:8850
+    validations:
+      required: true
+  - type: textarea
+    id: gene_disease_evidence
+    attributes:
+      label: Evidence for the gene-disease relation
+      description: |
+        Please provide the evidence supporting the relation between this gene and this disease, in the format PMID:####### or doi:########. More than one reference can be given.
+      placeholder: ex. PMID:26387595
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Attribution
+  - type: input
+    id: orcid
+    attributes:
+      label: ORCID Identifier
+      description: What is the ORCID identifier of the person requesting this change? ORCID identifiers can be made at https://orcid.org.
+      placeholder: e.g. https://orcid.org/0000-0001-5208-3432
+    validations:
+      required: false
+  - type: input
+    id: website
+    attributes:
+      label: Working group URL
+      description: Provide the website URL of the working group or community you'd like to be associated with this request.
+      placeholder: e.g. https://clinicalgenome.org/affiliation/40005/
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ## Additional information
+
+        ### Suggestion for definition changes/update
+  - type: textarea
+    id: definition_change
+    attributes:
+      label: Suggested definition
+      description: |
+        Optional. If the definition of this term should also change, please give the suggested definition here.
+        Mondo writes definitions of gene-related diseases in the format: Any [parent class] in which the cause of the disease is a mutation in the [GENE] gene.
+    validations:
+      required: false
+  - type: textarea
+    id: definition_evidence
+    attributes:
+      label: Evidence for the information in the definition
+      description: |
+        Optional. Please provide the reference(s) supporting the suggested definition, in the format PMID:####### or doi:########.
+      placeholder: ex. PMID:26387595
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ### Suggestion for classification changes/update
+  - type: textarea
+    id: classification_change
+    attributes:
+      label: Mondo ID and name of the suggested parent term(s)
+      description: |
+        Optional. If the classification of this term should also change, please give the suggested parent term(s) here, with their Mondo ID and label.
+      placeholder: ex. MONDO:0019234 peroxisome biogenesis disorder
+    validations:
+      required: false
+  - type: textarea
+    id: classification_evidence
+    attributes:
+      label: Evidence for the information in the classification
+      description: |
+        Optional. Please provide the reference(s) supporting the suggested classification, in the format PMID:####### or doi:########.
+      placeholder: ex. PMID:26387595
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ### Comments
+  - type: textarea
+    id: comments
+    attributes:
+      label: Comments
+      description: |
+        Please provide any additional comments here.
+    validations:
+      required: false
