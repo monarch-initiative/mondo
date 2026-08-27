@@ -1,5 +1,5 @@
 ---
-name: xref issue
+name: cross-reference (xref) issue
 about: Report issue about incorrect xref on term.
 title: ''
 labels: xref
