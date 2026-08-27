@@ -148,37 +148,12 @@ body:
       placeholder: ex. PMID:26387595
     validations:
       required: false
-  - type: markdown
-    attributes:
-      value: |
-        ### Term 3
-  - type: input
-    id: term3_id
-    attributes:
-      label: "Term 3: Mondo ID"
-      placeholder: ex. MONDO:0100259
-    validations:
-      required: false
-  - type: input
-    id: term3_label
-    attributes:
-      label: "Term 3: Mondo term label"
-      placeholder: ex. peroxisome biogenesis disorder due to PEX1 defect
-    validations:
-      required: false
-  - type: input
-    id: term3_evidence
-    attributes:
-      label: "Term 3: evidence for grouping this term under the umbrella term"
-      placeholder: ex. PMID:26387595
-    validations:
-      required: false
   - type: textarea
     id: additional_terms
     attributes:
       label: Additional terms
       description: |
-        If more than 3 terms should be grouped under this umbrella term, please list them here, one per line, in the format:
+        If more than 2 terms should be grouped under this umbrella term, please list them here, one per line, in the format:
         `MONDO:ID ; Mondo term label ; evidence`
 
         If you have listed fewer than 2 terms above, please explain why here.

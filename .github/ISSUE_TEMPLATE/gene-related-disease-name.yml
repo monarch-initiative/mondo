@@ -1,4 +1,4 @@
-name: Gene-related disease name - Request a new name for an existing term
+name: Gene-related disease name - Request an alternative name for an existing term
 description: Request a new (gene-related) name for an existing Mondo term, optionally with definition and/or classification changes.
 title: Request for gene-related disease name [ADD NAME HERE]
 labels: [ "synonym" ]
@@ -6,19 +6,19 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this form to request a gene-related name synonym to an **existing** Mondo term.
+        Use this form to request a gene-related name as an exact synonym to an **existing** Mondo term.
 
         Mondo names gene-related diseases using the pattern `{GENE}-related {disease description}`, for example `ALG8-related autosomal dominant polycystic kidney and/or liver disease`.
 
   - type: markdown
     attributes:
       value: |
-        ## Term to be renamed
+        ## Existing Mondo term
   - type: input
     id: mondo_id
     attributes:
       label: Mondo ID
-      description: The identifier of the existing Mondo term to be renamed.
+      description: The identifier of the existing Mondo term.
       placeholder: ex. MONDO:0100259
     validations:
       required: true
@@ -38,7 +38,7 @@ body:
     id: requested_name
     attributes:
       label: Requested disease name
-      description: The new disease name you would like the term to have. Please use lowercase, unless the name contains a proper name or a gene symbol.
+      description: The alternative disease name you would like the term to have. Please use lowercase, unless the name contains a proper name or a gene symbol.
       placeholder: ex. PEX1-related peroxisome biogenesis disorder
     validations:
       required: true
@@ -56,10 +56,10 @@ body:
   - type: input
     id: preferred_label_community
     attributes:
-      label: If yes, name of the community or ClinGen working group
+      label: If yes, name and/or URL of the community or ClinGen working group
       description: |
         The name of the community or ClinGen working group this preferred label comes from. Leave blank if you answered "No" above.
-      placeholder: ex. ClinGen Hereditary Cancer Gene Curation Expert Panel
+      placeholder: ex. ClinGen Hereditary Cancer Gene Curation Expert Panel; https://clinicalgenome.org/affiliation/40023/
     validations:
       required: false
   - type: markdown
