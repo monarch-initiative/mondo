@@ -1,5 +1,5 @@
 ---
-name: Revise logical definition
+name: Logical definition issue
 about: Improve the OWL-DL statement of a Mondo term
 title: "[Revise logical def]"
 labels: logical def
