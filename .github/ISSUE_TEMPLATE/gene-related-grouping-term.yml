@@ -1,0 +1,191 @@
+name: Gene-related grouping term - Request a new grouping/umbrella term
+description: Request a new gene-related grouping (umbrella) term, to group existing Mondo terms related to the same gene.
+title: Request for gene-related grouping term [ADD NAME HERE]
+labels: [ "New term request" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to request a new **gene-related grouping** (umbrella) term, i.e. a new term intended to group several existing Mondo terms that relate to the same gene.
+  - type: markdown
+    attributes:
+      value: |
+        ## Requested umbrella term
+  - type: input
+    id: requested_name
+    attributes:
+      label: Requested name
+      description: The label for the new umbrella term. Please use lowercase, unless the name contains a proper name or a gene symbol.
+      placeholder: ex. PEX1-related peroxisome biogenesis disorder
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ### Gene-disease association
+  - type: input
+    id: gene_name
+    attributes:
+      label: Gene name
+      description: The HGNC gene symbol of the gene this umbrella term relates to.
+      placeholder: ex. PEX1
+    validations:
+      required: true
+  - type: input
+    id: gene_hgnc_id
+    attributes:
+      label: Gene HGNC identifier
+      description: The HGNC identifier for this gene, which you can look up at https://www.genenames.org.
+      placeholder: ex. HGNC:8850
+    validations:
+      required: false
+  - type: textarea
+    id: gene_disease_evidence
+    attributes:
+      label: Evidence for the gene-disease relation
+      description: |
+        Please provide the evidence supporting the relation between this gene and this disease, in the format PMID:####### or doi:########. More than one reference can be given.
+      placeholder: ex. PMID:26387595
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ### Definition
+  - type: textarea
+    id: definition
+    attributes:
+      label: Suggested definition
+      description: |
+        Mondo writes definitions of gene-related diseases in the format: Any [parent class] in which the cause of the disease is a mutation in the [GENE] gene.
+      placeholder: ex. Any peroxisome biogenesis disorder in which the cause of the disease is a mutation in the PEX1 gene.
+    validations:
+      required: false
+  - type: textarea
+    id: definition_evidence
+    attributes:
+      label: Evidence for the information in the definition
+      description: |
+        Please provide the reference(s) supporting the suggested definition, in the format PMID:####### or doi:########.
+      placeholder: ex. PMID:26387595
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ### Classification
+  - type: textarea
+    id: parents
+    attributes:
+      label: Mondo ID and name of the suggested parent term(s)
+      description: |
+        Every Mondo term needs at least one parent. Please give the Mondo ID and label of the term(s) this new umbrella term should be classified under. One per line.
+      placeholder: ex. MONDO:0019234 peroxisome biogenesis disorder
+    validations:
+      required: true
+  - type: textarea
+    id: classification_evidence
+    attributes:
+      label: Evidence for the information in the classification
+      description: |
+        Please provide the reference(s) supporting the suggested classification, in the format PMID:####### or doi:########.
+      placeholder: ex. PMID:26387595
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Terms to include under this term
+
+        Please note that a grouping term is normally expected to group **at least 2 terms**. If you only have one term to list, please explain why in the "Additional terms" box at the end of this section.
+  - type: markdown
+    attributes:
+      value: |
+        ### Term 1
+  - type: input
+    id: term1_id
+    attributes:
+      label: "Term 1: Mondo ID"
+      placeholder: ex. MONDO:0008953
+    validations:
+      required: false
+  - type: input
+    id: term1_label
+    attributes:
+      label: "Term 1: Mondo term label"
+      placeholder: ex. peroxisome biogenesis disorder 1A (Zellweger)
+    validations:
+      required: false
+  - type: input
+    id: term1_evidence
+    attributes:
+      label: "Term 1: evidence for grouping this term under the umbrella term"
+      placeholder: ex. PMID:26387595
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ### Term 2
+  - type: input
+    id: term2_id
+    attributes:
+      label: "Term 2: Mondo ID"
+      placeholder: ex. MONDO:0011101
+    validations:
+      required: false
+  - type: input
+    id: term2_label
+    attributes:
+      label: "Term 2: Mondo term label"
+      placeholder: ex. peroxisome biogenesis disorder 1B
+    validations:
+      required: false
+  - type: input
+    id: term2_evidence
+    attributes:
+      label: "Term 2: evidence for grouping this term under the umbrella term"
+      placeholder: ex. PMID:26387595
+    validations:
+      required: false
+  - type: textarea
+    id: additional_terms
+    attributes:
+      label: Additional terms
+      description: |
+        If more than 2 terms should be grouped under this umbrella term, please list them here, one per line, in the format:
+        `MONDO:ID ; Mondo term label ; evidence`
+
+        If you have listed fewer than 2 terms above, please explain why here.
+      placeholder: |
+        ex. MONDO:0100260 ; peroxisome biogenesis disorder due to PEX2 defect ; PMID:26387595
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ## Additional information
+  - type: input
+    id: orcid
+    attributes:
+      label: ORCID Identifier
+      description: What is the ORCID identifier of the person requesting this term? ORCID identifiers can be made at https://orcid.org.
+      placeholder: e.g. https://orcid.org/0000-0001-5208-3432
+    validations:
+      required: false
+  - type: input
+    id: website
+    attributes:
+      label: Working group URL
+      description: Provide the website URL of the working group or community you'd like to be associated with this new term.
+      placeholder: e.g. https://clinicalgenome.org/affiliation/40005/
+    validations:
+      required: false
+  - type: textarea
+    id: comments
+    attributes:
+      label: Comments
+      description: |
+        Please provide any additional comments here.
+    validations:
+      required: false
