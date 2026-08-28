@@ -1,5 +1,5 @@
 ---
-name: Split term
+name: Split a term
 about: Request to split a term into two or more terms
 title: 'split term: <enter name>'
 labels: split
