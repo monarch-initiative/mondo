@@ -1,5 +1,5 @@
 ---
-name: Revise subclass relationship
+name: Classification issue
 about: Revise the subclass structure for Mondo terms.
 title: "[Revise subclass]"
 labels: Revise subclass
