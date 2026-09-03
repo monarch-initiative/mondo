@@ -7,7 +7,7 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<http://purl.obolibrary.org/obo/mondo/imports/merged_import.owl>
-<http://purl.obolibrary.org/obo/mondo/releases/2026-07-30/imports/merged_import.owl>
+<http://purl.obolibrary.org/obo/mondo/releases/2026-08-21/imports/merged_import.owl>
 Annotation(<http://purl.org/dc/elements/1.1/source> <http://dbpedia.org>)
 Annotation(<http://purl.org/dc/elements/1.1/source> <http://palaeos.com>)
 Annotation(<http://purl.org/dc/elements/1.1/source> <http://www.brain-map.org>)
@@ -67,7 +67,7 @@ Annotation(<http://purl.org/dc/elements/1.1/source> "PMID:16417468 Forgotten and
 Annotation(<http://purl.org/dc/elements/1.1/source> "aggregates AAO from 13:04:2012")
 Annotation(<http://purl.org/dc/elements/1.1/source> "aggregates TAO from 09:08:2012")
 Annotation(<http://purl.org/dc/elements/1.1/source> "aggregates VSAO from 16:07:2012")
-Annotation(owl:versionInfo "2026-07-30")
+Annotation(owl:versionInfo "2026-08-21")
 
 Declaration(Class(<http://identifiers.org/hgnc/10001>))
 Declaration(Class(<http://identifiers.org/hgnc/10004>))
@@ -943,6 +943,7 @@ Declaration(Class(<http://identifiers.org/hgnc/1391>))
 Declaration(Class(<http://identifiers.org/hgnc/1392>))
 Declaration(Class(<http://identifiers.org/hgnc/13921>))
 Declaration(Class(<http://identifiers.org/hgnc/1393>))
+Declaration(Class(<http://identifiers.org/hgnc/13937>))
 Declaration(Class(<http://identifiers.org/hgnc/1394>))
 Declaration(Class(<http://identifiers.org/hgnc/1395>))
 Declaration(Class(<http://identifiers.org/hgnc/1396>))
@@ -4055,6 +4056,7 @@ Declaration(Class(<http://identifiers.org/hgnc/6027>))
 Declaration(Class(<http://identifiers.org/hgnc/603>))
 Declaration(Class(<http://identifiers.org/hgnc/6050>))
 Declaration(Class(<http://identifiers.org/hgnc/6052>))
+Declaration(Class(<http://identifiers.org/hgnc/6053>))
 Declaration(Class(<http://identifiers.org/hgnc/6055>))
 Declaration(Class(<http://identifiers.org/hgnc/6062>))
 Declaration(Class(<http://identifiers.org/hgnc/6074>))
@@ -33870,6 +33872,11 @@ SubClassOf(<http://identifiers.org/hgnc/13921> <http://purl.obolibrary.org/obo/S
 AnnotationAssertion(rdfs:label <http://identifiers.org/hgnc/1393> "CACNA1F")
 SubClassOf(<http://identifiers.org/hgnc/1393> <http://purl.obolibrary.org/obo/SO_0000704>)
 
+# Class: <http://identifiers.org/hgnc/13937> (MPIG6B)
+
+AnnotationAssertion(rdfs:label <http://identifiers.org/hgnc/13937> "MPIG6B")
+SubClassOf(<http://identifiers.org/hgnc/13937> <http://purl.obolibrary.org/obo/SO_0000704>)
+
 # Class: <http://identifiers.org/hgnc/1394> (CACNA1G)
 
 AnnotationAssertion(rdfs:label <http://identifiers.org/hgnc/1394> "CACNA1G")
@@ -49430,6 +49437,11 @@ SubClassOf(<http://identifiers.org/hgnc/6050> <http://purl.obolibrary.org/obo/SO
 AnnotationAssertion(rdfs:label <http://identifiers.org/hgnc/6052> "IMPDH1")
 SubClassOf(<http://identifiers.org/hgnc/6052> <http://purl.obolibrary.org/obo/SO_0000704>)
 
+# Class: <http://identifiers.org/hgnc/6053> (IMPDH2)
+
+AnnotationAssertion(rdfs:label <http://identifiers.org/hgnc/6053> "IMPDH2")
+SubClassOf(<http://identifiers.org/hgnc/6053> <http://purl.obolibrary.org/obo/SO_0000704>)
+
 # Class: <http://identifiers.org/hgnc/6055> (IMPG1)
 
 AnnotationAssertion(rdfs:label <http://identifiers.org/hgnc/6055> "IMPG1")
@@ -55316,9 +55328,9 @@ AnnotationAssertion(rdfs:label <http://identifiers.org/ncbigene/100626812> "SORL
 SubClassOf(<http://identifiers.org/ncbigene/100626812> <http://purl.obolibrary.org/obo/SO_0000704>)
 SubClassOf(<http://identifiers.org/ncbigene/100626812> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002162> <http://purl.obolibrary.org/obo/NCBITaxon_9823>))
 
-# Class: <http://identifiers.org/ncbigene/100682814> (FAM83G)
+# Class: <http://identifiers.org/ncbigene/100682814> (SACK1G)
 
-AnnotationAssertion(rdfs:label <http://identifiers.org/ncbigene/100682814> "FAM83G")
+AnnotationAssertion(rdfs:label <http://identifiers.org/ncbigene/100682814> "SACK1G")
 SubClassOf(<http://identifiers.org/ncbigene/100682814> <http://purl.obolibrary.org/obo/SO_0000704>)
 SubClassOf(<http://identifiers.org/ncbigene/100682814> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002162> <http://purl.obolibrary.org/obo/NCBITaxon_9615>))
 
@@ -57668,9 +57680,9 @@ AnnotationAssertion(rdfs:label <http://identifiers.org/ncbigene/482049> "NDRG1")
 SubClassOf(<http://identifiers.org/ncbigene/482049> <http://purl.obolibrary.org/obo/SO_0000704>)
 SubClassOf(<http://identifiers.org/ncbigene/482049> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002162> <http://purl.obolibrary.org/obo/NCBITaxon_9615>))
 
-# Class: <http://identifiers.org/ncbigene/482081> (FAM83H)
+# Class: <http://identifiers.org/ncbigene/482081> (SACK1H)
 
-AnnotationAssertion(rdfs:label <http://identifiers.org/ncbigene/482081> "FAM83H")
+AnnotationAssertion(rdfs:label <http://identifiers.org/ncbigene/482081> "SACK1H")
 SubClassOf(<http://identifiers.org/ncbigene/482081> <http://purl.obolibrary.org/obo/SO_0000704>)
 SubClassOf(<http://identifiers.org/ncbigene/482081> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002162> <http://purl.obolibrary.org/obo/NCBITaxon_9615>))
 
@@ -58850,9 +58862,9 @@ AnnotationAssertion(rdfs:label <http://identifiers.org/ncbigene/608491> "IMPG2")
 SubClassOf(<http://identifiers.org/ncbigene/608491> <http://purl.obolibrary.org/obo/SO_0000704>)
 SubClassOf(<http://identifiers.org/ncbigene/608491> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002162> <http://purl.obolibrary.org/obo/NCBITaxon_9615>))
 
-# Class: <http://identifiers.org/ncbigene/608697> (LOC608697)
+# Class: <http://identifiers.org/ncbigene/608697> (HACL1)
 
-AnnotationAssertion(rdfs:label <http://identifiers.org/ncbigene/608697> "LOC608697")
+AnnotationAssertion(rdfs:label <http://identifiers.org/ncbigene/608697> "HACL1")
 SubClassOf(<http://identifiers.org/ncbigene/608697> <http://purl.obolibrary.org/obo/SO_0000704>)
 SubClassOf(<http://identifiers.org/ncbigene/608697> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002162> <http://purl.obolibrary.org/obo/NCBITaxon_9615>))
 
@@ -88639,10 +88651,10 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0003810> <http://purl.obolibrary.o
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0003824> "catalytic activity")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0003824> <http://purl.obolibrary.org/obo/GO_0003674>)
 
-# Class: <http://purl.obolibrary.org/obo/GO_0003842> (L-glutamate gamma-semialdehyde dehydrogenase activity)
+# Class: <http://purl.obolibrary.org/obo/GO_0003842> (L-glutamate gamma-semialdehyde dehydrogenase (NAD+) activity)
 
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0003842> "L-glutamate gamma-semialdehyde dehydrogenase activity")
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0003842> <http://purl.obolibrary.org/obo/GO_0016620>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0003842> "L-glutamate gamma-semialdehyde dehydrogenase (NAD+) activity")
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0003842> <http://purl.obolibrary.org/obo/GO_0004029>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0003845> (obsolete 11-beta-hydroxysteroid dehydrogenase [NAD(P)+] activity)
 
@@ -90021,7 +90033,6 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0006521> ObjectSomeValuesFrom(<htt
 # Class: <http://purl.obolibrary.org/obo/GO_0006541> (L-glutamine metabolic process)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0006541> "L-glutamine metabolic process")
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0006541> <http://purl.obolibrary.org/obo/GO_0170033>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006541> <http://purl.obolibrary.org/obo/GO_0170039>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0006544> (glycine metabolic process)
@@ -90038,14 +90049,12 @@ AnnotationAssertion(owl:deprecated <http://purl.obolibrary.org/obo/GO_0006547> "
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0006551> "L-leucine metabolic process")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006551> <http://purl.obolibrary.org/obo/GO_0009081>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0006551> <http://purl.obolibrary.org/obo/GO_0170033>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006551> <http://purl.obolibrary.org/obo/GO_0170039>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0006555> (L-methionine metabolic process)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0006555> "L-methionine metabolic process")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006555> <http://purl.obolibrary.org/obo/GO_0000096>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0006555> <http://purl.obolibrary.org/obo/GO_0170033>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006555> <http://purl.obolibrary.org/obo/GO_0170039>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0006558> (obsolete L-phenylalanine metabolic process)
@@ -90056,20 +90065,18 @@ AnnotationAssertion(owl:deprecated <http://purl.obolibrary.org/obo/GO_0006558> "
 # Class: <http://purl.obolibrary.org/obo/GO_0006559> (L-phenylalanine catabolic process)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0006559> "L-phenylalanine catabolic process")
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0006559> <http://purl.obolibrary.org/obo/GO_0009063>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006559> <http://purl.obolibrary.org/obo/GO_0009074>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0006559> <http://purl.obolibrary.org/obo/GO_0170035>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006559> <http://purl.obolibrary.org/obo/GO_0170040>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0006560> (L-proline metabolic process)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0006560> "L-proline metabolic process")
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0006560> <http://purl.obolibrary.org/obo/GO_0170033>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006560> <http://purl.obolibrary.org/obo/GO_0170039>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0006563> (L-serine metabolic process)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0006563> "L-serine metabolic process")
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0006563> <http://purl.obolibrary.org/obo/GO_0170033>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006563> <http://purl.obolibrary.org/obo/GO_0170039>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0006564> (L-serine biosynthetic process)
@@ -90077,7 +90084,6 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0006563> <http://purl.obolibrary.o
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0006564> "L-serine biosynthetic process")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006564> <http://purl.obolibrary.org/obo/GO_0006563>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006564> <http://purl.obolibrary.org/obo/GO_0009070>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0006564> <http://purl.obolibrary.org/obo/GO_0170034>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006564> <http://purl.obolibrary.org/obo/GO_0170038>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0006568> (obsolete L-tryptophan metabolic process)
@@ -90088,9 +90094,9 @@ AnnotationAssertion(owl:deprecated <http://purl.obolibrary.org/obo/GO_0006568> "
 # Class: <http://purl.obolibrary.org/obo/GO_0006569> (L-tryptophan catabolic process)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0006569> "L-tryptophan catabolic process")
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0006569> <http://purl.obolibrary.org/obo/GO_0009063>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006569> <http://purl.obolibrary.org/obo/GO_0009074>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006569> <http://purl.obolibrary.org/obo/GO_0042436>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0006569> <http://purl.obolibrary.org/obo/GO_0170035>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006569> <http://purl.obolibrary.org/obo/GO_0170040>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0006570> (obsolete tyrosine metabolic process)
@@ -90101,8 +90107,8 @@ AnnotationAssertion(owl:deprecated <http://purl.obolibrary.org/obo/GO_0006570> "
 # Class: <http://purl.obolibrary.org/obo/GO_0006572> (L-tyrosine catabolic process)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0006572> "L-tyrosine catabolic process")
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0006572> <http://purl.obolibrary.org/obo/GO_0009063>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006572> <http://purl.obolibrary.org/obo/GO_0009074>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0006572> <http://purl.obolibrary.org/obo/GO_0170035>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006572> <http://purl.obolibrary.org/obo/GO_0170040>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0006573> (obsolete valine metabolic process)
@@ -90114,7 +90120,6 @@ AnnotationAssertion(owl:deprecated <http://purl.obolibrary.org/obo/GO_0006573> "
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0006574> "L-valine catabolic process")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006574> <http://purl.obolibrary.org/obo/GO_0009083>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0006574> <http://purl.obolibrary.org/obo/GO_0170035>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006574> <http://purl.obolibrary.org/obo/GO_0170040>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0006575> (modified amino acid metabolic process)
@@ -90334,6 +90339,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0006753> <http://purl.obolibrary.o
 # Class: <http://purl.obolibrary.org/obo/GO_0006754> (ATP biosynthetic process)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0006754> "ATP biosynthetic process")
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0006754> <http://purl.obolibrary.org/obo/GO_0009142>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006754> <http://purl.obolibrary.org/obo/GO_0009152>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006754> <http://purl.obolibrary.org/obo/GO_0009206>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006754> <http://purl.obolibrary.org/obo/GO_0046034>)
@@ -90560,7 +90566,6 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0006893> <http://purl.obolibrary.o
 # Class: <http://purl.obolibrary.org/obo/GO_0006897> (endocytosis)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0006897> "endocytosis")
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0006897> <http://purl.obolibrary.org/obo/GO_0016192>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006897> <http://purl.obolibrary.org/obo/GO_0098657>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006897> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/GO_0006900>))
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006897> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/GO_0010324>))
@@ -90569,6 +90574,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0006897> ObjectSomeValuesFrom(<htt
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0006898> "receptor-mediated endocytosis")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0006898> <http://purl.obolibrary.org/obo/GO_0006897>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0006898> <http://purl.obolibrary.org/obo/GO_0016192>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0006900> (vesicle budding from membrane)
 
@@ -91002,6 +91008,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0007369> ObjectSomeValuesFrom(<htt
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0007398> "ectoderm development")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0007398> <http://purl.obolibrary.org/obo/GO_0009888>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0007398> <http://purl.obolibrary.org/obo/GO_0160108>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0007399> (nervous system development)
 
@@ -91052,11 +91059,13 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0007423> <http://purl.obolibrary.o
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0007492> "endoderm development")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0007492> <http://purl.obolibrary.org/obo/GO_0009888>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0007492> <http://purl.obolibrary.org/obo/GO_0160108>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0007498> (mesoderm development)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0007498> "mesoderm development")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0007498> <http://purl.obolibrary.org/obo/GO_0009888>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0007498> <http://purl.obolibrary.org/obo/GO_0160108>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0007499> (ectoderm and mesoderm interaction)
 
@@ -91066,7 +91075,6 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0007499> ObjectSomeValuesFrom(<htt
 
 # Class: <http://purl.obolibrary.org/obo/GO_0007507> (heart development)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/RO_0002175> <http://purl.obolibrary.org/obo/GO_0007507> <http://purl.obolibrary.org/obo/NCBITaxon_7227>)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0007507> "heart development")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0007507> <http://purl.obolibrary.org/obo/GO_0048513>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0007507> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/GO_0072359>))
@@ -91543,6 +91551,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0008527> ObjectSomeValuesFrom(<htt
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0008544> "epidermis development")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0008544> <http://purl.obolibrary.org/obo/GO_0009888>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0008544> <http://purl.obolibrary.org/obo/GO_0160108>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0008585> (female gonad development)
 
@@ -91696,7 +91705,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0009083> <http://purl.obolibrary.o
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0009087> "L-methionine catabolic process")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0009087> <http://purl.obolibrary.org/obo/GO_0000098>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0009087> <http://purl.obolibrary.org/obo/GO_0006555>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0009087> <http://purl.obolibrary.org/obo/GO_0170035>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0009087> <http://purl.obolibrary.org/obo/GO_0009063>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0009087> <http://purl.obolibrary.org/obo/GO_0170040>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0009100> (glycoprotein metabolic process)
@@ -91793,24 +91802,24 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0009137> <http://purl.obolibrary.o
 # Class: <http://purl.obolibrary.org/obo/GO_0009141> (nucleoside triphosphate metabolic process)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0009141> "nucleoside triphosphate metabolic process")
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0009141> <http://purl.obolibrary.org/obo/GO_0006753>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0009141> <http://purl.obolibrary.org/obo/GO_0006793>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0009142> (nucleoside triphosphate biosynthetic process)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0009142> "nucleoside triphosphate biosynthetic process")
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0009142> <http://purl.obolibrary.org/obo/GO_0009058>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0009142> <http://purl.obolibrary.org/obo/GO_0009141>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0009142> <http://purl.obolibrary.org/obo/GO_1901293>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0009144> (purine nucleoside triphosphate metabolic process)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0009144> "purine nucleoside triphosphate metabolic process")
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0009144> <http://purl.obolibrary.org/obo/GO_0009141>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0009144> <http://purl.obolibrary.org/obo/GO_0006753>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0009145> (purine nucleoside triphosphate biosynthetic process)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0009145> "purine nucleoside triphosphate biosynthetic process")
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0009145> <http://purl.obolibrary.org/obo/GO_0009142>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0009145> <http://purl.obolibrary.org/obo/GO_0009144>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0009145> <http://purl.obolibrary.org/obo/GO_1901293>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0009150> (purine ribonucleotide metabolic process)
 
@@ -91898,7 +91907,7 @@ AnnotationAssertion(owl:deprecated <http://purl.obolibrary.org/obo/GO_0009199> "
 # Class: <http://purl.obolibrary.org/obo/GO_0009201> (ribonucleoside triphosphate biosynthetic process)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0009201> "ribonucleoside triphosphate biosynthetic process")
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0009201> <http://purl.obolibrary.org/obo/GO_0009142>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0009201> <http://purl.obolibrary.org/obo/GO_1901293>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0009205> (purine ribonucleoside triphosphate metabolic process)
 
@@ -92141,7 +92150,6 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0009755> ObjectSomeValuesFrom(<htt
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0009790> "embryo development")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0009790> <http://purl.obolibrary.org/obo/GO_0007275>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0009790> <http://purl.obolibrary.org/obo/GO_0160108>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0009791> (post-embryonic development)
 
@@ -92153,6 +92161,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0009791> ObjectSomeValuesFrom(<htt
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0009792> "embryo development ending in birth or egg hatching")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0009792> <http://purl.obolibrary.org/obo/GO_0009790>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0009792> <http://purl.obolibrary.org/obo/GO_0160108>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0009887> (animal organ morphogenesis)
 
@@ -92163,7 +92172,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0009887> ObjectSomeValuesFrom(<htt
 # Class: <http://purl.obolibrary.org/obo/GO_0009888> (tissue development)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0009888> "tissue development")
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0009888> <http://purl.obolibrary.org/obo/GO_0160108>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0009888> <http://purl.obolibrary.org/obo/GO_0048856>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0009889> (regulation of biosynthetic process)
 
@@ -95109,8 +95118,8 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0030099> ObjectSomeValuesFrom(<htt
 # Class: <http://purl.obolibrary.org/obo/GO_0030100> (regulation of endocytosis)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0030100> "regulation of endocytosis")
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0030100> <http://purl.obolibrary.org/obo/GO_0051049>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0030100> <http://purl.obolibrary.org/obo/GO_0051128>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0030100> <http://purl.obolibrary.org/obo/GO_0060627>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0030100> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002211> <http://purl.obolibrary.org/obo/GO_0006897>))
 
 # Class: <http://purl.obolibrary.org/obo/GO_0030103> (vasopressin secretion)
@@ -95332,6 +95341,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0030279> ObjectSomeValuesFrom(<htt
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0030282> "bone mineralization")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0030282> <http://purl.obolibrary.org/obo/GO_0031214>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0030282> <http://purl.obolibrary.org/obo/GO_0160108>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0030282> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/GO_0001503>))
 
 # Class: <http://purl.obolibrary.org/obo/GO_0030283> (obsolete testosterone dehydrogenase [NAD(P)+] activity)
@@ -95400,7 +95410,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0030336> ObjectSomeValuesFrom(<htt
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0030343> "vitamin D 25-hydroxylase activity")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0030343> <http://purl.obolibrary.org/obo/GO_0008395>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0030343> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/GO_0036378>))
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0030343> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/GO_1901755>))
 
 # Class: <http://purl.obolibrary.org/obo/GO_0030414> (peptidase inhibitor activity)
 
@@ -97603,7 +97613,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0035265> <http://purl.obolibrary.o
 # Class: <http://purl.obolibrary.org/obo/GO_0035295> (tube development)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0035295> "tube development")
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0035295> <http://purl.obolibrary.org/obo/GO_0160108>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0035295> <http://purl.obolibrary.org/obo/GO_0048856>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0035295> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/GO_0007275>))
 
 # Class: <http://purl.obolibrary.org/obo/GO_0035296> (regulation of tube diameter)
@@ -97822,11 +97832,11 @@ AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0036374> "glut
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0036374> <http://purl.obolibrary.org/obo/GO_0008242>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0036374> <http://purl.obolibrary.org/obo/GO_0070003>)
 
-# Class: <http://purl.obolibrary.org/obo/GO_0036378> (calcitriol biosynthetic process from calciol)
+# Class: <http://purl.obolibrary.org/obo/GO_0036378> (obsolete calcitriol biosynthetic process from calciol)
 
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0036378> "calcitriol biosynthetic process from calciol")
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0036378> <http://purl.obolibrary.org/obo/GO_0070640>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0036378> <http://purl.obolibrary.org/obo/GO_1901755>)
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0100001> <http://purl.obolibrary.org/obo/GO_0036378> <http://purl.obolibrary.org/obo/GO_1901755>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0036378> "obsolete calcitriol biosynthetic process from calciol")
+AnnotationAssertion(owl:deprecated <http://purl.obolibrary.org/obo/GO_0036378> "true"^^xsd:boolean)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0036379> (myofilament)
 
@@ -99074,9 +99084,9 @@ AnnotationAssertion(owl:deprecated <http://purl.obolibrary.org/obo/GO_0043624> "
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0043648> "dicarboxylic acid metabolic process")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0043648> <http://purl.obolibrary.org/obo/GO_0019752>)
 
-# Class: <http://purl.obolibrary.org/obo/GO_0043891> (glyceraldehyde-3-phosphate dehydrogenase [NAD(P)+] (phosphorylating) activity)
+# Class: <http://purl.obolibrary.org/obo/GO_0043891> (glyceraldehyde-3-phosphate dehydrogenase (phosphorylating, [NAD(P)+] ) activity)
 
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0043891> "glyceraldehyde-3-phosphate dehydrogenase [NAD(P)+] (phosphorylating) activity")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0043891> "glyceraldehyde-3-phosphate dehydrogenase (phosphorylating, [NAD(P)+] ) activity")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0043891> <http://purl.obolibrary.org/obo/GO_0016620>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0043900> (obsolete regulation of multi-organism process)
@@ -100995,6 +101005,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0046032> <http://purl.obolibrary.o
 # Class: <http://purl.obolibrary.org/obo/GO_0046034> (ATP metabolic process)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0046034> "ATP metabolic process")
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0046034> <http://purl.obolibrary.org/obo/GO_0009141>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0046034> <http://purl.obolibrary.org/obo/GO_0009150>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0046034> <http://purl.obolibrary.org/obo/GO_0009205>)
 
@@ -101267,6 +101278,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0046676> ObjectSomeValuesFrom(<htt
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0046697> "decidualization")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0046697> <http://purl.obolibrary.org/obo/GO_0003006>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0046697> <http://purl.obolibrary.org/obo/GO_0009888>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0046697> <http://purl.obolibrary.org/obo/GO_0160108>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0046697> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/GO_0001893>))
 
 # Class: <http://purl.obolibrary.org/obo/GO_0046700> (obsolete heterocycle catabolic process)
@@ -101577,6 +101589,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0048243> <http://purl.obolibrary.o
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0048259> "regulation of receptor-mediated endocytosis")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0048259> <http://purl.obolibrary.org/obo/GO_0030100>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0048259> <http://purl.obolibrary.org/obo/GO_0060627>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0048259> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002211> <http://purl.obolibrary.org/obo/GO_0006898>))
 
 # Class: <http://purl.obolibrary.org/obo/GO_0048260> (positive regulation of receptor-mediated endocytosis)
@@ -101715,6 +101728,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0048545> <http://purl.obolibrary.o
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0048565> "digestive tract development")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0048565> <http://purl.obolibrary.org/obo/GO_0035295>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0048565> <http://purl.obolibrary.org/obo/GO_0160108>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0048565> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/GO_0055123>))
 
 # Class: <http://purl.obolibrary.org/obo/GO_0048580> (regulation of post-embryonic development)
@@ -102485,7 +102499,6 @@ AnnotationAssertion(owl:deprecated <http://purl.obolibrary.org/obo/GO_0050880> "
 
 # Class: <http://purl.obolibrary.org/obo/GO_0050881> (musculoskeletal movement)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/RO_0002175> <http://purl.obolibrary.org/obo/GO_0050881> <http://purl.obolibrary.org/obo/NCBITaxon_7227>)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0050881> "musculoskeletal movement")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0050881> <http://purl.obolibrary.org/obo/GO_0050879>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0050881> <http://purl.obolibrary.org/obo/GO_0050905>)
@@ -104334,6 +104347,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0060407> ObjectSomeValuesFrom(<htt
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0060429> "epithelium development")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0060429> <http://purl.obolibrary.org/obo/GO_0009888>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0060429> <http://purl.obolibrary.org/obo/GO_0160108>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0060452> (positive regulation of cardiac muscle contraction)
 
@@ -104398,6 +104412,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0060474> ObjectSomeValuesFrom(<htt
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0060485> "mesenchyme development")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0060485> <http://purl.obolibrary.org/obo/GO_0009888>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0060485> <http://purl.obolibrary.org/obo/GO_0160108>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0060485> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/GO_0048513>))
 
 # Class: <http://purl.obolibrary.org/obo/GO_0060491> (regulation of cell projection assembly)
@@ -104411,6 +104426,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0060491> ObjectSomeValuesFrom(<htt
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0060537> "muscle tissue development")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0060537> <http://purl.obolibrary.org/obo/GO_0009888>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0060537> <http://purl.obolibrary.org/obo/GO_0160108>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0060548> (obsolete negative regulation of cell death)
 
@@ -104745,12 +104761,12 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0061370> <http://purl.obolibrary.o
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0061448> "connective tissue development")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0061448> <http://purl.obolibrary.org/obo/GO_0009888>)
+SubClassOf(<http://purl.obolibrary.org/obo/GO_0061448> <http://purl.obolibrary.org/obo/GO_0160108>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0061458> (reproductive system development)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0061458> "reproductive system development")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0061458> <http://purl.obolibrary.org/obo/GO_0048731>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0061458> <http://purl.obolibrary.org/obo/GO_0160108>)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0061512> (protein localization to cilium)
 
@@ -107148,9 +107164,9 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0106016> <http://purl.obolibrary.o
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0106016> <http://purl.obolibrary.org/obo/GO_1903036>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0106016> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002213> <http://purl.obolibrary.org/obo/GO_0090594>))
 
-# Class: <http://purl.obolibrary.org/obo/GO_0106064> (regulation of cobalamin metabolic process)
+# Class: <http://purl.obolibrary.org/obo/GO_0106064> (regulation of cobalamin catabolic process)
 
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0106064> "regulation of cobalamin metabolic process")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0106064> "regulation of cobalamin catabolic process")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0106064> <http://purl.obolibrary.org/obo/GO_1901401>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0106064> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002211> <http://purl.obolibrary.org/obo/GO_0009235>))
 
@@ -107174,16 +107190,16 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0106120> <http://purl.obolibrary.o
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0106120> <http://purl.obolibrary.org/obo/GO_0106118>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0106120> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002213> <http://purl.obolibrary.org/obo/GO_0016126>))
 
-# Class: <http://purl.obolibrary.org/obo/GO_0106121> (positive regulation of cobalamin metabolic process)
+# Class: <http://purl.obolibrary.org/obo/GO_0106121> (positive regulation of cobalamin catabolic process)
 
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0106121> "positive regulation of cobalamin metabolic process")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0106121> "positive regulation of cobalamin catabolic process")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0106121> <http://purl.obolibrary.org/obo/GO_0009893>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0106121> <http://purl.obolibrary.org/obo/GO_0106064>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0106121> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002213> <http://purl.obolibrary.org/obo/GO_0009235>))
 
-# Class: <http://purl.obolibrary.org/obo/GO_0106122> (negative regulation of cobalamin metabolic process)
+# Class: <http://purl.obolibrary.org/obo/GO_0106122> (negative regulation of cobalamin catabolic process)
 
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0106122> "negative regulation of cobalamin metabolic process")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0106122> "negative regulation of cobalamin catabolic process")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0106122> <http://purl.obolibrary.org/obo/GO_0009892>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0106122> <http://purl.obolibrary.org/obo/GO_0106064>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0106122> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002212> <http://purl.obolibrary.org/obo/GO_0009235>))
@@ -107459,7 +107475,6 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0140237> ObjectSomeValuesFrom(<htt
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0140238> "presynaptic endocytosis")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0140238> <http://purl.obolibrary.org/obo/GO_0006897>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0140238> <http://purl.obolibrary.org/obo/GO_0051649>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0140238> <http://purl.obolibrary.org/obo/GO_0099003>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0140238> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000066> <http://purl.obolibrary.org/obo/GO_0098793>))
 
 # Class: <http://purl.obolibrary.org/obo/GO_0140239> (postsynaptic endocytosis)
@@ -107467,7 +107482,6 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0140238> ObjectSomeValuesFrom(<htt
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0140239> "postsynaptic endocytosis")
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0140239> <http://purl.obolibrary.org/obo/GO_0006897>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0140239> <http://purl.obolibrary.org/obo/GO_0051649>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0140239> <http://purl.obolibrary.org/obo/GO_0099003>)
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0140239> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000066> <http://purl.obolibrary.org/obo/GO_0098794>))
 
 # Class: <http://purl.obolibrary.org/obo/GO_0140241> (translation at synapse)
@@ -107681,25 +107695,20 @@ SubClassOf(<http://purl.obolibrary.org/obo/GO_0160307> <http://purl.obolibrary.o
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0160307> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/GO_0010467>))
 SubClassOf(<http://purl.obolibrary.org/obo/GO_0160307> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/GO_0043039>))
 
-# Class: <http://purl.obolibrary.org/obo/GO_0170033> (L-amino acid metabolic process)
+# Class: <http://purl.obolibrary.org/obo/GO_0170033> (obsolete L-amino acid metabolic process)
 
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0170033> "L-amino acid metabolic process")
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0170033> <http://purl.obolibrary.org/obo/GO_0006520>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0170033> <http://purl.obolibrary.org/obo/GO_0019752>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0170033> "obsolete L-amino acid metabolic process")
+AnnotationAssertion(owl:deprecated <http://purl.obolibrary.org/obo/GO_0170033> "true"^^xsd:boolean)
 
-# Class: <http://purl.obolibrary.org/obo/GO_0170034> (L-amino acid biosynthetic process)
+# Class: <http://purl.obolibrary.org/obo/GO_0170034> (obsolete L-amino acid biosynthetic process)
 
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0170034> "L-amino acid biosynthetic process")
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0170034> <http://purl.obolibrary.org/obo/GO_0008652>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0170034> <http://purl.obolibrary.org/obo/GO_0046394>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0170034> <http://purl.obolibrary.org/obo/GO_0170033>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0170034> "obsolete L-amino acid biosynthetic process")
+AnnotationAssertion(owl:deprecated <http://purl.obolibrary.org/obo/GO_0170034> "true"^^xsd:boolean)
 
-# Class: <http://purl.obolibrary.org/obo/GO_0170035> (L-amino acid catabolic process)
+# Class: <http://purl.obolibrary.org/obo/GO_0170035> (obsolete L-amino acid catabolic process)
 
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0170035> "L-amino acid catabolic process")
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0170035> <http://purl.obolibrary.org/obo/GO_0009063>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0170035> <http://purl.obolibrary.org/obo/GO_0046395>)
-SubClassOf(<http://purl.obolibrary.org/obo/GO_0170035> <http://purl.obolibrary.org/obo/GO_0170033>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/GO_0170035> "obsolete L-amino acid catabolic process")
+AnnotationAssertion(owl:deprecated <http://purl.obolibrary.org/obo/GO_0170035> "true"^^xsd:boolean)
 
 # Class: <http://purl.obolibrary.org/obo/GO_0170038> (proteinogenic amino acid biosynthetic process)
 
