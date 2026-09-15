@@ -1,0 +1,27 @@
+prefix owl:       <http://www.w3.org/2002/07/owl#>
+prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix xsd:       <http://www.w3.org/2001/XMLSchema#>
+prefix oboInOwl:  <http://www.geneontology.org/formats/oboInOwl#>
+prefix mondo:     <http://purl.obolibrary.org/obo/mondo#>
+
+# Emit a curated_content_resource linkout to monarchinitiative.org for every
+# MONDO class. The reified axiom annotation carries source="MONDO:Monarch",
+# matching the convention used by MONDO:MalaCards and MONDO:CLINGEN linkouts.
+
+CONSTRUCT {
+  ?cls mondo:curated_content_resource ?url .
+  _:ax a owl:Axiom ;
+       owl:annotatedSource ?cls ;
+       owl:annotatedProperty mondo:curated_content_resource ;
+       owl:annotatedTarget ?url ;
+       oboInOwl:source "MONDO:Monarch" .
+}
+WHERE {
+  ?cls a owl:Class .
+  FILTER(isIRI(?cls))
+  FILTER(STRSTARTS(STR(?cls), "http://purl.obolibrary.org/obo/MONDO_"))
+  # Do not emit linkouts for obsolete classes.
+  FILTER NOT EXISTS { ?cls owl:deprecated true }
+  BIND(STRAFTER(STR(?cls), "http://purl.obolibrary.org/obo/MONDO_") AS ?id)
+  BIND(STRDT(CONCAT("https://monarchinitiative.org/MONDO:", ?id), xsd:anyURI) AS ?url)
+}
