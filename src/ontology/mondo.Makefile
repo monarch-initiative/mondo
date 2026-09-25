@@ -794,8 +794,9 @@ update-omim-genes:
 		-i $(TMPDIR)/mondo-genes-axioms.owl \
 		-i $(TMPDIR)/keep-susceptibility-gene-assocation-axioms.owl \
 		--collapse-import-closure false \
-		query --update ../sparql/update/omim-gene-equivalence.ru \
-		query --update ../sparql/update/remove_gene_associations_from_obsolete.ru \
+		query --temporary-file true \
+		--update ../sparql/update/omim-gene-equivalence.ru \
+		--update ../sparql/update/remove_gene_associations_from_obsolete.ru \
 		convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
