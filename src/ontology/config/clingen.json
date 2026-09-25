@@ -1,0 +1,702 @@
+{
+  "description": "Registry of ClinGen curators and working groups interacting with Mondo, mined from GitHub issues in monarch-initiative/mondo",
+  "last_updated": "2026-03-30",
+  "how_to_update": "Run: gh issue list --repo monarch-initiative/mondo --search 'clinicalgenome.org/affiliation' --state all --limit 200 --json number,title,author,body,labels,state,comments. For each issue, extract: author github_handle, ORCID (from body text, look for orcid.org URLs), ClinGen affiliation URLs (clinicalgenome.org/affiliation/NNNNN/), and working group names (fetch the affiliation URL to get the official name). Cross-reference with existing entries and add new curators/WGs. Only include ORCIDs explicitly stated in issues. Every data point must have issue number provenance.",
+  "curators": [
+    {
+      "github_handle": "wchankey",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40072/",
+          "name": "Retina Gene Curation Expert Panel",
+          "short_name": "Retina GCEP"
+        },
+        {
+          "url": "https://clinicalgenome.org/affiliation/40077/",
+          "name": "Glaucoma and Neuro-Ophthalmology Gene Curation Expert Panel",
+          "short_name": "Glaucoma and Neuro-Ophthalmology GCEP"
+        }
+      ],
+      "issue_numbers": [7826, 8986, 9126, 9242, 9823]
+    },
+    {
+      "github_handle": "clauseMDM",
+      "orcid": "https://orcid.org/0000-0002-2078-7280",
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40151/",
+          "name": "Muscular Dystrophies and Myopathies Gene Curation Expert Panel",
+          "short_name": "Muscular Dystrophies and Myopathies GCEP"
+        },
+        {
+          "url": "https://clinicalgenome.org/affiliation/40060/",
+          "name": "Syndromic Disorders Gene Curation Expert Panel",
+          "short_name": "Syndromic Disorders GCEP"
+        }
+      ],
+      "issue_numbers": [8592, 8593, 8784, 8785, 9773, 9774, 9775, 9937, 9938]
+    },
+    {
+      "github_handle": "LengUNC",
+      "orcid": "https://orcid.org/0009-0007-6180-2639",
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40104/",
+          "name": "Hereditary Cardiovascular Disease Gene Curation Expert Panel",
+          "short_name": "Hereditary Cardiovascular Disease GCEP"
+        },
+        {
+          "url": "https://clinicalgenome.org/affiliation/40156/",
+          "name": "Neurovascular Gene Curation Expert Panel",
+          "short_name": "Neurovascular GCEP"
+        },
+        {
+          "url": "https://clinicalgenome.org/affiliation/50031/",
+          "name": "Congenital Myopathies Variant Curation Expert Panel",
+          "short_name": "Congenital Myopathies VCEP"
+        }
+      ],
+      "issue_numbers": [8840, 9236, 9362, 9707, 9721, 9742, 9832]
+    },
+    {
+      "github_handle": "keparis",
+      "orcid": "https://orcid.org/0009-0004-3069-7846",
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40157/",
+          "name": "Childhood, Adolescent and Young Adult Cancer Predisposition Gene Curation Expert Panel",
+          "short_name": "CAYACP GCEP"
+        }
+      ],
+      "issue_numbers": [8697, 8836, 8946, 8947, 9422, 9576, 9577, 9665, 9749, 9877]
+    },
+    {
+      "github_handle": "ikeseler",
+      "orcid": "https://orcid.org/0000-0003-1738-6117",
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40123/",
+          "name": "Monogenic Systemic and Incomplete Lupus Erythematosus Gene Curation Expert Panel",
+          "short_name": "Monogenic SLE GCEP"
+        }
+      ],
+      "issue_numbers": [9557, 9580, 9603, 9683, 9814, 9981, 9982, 9983]
+    },
+    {
+      "github_handle": "GabrielleGCA",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40073/",
+          "name": "Male Infertility Gene Curation Expert Panel",
+          "short_name": "Male Infertility GCEP"
+        },
+        {
+          "url": "https://clinicalgenome.org/affiliation/40113/",
+          "name": "Cerebral Palsy Gene Curation Expert Panel",
+          "short_name": "Cerebral Palsy GCEP"
+        }
+      ],
+      "issue_numbers": [9392, 9811, 9812, 9863, 9864, 9979, 10022]
+    },
+    {
+      "github_handle": "vgitau",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40066/",
+          "name": "Kidney Cystic and Ciliopathy Disorders Gene Curation Expert Panel",
+          "short_name": "Kidney Cystic and Ciliopathy Disorders GCEP"
+        },
+        {
+          "url": "https://clinicalgenome.org/affiliation/40060/",
+          "name": "Syndromic Disorders Gene Curation Expert Panel",
+          "short_name": "Syndromic Disorders GCEP"
+        }
+      ],
+      "issue_numbers": [7457, 8912, 8913, 8914, 8915, 9010, 9547, 9595, 9596, 9732, 9963]
+    },
+    {
+      "github_handle": "justyneross",
+      "orcid": "https://orcid.org/0000-0002-7437-8060",
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40028/",
+          "name": "Hemostasis/Thrombosis Gene Curation Expert Panel",
+          "short_name": "Hemostasis/Thrombosis GCEP"
+        },
+        {
+          "url": "https://clinicalgenome.org/affiliation/40031/",
+          "name": "Congenital Myopathies Gene Curation Expert Panel",
+          "short_name": "Congenital Myopathies GCEP"
+        }
+      ],
+      "issue_numbers": [8178, 9011, 9896, 9969, 9994]
+    },
+    {
+      "github_handle": "kezang-tshering",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40130/",
+          "name": "Congenital Heart Disease Gene Curation Expert Panel",
+          "short_name": "Congenital Heart Disease GCEP"
+        }
+      ],
+      "issue_numbers": [9463, 9876]
+    },
+    {
+      "github_handle": "RyanFWebb",
+      "orcid": "https://orcid.org/0009-0003-2127-3550",
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40065/",
+          "name": "Skeletal Disorders Gene Curation Expert Panel",
+          "short_name": "Skeletal Disorders GCEP"
+        }
+      ],
+      "issue_numbers": [7379, 8755, 9147, 9169]
+    },
+    {
+      "github_handle": "raquel-fernandez-acmg",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40110/",
+          "name": "Lysosomal Diseases Gene Curation Expert Panel",
+          "short_name": "Lysosomal Diseases GCEP"
+        }
+      ],
+      "issue_numbers": [9321, 9322, 9323]
+    },
+    {
+      "github_handle": "laurenfries",
+      "orcid": null,
+      "affiliations": [],
+      "clingen_context": "Submits on behalf of SCID-CID GCEP",
+      "issue_numbers": [9838, 10045]
+    },
+    {
+      "github_handle": "jennygoldstein",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/50162/",
+          "name": "Propionic Acidemia and Methylmalonic Acidemia Variant Curation Expert Panel",
+          "short_name": "PA/MMA VCEP"
+        }
+      ],
+      "issue_numbers": [9662, 9663]
+    },
+    {
+      "github_handle": "sng2140",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40106/",
+          "name": "Prenatal Gene Curation Expert Panel",
+          "short_name": "Prenatal GCEP"
+        }
+      ],
+      "issue_numbers": [8449, 9527, 9855]
+    },
+    {
+      "github_handle": "kanems",
+      "orcid": null,
+      "affiliations": [],
+      "clingen_context": "ClinGen-affiliated, works on MedGen/ClinGen coordination",
+      "issue_numbers": [7700, 9156, 9764]
+    },
+    {
+      "github_handle": "katiermullen",
+      "orcid": null,
+      "affiliations": [],
+      "clingen_context": "Mondo team member working on ClinGen release processes",
+      "issue_numbers": [9645]
+    },
+    {
+      "github_handle": "MeeSiing",
+      "orcid": null,
+      "affiliations": [],
+      "clingen_context": "ClinGen-affiliated, works on term review coordination",
+      "issue_numbers": [9831]
+    },
+    {
+      "github_handle": "galyea123",
+      "orcid": null,
+      "affiliations": [],
+      "clingen_context": "Submits ClinGen-related disease term requests without specific affiliation URL",
+      "issue_numbers": [8921, 9816]
+    },
+    {
+      "github_handle": "Jciesielka1",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40006/",
+          "name": "Intellectual Disability and Autism Gene Curation Expert Panel",
+          "short_name": "ID/Autism GCEP"
+        }
+      ],
+      "issue_numbers": [8265, 8266, 8327, 8931, 8944, 8945]
+    },
+    {
+      "github_handle": "icordovaG",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40006/",
+          "name": "Intellectual Disability and Autism Gene Curation Expert Panel",
+          "short_name": "ID/Autism GCEP"
+        },
+        {
+          "url": "https://clinicalgenome.org/affiliation/40063/",
+          "name": "Charcot-Marie-Tooth Disease Gene Curation Expert Panel",
+          "short_name": "CMT GCEP"
+        },
+        {
+          "url": "https://clinicalgenome.org/affiliation/40113/",
+          "name": "Cerebral Palsy Gene Curation Expert Panel",
+          "short_name": "Cerebral Palsy GCEP"
+        }
+      ],
+      "issue_numbers": [6600, 7317, 7572, 7652, 7975]
+    },
+    {
+      "github_handle": "ARosselClinGen",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40005/",
+          "name": "Epilepsy Gene Curation Expert Panel",
+          "short_name": "Epilepsy GCEP"
+        }
+      ],
+      "issue_numbers": [5546, 5563, 5564, 6223, 7195]
+    },
+    {
+      "github_handle": "nataliedeuitch",
+      "orcid": "https://orcid.org/0000-0002-0146-1162",
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40139/",
+          "name": "Monogenic Autoinflammatory Diseases Gene Curation Expert Panel",
+          "short_name": "Monogenic Autoinflammatory GCEP"
+        }
+      ],
+      "issue_numbers": [7706, 7707]
+    },
+    {
+      "github_handle": "eedoh01",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40059/",
+          "name": "Craniofacial Malformations Gene Curation Expert Panel",
+          "short_name": "Craniofacial Malformations GCEP"
+        },
+        {
+          "url": "https://clinicalgenome.org/affiliation/40130/",
+          "name": "Congenital Heart Disease Gene Curation Expert Panel",
+          "short_name": "Congenital Heart Disease GCEP"
+        }
+      ],
+      "issue_numbers": [7493, 7515, 7768, 8457, 8834, 8903, 9128, 9129, 9154, 9155, 9161, 9179, 9210]
+    },
+    {
+      "github_handle": "peastc",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40077/",
+          "name": "Glaucoma and Neuro-Ophthalmology Gene Curation Expert Panel",
+          "short_name": "Glaucoma and Neuro-Ophthalmology GCEP"
+        }
+      ],
+      "issue_numbers": [8786]
+    },
+    {
+      "github_handle": "mafaldacst",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40102/",
+          "name": "Motile Ciliopathy Gene Curation Expert Panel",
+          "short_name": "Motile Ciliopathy GCEP"
+        }
+      ],
+      "issue_numbers": [8728, 9718]
+    },
+    {
+      "github_handle": "J-Siew",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40102/",
+          "name": "Motile Ciliopathy Gene Curation Expert Panel",
+          "short_name": "Motile Ciliopathy GCEP"
+        },
+        {
+          "url": "https://clinicalgenome.org/affiliation/40097/",
+          "name": "General Inborn Errors of Metabolism Gene Curation Expert Panel",
+          "short_name": "General IEM GCEP"
+        }
+      ],
+      "issue_numbers": [8866, 9001]
+    },
+    {
+      "github_handle": "mibenito",
+      "orcid": "https://orcid.org/0009-0001-7138-8191",
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40102/",
+          "name": "Motile Ciliopathy Gene Curation Expert Panel",
+          "short_name": "Motile Ciliopathy GCEP"
+        }
+      ],
+      "issue_numbers": [8822, 8892]
+    },
+    {
+      "github_handle": "abbe-Lai",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/50020/",
+          "name": "Brain Malformations Variant Curation Expert Panel",
+          "short_name": "Brain Malformations VCEP"
+        }
+      ],
+      "issue_numbers": [7599, 7717, 7718, 7719]
+    },
+    {
+      "github_handle": "poppies700",
+      "orcid": null,
+      "affiliations": [],
+      "clingen_context": "Submits on behalf of ClinGen Glaucoma/Neuro-Ophthalmology related panels",
+      "issue_numbers": [7951, 9051]
+    },
+    {
+      "github_handle": "MLYBrownReeves",
+      "orcid": "https://orcid.org/0000-0003-2339-4914",
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40097/",
+          "name": "General Inborn Errors of Metabolism Gene Curation Expert Panel",
+          "short_name": "General IEM GCEP"
+        }
+      ],
+      "issue_numbers": [7180, 8036, 9582]
+    },
+    {
+      "github_handle": "mtwilke-art",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40097/",
+          "name": "General Inborn Errors of Metabolism Gene Curation Expert Panel",
+          "short_name": "General IEM GCEP"
+        }
+      ],
+      "issue_numbers": [9703]
+    },
+    {
+      "github_handle": "elmacke",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40016/",
+          "name": "Monogenic Diabetes Gene Curation Expert Panel",
+          "short_name": "Monogenic Diabetes GCEP"
+        }
+      ],
+      "issue_numbers": [9861]
+    },
+    {
+      "github_handle": "courtneythaxton",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40006/",
+          "name": "Intellectual Disability and Autism Gene Curation Expert Panel",
+          "short_name": "ID/Autism GCEP"
+        }
+      ],
+      "issue_numbers": [561, 9693]
+    },
+    {
+      "github_handle": "elizabeth-gavrilov",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40020/",
+          "name": "Brain Malformations Gene Curation Expert Panel",
+          "short_name": "Brain Malformations GCEP"
+        }
+      ],
+      "issue_numbers": [10063]
+    },
+    {
+      "github_handle": "cgutierrezford",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40104/",
+          "name": "Hereditary Cardiovascular Disease Gene Curation Expert Panel",
+          "short_name": "Hereditary Cardiovascular Disease GCEP"
+        }
+      ],
+      "issue_numbers": [9878]
+    },
+    {
+      "github_handle": "jonathan-s-berg",
+      "orcid": null,
+      "affiliations": [],
+      "clingen_context": "ClinGen-affiliated, works on autoimmune lymphoproliferative syndrome classification",
+      "issue_numbers": [9630]
+    },
+    {
+      "github_handle": "jasminebro",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://www.clinicalgenome.org/working-groups/clinical-domain/hereditary-cancer/",
+          "name": "Hereditary Cancer Clinical Domain Working Group",
+          "short_name": "Hereditary Cancer CDWG"
+        }
+      ],
+      "issue_numbers": [9178]
+    },
+    {
+      "github_handle": "jratliff1234",
+      "orcid": null,
+      "affiliations": [
+        {
+          "url": "https://clinicalgenome.org/affiliation/40069/",
+          "name": "Complement-Mediated Kidney Diseases Gene Curation Expert Panel",
+          "short_name": "Complement-Mediated Kidney Diseases GCEP"
+        }
+      ],
+      "issue_numbers": [9815, 9956]
+    }
+  ],
+  "working_groups": [
+    {
+      "url": "https://clinicalgenome.org/affiliation/40005/",
+      "name": "Epilepsy Gene Curation Expert Panel",
+      "short_name": "Epilepsy GCEP",
+      "curators": ["ARosselClinGen"],
+      "issue_numbers": [5546, 5563, 5564, 6223, 7195]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40006/",
+      "name": "Intellectual Disability and Autism Gene Curation Expert Panel",
+      "short_name": "ID/Autism GCEP",
+      "curators": ["Jciesielka1", "icordovaG", "courtneythaxton"],
+      "issue_numbers": [561, 6600, 7317, 7572, 7652, 8265, 8266, 8327, 8931, 8944, 8945, 9693]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40016/",
+      "name": "Monogenic Diabetes Gene Curation Expert Panel",
+      "short_name": "Monogenic Diabetes GCEP",
+      "curators": ["elmacke"],
+      "issue_numbers": [9861]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40020/",
+      "name": "Brain Malformations Gene Curation Expert Panel",
+      "short_name": "Brain Malformations GCEP",
+      "curators": ["elizabeth-gavrilov"],
+      "issue_numbers": [10063]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40028/",
+      "name": "Hemostasis/Thrombosis Gene Curation Expert Panel",
+      "short_name": "Hemostasis/Thrombosis GCEP",
+      "curators": ["justyneross"],
+      "issue_numbers": [4541, 8178, 9994]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40031/",
+      "name": "Congenital Myopathies Gene Curation Expert Panel",
+      "short_name": "Congenital Myopathies GCEP",
+      "curators": ["justyneross"],
+      "issue_numbers": [9969]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40059/",
+      "name": "Craniofacial Malformations Gene Curation Expert Panel",
+      "short_name": "Craniofacial Malformations GCEP",
+      "curators": ["eedoh01"],
+      "issue_numbers": [7493, 7768, 8457, 9128, 9129, 9154, 9155, 9161, 9179, 9210]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40060/",
+      "name": "Syndromic Disorders Gene Curation Expert Panel",
+      "short_name": "Syndromic Disorders GCEP",
+      "curators": ["clauseMDM", "vgitau"],
+      "issue_numbers": [8784, 9547, 9595, 9596, 9963]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40063/",
+      "name": "Charcot-Marie-Tooth Disease Gene Curation Expert Panel",
+      "short_name": "CMT GCEP",
+      "curators": ["icordovaG"],
+      "issue_numbers": [7652]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40065/",
+      "name": "Skeletal Disorders Gene Curation Expert Panel",
+      "short_name": "Skeletal Disorders GCEP",
+      "curators": ["RyanFWebb"],
+      "issue_numbers": [7379, 8755, 9147, 9169]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40066/",
+      "name": "Kidney Cystic and Ciliopathy Disorders Gene Curation Expert Panel",
+      "short_name": "Kidney Cystic and Ciliopathy Disorders GCEP",
+      "curators": ["vgitau"],
+      "issue_numbers": [7457, 8912, 8913, 8914, 8915, 9010]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40069/",
+      "name": "Complement-Mediated Kidney Diseases Gene Curation Expert Panel",
+      "short_name": "Complement-Mediated Kidney Diseases GCEP",
+      "curators": ["jratliff1234"],
+      "issue_numbers": [9956]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40072/",
+      "name": "Retina Gene Curation Expert Panel",
+      "short_name": "Retina GCEP",
+      "curators": ["wchankey"],
+      "issue_numbers": [8986, 9242]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40073/",
+      "name": "Male Infertility Gene Curation Expert Panel",
+      "short_name": "Male Infertility GCEP",
+      "curators": ["GabrielleGCA"],
+      "issue_numbers": [9811, 9979, 10022]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40077/",
+      "name": "Glaucoma and Neuro-Ophthalmology Gene Curation Expert Panel",
+      "short_name": "Glaucoma and Neuro-Ophthalmology GCEP",
+      "curators": ["wchankey", "peastc"],
+      "issue_numbers": [7826, 8786, 9126]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40097/",
+      "name": "General Inborn Errors of Metabolism Gene Curation Expert Panel",
+      "short_name": "General IEM GCEP",
+      "curators": ["J-Siew", "MLYBrownReeves", "mtwilke-art"],
+      "issue_numbers": [7180, 8036, 8866, 9582, 9703]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40102/",
+      "name": "Motile Ciliopathy Gene Curation Expert Panel",
+      "short_name": "Motile Ciliopathy GCEP",
+      "curators": ["mafaldacst", "J-Siew", "mibenito"],
+      "issue_numbers": [8728, 8822, 8892, 9001, 9718]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40104/",
+      "name": "Hereditary Cardiovascular Disease Gene Curation Expert Panel",
+      "short_name": "Hereditary Cardiovascular Disease GCEP",
+      "curators": ["LengUNC", "cgutierrezford"],
+      "issue_numbers": [9236, 9707, 9742, 9832, 9878]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40106/",
+      "name": "Prenatal Gene Curation Expert Panel",
+      "short_name": "Prenatal GCEP",
+      "curators": ["sng2140"],
+      "issue_numbers": [9855]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40110/",
+      "name": "Lysosomal Diseases Gene Curation Expert Panel",
+      "short_name": "Lysosomal Diseases GCEP",
+      "curators": ["raquel-fernandez-acmg"],
+      "issue_numbers": [9321, 9322, 9323]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40113/",
+      "name": "Cerebral Palsy Gene Curation Expert Panel",
+      "short_name": "Cerebral Palsy GCEP",
+      "curators": ["GabrielleGCA", "icordovaG"],
+      "issue_numbers": [7975, 9392]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40123/",
+      "name": "Monogenic Systemic and Incomplete Lupus Erythematosus Gene Curation Expert Panel",
+      "short_name": "Monogenic SLE GCEP",
+      "curators": ["ikeseler"],
+      "issue_numbers": [9557, 9580, 9603, 9683, 9814, 9981, 9982, 9983]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40130/",
+      "name": "Congenital Heart Disease Gene Curation Expert Panel",
+      "short_name": "Congenital Heart Disease GCEP",
+      "curators": ["kezang-tshering", "eedoh01"],
+      "issue_numbers": [7515, 8834, 8903, 9463, 9876]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40139/",
+      "name": "Monogenic Autoinflammatory Diseases Gene Curation Expert Panel",
+      "short_name": "Monogenic Autoinflammatory GCEP",
+      "curators": ["nataliedeuitch"],
+      "issue_numbers": [7706, 7707]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40151/",
+      "name": "Muscular Dystrophies and Myopathies Gene Curation Expert Panel",
+      "short_name": "Muscular Dystrophies and Myopathies GCEP",
+      "curators": ["clauseMDM"],
+      "issue_numbers": [8592, 8593, 9773, 9774, 9775, 9937, 9938]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40156/",
+      "name": "Neurovascular Gene Curation Expert Panel",
+      "short_name": "Neurovascular GCEP",
+      "curators": ["LengUNC"],
+      "issue_numbers": [9721]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/40157/",
+      "name": "Childhood, Adolescent and Young Adult Cancer Predisposition Gene Curation Expert Panel",
+      "short_name": "CAYACP GCEP",
+      "curators": ["keparis"],
+      "issue_numbers": [8697, 8836, 8946, 8947, 9422, 9576, 9577, 9665, 9749, 9877]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/50020/",
+      "name": "Brain Malformations Variant Curation Expert Panel",
+      "short_name": "Brain Malformations VCEP",
+      "curators": ["abbe-Lai"],
+      "issue_numbers": [7599, 7717, 7718, 7719]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/50031/",
+      "name": "Congenital Myopathies Variant Curation Expert Panel",
+      "short_name": "Congenital Myopathies VCEP",
+      "curators": ["LengUNC"],
+      "issue_numbers": [9362]
+    },
+    {
+      "url": "https://clinicalgenome.org/affiliation/50162/",
+      "name": "Propionic Acidemia and Methylmalonic Acidemia Variant Curation Expert Panel",
+      "short_name": "PA/MMA VCEP",
+      "curators": ["jennygoldstein"],
+      "issue_numbers": [9662, 9663]
+    },
+    {
+      "url": "https://www.clinicalgenome.org/working-groups/clinical-domain/hereditary-cancer/",
+      "name": "Hereditary Cancer Clinical Domain Working Group",
+      "short_name": "Hereditary Cancer CDWG",
+      "curators": ["jasminebro"],
+      "issue_numbers": [9178]
+    }
+  ]
+}
