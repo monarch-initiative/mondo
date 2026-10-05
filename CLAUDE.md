@@ -49,6 +49,16 @@ relationship: excluded_subClassOf MONDO:0002129 {source="https://orcid.org/0000-
 ```
 - Before finalising an edit for a session, we need to run `sh run.sh make NORM && mv NORM mondo-edit.obo` to normalise the serialisation.
 
+## Merging a ROBOT template (bulk xrefs, synonyms, annotations)
+
+- To merge a ROBOT template TSV into the edit file, ALWAYS use the standard pipeline. Do not write custom scripts that patch `mondo-edit.obo` text:
+    1. copy the template to `src/ontology/tmp/merge_template.tsv` (the target only downloads its Google Sheet default if this file is missing)
+    2. `sh run.sh make merge_template`
+    3. `sh run.sh make NORM && mv NORM mondo-edit.obo`
+    4. delete `tmp/merge_template.tsv` afterwards so it isn't picked up again by mistake
+- `make NORM` runs `owltools --merge-axiom-annotations`, which **dedupes**. If the template re-asserts an xref that already exists with different qualifiers (e.g. it adds reviewer ORCIDs to an existing `MONDO:equivalentTo` xref), NORM folds the new `source=` values into the existing xref line. You do not get duplicate lines, so you don't need to pre-filter the template or hand-dedupe.
+- In a non-TTY context (Claude Code), `run.sh` fails with "the input device is not a TTY". Call docker directly with `-i` instead (see the `odk` skill).
+
 ## OBO Format Guidelines
 - Term ID format: MONDO:NNNNNNN (7-digit number)
 - Handling New Term Requests (NTRs):
