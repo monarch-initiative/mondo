@@ -6,6 +6,7 @@ Details and summaries for upcoming and past Mondo workshops.
 
 ## Workshops and Outreach Calls
 
+- [Mondo Neuromuscular Disease Workshop (Fall 2026)](#neuromuscular)
 - [Mondo Outreach Calls](#outreach)
 - [Mondo Epilepsy Workshop (Part 1: October 25, 2024, Part 2: November 22, 2024, Part 3: January 17, 2025)](#Oct-2024)
 - [Mondo Workshop (February 01, 2023)](#feb-2023)
@@ -17,6 +18,39 @@ Details and summaries for upcoming and past Mondo workshops.
 - [Mondo Upper Level Reclassification Workshop (April 05, 2021)](#april-2021)
 - [Mondo Introductory Workshop (November 2018)](#november-2018) 
 
+<a name="neuromuscular"></a> 
+## Mondo Neuromuscular Disease Workshop
+
+### Description
+The goal of this workshop series is to review the classification of neuromuscular disease terms in Mondo to ensure that the branch is scientifically accurate, aligns with the current understanding of the disease features, and is maximally useful for our users.
+
+### Date and Time
+- Session 1: October 16, 2026   
+- Session 2: November 13, 2026  
+- Session 3: December 11, 2026      
+
+### Agenda
+The agenda is available [here](https://docs.google.com/document/d/113fRe4ctmBnG8xUV65tPQmARt_4cYMYDJhdFdP4CDVg/edit). 
+
+<!-- 
+### Summary Report
+An overview of the three workshops is available [here]()
+
+### Slides
+- [Introduction to Ontologies]()  
+- [Session 1 - Overview of Neuromuscular Diseases]()  
+- [Session 2 - Neuromuscular Junction Diseases]()  
+- [Session 3 - Myopathies]()  
+
+
+### Recordings
+- Session 1 [recording here]()  
+- Session 2 [recording here]()  
+- Session 3 [recording here]()
+
+### Funding
+Funded by NHGRI Phenomics First (1RM1HG010860-01) and the [Critical Path Institute](https://c-path.org/fda-acknowledgement/).
+-->
 
 <a name="outreach"></a> 
 ## Mondo Outreach Calls
