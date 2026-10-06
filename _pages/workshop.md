@@ -32,6 +32,9 @@ The goal of this workshop series is to review the classification of neuromuscula
 ### Agenda
 The agenda is available [here](https://docs.google.com/document/d/113fRe4ctmBnG8xUV65tPQmARt_4cYMYDJhdFdP4CDVg/edit). 
 
+### Registration
+To register for the workshop, please complete this [form](https://docs.google.com/forms/d/e/1FAIpQLSdT4mCMTT23y1_ZT1ywhzc_2hUU8aKTgUgV_IEFsGuLtK47ow/viewform?usp=dialog).
+
 <!-- 
 ### Summary Report
 An overview of the three workshops is available [here]()
