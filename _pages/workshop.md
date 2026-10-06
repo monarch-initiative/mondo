@@ -30,10 +30,7 @@ The goal of this workshop series is to review the classification of neuromuscula
 - Session 3: December 11, 2026      
 
 ### Agenda
-The agenda is available [here](https://docs.google.com/document/d/113fRe4ctmBnG8xUV65tPQmARt_4cYMYDJhdFdP4CDVg/edit). 
-
-### Registration
-To register for the workshop, please complete this [form](https://docs.google.com/forms/d/e/1FAIpQLSdT4mCMTT23y1_ZT1ywhzc_2hUU8aKTgUgV_IEFsGuLtK47ow/viewform?usp=dialog).
+The agenda is available [here](https://docs.google.com/document/d/113fRe4ctmBnG8xUV65tPQmARt_4cYMYDJhdFdP4CDVg/edit) and includes information on how to join the workshop.
 
 <!-- 
 ### Summary Report
@@ -50,10 +47,11 @@ An overview of the three workshops is available [here]()
 - Session 1 [recording here]()  
 - Session 2 [recording here]()  
 - Session 3 [recording here]()
-
-### Funding
-Funded by NHGRI Phenomics First (1RM1HG010860-01) and the [Critical Path Institute](https://c-path.org/fda-acknowledgement/).
 -->
+### Funding
+Funded by 'Are all diseases n-of-1? Meaningful classification and characterization within and across rare diseases' (Chan Zuckerberg Initiative DAF2025-367759), 
+'Mondo: A community consensus knowledge base for computational disease definitions' (NHGRI 1U24HG014770) and the [Critical Path Institute](https://c-path.org/fda-acknowledgement/).
+
 
 <a name="outreach"></a> 
 ## Mondo Outreach Calls
