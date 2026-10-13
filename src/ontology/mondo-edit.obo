@@ -94349,23 +94349,22 @@ id: MONDO:0004573
 name: ariboflavinosis
 def: "A dietary deficiency of riboflavin causing a syndrome chiefly marked by cheilitis, angular stomatitis, glossitis associated with a purplish red or magenta-colored tongue that may show fissures, corneal vascularization, dyssebacia, and anemia. (Dorland, 27th ed)" [MESH:D012257]
 subset: doid {source="DOID:8454"}
-subset: omim {source="OMIM:615026"}
 subset: otar {source="MONDO:OTAR"}
-synonym: "riboflavin deficiency" EXACT [DOID:8454, ICD10CM:E53.0, OMIM:615026]
+synonym: "riboflavin deficiency" EXACT [DOID:8454, ICD10CM:E53.0]
 synonym: "vitamin B2 deficiency" EXACT [DOID:8454, ICD10CM:E53.0]
 xref: DOID:8454 {source="MONDO:equivalentTo"}
 xref: ICD10CM:E53.0 {source="https://orcid.org/0009-0001-6494-4831", source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-5002-8648", source="DOID:8454"}
 xref: ICD9:266.0 {source="MONDO:equivalentTo", source="MONDO:i2s", source="DOID:8454"}
 xref: MEDGEN:1830329 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D012257 {source="DOID:8454"}
-xref: OMIM:615026 {source="MONDO:equivalentTo", source="https://github.com/monarch-initiative/mondo/issues/3272"}
+xref: OMIM:615026 {source="MONDO:mondoIsBroaderThanSource"}
 xref: SCTID:154726004 {source="DOID:8454"}
 xref: SCTID:20307000 {source="MONDO:equivalentTo", source="DOID:8454"}
 xref: SCTID:267492001 {source="DOID:8454"}
 xref: UMLS:C5779638 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1830329"}
 is_a: MONDO:0006873 {source="DOID:8454"} ! nutritional deficiency disease
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30225 {source="OMIM:615026"} ! SLC52A1
 property_value: curated_content_resource "https://www.malacards.org/card/riboflavin_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
 
 [Term]
@@ -204495,8 +204494,8 @@ subset: ncit_rare {source="NCIT:C85026"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "bulbar palsy, progressive, of childhood" NARROW []
-synonym: "Fazio-Londe disease" NARROW []
+synonym: "bulbar palsy, progressive, of childhood" NARROW [OMIM:211500]
+synonym: "Fazio-Londe disease" NARROW [OMIM:211500]
 synonym: "progressive bulbar atrophy" RELATED [GARD:0010928]
 xref: DOID:681 {source="EFO:0003783", source="MONDO:equivalentTo"}
 xref: EFO:0003783 {source="MONDO:equivalentTo", source="MONDO:EFO"}
@@ -204512,17 +204511,18 @@ xref: SCTID:54304004 {source="EFO:0003783", source="MONDO:equivalentTo", source=
 xref: UMLS:C0030442 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:18290"}
 is_a: MONDO:0002782 {source="NCIT:C85026"} ! cranial nerve palsy
 is_a: MONDO:0006496 {source="EFO:0003783"} ! palsy
-is_a: MONDO:0008891 {source="https://ghr.nlm.nih.gov/condition/riboflavin-transporter-deficiency-neuronopathy"} ! riboflavin transporter deficiency
 relationship: disease_has_location CL:0000100 {source="EFO:0000784"} ! motor neuron
 relationship: disease_has_location UBERON:0002298 ! brainstem
+relationship: excluded_subClassOf MONDO:0008891 {source="DOID:681", source="Orphanet:97229", source="https://ghr.nlm.nih.gov/condition/riboflavin-transporter-deficiency-neuronopathy", source="https://orcid.org/0000-0002-7638-4659"} ! riboflavin transporter deficiency
 property_value: curated_content_resource "https://www.malacards.org/card/progressive_bulbar_palsy" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/127" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10928/progressive-bulbar-palsy" xsd:anyURI {source="GARD:0010928"}
 
 [Term]
 id: MONDO:0008891
 name: riboflavin transporter deficiency
-def: "A progressive motor neuron disorder characterized by respiratory insufficiency, sensorineural deafness and progressive ponto-bulbar palsy." [Orphanet:97229]
+def: "A hereditary motor neuron disease characterized by a peripheral and cranial neuropathy, neuronal loss in anterior horns and atrophy of spinal sensory tracts, causing muscle weakness, sensory loss, diaphragmatic paralysis and respiratory insufficiency, and multiple cranial nerve deficits such as sensorineural hearing loss, bulbar symptoms, and loss of vision due to optic atrophy." [Orphanet:97229]
 subset: doid {source="DOID:0050694"}
 subset: gard_rare {source="GARD:0009993", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD", source="NORD:1960"}
@@ -204534,15 +204534,12 @@ subset: orphanet_rare {source="Orphanet:97229"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "Brown-Vialetto-van Laere syndrome" EXACT [DOID:0050694, OMIMPS:211530, Orphanet:97229]
-synonym: "Brown-Vialetto-Van Laere syndrome 1" NARROW []
-synonym: "BVVLS" RELATED ABBREVIATION [GARD:0009993]
-synonym: "BVVLS1" RELATED ABBREVIATION []
+synonym: "BVVLS" EXACT ABBREVIATION [GARD:0009993]
 synonym: "disorder of riboflavin transmembrane transporter activity" EXACT [MONDO:design_pattern, MONDO:patterns/basis_in_disruption_of_process]
-synonym: "Fazio-Londe syndrome" EXACT [PMID:29473049]
 synonym: "pontobulbar palsy and neurosensory deafness" RELATED [GARD:0009993]
 synonym: "progressive bulbar palsy with sensorineural deafness" RELATED [GARD:0009993]
 synonym: "riboflavin transmembrane transporter activity disease" EXACT [MONDO:design_pattern]
-synonym: "sensorineural hearing loss-pontobulbar palsy syndrome" EXACT []
+synonym: "RTD" EXACT ABBREVIATION [PMID:26072523]
 xref: DOID:0050694 {source="MONDO:equivalentTo"}
 xref: GARD:0009993 {source="MONDO:GARD"}
 xref: ICD10CM:G12.1 {source="Orphanet:97229"}
@@ -204563,6 +204560,7 @@ relationship: excluded_subClassOf MONDO:0019589 {source="Orphanet:97229", source
 relationship: has_characteristic MONDO:0021152 {source="OMIMPS:211530"} ! inherited
 property_value: curated_content_resource "https://www.malacards.org/card/brown_vialetto_van_laere_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/riboflavin_transporter_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/9993/riboflavin-transporter-deficiency" xsd:string
 
 [Term]
@@ -344065,7 +344063,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/ceroid_
 [Term]
 id: MONDO:0013867
 name: Brown-Vialetto-van Laere syndrome 2
-def: "Any Brown-Vialetto-van Laere syndrome in which the cause of the disease is a mutation in the SLC52A2 gene." [MONDO:patterns/disease_series_by_gene]
+def: "Any riboflavin transporter deficiency in which the cause of the disease is a mutation in the SLC52A2 gene. It is characterized by early childhood onset of sensorineural deafness, bulbar dysfunction, and severe diffuse muscle weakness and wasting of the upper and lower limbs and axial muscles, resulting in respiratory insufficiency." [MONDO:patterns/disease_series_by_gene, OMIM:614707]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: doid {source="DOID:0080786"}
 subset: doid_rare {source="DOID:0080786"}
@@ -344074,28 +344072,35 @@ subset: ncit {source="NCIT:C183529"}
 subset: ncit_rare {source="NCIT:C183529"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:614707"}
-subset: ordo_subtype_of_a_disorder {source="Orphanet:572550"}
-subset: orphanet {source="Orphanet:572550"}
+subset: ordo_subtype_of_a_disorder {source="Orphanet:572543"}
+subset: orphanet {source="Orphanet:572543"}
 subset: rare
 synonym: "Brown-Vialetto-van Laere syndrome 2" EXACT [DOID:0080786, NCIT:C183529, OMIM:614707] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "Brown-Vialetto-van Laere syndrome caused by mutation in SLC52A2" EXACT [MONDO:design_pattern]
 synonym: "Brown-Vialetto-Van Laere syndrome type 2" EXACT []
 synonym: "BVVLS2" EXACT ABBREVIATION [NCIT:C183529, OMIM:614707]
+synonym: "RFVT2-related riboflavin transporter deficiency" EXACT [Orphanet:572543]
+synonym: "riboflavin transporter deficiency 2" EXACT [Orphanet:572543]
+synonym: "riboflavin transporter deficiency, type 2" EXACT [OMIM:614707]
+synonym: "RTD2" EXACT ABBREVIATION [OMIM:614707, Orphanet:572543, PMID:26072523]
+synonym: "SCABD2" EXACT ABBREVIATION [OMIM:614707]
 synonym: "SLC52A2 Brown-Vialetto-van Laere syndrome" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
+synonym: "spinocerebellar ataxia with blindness and deafness 2" EXACT [OMIM:614707]
 xref: DOID:0080786 {source="MONDO:equivalentTo"}
 xref: GARD:0012861 {source="MONDO:GARD"}
 xref: HGNC:30224 {source="GARD:0012861"}
 xref: MEDGEN:766452 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C183529 {source="MONDO:equivalentTo"}
-xref: OMIM:614707 {source="MONDO:equivalentTo"}
-xref: Orphanet:572550 {source="MONDO:equivalentTo"}
+xref: OMIM:614707 {source="MONDO:equivalentTo", source="Orphanet:572543"}
+xref: Orphanet:572543 {source="MONDO:equivalentTo"}
 xref: UMLS:C3553538 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:766452"}
-is_a: MONDO:0008891 {source="DOID:0080786", source="OMIM:614707", source="Orphanet:572550", source="Orphanet:97229/btnt"} ! riboflavin transporter deficiency
+is_a: MONDO:0008891 {source="DOID:0080786", source="OMIM:614707", source="Orphanet:572543", source="Orphanet:97229/btnt", source="PMID:26072523"} ! riboflavin transporter deficiency
 intersection_of: MONDO:0008891 ! riboflavin transporter deficiency
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30224 ! SLC52A2
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0013867 {source="MONDO:CLINGEN"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30224 {source="OMIM:614707"} ! SLC52A2
 property_value: curated_content_resource "https://www.malacards.org/card/brown_vialetto_van_laere_syndrome_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/12861/brown-vialetto-van-laere-syndrome-2" xsd:anyURI {source="GARD:0012861"}
 
 [Term]
@@ -348237,28 +348242,34 @@ property_value: curated_content_resource "https://www.malacards.org/card/charcot
 [Term]
 id: MONDO:0014013
 name: maternal riboflavin deficiency
+def: "A rare, genetic disorder of metabolite absorption or transport characterized by persistently decreased riboflavin serum levels due to a primary genetic defect in the mother and which leads to clinical and biochemical findings consistent with a secondary, life-threatening, transient multiple acyl-CoA dehydrogenase deficiency (MADD) in the newborn." [Orphanet:411712]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: gard_rare {source="GARD:0017686", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
+subset: omim {source="OMIM:615026"}
 subset: ordo_disorder {source="Orphanet:411712"}
 subset: orphanet {source="Orphanet:411712"}
 subset: orphanet_rare {source="Orphanet:411712"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "maternal riboflavin deficiency" EXACT [Orphanet:411712] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "RBFVD" BROAD ABBREVIATION []
-synonym: "riboflavin deficiency" BROAD []
+synonym: "RBFVD" EXACT ABBREVIATION [OMIM:615026]
+synonym: "riboflavin deficiency" RELATED [OMIM:615026]
+synonym: "riboflavin transporter deficiency, type 1" EXACT [OMIM:615026]
+synonym: "RTD1" EXACT ABBREVIATION [OMIM:615026]
 xref: GARD:0017686 {source="MONDO:GARD"}
 xref: ICD10CM:P00.4 {source="Orphanet:411712"}
 xref: MEDGEN:1657395 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: OMIM:615026 {source="MONDO:equivalentTo", source="Orphanet:411712"}
 xref: Orphanet:411712 {source="OMIM:615026", source="MONDO:equivalentTo"}
 xref: UMLS:C4750953 {source="MEDGEN:1657395", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0004573 {source="https://orcid.org/0000-0002-4142-7153"} ! ariboflavinosis
 is_a: MONDO:0005066 {source="https://orcid.org/0000-0002-1780-5230"} ! metabolic disease
 is_a: MONDO:0017757 {source="PMID:33340416", source="https://orcid.org/0000-0001-5208-3432"} ! disorder of metabolite absorption and transport
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0014013 {source="MONDO:CLINGEN"}
-relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
+relationship: excluded_subClassOf MONDO:0004573 {source="Orphanet:411712", source="PMID:21089064", source="https://orcid.org/0000-0002-4142-7153", source="https://orcid.org/0000-0002-7638-4659"} ! ariboflavinosis
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30225 {source="OMIM:615026", source="Orphanet:411712"} ! SLC52A1
 property_value: curated_content_resource "https://www.malacards.org/card/maternal_riboflavin_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6750" xsd:anyURI
 
 [Term]
@@ -530851,7 +530862,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0024537
 name: Brown-Vialetto-van Laere syndrome 1
-def: "Any Brown-Vialetto-van Laere syndrome in which the cause of the disease is a mutation in the SLC52A3 gene." [MONDO:patterns/disease_series_by_gene]
+def: "Any riboflavin transporter deficiency in which the cause of the disease is a mutation in the SLC52A3 gene. It is characterized by sensorineural hearing loss and a variety of cranial nerve palsies, usually involving the motor components of the seventh and ninth to twelfth (more rarely the third, fifth, and sixth) cranial nerves. Spinal motor nerves and, less commonly, upper motor neurons are sometimes affected, giving a picture resembling amyotrophic lateral sclerosis. The onset of the disease is usually in the second decade, but earlier and later onset have been reported." [MONDO:patterns/disease_series_by_gene, OMIM:211530]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: doid {source="DOID:0080785"}
 subset: gard_rare {source="GARD:0018010", source="MONDO:GARD"}
@@ -530859,31 +530870,34 @@ subset: ncit {source="NCIT:C133724"}
 subset: ncit_rare {source="NCIT:C133724"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:211530"}
-subset: ordo_subtype_of_a_disorder {source="Orphanet:572543"}
-subset: orphanet {source="Orphanet:572543"}
+subset: ordo_subtype_of_a_disorder {source="Orphanet:572550"}
+subset: orphanet {source="Orphanet:572550"}
 subset: rare
 synonym: "Brown-Vialetto-Van Laere syndrome 1" EXACT [DOID:0080785, NCIT:C133724, OMIM:211530]
 synonym: "Brown-Vialetto-van Laere syndrome 1" EXACT [DOID:0080785, NCIT:C133724, OMIM:211530] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "Brown-Vialetto-van Laere syndrome caused by mutation in SLC52A3" EXACT [MONDO:design_pattern]
-synonym: "BVVLS1" RELATED ABBREVIATION []
-synonym: "rfvt2-related riboflavin transporter deficiency" EXACT [Orphanet:572543]
-synonym: "Riboflavin transporter deficiency 2" EXACT [Orphanet:572543]
-synonym: "RTD2" EXACT ABBREVIATION [Orphanet:572543]
+synonym: "bulbar palsy, progressive, with sensorineural deafness" EXACT [OMIM:211530]
+synonym: "BVVLS1" EXACT ABBREVIATION [OMIM:211530]
+synonym: "pontobulbar palsy with deafness" EXACT [OMIM:211530]
+synonym: "RFVT3-related riboflavin transporter deficiency" EXACT [Orphanet:572550]
+synonym: "riboflavin transporter deficiency 3" EXACT [Orphanet:572550]
+synonym: "RTD3" EXACT ABBREVIATION [Orphanet:572550, PMID:26072523]
 synonym: "SLC52A3 Brown-Vialetto-van Laere syndrome" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 xref: DOID:0080785 {source="MONDO:equivalentTo"}
 xref: GARD:0018010 {source="MONDO:GARD"}
-xref: ICD10CM:G12.1 {source="Orphanet:572543", source="MONDO:mondoSubClassOfSource"}
+xref: ICD10CM:G12.1 {source="Orphanet:572550", source="MONDO:mondoSubClassOfSource"}
 xref: MEDGEN:163239 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C133724 {source="MONDO:equivalentTo"}
-xref: OMIM:211530 {source="MONDO:equivalentTo", source="Orphanet:572543"}
-xref: Orphanet:572543 {source="MONDO:equivalentTo"}
+xref: OMIM:211530 {source="Orphanet:572550", source="MONDO:equivalentTo"}
+xref: Orphanet:572550 {source="MONDO:equivalentTo"}
 xref: UMLS:C0796274 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:163239"}
-is_a: MONDO:0008891 {source="DOID:0080785", source="MONDO:indirect", source="OMIM:211530", source="Orphanet:572543"} ! riboflavin transporter deficiency
+is_a: MONDO:0008891 {source="DOID:0080785", source="MONDO:indirect", source="OMIM:211530", source="Orphanet:572550", source="PMID:26072523"} ! riboflavin transporter deficiency
 intersection_of: MONDO:0008891 ! riboflavin transporter deficiency
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/16187 ! SLC52A3
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0024537 {source="MONDO:CLINGEN"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/16187 {source="OMIM:211530"} ! SLC52A3
 property_value: curated_content_resource "https://www.malacards.org/card/brown_vialetto_van_laere_syndrome_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 
 [Term]
 id: MONDO:0024538
@@ -586654,13 +586668,15 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-520
 
 [Term]
 id: MONDO:0100428
-name: progressive bulbar palsy of childhood
-def: "A progressive bulbar palsy of childhood that occurs during childhood." [MONDO:patterns/childhood]
+name: Fazio-Londe disease
+def: "A progressive bulbar palsy that occurs during childhood and presents with hypotonia and respiratory insufficiency." [MONDO:patterns/childhood, OMIM:211500]
 subset: doid {source="DOID:0080632"}
 subset: gard_rare {source="GARD:0026209", source="MONDO:GARD"}
 subset: omim {source="OMIM:211500"}
 subset: rare
+synonym: "bulbar palsy, progressive, of childhood" EXACT [OMIM:211500]
 synonym: "Fazio-Londe disease" EXACT [DOID:0080632, OMIM:211500]
+synonym: "progressive bulbar palsy of childhood" EXACT [Orphanet:56965]
 xref: DOID:0080632 {source="MONDO:equivalentTo"}
 xref: GARD:0026209 {source="MONDO:GARD"}
 xref: MEDGEN:140728 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -586669,12 +586685,15 @@ xref: Orphanet:56965 {source="MONDO:equivalentObsolete"}
 xref: SCTID:230246005 {source="MONDO:equivalentTo"}
 xref: UMLS:C0393540 {source="MEDGEN:140728", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0008890 {source="DOID:0080632", source="https://orcid.org/0000-0001-5493-2602"} ! progressive bulbar palsy
+is_a: MONDO:0008891 {source="Orphanet:97229", source="PMID:30793323"} ! riboflavin transporter deficiency
 intersection_of: MONDO:0008890 ! progressive bulbar palsy
 intersection_of: has_characteristic HP:0011463 ! Childhood onset
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/16187 {source="OMIM:211500"} ! SLC52A3
 property_value: curated_content_resource "https://www.malacards.org/card/fazio_londe_disease" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/127" xsd:anyURI
 
 [Term]
