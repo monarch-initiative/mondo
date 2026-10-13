@@ -504968,24 +504968,31 @@ property_value: curated_content_resource "https://www.malacards.org/card/intelle
 
 [Term]
 id: MONDO:0020847
-name: intellectual disability, autosomal dominant 58
+name: intellectual developmental disorder, autosomal dominant 58
+def: "Any autosomal dominant intellectual disability in which the cause of the disease is a variation in the SET gene, characterized by delayed development and intellectual disability with language delay and speech impairment. Additional features include motor delay or incoordination, minor dysmorphic features, hypotonia, hypermobility, and variable nonspecific ocular problems." [OMIM:618106, PMID:29907757, PMID:35122673, PMID:42141719]
 subset: doid {source="DOID:0061032"}
 subset: gard_rare {source="GARD:0016476", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:618106"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "MENTAL RETARDATION, autosomal dominant 58" EXACT [OMIM:618106]
+synonym: "intellectual developmental disorder, autosomal dominant 58" EXACT [OMIM:618106]
+synonym: "intellectual disability, autosomal dominant 58" EXACT [MEDGEN:1648488]
+synonym: "mental retardation, autosomal dominant 58" EXACT [OMIM:618106]
 synonym: "MRD58" EXACT ABBREVIATION [OMIM:618106]
+synonym: "SET-NDD" EXACT ABBREVIATION [PMID:42432431]
+synonym: "SET-related intellectual disability syndrome" EXACT [PMID:29907757, PMID:35122673]
+synonym: "SET-related neurodevelopmental disorder" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:29907757, PMID:42141719]
 xref: DOID:0061032 {source="MONDO:equivalentTo"}
 xref: GARD:0016476 {source="MONDO:GARD"}
 xref: MEDGEN:1648488 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:618106 {source="MONDO:equivalentTo"}
 xref: UMLS:C4748195 {source="MEDGEN:1648488", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0015802 {source="OMIM:618106"} ! autosomal dominant non-syndromic intellectual disability
 is_a: MONDO:0100172 {source="OMIM:618106"} ! intellectual disability, autosomal dominant
+relationship: excluded_subClassOf MONDO:0015802 {source="OMIM:618106", source="PMID:42322191", source="PMID:42432431", source="https://orcid.org/0000-0002-7638-4659"} ! autosomal dominant non-syndromic intellectual disability
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10760 {source="OMIM:618106"} ! SET
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_dominant_58" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10572" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 
 [Term]
