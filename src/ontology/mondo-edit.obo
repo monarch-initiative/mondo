@@ -702820,6 +702820,24 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10608" xsd:anyURI
 
 [Term]
+id: MONDO:1060303
+name: DNAJC17 deficiency
+def: "Any inborn error of immunity in which the cause of the disease is a variation in the DNAJC17 gene. It is characterized by retinopathy, combined immunodeficiency, and TNF-driven autoinflammation responsive to targeted TNF blockade." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:42495638]
+synonym: "DNAJC17 deficiency" EXACT [https://orcid.org/0009-0001-4272-1178, PMID:42495638]
+synonym: "DNAJC17-related autoinflammatory disorder" RELATED [https://orcid.org/0009-0001-4272-1178]
+synonym: "DNAJC17-related retinitis pigmentosa and hypogammaglobulinemia syndrome" EXACT [PMID:35198051]
+is_a: MONDO:0003778 {source="PMID:42495638", source="https://orcid.org/0009-0001-4272-1178"} ! inborn error of immunity
+is_a: MONDO:0019200 {source="PMID:26355662", source="PMID:42495638"} ! retinitis pigmentosa
+is_a: MONDO:0019751 {source="PMID:42495638"} ! autoinflammatory syndrome
+intersection_of: MONDO:0003778 ! inborn error of immunity
+intersection_of: MONDO:0006025 ! autosomal recessive disease
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/25556
+relationship: has_characteristic HP:0000007 {source="PMID:26355662", source="PMID:42495638"} ! Autosomal recessive inheritance
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/25556 {source="PMID:26355662", source="PMID:42495638"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10632" xsd:anyURI
+
+[Term]
 id: MONDO:1061000
 name: TUBB-related tubulinopathy
 def: "Any tubulinopathy in which the cause of the disease is a mutation in the TUBB gene. Heterozygous TUBB variants cause two overlapping developmental disorders, complex cortical dysplasia with other brain malformations (CDCBM) and congenital symmetric circumferential skin creases (CSCSC), also known as circumferential skin creases Kunze type. The clinical findings are diverse and include abnormalities of the cortex, basal ganglia, corpus callosum, brain stem and cerebellum, microcephaly, intellectual disability, facial dysmorphism, excess skin folding and growth retardation." [https://www.clinicalgenome.org/affiliation/40020/, PMID:32085672, PMID:34211110]
