@@ -238183,8 +238183,8 @@ replaced_by: MONDO:0100282
 
 [Term]
 id: MONDO:0010010
-name: Schinzel-Giedion syndrome
-def: "Schinzel-Giedion syndrome (SGS) is an ectodermal dysplasia syndrome chiefly characterized by a distinctive facial dysmorphism, hydronephrosis, severe developmental delay, typical skeletal malformations, and genital and cardiac anomalies." [Orphanet:798]
+name: Schinzel-Giedion midface retraction syndrome
+def: "An ectodermal dysplasia syndrome chiefly characterized by a distinctive facial dysmorphism, hydronephrosis, severe developmental delay, typical skeletal malformations, and genital and cardiac anomalies." [Orphanet:798]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: doid {source="DOID:0070509"}
 subset: doid_rare {source="DOID:0070509"}
@@ -238199,9 +238199,9 @@ subset: orphanet {source="Orphanet:798"}
 subset: orphanet_rare {source="Orphanet:798"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "Schinzel Giedion midface-retraction syndrome" RELATED [GARD:0000117]
+synonym: "Schinzel Giedion midface-retraction syndrome" EXACT [GARD:0000117]
 synonym: "Schinzel Giedion Syndrome" EXACT [DOID:0070509, NORD:1694] {OMO:0002001="https://w3id.org/information-resource-registry/nord"}
-synonym: "Schinzel Giedion syndrome" RELATED [GARD:0000117]
+synonym: "Schinzel Giedion syndrome" EXACT [GARD:0000117]
 synonym: "Schinzel-Giedion midface-retraction syndrome" EXACT [NCIT:C129308]
 synonym: "Schinzel-Giedion syndrome" EXACT [GARD:0000117, icd11.foundation:1542318431, NCIT:C129308, Orphanet:798] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "SGS" EXACT ABBREVIATION [DOID:0070509, OMIM:269150, Orphanet:798]
@@ -238223,10 +238223,12 @@ is_a: MONDO:0000508 {source="Orphanet:798", source="https://clinicalgenome.org/a
 is_a: MONDO:0002254 {source="MONDO:Redundant", source="NCIT:C129308"} ! syndromic disease
 is_a: MONDO:0015160 {source="Orphanet:798"} ! multiple congenital anomalies/dysmorphic syndrome-variable intellectual disability syndrome
 is_a: MONDO:0019287 {source="DOID:0070509", source="Orphanet:798", source="icd11.foundation:1542318431"} ! ectodermal dysplasia syndrome
+is_a: MONDO:1060288 {source="PMID:38452171", source="https://orcid.org/0000-0001-9310-0163"} ! SETBP1-related neurodevelopmental disorder
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0010010 {source="MONDO:CLINGEN"}
 relationship: has_characteristic HP:0000006 {source="OMIM:269150"} ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/15573 {source="OMIM:269150"} ! SETBP1
 property_value: curated_content_resource "https://www.malacards.org/card/schinzel_giedion_midface_retraction_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10602" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5588" xsd:anyURI
 
 [Term]
@@ -361558,7 +361560,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/neonata
 
 [Term]
 id: MONDO:0014482
-name: intellectual disability, autosomal dominant 29
+name: intellectual developmental disorder, autosomal dominant 29
 def: "Any autosomal dominant complex neurodevelopmental disorder caused by haploinsufficiency and/or loss-of-function variants in the SETBP1 gene and characterized by intellectual disability, autism, speech difficulty, motor and developmental delays, seizures, hypotonia, behavior challenges, and facial dysmorphisms." [https://clinicalgenome.org/affiliation/40006/, MONDO:patterns/disease_series_by_gene, PMID:21037274]
 subset: doid {source="DOID:0070059"}
 subset: gard_rare {source="GARD:0013379", source="MONDO:GARD"}
@@ -361568,15 +361570,18 @@ subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "autosomal dominant intellectual disability 29" EXACT [GARD:0013379]
 synonym: "autosomal dominant mental retardation 29" EXACT DEPRECATED [DOID:0070059, GARD:0013379]
-synonym: "intellectual disability, autosomal dominant type 29" EXACT []
+synonym: "intellectual disability, autosomal dominant 29" EXACT [OMIM:616078]
+synonym: "intellectual disability-expressive aphasia-facial dysmorphism syndrome" EXACT [https://orcid.org/0000-0001-9310-0163, Orphanet:436151]
 synonym: "intellectual disability-expressive aphasia-facial dysmorphism syndrome caused by mutation in SETBP1" EXACT [MONDO:design_pattern]
-synonym: "mental retardation, autosomal dominant 29" RELATED DEPRECATED []
+synonym: "intellectual disability-loss of expressive language-facial dysmorphism syndrome" EXACT [https://orcid.org/0000-0001-9310-0163, Orphanet:436151]
+synonym: "mental retardation, autosomal dominant 29" EXACT [OMIM:616078]
 synonym: "mental retardation, autosomal dominant type 29" EXACT DEPRECATED []
 synonym: "MRD29" EXACT ABBREVIATION [DOID:0070059, OMIM:616078]
 synonym: "SETBP1 disorder" RELATED [GARD:0013379]
-synonym: "SETBP1 Haploinsufficiency Disorder" EXACT [NORD:1958] {OMO:0002001="https://w3id.org/information-resource-registry/nord"}
+synonym: "SETBP1 haploinsufficiency disorder" EXACT [https://orcid.org/0000-0001-9310-0163, NORD:1958, Orphanet:436151, PMID:34807554] {OMO:0002001="https://w3id.org/information-resource-registry/nord"}
 synonym: "SETBP1 intellectual disability-expressive aphasia-facial dysmorphism syndrome" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 synonym: "SETBP1 related developmental delay" RELATED [GARD:0013379]
+synonym: "SETBP1-HD" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, Orphanet:436151, PMID:34807554]
 synonym: "SETBP1-related complex neurodevelopmental disorder" EXACT [https://clinicalgenome.org/affiliation/40006/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "SETBP1-related disorder" RELATED [GARD:0013379]
 synonym: "SETBP1-related intellectual disability" RELATED [GARD:0013379]
@@ -361589,6 +361594,7 @@ xref: UMLS:C4015141 {source="MONDO:equivalentTo", source="MEDGEN:863578", source
 is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-5002-8648"} ! syndromic disease
 is_a: MONDO:0100038 {source="PMID:21037274", source="https://clinicalgenome.org/affiliation/40006/"} ! complex neurodevelopmental disorder
 is_a: MONDO:0100172 {source="OMIM:616078"} ! intellectual disability, autosomal dominant
+is_a: MONDO:1060288 {source="PMID:34807554", source="https://orcid.org/0000-0001-9310-0163"} ! SETBP1-related neurodevelopmental disorder
 intersection_of: MONDO:0100038 ! complex neurodevelopmental disorder
 intersection_of: has_characteristic HP:0000006 ! Autosomal dominant inheritance
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/15573 ! SETBP1
@@ -361596,6 +361602,7 @@ relationship: excluded_subClassOf MONDO:0015802 {source="DOID:0070059", source="
 relationship: has_characteristic HP:0000006 {source="OMIM:616078"} ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/15573 {source="OMIM:616078"} ! SETBP1
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_dominant_29" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10602" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6878" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9693" xsd:anyURI
@@ -361709,7 +361716,7 @@ is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-5002-8648"} ! syndromic
 is_a: MONDO:0100172 {source="OMIM:616083"} ! intellectual disability, autosomal dominant
 intersection_of: MONDO:0100601 ! autosomal dominant syndromic intellectual disability
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/16966 ! ZMYND11
-relationship: excluded_subClassOf MONDO:0014482 {source="DOID:0070060", source="https://orcid.org/0000-0001-5208-3432"} ! intellectual disability, autosomal dominant 29
+relationship: excluded_subClassOf MONDO:0014482 {source="DOID:0070060", source="https://orcid.org/0000-0001-5208-3432"} ! intellectual developmental disorder, autosomal dominant 29
 relationship: excluded_subClassOf MONDO:0015802 {source="OMIM:616083", source="https://orcid.org/0000-0001-5208-3432"} ! autosomal dominant non-syndromic intellectual disability
 relationship: has_characteristic HP:0000006 ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/16966 {source="OMIM:616083"} ! ZMYND11
@@ -702454,6 +702461,34 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/21042 {source="PMID:35949226", source="https://orcid.org/0000-0001-9310-0163"} ! NUS1
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10557" xsd:anyURI
+
+[Term]
+id: MONDO:1060288
+name: SETBP1-related neurodevelopmental disorder
+def: "Any neurodevelopmental disorder in which the cause of the disease is a variation in the SETBP1 gene. Variants in SETBP1 are associated with three different phenotypes: Schinzel-Giedion midface retraction syndrome, SETBP1 haploinsufficiency disorder, and SETBP1-related neurodevelopemental disorder caused by missense variant of unknown functional effect." [https://orcid.org/0000-0001-9310-0163, PMID:34807554, PMID:38452171, PMID:38923504]
+synonym: "SETBP1-related conditions" EXACT [https://orcid.org/0000-0001-9310-0163]
+synonym: "SETBP1-related neurodevelopmental disorders" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:38923504]
+is_a: MONDO:0002254 {source="PMID:38923504", source="https://orcid.org/0000-0001-9310-0163"} ! syndromic disease
+is_a: MONDO:0700092 {source="PMID:38923504", source="https://orcid.org/0000-0001-9310-0163"} ! neurodevelopmental disorder
+intersection_of: MONDO:0700092 ! neurodevelopmental disorder
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/15573 ! SETBP1
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/15573 {source="PMID:38923504", source="https://orcid.org/0000-0001-9310-0163"} ! SETBP1
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10602" xsd:anyURI
+
+[Term]
+id: MONDO:1060289
+name: SETBP1-related neurodevelopemental disorder caused by missense variant of unknown functional effect
+def: "A neurodevelopmental disorder caused by a pathogenic missense variant of unknown functional effect that are not within or adjacent to the mutational hot spot in the SETBP1 gene. It is characterized by intellectual disability or developmental delay, speech and language delay, hypotonia and sleep issues, with variable seizures, attention-deficit/hyperactivity disorder and autistic traits, and a greater risk of orthopedic, gastrointestinal and heart issues than SETBP1 haploinsufficiency disorder. Inheritance is autosomal dominant and usually de novo." [https://orcid.org/0000-0001-9310-0163, PMID:34807554, PMID:38923504]
+comment: In PMID:34807554, "SETBP1-related disorders" is specifically referring to phenotypes that are not consistent w/SGS or SETBP1 haploinsufficiency disorder caused by SETBP1 pathogenic variants that do not result in loss of function and are not within or near the SGS mutational hot spot. However, "SETBP1-related disorders" has also been used to refer to all phenotypes associated w/SETBP1 pathogenic variants.
+synonym: "SETBP1-RD" RELATED ABBREVIATION [PMID:38923504]
+synonym: "SETBP1-related disorders" RELATED [https://orcid.org/0000-0001-9310-0163, PMID:38923504]
+synonym: "SETBP1-related disorders, not SGS or SETBP1-haploinsufficiency disorder" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:34807554]
+is_a: MONDO:1060288 {source="PMID:38923504", source="https://orcid.org/0000-0001-9310-0163"} ! SETBP1-related neurodevelopmental disorder
+relationship: has_characteristic HP:0000006 {source="PMID:38923504"} ! Autosomal dominant inheritance
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/15573 {source="PMID:38923504"} ! SETBP1
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10602" xsd:anyURI
 
 [Term]
 id: MONDO:1060290
