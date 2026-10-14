@@ -307218,7 +307218,7 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10878/normop
 id: MONDO:0012503
 name: thiopurine S-methyltransferase deficiency
 def: "An inherited metabolic disease that is has its basis in the disruption of thiopurine S-methyltransferase activity." [MONDO:patterns/inborn_metabolic]
-subset: doid {source="DOID:0061004", source="DOID:0080172"}
+subset: doid {source="DOID:0061004"}
 subset: gard_rare {source="GARD:0005173", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C4389"}
 subset: omim {source="OMIM:610460"}
@@ -307232,11 +307232,11 @@ synonym: "poor metabolism of thiopurines-1" EXACT []
 synonym: "rare inborn error of thiopurine S-methyltransferase activity" EXACT [MONDO:patterns/inborn_metabolic]
 synonym: "thiopurine methyltransferase deficiency" RELATED [GARD:0005173]
 synonym: "thiopurine S methyltranferase deficiency" RELATED [GARD:0005173]
-synonym: "thiopurine S-methyltransferase deficiency" EXACT [DOID:0080172, icd11.foundation:1916778396, OMIM:610460]
+synonym: "thiopurine S-methyltransferase deficiency" EXACT [icd11.foundation:1916778396, OMIM:610460]
 synonym: "THPM1" RELATED ABBREVIATION []
-synonym: "TPMT deficiency" EXACT [DOID:0080172, NCIT:C4389, OMIM:610460]
+synonym: "TPMT deficiency" EXACT [NCIT:C4389, OMIM:610460]
 xref: DOID:0061004 {source="MONDO:equivalentTo"}
-xref: DOID:0080172 {source="MONDO:equivalentTo"}
+xref: DOID:0080172 {source="MONDO:mondoIsNarrowerThanSource"}
 xref: GARD:0005173 {source="MONDO:GARD"}
 xref: icd11.foundation:1916778396 {source="MONDO:equivalentTo"}
 xref: MEDGEN:83352 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -307254,6 +307254,7 @@ relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/12014 {source="OMIM:610460"} ! TPMT
 property_value: curated_content_resource "https://www.malacards.org/card/poor_metabolism_of_thiopurines" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/thiopurines_poor_metabolism_of_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/dismech/pull/11728" xsd:anyURI
 
 [Term]
 id: MONDO:0012504
