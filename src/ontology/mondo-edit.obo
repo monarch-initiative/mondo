@@ -387636,7 +387636,7 @@ subset: orphanet_rare {source="Orphanet:157791"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "epithelioid angioendothelioma" EXACT [NCIT:C3800]
-synonym: "epithelioid angiosarcoma" EXACT [NCIT:C3800]
+synonym: "epithelioid angiosarcoma" RELATED [NCIT:C3800]
 synonym: "epithelioid hemangioendothelioma" EXACT [NCIT:C3800, Orphanet:157791]
 synonym: "malignant epithelioid hemangioendothelioma" EXACT [DOID:0080190, MONDO:0000899]
 xref: DOID:0080190 {source="MONDO:equivalentTo"}
@@ -387657,6 +387657,7 @@ is_a: MONDO:0002095 {source="MESH:D018323/inferred", source="NCIT:C3800", source
 is_a: MONDO:0021121 {source="MESH:D018323", source="NCIT:C3800"} ! hemangioendothelioma
 is_a: MONDO:0024296 {source="Orphanet:157791"} ! vascular neoplasm
 property_value: curated_content_resource "https://www.malacards.org/card/malignant_epithelioid_hemangioendothelioma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10513" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/3741" xsd:anyURI
 
 [Term]
@@ -702465,6 +702466,15 @@ is_a: MONDO:0019042 {source="PMID:38743093"} ! multiple congenital anomalies/dys
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/76 {source="PMID:38743093", source="https://orcid.org/0000-0003-2955-4640"} ! ABL1
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10608" xsd:anyURI
+
+[Term]
+id: MONDO:1060301
+name: epithelioid angiosarcoma
+def: "Epithelioid angiosarcoma is a highly aggressive endothelial cell malignancy, most commonly arising in the deep soft tissues, but a variety of primary sites, including the adrenals, thyroid, skin, and bone, are encountered." [PMID:21284449]
+synonym: "epithelioid angiosarcoma" EXACT [https://orcid.org/0000-0003-3311-7320, PMID:1718176, PMID:21284449]
+is_a: MONDO:0016982 {source="PMID:10070336", source="PMID:1718176", source="https://orcid.org/0000-0003-3311-7320"} ! angiosarcoma
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10513" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
