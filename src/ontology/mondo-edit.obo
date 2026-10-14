@@ -417474,6 +417474,7 @@ relationship: has_characteristic SO:1000008 ! point_mutation
 [Term]
 id: MONDO:0016865
 name: Kleefstra syndrome due to a point mutation
+def: "A Kleefstra syndrome in which the cause of the disease is a point mutation in the EHMT1 or KMT2C gene." [Orphanet:261652]
 subset: gard_rare {source="GARD:0017253", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: ordo_etiological_subtype {source="Orphanet:261652"}
@@ -417489,6 +417490,7 @@ xref: UMLS:C5680724 {source="MEDGEN:1826146", source="MONDO:equivalentTo", sourc
 is_a: MONDO:0012455 {source="Orphanet:261652"} ! Kleefstra syndrome
 relationship: has_characteristic SO:1000008 ! point_mutation
 property_value: curated_content_resource "https://www.malacards.org/card/kleefstra_syndrome_due_to_a_point_mutation" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10416" xsd:anyURI
 
 [Term]
 id: MONDO:0016866
@@ -486876,6 +486878,7 @@ subset: rare
 synonym: "9q subtelomeric deletion syndrome" EXACT [DECIPHER:52, Orphanet:96147]
 synonym: "9qSTDS" EXACT [Orphanet:96147]
 synonym: "Kleefstra syndrome due to 9q subtelomeric deletion" EXACT [Orphanet:96147]
+synonym: "Kleefstra syndrome due to 9q34.3 microdeletion involving EHMT1" EXACT [https://orcid.org/0000-0001-9310-0163]
 synonym: "Kleefstra syndrome due to del(9)(q34)" EXACT [Orphanet:96147]
 synonym: "Kleefstra syndrome due to monosomy 9q34" EXACT [Orphanet:96147]
 xref: DECIPHER:52 {source="https://orcid.org/0009-0001-6494-4831", source="MONDO:equivalentTo"}
@@ -486884,10 +486887,13 @@ xref: ICD10CM:Q87.8 {source="Orphanet:96147"}
 xref: Orphanet:96147 {source="MONDO:equivalentTo"}
 is_a: MONDO:0016908 {source="Orphanet:96147"} ! partial monosomy of the long arm of chromosome 9
 is_a: MONDO:0027407 {source="Orphanet:96147", source="https://github.com/monarch-initiative/mondo/issues/1063"} ! Kleefstra syndrome 1
+intersection_of: MONDO:0016908 ! partial monosomy of the long arm of chromosome 9
+intersection_of: MONDO:0027407 ! Kleefstra syndrome 1
 relationship: disease_arises_from_structure CHR:9606-chr9q34 {source="https://orcid.org/0000-0002-4142-7153"} ! 9q34 (Human)
 relationship: excluded_subClassOf MONDO:0005027 {source="MONDO:0015652-obsoleted", source="https://orcid.org/0000-0001-5208-3432"} ! epilepsy
 relationship: has_characteristic SO:1000029 {source="https://orcid.org/0000-0002-4142-7153"} ! chromosomal_deletion
 property_value: curated_content_resource "https://www.malacards.org/card/kleefstra_syndrome_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10416" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/3664" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6311" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
@@ -536858,7 +536864,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/autosom
 [Term]
 id: MONDO:0027407
 name: Kleefstra syndrome 1
-def: "An autosomal dominant non-syndromic intellectual disability that has material basis in an autosomal dominant mutation of EHMT1 on chromosome 9q34.3." [DOID:0070075]
+def: "A Kleefstra syndrome that is characterized by severe intellectual disability, hypotonia, microcephaly, epileptic seizures, flat face with hypertelorism, synophrys, anteverted nares, everted lower lip, carp mouth with macroglossia, and heart defects, and that has material basis in a microdeletion in the chromosome region 9q34.3 or a mutation in the EHMT1 gene located in that region." [DOID:0060352, OMIM:610253]
 subset: doid {source="DOID:0060352"}
 subset: doid_rare {source="DOID:0060352"}
 subset: gard_rare {source="GARD:0025497", source="MONDO:GARD"}
@@ -536867,12 +536873,12 @@ subset: ncit_rare {source="NCIT:C129976"}
 subset: omim {source="OMIM:610253"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "9q subtelomeric deletion syndrome" BROAD EXCLUDE []
-synonym: "9q-syndrome" BROAD []
-synonym: "chromosome 9q34.3 deletion syndrome" BROAD []
-synonym: "Kleefstra syndrome" BROAD []
+synonym: "9q subtelomeric deletion syndrome" NARROW EXCLUDE [OMIM:610253]
+synonym: "9q-syndrome" NARROW [OMIM:610253, PMID:16826528]
+synonym: "chromosome 9q34.3 deletion syndrome" NARROW [OMIM:610253]
+synonym: "EHMT1-related Kleefstra syndrome" EXACT [https://orcid.org/0000-0001-9310-0163]
 synonym: "Kleefstra syndrome 1" EXACT [DOID:0060352, OMIM:610253] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "KLEFS1" BROAD ABBREVIATION []
+synonym: "KLEFS1" EXACT ABBREVIATION [OMIM:610253]
 synonym: "obsolete Kleefstra syndrome" RELATED EXCLUDE []
 xref: DOID:0060352 {source="MONDO:equivalentTo"}
 xref: DOID:0070075 {source="MONDO:equivalentObsolete"}
@@ -536885,6 +536891,8 @@ xref: SCTID:724207001 {source="MONDO:equivalentTo"}
 xref: UMLS:C0795833 {source="MEDGEN:208639", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0012455 {source="DOID:0060352", source="OMIM:610253"} ! Kleefstra syndrome
 is_a: MONDO:0100172 {source="OMIM:610253"} ! intellectual disability, autosomal dominant
+intersection_of: MONDO:0012455 ! Kleefstra syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/24650 ! EHMT1
 relationship: excluded_subClassOf MONDO:0015802 {source="DOID:0070075", source="https://orcid.org/0000-0001-5208-3432"} ! autosomal dominant non-syndromic intellectual disability
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/24650 {source="OMIM:610253"} ! EHMT1
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
@@ -575589,6 +575597,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/proteos
 [Term]
 id: MONDO:0054701
 name: Kleefstra syndrome 2
+def: "Any Kleefstra syndrome in which the cause of the disease is a variation in the KMT2C gene, characterized by delayed psychomotor development, variably impaired intellectual development, and mild dysmorphic features." [MONDO:patterns/disease_series_by_gene, OMIM:617768]
 subset: doid {source="DOID:0080598"}
 subset: doid_rare {source="DOID:0080598"}
 subset: gard_rare {source="GARD:0018382", source="MONDO:GARD"}
@@ -575598,6 +575607,7 @@ subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "Kleefstra syndrome 2" EXACT [DOID:0080598, OMIM:617768]
 synonym: "KLEFS2" RELATED ABBREVIATION []
+synonym: "KMT2C-related Kleefstra syndrome" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:41914216]
 xref: DOID:0080598 {source="MONDO:equivalentTo"}
 xref: GARD:0018382 {source="MONDO:GARD"}
 xref: MEDGEN:1623903 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -575605,8 +575615,11 @@ xref: OMIM:617768 {source="MONDO:equivalentTo"}
 xref: UMLS:C4540395 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1623903"}
 is_a: MONDO:0012455 {source="DOID:0080598", source="OMIM:617768"} ! Kleefstra syndrome
 is_a: MONDO:0100172 {source="OMIM:617768"} ! intellectual disability, autosomal dominant
+intersection_of: MONDO:0012455 ! Kleefstra syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/13726 ! KMT2C
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/13726 {source="OMIM:617768"} ! KMT2C
 property_value: curated_content_resource "https://www.malacards.org/card/kleefstra_syndrome_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10416" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 
 [Term]
