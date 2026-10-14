@@ -205124,6 +205124,9 @@ subset: ncit_rare {source="NCIT:C132196"}
 subset: omim {source="OMIM:212070"}
 subset: rare
 synonym: "carboxypeptidase N deficiency" EXACT [DOID:0111583, NCIT:C132196, OMIM:212070] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "HAE with carboxypeptidase N (CPN1) mutation" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE-CPN" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE-CPN1" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 xref: DOID:0111583 {source="MONDO:equivalentTo"}
 xref: GARD:0027789 {source="MONDO:GARD"}
 xref: ICD9:279.8 {source="MONDO:relatedTo", source="MONDO:i2s"}
@@ -205134,8 +205137,10 @@ xref: OMIM:212070 {source="MONDO:equivalentTo"}
 xref: SCTID:234627009 {source="MONDO:equivalentTo"}
 xref: UMLS:C0398782 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:98312"}
 is_a: MONDO:0003847 {source="MESH:C562876/inferred"} ! hereditary disease
+is_a: MONDO:0035734 {source="Orphanet:599418", source="PMID:38445235", source="PMID:42165046", source="https://orcid.org/0000-0001-9310-0163"} ! hereditary angioedema with normal C1inh not related to F12 or PLG variant
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2312 {source="OMIM:212070"} ! CPN1
 property_value: curated_content_resource "https://www.malacards.org/card/carboxypeptidase_n_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 
 [Term]
 id: MONDO:0008911
@@ -307959,7 +307964,7 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10489/leber-
 [Term]
 id: MONDO:0012526
 name: hereditary angioedema type 3
-def: "Hereditary angioedema type 3 (HAE 3) is a form of hereditary angioedema characterized by acute edema in subcutaneous tissues, viscera and/or the upper airway." [Orphanet:100054]
+def: "A hereditary angioedema caused by a variation in the F12 gene, characterized by normal serum levels and function of C1 inhibitor, normal C1 activity, and, clinically, recurrent subcutaneous edema, abdominal pain attacks, and episodes of potentially life-threatening upper airway obstruction. The disorder occurs almost exclusively in women, and episodes are often precipitated or worsened by high estrogen levels (such as during pregnancy or treatment with oral contraceptives)." [Orphanet:100054]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: doid {source="DOID:0080940"}
 subset: gard_rare {source="GARD:0016935", source="MONDO:GARD"}
@@ -307971,11 +307976,13 @@ subset: orphanet {source="Orphanet:100054"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "angioedema, hereditary, 3" EXACT [OMIM:610618]
-synonym: "angioedema, hereditary, type III" RELATED []
 synonym: "F12 hereditary angioedema" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
+synonym: "F12-related hereditary angioedema with normal C1Inh" EXACT [Orphanet:100054]
 synonym: "HAE 3" EXACT [Orphanet:100054]
+synonym: "HAE with factor 12 (F12) mutation" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE-FXII" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 synonym: "HAE-III" EXACT ABBREVIATION [Orphanet:100054]
-synonym: "HAE3" RELATED ABBREVIATION []
+synonym: "HAE3" EXACT ABBREVIATION [Orphanet:100054]
 synonym: "hereditary angioedema caused by mutation in F12" EXACT [MONDO:design_pattern]
 synonym: "hereditary angioedema type 3" EXACT [Orphanet:100054] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "hereditary angioneurotic edema type 3" EXACT [Orphanet:100054]
@@ -307997,11 +308004,13 @@ xref: Orphanet:100054 {source="MONDO:equivalentTo", source="OMIM:610618"}
 xref: SCTID:427167008 {source="MONDO:equivalentTo"}
 xref: UMLS:C1857728 {source="MEDGEN:346653", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019623 {source="DOID:0080940", source="OMIM:610618"} ! hereditary angioedema
+is_a: MONDO:0100567 {source="Orphanet:100054"} ! hereditary angioedema with normal C1Inh
 intersection_of: MONDO:0019623 ! hereditary angioedema
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3530 ! F12
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0012526 {source="MONDO:CLINGEN"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3530 {source="OMIM:610618"} ! F12
 property_value: curated_content_resource "https://www.malacards.org/card/angioedema_hereditary_3" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 
 [Term]
@@ -377037,7 +377046,7 @@ consider: MONDO:0017015
 [Term]
 id: MONDO:0015053
 name: hereditary angioedema type 1
-def: "Hereditary angioedema type 1 (HAE 1) is a form of hereditary angioedema characterized by acute edema in subcutaneous tissues, viscera and/or the upper airway." [Orphanet:100050]
+def: "A form of hereditary angioedema characterized by serum levels of C1NH less than 35% of normal, acute edema in subcutaneous tissues, viscera and/or the upper airway." [Orphanet:100050, PMID:11161971]
 subset: gard_rare {source="GARD:0016933", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: ordo_etiological_subtype {source="Orphanet:100050"}
@@ -377046,9 +377055,12 @@ subset: orphanet {source="Orphanet:100050"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "HAE 1" EXACT [Orphanet:100050]
+synonym: "HAE type 1" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE-C1-INH type 1" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 synonym: "HAE-I" EXACT ABBREVIATION [Orphanet:100050]
 synonym: "hereditary angioneurotic edema type 1" EXACT [Orphanet:100050]
 synonym: "hereditary angioneurotic oedema type 1" EXACT OMO:0003005 []
+synonym: "type 1 HAE" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 xref: GARD:0016933 {source="MONDO:GARD"}
 xref: ICD10CM:D84.1 {source="Orphanet:100050"}
 xref: ICD9:279.8 {source="MONDO:relatedTo", source="MONDO:i2s"}
@@ -377059,11 +377071,12 @@ xref: SCTID:234619000 {source="MONDO:equivalentTo"}
 xref: UMLS:C2717906 {source="MEDGEN:403466", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0033946 {source="Orphanet:100050"} ! hereditary angioedema with C1Inh deficiency
 property_value: curated_content_resource "https://www.malacards.org/card/angioedema_hereditary_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 
 [Term]
 id: MONDO:0015054
 name: hereditary angioedema type 2
-def: "Hereditary angioedema type 2 (HAE 2) is a form of hereditary angioedema characterized by acute edema in subcutaneous tissues, viscera and/or the upper airway." [Orphanet:100051]
+def: "A form of hereditary angioedema associated with the production of a non-functional complement C1 inhibitor protein, characterized by acute edema in subcutaneous tissues, viscera and/or the upper airway." [Orphanet:100051]
 subset: gard_rare {source="GARD:0016934", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: ordo_etiological_subtype {source="Orphanet:100051"}
@@ -377072,20 +377085,23 @@ subset: orphanet {source="Orphanet:100051"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "HAE 2" EXACT [Orphanet:100051]
+synonym: "HAE type 2" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 synonym: "HAE-II" EXACT ABBREVIATION [Orphanet:100051]
 synonym: "hereditary angioneurotic edema type 2" EXACT [Orphanet:100051]
 synonym: "hereditary angioneurotic oedema type 2" EXACT OMO:0003005 []
+synonym: "type 2 HAE" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 xref: GARD:0016934 {source="MONDO:GARD"}
 xref: ICD10CM:D84.1 {source="Orphanet:100051"}
 xref: MEDGEN:585077 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:100051 {source="MONDO:equivalentTo"}
 xref: UMLS:C0398776 {source="MEDGEN:585077", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0033946 {source="Orphanet:100051"} ! hereditary angioedema with C1Inh deficiency
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 
 [Term]
 id: MONDO:0015055
 name: acquired angioedema type 2
-def: "Acquired angioedema type 2 (AAE2) is a type of acquired angioedema (AAE) characterized by acute edema in subcutaneous tissues, viscera and/or the upper airway." [Orphanet:100055]
+def: "An acquired angioedema (AAE) caused by malfunctioning B cells that secrete autoantibodies to the C1-INH molecule that neutralize C1-INH activity. It is often associated with dysglobulinemia of unknown origin and  characterized by acute edema in subcutaneous tissues, viscera and/or the upper airway." [Orphanet:100055]
 subset: gard_rare {source="GARD:0019747", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: ordo_subtype_of_a_disorder {source="Orphanet:100055"}
@@ -377101,12 +377117,14 @@ xref: MEDGEN:1814461 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:100055 {source="MONDO:equivalentTo"}
 xref: UMLS:C5680381 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1814461"}
 is_a: MONDO:0019624 {source="Orphanet:100055"} ! acquired angioedema
+is_a: MONDO:0033948 {source="Orphanet:100055", source="https://orcid.org/0000-0001-9310-0163"} ! acquired angioedema with C1Inh deficiency
 property_value: curated_content_resource "https://www.malacards.org/card/acquired_angioedema_type_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 
 [Term]
 id: MONDO:0015056
 name: acquired angioedema type 1
-def: "Acquired angioedema type 1 (AAE 1) is a type of acquired angioedema (AAE) characterized by acute edema in subcutaneous tissues, viscera and/or the upper airway." [Orphanet:100056]
+def: "An acquired angioedema (AAE) often associated with lymphoproliferative or autoimmune diseases which produce immune factors that destroy C1-INH leading to low levels of C1-INH, C1q complement and C4 complement. It is characterized by acute edema in subcutaneous tissues, viscera and/or the upper airway." [Orphanet:100056]
 subset: gard_rare {source="GARD:0019748", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: ordo_subtype_of_a_disorder {source="Orphanet:100056"}
@@ -377120,7 +377138,9 @@ xref: MEDGEN:1814460 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:100056 {source="MONDO:equivalentTo"}
 xref: UMLS:C5680380 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1814460"}
 is_a: MONDO:0019624 {source="Orphanet:100056"} ! acquired angioedema
+is_a: MONDO:0033948 {source="Orphanet:100056", source="https://orcid.org/0000-0001-9310-0163"} ! acquired angioedema with C1Inh deficiency
 property_value: curated_content_resource "https://www.malacards.org/card/acquired_angioedema_type_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:string
 
 [Term]
 id: MONDO:0015057
@@ -377133,6 +377153,7 @@ subset: orphanet {source="Orphanet:100057"}
 subset: orphanet_rare {source="Orphanet:100057"}
 subset: rare
 synonym: "AEACEI" RELATED ABBREVIATION []
+synonym: "drug-induced bradykinin-mediated angioedema" RELATED [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 synonym: "Raas-blocker-induced angioedema" EXACT [Orphanet:100057]
 synonym: "Raas-blocker-induced angioneurotic edema" EXACT [Orphanet:100057]
 synonym: "Raas-blocker-induced angioneurotic oedema" EXACT OMO:0003005 []
@@ -377149,6 +377170,7 @@ xref: SCTID:403607004 {source="MONDO:equivalentTo"}
 xref: UMLS:C1304495 {source="MEDGEN:725846", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019624 {source="Orphanet:100057"} ! acquired angioedema
 property_value: curated_content_resource "https://www.malacards.org/card/angioedema_induced_by_ace_inhibitors" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/3945" xsd:anyURI
 
 [Term]
@@ -526390,14 +526412,19 @@ name: angioedema, hereditary, 6
 subset: gard_rare {source="GARD:0025373", source="MONDO:GARD"}
 subset: omim {source="OMIM:619363"}
 subset: rare
+synonym: "HAE with kininogen 1 (KNG1) mutation" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE-KNG" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE-KNG1" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 synonym: "HAE6" EXACT ABBREVIATION [OMIM:619363]
 xref: GARD:0025373 {source="MONDO:GARD"}
 xref: MEDGEN:1785484 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619363 {source="MONDO:equivalentTo"}
 xref: UMLS:C5543516 {source="MONDO:equivalentTo", source="MEDGEN:1785484", source="MONDO:MEDGEN"}
 is_a: MONDO:0019623 {source="OMIM:619363"} ! hereditary angioedema
+is_a: MONDO:0035734 {source="Orphanet:599418", source="PMID:42165046", source="https://orcid.org/0000-0001-9310-0163"} ! hereditary angioedema with normal C1inh not related to F12 or PLG variant
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6383 {source="OMIM:619363"} ! KNG1
 property_value: curated_content_resource "https://www.malacards.org/card/angioedema_hereditary_6" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 
 [Term]
 id: MONDO:0023662
@@ -535878,14 +535905,17 @@ name: angioedema, hereditary, 4
 subset: gard_rare {source="GARD:0025481", source="MONDO:GARD"}
 subset: omim {source="OMIM:619360"}
 subset: rare
+synonym: "HAE-PLG" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 synonym: "HAE4" EXACT ABBREVIATION [OMIM:619360]
 xref: GARD:0025481 {source="MONDO:GARD"}
 xref: MEDGEN:1787336 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619360 {source="MONDO:equivalentTo"}
 xref: UMLS:C5543503 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1787336"}
 is_a: MONDO:0019623 {source="OMIM:619360"} ! hereditary angioedema
+is_a: MONDO:0100567 {source="PMID:42165046", source="https://orcid.org/0000-0001-9310-0163"} ! hereditary angioedema with normal C1Inh
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9071 {source="OMIM:619360"} ! PLG
 property_value: curated_content_resource "https://www.malacards.org/card/angioedema_hereditary_4" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 
 [Term]
 id: MONDO:0025713
@@ -535893,13 +535923,18 @@ name: angioedema, hereditary, 7
 subset: gard_rare {source="GARD:0025482", source="MONDO:GARD"}
 subset: omim {source="OMIM:619366"}
 subset: rare
+synonym: "HAE with myoferlin (MYOF) mutation" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE-MYOF" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 synonym: "HAE7" EXACT ABBREVIATION [OMIM:619366]
 xref: GARD:0025482 {source="MONDO:GARD"}
 xref: MEDGEN:1784046 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619366 {source="MONDO:equivalentTo"}
 xref: UMLS:C5543526 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1784046"}
 is_a: MONDO:0019623 {source="OMIM:619366"} ! hereditary angioedema
+is_a: MONDO:0035734 {source="Orphanet:599418", source="PMID:42165046", source="https://orcid.org/0000-0001-9310-0163"} ! hereditary angioedema with normal C1inh not related to F12 or PLG variant
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3656 {source="OMIM:619366"}
 property_value: curated_content_resource "https://www.malacards.org/card/angioedema_hereditary_7" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 
 [Term]
 id: MONDO:0025956
@@ -539288,13 +539323,18 @@ subset: gard_rare {source="GARD:0025529", source="MONDO:GARD"}
 subset: omim {source="OMIM:619361"}
 subset: rare
 synonym: "angioedema, hereditary, 5" EXACT [OMIM:619361]
+synonym: "HAE with angiopoietin-1 (ANGPT1) mutation" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE-ANGPT1" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 synonym: "HAE5" EXACT ABBREVIATION [OMIM:619361]
 xref: GARD:0025529 {source="MONDO:GARD"}
 xref: MEDGEN:1780904 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619361 {source="MONDO:equivalentTo"}
 xref: UMLS:C5543508 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1780904"}
 is_a: MONDO:0019623 {source="OMIM:619361"} ! hereditary angioedema
+is_a: MONDO:0035734 {source="Orphanet:599418", source="PMID:42165046", source="https://orcid.org/0000-0001-9310-0163"} ! hereditary angioedema with normal C1inh not related to F12 or PLG variant
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/484 {source="OMIM:619361"}
 property_value: curated_content_resource "https://www.malacards.org/card/angioedema_hereditary_5" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 
 [Term]
 id: MONDO:0030294
@@ -539333,13 +539373,19 @@ subset: gard_rare {source="GARD:0025530", source="MONDO:GARD"}
 subset: omim {source="OMIM:619367"}
 subset: rare
 synonym: "angioedema, hereditary, 8" EXACT [OMIM:619367]
+synonym: "HAE with heparan sulfate-3-O-sulfotransferase 6 (HS3ST6) mutation" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE-HS3ST6" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE-HSST" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 synonym: "HAE8" EXACT ABBREVIATION [OMIM:619367]
 xref: GARD:0025530 {source="MONDO:GARD"}
 xref: MEDGEN:1780930 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619367 {source="MONDO:equivalentTo"}
 xref: UMLS:C5543528 {source="MEDGEN:1780930", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019623 {source="OMIM:619367"} ! hereditary angioedema
+is_a: MONDO:0035734 {source="Orphanet:599418", source="PMID:42165046", source="https://orcid.org/0000-0001-9310-0163"} ! hereditary angioedema with normal C1inh not related to F12 or PLG variant
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/14178 {source="OMIM:619367"}
 property_value: curated_content_resource "https://www.malacards.org/card/angioedema_hereditary_8" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 
 [Term]
 id: MONDO:0030300
@@ -556658,9 +556704,13 @@ subset: orphanet {source="Orphanet:528623"}
 subset: orphanet_rare {source="Orphanet:528623"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "angioedema, hereditary, 1 and 2" EXACT []
+synonym: "angioedema, hereditary, 1 and 2" EXACT [OMIM:106100]
 synonym: "angioedema, hereditary, type 1/2" EXACT [MONDO:0007117]
-synonym: "angioedema, hereditary, type I" RELATED []
+synonym: "C1 inhibitor deficiency angioedema" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE with C1 inhibitor deficiency" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE with C1-INH deficiency" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE-C1-INH" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE-C1INH" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163]
 synonym: "HAE1" RELATED ABBREVIATION []
 xref: DOID:0080939 {source="MONDO:equivalentTo"}
 xref: GARD:0022194 {source="MONDO:GARD"}
@@ -556673,6 +556723,7 @@ is_a: MONDO:0019623 {source="DC-OMIM:106100", source="DOID:0080939", source="OMI
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0033946 {source="MONDO:CLINGEN"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1228 {source="OMIM:106100"} ! SERPING1
 property_value: curated_content_resource "https://www.malacards.org/card/hereditary_angioedema_with_c1inh_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 
 [Term]
@@ -556698,6 +556749,8 @@ subset: ordo_disorder {source="Orphanet:528663"}
 subset: orphanet {source="Orphanet:528663"}
 subset: orphanet_rare {source="Orphanet:528663"}
 subset: rare
+synonym: "AAE-C1-INH" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "AAE-C1INH" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163]
 xref: GARD:0022196 {source="MONDO:GARD"}
 xref: MEDGEN:1846342 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:528663 {source="MONDO:equivalentTo"}
@@ -556705,6 +556758,7 @@ xref: UMLS:C5848086 {source="MEDGEN:1846342", source="MONDO:equivalentTo", sourc
 is_a: MONDO:0000001 {source="Orphanet:528663"} ! disease
 is_a: MONDO:0019624 {source="Orphanet:528663"} ! acquired angioedema
 property_value: curated_content_resource "https://www.malacards.org/card/acquired_angioedema_with_c1inh_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 
 [Term]
 id: MONDO:0033954
@@ -557355,7 +557409,9 @@ xref: icd11.foundation:1471948086 {source="MONDO:equivalentTo"}
 xref: MEDGEN:99175 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:493348 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C0473546 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:99175"}
-is_a: MONDO:0019624 {source="https://orcid.org/0000-0001-5208-3432"} ! acquired angioedema
+is_a: MONDO:0006618 {source="Orphanet:493348", source="https://orcid.org/0000-0001-9310-0163"} ! vibratory urticaria
+relationship: excluded_subClassOf MONDO:0019624 {source="OMIM:125630", source="https://orcid.org/0000-0001-9310-0163", source="https://orcid.org/0000-0002-7638-4659"} ! acquired angioedema
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 
 [Term]
 id: MONDO:0034641
@@ -558308,6 +558364,8 @@ subset: nord_rare {source="MONDO:NORD"}
 subset: ordo_subtype_of_a_disorder {source="Orphanet:537072"}
 subset: orphanet {source="Orphanet:537072"}
 subset: rare
+synonym: "HAE with plasminogen (PLG) mutation" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE-PLG" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 synonym: "PLG-related HAE with normal C1 inhibitor" EXACT [Orphanet:537072]
 xref: GARD:0022217 {source="MONDO:GARD"}
 xref: ICD10CM:D84.1 {source="MONDO:mondoIsNarrowerThanSource", source="Orphanet:537072"}
@@ -558316,8 +558374,10 @@ xref: Orphanet:537072 {source="MONDO:equivalentTo"}
 xref: UMLS:C5680155 {source="MEDGEN:1843266", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0003847 {source="https://orcid.org/0000-0002-5002-8648"} ! hereditary disease
 is_a: MONDO:0019623 {source="PMID:28795768", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-3458-4839", source="https://orcid.org/0009-0001-6494-4831"} ! hereditary angioedema
+is_a: MONDO:0100567 {source="Orphanet:537072"} ! hereditary angioedema with normal C1Inh
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9071 {source="Orphanet:537072", source="https://orcid.org/0000-0002-4142-7153"} ! PLG
 property_value: curated_content_resource "https://www.malacards.org/card/plg_related_hereditary_angioedema_with_normal_c1inh" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6740" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6748" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6749" xsd:anyURI
@@ -560347,12 +560407,16 @@ subset: nord_rare {source="MONDO:NORD"}
 subset: ordo_subtype_of_a_disorder {source="Orphanet:599418"}
 subset: orphanet {source="Orphanet:599418"}
 subset: rare
+synonym: "HAE of unknown origin" NARROW [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
+synonym: "HAE-UNK" NARROW ABBREVIATION [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 xref: GARD:0022406 {source="MONDO:GARD"}
 xref: MEDGEN:1843147 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:599418 {source="MONDO:equivalentTo"}
 xref: UMLS:C5681601 {source="MEDGEN:1843147", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019623 {source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-4142-7153"} ! hereditary angioedema
+is_a: MONDO:0100567 {source="Orphanet:599418"} ! hereditary angioedema with normal C1Inh
 property_value: curated_content_resource "https://www.malacards.org/card/hereditary_angioedema_with_normal_c1inh_not_related_to_f12_or_plg_variant" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 
 [Term]
 id: MONDO:0035735
@@ -589115,8 +589179,12 @@ subset: ordo_disorder {source="Orphanet:528647"}
 subset: orphanet {source="Orphanet:528647"}
 subset: orphanet_rare {source="Orphanet:528647"}
 subset: rare
+synonym: "HAE type 3" RELATED [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 synonym: "HAE with normal C1 inhibitor" EXACT [Orphanet:528647]
+synonym: "HAE with normal C1-INH" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:42165046]
 synonym: "HAE with normal C1Inh" EXACT [Orphanet:528647]
+synonym: "HAE-nC1-INH" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, PMID:38445235, PMID:42165046]
+synonym: "HAE-nC1INH" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163]
 synonym: "hereditary angioedema with normal C1 inhibitor" EXACT [Orphanet:528647]
 synonym: "hereditary angioneurotic edema with normal C1 inhibitor" EXACT [Orphanet:528647]
 synonym: "hereditary angioneurotic edema with normal C1Inh" EXACT [Orphanet:528647]
@@ -589127,6 +589195,7 @@ xref: UMLS:C1960459 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0019623 {source="Orphanet:528647"} ! hereditary angioedema
 property_value: curated_content_resource "https://www.malacards.org/card/hereditary_angioedema_with_normal_c1inh" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7581" xsd:anyURI
 
 [Term]
