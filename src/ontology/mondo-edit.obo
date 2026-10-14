@@ -159279,6 +159279,7 @@ subset: orphanet {source="Orphanet:93382"}
 subset: orphanet_rare {source="Orphanet:93382"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
+synonym: "acromesomelic dysplasia, Osebold-Remondini type" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
 synonym: "BDA6" EXACT ABBREVIATION [DOID:0110968, OMIM:112910]
 synonym: "brachydactyly type A6" EXACT [DOID:0110968, Orphanet:93382]
 synonym: "brachydactyly, type A6" EXACT [OMIM:112910]
@@ -159296,6 +159297,7 @@ xref: UMLS:C1862130 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0019696 {source="OMIM:112910", source="Orphanet:93382", source="PMID:31633310"} ! acromesomelic dysplasia
 is_a: MONDO:0021004 {source="DOID:0110968", source="https://orcid.org/0000-0001-5208-3432"} ! brachydactyly
 property_value: curated_content_resource "https://www.malacards.org/card/osebold_remondini_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/983/brachydactyly-type-a6" xsd:anyURI {source="GARD:0000983"}
 
@@ -198756,6 +198758,8 @@ subset: clingen {source="MONDO:CLINGEN"}
 subset: doid {source="DOID:0080056"}
 subset: doid_rare {source="DOID:0080056"}
 subset: gard_rare {source="GARD:0008713", source="MONDO:GARD"}
+subset: ncit {source="NCIT:C3816"}
+subset: ncit_rare {source="NCIT:C3816"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:200610"}
 subset: ordo_subtype_of_a_disorder {source="Orphanet:93296"}
@@ -198767,11 +198771,14 @@ synonym: "achondrogenesis type II" EXACT [DOID:0080056] {OMO:0002001="https://w3
 synonym: "achondrogenesis, Langer-Saldino type" EXACT [OMIM:200610, Orphanet:93296]
 synonym: "achondrogenesis, type II" RELATED []
 synonym: "achondrogenesis, type II or hypochondrogenesis" EXACT []
+synonym: "Langer-Saldino achondrogenesis" EXACT [NCIT:C3816]
+synonym: "type II achondrogenesis" EXACT [NCIT:C3816]
 xref: DOID:0080056 {source="MONDO:equivalentTo"}
 xref: GARD:0008713 {source="MONDO:GARD"}
 xref: MEDGEN:66315 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C536017 {source="Orphanet:93296", source="MONDO:equivalentTo", source="Orphanet:93296/e"}
 xref: NANDO:2201345 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
+xref: NCIT:C3816 {source="MONDO:equivalentTo"}
 xref: OMIM:200610 {source="Orphanet:93296", source="DOID:0080056", source="MONDO:equivalentTo", source="Orphanet:93296/e"}
 xref: Orphanet:93296 {source="MONDO:equivalentTo", source="OMIM:200610"}
 xref: UMLS:C0220685 {source="MEDGEN:66315", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -198782,6 +198789,7 @@ relationship: disease_has_feature HP:0001789 ! Hydrops fetalis
 relationship: disease_has_feature HP:0011220 ! Prominent forehead
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2200 {source="OMIM:200610"} ! COL2A1
 property_value: curated_content_resource "https://www.malacards.org/card/achondrogenesis_type_ii_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 
@@ -198792,8 +198800,6 @@ def: "An autosomal recessively inherited form of acromesomelic dysplasia charact
 subset: doid {source="DOID:0080052"}
 subset: doid_rare {source="DOID:0080052"}
 subset: gard_rare {source="GARD:0001300", source="MONDO:GARD"}
-subset: ncit {source="NCIT:C3816"}
-subset: ncit_rare {source="NCIT:C3816"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:200700"}
 subset: ordo_disorder {source="Orphanet:2098"}
@@ -198802,33 +198808,32 @@ subset: orphanet {source="Orphanet:2098"}
 subset: orphanet_rare {source="Orphanet:2098"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "achondrogenesis type II (formerly)" RELATED [GARD:0001300]
+synonym: "achondrogenesis type II (formerly)" EXACT [GARD:0001300]
 synonym: "acromesomelic dysplasia 2A" EXACT [OMIM:200700]
 synonym: "acromesomelic dysplasia, Grebe type" EXACT [DOID:0080052, OMIM:200700, Orphanet:2098]
-synonym: "AMDG" RELATED ABBREVIATION [GARD:0001300]
+synonym: "AMDG" EXACT ABBREVIATION [GARD:0001300]
 synonym: "Brazilian achondrogenesis" RELATED [GARD:0001300]
 synonym: "chondrodysplasia, Grebe type" EXACT [OMIM:200700, Orphanet:2098]
 synonym: "GREBE chondrodysplasia" EXACT [DOID:0080052, OMIM:200700]
 synonym: "Grebe chondrodysplasia" EXACT [DOID:0080052, OMIM:200700]
 synonym: "Grebe dysplasia" EXACT [OMIM:200700]
+synonym: "Grebe dysplasia, GDF5-related" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
 synonym: "Grebe syndrome" RELATED [GARD:0001300]
-synonym: "Langer-Saldino achondrogenesis" EXACT [NCIT:C3816]
-synonym: "type II achondrogenesis" EXACT [NCIT:C3816]
 xref: DOID:0080052 {source="MONDO:equivalentTo"}
 xref: GARD:0001300 {source="MONDO:GARD"}
 xref: ICD10CM:Q78.8 {source="Orphanet:2098"}
 xref: MEDGEN:75557 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NANDO:2201345 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
 xref: NANDO:2201346 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
-xref: NCIT:C3816 {source="MONDO:equivalentTo"}
 xref: OMIM:200700 {source="DOID:0080052", source="Orphanet:2098/e", source="MONDO:equivalentTo", source="Orphanet:2098"}
 xref: Orphanet:2098 {source="MONDO:equivalentTo", source="OMIM:200700"}
 xref: UMLS:C0265260 {source="MEDGEN:75557", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0019648 {source="NCIT:C3816"} ! achondrogenesis
 is_a: MONDO:0019696 {source="DOID:0080052", source="OMIM:200700", source="Orphanet:2098", source="PMID:31633310"} ! acromesomelic dysplasia
 relationship: disease_has_feature HP:0002983 ! Micromelia
+relationship: excluded_subClassOf MONDO:0019648 {source="NCIT:C3816", source="https://orcid.org/0000-0002-7638-4659"} ! achondrogenesis
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4220 {source="OMIM:200700"} ! GDF5
 property_value: curated_content_resource "https://www.malacards.org/card/acromesomelic_dysplasia_2a" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 
@@ -199282,7 +199287,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/acroger
 [Term]
 id: MONDO:0008717
 name: acromesomelic dysplasia 2C, Hunter-Thompson type
-def: "Acromesomelic dysplasia, Hunter-Thomson type is an autosomal recessively inherited form of acromesomelic dysplasia characterized by severe dwarfism (adult height approximately 120 cm) with abnormalities limited to the limbs (affecting the lower limbs more than upper limbs, with middle and distal segments being the most affected), severe shortening, absence or fusion of tubular bones of hands and feet and large joint dislocations. As seen in acromesomelic dysplasia, Grebe type and acromesomelic dysplasia, Maroteaux type, facial features and intelligence are normal." [Orphanet:968]
+def: "An autosomal recessively inherited form of acromesomelic dysplasia characterized by severe dwarfism (adult height approximately 120 cm) with abnormalities limited to the limbs (affecting the lower limbs more than upper limbs, with middle and distal segments being the most affected), severe shortening, absence or fusion of tubular bones of hands and feet and large joint dislocations. As seen in acromesomelic dysplasia, Grebe type and acromesomelic dysplasia, Maroteaux type, facial features and intelligence are normal." [Orphanet:968]
 subset: doid {source="DOID:0080051"}
 subset: doid_rare {source="DOID:0080051"}
 subset: gard_rare {source="GARD:0000506", source="MONDO:GARD"}
@@ -199295,10 +199300,9 @@ subset: orphanet_rare {source="Orphanet:968"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "acromesomelic dwarfism" EXACT [DOID:0080051, Orphanet:968]
-synonym: "acromesomelic dysplasia 2C, Hunter-Thompson type" EXACT []
-synonym: "acromesomelic dysplasia Hunter Thompson type" RELATED [GARD:0000506]
+synonym: "acromesomelic dysplasia Hunter Thompson type" EXACT [GARD:0000506]
 synonym: "acromesomelic dysplasia, Hunter-Thompson type" EXACT [DOID:0080051, OMIM:201250, Orphanet:968]
-synonym: "AMDH" RELATED ABBREVIATION []
+synonym: "AMDH" EXACT ABBREVIATION []
 xref: DOID:0080051 {source="MONDO:equivalentTo"}
 xref: GARD:0000506 {source="MONDO:GARD"}
 xref: ICD10CM:Q78.8 {source="Orphanet:968"}
@@ -214356,6 +214360,7 @@ subset: rare
 synonym: "acromesomelic dysplasia 2B" EXACT [OMIM:228900]
 synonym: "Du Pan syndrome" EXACT [DOID:0050790, OMIM:228900, Orphanet:2639]
 synonym: "fibular hypoplasia and complex brachydactyly" EXACT [DOID:0050790, OMIM:228900]
+synonym: "GDF5-related fibular hypoplasia and complex brachydactyly" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
 xref: DOID:0050790 {source="MONDO:equivalentTo"}
 xref: GARD:0009879 {source="MONDO:GARD"}
 xref: ICD10CM:Q73.8 {source="Orphanet:2639"}
@@ -214372,6 +214377,7 @@ is_a: MONDO:0019696 {source="DOID:0050790", source="OMIM:228900", source="Orphan
 relationship: has_characteristic HP:0000007 {source="MONDO:HPOA", source="OMIM:228900", source="Orphanet:2639"} ! Autosomal recessive inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4220 {source="OMIM:228900"} ! GDF5
 property_value: curated_content_resource "https://www.malacards.org/card/acromesomelic_dysplasia_2b" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/9879/fibular-hypoplasia-and-complex-brachydactyly" xsd:anyURI {source="GARD:0009879"}
@@ -275169,6 +275175,7 @@ subset: orphanet_rare {source="Orphanet:40"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "acromesomelic dwarfism Maroteux type" RELATED [GARD:0000507]
+synonym: "acromesomelic dysplasia (type Maroteaux), NPR2-related" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
 synonym: "acromesomelic dysplasia 1, Maroteaux type" EXACT []
 synonym: "acromesomelic dysplasia Maroteaux type" RELATED [GARD:0000507]
 synonym: "acromesomelic dysplasia, Maroteaux type" EXACT [DOID:0080050, OMIM:602875, Orphanet:40]
@@ -275188,6 +275195,7 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: disease_has_feature HP:0003510 ! Severe short stature
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/7944 {source="OMIM:602875"} ! NPR2
 property_value: curated_content_resource "https://www.malacards.org/card/acromesomelic_dysplasia_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/507/acromesomelic-dysplasia-maroteaux-type" xsd:anyURI {source="GARD:0000507"}
@@ -301603,6 +301611,7 @@ subset: rare
 synonym: "acromesomelic dysplasia 3" EXACT [DOID:0081237, OMIM:609441]
 synonym: "acromesomelic dysplasia, Demirhan type" EXACT [OMIM:609441]
 synonym: "AMDD" EXACT ABBREVIATION [OMIM:609441]
+synonym: "BMPR1B-related Grebe dysplasia" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
 synonym: "chondrodysplasia acromesomelic with genital anomalies" RELATED [GARD:0010077]
 synonym: "chondrodysplasia, acromesomelic, with or without genital anomalies" EXACT [OMIM:609441]
 xref: DOID:0081237 {source="MONDO:equivalentTo"}
@@ -301612,10 +301621,9 @@ xref: MESH:C537913 {source="MONDO:equivalentTo"}
 xref: OMIM:609441 {source="GARD:0010077", source="MONDO:equivalentTo"}
 xref: UMLS:C4225404 {source="MEDGEN:904735", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019696 {source="DOID:0081237", source="OMIM:609441", source="PMID:31633310"} ! acromesomelic dysplasia
-intersection_of: MONDO:0019696 ! acromesomelic dysplasia
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1077 ! BMPR1B
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1077 {source="OMIM:609441"} ! BMPR1B
 property_value: curated_content_resource "https://www.malacards.org/card/acromesomelic_dysplasia_3" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10077/chondrodysplasia-acromesomelic-with-genital-anomalies" xsd:anyURI {source="GARD:0010077"}
@@ -541636,15 +541644,20 @@ subset: gard_rare {source="GARD:0025602", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:619636"}
 subset: rare
+synonym: "acromesomelic dysplasia, PRKG2-related" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
 synonym: "AMD4" EXACT ABBREVIATION [OMIM:619636]
+synonym: "PRKG2-related acromesomelic dysplasia" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
 xref: DOID:0081238 {source="MONDO:equivalentTo"}
 xref: GARD:0025602 {source="MONDO:GARD"}
 xref: MEDGEN:1794238 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619636 {source="MONDO:equivalentTo"}
 xref: UMLS:C5562028 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1794238"}
 is_a: MONDO:0019696 {source="DOID:0081238", source="OMIM:619636"} ! acromesomelic dysplasia
+intersection_of: MONDO:0019696 ! acromesomelic dysplasia
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9416 ! PRKG2
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9416 {source="OMIM:619636"} ! PRKG2
 property_value: curated_content_resource "https://www.malacards.org/card/acromesomelic_dysplasia_4" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
 
 [Term]
 id: MONDO:0030602
@@ -702896,6 +702909,16 @@ intersection_of: MONDO:0002442 ! long QT syndrome
 intersection_of: has_characteristic MONDO:0021141 ! acquired
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
+
+[Term]
+id: MONDO:1060293
+name: BMPR1B-related fibular hypoplasia and complex brachydactyly
+def: "An autosomal recessive acromesomelic dysplasia in which the cause of the disease is a hypomorphic mutation in the BMPR1B gene. It belongs to a spectrum of skeletal dysplasias characterized by short stature, severe acromesomelic shortening of the limbs, and normal axial skeleton." [PMID:26105076, PMID:36779427]
+synonym: "fibular hypoplasia and complex brachydactyly (Du Pan), BMPR1B-related" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
+is_a: MONDO:0019696 {source="PMID:26105076", source="PMID:36779427", source="https://orcid.org/0000-0001-9310-0163"} ! acromesomelic dysplasia
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1077 {source="PMID:26105076", source="PMID:36779427"} ! BMPR1B
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
