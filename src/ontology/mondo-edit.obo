@@ -47220,6 +47220,7 @@ synonym: "Jervell and Lange-Nielsen syndrome type 1" RELATED []
 synonym: "Jervell Lange-Nielsen syndrome" EXACT [GARD:0003048]
 synonym: "JLNS1" RELATED ABBREVIATION [GARD:0003048]
 synonym: "long QT interval-deafness syndrome" EXACT [Orphanet:90647]
+synonym: "long QT interval-hearing loss syndrome" EXACT [Orphanet:90647]
 synonym: "prolonged QT interval in EKG and sudden death" RELATED [GARD:0003048]
 synonym: "Surdo-cardiac syndrome" RELATED [GARD:0003048]
 xref: DOID:2842 {source="MONDO:equivalentTo"}
@@ -47235,18 +47236,20 @@ xref: Orphanet:90647 {source="GARD:0003048", source="MONDO:equivalentTo", source
 xref: SCTID:373905003 {source="DOID:2842", source="MONDO:equivalentTo"}
 xref: SCTID:49518001 {source="DOID:2842"}
 xref: UMLS:C0022387 {source="MEDGEN:5929", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0002254 {source="Orphanet:90647", source="https://orcid.org/0000-0001-9310-0163"} ! syndromic disease
 is_a: MONDO:0002442 {source="DOID:2842", source="MESH:D029593", source="NCIT:C84793"} ! long QT syndrome
 is_a: MONDO:0019171 {source="Orphanet:90647", source="https://orcid.org/0000-0002-4142-7153", source="https://orcid.org/0009-0001-6494-4831"} ! familial long QT syndrome
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0002441 {source="MONDO:CLINGEN"}
 relationship: has_characteristic MONDO:0021152 {source="OMIMPS:220400"} ! inherited
 property_value: curated_content_resource "https://www.malacards.org/card/jervell_lange_nielsen_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/3048/jervell-lange-nielsen-syndrome" xsd:anyURI {source="GARD:0003048"}
 
 [Term]
 id: MONDO:0002442
 name: long QT syndrome
-def: "A condition that is characterized by episodes of fainting (syncope) and varying degree of ventricular arrhythmia as indicated by the prolonged QT interval. The inherited forms are caused by mutation of genes encoding cardiac ion channel proteins. The two major forms are Romano-Ward syndrome (also known as long QT syndrome 1) and Jervell-Lange Nielsen syndrome." [MESH:D008133]
+def: "A cardiac rhythm disease characterized by prolongation of the corrected QT (QTc) interval on the surface electrocardiogram, associated with precipitation of torsade de pointes (TdP), a polymorphic ventricular tachycardia that may cause sudden death. It is characterized by episodes of fainting (syncope) and varying degree of ventricular arrhythmia. It may be congenital or, more frequently, acquired. The inherited forms are caused by mutation of genes encoding cardiac ion channel proteins." [MESH:D008133, PMID:22593664, PMID:37969211]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: doid {source="DOID:2843"}
 subset: doid_rare {source="DOID:2843"}
@@ -47269,13 +47272,16 @@ xref: NCIT:C34786 {source="MONDO:equivalentTo", source="DOID:2843"}
 xref: SCTID:395649008 {source="DOID:2843"}
 xref: SCTID:9651007 {source="DOID:2843"}
 xref: UMLS:C0023976 {source="MEDGEN:44193", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0002254 {source="NCIT:C34786"} ! syndromic disease
+is_a: MONDO:0000992 {source="MESH:D008133", source="https://orcid.org/0000-0001-9310-0163"} ! heart conduction disease
+is_a: MONDO:0007263 {source="MESH:D008133", source="https://orcid.org/0000-0001-9310-0163"} ! cardiac rhythm disease
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0002442 {source="MONDO:CLINGEN"}
 relationship: disease_has_feature HP:0011675 ! Arrhythmia
 relationship: disease_has_feature MONDO:0005478 ! torsades de pointes
 relationship: excluded_subClassOf MONDO:0000591 {source="DOID:2843", source="https://orcid.org/0000-0001-5208-3432"} ! intrinsic cardiomyopathy
+relationship: excluded_subClassOf MONDO:0002254 {source="NCIT:C34786", source="Orphanet:101016", source="https://orcid.org/0000-0001-9310-0163", source="https://orcid.org/0000-0002-7638-4659"} ! syndromic disease
 relationship: excluded_subClassOf MONDO:0005453 {source="MESH:D008133", source="https://orcid.org/0000-0002-4142-7153", source="https://orcid.org/0009-0001-6494-4831"} ! congenital heart disease
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 
 [Term]
 id: MONDO:0002443
@@ -266433,7 +266439,6 @@ is_a: MONDO:0002442 {source="MONDO:Redundant", source="OMIM:600919"} ! long QT s
 is_a: MONDO:0019171 {source="OMIM:600919", source="Orphanet:101016-prototype"} ! familial long QT syndrome
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/493 {source="OMIM:600919"} ! ANK2
 property_value: curated_content_resource "https://www.malacards.org/card/cardiac_arrhythmia_ankyrin_b_related" xsd:anyURI {source="MONDO:MalaCards"}
-property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_4" xsd:anyURI {source="MONDO:MalaCards"}
 
 [Term]
 id: MONDO:0010959
@@ -267035,8 +267040,10 @@ subset: orphanet {source="Orphanet:65283"}
 subset: orphanet_rare {source="Orphanet:65283"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
+synonym: "long QT syndrome type 8" RELATED [Orphanet:65283]
+synonym: "long QT syndrome with syndactyly" EXACT [OMIM:601005]
 synonym: "long QT syndrome-syndactyly syndrome" EXACT [Orphanet:65283]
-synonym: "LQT8" RELATED ABBREVIATION []
+synonym: "LQT8" RELATED ABBREVIATION [Orphanet:65283]
 synonym: "TIMOTHY syndrome" EXACT [DOID:0060173, NCIT:C142894, OMIM:601005, Orphanet:65283]
 synonym: "Timothy syndrome" EXACT [DOID:0060173, NCIT:C142894, OMIM:601005, Orphanet:65283]
 synonym: "TS" EXACT ABBREVIATION [OMIM:601005]
@@ -267051,6 +267058,7 @@ xref: OMIM:601005 {source="Orphanet:65283/e", source="MONDO:equivalentTo", sourc
 xref: Orphanet:65283 {source="OMIM:601005", source="MONDO:equivalentTo", source="DOID:0060173"}
 xref: UMLS:C1832916 {source="MEDGEN:331395", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0000426 {source="DOID:0060173", source="MONDO:Redundant"} ! autosomal dominant disease
+is_a: MONDO:0002254 {source="Orphanet:65283", source="https://orcid.org/0000-0001-9310-0163"} ! syndromic disease
 is_a: MONDO:0002442 {source="MESH:C536962", source="MONDO:Redundant", source="NCIT:C142894", source="OMIM:601005"} ! long QT syndrome
 is_a: MONDO:0019171 {source="OMIM:601005", source="Orphanet:65283", source="https://orcid.org/0000-0002-4142-7153", source="https://orcid.org/0009-0001-6494-4831"} ! familial long QT syndrome
 relationship: disease_has_feature HP:0001279 {source="MONDO:Wikidata"} ! Syncope
@@ -267061,6 +267069,7 @@ relationship: disease_has_feature MONDO:0000992 {source="MONDO:Wikidata"} ! hear
 relationship: has_characteristic HP:0000006 {source="MONDO:HPOA", source="OMIM:601005", source="Orphanet:65283"} ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1390 {source="OMIM:601005"} ! CACNA1C
 property_value: curated_content_resource "https://www.malacards.org/card/timothy_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/9294/timothy-syndrome" xsd:anyURI {source="GARD:0009294"}
 
@@ -277542,10 +277551,12 @@ xref: OMIM:603830 {source="DOID:0110646", source="MONDO:equivalentTo"}
 xref: UMLS:C1859062 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:349087"}
 is_a: MONDO:0019171 {source="OMIM:603830", source="Orphanet:101016-prototype"} ! familial long QT syndrome
 is_a: MONDO:1010181 {source="https://www.clinicalgenome.org/affiliation/40104/"} ! SCN5A-related cardiac rhythm disorder
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:603830"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10593 ! SCN5A
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10593 {source="OMIM:603830"} ! SCN5A
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_3" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/3286/long-qt-syndrome-3" xsd:anyURI {source="GARD:0003286"}
 
@@ -313736,10 +313747,12 @@ xref: MESH:C567515 {source="MONDO:equivalentTo"}
 xref: OMIM:611818 {source="MONDO:equivalentTo", source="DOID:0110650"}
 xref: UMLS:C2678485 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:395635"}
 is_a: MONDO:0019171 {source="OMIM:611818", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:611818"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1529 ! CAV3
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1529 {source="OMIM:611818"} ! CAV3
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_9" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10435/long-qt-syndrome-9" xsd:anyURI {source="GARD:0010435"}
 
@@ -313767,10 +313780,12 @@ xref: OMIM:611819 {source="MONDO:equivalentTo", source="DOID:0110651"}
 xref: UMLS:C2678484 {source="MEDGEN:394836", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0018054 {source="OMIM:611819"} ! familial atrial fibrillation
 is_a: MONDO:0019171 {source="OMIM:611819", source="Orphanet:768/btnt"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:611819"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10592 ! SCN4B
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10592 {source="OMIM:611819"} ! SCN4B
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_10" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10436/long-qt-syndrome-10" xsd:anyURI {source="GARD:0010436"}
@@ -313798,10 +313813,12 @@ xref: MESH:C567513 {source="MONDO:equivalentTo"}
 xref: OMIM:611820 {source="MONDO:equivalentTo", source="DOID:0110652"}
 xref: UMLS:C2678483 {source="MONDO:equivalentTo", source="MEDGEN:437218", source="MONDO:MEDGEN"}
 is_a: MONDO:0019171 {source="OMIM:611820", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:611820"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/379 ! AKAP9
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/379 {source="OMIM:611820"} ! AKAP9
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_11" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10437/long-qt-syndrome-11" xsd:anyURI {source="GARD:0010437"}
 
@@ -317345,7 +317362,7 @@ subset: rare
 synonym: "Jervell and Lange-Nielsen syndrome 2" EXACT [OMIM:612347] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "Jervell and Lange-Nielsen syndrome caused by mutation in KCNE1" EXACT [MONDO:design_pattern]
 synonym: "Jervell and Lange-Nielsen syndrome type 2" EXACT []
-synonym: "JLNS2" RELATED ABBREVIATION []
+synonym: "JLNS2" EXACT ABBREVIATION [OMIM:612347]
 synonym: "KCNE1 Jervell and Lange-Nielsen syndrome" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 xref: GARD:0010364 {source="MONDO:GARD"}
 xref: MEDGEN:394108 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -317358,6 +317375,7 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0012871 {source="MONDO:CLINGEN"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6240 {source="OMIM:612347"} ! KCNE1
 property_value: curated_content_resource "https://www.malacards.org/card/jervell_and_lange_nielsen_syndrome_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10364/jervell-and-lange-nielsen-syndrome-2" xsd:anyURI {source="GARD:0010364"}
 
 [Term]
@@ -322573,10 +322591,12 @@ xref: MESH:C567842 {source="MONDO:equivalentTo"}
 xref: OMIM:612955 {source="MONDO:equivalentTo", source="DOID:0110653"}
 xref: UMLS:C2751830 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:442824"}
 is_a: MONDO:0019171 {source="OMIM:612955", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:612955"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11167 ! SNTA1
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11167 {source="OMIM:612955"} ! SNTA1
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_12" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 
 [Term]
@@ -328471,10 +328491,12 @@ xref: MEDGEN:462083 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:613485 {source="DOID:0110654", source="MONDO:equivalentTo"}
 xref: UMLS:C3150733 {source="MEDGEN:462083", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019171 {source="OMIM:613485", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:613485"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6266 ! KCNJ5
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6266 {source="OMIM:613485"} ! KCNJ5
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_13" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 
 [Term]
@@ -330971,7 +330993,6 @@ subset: omim_susceptibility {source="OMIM:613688"}
 subset: rare
 synonym: "long QT syndrome 2" EXACT [DOID:0110645, NCIT:C137957, OMIM:613688] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "long QT syndrome type 2" EXACT []
-synonym: "Long QT syndrome, acquired, reduced susceptibility to" EXACT []
 synonym: "LQT2" EXACT ABBREVIATION [DOID:0110645, NCIT:C137957, OMIM:613688]
 xref: DOID:0110645 {source="MONDO:equivalentTo"}
 xref: GARD:0003285 {source="MONDO:GARD"}
@@ -330983,8 +331004,12 @@ xref: NCIT:C137957 {source="MONDO:equivalentTo"}
 xref: OMIM:613688 {source="DOID:0110645", source="MONDO:equivalentTo"}
 xref: UMLS:C3150943 {source="MEDGEN:462293", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019171 {source="OMIM:613688", source="Orphanet:101016-prototype"} ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:613688"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6251 ! KCNH2
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6251 {source="https://orcid.org/0000-0003-0148-9787"} ! KCNH2
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6236" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
@@ -331074,10 +331099,12 @@ xref: MESH:C566333 {source="MONDO:equivalentTo"}
 xref: OMIM:613693 {source="DOID:0110648", source="MONDO:equivalentTo"}
 xref: UMLS:C3150953 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:462303"}
 is_a: MONDO:0019171 {source="OMIM:613693", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:613693"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6242 ! KCNE2
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6242 {source="OMIM:613693"} ! KCNE2
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_6" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10434/long-qt-syndrome-6" xsd:anyURI {source="GARD:0010434"}
 
@@ -331136,11 +331163,13 @@ xref: NCIT:C172094 {source="MONDO:equivalentTo"}
 xref: OMIM:613695 {source="DOID:0110647", source="MONDO:equivalentTo"}
 xref: UMLS:C1867904 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:358092"}
 is_a: MONDO:0019171 {source="OMIM:613695", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:613695"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6240 ! KCNE1
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0013372 {source="MONDO:CLINGEN"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6240 {source="OMIM:613695"} ! KCNE1
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_5" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10433/long-qt-syndrome-5" xsd:anyURI {source="GARD:0010433"}
 
@@ -363820,10 +363849,12 @@ xref: NCIT:C177534 {source="MONDO:equivalentTo"}
 xref: OMIM:616247 {source="DOID:0110655", source="MONDO:equivalentTo"}
 xref: UMLS:C4015671 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:864108"}
 is_a: MONDO:0019171 {source="OMIM:616247", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:616247"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1442 ! CALM1
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1442 {source="OMIM:616247"} ! CALM1
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_14" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 
 [Term]
@@ -363872,10 +363903,12 @@ xref: MEDGEN:864132 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:616249 {source="DOID:0110656", source="MONDO:equivalentTo"}
 xref: UMLS:C4015695 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:864132"}
 is_a: MONDO:0019171 {source="OMIM:616249", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:616249"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1445 ! CALM2
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1445 {source="OMIM:616249"} ! CALM2
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_15" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 
 [Term]
@@ -469587,21 +469620,17 @@ subset: clingen {source="MONDO:CLINGEN"}
 subset: gard_rare {source="GARD:0016547", source="MONDO:GARD"}
 subset: nord_rare {source="NORD:407", source="MONDO:NORD"}
 subset: omim {source="OMIMPS:192500"}
-subset: ordo_disorder {source="Orphanet:101016"}
 subset: ordo_group_of_disorders {source="Orphanet:768"}
-subset: orphanet {source="Orphanet:101016", source="Orphanet:768"}
-subset: orphanet_rare {source="Orphanet:101016"}
+subset: orphanet {source="Orphanet:768"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "congenital long QT syndrome" EXACT [icd11.foundation:1208831985, Orphanet:768]
+synonym: "congenital LQTS" EXACT [Orphanet:768]
 synonym: "familial long QT syndrome" EXACT [icd11.foundation:1208831985] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "hereditary long QT syndrome" EXACT [MONDO:patterns/hereditary]
 synonym: "Long QT Syndrome" BROAD [icd11.foundation:1208831985, OMIMPS:192500]
 synonym: "Long QT syndrome" EXACT [NORD:407] {OMO:0002001="https://w3id.org/information-resource-registry/nord"}
 synonym: "LQTS" EXACT ABBREVIATION []
-synonym: "Romano-Ward long QT syndrome" EXACT [Orphanet:101016]
-synonym: "Romano-Ward syndrome" EXACT [Orphanet:101016]
-synonym: "Ward-Romano syndrome" EXACT []
 xref: GARD:0016547 {source="MONDO:GARD"}
 xref: ICD10CM:I45.8 {source="Orphanet:768"}
 xref: icd11.foundation:1208831985 {source="Orphanet:101016", source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-3458-4839"}
@@ -469610,17 +469639,18 @@ xref: MEDGEN:685787 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NANDO:2200228 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
 xref: NORD:407 {source="MONDO:NORD"}
 xref: OMIMPS:192500 {source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-6601-2165"}
-xref: Orphanet:101016 {source="OMIM:192500", source="MONDO:equivalentTo"}
 xref: Orphanet:768 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
 xref: SCTID:442917000 {source="MONDO:equivalentTo"}
 xref: UMLS:C1141890 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:685787"}
 is_a: MONDO:0002442 {source="MONDO:Redundant", source="https://orcid.org/0000-0002-6601-2165"} ! long QT syndrome
+is_a: MONDO:1010180 {source="https://orcid.org/0000-0001-9310-0163", source="https://www.clinicalgenome.org/affiliation/40104/"} ! cardiogenetic rhythm disorder
 intersection_of: MONDO:0002442 ! long QT syndrome
 intersection_of: has_characteristic MONDO:0021152 ! inherited
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0019171 {source="MONDO:CLINGEN"}
 relationship: has_characteristic MONDO:0021152 {source="OMIMPS:192500"} ! inherited
 property_value: curated_content_resource "https://www.malacards.org/card/familial_long_qt_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 
 [Term]
 id: MONDO:0019172
@@ -531273,11 +531303,16 @@ def: "Any Jervell and Lange-Nielsen syndrome in which the cause of the disease i
 subset: gard_rare {source="GARD:0025421", source="MONDO:GARD"}
 subset: omim {source="OMIM:220400"}
 subset: rare
+synonym: "cardioauditory syndrome of Jervell and Lange-Nielsen" EXACT [OMIM:220400]
+synonym: "deafness, congenital, and functional heart disease" EXACT [OMIM:220400]
 synonym: "Jervell and Lange-Nielsen syndrome" BROAD []
 synonym: "Jervell and Lange-Nielsen syndrome 1" EXACT [OMIM:220400]
 synonym: "Jervell and Lange-Nielsen syndrome caused by mutation in KCNQ1" EXACT [MONDO:design_pattern]
-synonym: "JLNS1" RELATED ABBREVIATION []
+synonym: "JLNS" EXACT ABBREVIATION [OMIM:220400]
+synonym: "JLNS1" EXACT ABBREVIATION [OMIM:220400]
 synonym: "KCNQ1 Jervell and Lange-Nielsen syndrome" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
+synonym: "prolonged QT interval in EKG and sudden death" EXACT [OMIM:220400]
+synonym: "surdo-cardiac syndrome" EXACT [OMIM:220400]
 xref: GARD:0025421 {source="MONDO:GARD"}
 xref: MEDGEN:1646925 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:220400 {source="MONDO:equivalentTo"}
@@ -531287,6 +531322,7 @@ intersection_of: MONDO:0002441 ! Jervell and Lange-Nielsen syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6294 ! KCNQ1
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6294 {source="OMIM:220400"} ! KCNQ1
 property_value: curated_content_resource "https://www.malacards.org/card/jervell_and_lange_nielsen_syndrome_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 
 [Term]
@@ -550065,8 +550101,12 @@ xref: GARD:0025735 {source="MONDO:GARD"}
 xref: OMIM:618447 {source="MONDO:equivalentTo"}
 is_a: MONDO:0003847 {source="OMIM:618447"} ! hereditary disease
 is_a: MONDO:0019171 {source="OMIM:618447"} ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:618447"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1390 ! CACNA1C
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1390 {source="OMIM:618447"} ! CACNA1C
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_8" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 
 [Term]
 id: MONDO:0032757
@@ -552930,7 +552970,7 @@ subset: omim {source="OMIM:618782"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "long QT syndrome 16" EXACT [DOID:0070533, OMIM:618782] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "LQT16" RELATED ABBREVIATION []
+synonym: "LQT16" EXACT ABBREVIATION [OMIM:618782]
 xref: DOID:0070533 {source="MONDO:equivalentTo"}
 xref: GARD:0025773 {source="MONDO:GARD"}
 xref: MEDGEN:1713991 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -552939,7 +552979,12 @@ xref: UMLS:C5394068 {source="MEDGEN:1713991", source="MONDO:equivalentTo", sourc
 is_a: MONDO:0003847 {source="OMIM:618782"} ! hereditary disease
 is_a: MONDO:0017990 {source="OMIM:618782"} ! catecholaminergic polymorphic ventricular tachycardia
 is_a: MONDO:0019171 {source="OMIM:618782"} ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:618782"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1449
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1449 {source="OMIM:618782"}
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_16" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 
 [Term]
 id: MONDO:0032916
@@ -585177,8 +585222,12 @@ xref: OMIM:192500 {source="DOID:0110644", source="Orphanet:101016", source="MOND
 xref: SCTID:20852007 {source="MONDO:equivalentTo"}
 xref: UMLS:C4551647 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1641146"}
 is_a: MONDO:0019171 {source="OMIM:192500", source="Orphanet:101016"} ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:192500"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6294 ! KCNQ1
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6294 {source="OMIM:192500"} ! KCNQ1
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 
 [Term]
@@ -598478,6 +598527,9 @@ xref: MEDGEN:331449 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:600919 {source="MONDO:includedEntryInOMIM"}
 xref: UMLS:C1833154 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:331449"}
 is_a: MONDO:0019171 {source="https://orcid.org/0000-0001-5208-3432"} ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:600919"} ! isolated congenital long QT syndrome
+property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_4" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5507" xsd:anyURI
 
 [Term]
@@ -702818,6 +702870,32 @@ is_a: MONDO:0019042 {source="PMID:38743093"} ! multiple congenital anomalies/dys
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/76 {source="PMID:38743093", source="https://orcid.org/0000-0003-2955-4640"} ! ABL1
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10608" xsd:anyURI
+
+[Term]
+id: MONDO:1060291
+name: isolated congenital long QT syndrome
+def: "A form of familial long QT syndrome (LQTS) characterized by syncopal episodes and electrocardiographic abnormalities (QT prolongation, T-wave abnormalities and torsade de pointes (TdP) ventricular tachycardia)." [Orphanet:101016]
+subset: ordo_disorder {source="Orphanet:101016"}
+subset: orphanet {source="Orphanet:101016"}
+subset: orphanet_rare {source="Orphanet:101016"}
+synonym: "isolated congenital LQTS" EXACT [Orphanet:101016]
+synonym: "Romano-Ward long QT syndrome" EXACT [Orphanet:101016]
+synonym: "Romano-Ward syndrome" EXACT [https://medlineplus.gov/genetics/condition/romano-ward-syndrome/, https://orcid.org/0000-0001-9310-0163]
+xref: Orphanet:101016 {source="OMIM:192500", source="MONDO:equivalentTo"}
+is_a: MONDO:0019171 {source="Orphanet:101016", source="https://orcid.org/0000-0001-9310-0163"} ! familial long QT syndrome
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
+
+[Term]
+id: MONDO:1060292
+name: acquired long QT syndrome
+def: "A long QT syndrome characterized by pathologic excessive prolongation of the QT interval, upon exposure to an environmental stressor, with reversion back to normal following removal of the stressor. It is most often due to specific drugs or metabolic abnormalities, such as hypokalemia or hypomagnesemia." [PMID:22593664, PMID:26715165]
+synonym: "aLQTS" EXACT ABBREVIATION [PMID:26715165, PMID:37969211]
+is_a: MONDO:0002442 {source="PMID:22593664", source="PMID:37969211", source="https://orcid.org/0000-0001-9310-0163"} ! long QT syndrome
+intersection_of: MONDO:0002442 ! long QT syndrome
+intersection_of: has_characteristic MONDO:0021141 ! acquired
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
