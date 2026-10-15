@@ -702950,21 +702950,6 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10494" xsd:anyURI
 
 [Term]
-id: MONDO:1060303
-name: DNAJC17 deficiency
-def: "Any inborn error of immunity in which the cause of the disease is a variation in the DNAJC17 gene. It is characterized by retinopathy, combined immunodeficiency, and TNF-driven autoinflammation responsive to targeted TNF blockade." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:42495638]
-synonym: "DNAJC17-related autoinflammatory disorder" RELATED [https://orcid.org/0009-0001-4272-1178]
-synonym: "DNAJC17-related retinitis pigmentosa and hypogammaglobulinemia syndrome" EXACT [PMID:35198051]
-is_a: MONDO:0003778 {source="PMID:42495638", source="https://orcid.org/0009-0001-4272-1178"} ! inborn error of immunity
-is_a: MONDO:0019200 {source="PMID:26355662", source="PMID:42495638"} ! retinitis pigmentosa
-is_a: MONDO:0019751 {source="PMID:42495638"} ! autoinflammatory syndrome
-intersection_of: MONDO:0003778 ! inborn error of immunity
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/25556
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/25556 {source="PMID:26355662", source="PMID:42495638"}
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10632" xsd:anyURI
-
-[Term]
 id: MONDO:1060301
 name: epithelioid angiosarcoma
 def: "Epithelioid angiosarcoma is a highly aggressive endothelial cell malignancy, most commonly arising in the deep soft tissues, but a variety of primary sites, including the adrenals, thyroid, skin, and bone, are encountered." [PMID:21284449]
@@ -702987,6 +702972,21 @@ relationship: has_characteristic HP:0001419 {source="PMID:35977808"} ! X-linked 
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10540 {source="PMID:35977808"} ! SAT1
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10631" xsd:anyURI
+
+[Term]
+id: MONDO:1060303
+name: DNAJC17 deficiency
+def: "Any inborn error of immunity in which the cause of the disease is a variation in the DNAJC17 gene. It is characterized by retinopathy, combined immunodeficiency, and TNF-driven autoinflammation responsive to targeted TNF blockade." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:42495638]
+synonym: "DNAJC17-related autoinflammatory disorder" RELATED [https://orcid.org/0009-0001-4272-1178]
+synonym: "DNAJC17-related retinitis pigmentosa and hypogammaglobulinemia syndrome" EXACT [PMID:35198051]
+is_a: MONDO:0003778 {source="PMID:42495638", source="https://orcid.org/0009-0001-4272-1178"} ! inborn error of immunity
+is_a: MONDO:0019200 {source="PMID:26355662", source="PMID:42495638"} ! retinitis pigmentosa
+is_a: MONDO:0019751 {source="PMID:42495638"} ! autoinflammatory syndrome
+intersection_of: MONDO:0003778 ! inborn error of immunity
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/25556
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/25556 {source="PMID:26355662", source="PMID:42495638"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10632" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
