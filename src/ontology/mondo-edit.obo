@@ -544321,28 +544321,34 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0030916
 name: intellectual developmental disorder, autosomal dominant 50, with behavioral abnormalities
+def: "Any autosomal dominant intellectual disability in which the cause of the disease is a variation in the NAA15 gene. It presents with a wide array of manifestations that affect the heart, brain, musculoskeletal system, and behavioral and cognitive development." [OMIM:617787, PMID:39991982, PMID:40204117]
 subset: doid {source="DOID:0080233"}
 subset: gard_rare {source="GARD:0025661", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:617787"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "autosomal dominant mental retardation 50" RELATED DEPRECATED []
+synonym: "autosomal dominant mental retardation 50" EXACT DEPRECATED []
 synonym: "intellectual developmental disorder, autosomal dominant 50, with behavioral abnormalities" EXACT [OMIM:617787]
 synonym: "intellectual developmental disorder, autosomal dominant 50, with behavioural abnormalities" EXACT OMO:0003005 []
-synonym: "intellectual disability, autosomal dominant 50" EXACT [GARD:0025661]
-synonym: "mental retardation, autosomal dominant 50" RELATED DEPRECATED []
-synonym: "MRD50" RELATED DEPRECATED []
+synonym: "intellectual disability, autosomal dominant 50" EXACT [MEDGEN:1616989]
+synonym: "mental retardation, autosomal dominant 50" EXACT [OMIM:617787]
+synonym: "MRD50" EXACT ABBREVIATION [OMIM:617787]
+synonym: "NAA15-related neurodevelopmental disorder" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:38712024, PMID:39991982]
+synonym: "NAA15-related syndrome" EXACT [https://orcid.org/0000-0001-9310-0163, https://www.simonssearchlight.org/gene-guide/naa15/, PMID:42749089]
 xref: DOID:0080233 {source="MONDO:equivalentTo"}
 xref: GARD:0025661 {source="MONDO:GARD"}
 xref: MEDGEN:1616989 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:617787 {source="DOID:0080233", source="MONDO:equivalentTo"}
 xref: UMLS:C4540470 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1616989"}
-is_a: MONDO:0015802 {source="DOID:0080233", source="OMIM:617787"} ! autosomal dominant non-syndromic intellectual disability
 is_a: MONDO:0100172 {source="OMIM:617787"} ! intellectual disability, autosomal dominant
+intersection_of: MONDO:0100172 ! intellectual disability, autosomal dominant
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30782 ! NAA15
+relationship: excluded_subClassOf MONDO:0015802 {source="DOID:0080233", source="OMIM:617787", source="PMID:39991982", source="PMID:40204117", source="https://orcid.org/0000-0002-7638-4659"} ! autosomal dominant non-syndromic intellectual disability
 relationship: has_characteristic HP:0000006 ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30782 {source="OMIM:617787"} ! NAA15
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_dominant_50_with_behavioral_abnormalities" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10563" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10590" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
