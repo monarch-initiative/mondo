@@ -354231,9 +354231,11 @@ subset: omim {source="OMIM:615506"}
 subset: rare
 synonym: "GDF2 hereditary hemorrhagic telangiectasia" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 synonym: "GDF2 related HHT-like syndrome" EXACT [https://orcid.org/0000-0001-5208-3432]
+synonym: "GDF2-related hereditary hemorrhagic telangiectasia-like syndrome" EXACT [https://clinicalgenome.org/affiliation/40028/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "GDF2-related HHT-like syndrome" EXACT [https://clinicalgenome.org/affiliation/40028/]
 synonym: "hereditary hemorrhagic telangiectasia caused by mutation in GDF2" EXACT [MONDO:design_pattern]
-synonym: "HHT5" RELATED ABBREVIATION []
-synonym: "telangiectasia, hereditary hemorrhagic, type 5" EXACT [OMIM:615506] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "HHT5" EXACT ABBREVIATION [OMIM:615506]
+synonym: "telangiectasia, hereditary hemorrhagic, type 5" EXACT [OMIM:615506]
 xref: GARD:0015978 {source="MONDO:GARD"}
 xref: MEDGEN:816040 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:615506 {source="MONDO:equivalentTo"}
@@ -354245,6 +354247,7 @@ relationship: curated_content_resource https://search.clinicalgenome.org/kb/cond
 relationship: has_characteristic HP:0000006 {source="MONDO:HPOA", source="OMIM:615506"} ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4217 {source="OMIM:615506"} ! GDF2
 property_value: curated_content_resource "https://www.malacards.org/card/telangiectasia_hereditary_hemorrhagic_type_5" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10614" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6195" xsd:anyURI
 
 [Term]
