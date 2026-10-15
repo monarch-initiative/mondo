@@ -156427,6 +156427,7 @@ xref: OMIM:105600 {source="Orphanet:98870/e", source="MONDO:equivalentTo", sourc
 xref: Orphanet:98870 {source="MONDO:equivalentTo", source="OMIM:105600"}
 xref: SCTID:26409005 {source="MONDO:equivalentTo"}
 xref: UMLS:C5676874 {source="MEDGEN:1801596", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0000426 {source="OMIM:105600"} ! autosomal dominant disease
 is_a: MONDO:0019403 {source="DC-OMIM:105600", source="DOID:0111399", source="OMIM:105600", source="Orphanet:98870"} ! congenital dyserythropoietic anemia
 relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6392 {source="OMIM:105600"} ! KIF23
@@ -330657,8 +330658,8 @@ property_value: curated_content_resource "https://www.malacards.org/card/spastic
 
 [Term]
 id: MONDO:0013355
-name: congenital dyserythropoietic anemia type 4
-def: "Congenital dyserythropoietic anemia type IV (CDA IV) is a newly discovered form of CDA characterized by ineffective erythropoiesis and hemolysis that leads to severe anemia at birth." [Orphanet:293825]
+name: anemia, congenital dyserythropoietic, type IVa
+def: "An autosomal dominant congenital dyserythropoietic anemia in which the cause of the disease is a variation in the KLF1 gene. It is characterized by ineffective erythropoiesis and hemolysis that leads to severe anemia at birth, requiring repeated transfusions. The majority of affected individuals experience severe hemolytic anemia, often accompanied by a normal or slightly elevated reticulocyte count, hepatosplenomegaly, hyperbilirubinemia, and persistence of fetal hemoglobin. Hypertrophic cardiomyopathy and occasional dysmorphic features, including large anterior fontanel, hypertelorism, micropenis, and hypospadias, have also been reported. All documented cases to date share the same dominant-negative missense variant, E325K, in the KLF1 gene (19p13.2)." [Orphanet:293825]
 subset: doid {source="DOID:0111400"}
 subset: doid_rare {source="DOID:0111400"}
 subset: gard_rare {source="GARD:0017344", source="MONDO:GARD"}
@@ -330669,15 +330670,21 @@ subset: orphanet {source="Orphanet:293825"}
 subset: orphanet_rare {source="Orphanet:293825"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "anemia, congenital dyserythropoietic, type IV" RELATED []
-synonym: "CDA due to KLF1 mutation" EXACT [DOID:0111400, Orphanet:293825]
-synonym: "CDA IV" EXACT ABBREVIATION [DOID:0111400, Orphanet:293825]
-synonym: "CDA type 4" EXACT [DOID:0111400, Orphanet:293825]
-synonym: "CDA type IV" EXACT [DOID:0111400, Orphanet:293825]
-synonym: "CDAN4" EXACT ABBREVIATION [DOID:0111400, Orphanet:293825]
-synonym: "congenital dyserythropoietic anemia due to KLF1 mutation" EXACT [DOID:0111400, Orphanet:293825]
-synonym: "congenital dyserythropoietic anemia type 4" EXACT [DOID:0111400, Orphanet:293825]
-synonym: "dyserythropoietic anemia, congenital, type IV" EXACT []
+synonym: "anemia, congenital dyserythropoietic, type IVa" EXACT [OMIM:613673]
+synonym: "autosomal dominant KLF1-related dyserythropoietic anemia" EXACT [Orphanet:293825]
+synonym: "CDA due to KLF1 mutation" RELATED [DOID:0111400, Orphanet:293825]
+synonym: "CDA IV" RELATED ABBREVIATION [DOID:0111400, Orphanet:293825]
+synonym: "CDA type 4" RELATED [DOID:0111400, Orphanet:293825]
+synonym: "CDA type 4a" EXACT [Orphanet:293825]
+synonym: "CDA type IV" RELATED [DOID:0111400, Orphanet:293825]
+synonym: "CDA type IVa" EXACT [Orphanet:293825]
+synonym: "CDA, type IVa" EXACT [OMIM:613673]
+synonym: "CDAN4" RELATED ABBREVIATION [DOID:0111400, Orphanet:293825]
+synonym: "CDAN4A" EXACT ABBREVIATION [OMIM:613673]
+synonym: "congenital dyserythropoietic anemia due to KLF1 mutation" RELATED [DOID:0111400, Orphanet:293825]
+synonym: "congenital dyserythropoietic anemia type 4" RELATED [DOID:0111400, Orphanet:293825]
+synonym: "congenital dyserythropoietic anemia type IVa" EXACT [DOID:0111400, Orphanet:293825]
+synonym: "dyserythropoietic anemia, congenital, type IV" RELATED []
 xref: DOID:0111400 {source="MONDO:equivalentTo"}
 xref: GARD:0017344 {source="MONDO:GARD"}
 xref: MEDGEN:462276 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -330686,9 +330693,14 @@ xref: Orphanet:293825 {source="OMIM:613673", source="MONDO:equivalentTo"}
 xref: SCTID:719453009 {source="MONDO:equivalentTo"}
 xref: UMLS:C3150926 {source="MONDO:equivalentTo", source="MEDGEN:462276", source="MONDO:MEDGEN"}
 is_a: MONDO:0019403 {source="DC-OMIM:613673", source="DOID:0111400", source="OMIM:613673", source="Orphanet:293825"} ! congenital dyserythropoietic anemia
+intersection_of: MONDO:0019403 ! congenital dyserythropoietic anemia
+intersection_of: has_characteristic HP:0000006 ! Autosomal dominant inheritance
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6345 ! KLF1
+relationship: has_characteristic HP:0000006 {source="OMIM:613673", source="PMID:30872368"} ! Autosomal dominant inheritance
 relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6345 {source="OMIM:613673"} ! KLF1
 property_value: curated_content_resource "https://www.malacards.org/card/anemia_congenital_dyserythropoietic_type_iva" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10570" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 
@@ -615848,17 +615860,29 @@ relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/
 [Term]
 id: MONDO:0975829
 name: anemia, congenital dyserythropoietic, type IVb
+def: "An autosomal recessive congenital dyserythropoietic anemia in which the cause of the disease is a variation in the KLF1 gene, characterized by neonatal jaundice, hyperbilirubinemia, and severe congenital hemolytic anemia requiring transfusion." [DOID:0051002, OMIM:620969]
 subset: doid {source="DOID:0051002"}
 subset: gard_rare {source="GARD:0027326", source="MONDO:GARD"}
 subset: omim {source="OMIM:620969"}
 subset: rare
+synonym: "anemia, congenital dyserythropoietic, type IVb" EXACT [OMIM:620969]
+synonym: "anemia, congenital, with hereditary persistence of fetal and embryonic hemoglobin" EXACT [OMIM:620969]
+synonym: "autosomal recessive KLF1-related severe anemia" EXACT [Orphanet:727394]
+synonym: "CDA, type IVb" EXACT [OMIM:620969]
+synonym: "CDAN4B" EXACT ABBREVIATION [OMIM:620969]
+synonym: "congenital dyserythropoietic anemia type IVb" EXACT [DOID:0051002]
 xref: DOID:0051002 {source="MONDO:equivalentTo"}
 xref: GARD:0027326 {source="MONDO:GARD"}
 xref: MEDGEN:1874968 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:620969 {source="MONDO:equivalentTo"}
 xref: UMLS:C5975438 {source="MEDGEN:1874968", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019403 {source="OMIM:620969", source="https://orcid.org/0000-0002-4142-7153"} ! congenital dyserythropoietic anemia
+intersection_of: MONDO:0019403 ! congenital dyserythropoietic anemia
+intersection_of: has_characteristic HP:0000007 ! Autosomal recessive inheritance
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6345 ! KLF1
+relationship: has_characteristic HP:0000007 {source="OMIM:620969", source="PMID:25724378", source="PMID:34227100"} ! Autosomal recessive inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6345 {source="OMIM:620969"} ! KLF1
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10570" xsd:anyURI
 
 [Term]
 id: MONDO:0975830
