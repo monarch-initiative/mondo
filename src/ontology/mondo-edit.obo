@@ -544301,10 +544301,12 @@ subset: gard_rare {source="GARD:0025660", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:617773"}
 subset: rare
+synonym: "Alwadei syndrome" EXACT [OMIM:617773]
+synonym: "autosomal recessive intellectual developmental disorder-61" EXACT [https://orcid.org/0000-0001-9310-0163]
 synonym: "autosomal recessive mental retardation 61" RELATED DEPRECATED []
-synonym: "intellectual disability, autosomal recessive 61" EXACT [OMIM:617773]
-synonym: "mental retardation, autosomal recessive 61" RELATED DEPRECATED []
-synonym: "MRT61" RELATED DEPRECATED []
+synonym: "intellectual disability, autosomal recessive 61" EXACT []
+synonym: "mental retardation, autosomal recessive 61" EXACT [OMIM:617773]
+synonym: "MRT61" EXACT ABBREVIATION [OMIM:617773]
 xref: DOID:0080239 {source="MONDO:equivalentTo"}
 xref: GARD:0025660 {source="MONDO:GARD"}
 xref: MEDGEN:1622296 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -544313,6 +544315,7 @@ xref: UMLS:C4540424 {source="MEDGEN:1622296", source="MONDO:equivalentTo", sourc
 is_a: MONDO:0019502 {source="DOID:0080239", source="OMIM:617773"} ! autosomal recessive non-syndromic intellectual disability
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23625 {source="OMIM:617773"} ! RUSC2
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_recessive_61" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10561" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10590" xsd:anyURI
 
 [Term]
