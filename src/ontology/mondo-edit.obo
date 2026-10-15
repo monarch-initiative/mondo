@@ -544356,6 +544356,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0030917
 name: intellectual developmental disorder, autosomal dominant 51
+def: "Any autosomal dominant intellectual disability in which the cause of the disease is a variation in the KMT5B gene. It is associated with global developmental delay, macrocephaly, autism, seizures, and congenital anomalies, with hypotonia and congenital heart defects as prominent features." [OMIM:617788, PMID:28191889, PMID:36897941, PMID:38571636, PMID:41153391]
 subset: doid {source="DOID:0080232"}
 subset: gard_rare {source="GARD:0025662", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -544365,21 +544366,27 @@ subset: orphanet {source="Orphanet:684226"}
 subset: orphanet_rare {source="Orphanet:684226"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "autosomal dominant mental retardation 51" RELATED DEPRECATED []
-synonym: "intellectual disability, autosomal dominant 51" EXACT [OMIM:617788]
-synonym: "mental retardation, autosomal dominant 51" RELATED DEPRECATED []
-synonym: "MRD51" RELATED DEPRECATED []
+synonym: "autosomal dominant mental retardation 51" EXACT DEPRECATED []
+synonym: "intellectual disability, autosomal dominant 51" EXACT [MEDGEN:1625009]
+synonym: "intellectual disability-hypotonia-facial dysmorphism-macrocephaly syndrome" EXACT [https://orcid.org/0000-0001-9310-0163, Orphanet:684226]
+synonym: "KMT5B haploinsufficiency neurodevelopmental disorder" EXACT [https://orcid.org/0000-0001-9310-0163, Orphanet:684226]
+synonym: "KMT5B-related disorder" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:41153391]
+synonym: "KMT5B-related neurodevelopmental disorder" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:38571636]
+synonym: "KMT5B-related syndrome" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:41153391]
+synonym: "mental retardation, autosomal dominant 51" EXACT [OMIM:617788]
+synonym: "MRD51" EXACT ABBREVIATION [OMIM:617788]
 xref: DOID:0080232 {source="MONDO:equivalentTo"}
 xref: GARD:0025662 {source="MONDO:GARD"}
 xref: MEDGEN:1625009 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:617788 {source="DOID:0080232", source="MONDO:equivalentTo"}
 xref: Orphanet:684226 {source="MONDO:equivalentTo"}
 xref: UMLS:C4540474 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1625009"}
-is_a: MONDO:0015802 {source="DOID:0080232", source="OMIM:617788"} ! autosomal dominant non-syndromic intellectual disability
 is_a: MONDO:0100172 {source="OMIM:617788"} ! intellectual disability, autosomal dominant
+relationship: excluded_subClassOf MONDO:0015802 {source="DOID:0080232", source="OMIM:617788", source="Orphanet:684226", source="PMID:28191889", source="PMID:36897941", source="https://orcid.org/0000-0002-7638-4659"} ! autosomal dominant non-syndromic intellectual disability
 relationship: has_characteristic HP:0000006 ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/24283 {source="OMIM:617788"} ! KMT5B
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_dominant_51" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10564" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10590" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 
