@@ -101122,7 +101122,7 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/5834/aphthou
 [Term]
 id: MONDO:0004846
 name: placental abruption
-def: "Vaginal bleeding preceding the 20th week of gestation." [NCIT:P378]
+def: "A placenta disorder characterized by separation of the placenta from the uterus with bleeding (concealed or vaginal) before fetal birth, with or without maternal/fetal compromise. It is one of the leading causes of vaginal bleeding in the second half of pregnancy." [https://orcid.org/0000-0001-5705-7831, NCIT:C26685, PMID:21241259, PMID:37164498]
 subset: doid {source="DOID:9667"}
 subset: ncit {source="NCIT:C26685"}
 subset: otar {source="MONDO:OTAR"}
@@ -101134,15 +101134,10 @@ synonym: "premature separation of placenta" EXACT [ICD10CM:O45, NCIT:C26685]
 xref: DOID:9667 {source="MONDO:equivalentTo"}
 xref: EFO:1001754 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: HP:0011419 {source="MONDO:otherHierarchy"}
-xref: ICD10CM:O20.0 {source="DOID:9667"}
 xref: ICD10CM:O45 {source="https://orcid.org/0009-0001-6494-4831", source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-5002-8648"}
-xref: ICD9:640.0 {source="DOID:9667"}
-xref: ICD9:640.03 {source="DOID:9667"}
 xref: ICD9:641.20 {source="MONDO:equivalentTo", source="MONDO:i2s"}
 xref: MEDGEN:49 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: MESH:D000033 {source="DOID:9667"}
 xref: MESH:D000037 {source="MONDO:equivalentTo"}
-xref: NCIT:C112857 {source="DOID:9667", source="MONDO:otherHierarchy"}
 xref: NCIT:C26685 {source="MONDO:equivalentTo"}
 xref: SCTID:156098004 {source="DOID:9667"}
 xref: SCTID:198882006 {source="DOID:9667"}
@@ -101153,6 +101148,7 @@ xref: SCTID:54048003 {source="DOID:9667"}
 xref: UMLS:C0000832 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:49"}
 is_a: MONDO:0005917 {source="DOID:9667", source="MESH:D000037", source="NCIT:C26685/inferred"} ! placenta disorder
 property_value: curated_content_resource "https://www.malacards.org/card/placental_abruption" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10524" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
 property_value: IAO:0000589 "placental abruption (disease)" xsd:string
 
