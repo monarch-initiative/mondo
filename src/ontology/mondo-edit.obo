@@ -702947,6 +702947,19 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10513" xsd:anyURI
 
 [Term]
+id: MONDO:1060305
+name: combined immunodeficiency due to SIT1 deficiency
+def: "Any combined immunodeficiency in which the cause of the disease is a variation in the SIT1 gene." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:42128181]
+synonym: "SIT1 deficiency" RELATED [https://orcid.org/0009-0001-4272-1178, PMID:42128181]
+synonym: "SIT1-related combined immunodeficiency" RELATED [https://orcid.org/0009-0001-4272-1178]
+is_a: MONDO:0015131 {source="PMID:42128181", source="https://orcid.org/0009-0001-4272-1178"} ! combined immunodeficiency
+intersection_of: MONDO:0015131 ! combined immunodeficiency
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/17710
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/17710 {source="PMID:42128181"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10634" xsd:anyURI
+
+[Term]
 id: MONDO:1061000
 name: TUBB-related tubulinopathy
 def: "Any tubulinopathy in which the cause of the disease is a mutation in the TUBB gene. Heterozygous TUBB variants cause two overlapping developmental disorders, complex cortical dysplasia with other brain malformations (CDCBM) and congenital symmetric circumferential skin creases (CSCSC), also known as circumferential skin creases Kunze type. The clinical findings are diverse and include abnormalities of the cortex, basal ganglia, corpus callosum, brain stem and cerebellum, microcephaly, intellectual disability, facial dysmorphism, excess skin folding and growth retardation." [https://www.clinicalgenome.org/affiliation/40020/, PMID:32085672, PMID:34211110]
