@@ -702872,21 +702872,6 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10608" xsd:anyURI
 
 [Term]
-id: MONDO:1060302
-name: SAT1-related X-linked systemic lupus erythematosus
-def: "Any systemic lupus erythematosus in which the cause of the disease is a variation in the SAT1 gene. Loss-of-function variants in SAT1 cause X-linked childhood-onset systemic lupus erythematosus." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:35977808]
-synonym: "SAT1 deficiency" RELATED [https://orcid.org/0009-0001-4272-1178]
-synonym: "SSAT1 deficiency" RELATED [https://orcid.org/0009-0001-4272-1178]
-is_a: MONDO:0007915 {source="PMID:35977808", source="https://orcid.org/0009-0001-4272-1178"} ! systemic lupus erythematosus
-intersection_of: MONDO:0007915 ! systemic lupus erythematosus
-intersection_of: has_characteristic HP:0001419 ! X-linked recessive inheritance
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10540 ! SAT1
-relationship: has_characteristic HP:0001419 {source="PMID:35977808"} ! X-linked recessive inheritance
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10540 {source="PMID:35977808"} ! SAT1
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10631" xsd:anyURI
-
-[Term]
 id: MONDO:1060291
 name: isolated congenital long QT syndrome
 def: "A form of familial long QT syndrome (LQTS) characterized by syncopal episodes and electrocardiographic abnormalities (QT prolongation, T-wave abnormalities and torsade de pointes (TdP) ventricular tachycardia)." [Orphanet:101016]
@@ -702960,6 +702945,21 @@ synonym: "epithelioid angiosarcoma" EXACT [https://orcid.org/0000-0003-3311-7320
 is_a: MONDO:0016982 {source="PMID:10070336", source="PMID:1718176", source="https://orcid.org/0000-0003-3311-7320"} ! angiosarcoma
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10513" xsd:anyURI
+
+[Term]
+id: MONDO:1060302
+name: SAT1-related X-linked systemic lupus erythematosus
+def: "Any systemic lupus erythematosus in which the cause of the disease is a variation in the SAT1 gene. Loss-of-function variants in SAT1 cause X-linked childhood-onset systemic lupus erythematosus." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:35977808]
+synonym: "SAT1 deficiency" RELATED [https://orcid.org/0009-0001-4272-1178]
+synonym: "SSAT1 deficiency" RELATED [https://orcid.org/0009-0001-4272-1178]
+is_a: MONDO:0007915 {source="PMID:35977808", source="https://orcid.org/0009-0001-4272-1178"} ! systemic lupus erythematosus
+intersection_of: MONDO:0007915 ! systemic lupus erythematosus
+intersection_of: has_characteristic HP:0001419 ! X-linked recessive inheritance
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10540 ! SAT1
+relationship: has_characteristic HP:0001419 {source="PMID:35977808"} ! X-linked recessive inheritance
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10540 {source="PMID:35977808"} ! SAT1
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10631" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
