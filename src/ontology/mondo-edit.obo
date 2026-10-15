@@ -47220,6 +47220,7 @@ synonym: "Jervell and Lange-Nielsen syndrome type 1" RELATED []
 synonym: "Jervell Lange-Nielsen syndrome" EXACT [GARD:0003048]
 synonym: "JLNS1" RELATED ABBREVIATION [GARD:0003048]
 synonym: "long QT interval-deafness syndrome" EXACT [Orphanet:90647]
+synonym: "long QT interval-hearing loss syndrome" EXACT [Orphanet:90647]
 synonym: "prolonged QT interval in EKG and sudden death" RELATED [GARD:0003048]
 synonym: "Surdo-cardiac syndrome" RELATED [GARD:0003048]
 xref: DOID:2842 {source="MONDO:equivalentTo"}
@@ -47235,18 +47236,20 @@ xref: Orphanet:90647 {source="GARD:0003048", source="MONDO:equivalentTo", source
 xref: SCTID:373905003 {source="DOID:2842", source="MONDO:equivalentTo"}
 xref: SCTID:49518001 {source="DOID:2842"}
 xref: UMLS:C0022387 {source="MEDGEN:5929", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0002254 {source="Orphanet:90647", source="https://orcid.org/0000-0001-9310-0163"} ! syndromic disease
 is_a: MONDO:0002442 {source="DOID:2842", source="MESH:D029593", source="NCIT:C84793"} ! long QT syndrome
 is_a: MONDO:0019171 {source="Orphanet:90647", source="https://orcid.org/0000-0002-4142-7153", source="https://orcid.org/0009-0001-6494-4831"} ! familial long QT syndrome
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0002441 {source="MONDO:CLINGEN"}
 relationship: has_characteristic MONDO:0021152 {source="OMIMPS:220400"} ! inherited
 property_value: curated_content_resource "https://www.malacards.org/card/jervell_lange_nielsen_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/3048/jervell-lange-nielsen-syndrome" xsd:anyURI {source="GARD:0003048"}
 
 [Term]
 id: MONDO:0002442
 name: long QT syndrome
-def: "A condition that is characterized by episodes of fainting (syncope) and varying degree of ventricular arrhythmia as indicated by the prolonged QT interval. The inherited forms are caused by mutation of genes encoding cardiac ion channel proteins. The two major forms are Romano-Ward syndrome (also known as long QT syndrome 1) and Jervell-Lange Nielsen syndrome." [MESH:D008133]
+def: "A cardiac rhythm disease characterized by prolongation of the corrected QT (QTc) interval on the surface electrocardiogram, associated with precipitation of torsade de pointes (TdP), a polymorphic ventricular tachycardia that may cause sudden death. It is characterized by episodes of fainting (syncope) and varying degree of ventricular arrhythmia. It may be congenital or, more frequently, acquired. The inherited forms are caused by mutation of genes encoding cardiac ion channel proteins." [MESH:D008133, PMID:22593664, PMID:37969211]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: doid {source="DOID:2843"}
 subset: doid_rare {source="DOID:2843"}
@@ -47269,13 +47272,16 @@ xref: NCIT:C34786 {source="MONDO:equivalentTo", source="DOID:2843"}
 xref: SCTID:395649008 {source="DOID:2843"}
 xref: SCTID:9651007 {source="DOID:2843"}
 xref: UMLS:C0023976 {source="MEDGEN:44193", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0002254 {source="NCIT:C34786"} ! syndromic disease
+is_a: MONDO:0000992 {source="MESH:D008133", source="https://orcid.org/0000-0001-9310-0163"} ! heart conduction disease
+is_a: MONDO:0007263 {source="MESH:D008133", source="https://orcid.org/0000-0001-9310-0163"} ! cardiac rhythm disease
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0002442 {source="MONDO:CLINGEN"}
 relationship: disease_has_feature HP:0011675 ! Arrhythmia
 relationship: disease_has_feature MONDO:0005478 ! torsades de pointes
 relationship: excluded_subClassOf MONDO:0000591 {source="DOID:2843", source="https://orcid.org/0000-0001-5208-3432"} ! intrinsic cardiomyopathy
+relationship: excluded_subClassOf MONDO:0002254 {source="NCIT:C34786", source="Orphanet:101016", source="https://orcid.org/0000-0001-9310-0163", source="https://orcid.org/0000-0002-7638-4659"} ! syndromic disease
 relationship: excluded_subClassOf MONDO:0005453 {source="MESH:D008133", source="https://orcid.org/0000-0002-4142-7153", source="https://orcid.org/0009-0001-6494-4831"} ! congenital heart disease
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 
 [Term]
 id: MONDO:0002443
@@ -101116,7 +101122,7 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/5834/aphthou
 [Term]
 id: MONDO:0004846
 name: placental abruption
-def: "Vaginal bleeding preceding the 20th week of gestation." [NCIT:P378]
+def: "A placenta disorder characterized by separation of the placenta from the uterus with bleeding (concealed or vaginal) before fetal birth, with or without maternal/fetal compromise. It is one of the leading causes of vaginal bleeding in the second half of pregnancy." [https://orcid.org/0000-0001-5705-7831, NCIT:C26685, PMID:21241259, PMID:37164498]
 subset: doid {source="DOID:9667"}
 subset: ncit {source="NCIT:C26685"}
 subset: otar {source="MONDO:OTAR"}
@@ -101128,15 +101134,10 @@ synonym: "premature separation of placenta" EXACT [ICD10CM:O45, NCIT:C26685]
 xref: DOID:9667 {source="MONDO:equivalentTo"}
 xref: EFO:1001754 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: HP:0011419 {source="MONDO:otherHierarchy"}
-xref: ICD10CM:O20.0 {source="DOID:9667"}
 xref: ICD10CM:O45 {source="https://orcid.org/0009-0001-6494-4831", source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-5002-8648"}
-xref: ICD9:640.0 {source="DOID:9667"}
-xref: ICD9:640.03 {source="DOID:9667"}
 xref: ICD9:641.20 {source="MONDO:equivalentTo", source="MONDO:i2s"}
 xref: MEDGEN:49 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: MESH:D000033 {source="DOID:9667"}
 xref: MESH:D000037 {source="MONDO:equivalentTo"}
-xref: NCIT:C112857 {source="DOID:9667", source="MONDO:otherHierarchy"}
 xref: NCIT:C26685 {source="MONDO:equivalentTo"}
 xref: SCTID:156098004 {source="DOID:9667"}
 xref: SCTID:198882006 {source="DOID:9667"}
@@ -101147,6 +101148,7 @@ xref: SCTID:54048003 {source="DOID:9667"}
 xref: UMLS:C0000832 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:49"}
 is_a: MONDO:0005917 {source="DOID:9667", source="MESH:D000037", source="NCIT:C26685/inferred"} ! placenta disorder
 property_value: curated_content_resource "https://www.malacards.org/card/placental_abruption" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10524" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
 property_value: IAO:0000589 "placental abruption (disease)" xsd:string
 
@@ -120373,9 +120375,10 @@ synonym: "SCAR" EXACT ABBREVIATION [PMID:29445753]
 xref: EFO:0006346 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: MedDRA:20000020 {source="EFO:0006346"}
 xref: MEDGEN:1843455 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: MESH:D002921 {source="https://orcid.org/0000-0002-7941-5545", source="MONDO:equivalentTo", source="https://orcid.org/0000-0001-9439-5346"}
+xref: MESH:D003875 {source="MONDO:mondoIsNarrowerThanSource"}
 xref: UMLS:C5554042 {source="MEDGEN:1843455", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0005093 {source="EFO:0006346"} ! skin disorder
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10612" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7258" xsd:anyURI
 
 [Term]
@@ -159273,6 +159276,7 @@ subset: orphanet {source="Orphanet:93382"}
 subset: orphanet_rare {source="Orphanet:93382"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
+synonym: "acromesomelic dysplasia, Osebold-Remondini type" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
 synonym: "BDA6" EXACT ABBREVIATION [DOID:0110968, OMIM:112910]
 synonym: "brachydactyly type A6" EXACT [DOID:0110968, Orphanet:93382]
 synonym: "brachydactyly, type A6" EXACT [OMIM:112910]
@@ -159290,6 +159294,7 @@ xref: UMLS:C1862130 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0019696 {source="OMIM:112910", source="Orphanet:93382", source="PMID:31633310"} ! acromesomelic dysplasia
 is_a: MONDO:0021004 {source="DOID:0110968", source="https://orcid.org/0000-0001-5208-3432"} ! brachydactyly
 property_value: curated_content_resource "https://www.malacards.org/card/osebold_remondini_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/983/brachydactyly-type-a6" xsd:anyURI {source="GARD:0000983"}
 
@@ -197652,8 +197657,10 @@ xref: SCTID:128106003 {source="MONDO:equivalentTo"}
 xref: UMLS:C1264039 {source="MEDGEN:220393", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019565 {source="DC-OMIM:193400", source="DOID:0060573", source="MESH:D056725", source="NCIT:C131685", source="Orphanet:166078"} ! hereditary von Willebrand disease
 is_a: MONDO:0024574 {source="MESH:D056725", source="NCIT:C131685"} ! von Willebrand disease (hereditary or acquired)
+is_a: MONDO:1060299 {source="PMID:16889557", source="PMID:31968368", source="https://clinicalgenome.org/affiliation/50051/"} ! VWF-related quantitative von Willebrand disease
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/12726 {source="OMIM:193400"} ! VWF
 property_value: curated_content_resource "https://www.malacards.org/card/von_willebrand_disease_type_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10494" xsd:anyURI
 
 [Term]
 id: MONDO:0008669
@@ -198750,6 +198757,8 @@ subset: clingen {source="MONDO:CLINGEN"}
 subset: doid {source="DOID:0080056"}
 subset: doid_rare {source="DOID:0080056"}
 subset: gard_rare {source="GARD:0008713", source="MONDO:GARD"}
+subset: ncit {source="NCIT:C3816"}
+subset: ncit_rare {source="NCIT:C3816"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:200610"}
 subset: ordo_subtype_of_a_disorder {source="Orphanet:93296"}
@@ -198761,11 +198770,14 @@ synonym: "achondrogenesis type II" EXACT [DOID:0080056] {OMO:0002001="https://w3
 synonym: "achondrogenesis, Langer-Saldino type" EXACT [OMIM:200610, Orphanet:93296]
 synonym: "achondrogenesis, type II" RELATED []
 synonym: "achondrogenesis, type II or hypochondrogenesis" EXACT []
+synonym: "Langer-Saldino achondrogenesis" EXACT [NCIT:C3816]
+synonym: "type II achondrogenesis" EXACT [NCIT:C3816]
 xref: DOID:0080056 {source="MONDO:equivalentTo"}
 xref: GARD:0008713 {source="MONDO:GARD"}
 xref: MEDGEN:66315 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C536017 {source="Orphanet:93296", source="MONDO:equivalentTo", source="Orphanet:93296/e"}
 xref: NANDO:2201345 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
+xref: NCIT:C3816 {source="MONDO:equivalentTo"}
 xref: OMIM:200610 {source="Orphanet:93296", source="DOID:0080056", source="MONDO:equivalentTo", source="Orphanet:93296/e"}
 xref: Orphanet:93296 {source="MONDO:equivalentTo", source="OMIM:200610"}
 xref: UMLS:C0220685 {source="MEDGEN:66315", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -198776,6 +198788,7 @@ relationship: disease_has_feature HP:0001789 ! Hydrops fetalis
 relationship: disease_has_feature HP:0011220 ! Prominent forehead
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2200 {source="OMIM:200610"} ! COL2A1
 property_value: curated_content_resource "https://www.malacards.org/card/achondrogenesis_type_ii_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 
@@ -198786,8 +198799,6 @@ def: "An autosomal recessively inherited form of acromesomelic dysplasia charact
 subset: doid {source="DOID:0080052"}
 subset: doid_rare {source="DOID:0080052"}
 subset: gard_rare {source="GARD:0001300", source="MONDO:GARD"}
-subset: ncit {source="NCIT:C3816"}
-subset: ncit_rare {source="NCIT:C3816"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:200700"}
 subset: ordo_disorder {source="Orphanet:2098"}
@@ -198796,33 +198807,32 @@ subset: orphanet {source="Orphanet:2098"}
 subset: orphanet_rare {source="Orphanet:2098"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "achondrogenesis type II (formerly)" RELATED [GARD:0001300]
+synonym: "achondrogenesis type II (formerly)" EXACT [GARD:0001300]
 synonym: "acromesomelic dysplasia 2A" EXACT [OMIM:200700]
 synonym: "acromesomelic dysplasia, Grebe type" EXACT [DOID:0080052, OMIM:200700, Orphanet:2098]
-synonym: "AMDG" RELATED ABBREVIATION [GARD:0001300]
+synonym: "AMDG" EXACT ABBREVIATION [GARD:0001300]
 synonym: "Brazilian achondrogenesis" RELATED [GARD:0001300]
 synonym: "chondrodysplasia, Grebe type" EXACT [OMIM:200700, Orphanet:2098]
 synonym: "GREBE chondrodysplasia" EXACT [DOID:0080052, OMIM:200700]
 synonym: "Grebe chondrodysplasia" EXACT [DOID:0080052, OMIM:200700]
 synonym: "Grebe dysplasia" EXACT [OMIM:200700]
+synonym: "Grebe dysplasia, GDF5-related" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
 synonym: "Grebe syndrome" RELATED [GARD:0001300]
-synonym: "Langer-Saldino achondrogenesis" EXACT [NCIT:C3816]
-synonym: "type II achondrogenesis" EXACT [NCIT:C3816]
 xref: DOID:0080052 {source="MONDO:equivalentTo"}
 xref: GARD:0001300 {source="MONDO:GARD"}
 xref: ICD10CM:Q78.8 {source="Orphanet:2098"}
 xref: MEDGEN:75557 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NANDO:2201345 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
 xref: NANDO:2201346 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
-xref: NCIT:C3816 {source="MONDO:equivalentTo"}
 xref: OMIM:200700 {source="DOID:0080052", source="Orphanet:2098/e", source="MONDO:equivalentTo", source="Orphanet:2098"}
 xref: Orphanet:2098 {source="MONDO:equivalentTo", source="OMIM:200700"}
 xref: UMLS:C0265260 {source="MEDGEN:75557", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0019648 {source="NCIT:C3816"} ! achondrogenesis
 is_a: MONDO:0019696 {source="DOID:0080052", source="OMIM:200700", source="Orphanet:2098", source="PMID:31633310"} ! acromesomelic dysplasia
 relationship: disease_has_feature HP:0002983 ! Micromelia
+relationship: excluded_subClassOf MONDO:0019648 {source="NCIT:C3816", source="https://orcid.org/0000-0002-7638-4659"} ! achondrogenesis
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4220 {source="OMIM:200700"} ! GDF5
 property_value: curated_content_resource "https://www.malacards.org/card/acromesomelic_dysplasia_2a" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 
@@ -199276,7 +199286,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/acroger
 [Term]
 id: MONDO:0008717
 name: acromesomelic dysplasia 2C, Hunter-Thompson type
-def: "Acromesomelic dysplasia, Hunter-Thomson type is an autosomal recessively inherited form of acromesomelic dysplasia characterized by severe dwarfism (adult height approximately 120 cm) with abnormalities limited to the limbs (affecting the lower limbs more than upper limbs, with middle and distal segments being the most affected), severe shortening, absence or fusion of tubular bones of hands and feet and large joint dislocations. As seen in acromesomelic dysplasia, Grebe type and acromesomelic dysplasia, Maroteaux type, facial features and intelligence are normal." [Orphanet:968]
+def: "An autosomal recessively inherited form of acromesomelic dysplasia characterized by severe dwarfism (adult height approximately 120 cm) with abnormalities limited to the limbs (affecting the lower limbs more than upper limbs, with middle and distal segments being the most affected), severe shortening, absence or fusion of tubular bones of hands and feet and large joint dislocations. As seen in acromesomelic dysplasia, Grebe type and acromesomelic dysplasia, Maroteaux type, facial features and intelligence are normal." [Orphanet:968]
 subset: doid {source="DOID:0080051"}
 subset: doid_rare {source="DOID:0080051"}
 subset: gard_rare {source="GARD:0000506", source="MONDO:GARD"}
@@ -199289,10 +199299,9 @@ subset: orphanet_rare {source="Orphanet:968"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "acromesomelic dwarfism" EXACT [DOID:0080051, Orphanet:968]
-synonym: "acromesomelic dysplasia 2C, Hunter-Thompson type" EXACT []
-synonym: "acromesomelic dysplasia Hunter Thompson type" RELATED [GARD:0000506]
+synonym: "acromesomelic dysplasia Hunter Thompson type" EXACT [GARD:0000506]
 synonym: "acromesomelic dysplasia, Hunter-Thompson type" EXACT [DOID:0080051, OMIM:201250, Orphanet:968]
-synonym: "AMDH" RELATED ABBREVIATION []
+synonym: "AMDH" EXACT ABBREVIATION []
 xref: DOID:0080051 {source="MONDO:equivalentTo"}
 xref: GARD:0000506 {source="MONDO:GARD"}
 xref: ICD10CM:Q78.8 {source="Orphanet:968"}
@@ -214350,6 +214359,7 @@ subset: rare
 synonym: "acromesomelic dysplasia 2B" EXACT [OMIM:228900]
 synonym: "Du Pan syndrome" EXACT [DOID:0050790, OMIM:228900, Orphanet:2639]
 synonym: "fibular hypoplasia and complex brachydactyly" EXACT [DOID:0050790, OMIM:228900]
+synonym: "GDF5-related fibular hypoplasia and complex brachydactyly" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
 xref: DOID:0050790 {source="MONDO:equivalentTo"}
 xref: GARD:0009879 {source="MONDO:GARD"}
 xref: ICD10CM:Q73.8 {source="Orphanet:2639"}
@@ -214366,6 +214376,7 @@ is_a: MONDO:0019696 {source="DOID:0050790", source="OMIM:228900", source="Orphan
 relationship: has_characteristic HP:0000007 {source="MONDO:HPOA", source="OMIM:228900", source="Orphanet:2639"} ! Autosomal recessive inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4220 {source="OMIM:228900"} ! GDF5
 property_value: curated_content_resource "https://www.malacards.org/card/acromesomelic_dysplasia_2b" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/9879/fibular-hypoplasia-and-complex-brachydactyly" xsd:anyURI {source="GARD:0009879"}
@@ -243564,8 +243575,10 @@ xref: SCTID:128108002 {source="MONDO:equivalentTo"}
 xref: UMLS:C1264041 {source="MEDGEN:266075", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019565 {source="DC-OMIM:277480", source="DOID:0111054", source="MESH:D056729", source="NCIT:C85213", source="Orphanet:166096"} ! hereditary von Willebrand disease
 is_a: MONDO:0024574 {source="MESH:D056729", source="NCIT:C85213"} ! von Willebrand disease (hereditary or acquired)
+is_a: MONDO:1060299 {source="PMID:16889557", source="PMID:31968368", source="https://clinicalgenome.org/affiliation/50051/"} ! VWF-related quantitative von Willebrand disease
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/12726 {source="OMIM:277480"} ! VWF
 property_value: curated_content_resource "https://www.malacards.org/card/von_willebrand_disease_type_3" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10494" xsd:anyURI
 
 [Term]
 id: MONDO:0010192
@@ -266433,7 +266446,6 @@ is_a: MONDO:0002442 {source="MONDO:Redundant", source="OMIM:600919"} ! long QT s
 is_a: MONDO:0019171 {source="OMIM:600919", source="Orphanet:101016-prototype"} ! familial long QT syndrome
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/493 {source="OMIM:600919"} ! ANK2
 property_value: curated_content_resource "https://www.malacards.org/card/cardiac_arrhythmia_ankyrin_b_related" xsd:anyURI {source="MONDO:MalaCards"}
-property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_4" xsd:anyURI {source="MONDO:MalaCards"}
 
 [Term]
 id: MONDO:0010959
@@ -267035,8 +267047,10 @@ subset: orphanet {source="Orphanet:65283"}
 subset: orphanet_rare {source="Orphanet:65283"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
+synonym: "long QT syndrome type 8" RELATED [Orphanet:65283]
+synonym: "long QT syndrome with syndactyly" EXACT [OMIM:601005]
 synonym: "long QT syndrome-syndactyly syndrome" EXACT [Orphanet:65283]
-synonym: "LQT8" RELATED ABBREVIATION []
+synonym: "LQT8" RELATED ABBREVIATION [Orphanet:65283]
 synonym: "TIMOTHY syndrome" EXACT [DOID:0060173, NCIT:C142894, OMIM:601005, Orphanet:65283]
 synonym: "Timothy syndrome" EXACT [DOID:0060173, NCIT:C142894, OMIM:601005, Orphanet:65283]
 synonym: "TS" EXACT ABBREVIATION [OMIM:601005]
@@ -267051,6 +267065,7 @@ xref: OMIM:601005 {source="Orphanet:65283/e", source="MONDO:equivalentTo", sourc
 xref: Orphanet:65283 {source="OMIM:601005", source="MONDO:equivalentTo", source="DOID:0060173"}
 xref: UMLS:C1832916 {source="MEDGEN:331395", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0000426 {source="DOID:0060173", source="MONDO:Redundant"} ! autosomal dominant disease
+is_a: MONDO:0002254 {source="Orphanet:65283", source="https://orcid.org/0000-0001-9310-0163"} ! syndromic disease
 is_a: MONDO:0002442 {source="MESH:C536962", source="MONDO:Redundant", source="NCIT:C142894", source="OMIM:601005"} ! long QT syndrome
 is_a: MONDO:0019171 {source="OMIM:601005", source="Orphanet:65283", source="https://orcid.org/0000-0002-4142-7153", source="https://orcid.org/0009-0001-6494-4831"} ! familial long QT syndrome
 relationship: disease_has_feature HP:0001279 {source="MONDO:Wikidata"} ! Syncope
@@ -267061,6 +267076,7 @@ relationship: disease_has_feature MONDO:0000992 {source="MONDO:Wikidata"} ! hear
 relationship: has_characteristic HP:0000006 {source="MONDO:HPOA", source="OMIM:601005", source="Orphanet:65283"} ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1390 {source="OMIM:601005"} ! CACNA1C
 property_value: curated_content_resource "https://www.malacards.org/card/timothy_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/9294/timothy-syndrome" xsd:anyURI {source="GARD:0009294"}
 
@@ -275160,6 +275176,7 @@ subset: orphanet_rare {source="Orphanet:40"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "acromesomelic dwarfism Maroteux type" RELATED [GARD:0000507]
+synonym: "acromesomelic dysplasia (type Maroteaux), NPR2-related" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
 synonym: "acromesomelic dysplasia 1, Maroteaux type" EXACT []
 synonym: "acromesomelic dysplasia Maroteaux type" RELATED [GARD:0000507]
 synonym: "acromesomelic dysplasia, Maroteaux type" EXACT [DOID:0080050, OMIM:602875, Orphanet:40]
@@ -275179,6 +275196,7 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: disease_has_feature HP:0003510 ! Severe short stature
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/7944 {source="OMIM:602875"} ! NPR2
 property_value: curated_content_resource "https://www.malacards.org/card/acromesomelic_dysplasia_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/507/acromesomelic-dysplasia-maroteaux-type" xsd:anyURI {source="GARD:0000507"}
@@ -277542,10 +277560,12 @@ xref: OMIM:603830 {source="DOID:0110646", source="MONDO:equivalentTo"}
 xref: UMLS:C1859062 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:349087"}
 is_a: MONDO:0019171 {source="OMIM:603830", source="Orphanet:101016-prototype"} ! familial long QT syndrome
 is_a: MONDO:1010181 {source="https://www.clinicalgenome.org/affiliation/40104/"} ! SCN5A-related cardiac rhythm disorder
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:603830"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10593 ! SCN5A
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10593 {source="OMIM:603830"} ! SCN5A
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_3" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/3286/long-qt-syndrome-3" xsd:anyURI {source="GARD:0003286"}
 
@@ -301592,6 +301612,7 @@ subset: rare
 synonym: "acromesomelic dysplasia 3" EXACT [DOID:0081237, OMIM:609441]
 synonym: "acromesomelic dysplasia, Demirhan type" EXACT [OMIM:609441]
 synonym: "AMDD" EXACT ABBREVIATION [OMIM:609441]
+synonym: "BMPR1B-related Grebe dysplasia" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
 synonym: "chondrodysplasia acromesomelic with genital anomalies" RELATED [GARD:0010077]
 synonym: "chondrodysplasia, acromesomelic, with or without genital anomalies" EXACT [OMIM:609441]
 xref: DOID:0081237 {source="MONDO:equivalentTo"}
@@ -301601,10 +301622,9 @@ xref: MESH:C537913 {source="MONDO:equivalentTo"}
 xref: OMIM:609441 {source="GARD:0010077", source="MONDO:equivalentTo"}
 xref: UMLS:C4225404 {source="MEDGEN:904735", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019696 {source="DOID:0081237", source="OMIM:609441", source="PMID:31633310"} ! acromesomelic dysplasia
-intersection_of: MONDO:0019696 ! acromesomelic dysplasia
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1077 ! BMPR1B
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1077 {source="OMIM:609441"} ! BMPR1B
 property_value: curated_content_resource "https://www.malacards.org/card/acromesomelic_dysplasia_3" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10077/chondrodysplasia-acromesomelic-with-genital-anomalies" xsd:anyURI {source="GARD:0010077"}
@@ -313736,10 +313756,12 @@ xref: MESH:C567515 {source="MONDO:equivalentTo"}
 xref: OMIM:611818 {source="MONDO:equivalentTo", source="DOID:0110650"}
 xref: UMLS:C2678485 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:395635"}
 is_a: MONDO:0019171 {source="OMIM:611818", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:611818"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1529 ! CAV3
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1529 {source="OMIM:611818"} ! CAV3
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_9" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10435/long-qt-syndrome-9" xsd:anyURI {source="GARD:0010435"}
 
@@ -313767,10 +313789,12 @@ xref: OMIM:611819 {source="MONDO:equivalentTo", source="DOID:0110651"}
 xref: UMLS:C2678484 {source="MEDGEN:394836", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0018054 {source="OMIM:611819"} ! familial atrial fibrillation
 is_a: MONDO:0019171 {source="OMIM:611819", source="Orphanet:768/btnt"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:611819"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10592 ! SCN4B
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10592 {source="OMIM:611819"} ! SCN4B
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_10" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10436/long-qt-syndrome-10" xsd:anyURI {source="GARD:0010436"}
@@ -313798,10 +313822,12 @@ xref: MESH:C567513 {source="MONDO:equivalentTo"}
 xref: OMIM:611820 {source="MONDO:equivalentTo", source="DOID:0110652"}
 xref: UMLS:C2678483 {source="MONDO:equivalentTo", source="MEDGEN:437218", source="MONDO:MEDGEN"}
 is_a: MONDO:0019171 {source="OMIM:611820", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:611820"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/379 ! AKAP9
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/379 {source="OMIM:611820"} ! AKAP9
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_11" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10437/long-qt-syndrome-11" xsd:anyURI {source="GARD:0010437"}
 
@@ -317345,7 +317371,7 @@ subset: rare
 synonym: "Jervell and Lange-Nielsen syndrome 2" EXACT [OMIM:612347] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "Jervell and Lange-Nielsen syndrome caused by mutation in KCNE1" EXACT [MONDO:design_pattern]
 synonym: "Jervell and Lange-Nielsen syndrome type 2" EXACT []
-synonym: "JLNS2" RELATED ABBREVIATION []
+synonym: "JLNS2" EXACT ABBREVIATION [OMIM:612347]
 synonym: "KCNE1 Jervell and Lange-Nielsen syndrome" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 xref: GARD:0010364 {source="MONDO:GARD"}
 xref: MEDGEN:394108 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -317358,6 +317384,7 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0012871 {source="MONDO:CLINGEN"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6240 {source="OMIM:612347"} ! KCNE1
 property_value: curated_content_resource "https://www.malacards.org/card/jervell_and_lange_nielsen_syndrome_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10364/jervell-and-lange-nielsen-syndrome-2" xsd:anyURI {source="GARD:0010364"}
 
 [Term]
@@ -322573,10 +322600,12 @@ xref: MESH:C567842 {source="MONDO:equivalentTo"}
 xref: OMIM:612955 {source="MONDO:equivalentTo", source="DOID:0110653"}
 xref: UMLS:C2751830 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:442824"}
 is_a: MONDO:0019171 {source="OMIM:612955", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:612955"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11167 ! SNTA1
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11167 {source="OMIM:612955"} ! SNTA1
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_12" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 
 [Term]
@@ -328471,10 +328500,12 @@ xref: MEDGEN:462083 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:613485 {source="DOID:0110654", source="MONDO:equivalentTo"}
 xref: UMLS:C3150733 {source="MEDGEN:462083", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019171 {source="OMIM:613485", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:613485"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6266 ! KCNJ5
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6266 {source="OMIM:613485"} ! KCNJ5
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_13" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 
 [Term]
@@ -329235,6 +329266,7 @@ synonym: "von Willebrand disease, types 2A, 2B, 2M, and 2N" EXACT []
 synonym: "von willebrand's disease 2" EXACT [doi:10.1093/jama/9780195176339.003.0016, DOID:0060574]
 synonym: "von Willebrand's disease type 2" EXACT []
 synonym: "VWD2" EXACT ABBREVIATION [DOID:0060574, OMIM:613554]
+synonym: "VWF-related qualitative von Willebrand disease" EXACT [https://clinicalgenome.org/affiliation/50051/]
 xref: DOID:0060574 {source="MONDO:equivalentTo"}
 xref: GARD:0017020 {source="MONDO:GARD"}
 xref: MEDGEN:224736 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -329244,8 +329276,10 @@ xref: Orphanet:166081 {source="DOID:0060574", source="OMIM:613554", source="MOND
 xref: SCTID:128107007 {source="MONDO:equivalentTo"}
 xref: UMLS:C1264040 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:224736"}
 is_a: MONDO:0019565 {source="DC-OMIM:613554", source="DOID:0060574", source="Orphanet:166081"} ! hereditary von Willebrand disease
+is_a: MONDO:1060298 {source="PMID:16889557", source="https://clinicalgenome.org/affiliation/50051/"} ! VWF-related von Willebrand disease
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/12726 {source="OMIM:613554"} ! VWF
 property_value: curated_content_resource "https://www.malacards.org/card/von_willebrand_disease_type_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10494" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 
 [Term]
@@ -330971,7 +331005,6 @@ subset: omim_susceptibility {source="OMIM:613688"}
 subset: rare
 synonym: "long QT syndrome 2" EXACT [DOID:0110645, NCIT:C137957, OMIM:613688] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "long QT syndrome type 2" EXACT []
-synonym: "Long QT syndrome, acquired, reduced susceptibility to" EXACT []
 synonym: "LQT2" EXACT ABBREVIATION [DOID:0110645, NCIT:C137957, OMIM:613688]
 xref: DOID:0110645 {source="MONDO:equivalentTo"}
 xref: GARD:0003285 {source="MONDO:GARD"}
@@ -330983,8 +331016,12 @@ xref: NCIT:C137957 {source="MONDO:equivalentTo"}
 xref: OMIM:613688 {source="DOID:0110645", source="MONDO:equivalentTo"}
 xref: UMLS:C3150943 {source="MEDGEN:462293", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019171 {source="OMIM:613688", source="Orphanet:101016-prototype"} ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:613688"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6251 ! KCNH2
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6251 {source="https://orcid.org/0000-0003-0148-9787"} ! KCNH2
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6236" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
@@ -331074,10 +331111,12 @@ xref: MESH:C566333 {source="MONDO:equivalentTo"}
 xref: OMIM:613693 {source="DOID:0110648", source="MONDO:equivalentTo"}
 xref: UMLS:C3150953 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:462303"}
 is_a: MONDO:0019171 {source="OMIM:613693", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:613693"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6242 ! KCNE2
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6242 {source="OMIM:613693"} ! KCNE2
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_6" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10434/long-qt-syndrome-6" xsd:anyURI {source="GARD:0010434"}
 
@@ -331136,11 +331175,13 @@ xref: NCIT:C172094 {source="MONDO:equivalentTo"}
 xref: OMIM:613695 {source="DOID:0110647", source="MONDO:equivalentTo"}
 xref: UMLS:C1867904 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:358092"}
 is_a: MONDO:0019171 {source="OMIM:613695", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:613695"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6240 ! KCNE1
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0013372 {source="MONDO:CLINGEN"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6240 {source="OMIM:613695"} ! KCNE1
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_5" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10433/long-qt-syndrome-5" xsd:anyURI {source="GARD:0010433"}
 
@@ -354194,9 +354235,11 @@ subset: omim {source="OMIM:615506"}
 subset: rare
 synonym: "GDF2 hereditary hemorrhagic telangiectasia" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 synonym: "GDF2 related HHT-like syndrome" EXACT [https://orcid.org/0000-0001-5208-3432]
+synonym: "GDF2-related hereditary hemorrhagic telangiectasia-like syndrome" EXACT [https://clinicalgenome.org/affiliation/40028/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "GDF2-related HHT-like syndrome" EXACT [https://clinicalgenome.org/affiliation/40028/]
 synonym: "hereditary hemorrhagic telangiectasia caused by mutation in GDF2" EXACT [MONDO:design_pattern]
-synonym: "HHT5" RELATED ABBREVIATION []
-synonym: "telangiectasia, hereditary hemorrhagic, type 5" EXACT [OMIM:615506] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "HHT5" EXACT ABBREVIATION [OMIM:615506]
+synonym: "telangiectasia, hereditary hemorrhagic, type 5" EXACT [OMIM:615506]
 xref: GARD:0015978 {source="MONDO:GARD"}
 xref: MEDGEN:816040 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:615506 {source="MONDO:equivalentTo"}
@@ -354208,6 +354251,7 @@ relationship: curated_content_resource https://search.clinicalgenome.org/kb/cond
 relationship: has_characteristic HP:0000006 {source="MONDO:HPOA", source="OMIM:615506"} ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4217 {source="OMIM:615506"} ! GDF2
 property_value: curated_content_resource "https://www.malacards.org/card/telangiectasia_hereditary_hemorrhagic_type_5" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10614" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6195" xsd:anyURI
 
 [Term]
@@ -363820,10 +363864,12 @@ xref: NCIT:C177534 {source="MONDO:equivalentTo"}
 xref: OMIM:616247 {source="DOID:0110655", source="MONDO:equivalentTo"}
 xref: UMLS:C4015671 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:864108"}
 is_a: MONDO:0019171 {source="OMIM:616247", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:616247"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1442 ! CALM1
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1442 {source="OMIM:616247"} ! CALM1
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_14" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 
 [Term]
@@ -363872,10 +363918,12 @@ xref: MEDGEN:864132 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:616249 {source="DOID:0110656", source="MONDO:equivalentTo"}
 xref: UMLS:C4015695 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:864132"}
 is_a: MONDO:0019171 {source="OMIM:616249", source="Orphanet:101016-prototype"} ! familial long QT syndrome
-intersection_of: MONDO:0019171 ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:616249"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1445 ! CALM2
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1445 {source="OMIM:616249"} ! CALM2
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_15" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 
 [Term]
@@ -390236,6 +390284,8 @@ xref: UMLS:C1282968 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0013304 {source="Orphanet:166084", source="https://orcid.org/0000-0001-5208-3432"} ! von Willebrand disease 2
 is_a: MONDO:0019565 {source="MONDO:0015628/inferred", source="MONDO:Redundant", source="NCIT:C131686", source="Orphanet:166084/inferred"} ! hereditary von Willebrand disease
 is_a: MONDO:0024574 {source="NCIT:C131686"} ! von Willebrand disease (hereditary or acquired)
+is_a: MONDO:1060300 {source="PMID:16889557", source="PMID:41610306", source="https://clinicalgenome.org/affiliation/50051/"} ! VWF-related von Willebrand disease with decreased platelet tethering
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10494" xsd:anyURI
 
 [Term]
 id: MONDO:0015629
@@ -390251,6 +390301,7 @@ subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "von Willebrand disease type 2B" EXACT [icd11.foundation:1383884415, Orphanet:166087] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "von Willebrand disease, type 2B" EXACT [NCIT:C131687]
+synonym: "VWF-related von Willebrand disease with increased platelet tethering" EXACT [https://clinicalgenome.org/affiliation/50051/]
 xref: GARD:0017022 {source="MONDO:GARD"}
 xref: icd11.foundation:1383884415 {source="MONDO:equivalentTo"}
 xref: MEDGEN:224831 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -390263,6 +390314,7 @@ is_a: MONDO:0013304 {source="Orphanet:166087", source="https://orcid.org/0000-00
 is_a: MONDO:0019565 {source="MONDO:0015629/inferred", source="MONDO:Redundant", source="NCIT:C131687", source="Orphanet:166087/inferred"} ! hereditary von Willebrand disease
 is_a: MONDO:0024574 {source="NCIT:C131687"} ! von Willebrand disease (hereditary or acquired)
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0015629 {source="MONDO:CLINGEN"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10494" xsd:anyURI
 
 [Term]
 id: MONDO:0015630
@@ -390288,6 +390340,8 @@ xref: UMLS:C1282974 {source="MEDGEN:266186", source="MONDO:equivalentTo", source
 is_a: MONDO:0013304 {source="Orphanet:166090", source="https://orcid.org/0000-0001-5208-3432"} ! von Willebrand disease 2
 is_a: MONDO:0019565 {source="MONDO:0015630/inferred", source="MONDO:Redundant", source="NCIT:C131688", source="Orphanet:166090/inferred"} ! hereditary von Willebrand disease
 is_a: MONDO:0024574 {source="NCIT:C131688"} ! von Willebrand disease (hereditary or acquired)
+is_a: MONDO:1060300 {source="PMID:16889557", source="PMID:41610306", source="https://clinicalgenome.org/affiliation/50051/"} ! VWF-related von Willebrand disease with decreased platelet tethering
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10494" xsd:anyURI
 
 [Term]
 id: MONDO:0015631
@@ -390302,6 +390356,7 @@ subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "von Willebrand disease Normandy variant" EXACT [NCIT:C131689]
 synonym: "von Willebrand disease, type 2N" EXACT [NCIT:C131689]
+synonym: "VWF-related von Willebrand disease with decreased FVIII binding" EXACT [https://clinicalgenome.org/affiliation/50051/]
 xref: GARD:0017024 {source="MONDO:GARD"}
 xref: icd11.foundation:1091176565 {source="MONDO:equivalentTo"}
 xref: MEDGEN:266187 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -390312,6 +390367,7 @@ xref: UMLS:C1282975 {source="MEDGEN:266187", source="MONDO:equivalentTo", source
 is_a: MONDO:0013304 {source="Orphanet:166093", source="https://orcid.org/0000-0001-5208-3432"} ! von Willebrand disease 2
 is_a: MONDO:0019565 {source="MONDO:0015631/inferred", source="MONDO:Redundant", source="NCIT:C131689", source="Orphanet:166093/inferred"} ! hereditary von Willebrand disease
 is_a: MONDO:0024574 {source="NCIT:C131689"} ! von Willebrand disease (hereditary or acquired)
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10494" xsd:anyURI
 
 [Term]
 id: MONDO:0015632
@@ -469587,21 +469643,17 @@ subset: clingen {source="MONDO:CLINGEN"}
 subset: gard_rare {source="GARD:0016547", source="MONDO:GARD"}
 subset: nord_rare {source="NORD:407", source="MONDO:NORD"}
 subset: omim {source="OMIMPS:192500"}
-subset: ordo_disorder {source="Orphanet:101016"}
 subset: ordo_group_of_disorders {source="Orphanet:768"}
-subset: orphanet {source="Orphanet:101016", source="Orphanet:768"}
-subset: orphanet_rare {source="Orphanet:101016"}
+subset: orphanet {source="Orphanet:768"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "congenital long QT syndrome" EXACT [icd11.foundation:1208831985, Orphanet:768]
+synonym: "congenital LQTS" EXACT [Orphanet:768]
 synonym: "familial long QT syndrome" EXACT [icd11.foundation:1208831985] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "hereditary long QT syndrome" EXACT [MONDO:patterns/hereditary]
 synonym: "Long QT Syndrome" BROAD [icd11.foundation:1208831985, OMIMPS:192500]
 synonym: "Long QT syndrome" EXACT [NORD:407] {OMO:0002001="https://w3id.org/information-resource-registry/nord"}
 synonym: "LQTS" EXACT ABBREVIATION []
-synonym: "Romano-Ward long QT syndrome" EXACT [Orphanet:101016]
-synonym: "Romano-Ward syndrome" EXACT [Orphanet:101016]
-synonym: "Ward-Romano syndrome" EXACT []
 xref: GARD:0016547 {source="MONDO:GARD"}
 xref: ICD10CM:I45.8 {source="Orphanet:768"}
 xref: icd11.foundation:1208831985 {source="Orphanet:101016", source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-3458-4839"}
@@ -469610,17 +469662,18 @@ xref: MEDGEN:685787 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NANDO:2200228 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
 xref: NORD:407 {source="MONDO:NORD"}
 xref: OMIMPS:192500 {source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-6601-2165"}
-xref: Orphanet:101016 {source="OMIM:192500", source="MONDO:equivalentTo"}
 xref: Orphanet:768 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
 xref: SCTID:442917000 {source="MONDO:equivalentTo"}
 xref: UMLS:C1141890 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:685787"}
 is_a: MONDO:0002442 {source="MONDO:Redundant", source="https://orcid.org/0000-0002-6601-2165"} ! long QT syndrome
+is_a: MONDO:1010180 {source="https://orcid.org/0000-0001-9310-0163", source="https://www.clinicalgenome.org/affiliation/40104/"} ! cardiogenetic rhythm disorder
 intersection_of: MONDO:0002442 ! long QT syndrome
 intersection_of: has_characteristic MONDO:0021152 ! inherited
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0019171 {source="MONDO:CLINGEN"}
 relationship: has_characteristic MONDO:0021152 {source="OMIMPS:192500"} ! inherited
 property_value: curated_content_resource "https://www.malacards.org/card/familial_long_qt_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 
 [Term]
 id: MONDO:0019172
@@ -479885,7 +479938,7 @@ replaced_by: MONDO:0005100
 [Term]
 id: MONDO:0019565
 name: hereditary von Willebrand disease
-def: "Hereditary von Willebrand disease (VWD) is a hereditary bleeding disorder caused by a genetic anomaly leading to quantitative, structural or functional abnormalities of the Willebrand factor (von Willebrand factor; VWF). Two major groups of VWF deficiency have been defined: quantitative and partial (type 1) or total (type 3), and qualitative (type 2) with several subtypes (2A, 2B, 2M, 2N)." [Orphanet:903]
+def: "A von Willebrand disease that is inherited and characterized by impaired primary hemostasis resulting from germline genetic variation affecting von Willebrand factor quantity, von Willebrand factor function, platelet interaction with von Willebrand factor, or related hemostatic mechanisms. It is clinically characterized by defective platelet adhesion and secondary coagulation defect that manifests as abnormal bleeding of variable severity occurring either spontaneously or in association with an invasive procedure." [https://clinicalgenome.org/affiliation/50051/, Orphanet:903]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: doid {source="DOID:12531"}
 subset: doid_rare {source="DOID:12531"}
@@ -479895,7 +479948,8 @@ subset: orphanet_rare {source="Orphanet:903"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "congenital von willebrand's disease" EXACT []
-synonym: "hereditary von Willebrand disease" EXACT [Orphanet:903] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "hereditary pseudohaemophilia" EXACT [Orphanet:903]
+synonym: "hereditary von Willebrand disease" EXACT [MEDGEN:1814986, Orphanet:903] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "hereditary von Willebrand disease (hereditary or acquired)" EXACT [MONDO:patterns/hereditary]
 synonym: "vascular haemophilia" BROAD OMO:0003005 []
 synonym: "vascular hemophilia" BROAD []
@@ -479923,6 +479977,7 @@ intersection_of: MONDO:0024574 ! von Willebrand disease (hereditary or acquired)
 intersection_of: has_characteristic MONDO:0021152 ! inherited
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0019565 {source="MONDO:CLINGEN"}
 property_value: curated_content_resource "https://www.malacards.org/card/von_willebrands_disease" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10494" xsd:anyURI
 
 [Term]
 id: MONDO:0019566
@@ -505285,24 +505340,30 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0020847
 name: intellectual developmental disorder, autosomal dominant 58
+def: "Any autosomal dominant intellectual disability in which the cause of the disease is a variation in the SET gene, characterized by delayed development and intellectual disability with language delay and speech impairment. Additional features include motor delay or incoordination, minor dysmorphic features, hypotonia, hypermobility, and variable nonspecific ocular problems." [OMIM:618106, PMID:29907757, PMID:35122673, PMID:42141719]
 subset: doid {source="DOID:0061032"}
 subset: gard_rare {source="GARD:0016476", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:618106"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "intellectual disability, autosomal dominant 58" EXACT [OMIM:618106]
-synonym: "MENTAL RETARDATION, autosomal dominant 58" EXACT [OMIM:618106]
+synonym: "intellectual developmental disorder, autosomal dominant 58" EXACT [OMIM:618106]
+synonym: "intellectual disability, autosomal dominant 58" EXACT [MEDGEN:1648488]
+synonym: "mental retardation, autosomal dominant 58" EXACT [OMIM:618106]
 synonym: "MRD58" EXACT ABBREVIATION [OMIM:618106]
+synonym: "SET-NDD" EXACT ABBREVIATION [PMID:42432431]
+synonym: "SET-related intellectual disability syndrome" EXACT [PMID:29907757, PMID:35122673]
+synonym: "SET-related neurodevelopmental disorder" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:29907757, PMID:42141719]
 xref: DOID:0061032 {source="MONDO:equivalentTo"}
 xref: GARD:0016476 {source="MONDO:GARD"}
 xref: MEDGEN:1648488 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:618106 {source="MONDO:equivalentTo"}
 xref: UMLS:C4748195 {source="MEDGEN:1648488", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0015802 {source="OMIM:618106"} ! autosomal dominant non-syndromic intellectual disability
 is_a: MONDO:0100172 {source="OMIM:618106"} ! intellectual disability, autosomal dominant
+relationship: excluded_subClassOf MONDO:0015802 {source="OMIM:618106", source="PMID:42322191", source="PMID:42432431", source="https://orcid.org/0000-0002-7638-4659"} ! autosomal dominant non-syndromic intellectual disability
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10760 {source="OMIM:618106"} ! SET
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_dominant_58" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10572" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10590" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 
@@ -531273,11 +531334,16 @@ def: "Any Jervell and Lange-Nielsen syndrome in which the cause of the disease i
 subset: gard_rare {source="GARD:0025421", source="MONDO:GARD"}
 subset: omim {source="OMIM:220400"}
 subset: rare
+synonym: "cardioauditory syndrome of Jervell and Lange-Nielsen" EXACT [OMIM:220400]
+synonym: "deafness, congenital, and functional heart disease" EXACT [OMIM:220400]
 synonym: "Jervell and Lange-Nielsen syndrome" BROAD []
 synonym: "Jervell and Lange-Nielsen syndrome 1" EXACT [OMIM:220400]
 synonym: "Jervell and Lange-Nielsen syndrome caused by mutation in KCNQ1" EXACT [MONDO:design_pattern]
-synonym: "JLNS1" RELATED ABBREVIATION []
+synonym: "JLNS" EXACT ABBREVIATION [OMIM:220400]
+synonym: "JLNS1" EXACT ABBREVIATION [OMIM:220400]
 synonym: "KCNQ1 Jervell and Lange-Nielsen syndrome" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
+synonym: "prolonged QT interval in EKG and sudden death" EXACT [OMIM:220400]
+synonym: "surdo-cardiac syndrome" EXACT [OMIM:220400]
 xref: GARD:0025421 {source="MONDO:GARD"}
 xref: MEDGEN:1646925 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:220400 {source="MONDO:equivalentTo"}
@@ -531287,6 +531353,7 @@ intersection_of: MONDO:0002441 ! Jervell and Lange-Nielsen syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6294 ! KCNQ1
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6294 {source="OMIM:220400"} ! KCNQ1
 property_value: curated_content_resource "https://www.malacards.org/card/jervell_and_lange_nielsen_syndrome_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 
 [Term]
@@ -541600,15 +541667,20 @@ subset: gard_rare {source="GARD:0025602", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:619636"}
 subset: rare
+synonym: "acromesomelic dysplasia, PRKG2-related" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
 synonym: "AMD4" EXACT ABBREVIATION [OMIM:619636]
+synonym: "PRKG2-related acromesomelic dysplasia" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
 xref: DOID:0081238 {source="MONDO:equivalentTo"}
 xref: GARD:0025602 {source="MONDO:GARD"}
 xref: MEDGEN:1794238 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619636 {source="MONDO:equivalentTo"}
 xref: UMLS:C5562028 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1794238"}
 is_a: MONDO:0019696 {source="DOID:0081238", source="OMIM:619636"} ! acromesomelic dysplasia
+intersection_of: MONDO:0019696 ! acromesomelic dysplasia
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9416 ! PRKG2
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9416 {source="OMIM:619636"} ! PRKG2
 property_value: curated_content_resource "https://www.malacards.org/card/acromesomelic_dysplasia_4" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
 
 [Term]
 id: MONDO:0030602
@@ -544134,6 +544206,7 @@ is_a: MONDO:0100172 {source="OMIM:617601"} ! intellectual disability, autosomal 
 relationship: has_characteristic HP:0000006 ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6299 {source="OMIM:617601"} ! KCNQ5
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_dominant_46" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10559" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10590" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 
@@ -544187,6 +544260,7 @@ subset: rare
 synonym: "autosomal dominant mental retardation 48" RELATED DEPRECATED []
 synonym: "intellectual disability, autosomal dominant 48" EXACT [OMIM:617751]
 synonym: "mental retardation, autosomal dominant 48" RELATED DEPRECATED []
+synonym: "microcephaly-corpus callosum and cerebellar vermis hypoplasia-facial dysmorphism-intellectual disability syndrome" EXACT [https://orcid.org/0000-0001-9310-0163, Orphanet:500159]
 synonym: "MRD48" RELATED DEPRECATED []
 xref: DOID:0080235 {source="MONDO:equivalentTo"}
 xref: GARD:0017924 {source="MONDO:GARD"}
@@ -544202,6 +544276,7 @@ relationship: has_characteristic HP:0000006 ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9801 {source="OMIM:617751"} ! RAC1
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_dominant_48" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/microcephaly_corpus_callosum_and_cerebellar_vermis_hypoplasia_facial_dysmorphism_intellectual_disability_syndrom" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10560" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10590" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5588" xsd:anyURI
 
@@ -544249,10 +544324,12 @@ subset: gard_rare {source="GARD:0025660", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:617773"}
 subset: rare
+synonym: "Alwadei syndrome" EXACT [OMIM:617773]
+synonym: "autosomal recessive intellectual developmental disorder-61" EXACT [https://orcid.org/0000-0001-9310-0163]
 synonym: "autosomal recessive mental retardation 61" RELATED DEPRECATED []
-synonym: "intellectual disability, autosomal recessive 61" EXACT [OMIM:617773]
-synonym: "mental retardation, autosomal recessive 61" RELATED DEPRECATED []
-synonym: "MRT61" RELATED DEPRECATED []
+synonym: "intellectual disability, autosomal recessive 61" EXACT []
+synonym: "mental retardation, autosomal recessive 61" EXACT [OMIM:617773]
+synonym: "MRT61" EXACT ABBREVIATION [OMIM:617773]
 xref: DOID:0080239 {source="MONDO:equivalentTo"}
 xref: GARD:0025660 {source="MONDO:GARD"}
 xref: MEDGEN:1622296 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -544261,33 +544338,40 @@ xref: UMLS:C4540424 {source="MEDGEN:1622296", source="MONDO:equivalentTo", sourc
 is_a: MONDO:0019502 {source="DOID:0080239", source="OMIM:617773"} ! autosomal recessive non-syndromic intellectual disability
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23625 {source="OMIM:617773"} ! RUSC2
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_recessive_61" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10561" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10590" xsd:anyURI
 
 [Term]
 id: MONDO:0030916
 name: intellectual developmental disorder, autosomal dominant 50, with behavioral abnormalities
+def: "Any autosomal dominant intellectual disability in which the cause of the disease is a variation in the NAA15 gene. It presents with a wide array of manifestations that affect the heart, brain, musculoskeletal system, and behavioral and cognitive development." [OMIM:617787, PMID:39991982, PMID:40204117]
 subset: doid {source="DOID:0080233"}
 subset: gard_rare {source="GARD:0025661", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:617787"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "autosomal dominant mental retardation 50" RELATED DEPRECATED []
+synonym: "autosomal dominant mental retardation 50" EXACT DEPRECATED []
 synonym: "intellectual developmental disorder, autosomal dominant 50, with behavioral abnormalities" EXACT [OMIM:617787]
 synonym: "intellectual developmental disorder, autosomal dominant 50, with behavioural abnormalities" EXACT OMO:0003005 []
-synonym: "intellectual disability, autosomal dominant 50" EXACT [GARD:0025661]
-synonym: "mental retardation, autosomal dominant 50" RELATED DEPRECATED []
-synonym: "MRD50" RELATED DEPRECATED []
+synonym: "intellectual disability, autosomal dominant 50" EXACT [MEDGEN:1616989]
+synonym: "mental retardation, autosomal dominant 50" EXACT [OMIM:617787]
+synonym: "MRD50" EXACT ABBREVIATION [OMIM:617787]
+synonym: "NAA15-related neurodevelopmental disorder" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:38712024, PMID:39991982]
+synonym: "NAA15-related syndrome" EXACT [https://orcid.org/0000-0001-9310-0163, https://www.simonssearchlight.org/gene-guide/naa15/, PMID:42749089]
 xref: DOID:0080233 {source="MONDO:equivalentTo"}
 xref: GARD:0025661 {source="MONDO:GARD"}
 xref: MEDGEN:1616989 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:617787 {source="DOID:0080233", source="MONDO:equivalentTo"}
 xref: UMLS:C4540470 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1616989"}
-is_a: MONDO:0015802 {source="DOID:0080233", source="OMIM:617787"} ! autosomal dominant non-syndromic intellectual disability
 is_a: MONDO:0100172 {source="OMIM:617787"} ! intellectual disability, autosomal dominant
+intersection_of: MONDO:0100172 ! intellectual disability, autosomal dominant
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30782 ! NAA15
+relationship: excluded_subClassOf MONDO:0015802 {source="DOID:0080233", source="OMIM:617787", source="PMID:39991982", source="PMID:40204117", source="https://orcid.org/0000-0002-7638-4659"} ! autosomal dominant non-syndromic intellectual disability
 relationship: has_characteristic HP:0000006 ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30782 {source="OMIM:617787"} ! NAA15
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_dominant_50_with_behavioral_abnormalities" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10563" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10590" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
@@ -544295,6 +544379,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0030917
 name: intellectual developmental disorder, autosomal dominant 51
+def: "Any autosomal dominant intellectual disability in which the cause of the disease is a variation in the KMT5B gene. It is associated with global developmental delay, macrocephaly, autism, seizures, and congenital anomalies, with hypotonia and congenital heart defects as prominent features." [OMIM:617788, PMID:28191889, PMID:36897941, PMID:38571636, PMID:41153391]
 subset: doid {source="DOID:0080232"}
 subset: gard_rare {source="GARD:0025662", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -544304,21 +544389,27 @@ subset: orphanet {source="Orphanet:684226"}
 subset: orphanet_rare {source="Orphanet:684226"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "autosomal dominant mental retardation 51" RELATED DEPRECATED []
-synonym: "intellectual disability, autosomal dominant 51" EXACT [OMIM:617788]
-synonym: "mental retardation, autosomal dominant 51" RELATED DEPRECATED []
-synonym: "MRD51" RELATED DEPRECATED []
+synonym: "autosomal dominant mental retardation 51" EXACT DEPRECATED []
+synonym: "intellectual disability, autosomal dominant 51" EXACT [MEDGEN:1625009]
+synonym: "intellectual disability-hypotonia-facial dysmorphism-macrocephaly syndrome" EXACT [https://orcid.org/0000-0001-9310-0163, Orphanet:684226]
+synonym: "KMT5B haploinsufficiency neurodevelopmental disorder" EXACT [https://orcid.org/0000-0001-9310-0163, Orphanet:684226]
+synonym: "KMT5B-related disorder" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:41153391]
+synonym: "KMT5B-related neurodevelopmental disorder" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:38571636]
+synonym: "KMT5B-related syndrome" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:41153391]
+synonym: "mental retardation, autosomal dominant 51" EXACT [OMIM:617788]
+synonym: "MRD51" EXACT ABBREVIATION [OMIM:617788]
 xref: DOID:0080232 {source="MONDO:equivalentTo"}
 xref: GARD:0025662 {source="MONDO:GARD"}
 xref: MEDGEN:1625009 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:617788 {source="DOID:0080232", source="MONDO:equivalentTo"}
 xref: Orphanet:684226 {source="MONDO:equivalentTo"}
 xref: UMLS:C4540474 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1625009"}
-is_a: MONDO:0015802 {source="DOID:0080232", source="OMIM:617788"} ! autosomal dominant non-syndromic intellectual disability
 is_a: MONDO:0100172 {source="OMIM:617788"} ! intellectual disability, autosomal dominant
+relationship: excluded_subClassOf MONDO:0015802 {source="DOID:0080232", source="OMIM:617788", source="Orphanet:684226", source="PMID:28191889", source="PMID:36897941", source="https://orcid.org/0000-0002-7638-4659"} ! autosomal dominant non-syndromic intellectual disability
 relationship: has_characteristic HP:0000006 ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/24283 {source="OMIM:617788"} ! KMT5B
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_dominant_51" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10564" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10590" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 
@@ -550065,8 +550156,12 @@ xref: GARD:0025735 {source="MONDO:GARD"}
 xref: OMIM:618447 {source="MONDO:equivalentTo"}
 is_a: MONDO:0003847 {source="OMIM:618447"} ! hereditary disease
 is_a: MONDO:0019171 {source="OMIM:618447"} ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:618447"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1390 ! CACNA1C
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1390 {source="OMIM:618447"} ! CACNA1C
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_8" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 
 [Term]
 id: MONDO:0032757
@@ -552930,7 +553025,7 @@ subset: omim {source="OMIM:618782"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "long QT syndrome 16" EXACT [DOID:0070533, OMIM:618782] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "LQT16" RELATED ABBREVIATION []
+synonym: "LQT16" EXACT ABBREVIATION [OMIM:618782]
 xref: DOID:0070533 {source="MONDO:equivalentTo"}
 xref: GARD:0025773 {source="MONDO:GARD"}
 xref: MEDGEN:1713991 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -552939,7 +553034,12 @@ xref: UMLS:C5394068 {source="MEDGEN:1713991", source="MONDO:equivalentTo", sourc
 is_a: MONDO:0003847 {source="OMIM:618782"} ! hereditary disease
 is_a: MONDO:0017990 {source="OMIM:618782"} ! catecholaminergic polymorphic ventricular tachycardia
 is_a: MONDO:0019171 {source="OMIM:618782"} ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:618782"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1449
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1449 {source="OMIM:618782"}
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_16" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 
 [Term]
 id: MONDO:0032916
@@ -585177,8 +585277,12 @@ xref: OMIM:192500 {source="DOID:0110644", source="Orphanet:101016", source="MOND
 xref: SCTID:20852007 {source="MONDO:equivalentTo"}
 xref: UMLS:C4551647 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1641146"}
 is_a: MONDO:0019171 {source="OMIM:192500", source="Orphanet:101016"} ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:192500"} ! isolated congenital long QT syndrome
+intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6294 ! KCNQ1
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6294 {source="OMIM:192500"} ! KCNQ1
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 
 [Term]
@@ -598478,6 +598582,9 @@ xref: MEDGEN:331449 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:600919 {source="MONDO:includedEntryInOMIM"}
 xref: UMLS:C1833154 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:331449"}
 is_a: MONDO:0019171 {source="https://orcid.org/0000-0001-5208-3432"} ! familial long QT syndrome
+is_a: MONDO:1060291 {source="OMIM:600919"} ! isolated congenital long QT syndrome
+property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_4" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5507" xsd:anyURI
 
 [Term]
@@ -702820,6 +702927,72 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10608" xsd:anyURI
 
 [Term]
+id: MONDO:1060291
+name: isolated congenital long QT syndrome
+def: "A form of familial long QT syndrome (LQTS) characterized by syncopal episodes and electrocardiographic abnormalities (QT prolongation, T-wave abnormalities and torsade de pointes (TdP) ventricular tachycardia)." [Orphanet:101016]
+subset: ordo_disorder {source="Orphanet:101016"}
+subset: orphanet {source="Orphanet:101016"}
+subset: orphanet_rare {source="Orphanet:101016"}
+synonym: "isolated congenital LQTS" EXACT [Orphanet:101016]
+synonym: "Romano-Ward long QT syndrome" EXACT [Orphanet:101016]
+synonym: "Romano-Ward syndrome" EXACT [https://medlineplus.gov/genetics/condition/romano-ward-syndrome/, https://orcid.org/0000-0001-9310-0163]
+xref: Orphanet:101016 {source="OMIM:192500", source="MONDO:equivalentTo"}
+is_a: MONDO:0019171 {source="Orphanet:101016", source="https://orcid.org/0000-0001-9310-0163"} ! familial long QT syndrome
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
+
+[Term]
+id: MONDO:1060292
+name: acquired long QT syndrome
+def: "A long QT syndrome characterized by pathologic excessive prolongation of the QT interval, upon exposure to an environmental stressor, with reversion back to normal following removal of the stressor. It is most often due to specific drugs or metabolic abnormalities, such as hypokalemia or hypomagnesemia." [PMID:22593664, PMID:26715165]
+synonym: "aLQTS" EXACT ABBREVIATION [PMID:26715165, PMID:37969211]
+is_a: MONDO:0002442 {source="PMID:22593664", source="PMID:37969211", source="https://orcid.org/0000-0001-9310-0163"} ! long QT syndrome
+intersection_of: MONDO:0002442 ! long QT syndrome
+intersection_of: has_characteristic MONDO:0021141 ! acquired
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
+
+[Term]
+id: MONDO:1060293
+name: BMPR1B-related fibular hypoplasia and complex brachydactyly
+def: "An autosomal recessive acromesomelic dysplasia in which the cause of the disease is a hypomorphic mutation in the BMPR1B gene. It belongs to a spectrum of skeletal dysplasias characterized by short stature, severe acromesomelic shortening of the limbs, and normal axial skeleton." [PMID:26105076, PMID:36779427]
+synonym: "fibular hypoplasia and complex brachydactyly (Du Pan), BMPR1B-related" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:36779427]
+is_a: MONDO:0019696 {source="PMID:26105076", source="PMID:36779427", source="https://orcid.org/0000-0001-9310-0163"} ! acromesomelic dysplasia
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1077 {source="PMID:26105076", source="PMID:36779427"} ! BMPR1B
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
+
+[Term]
+id: MONDO:1060298
+name: VWF-related von Willebrand disease
+def: "A hereditary von Willebrand disease caused by pathogenic variation in VWF, resulting in abnormalities of von Willebrand factor quantity or function that impair hemostasis. VWF-related von Willebrand disease encompasses both quantitative deficiencies of VWF and qualitative defects affecting VWF-mediated platelet adhesion, platelet interaction, or factor VIII binding." [https://clinicalgenome.org/affiliation/50051/]
+synonym: "VWF-related von Willebrand disease" EXACT [https://clinicalgenome.org/affiliation/50051/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+is_a: MONDO:0019565 {source="Orphanet:903", source="PMID:16889557", source="https://clinicalgenome.org/affiliation/50051/"} ! hereditary von Willebrand disease
+intersection_of: MONDO:0019565 ! hereditary von Willebrand disease
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/12726 ! VWF
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/12726 {source="PMID:16889557"} ! VWF
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10494" xsd:anyURI
+
+[Term]
+id: MONDO:1060299
+name: VWF-related quantitative von Willebrand disease
+def: "VWF-related quantitative von Willebrand disease is characterized by decreased circulating VWF levels and impaired primary hemostasis, and includes both partial quantitative deficiency (von Willebrand disease type 1) and virtually complete quantitative deficiency (von Willebrand disease type 3)." [https://clinicalgenome.org/affiliation/50051/]
+synonym: "VWF-related quantitative von Willebrand disease" EXACT [https://clinicalgenome.org/affiliation/50051/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+is_a: MONDO:1060298 {source="PMID:16889557", source="PMID:31968368", source="https://clinicalgenome.org/affiliation/50051/"} ! VWF-related von Willebrand disease
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10494" xsd:anyURI
+
+[Term]
+id: MONDO:1060300
+name: VWF-related von Willebrand disease with decreased platelet tethering
+def: "A VWF-related qualitative von Willebrand disease in which pathogenic variation in VWF reduces the ability of von Willebrand factor to support platelet tethering and adhesion under conditions of vascular injury." [https://clinicalgenome.org/affiliation/50051/, PMID:16889557, PMID:41610306]
+synonym: "VWF-related von Willebrand disease with decreased platelet tethering" EXACT [https://clinicalgenome.org/affiliation/50051/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+is_a: MONDO:0013304 {source="PMID:16889557", source="PMID:41610306", source="https://clinicalgenome.org/affiliation/50051/"} ! von Willebrand disease 2
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10494" xsd:anyURI
+
+[Term]
 id: MONDO:1060303
 name: DNAJC17 deficiency
 def: "Any inborn error of immunity in which the cause of the disease is a variation in the DNAJC17 gene. It is characterized by retinopathy, combined immunodeficiency, and TNF-driven autoinflammation responsive to targeted TNF blockade." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:42495638]
@@ -702836,6 +703009,7 @@ relationship: has_characteristic HP:0000007 {source="PMID:26355662", source="PMI
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/25556 {source="PMID:26355662", source="PMID:42495638"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10632" xsd:anyURI
+
 
 [Term]
 id: MONDO:1061000
