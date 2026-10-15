@@ -165257,7 +165257,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/failure
 [Term]
 id: MONDO:0007435
 name: dentatorubral-pallidoluysian atrophy
-def: "Dentatorubral pallidoluysian atrophy (DRPLA) is a rare subtype of type I autosomal dominant cerebellar ataxia (ADCA type I). It is characterized by involuntary movements, ataxia, epilepsy, mental disorders, cognitive decline and prominent anticipation." [Orphanet:101]
+def: "A progressive neurodegenerative disease caused by expanded CAG repeats in the ATN1 gene. It is characterized by involuntary movements, ataxia, epilepsy, mental disorders, cerebellar atrophy, and cognitive decline. Neuropathological changes consist of combined degeneration of the dentatorubral and pallidoluysian systems. Affected individuals mostly have heterozygous expanded CAG repeat units (usually with lengths of 48 tandem repeat units or more) in exon 5 of the ATN1 gene. Clinical presentation and onset depend on the size of the repeat due to the toxicity threshold of the expanded polyglutamine (polyQ) tract in the ATN1 gene product." [https://clinicalgenome.org/affiliation/40155/, Orphanet:101, PMID:20301664]
 subset: doid {source="DOID:0060162"}
 subset: doid_rare {source="DOID:0060162"}
 subset: gard_rare {source="GARD:0005643", source="MONDO:GARD"}
@@ -165270,6 +165270,7 @@ subset: orphanet {source="Orphanet:101"}
 subset: orphanet_rare {source="Orphanet:101"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
+synonym: "ATN1-related dentatorubral-pallidoluysian atrophy" EXACT [https://clinicalgenome.org/affiliation/40155/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "dentatorubral-pallidoluysian atrophy" EXACT [DOID:0060162, NCIT:C122653, OMIM:125370]
 synonym: "Dentatorubropallidoluysian atrophy" EXACT [NCIT:C122653, Orphanet:101]
 synonym: "DRPLA" EXACT ABBREVIATION [DOID:0060162, NCIT:C122653, OMIM:125370, Orphanet:101]
@@ -165297,6 +165298,7 @@ is_a: MONDO:0019794 {source="Orphanet:101"} ! autosomal dominant cerebellar atax
 relationship: disease_has_feature HP:0002503 ! Spinocerebellar tract degeneration
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3033 {source="OMIM:125370"} ! ATN1
 property_value: curated_content_resource "https://www.malacards.org/card/dentatorubral_pallidoluysian_atrophy" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10386" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/5643/dentatorubral-pallidoluysian-atrophy" xsd:anyURI {source="GARD:0005643"}
 
 [Term]
