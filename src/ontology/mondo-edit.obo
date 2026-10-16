@@ -273486,9 +273486,11 @@ is_a: MONDO:0000508 {source="MONDO:Redundant", source="Orphanet:487825", source=
 is_a: MONDO:0003847 {source="https://orcid.org/0000-0001-5208-3432"} ! hereditary disease
 is_a: MONDO:0015159 {source="Orphanet:487825"} ! multiple congenital anomalies/dysmorphic syndrome-intellectual disability
 is_a: MONDO:0019296 {source="Orphanet:487825"} ! subcutaneous tissue disorder
+is_a: MONDO:1060313 {source="PMID:41444645", source="https://orcid.org/0000-0001-9310-0163"} ! TBL1XR1-related disorder
 relationship: has_characteristic HP:0000006 {source="OMIM:602342"} ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29529 {source="OMIM:602342"} ! TBL1XR1
 property_value: curated_content_resource "https://www.malacards.org/card/pierpont_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10574" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5588" xsd:anyURI
 
 [Term]
@@ -372052,7 +372054,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/trichot
 [Term]
 id: MONDO:0014842
 name: intellectual developmental disorder, autosomal dominant 41
-def: "Any autosomal dominant non-syndromic intellectual disability in which the cause of the disease is a mutation in the TBL1XR1 gene." [MONDO:patterns/disease_series_by_gene]
+def: "Any autosomal dominant non-syndromic intellectual disability in which the cause of the disease is a variation in the TBL1XR1 gene." [MONDO:patterns/disease_series_by_gene, OMIM:616944]
 subset: doid {source="DOID:0070071"}
 subset: gard_rare {source="GARD:0025023", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -372060,25 +372062,26 @@ subset: omim {source="OMIM:616944"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "autosomal dominant intellectual disability 41" EXACT []
-synonym: "autosomal dominant non-syndromic intellectual disability caused by mutation in TBL1XR1" EXACT [MONDO:design_pattern]
-synonym: "intellectual disability, autosomal dominant 41" EXACT [OMIM:616944] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "intellectual disability, autosomal dominant 41" EXACT [OMIM:616944]
 synonym: "intellectual disability, autosomal dominant type 41" EXACT []
-synonym: "mental retardation, autosomal dominant 41" EXACT DEPRECATED [OMIM:616944]
+synonym: "mental retardation, autosomal dominant 41" EXACT [OMIM:616944]
 synonym: "mental retardation, autosomal dominant type 41" EXACT DEPRECATED []
 synonym: "MRD41" EXACT ABBREVIATION [DOID:0070071, OMIM:616944]
-synonym: "TBL1XR1 autosomal dominant non-syndromic intellectual disability" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
+synonym: "TBL1XR1 autosomal dominant non-syndromic intellectual disability" EXACT [https://orcid.org/0000-0001-9310-0163]
 xref: DOID:0070071 {source="MONDO:equivalentTo"}
 xref: GARD:0025023 {source="MONDO:GARD"}
 xref: MEDGEN:934751 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:616944 {source="MONDO:equivalentTo", source="DOID:0070071"}
 xref: UMLS:C4310784 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:934751"}
-is_a: MONDO:0015802 {source="DC-OMIM:616944", source="DOID:0070071", source="MONDO:Redundant", source="OMIM:616944"} ! autosomal dominant non-syndromic intellectual disability
+is_a: MONDO:0015802 {source="DC-OMIM:616944", source="DOID:0070071", source="MONDO:Redundant", source="OMIM:616944", source="PMID:28687524"} ! autosomal dominant non-syndromic intellectual disability
 is_a: MONDO:0100172 {source="OMIM:616944"} ! intellectual disability, autosomal dominant
+is_a: MONDO:1060313 {source="PMID:38378692", source="https://orcid.org/0000-0001-9310-0163"} ! TBL1XR1-related disorder
 intersection_of: MONDO:0015802 ! autosomal dominant non-syndromic intellectual disability
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29529 ! TBL1XR1
 relationship: has_characteristic HP:0000006 ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29529 {source="OMIM:616944"} ! TBL1XR1
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_dominant_41" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10574" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10590" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 
@@ -372496,7 +372499,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0014858
 name: intellectual developmental disorder, autosomal dominant 43
-def: "Any autosomal dominant non-syndromic intellectual disability in which the cause of the disease is a mutation in the HIVEP2 gene." [MONDO:patterns/disease_series_by_gene]
+def: "Any autosomal dominant intellectual disability in which the cause of the disease is a variation in the HIVEP2 gene. Common features included neonatal complications, hypotonia, developmental delay, intellectual disability, language impairment, gastroesophageal reflux, and strabismus." [MONDO:patterns/disease_series_by_gene, PMID:34704275, PMID:37441550, PMID:41808101]
 subset: doid {source="DOID:0070073"}
 subset: gard_rare {source="GARD:0013179", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -372504,11 +372507,11 @@ subset: omim {source="OMIM:616977"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "autosomal dominant intellectual disability 43" EXACT []
-synonym: "autosomal dominant intellectual disability-43" RELATED [GARD:0013179]
-synonym: "autosomal dominant non-syndromic intellectual disability caused by mutation in HIVEP2" EXACT [MONDO:design_pattern]
-synonym: "HIVEP2 autosomal dominant non-syndromic intellectual disability" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
-synonym: "HIVEP2-related intellectual disability" RELATED [GARD:0013179]
-synonym: "intellectual disability, autosomal dominant 43" EXACT [OMIM:616977] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "autosomal dominant intellectual disability-43" EXACT [GARD:0013179]
+synonym: "HIVEP2-related disorder" BROAD [https://orcid.org/0000-0001-9310-0163, PMID:34704275, PMID:37441550, PMID:41808101]
+synonym: "HIVEP2-related intellectual disability" EXACT [GARD:0013179, PMID:37441550]
+synonym: "intellectual developmental disorder, autosomal dominant 43" EXACT [OMIM:616977]
+synonym: "intellectual disability, autosomal dominant 43" EXACT [MEDGEN:1640004] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "intellectual disability, autosomal dominant type 43" EXACT []
 synonym: "mental retardation, autosomal dominant 43" EXACT DEPRECATED []
 synonym: "mental retardation, autosomal dominant type 43" EXACT DEPRECATED []
@@ -372519,13 +372522,14 @@ xref: MEDGEN:1640004 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:616977 {source="MONDO:equivalentTo", source="DOID:0070073"}
 xref: SCTID:765434008 {source="MONDO:equivalentTo"}
 xref: UMLS:C4707429 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1640004"}
-is_a: MONDO:0015802 {source="DC-OMIM:616977", source="DOID:0070073", source="MONDO:Redundant", source="OMIM:616977"} ! autosomal dominant non-syndromic intellectual disability
 is_a: MONDO:0100172 {source="OMIM:616977"} ! intellectual disability, autosomal dominant
-intersection_of: MONDO:0015802 ! autosomal dominant non-syndromic intellectual disability
+intersection_of: MONDO:0100172 ! intellectual disability, autosomal dominant
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4921 ! HIVEP2
+relationship: excluded_subClassOf MONDO:0015802 {source="DC-OMIM:616977", source="DOID:0070073", source="OMIM:616977", source="PMID:34704275", source="PMID:37441550", source="https://orcid.org/0000-0002-7638-4659"} ! autosomal dominant non-syndromic intellectual disability
 relationship: has_characteristic HP:0000006 ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4921 {source="OMIM:616977"} ! HIVEP2
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_dominant_43" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10573" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10590" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 
@@ -703045,6 +703049,20 @@ relationship: has_characteristic HP:0000007 {source="PMID:37612131", source="PMI
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2438 {source="PMID:37612131", source="PMID:42358053"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10633" xsd:anyURI
+
+[Term]
+id: MONDO:1060313
+name: TBL1XR1-related disorder
+def: "Any disorder in which the cause of the disease is a variation in the TBL1XR1 gene." [https://orcid.org/0000-0001-9310-0163, MONDO:patterns/disease_series_by_gene, PMID:37683765, PMID:38378692, PMID:41444645]
+synonym: "TBL1XR1-related disease" EXACT [PMID:37683765]
+synonym: "TBL1XR1-related disorder" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:38378692]
+synonym: "TBL1XR1-related disorders" EXACT [https://orcid.org/0000-0001-9310-0163]
+is_a: MONDO:0003847 {source="PMID:38378692", source="https://orcid.org/0000-0001-9310-0163"} ! hereditary disease
+intersection_of: MONDO:0003847 ! hereditary disease
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29529 ! TBL1XR1
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29529 {source="PMID:37683765", source="PMID:38378692"} ! TBL1XR1
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10574" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
