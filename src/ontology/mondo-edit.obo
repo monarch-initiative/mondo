@@ -322981,6 +322981,7 @@ is_a: MONDO:0020573 {source="https://orcid.org/0000-0001-5208-3432"} ! inherited
 relationship: excluded_subClassOf MONDO:0000166 {source="OMIM:613002", source="https://orcid.org/0000-0001-5208-3432"} ! encephalopathy, acute, infection-induced
 relationship: excluded_subClassOf MONDO:0012521 {source="Orphanet:1930/btnt", source="https://orcid.org/0000-0001-5208-3432"} ! herpes simplex encephalitis
 relationship: predisposes_towards MONDO:0100198 {source="OMIM:613002"} ! Mendelian encephalopathy
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10644" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4882" xsd:anyURI
 
@@ -345923,20 +345924,24 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0013920
-name: herpes simplex encephalitis, susceptibility to, 3
+name: immunodeficiency 132A
 def: "A Mendelian susceptibility or predisposition to herpes simplex infection induced encephalitis in which the cause of the diseas is a mutation in the TRAF3 gene." [MONDO:patterns/disease_series_by_gene]
 subset: doid {source="DOID:0061101"}
 subset: omim {source="OMIM:614849"}
 subset: predisposition
+synonym: "encephalopathy, acute, infection-induced (herpes-specific), susceptibility to, 5" EXACT [OMIM:614849]
 synonym: "herpes simplex encephalitis caused by mutation in TRAF3" EXACT [MONDO:design_pattern]
 synonym: "herpes simplex encephalitis, susceptibility to, 3" EXACT [OMIM:614849]
 synonym: "Herpes simplex encephalitis, susceptibility to, type 3" EXACT []
-synonym: "IIAE5" RELATED ABBREVIATION []
+synonym: "IIAE5" EXACT ABBREVIATION [OMIM:614849]
+synonym: "IMD132A" EXACT ABBREVIATION [OMIM:614849]
+synonym: "immunodeficiency 132A" EXACT [OMIM:614849]
 synonym: "TRAF3 herpes simplex encephalitis" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 xref: DOID:0061101 {source="MONDO:equivalentTo"}
 xref: MEDGEN:766782 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:614849 {source="MONDO:equivalentTo"}
 xref: UMLS:C3553868 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:766782"}
+is_a: MONDO:0800174 {source="OMIMPS:610551"} ! encephalitis, acute, infection-induced, susceptibility to
 intersection_of: MONDO:0020573 ! inherited disease susceptibility
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/12033 ! TRAF3
 intersection_of: predisposes_towards MONDO:0100198 ! Mendelian encephalopathy
@@ -345945,23 +345950,26 @@ relationship: excluded_subClassOf MONDO:0012521 {source="Orphanet:1930", source=
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/12033 {source="OMIM:614849"} ! TRAF3
 relationship: predisposes_towards MONDO:0100198 {source="OMIM:614849"} ! Mendelian encephalopathy
 property_value: curated_content_resource "https://www.malacards.org/card/immunodeficiency_132a" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10644" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4882" xsd:anyURI
 
 [Term]
 id: MONDO:0013921
-name: herpes simplex encephalitis, susceptibility to, 4
+name: encephalopathy, acute, infection-induced (herpes-specific), susceptibility to, 6
 def: "A Mendelian susceptibility or predisposition to herpes simplex infection induced encephalitis in which the cause of the diseas is a mutation in the TICAM1 gene." [MONDO:patterns/disease_series_by_gene]
 subset: omim {source="OMIM:614850"}
 subset: omim_susceptibility {source="OMIM:614850"}
 subset: predisposition
+synonym: "encephalopathy, acute, infection-induced (herpes-specific), susceptibility to, 6" EXACT [OMIM:614850]
 synonym: "herpes simplex encephalitis caused by mutation in TICAM1" EXACT [MONDO:design_pattern]
 synonym: "herpes simplex encephalitis, susceptibility to, 4" EXACT [OMIM:614850]
 synonym: "Herpes simplex encephalitis, susceptibility to, type 4" EXACT []
-synonym: "IIAE6" RELATED ABBREVIATION []
+synonym: "IIAE6" EXACT ABBREVIATION [OMIM:614850]
 synonym: "TICAM1 herpes simplex encephalitis" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 xref: MEDGEN:766783 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:614850 {source="MONDO:equivalentTo"}
 xref: UMLS:C3553869 {source="MEDGEN:766783", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0800174 {source="OMIMPS:610551"} ! encephalitis, acute, infection-induced, susceptibility to
 intersection_of: MONDO:0020573 ! inherited disease susceptibility
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18348 ! TICAM1
 intersection_of: predisposes_towards MONDO:0100198 ! Mendelian encephalopathy
@@ -345970,6 +345978,7 @@ relationship: excluded_subClassOf MONDO:0012521 {source="Orphanet:1930/btnt", so
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18348 {source="OMIM:614850"} ! TICAM1
 relationship: predisposes_towards MONDO:0100198 {source="OMIM:614850"} ! Mendelian encephalopathy
 property_value: curated_content_resource "https://www.malacards.org/card/encephalopathy_acute_infection_induced_6" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10644" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4882" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5671" xsd:anyURI
 
@@ -367617,19 +367626,22 @@ property_value: curated_content_resource "https://www.malacards.org/card/neurode
 
 [Term]
 id: MONDO:0014680
-name: herpes simplex encephalitis, susceptibility to, 7
+name: encephalopathy, acute, infection-induced (herpes-specific), susceptibility to, 7
 def: "A Mendelian susceptibility or predisposition to herpes simplex infection induced encephalitis in which the cause of the diseas is a mutation in the IRF3 gene." [MONDO:patterns/susceptibility_by_gene]
 subset: omim {source="OMIM:616532"}
 subset: omim_susceptibility {source="OMIM:616532"}
 subset: predisposition
+synonym: "encephalopathy, acute, infection-induced (herpes-specific), susceptibility to, 7" EXACT [OMIM:616532]
 synonym: "herpes simplex encephalitis caused by mutation in IRF3" EXACT [MONDO:design_pattern]
+synonym: "herpes simplex encephalitis, susceptibility to, 5" EXACT [OMIM:616532]
 synonym: "herpes simplex encephalitis, susceptibility to, 7" EXACT []
 synonym: "Herpes simplex encephalitis, susceptibility to, type 7" EXACT []
-synonym: "IIAE7" RELATED ABBREVIATION []
+synonym: "IIAE7" EXACT ABBREVIATION [OMIM:616532]
 synonym: "IRF3 herpes simplex encephalitis" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 xref: MEDGEN:901850 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:616532 {source="MONDO:equivalentTo"}
 xref: UMLS:C4225294 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:901850"}
+is_a: MONDO:0800174 {source="OMIMPS:610551"} ! encephalitis, acute, infection-induced, susceptibility to
 intersection_of: MONDO:0020573 ! inherited disease susceptibility
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6118 ! IRF3
 intersection_of: predisposes_towards MONDO:0100198 ! Mendelian encephalopathy
@@ -367638,6 +367650,7 @@ relationship: excluded_subClassOf MONDO:0012521 {source="Orphanet:1930/btnt", so
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6118 {source="OMIM:616532"} ! IRF3
 relationship: predisposes_towards MONDO:0100198 {source="OMIM:616532", source="https://orcid.org/0000-0001-5208-3432"} ! Mendelian encephalopathy
 property_value: curated_content_resource "https://www.malacards.org/card/encephalopathy_acute_infection_induced_7" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10644" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4882" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5671" xsd:anyURI
 
@@ -531895,18 +531908,20 @@ property_value: curated_content_resource "https://www.malacards.org/card/sick_si
 
 [Term]
 id: MONDO:0024563
-name: herpes simplex encephalitis, susceptibility to, 1
+name: encephalopathy, acute, infection-induced (herpes-specific), susceptibility to, 1
 def: "A Mendelian susceptibility or predisposition to herpes simplex infection induced encephalitis in which the cause of the diseas is a mutation in the UNC93B1 gene." [MONDO:patterns/disease_series_by_gene]
 subset: omim {source="OMIM:610551"}
 subset: omim_susceptibility {source="OMIM:610551"}
 subset: predisposition
+synonym: "encephalopathy, acute, infection-induced (herpes-specific), susceptibility to, 1" EXACT [OMIM:610551]
 synonym: "herpes simplex encephalitis caused by mutation in UNC93B1" EXACT [MONDO:design_pattern]
 synonym: "herpes simplex encephalitis, susceptibility to, 1" EXACT [OMIM:610551]
-synonym: "IIAE1" RELATED ABBREVIATION []
+synonym: "IIAE1" EXACT ABBREVIATION [OMIM:610551]
 synonym: "UNC93B1 herpes simplex encephalitis" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 xref: MEDGEN:413772 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:610551 {source="MONDO:equivalentTo"}
 xref: UMLS:C2750180 {source="MEDGEN:413772", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0800174 {source="OMIMPS:610551"} ! encephalitis, acute, infection-induced, susceptibility to
 intersection_of: MONDO:0020573 ! inherited disease susceptibility
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/13481 ! UNC93B1
 intersection_of: predisposes_towards MONDO:0100198 ! Mendelian encephalopathy
@@ -531915,6 +531930,7 @@ relationship: excluded_subClassOf MONDO:0012521 {source="MONDO:Redundant", sourc
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/13481 {source="OMIM:610551"} ! UNC93B1
 relationship: predisposes_towards MONDO:0100198 {source="OMIM:610551"} ! Mendelian encephalopathy
 property_value: curated_content_resource "https://www.malacards.org/card/encephalopathy_acute_infection_induced_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10644" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4882" xsd:anyURI
 
 [Term]
@@ -703045,6 +703061,20 @@ relationship: has_characteristic HP:0000007 {source="PMID:37612131", source="PMI
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2438 {source="PMID:37612131", source="PMID:42358053"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10633" xsd:anyURI
+
+[Term]
+id: MONDO:1060314
+name: herpes simplex encephalitis due to TMEFF1 deficiency
+def: "An inherited susceptibility to acute infection-induced encephalitis in which the cause is a variation in the TMEFF1 gene, predisposing to herpes simplex encephalitis. Genetic TMEFF1 deficiency allows HSV-1 to rapidly enter cortical neurons." [https://orcid.org/0009-0001-4272-1178, PMID:39048823, PMID:39048830]
+synonym: "herpes simplex encephalitis, susceptibility to, TMEFF1-related" EXACT [https://orcid.org/0009-0001-4272-1178]
+synonym: "TMEFF1 deficiency" RELATED [https://orcid.org/0009-0001-4272-1178, PMID:39048830]
+is_a: MONDO:0800174 {source="PMID:39048830", source="https://orcid.org/0009-0001-4272-1178"} ! encephalitis, acute, infection-induced, susceptibility to
+intersection_of: MONDO:0800174 ! encephalitis, acute, infection-induced, susceptibility to
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11866
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11866 {source="PMID:39048823", source="PMID:39048830"}
+relationship: predisposes_towards MONDO:0012521 {source="PMID:39048830"} ! herpes simplex encephalitis
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10644" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
