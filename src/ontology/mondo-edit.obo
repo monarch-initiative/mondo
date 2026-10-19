@@ -703061,47 +703061,6 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10633" xsd:anyURI
 
 [Term]
-id: MONDO:1060310
-name: MAGIS syndrome, GNAI2-related
-def: "Any inborn error of immunity in which the cause of the disease is a variation in the GNAI2 gene. It is characterized by midline malformations of the brain, anterior pituitary gland dysfunction, growth retardation, immunodysregulation/immunodeficiency, and skeletal defects." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:39298586, PMID:40926810]
-synonym: "GNAI2-related immune dysregulation syndrome" EXACT [https://orcid.org/0009-0001-4272-1178]
-synonym: "MAGIS" EXACT ABBREVIATION [PMID:40926810]
-synonym: "MAGIS syndrome" EXACT [PMID:40926810]
-is_a: MONDO:0002254 {source="PMID:40926810"} ! syndromic disease
-is_a: MONDO:0003778 {source="PMID:39298586", source="PMID:40926810", source="https://orcid.org/0009-0001-4272-1178"} ! inborn error of immunity
-intersection_of: MONDO:0003778 ! inborn error of immunity
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4385 ! GNAI2
-relationship: has_characteristic HP:0000006 {source="PMID:40926810"} ! Autosomal dominant inheritance
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4385 {source="PMID:39298586", source="PMID:40926810"} ! GNAI2
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10640" xsd:anyURI
-
-[Term]
-id: MONDO:1060311
-name: CASP1-related autoinflammatory syndrome
-def: "Any autoinflammatory syndrome in which the cause of the disease is a gain-of-function variation in the CASP1 gene. It is characterized by systemic juvenile idiopathic arthritis and recurrent macrophage activation syndrome, with elevated IL-1beta and IL-18, and progressive interstitial lung disease." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:32556329]
-synonym: "CASP1 gain-of-function autoinflammatory disease" EXACT [https://orcid.org/0009-0001-4272-1178]
-is_a: MONDO:0019751 {source="PMID:32556329", source="https://orcid.org/0009-0001-4272-1178"} ! autoinflammatory syndrome
-intersection_of: MONDO:0019751 ! autoinflammatory syndrome
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1499
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1499 {source="PMID:32556329"}
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10641" xsd:anyURI
-
-[Term]
-id: MONDO:1060312
-name: inborn error of immunity due to STXBP3 deficiency
-def: "Any inborn error of immunity in which the cause of the disease is a variation in the STXBP3 gene. It is characterized by medically refractory infantile-onset IBD, bilateral sensorineural hearing loss and, in the majority, recurrent infections." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:33891011]
-synonym: "STXBP3-related very early onset inflammatory bowel disease with hearing loss and immune dysregulation" EXACT [https://orcid.org/0009-0001-4272-1178]
-is_a: MONDO:0003778 {source="PMID:33891011", source="https://orcid.org/0009-0001-4272-1178"} ! inborn error of immunity
-is_a: MONDO:0005265 {source="PMID:33891011"} ! inflammatory bowel disease
-intersection_of: MONDO:0003778 ! inborn error of immunity
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11446
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11446 {source="PMID:33891011", source="PMID:40575033"}
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10643" xsd:anyURI
-
-[Term]
 id: MONDO:1060305
 name: combined immunodeficiency due to SIT1 deficiency
 def: "Any combined immunodeficiency in which the cause of the disease is a variation in the SIT1 gene." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:42128181]
@@ -703163,6 +703122,47 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3697 {source="PMID:41920357"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10638" xsd:anyURI
+
+[Term]
+id: MONDO:1060310
+name: MAGIS syndrome, GNAI2-related
+def: "Any inborn error of immunity in which the cause of the disease is a variation in the GNAI2 gene. It is characterized by midline malformations of the brain, anterior pituitary gland dysfunction, growth retardation, immunodysregulation/immunodeficiency, and skeletal defects." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:39298586, PMID:40926810]
+synonym: "GNAI2-related immune dysregulation syndrome" EXACT [https://orcid.org/0009-0001-4272-1178]
+synonym: "MAGIS" EXACT ABBREVIATION [PMID:40926810]
+synonym: "MAGIS syndrome" EXACT [PMID:40926810]
+is_a: MONDO:0002254 {source="PMID:40926810"} ! syndromic disease
+is_a: MONDO:0003778 {source="PMID:39298586", source="PMID:40926810", source="https://orcid.org/0009-0001-4272-1178"} ! inborn error of immunity
+intersection_of: MONDO:0003778 ! inborn error of immunity
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4385 ! GNAI2
+relationship: has_characteristic HP:0000006 {source="PMID:40926810"} ! Autosomal dominant inheritance
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4385 {source="PMID:39298586", source="PMID:40926810"} ! GNAI2
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10640" xsd:anyURI
+
+[Term]
+id: MONDO:1060311
+name: CASP1-related autoinflammatory syndrome
+def: "Any autoinflammatory syndrome in which the cause of the disease is a gain-of-function variation in the CASP1 gene. It is characterized by systemic juvenile idiopathic arthritis and recurrent macrophage activation syndrome, with elevated IL-1beta and IL-18, and progressive interstitial lung disease." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:32556329]
+synonym: "CASP1 gain-of-function autoinflammatory disease" EXACT [https://orcid.org/0009-0001-4272-1178]
+is_a: MONDO:0019751 {source="PMID:32556329", source="https://orcid.org/0009-0001-4272-1178"} ! autoinflammatory syndrome
+intersection_of: MONDO:0019751 ! autoinflammatory syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1499
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1499 {source="PMID:32556329"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10641" xsd:anyURI
+
+[Term]
+id: MONDO:1060312
+name: inborn error of immunity due to STXBP3 deficiency
+def: "Any inborn error of immunity in which the cause of the disease is a variation in the STXBP3 gene. It is characterized by medically refractory infantile-onset IBD, bilateral sensorineural hearing loss and, in the majority, recurrent infections." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:33891011]
+synonym: "STXBP3-related very early onset inflammatory bowel disease with hearing loss and immune dysregulation" EXACT [https://orcid.org/0009-0001-4272-1178]
+is_a: MONDO:0003778 {source="PMID:33891011", source="https://orcid.org/0009-0001-4272-1178"} ! inborn error of immunity
+is_a: MONDO:0005265 {source="PMID:33891011"} ! inflammatory bowel disease
+intersection_of: MONDO:0003778 ! inborn error of immunity
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11446
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11446 {source="PMID:33891011", source="PMID:40575033"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10643" xsd:anyURI
 
 [Term]
 id: MONDO:1060313
