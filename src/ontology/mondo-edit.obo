@@ -24388,22 +24388,11 @@ property_value: curated_content_resource "https://www.malacards.org/card/periphe
 
 [Term]
 id: MONDO:0001394
-name: chronic erythremia
-comment: This term is scheduled to be merged with MONDO:0009891 acquired polycythemia vera, based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0009891
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
-xref: DOID:11868 {source="MONDO:equivalentObsolete"}
-xref: ICD9:207.1 {source="DOID:11868"}
-xref: SCTID:188753004 {source="DOID:11868"}
-xref: SCTID:190042004 {source="DOID:11868"}
-xref: SCTID:269478004 {source="DOID:11868"}
-xref: SCTID:48292007 {source="DOID:11868"}
-xref: SCTID:92810002 {source="DOID:11868"}
-is_a: MONDO:0005059 {source="DOID:11868"} ! leukemia
+name: obsolete chronic erythremia
+property_value: IAO:0000231 MONDO:TermsMerged
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10390" xsd:anyURI
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+replaced_by: MONDO:0009891
 
 [Term]
 id: MONDO:0001395
@@ -234762,10 +234751,11 @@ property_value: curated_content_resource "https://www.malacards.org/card/gilless
 [Term]
 id: MONDO:0009891
 name: acquired polycythemia vera
-def: "Polycythemia vera (PV) is an acquired myeloproliferative disorder characterized by an elevated absolute red blood cell mass caused by uncontrolled red blood cell production, frequently associated with uncontrolled white blood cell and platelet production." [Orphanet:729]
+def: "An acquired myeloproliferative disorder characterized by an elevated absolute red blood cell mass caused by uncontrolled red blood cell production, frequently associated with uncontrolled white blood cell and platelet production." [Orphanet:729]
 subset: doid {source="DOID:8997"}
 subset: doid_rare {source="DOID:8997"}
 subset: gard_rare {source="GARD:0007422", source="MONDO:GARD"}
+subset: inferred_rare
 subset: ncit {source="NCIT:C3336"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:263300"}
@@ -234775,6 +234765,7 @@ subset: orphanet_rare {source="Orphanet:729"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "acquired primary erythrocytosis" EXACT [Orphanet:729]
+synonym: "chronic erythremia" EXACT [DOID:8997]
 synonym: "Osler-Vaquez disease" EXACT [Orphanet:729]
 synonym: "polycythaemia rubra vera" EXACT [DOID:8997, icd11.foundation:818364947]
 synonym: "polycythemia rubra vera" EXACT [NCIT:C3336, OMIM:263300, Orphanet:729]
@@ -234784,12 +234775,14 @@ synonym: "primary polycythemia" RELATED [GARD:0007422]
 synonym: "PRV" RELATED ABBREVIATION [GARD:0007422]
 synonym: "PV" EXACT ABBREVIATION [OMIM:263300, Orphanet:729]
 synonym: "Vaquez disease" EXACT [icd11.foundation:818364947, Orphanet:729]
+xref: DOID:11868 {source="MONDO:equivalentObsolete"}
 xref: DOID:8997 {source="MONDO:equivalentTo", source="EFO:0002429"}
 xref: EFO:0002429 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: GARD:0007422 {source="MONDO:GARD"}
 xref: ICD10CM:D37-D48 {source="https://github.com/monarch-initiative/mondo/issues/4536", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-4142-7153"}
 xref: ICD10CM:D45 {source="Orphanet:729/e", source="DOID:8997", source="MONDO:equivalentTo", source="Orphanet:729", source="https://orcid.org/0000-0002-1780-5230", source="https://orcid.org/0000-0002-2842-8645"}
 xref: icd11.foundation:818364947 {source="MONDO:equivalentTo", source="Orphanet:729", source="https://orcid.org/0000-0002-4142-7153"}
+xref: ICD9:207.1 {source="DOID:11868"}
 xref: ICD9:238.4 {source="DOID:8997", source="EFO:0002429"}
 xref: ICDO:9950/3 {source="NCIT:C3336"}
 xref: MedDRA:10036057 {source="Orphanet:729/e", source="Orphanet:729"}
@@ -234805,16 +234798,24 @@ xref: SCTID:109992005 {source="DOID:8997"}
 xref: SCTID:128841001 {source="DOID:8997", source="EFO:0002429"}
 xref: SCTID:134182002 {source="DOID:8997"}
 xref: SCTID:154644004 {source="DOID:8997"}
+xref: SCTID:188753004 {source="DOID:11868"}
+xref: SCTID:190042004 {source="DOID:11868"}
+xref: SCTID:269478004 {source="DOID:11868"}
 xref: SCTID:269652000 {source="DOID:8997"}
 xref: SCTID:278190000 {source="DOID:8997"}
 xref: SCTID:31569001 {source="DOID:8997"}
+xref: SCTID:48292007 {source="DOID:11868"}
+xref: SCTID:92810002 {source="DOID:11868"}
 xref: UMLS:C0032463 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:45996"}
 is_a: MONDO:0005571 {source="DOID:8997", source="EFO:0002429", source="NCIT:C3336", source="Orphanet:729"} ! polycythemia
 is_a: MONDO:0020076 {source="EFO:0002429", source="MONDO:Redundant", source="NCIT:C3336", source="ONCOTREE:PV", source="Orphanet:729"} ! myeloproliferative neoplasm
 is_a: MONDO:0020703 {source="NCIT:C3336"} ! erythroid neoplasm
+relationship: excluded_subClassOf MONDO:0005059 {source="DOID:11868", source="https://orcid.org/0000-0002-7638-4659"} ! leukemia
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6192 {source="OMIM:263300"} ! JAK2
 property_value: curated_content_resource "https://www.malacards.org/card/polycythemia_vera" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10390" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0009892
