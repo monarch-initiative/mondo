@@ -703052,6 +703052,18 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10633" xsd:anyURI
 
 [Term]
+id: MONDO:1060306
+name: SH3GL1 deficiency
+def: "Any B cell deficiency in which the cause of the disease is a variation in the SH3GL1 gene." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:39499372]
+synonym: "Endophilin A2 deficiency" EXACT [https://orcid.org/0009-0001-4272-1178, PMID:39499372]
+is_a: MONDO:0002211 {source="PMID:39499372", source="https://orcid.org/0009-0001-4272-1178"} ! B cell deficiency
+intersection_of: MONDO:0002211 ! B cell deficiency
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10830
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10830 {source="PMID:39499372"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10635" xsd:anyURI
+
+[Term]
 id: MONDO:1060313
 name: TBL1XR1-related disorder
 def: "Any disorder in which the cause of the disease is a variation in the TBL1XR1 gene." [https://orcid.org/0000-0001-9310-0163, MONDO:patterns/disease_series_by_gene, PMID:37683765, PMID:38378692, PMID:41444645]
@@ -703064,18 +703076,6 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29529 {source="PMID:37683765", source="PMID:38378692"} ! TBL1XR1
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10574" xsd:anyURI
-
-[Term]
-id: MONDO:1060306
-name: SH3GL1 deficiency
-def: "Any B cell deficiency in which the cause of the disease is a variation in the SH3GL1 gene." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:39499372]
-synonym: "Endophilin A2 deficiency" EXACT [https://orcid.org/0009-0001-4272-1178, PMID:39499372]
-is_a: MONDO:0002211 {source="PMID:39499372", source="https://orcid.org/0009-0001-4272-1178"} ! B cell deficiency
-intersection_of: MONDO:0002211 ! B cell deficiency
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10830
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10830 {source="PMID:39499372"}
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10635" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
