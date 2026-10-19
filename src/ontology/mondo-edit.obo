@@ -703077,6 +703077,44 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10635" xsd:anyURI
 
 [Term]
+id: MONDO:1060307
+name: CD48-related hemophagocytic syndrome
+def: "Any hemophagocytic syndrome in which the cause of the disease is a variation in the CD48 gene." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:31419545, PMID:41984595]
+synonym: "CD48 deficiency" RELATED [https://orcid.org/0009-0001-4272-1178]
+synonym: "CD48-related autoinflammatory syndrome" RELATED [https://orcid.org/0009-0001-4272-1178]
+is_a: MONDO:0015540 {source="PMID:31419545", source="PMID:41984595", source="https://orcid.org/0009-0001-4272-1178"} ! hemophagocytic syndrome
+intersection_of: MONDO:0015540 ! hemophagocytic syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1683
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1683 {source="PMID:31419545", source="PMID:41984595"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10636" xsd:anyURI
+
+[Term]
+id: MONDO:1060308
+name: IRAK2 deficiency
+def: "Any inborn error of immunity in which the cause of the disease is a variation in the IRAK2 gene." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:42168171]
+synonym: "IRAK2-related immune dysregulation" EXACT [https://orcid.org/0009-0001-4272-1178, PMID:42168171]
+is_a: MONDO:0003778 {source="PMID:42168171", source="https://orcid.org/0009-0001-4272-1178"} ! inborn error of immunity
+intersection_of: MONDO:0003778 ! inborn error of immunity
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6113
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6113 {source="PMID:42168171"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10637" xsd:anyURI
+
+[Term]
+id: MONDO:1060309
+name: FGR-related monogenic vasculitis
+def: "Any vasculitis in which the cause of the disease is a variation in the FGR gene." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:41920357]
+synonym: "FGR deficiency" RELATED [https://orcid.org/0009-0001-4272-1178]
+is_a: MONDO:0018882 {source="PMID:41920357", source="https://orcid.org/0009-0001-4272-1178"} ! vasculitis
+is_a: MONDO:0019751 {source="PMID:41920357"} ! autoinflammatory syndrome
+intersection_of: MONDO:0018882 ! vasculitis
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3697
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3697 {source="PMID:41920357"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10638" xsd:anyURI
+
+[Term]
 id: MONDO:1060313
 name: TBL1XR1-related disorder
 def: "Any disorder in which the cause of the disease is a variation in the TBL1XR1 gene." [https://orcid.org/0000-0001-9310-0163, MONDO:patterns/disease_series_by_gene, PMID:37683765, PMID:38378692, PMID:41444645]
