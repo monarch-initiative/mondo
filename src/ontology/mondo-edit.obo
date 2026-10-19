@@ -1873,6 +1873,7 @@ xref: MEDGEN:444071 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C537463 {source="MONDO:equivalentTo"}
 xref: OMIMPS:300345 {source="MONDO:equivalentTo"}
 xref: Orphanet:98938 {source="MONDO:equivalentTo", source="OMIM:300345"}
+xref: SCTID:715771008 {source="MONDO:equivalentTo"}
 xref: UMLS:C2931500 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:444071"}
 is_a: MONDO:0000062 {source="MONDO:Redundant", source="https://orcid.org/0000-0002-6601-2165"} ! isolated microphthalmia
 is_a: MONDO:0001476 {source="MESH:C537463", source="MONDO:Redundant"} ! coloboma
@@ -17487,7 +17488,7 @@ xref: GARD:0022877 {source="MONDO:GARD"}
 xref: ICD9:239.89 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:182690 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C35812 {source="MONDO:equivalentTo"}
-xref: SCTID:127232002 {source="MONDO:equivalentTo", source="DOID:10619"}
+xref: SCTID:127232002 {source="DOID:10619"}
 xref: UMLS:C0948627 {source="MEDGEN:182690", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0000612 {source="DOID:10619", source="MONDO:Entailed", source="MONDO:Redundant"} ! lymphatic system cancer
 is_a: MONDO:0004928 {source="DOID:10619", source="MONDO:Redundant", source="NCIT:C35812/inferred"} ! lymph node disorder
@@ -34679,6 +34680,7 @@ synonym: "warfarin blue toe syndrome" EXACT [https://orcid.org/0000-0002-0587-46
 xref: DOID:14121 {source="MONDO:equivalentTo"}
 xref: MEDGEN:66940 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D018438 {source="MONDO:equivalentTo", source="DOID:14121"}
+xref: SCTID:307406004 {source="MONDO:equivalentTo"}
 xref: UMLS:C0242645 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:66940"}
 is_a: MONDO:0005568 {source="DOID:14121", source="MESH:D018438"} ! cholesterol embolism
 property_value: curated_content_resource "https://www.malacards.org/card/blue_toe_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
@@ -47806,7 +47808,7 @@ xref: ICD9:190.2 {source="DOID:294"}
 xref: ICD9:239.89 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:56315 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C3563 {source="MONDO:equivalentTo", source="DOID:294"}
-xref: SCTID:127004000 {source="MONDO:equivalentTo", source="DOID:294"}
+xref: SCTID:127004000 {source="DOID:294"}
 xref: SCTID:188271007 {source="DOID:294"}
 xref: SCTID:188272000 {source="DOID:294"}
 xref: SCTID:93853008 {source="DOID:294"}
@@ -71703,7 +71705,6 @@ synonym: "tubular apocrine adenoma" EXACT [https://www.ncbi.nlm.nih.gov/pmc/arti
 xref: DOID:5591 {source="MONDO:equivalentTo"}
 xref: NCIT:C27254 {source="MONDO:equivalentObsolete"}
 xref: SCTID:128898008 {source="DOID:5591"}
-xref: SCTID:254709009 {source="MONDO:equivalentTo"}
 is_a: MONDO:0002512 {source="MONDO:Redundant", source="NCIT:C27254"} ! papillary adenocarcinoma
 is_a: MONDO:0024240 {source="DOID:5591", source="MONDO:Redundant", source="NCIT:C27254"} ! eccrine carcinoma
 intersection_of: MONDO:0002512 {source="NCIT:C27254"} ! papillary adenocarcinoma
@@ -85667,6 +85668,7 @@ xref: MESH:D011293 {source="DOID:727", source="MONDO:equivalentTo"}
 xref: SCTID:123076003 {source="DOID:727"}
 xref: SCTID:156026006 {source="DOID:727"}
 xref: SCTID:198407008 {source="DOID:727"}
+xref: SCTID:82639001 {source="MONDO:equivalentTo"}
 xref: UMLS:C0376356 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:87683"}
 is_a: MONDO:0002263 {source="DOID:727"} ! female reproductive system disorder
 is_a: MONDO:1060204 {source="PMID:29489290", source="https://orcid.org/0000-0002-1149-7767"} ! menstrual disorder
@@ -94391,23 +94393,22 @@ id: MONDO:0004573
 name: ariboflavinosis
 def: "A dietary deficiency of riboflavin causing a syndrome chiefly marked by cheilitis, angular stomatitis, glossitis associated with a purplish red or magenta-colored tongue that may show fissures, corneal vascularization, dyssebacia, and anemia. (Dorland, 27th ed)" [MESH:D012257]
 subset: doid {source="DOID:8454"}
-subset: omim {source="OMIM:615026"}
 subset: otar {source="MONDO:OTAR"}
-synonym: "riboflavin deficiency" EXACT [DOID:8454, ICD10CM:E53.0, OMIM:615026]
+synonym: "riboflavin deficiency" EXACT [DOID:8454, ICD10CM:E53.0]
 synonym: "vitamin B2 deficiency" EXACT [DOID:8454, ICD10CM:E53.0]
 xref: DOID:8454 {source="MONDO:equivalentTo"}
 xref: ICD10CM:E53.0 {source="https://orcid.org/0009-0001-6494-4831", source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-5002-8648", source="DOID:8454"}
 xref: ICD9:266.0 {source="MONDO:equivalentTo", source="MONDO:i2s", source="DOID:8454"}
 xref: MEDGEN:1830329 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D012257 {source="DOID:8454"}
-xref: OMIM:615026 {source="MONDO:equivalentTo", source="https://github.com/monarch-initiative/mondo/issues/3272"}
+xref: OMIM:615026 {source="MONDO:mondoIsBroaderThanSource"}
 xref: SCTID:154726004 {source="DOID:8454"}
 xref: SCTID:20307000 {source="MONDO:equivalentTo", source="DOID:8454"}
 xref: SCTID:267492001 {source="DOID:8454"}
 xref: UMLS:C5779638 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1830329"}
 is_a: MONDO:0006873 {source="DOID:8454"} ! nutritional deficiency disease
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30225 {source="OMIM:615026"} ! SLC52A1
 property_value: curated_content_resource "https://www.malacards.org/card/riboflavin_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
 
 [Term]
@@ -105361,8 +105362,9 @@ xref: SCTID:155762006 {source="DOID:8778"}
 xref: SCTID:196981009 {source="DOID:8778"}
 xref: SCTID:196982002 {source="DOID:8778"}
 xref: SCTID:266446008 {source="DOID:8778"}
+xref: SCTID:34000006 {source="MONDO:equivalentTo"}
 xref: SCTID:50440006 {source="DOID:8778"}
-xref: SCTID:7620006 {source="DOID:8778", source="MONDO:equivalentTo"}
+xref: SCTID:7620006 {source="DOID:8778"}
 xref: UMLS:C0010346 {source="MONDO:equivalentTo", source="MEDGEN:3664", source="MONDO:MEDGEN"}
 is_a: MONDO:0005265 {source="DOID:8778", source="EFO:0000384", source="NCIT:C2965"} ! inflammatory bowel disease
 relationship: disease_has_feature HP:0000230 {source="MONDO:Wikidata"} ! Gingivitis
@@ -113672,7 +113674,7 @@ xref: ICD9:314.9 {source="MONDO:equivalentTo", source="MONDO:i2s"}
 xref: MEDGEN:473060 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D001289 {source="MONDO:equivalentTo", source="EFO:0003888", source="DOID:1094"}
 xref: NCIT:C35092 {source="MONDO:equivalentTo", source="DOID:1094"}
-xref: SCTID:406506008 {source="MONDO:equivalentTo", source="EFO:0003888"}
+xref: SCTID:406506008 {source="EFO:0003888"}
 xref: UMLS:C0339002 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:473060"}
 is_a: MONDO:0007743 {source="NCIT:C35092"} ! attention deficit-hyperactivity disorder
 relationship: disease_disrupts NBO:0000455 ! attention behavior
@@ -115495,9 +115497,10 @@ xref: Orphanet:399158 {source="MONDO:equivalentTo"}
 xref: SCTID:156837008 {source="DOID:10159"}
 xref: SCTID:17926002 {source="DOID:10159"}
 xref: SCTID:203487006 {source="DOID:10159"}
-xref: SCTID:240196003 {source="DOID:10159", source="MONDO:equivalentTo"}
+xref: SCTID:240196003 {source="DOID:10159", source="MONDO:equivalentObsolete"}
 xref: SCTID:29281007 {source="DOID:10159"}
 xref: SCTID:34686004 {source="DOID:10159"}
+xref: SCTID:397758007 {source="MONDO:equivalentTo"}
 xref: SCTID:398199007 {source="DOID:10159", source="EFO:0004259"}
 xref: SCTID:43453000 {source="DOID:10159"}
 xref: SCTID:62100001 {source="DOID:10159"}
@@ -116385,6 +116388,7 @@ subset: otar {source="MONDO:OTAR"}
 xref: EFO:0004616 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: MEDGEN:98371 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D020370 {source="MONDO:equivalentTo", source="EFO:0004616"}
+xref: SCTID:239873007 {source="MONDO:equivalentTo"}
 xref: UMLS:C0409959 {source="MEDGEN:98371", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0005178 {source="EFO:0004616", source="MESH:D020370"} ! osteoarthritis
 
@@ -119804,7 +119808,7 @@ xref: ICD9:459.89 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:57437 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D017700 {source="DOID:1461", source="MONDO:equivalentTo"}
 xref: SCTID:10690002 {source="DOID:1461"}
-xref: SCTID:307406004 {source="EFO:0005801", source="MONDO:equivalentTo"}
+xref: SCTID:307406004 {source="EFO:0005801"}
 xref: UMLS:C0149649 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:57437"}
 is_a: MONDO:0005385 {source="DOID:1461", source="MESH:D017700/inferred"} ! vascular disorder
 relationship: disease_has_location UBERON:0001981 {source="EFO:0000784"} ! blood vessel
@@ -120136,7 +120140,8 @@ xref: SCTID:155038005 {source="DOID:1827"}
 xref: SCTID:155043003 {source="DOID:1827"}
 xref: SCTID:192989008 {source="DOID:1827"}
 xref: SCTID:192994008 {source="DOID:1827"}
-xref: SCTID:19598007 {source="MONDO:equivalentTo", source="DOID:1827"}
+xref: SCTID:19598007 {source="DOID:1827"}
+xref: SCTID:36803009 {source="MONDO:equivalentTo"}
 xref: UMLS:C0270850 {source="MEDGEN:75725", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0005027 {source="DOID:1827", source="EFO:0005917", source="MESH:D004829", source="NCIT:C3021"} ! epilepsy
 is_a: MONDO:0100574 {source="https://www.epilepsydiagnosis.org/epilepsy/generalized-epilepsy-groupoverview.html"} ! generalized epilepsy
@@ -121295,7 +121300,7 @@ subset: venom_small_animal {source="VeNom:21946"}
 synonym: "actinobacillosis, NOS" RELATED EXCLUDE []
 xref: DOID:4974 {source="EFO:0007127", source="MONDO:equivalentTo"}
 xref: MESH:D000187 {source="EFO:0007127", source="DOID:4974", source="MONDO:equivalentTo"}
-xref: SCTID:16140007 {source="DOID:4974", source="MONDO:equivalentTo"}
+xref: SCTID:16140007 {source="DOID:4974"}
 xref: VeNom:21946 {source="MONDO:equivalentTo"}
 is_a: MONDO:0005583 {source="MESH:D000187"} ! non-human animal disease
 is_a: MONDO:0024913 ! cattle disease
@@ -129834,7 +129839,7 @@ xref: icd11.foundation:347078862 {source="https://orcid.org/0009-0001-6494-4831"
 xref: MEDGEN:102271 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D013160 {source="MONDO:equivalentTo", source="EFO:0007491", source="DOID:672"}
 xref: NCIT:C3539 {source="MONDO:equivalentTo", source="DOID:672"}
-xref: SCTID:127230005 {source="MONDO:equivalentTo", source="DOID:672"}
+xref: SCTID:127230005 {source="DOID:672"}
 xref: SCTID:187823003 {source="DOID:672"}
 xref: SCTID:254616004 {source="DOID:672"}
 xref: SCTID:363499005 {source="DOID:672"}
@@ -144967,6 +144972,7 @@ synonym: "Actinobacillus infection" RELATED [MESH:D000189]
 synonym: "infection, Actinobacillus" RELATED [MESH:D000189]
 synonym: "infections, Actinobacillus" RELATED [MESH:D000189]
 xref: MESH:D000189 {source="EFO:1000793", source="MONDO:equivalentTo"}
+xref: SCTID:16140007 {source="MONDO:equivalentTo"}
 is_a: MONDO:0005113 {source="EFO:1000793", source="MESH:D000189/inferred", source="MONDO:Redundant"} ! bacterial infectious disease
 intersection_of: MONDO:0005550 ! infectious disease
 intersection_of: disease_has_infectious_agent NCBITaxon:713 ! Actinobacillus
@@ -156421,6 +156427,7 @@ xref: OMIM:105600 {source="Orphanet:98870/e", source="MONDO:equivalentTo", sourc
 xref: Orphanet:98870 {source="MONDO:equivalentTo", source="OMIM:105600"}
 xref: SCTID:26409005 {source="MONDO:equivalentTo"}
 xref: UMLS:C5676874 {source="MEDGEN:1801596", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0000426 {source="OMIM:105600"} ! autosomal dominant disease
 is_a: MONDO:0019403 {source="DC-OMIM:105600", source="DOID:0111399", source="OMIM:105600", source="Orphanet:98870"} ! congenital dyserythropoietic anemia
 relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6392 {source="OMIM:105600"} ! KIF23
@@ -165610,7 +165617,6 @@ xref: MESH:C536347 {source="MONDO:equivalentTo"}
 xref: OMIM:125630 {source="Orphanet:493342", source="MONDO:equivalentTo", source="Orphanet:493348"}
 xref: OMIM:193050 {source="MONDO:equivalentObsolete"}
 xref: Orphanet:493342 {source="MONDO:equivalentTo"}
-xref: SCTID:238694002 {source="MONDO:equivalentTo"}
 is_a: MONDO:0003847 {source="MONDO:indirect"} ! hereditary disease
 is_a: MONDO:0005492 {source="Orphanet:493342", source="Orphanet:493348"} ! urticaria
 is_a: MONDO:0006618 {source="MONDO:Redundant", source="https://orcid.org/0000-0002-6601-2165"} ! vibratory urticaria
@@ -171807,7 +171813,6 @@ xref: NANDO:2200905 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0
 xref: OMIM:139393 {source="DOID:12842", source="MONDO:equivalentTo"}
 xref: SCTID:155082001 {source="DOID:12842"}
 xref: SCTID:267707000 {source="DOID:12842"}
-xref: SCTID:716723000 {source="MONDO:equivalentTo"}
 xref: UMLS:C4083008 {source="MEDGEN:901636", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0005046 ! immune system disorder
 is_a: MONDO:0016218 {source="OMIM:139393", source="https://orcid.org/0000-0001-5208-3432"} ! Guillain-Barre syndrome
@@ -173175,6 +173180,7 @@ xref: EFO:0003888 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: ICD10CM:F90-F98 {source="https://github.com/monarch-initiative/mondo/issues/4536", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-4142-7153"}
 xref: MEDGEN:220387 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C97160 {source="MONDO:equivalentTo"}
+xref: SCTID:406506008 {source="MONDO:equivalentTo"}
 xref: UMLS:C1263846 {source="MEDGEN:220387", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0000592 {source="DOID:1094"} ! specific developmental disorder
 is_a: MONDO:0002025 {source="NCIT:C97160"} ! psychiatric disorder
@@ -182227,7 +182233,7 @@ xref: ICD9:353.5 {source="MONDO:equivalentTo", source="MONDO:i2s", source="DOID:
 xref: MEDGEN:320318 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:162100 {source="MONDO:equivalentTo", source="DOID:10383"}
 xref: SCTID:193113006 {source="DOID:10383"}
-xref: SCTID:26609002 {source="MONDO:equivalentTo", source="DOID:10383"}
+xref: SCTID:26609002 {source="DOID:10383"}
 xref: UMLS:C1834304 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:320318"}
 is_a: MONDO:0006683 {source="DOID:10383"} ! brachial plexus neuropathy
 relationship: excluded_subClassOf MONDO:0017362 {source="Orphanet:2901/btnt", source="https://orcid.org/0000-0001-5208-3432"} ! neuralgic amyotrophy
@@ -184538,7 +184544,6 @@ xref: ICD9:282.1 {source="MONDO:equivalentTo", source="MONDO:i2s"}
 xref: MEDGEN:350649 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:166900 {source="MONDO:equivalentTo", source="Orphanet:98868", source="Orphanet:98868/e"}
 xref: Orphanet:98868 {source="MONDO:equivalentTo"}
-xref: SCTID:191169008 {source="MONDO:equivalentTo"}
 xref: UMLS:C1862322 {source="MEDGEN:350649", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0017319 ! hereditary elliptocytosis
 is_a: MONDO:0020102 {source="Orphanet:98868"} ! hereditary stomatocytosis
@@ -187250,7 +187255,6 @@ xref: MEDGEN:357424 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C536331 {source="MONDO:equivalentTo"}
 xref: OMIM:174310 {source="Orphanet:2917/e", source="MONDO:equivalentTo", source="Orphanet:2917"}
 xref: Orphanet:2917 {source="MONDO:equivalentTo", source="OMIM:174310"}
-xref: SCTID:82639001 {source="MONDO:equivalentTo"}
 xref: UMLS:C1868117 {source="MONDO:equivalentTo", source="MEDGEN:357424", source="MONDO:MEDGEN"}
 is_a: MONDO:0002254 {source="Orphanet:2917"} ! syndromic disease
 property_value: curated_content_resource "https://www.malacards.org/card/polydactyly_postaxial_with_progressive_myopia" xsd:anyURI {source="MONDO:MalaCards"}
@@ -190414,7 +190418,6 @@ xref: icd11.foundation:807338758 {source="MONDO:equivalentTo"}
 xref: ICD9:759.89 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:1675001 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:3107 {source="OMIM:180700", source="MONDO:equivalentTo", source="DOID:0060766"}
-xref: SCTID:76520005 {source="MONDO:equivalentTo"}
 xref: UMLS:C5200540 {source="MEDGEN:1675001", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019978 {source="DC-OMIM:180700", source="DOID:0060766", source="MONDO:Redundant", source="OMIM:180700", source="Orphanet:3107", source="icd11.foundation:807338758"} ! Robinow syndrome
 intersection_of: MONDO:0019978 ! Robinow syndrome
@@ -202275,7 +202278,6 @@ xref: MEDGEN:167087 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C536767 {source="MONDO:equivalentTo", source="Orphanet:3469", source="Orphanet:3469/e"}
 xref: OMIM:207770 {source="MONDO:equivalentTo", source="Orphanet:3469", source="Orphanet:3469/e"}
 xref: Orphanet:3469 {source="MONDO:equivalentTo", source="OMIM:207770"}
-xref: SCTID:277921008 {source="MONDO:equivalentTo"}
 xref: UMLS:C0795952 {source="MEDGEN:167087", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0005560 {source="https://orcid.org/0000-0002-4142-7153"} ! brain disorder
 property_value: curated_content_resource "https://www.malacards.org/card/aprosencephaly_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
@@ -204575,8 +204577,8 @@ subset: ncit_rare {source="NCIT:C85026"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "bulbar palsy, progressive, of childhood" NARROW []
-synonym: "Fazio-Londe disease" NARROW []
+synonym: "bulbar palsy, progressive, of childhood" NARROW [OMIM:211500]
+synonym: "Fazio-Londe disease" NARROW [OMIM:211500]
 synonym: "progressive bulbar atrophy" RELATED [GARD:0010928]
 xref: DOID:681 {source="EFO:0003783", source="MONDO:equivalentTo"}
 xref: EFO:0003783 {source="MONDO:equivalentTo", source="MONDO:EFO"}
@@ -204592,17 +204594,18 @@ xref: SCTID:54304004 {source="EFO:0003783", source="MONDO:equivalentTo", source=
 xref: UMLS:C0030442 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:18290"}
 is_a: MONDO:0002782 {source="NCIT:C85026"} ! cranial nerve palsy
 is_a: MONDO:0006496 {source="EFO:0003783"} ! palsy
-is_a: MONDO:0008891 {source="https://ghr.nlm.nih.gov/condition/riboflavin-transporter-deficiency-neuronopathy"} ! riboflavin transporter deficiency
 relationship: disease_has_location CL:0000100 {source="EFO:0000784"} ! motor neuron
 relationship: disease_has_location UBERON:0002298 ! brainstem
+relationship: excluded_subClassOf MONDO:0008891 {source="DOID:681", source="Orphanet:97229", source="https://ghr.nlm.nih.gov/condition/riboflavin-transporter-deficiency-neuronopathy", source="https://orcid.org/0000-0002-7638-4659"} ! riboflavin transporter deficiency
 property_value: curated_content_resource "https://www.malacards.org/card/progressive_bulbar_palsy" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/127" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10928/progressive-bulbar-palsy" xsd:anyURI {source="GARD:0010928"}
 
 [Term]
 id: MONDO:0008891
 name: riboflavin transporter deficiency
-def: "A progressive motor neuron disorder characterized by respiratory insufficiency, sensorineural deafness and progressive ponto-bulbar palsy." [Orphanet:97229]
+def: "A hereditary motor neuron disease characterized by a peripheral and cranial neuropathy, neuronal loss in anterior horns and atrophy of spinal sensory tracts, causing muscle weakness, sensory loss, diaphragmatic paralysis and respiratory insufficiency, and multiple cranial nerve deficits such as sensorineural hearing loss, bulbar symptoms, and loss of vision due to optic atrophy." [Orphanet:97229]
 subset: doid {source="DOID:0050694"}
 subset: gard_rare {source="GARD:0009993", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD", source="NORD:1960"}
@@ -204614,15 +204617,12 @@ subset: orphanet_rare {source="Orphanet:97229"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "Brown-Vialetto-van Laere syndrome" EXACT [DOID:0050694, OMIMPS:211530, Orphanet:97229]
-synonym: "Brown-Vialetto-Van Laere syndrome 1" NARROW []
-synonym: "BVVLS" RELATED ABBREVIATION [GARD:0009993]
-synonym: "BVVLS1" RELATED ABBREVIATION []
+synonym: "BVVLS" EXACT ABBREVIATION [GARD:0009993]
 synonym: "disorder of riboflavin transmembrane transporter activity" EXACT [MONDO:design_pattern, MONDO:patterns/basis_in_disruption_of_process]
-synonym: "Fazio-Londe syndrome" EXACT [PMID:29473049]
 synonym: "pontobulbar palsy and neurosensory deafness" RELATED [GARD:0009993]
 synonym: "progressive bulbar palsy with sensorineural deafness" RELATED [GARD:0009993]
 synonym: "riboflavin transmembrane transporter activity disease" EXACT [MONDO:design_pattern]
-synonym: "sensorineural hearing loss-pontobulbar palsy syndrome" EXACT []
+synonym: "RTD" EXACT ABBREVIATION [PMID:26072523]
 xref: DOID:0050694 {source="MONDO:equivalentTo"}
 xref: GARD:0009993 {source="MONDO:GARD"}
 xref: ICD10CM:G12.1 {source="Orphanet:97229"}
@@ -204643,6 +204643,7 @@ relationship: excluded_subClassOf MONDO:0019589 {source="Orphanet:97229", source
 relationship: has_characteristic MONDO:0021152 {source="OMIMPS:211530"} ! inherited
 property_value: curated_content_resource "https://www.malacards.org/card/brown_vialetto_van_laere_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/riboflavin_transporter_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/9993/riboflavin-transporter-deficiency" xsd:string
 
 [Term]
@@ -207383,7 +207384,6 @@ xref: NANDO:2200480 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0
 xref: NCIT:C150601 {source="MONDO:equivalentTo"}
 xref: OMIM:215700 {source="DOID:0070340", source="Orphanet:247525", source="MONDO:equivalentTo", source="Orphanet:247525/e"}
 xref: Orphanet:247525 {source="MONDO:equivalentTo", source="OMIM:215700"}
-xref: SCTID:398680004 {source="MONDO:equivalentTo"}
 xref: UMLS:C4721769 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1648491"}
 is_a: MONDO:0015991 {source="DC-OMIM:215700", source="DOID:0070340", source="NCIT:C150601", source="OMIM:215700", source="Orphanet:247525"} ! citrullinemia
 is_a: MONDO:0800153 {source="PMID:33340416"} ! urea cycle disorder or inherited hyperammonemia
@@ -209226,7 +209226,6 @@ xref: ICD9:371.89 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:1720006 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:219150 {source="DOID:0070132", source="Orphanet:35664/e", source="MONDO:equivalentTo", source="Orphanet:35664"}
 xref: Orphanet:35664 {source="DOID:0070132", source="MONDO:equivalentTo", source="OMIM:219150"}
-xref: SCTID:59252009 {source="MONDO:equivalentTo"}
 xref: UMLS:C5234852 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1720006"}
 is_a: MONDO:0017569 {source="DOID:0070132", source="Orphanet:35664"} ! de Barsy syndrome
 is_a: MONDO:0100126 {source="PMID:32017139", source="https://github.com/monarch-initiative/mondo/issues/1444"} ! P5CS deficiency
@@ -211728,7 +211727,6 @@ xref: MEDGEN:347372 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C537998 {source="MONDO:equivalentTo"}
 xref: OMIM:224410 {source="DOID:0090032", source="MONDO:equivalentTo", source="Orphanet:1865", source="Orphanet:1865/e"}
 xref: Orphanet:1865 {source="DOID:0090032", source="MONDO:equivalentTo", source="OMIM:224410"}
-xref: SCTID:93132001 {source="MONDO:equivalentTo"}
 xref: UMLS:C1857100 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:347372"}
 is_a: MONDO:0005516 {source="DOID:0090032"} ! osteochondrodysplasia
 is_a: MONDO:0016151 {source="OMIM:224410"} ! neuromuscular disease caused by qualitative or quantitative defects of perlecan
@@ -213411,7 +213409,7 @@ xref: MESH:C535508 {source="Orphanet:999", source="MONDO:equivalentTo", source="
 xref: MESH:C562663 {source="MONDO:equivalentTo", source="UMLS:C0268501"}
 xref: OMIM:227010 {source="Orphanet:999", source="MONDO:equivalentTo", source="UMLS:C0268501", source="Orphanet:999/e"}
 xref: Orphanet:999 {source="MONDO:equivalentTo", source="OMIM:227010"}
-xref: SCTID:10170007 {source="MONDO:equivalentTo", source="UMLS:C0268501"}
+xref: SCTID:10170007 {source="UMLS:C0268501"}
 xref: UMLS:C1856899 {source="MEDGEN:346466", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0002254 {source="https://orcid.org/0000-0001-5208-3432"} ! syndromic disease
 property_value: curated_content_resource "https://www.malacards.org/card/ermine_phenotype" xsd:anyURI {source="MONDO:MalaCards"}
@@ -214310,7 +214308,6 @@ xref: MEDGEN:1632352 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C562978 {source="MONDO:equivalentTo"}
 xref: NCIT:C176943 {source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-5002-8648"}
 xref: OMIM:228550 {source="MONDO:equivalentTo"}
-xref: SCTID:254146000 {source="MONDO:equivalentTo"}
 xref: UMLS:C4551572 {source="MEDGEN:1632352", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0016824 {source="DC-OMIM:228550", source="MESH:C562978", source="MONDO:Redundant", source="OMIM:228550"} ! infantile myofibromatosis
 intersection_of: MONDO:0016824 ! infantile myofibromatosis
@@ -222376,6 +222373,7 @@ xref: MEDGEN:383721 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C537208 {source="MONDO:equivalentTo", source="Orphanet:2347", source="Orphanet:2347/e"}
 xref: OMIM:245190 {source="MONDO:equivalentTo", source="Orphanet:2347", source="Orphanet:2347/e"}
 xref: Orphanet:2347 {source="MONDO:equivalentTo", source="OMIM:245190"}
+xref: SCTID:93132001 {source="MONDO:equivalentTo"}
 xref: UMLS:C1855605 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:383721"}
 is_a: MONDO:0003847 {source="https://orcid.org/0000-0002-5002-8648"} ! hereditary disease
 is_a: MONDO:0005516 {source="https://orcid.org/0009-0001-6494-4831"} ! osteochondrodysplasia
@@ -226405,7 +226403,6 @@ xref: GARD:0015200 {source="MONDO:GARD"}
 xref: MEDGEN:344410 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C565378 {source="MONDO:equivalentTo"}
 xref: OMIM:251505 {source="MONDO:equivalentTo"}
-xref: SCTID:715771008 {source="MONDO:equivalentTo"}
 xref: UMLS:C1855053 {source="MEDGEN:344410", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0000170 {source="MONDO:0009630/inferred", source="MONDO:Redundant", source="OMIM:251505", source="Orphanet:98938/btnt"} ! microphthalmia, isolated, with coloboma
 property_value: curated_content_resource "https://www.malacards.org/card/microphthalmia_coloboma_4" xsd:anyURI {source="MONDO:MalaCards"}
@@ -233829,9 +233826,8 @@ xref: NORD:65 {source="MONDO:NORD"}
 xref: OMIM:261600 {source="DOID:9281", source="MONDO:equivalentTo", source="Orphanet:716", source="Orphanet:716/e"}
 xref: Orphanet:716 {source="OMIM:261600", source="MONDO:equivalentTo"}
 xref: SCTID:154735006 {source="DOID:9281"}
-xref: SCTID:190687004 {source="DOID:9281"}
+xref: SCTID:190687004 {source="DOID:9281", source="MONDO:equivalentTo"}
 xref: SCTID:297225000 {source="DOID:9281"}
-xref: SCTID:7573000 {source="MONDO:equivalentTo"}
 xref: UMLS:C0031485 {source="MEDGEN:19244", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0004736 {source="DOID:9281", source="MESH:D010661", source="MONDO:indirect"} ! inborn disorder of amino acid metabolism
 is_a: MONDO:0006025 {source="MONDO:Redundant"} ! autosomal recessive disease
@@ -236948,7 +236944,6 @@ xref: DOID:0110892 {source="MONDO:equivalentTo"}
 xref: GARD:0009857 {source="MONDO:GARD"}
 xref: ICD9:555.9 {source="MONDO:equivalentTo", source="MONDO:i2s"}
 xref: OMIM:266600 {source="MONDO:equivalentTo", source="DOID:0110892"}
-xref: SCTID:34000006 {source="MONDO:equivalentTo"}
 is_a: MONDO:0005265 {source="DOID:0110892", source="MONDO:Redundant", source="OMIM:266600"} ! inflammatory bowel disease
 intersection_of: MONDO:0005265 ! inflammatory bowel disease
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5331 ! NOD2
@@ -254896,7 +254891,6 @@ xref: MESH:C536029 {source="DOID:0060246", source="Orphanet:2466", source="Orpha
 xref: NCIT:C129930 {source="MONDO:equivalentTo"}
 xref: OMIM:303350 {source="DOID:0060246", source="Orphanet:2466", source="MONDO:equivalentTo", source="Orphanet:2466/e"}
 xref: Orphanet:2466 {source="DOID:0060246", source="MONDO:equivalentTo", source="OMIM:303350"}
-xref: SCTID:716996008 {source="MONDO:equivalentTo"}
 xref: UMLS:C0795953 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:162894"}
 is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-5002-8648"} ! syndromic disease
 is_a: MONDO:0017140 {source="Orphanet:2466", source="https://www.ncbi.nlm.nih.gov/books/NBK1484/", source="icd11.foundation:1973644723"} ! L1 syndrome
@@ -265504,7 +265498,6 @@ synonym: "epilepsy, idiopathic generalized, susceptibility to, 1" EXACT []
 xref: ICD9:345.10 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:412636 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:600669 {source="MONDO:includedEntryInOMIM"}
-xref: SCTID:36803009 {source="MONDO:equivalentTo"}
 xref: UMLS:C2748799 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:412636"}
 is_a: MONDO:0020573 {source="OMIM:600669"} ! inherited disease susceptibility
 relationship: excluded_subClassOf MONDO:0005579 {source="DC-OMIM:600669", source="MESH:C562694", source="https://orcid.org/0000-0001-5208-3432"} ! idiopathic generalized epilepsy
@@ -269662,7 +269655,6 @@ xref: ICD10CM:D69.4 {source="Orphanet:71290"}
 xref: MESH:C563324 {source="MONDO:equivalentTo"}
 xref: NCIT:C162696 {source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-5002-8648"}
 xref: Orphanet:71290 {source="OMIM:601399", source="MONDO:equivalentTo"}
-xref: SCTID:725034002 {source="MONDO:equivalentTo"}
 is_a: MONDO:0015356 {source="Orphanet:71290"} ! hereditary neoplastic syndrome
 is_a: MONDO:0021181 {source="MESH:C563324", source="MONDO:Redundant", source="MONDO:indirect"} ! inherited blood coagulation disorder
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0011071 {source="MONDO:CLINGEN"}
@@ -273494,9 +273486,11 @@ is_a: MONDO:0000508 {source="MONDO:Redundant", source="Orphanet:487825", source=
 is_a: MONDO:0003847 {source="https://orcid.org/0000-0001-5208-3432"} ! hereditary disease
 is_a: MONDO:0015159 {source="Orphanet:487825"} ! multiple congenital anomalies/dysmorphic syndrome-intellectual disability
 is_a: MONDO:0019296 {source="Orphanet:487825"} ! subcutaneous tissue disorder
+is_a: MONDO:1060313 {source="PMID:41444645", source="https://orcid.org/0000-0001-9310-0163"} ! TBL1XR1-related disorder
 relationship: has_characteristic HP:0000006 {source="OMIM:602342"} ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29529 {source="OMIM:602342"} ! TBL1XR1
 property_value: curated_content_resource "https://www.malacards.org/card/pierpont_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10574" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5588" xsd:anyURI
 
 [Term]
@@ -277580,7 +277574,6 @@ xref: ICD10CM:I49.0 {source="Orphanet:228140"}
 xref: MEDGEN:414502 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C567851 {source="MONDO:equivalentTo"}
 xref: OMIM:603829 {source="MONDO:equivalentTo", source="Orphanet:228140", source="Orphanet:228140/e"}
-xref: SCTID:233915000 {source="MONDO:equivalentTo"}
 xref: UMLS:C2751898 {source="MEDGEN:414502", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0100234 {source="DC-OMIM:603829", source="MESH:C567851"} ! paroxysmal familial ventricular fibrillation
 is_a: MONDO:1010181 {source="https://www.clinicalgenome.org/affiliation/40104/"} ! SCN5A-related cardiac rhythm disorder
@@ -281228,7 +281221,6 @@ xref: GARD:0024804 {source="MONDO:GARD"}
 xref: ICD9:202.80 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:1648388 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:605027 {source="MONDO:equivalentTo"}
-xref: SCTID:118601006 {source="MONDO:equivalentTo"}
 xref: UMLS:C4721532 {source="MEDGEN:1648388", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0018908 {source="Orphanet:547/btnt"} ! non-Hodgkin lymphoma
 property_value: curated_content_resource "https://www.malacards.org/card/lymphoma_non_hodgkin_familial" xsd:anyURI {source="MONDO:MalaCards"}
@@ -317999,7 +317991,6 @@ synonym: "osteoarthritis susceptibility 6" EXACT [OMIM:612401]
 xref: ICD9:715.96 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:1887603 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:612401 {source="MONDO:equivalentTo"}
-xref: SCTID:239873007 {source="MONDO:equivalentTo"}
 xref: UMLS:C6022307 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1887603"}
 is_a: MONDO:0020573 {source="OMIM:612401"} ! inherited disease susceptibility
 relationship: excluded_subClassOf MONDO:0005178 {source="DC-OMIM:612401", source="https://orcid.org/0000-0001-5208-3432"} ! osteoarthritis
@@ -330669,8 +330660,8 @@ property_value: curated_content_resource "https://www.malacards.org/card/spastic
 
 [Term]
 id: MONDO:0013355
-name: congenital dyserythropoietic anemia type 4
-def: "Congenital dyserythropoietic anemia type IV (CDA IV) is a newly discovered form of CDA characterized by ineffective erythropoiesis and hemolysis that leads to severe anemia at birth." [Orphanet:293825]
+name: anemia, congenital dyserythropoietic, type IVa
+def: "An autosomal dominant congenital dyserythropoietic anemia in which the cause of the disease is a variation in the KLF1 gene. It is characterized by ineffective erythropoiesis and hemolysis that leads to severe anemia at birth, requiring repeated transfusions. The majority of affected individuals experience severe hemolytic anemia, often accompanied by a normal or slightly elevated reticulocyte count, hepatosplenomegaly, hyperbilirubinemia, and persistence of fetal hemoglobin. Hypertrophic cardiomyopathy and occasional dysmorphic features, including large anterior fontanel, hypertelorism, micropenis, and hypospadias, have also been reported. All documented cases to date share the same dominant-negative missense variant, E325K, in the KLF1 gene (19p13.2)." [Orphanet:293825]
 subset: doid {source="DOID:0111400"}
 subset: doid_rare {source="DOID:0111400"}
 subset: gard_rare {source="GARD:0017344", source="MONDO:GARD"}
@@ -330681,15 +330672,21 @@ subset: orphanet {source="Orphanet:293825"}
 subset: orphanet_rare {source="Orphanet:293825"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "anemia, congenital dyserythropoietic, type IV" RELATED []
-synonym: "CDA due to KLF1 mutation" EXACT [DOID:0111400, Orphanet:293825]
-synonym: "CDA IV" EXACT ABBREVIATION [DOID:0111400, Orphanet:293825]
-synonym: "CDA type 4" EXACT [DOID:0111400, Orphanet:293825]
-synonym: "CDA type IV" EXACT [DOID:0111400, Orphanet:293825]
-synonym: "CDAN4" EXACT ABBREVIATION [DOID:0111400, Orphanet:293825]
-synonym: "congenital dyserythropoietic anemia due to KLF1 mutation" EXACT [DOID:0111400, Orphanet:293825]
-synonym: "congenital dyserythropoietic anemia type 4" EXACT [DOID:0111400, Orphanet:293825]
-synonym: "dyserythropoietic anemia, congenital, type IV" EXACT []
+synonym: "anemia, congenital dyserythropoietic, type IVa" EXACT [OMIM:613673]
+synonym: "autosomal dominant KLF1-related dyserythropoietic anemia" EXACT [Orphanet:293825]
+synonym: "CDA due to KLF1 mutation" RELATED [DOID:0111400, Orphanet:293825]
+synonym: "CDA IV" RELATED ABBREVIATION [DOID:0111400, Orphanet:293825]
+synonym: "CDA type 4" RELATED [DOID:0111400, Orphanet:293825]
+synonym: "CDA type 4a" EXACT [Orphanet:293825]
+synonym: "CDA type IV" RELATED [DOID:0111400, Orphanet:293825]
+synonym: "CDA type IVa" EXACT [Orphanet:293825]
+synonym: "CDA, type IVa" EXACT [OMIM:613673]
+synonym: "CDAN4" RELATED ABBREVIATION [DOID:0111400, Orphanet:293825]
+synonym: "CDAN4A" EXACT ABBREVIATION [OMIM:613673]
+synonym: "congenital dyserythropoietic anemia due to KLF1 mutation" RELATED [DOID:0111400, Orphanet:293825]
+synonym: "congenital dyserythropoietic anemia type 4" RELATED [DOID:0111400, Orphanet:293825]
+synonym: "congenital dyserythropoietic anemia type IVa" EXACT [DOID:0111400, Orphanet:293825]
+synonym: "dyserythropoietic anemia, congenital, type IV" RELATED []
 xref: DOID:0111400 {source="MONDO:equivalentTo"}
 xref: GARD:0017344 {source="MONDO:GARD"}
 xref: MEDGEN:462276 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -330698,9 +330695,14 @@ xref: Orphanet:293825 {source="OMIM:613673", source="MONDO:equivalentTo"}
 xref: SCTID:719453009 {source="MONDO:equivalentTo"}
 xref: UMLS:C3150926 {source="MONDO:equivalentTo", source="MEDGEN:462276", source="MONDO:MEDGEN"}
 is_a: MONDO:0019403 {source="DC-OMIM:613673", source="DOID:0111400", source="OMIM:613673", source="Orphanet:293825"} ! congenital dyserythropoietic anemia
+intersection_of: MONDO:0019403 ! congenital dyserythropoietic anemia
+intersection_of: has_characteristic HP:0000006 ! Autosomal dominant inheritance
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6345 ! KLF1
+relationship: has_characteristic HP:0000006 {source="OMIM:613673", source="PMID:30872368"} ! Autosomal dominant inheritance
 relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6345 {source="OMIM:613673"} ! KLF1
 property_value: curated_content_resource "https://www.malacards.org/card/anemia_congenital_dyserythropoietic_type_iva" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10570" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 
@@ -344417,7 +344419,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/ceroid_
 [Term]
 id: MONDO:0013867
 name: Brown-Vialetto-van Laere syndrome 2
-def: "Any Brown-Vialetto-van Laere syndrome in which the cause of the disease is a mutation in the SLC52A2 gene." [MONDO:patterns/disease_series_by_gene]
+def: "Any riboflavin transporter deficiency in which the cause of the disease is a mutation in the SLC52A2 gene. It is characterized by early childhood onset of sensorineural deafness, bulbar dysfunction, and severe diffuse muscle weakness and wasting of the upper and lower limbs and axial muscles, resulting in respiratory insufficiency." [MONDO:patterns/disease_series_by_gene, OMIM:614707]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: doid {source="DOID:0080786"}
 subset: doid_rare {source="DOID:0080786"}
@@ -344426,28 +344428,35 @@ subset: ncit {source="NCIT:C183529"}
 subset: ncit_rare {source="NCIT:C183529"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:614707"}
-subset: ordo_subtype_of_a_disorder {source="Orphanet:572550"}
-subset: orphanet {source="Orphanet:572550"}
+subset: ordo_subtype_of_a_disorder {source="Orphanet:572543"}
+subset: orphanet {source="Orphanet:572543"}
 subset: rare
 synonym: "Brown-Vialetto-van Laere syndrome 2" EXACT [DOID:0080786, NCIT:C183529, OMIM:614707] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "Brown-Vialetto-van Laere syndrome caused by mutation in SLC52A2" EXACT [MONDO:design_pattern]
 synonym: "Brown-Vialetto-Van Laere syndrome type 2" EXACT []
 synonym: "BVVLS2" EXACT ABBREVIATION [NCIT:C183529, OMIM:614707]
+synonym: "RFVT2-related riboflavin transporter deficiency" EXACT [Orphanet:572543]
+synonym: "riboflavin transporter deficiency 2" EXACT [Orphanet:572543]
+synonym: "riboflavin transporter deficiency, type 2" EXACT [OMIM:614707]
+synonym: "RTD2" EXACT ABBREVIATION [OMIM:614707, Orphanet:572543, PMID:26072523]
+synonym: "SCABD2" EXACT ABBREVIATION [OMIM:614707]
 synonym: "SLC52A2 Brown-Vialetto-van Laere syndrome" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
+synonym: "spinocerebellar ataxia with blindness and deafness 2" EXACT [OMIM:614707]
 xref: DOID:0080786 {source="MONDO:equivalentTo"}
 xref: GARD:0012861 {source="MONDO:GARD"}
 xref: HGNC:30224 {source="GARD:0012861"}
 xref: MEDGEN:766452 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C183529 {source="MONDO:equivalentTo"}
-xref: OMIM:614707 {source="MONDO:equivalentTo"}
-xref: Orphanet:572550 {source="MONDO:equivalentTo"}
+xref: OMIM:614707 {source="MONDO:equivalentTo", source="Orphanet:572543"}
+xref: Orphanet:572543 {source="MONDO:equivalentTo"}
 xref: UMLS:C3553538 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:766452"}
-is_a: MONDO:0008891 {source="DOID:0080786", source="OMIM:614707", source="Orphanet:572550", source="Orphanet:97229/btnt"} ! riboflavin transporter deficiency
+is_a: MONDO:0008891 {source="DOID:0080786", source="OMIM:614707", source="Orphanet:572543", source="Orphanet:97229/btnt", source="PMID:26072523"} ! riboflavin transporter deficiency
 intersection_of: MONDO:0008891 ! riboflavin transporter deficiency
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30224 ! SLC52A2
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0013867 {source="MONDO:CLINGEN"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30224 {source="OMIM:614707"} ! SLC52A2
 property_value: curated_content_resource "https://www.malacards.org/card/brown_vialetto_van_laere_syndrome_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/12861/brown-vialetto-van-laere-syndrome-2" xsd:anyURI {source="GARD:0012861"}
 
 [Term]
@@ -348590,28 +348599,34 @@ property_value: curated_content_resource "https://www.malacards.org/card/charcot
 [Term]
 id: MONDO:0014013
 name: maternal riboflavin deficiency
+def: "A rare, genetic disorder of metabolite absorption or transport characterized by persistently decreased riboflavin serum levels due to a primary genetic defect in the mother and which leads to clinical and biochemical findings consistent with a secondary, life-threatening, transient multiple acyl-CoA dehydrogenase deficiency (MADD) in the newborn." [Orphanet:411712]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: gard_rare {source="GARD:0017686", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
+subset: omim {source="OMIM:615026"}
 subset: ordo_disorder {source="Orphanet:411712"}
 subset: orphanet {source="Orphanet:411712"}
 subset: orphanet_rare {source="Orphanet:411712"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "maternal riboflavin deficiency" EXACT [Orphanet:411712] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "RBFVD" BROAD ABBREVIATION []
-synonym: "riboflavin deficiency" BROAD []
+synonym: "RBFVD" EXACT ABBREVIATION [OMIM:615026]
+synonym: "riboflavin deficiency" RELATED [OMIM:615026]
+synonym: "riboflavin transporter deficiency, type 1" EXACT [OMIM:615026]
+synonym: "RTD1" EXACT ABBREVIATION [OMIM:615026]
 xref: GARD:0017686 {source="MONDO:GARD"}
 xref: ICD10CM:P00.4 {source="Orphanet:411712"}
 xref: MEDGEN:1657395 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: OMIM:615026 {source="MONDO:equivalentTo", source="Orphanet:411712"}
 xref: Orphanet:411712 {source="OMIM:615026", source="MONDO:equivalentTo"}
 xref: UMLS:C4750953 {source="MEDGEN:1657395", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0004573 {source="https://orcid.org/0000-0002-4142-7153"} ! ariboflavinosis
 is_a: MONDO:0005066 {source="https://orcid.org/0000-0002-1780-5230"} ! metabolic disease
 is_a: MONDO:0017757 {source="PMID:33340416", source="https://orcid.org/0000-0001-5208-3432"} ! disorder of metabolite absorption and transport
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0014013 {source="MONDO:CLINGEN"}
-relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
+relationship: excluded_subClassOf MONDO:0004573 {source="Orphanet:411712", source="PMID:21089064", source="https://orcid.org/0000-0002-4142-7153", source="https://orcid.org/0000-0002-7638-4659"} ! ariboflavinosis
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30225 {source="OMIM:615026", source="Orphanet:411712"} ! SLC52A1
 property_value: curated_content_resource "https://www.malacards.org/card/maternal_riboflavin_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6750" xsd:anyURI
 
 [Term]
@@ -372039,7 +372054,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/trichot
 [Term]
 id: MONDO:0014842
 name: intellectual developmental disorder, autosomal dominant 41
-def: "Any autosomal dominant non-syndromic intellectual disability in which the cause of the disease is a mutation in the TBL1XR1 gene." [MONDO:patterns/disease_series_by_gene]
+def: "Any autosomal dominant non-syndromic intellectual disability in which the cause of the disease is a variation in the TBL1XR1 gene." [MONDO:patterns/disease_series_by_gene, OMIM:616944]
 subset: doid {source="DOID:0070071"}
 subset: gard_rare {source="GARD:0025023", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -372048,9 +372063,9 @@ subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "autosomal dominant intellectual disability 41" EXACT []
 synonym: "autosomal dominant non-syndromic intellectual disability caused by mutation in TBL1XR1" EXACT [MONDO:design_pattern]
-synonym: "intellectual disability, autosomal dominant 41" EXACT [OMIM:616944] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "intellectual disability, autosomal dominant 41" EXACT [OMIM:616944]
 synonym: "intellectual disability, autosomal dominant type 41" EXACT []
-synonym: "mental retardation, autosomal dominant 41" EXACT DEPRECATED [OMIM:616944]
+synonym: "mental retardation, autosomal dominant 41" EXACT [OMIM:616944]
 synonym: "mental retardation, autosomal dominant type 41" EXACT DEPRECATED []
 synonym: "MRD41" EXACT ABBREVIATION [DOID:0070071, OMIM:616944]
 synonym: "TBL1XR1 autosomal dominant non-syndromic intellectual disability" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
@@ -372059,13 +372074,15 @@ xref: GARD:0025023 {source="MONDO:GARD"}
 xref: MEDGEN:934751 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:616944 {source="MONDO:equivalentTo", source="DOID:0070071"}
 xref: UMLS:C4310784 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:934751"}
-is_a: MONDO:0015802 {source="DC-OMIM:616944", source="DOID:0070071", source="MONDO:Redundant", source="OMIM:616944"} ! autosomal dominant non-syndromic intellectual disability
+is_a: MONDO:0015802 {source="DC-OMIM:616944", source="DOID:0070071", source="MONDO:Redundant", source="OMIM:616944", source="PMID:28687524"} ! autosomal dominant non-syndromic intellectual disability
 is_a: MONDO:0100172 {source="OMIM:616944"} ! intellectual disability, autosomal dominant
+is_a: MONDO:1060313 {source="PMID:38378692", source="https://orcid.org/0000-0001-9310-0163"} ! TBL1XR1-related disorder
 intersection_of: MONDO:0015802 ! autosomal dominant non-syndromic intellectual disability
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29529 ! TBL1XR1
 relationship: has_characteristic HP:0000006 ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29529 {source="OMIM:616944"} ! TBL1XR1
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_dominant_41" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10574" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10590" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 
@@ -372483,7 +372500,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0014858
 name: intellectual developmental disorder, autosomal dominant 43
-def: "Any autosomal dominant non-syndromic intellectual disability in which the cause of the disease is a mutation in the HIVEP2 gene." [MONDO:patterns/disease_series_by_gene]
+def: "Any autosomal dominant intellectual disability in which the cause of the disease is a variation in the HIVEP2 gene. Common features included neonatal complications, hypotonia, developmental delay, intellectual disability, language impairment, gastroesophageal reflux, and strabismus." [MONDO:patterns/disease_series_by_gene, PMID:34704275, PMID:37441550, PMID:41808101]
 subset: doid {source="DOID:0070073"}
 subset: gard_rare {source="GARD:0013179", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -372491,11 +372508,11 @@ subset: omim {source="OMIM:616977"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "autosomal dominant intellectual disability 43" EXACT []
-synonym: "autosomal dominant intellectual disability-43" RELATED [GARD:0013179]
-synonym: "autosomal dominant non-syndromic intellectual disability caused by mutation in HIVEP2" EXACT [MONDO:design_pattern]
-synonym: "HIVEP2 autosomal dominant non-syndromic intellectual disability" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
-synonym: "HIVEP2-related intellectual disability" RELATED [GARD:0013179]
-synonym: "intellectual disability, autosomal dominant 43" EXACT [OMIM:616977] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "autosomal dominant intellectual disability-43" EXACT [GARD:0013179]
+synonym: "HIVEP2-related disorder" BROAD [https://orcid.org/0000-0001-9310-0163, PMID:34704275, PMID:37441550, PMID:41808101]
+synonym: "HIVEP2-related intellectual disability" EXACT [GARD:0013179, PMID:37441550]
+synonym: "intellectual developmental disorder, autosomal dominant 43" EXACT [OMIM:616977]
+synonym: "intellectual disability, autosomal dominant 43" EXACT [MEDGEN:1640004] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "intellectual disability, autosomal dominant type 43" EXACT []
 synonym: "mental retardation, autosomal dominant 43" EXACT DEPRECATED []
 synonym: "mental retardation, autosomal dominant type 43" EXACT DEPRECATED []
@@ -372506,13 +372523,14 @@ xref: MEDGEN:1640004 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:616977 {source="MONDO:equivalentTo", source="DOID:0070073"}
 xref: SCTID:765434008 {source="MONDO:equivalentTo"}
 xref: UMLS:C4707429 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1640004"}
-is_a: MONDO:0015802 {source="DC-OMIM:616977", source="DOID:0070073", source="MONDO:Redundant", source="OMIM:616977"} ! autosomal dominant non-syndromic intellectual disability
 is_a: MONDO:0100172 {source="OMIM:616977"} ! intellectual disability, autosomal dominant
-intersection_of: MONDO:0015802 ! autosomal dominant non-syndromic intellectual disability
+intersection_of: MONDO:0100172 ! intellectual disability, autosomal dominant
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4921 ! HIVEP2
+relationship: excluded_subClassOf MONDO:0015802 {source="DC-OMIM:616977", source="DOID:0070073", source="OMIM:616977", source="PMID:34704275", source="PMID:37441550", source="https://orcid.org/0000-0002-7638-4659"} ! autosomal dominant non-syndromic intellectual disability
 relationship: has_characteristic HP:0000006 ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4921 {source="OMIM:616977"} ! HIVEP2
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_dominant_43" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10573" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10590" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 
@@ -397810,9 +397828,10 @@ xref: MESH:D020159 {source="Orphanet:187/e", source="MONDO:equivalentTo", source
 xref: NCIT:C84639 {source="MONDO:equivalentTo", source="DOID:9273"}
 xref: OMIMPS:215700 {source="MONDO:equivalentTo"}
 xref: Orphanet:187 {source="MONDO:equivalentTo", source="DOID:9273"}
-xref: SCTID:124711003 {source="MONDO:equivalentTo", source="DOID:9273"}
+xref: SCTID:124711003 {source="DOID:9273"}
 xref: SCTID:15489004 {source="DOID:9273"}
 xref: SCTID:398630005 {source="DOID:9273"}
+xref: SCTID:398680004 {source="MONDO:equivalentTo"}
 xref: UMLS:C0175683 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:104491"}
 is_a: MONDO:0004739 {source="DOID:9273", source="MESH:D020159", source="MONDO:Redundant", source="NCIT:C84639", source="Orphanet:187"} ! urea cycle disorder
 relationship: has_characteristic MONDO:0021152 {source="OMIMPS:215700", source="https://orcid.org/0000-0002-4142-7153"} ! inherited
@@ -404558,7 +404577,7 @@ xref: MEDGEN:83289 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C536122 {source="Orphanet:215", source="MONDO:equivalentTo", source="Orphanet:215/e"}
 xref: OMIMPS:310500 {source="MONDO:equivalentTo", source="DOID:0050534"}
 xref: Orphanet:215 {source="MONDO:equivalentTo", source="DOID:0050534"}
-xref: SCTID:193687000 {source="MONDO:equivalentTo", source="DOID:0050534", source="DOID:8498"}
+xref: SCTID:193687000 {source="DOID:0050534", source="DOID:8498"}
 xref: SCTID:193688005 {source="DOID:0050534", source="DOID:8498"}
 xref: SCTID:193689002 {source="DOID:0050534", source="DOID:8498"}
 xref: SCTID:232061009 {source="MONDO:equivalentTo"}
@@ -412290,8 +412309,8 @@ xref: SCTID:189940004 {source="DOID:3565"}
 xref: SCTID:189941000 {source="DOID:3565"}
 xref: SCTID:189945009 {source="DOID:3565"}
 xref: SCTID:269643009 {source="DOID:3565"}
-xref: SCTID:302820008 {source="DOID:3565", source="MONDO:equivalentTo"}
-xref: SCTID:393566004 {source="DOID:3565"}
+xref: SCTID:302820008 {source="DOID:3565"}
+xref: SCTID:393566004 {source="DOID:3565", source="MONDO:equivalentTo"}
 xref: UMLS:C0025286 {source="MEDGEN:7532", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0016743 {source="NCIT:C3230", source="ONCOTREE:MNG", source="Orphanet:2495"} ! tumor of meninges
 property_value: curated_content_resource "https://www.malacards.org/card/meningioma" xsd:anyURI {source="MONDO:MalaCards"}
@@ -416772,6 +416791,7 @@ xref: NORD:1301 {source="MONDO:NORD"}
 xref: OMIMPS:228550 {source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-6601-2165"}
 xref: ONCOTREE:IMS {source="MONDO:equivalentTo"}
 xref: Orphanet:2591 {source="MONDO:equivalentTo", source="DOID:0080109"}
+xref: SCTID:254146000 {source="MONDO:equivalentTo"}
 xref: UMLS:C0432284 {source="MEDGEN:140933", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0000654 {source="DOID:0080109", source="NCIT:C3742/inferred"} ! benign connective and soft tissue neoplasm
 is_a: MONDO:0003342 {source="NCIT:C3742"} ! benign perivascular tumor
@@ -423258,6 +423278,7 @@ xref: icd11.foundation:1457804873 {source="MONDO:equivalentTo"}
 xref: MEDGEN:1830362 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NORD:1343 {source="MONDO:NORD"}
 xref: Orphanet:275543 {source="MONDO:equivalentTo"}
+xref: SCTID:716996008 {source="MONDO:equivalentTo"}
 xref: UMLS:C5779710 {source="MEDGEN:1830362", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0021147 {source="MONDO:0017122-obsoleted"} ! disorder of development or morphogenesis
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0017140 {source="MONDO:CLINGEN"}
@@ -427183,7 +427204,8 @@ xref: NCIT:C36293 {source="DOID:2373", source="MONDO:otherHierarchy"}
 xref: NORD:1935 {source="MONDO:NORD"}
 xref: Orphanet:288 {source="DOID:2373", source="MONDO:equivalentTo"}
 xref: SCTID:154801000 {source="DOID:2373"}
-xref: SCTID:178935009 {source="DOID:2373", source="MONDO:equivalentTo"}
+xref: SCTID:178935009 {source="DOID:2373", source="MONDO:equivalentObsolete"}
+xref: SCTID:191169008 {source="MONDO:equivalentTo"}
 xref: SCTID:267558001 {source="DOID:2373"}
 xref: SCTID:58864003 {source="DOID:2373"}
 xref: UMLS:C0013902 {source="MONDO:equivalentTo", source="MEDGEN:41747", source="MONDO:MEDGEN"}
@@ -428158,6 +428180,7 @@ xref: MedDRA:10063020 {source="Orphanet:2901/e", source="Orphanet:2901"}
 xref: MEDGEN:307145 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NORD:1560 {source="MONDO:NORD"}
 xref: Orphanet:2901 {source="MONDO:equivalentTo"}
+xref: SCTID:26609002 {source="MONDO:equivalentTo"}
 xref: UMLS:C1510479 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:307145"}
 is_a: MONDO:0015923 {source="Orphanet:2901"} ! acquired peripheral neuropathy
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0017362 {source="MONDO:CLINGEN"}
@@ -432229,7 +432252,8 @@ xref: MESH:C535990 {source="Orphanet:2962", source="MONDO:equivalentTo", source=
 xref: NORD:1034 {source="MONDO:NORD"}
 xref: Orphanet:2962 {source="DOID:0070143", source="MONDO:equivalentTo", source="GARD:0000049"}
 xref: PMID:18388779 {source="DOID:0070143"}
-xref: SCTID:238826008 {source="DOID:0070143", source="MONDO:equivalentTo"}
+xref: SCTID:238826008 {source="DOID:0070143", source="MONDO:equivalentObsolete"}
+xref: SCTID:59252009 {source="MONDO:equivalentTo"}
 xref: UMLS:C0268354 {source="MEDGEN:82794", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0006025 {source="DOID:0070143", source="https://orcid.org/0000-0002-2825-0621"} ! autosomal recessive disease
 is_a: MONDO:0019303 {source="Orphanet:2962"} ! premature aging syndrome
@@ -436598,6 +436622,7 @@ xref: NANDO:1200617 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0
 xref: NCIT:C84805 {source="MONDO:equivalentTo"}
 xref: NORD:1289 {source="MONDO:NORD"}
 xref: Orphanet:313 {source="MONDO:equivalentTo"}
+xref: SCTID:205550003 {source="MONDO:equivalentTo"}
 xref: UMLS:C5848247 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1852191"}
 is_a: MONDO:0003847 {source="https://orcid.org/0000-0002-5002-8648"} ! hereditary disease
 is_a: MONDO:0005093 {source="Orphanet:313/inferred"} ! skin disorder
@@ -444111,8 +444136,7 @@ xref: NCIT:C85222 {source="MONDO:equivalentTo", source="DOID:9258"}
 xref: NORD:430 {source="MONDO:NORD"}
 xref: OMIMPS:193500 {source="MONDO:equivalentTo", source="DOID:9258"}
 xref: Orphanet:3440 {source="MONDO:equivalentTo", source="DOID:9258"}
-xref: SCTID:47434006 {source="DOID:9258"}
-xref: SCTID:715952000 {source="MONDO:equivalentTo"}
+xref: SCTID:47434006 {source="MONDO:equivalentTo", source="DOID:9258"}
 xref: UMLS:C3266898 {source="MONDO:equivalentTo", source="MEDGEN:473809", source="MONDO:MEDGEN"}
 is_a: MONDO:0000426 {source="DOID:9258", source="MONDO:Redundant"} ! autosomal dominant disease
 is_a: MONDO:0002254 {source="DOID:9258", source="MONDO:Redundant", source="NCIT:C85222"} ! syndromic disease
@@ -447017,7 +447041,6 @@ xref: ICD9:331.89 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MedDRA:10072106 {source="Orphanet:36388/e", source="Orphanet:36388"}
 xref: MEDGEN:155656 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:36388 {source="MONDO:equivalentTo"}
-xref: SCTID:192877007 {source="MONDO:equivalentTo"}
 xref: UMLS:C0751911 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:155656"}
 is_a: MONDO:0005071 {source="Orphanet:36388"} ! nervous system disorder
 is_a: MONDO:0021073 {source="MONDO:Redundant"} ! paraneoplastic syndrome
@@ -450396,7 +450419,6 @@ xref: ICD10CM:M87.9 {source="Orphanet:399164/btnt", source="Orphanet:399164"}
 xref: MEDGEN:10200 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C34841 {source="MONDO:equivalentTo"}
 xref: Orphanet:399164 {source="MONDO:equivalentTo"}
-xref: SCTID:397758007 {source="MONDO:equivalentTo"}
 xref: UMLS:C0027543 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:10200"}
 is_a: MONDO:0005380 {source="NCIT:C34841", source="Orphanet:399164"} ! osteonecrosis
 property_value: curated_content_resource "https://www.malacards.org/card/avascular_necrosis" xsd:anyURI {source="MONDO:MalaCards"}
@@ -462341,6 +462363,7 @@ xref: MESH:D008228 {source="Orphanet:547", source="MONDO:equivalentTo", source="
 xref: NCIT:C3211 {source="EFO:0005952", source="MONDO:equivalentTo"}
 xref: ONCOTREE:NHL {source="MONDO:equivalentTo"}
 xref: Orphanet:547 {source="MONDO:equivalentTo"}
+xref: SCTID:118601006 {source="MONDO:equivalentTo"}
 xref: UMLS:C0024305 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:6160"}
 is_a: MONDO:0005062 {source="DOID:0060060", source="EFO:0005952", source="MESH:D008228", source="NCIT:C3211", source="Orphanet:547"} ! lymphoma
 
@@ -469045,6 +469068,7 @@ xref: icd11.foundation:1759055065 {source="MONDO:equivalentTo"}
 xref: MEDGEN:224927 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C537743 {source="Orphanet:75382/e", source="MONDO:equivalentTo", source="Orphanet:75382"}
 xref: Orphanet:75382 {source="MONDO:equivalentTo"}
+xref: SCTID:193687000 {source="MONDO:equivalentTo"}
 xref: UMLS:C1306122 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:224927"}
 is_a: MONDO:0016293 {source="PMID:30607313", source="PMID:34057838", source="https://orcid.org/0000-0002-4142-7153"} ! congenital stationary night blindness
 is_a: MONDO:0019118 {source="Orphanet:75382", source="https://orcid.org/0000-0001-5208-3432"} ! inherited retinal dystrophy
@@ -471974,6 +471998,7 @@ xref: icd11.foundation:2084504393 {source="MONDO:equivalentTo", source="Orphanet
 xref: MedDRA:10034875 {source="Orphanet:79254/e", source="Orphanet:79254"}
 xref: MEDGEN:199655 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:79254 {source="MONDO:equivalentObsolete"}
+xref: SCTID:7573000 {source="MONDO:equivalentTo"}
 xref: UMLS:C0751434 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:199655"}
 is_a: MONDO:0009861 {source="Orphanet:79254", source="PMID:42324212", source="icd11.foundation:2084504393"} ! phenylketonuria
 relationship: has_characteristic HP:0000007 {source="Orphanet:79254"} ! Autosomal recessive inheritance
@@ -472907,7 +472932,7 @@ xref: NANDO:1200617 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0
 xref: Orphanet:79394 {source="MONDO:equivalentTo"}
 xref: SCTID:12215009 {source="DOID:1699"}
 xref: SCTID:205549003 {source="DOID:1699"}
-xref: SCTID:205550003 {source="MONDO:equivalentTo", source="DOID:1699"}
+xref: SCTID:205550003 {source="DOID:1699"}
 xref: SCTID:205556009 {source="DOID:1699"}
 xref: SCTID:254156001 {source="DOID:1699"}
 xref: SCTID:267372009 {source="DOID:1699"}
@@ -478856,6 +478881,7 @@ xref: ICD10CM:Q87.8 {source="Orphanet:897"}
 xref: icd11.foundation:1420151003 {source="Orphanet:897", source="MONDO:equivalentTo"}
 xref: NCIT:C124842 {source="MONDO:equivalentTo"}
 xref: Orphanet:897 {source="GARD:0005524", source="MONDO:equivalentTo"}
+xref: SCTID:715952000 {source="MONDO:equivalentTo"}
 is_a: MONDO:0018094 {source="NCIT:C124842"} ! Waardenburg syndrome
 is_a: MONDO:0021189 {source="Orphanet:897"} ! intestinal motility disease
 is_a: MONDO:0021635 {source="Wikipedia:Neurocristopathy"} ! neurocristopathy
@@ -489306,6 +489332,7 @@ xref: NCIT:C85048 {source="DOID:0060254", source="MONDO:equivalentTo"}
 xref: NORD:1673 {source="MONDO:NORD"}
 xref: OMIMPS:268310 {source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-6601-2165"}
 xref: Orphanet:97360 {source="DOID:0060254", source="MONDO:equivalentTo"}
+xref: SCTID:76520005 {source="MONDO:equivalentTo"}
 xref: UMLS:C0265205 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:78535"}
 is_a: MONDO:0002254 {source="DOID:0060254", source="NCIT:C85048"} ! syndromic disease
 is_a: MONDO:0005172 {source="https://orcid.org/0000-0002-4142-7153"} ! skeletal system disorder
@@ -495411,6 +495438,7 @@ xref: icd11.foundation:1196874419 {source="MONDO:equivalentTo", source="Orphanet
 xref: MEDGEN:1648220 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C116926 {source="MONDO:equivalentTo"}
 xref: Orphanet:98916 {source="MONDO:equivalentTo"}
+xref: SCTID:716723000 {source="MONDO:equivalentTo"}
 xref: UMLS:C4551910 {source="MEDGEN:1648220", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0016218 {source="NCIT:C116926", source="Orphanet:98916"} ! Guillain-Barre syndrome
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
@@ -510465,6 +510493,7 @@ synonym: "tumour of lacrimal gland" EXACT OMO:0003005 []
 synonym: "tumour of the lacrimal gland" EXACT OMO:0003005 []
 xref: MEDGEN:83280 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C4360 {source="MONDO:equivalentTo"}
+xref: SCTID:127004000 {source="MONDO:equivalentTo"}
 xref: UMLS:C0339124 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:83280"}
 is_a: MONDO:0021220 {source="MONDO:Redundant", source="NCIT:C4360/inferred"} ! eye neoplasm
 intersection_of: MONDO:0005070 ! neoplasm
@@ -524025,7 +524054,6 @@ xref: DOID:0081058 {source="MONDO:equivalentTo"}
 xref: MEDGEN:82829 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C548013 {source="MONDO:equivalentTo"}
 xref: NCIT:C129735 {source="MONDO:equivalentTo"}
-xref: SCTID:82800008 {source="MONDO:equivalentTo"}
 xref: UMLS:C0268813 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:82829"}
 is_a: MONDO:0004782 {source="DOID:0081058", source="MESH:C548013", source="MONDO:Redundant", source="NCIT:C129735"} ! diabetes insipidus
 is_a: MONDO:0040870 ! primary polydipsia
@@ -528926,6 +528954,7 @@ synonym: "tumour of lymph node" EXACT OMO:0003005 []
 xref: GARD:0006932 {source="MONDO:GARD"}
 xref: MEDGEN:108920 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C35497 {source="MONDO:equivalentTo"}
+xref: SCTID:127232002 {source="MONDO:equivalentTo"}
 xref: UMLS:C0596869 {source="MEDGEN:108920", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0002334 {source="NCIT:C35497"} ! hematopoietic and lymphoid system neoplasm
 is_a: MONDO:0004928 {source="MONDO:Redundant", source="NCIT:C35497"} ! lymph node disorder
@@ -531195,7 +531224,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0024537
 name: Brown-Vialetto-van Laere syndrome 1
-def: "Any Brown-Vialetto-van Laere syndrome in which the cause of the disease is a mutation in the SLC52A3 gene." [MONDO:patterns/disease_series_by_gene]
+def: "Any riboflavin transporter deficiency in which the cause of the disease is a mutation in the SLC52A3 gene. It is characterized by sensorineural hearing loss and a variety of cranial nerve palsies, usually involving the motor components of the seventh and ninth to twelfth (more rarely the third, fifth, and sixth) cranial nerves. Spinal motor nerves and, less commonly, upper motor neurons are sometimes affected, giving a picture resembling amyotrophic lateral sclerosis. The onset of the disease is usually in the second decade, but earlier and later onset have been reported." [MONDO:patterns/disease_series_by_gene, OMIM:211530]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: doid {source="DOID:0080785"}
 subset: gard_rare {source="GARD:0018010", source="MONDO:GARD"}
@@ -531203,31 +531232,32 @@ subset: ncit {source="NCIT:C133724"}
 subset: ncit_rare {source="NCIT:C133724"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:211530"}
-subset: ordo_subtype_of_a_disorder {source="Orphanet:572543"}
-subset: orphanet {source="Orphanet:572543"}
+subset: ordo_subtype_of_a_disorder {source="Orphanet:572550"}
+subset: orphanet {source="Orphanet:572550"}
 subset: rare
 synonym: "Brown-Vialetto-Van Laere syndrome 1" EXACT [DOID:0080785, NCIT:C133724, OMIM:211530]
 synonym: "Brown-Vialetto-van Laere syndrome 1" EXACT [DOID:0080785, NCIT:C133724, OMIM:211530] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "Brown-Vialetto-van Laere syndrome caused by mutation in SLC52A3" EXACT [MONDO:design_pattern]
-synonym: "BVVLS1" RELATED ABBREVIATION []
-synonym: "rfvt2-related riboflavin transporter deficiency" EXACT [Orphanet:572543]
-synonym: "Riboflavin transporter deficiency 2" EXACT [Orphanet:572543]
-synonym: "RTD2" EXACT ABBREVIATION [Orphanet:572543]
+synonym: "bulbar palsy, progressive, with sensorineural deafness" EXACT [OMIM:211530]
+synonym: "BVVLS1" EXACT ABBREVIATION [OMIM:211530]
+synonym: "pontobulbar palsy with deafness" EXACT [OMIM:211530]
+synonym: "RFVT3-related riboflavin transporter deficiency" EXACT [Orphanet:572550]
+synonym: "riboflavin transporter deficiency 3" EXACT [Orphanet:572550]
+synonym: "RTD3" EXACT ABBREVIATION [Orphanet:572550, PMID:26072523]
 synonym: "SLC52A3 Brown-Vialetto-van Laere syndrome" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 xref: DOID:0080785 {source="MONDO:equivalentTo"}
 xref: GARD:0018010 {source="MONDO:GARD"}
-xref: ICD10CM:G12.1 {source="Orphanet:572543", source="MONDO:mondoSubClassOfSource"}
+xref: ICD10CM:G12.1 {source="Orphanet:572550", source="MONDO:mondoSubClassOfSource"}
 xref: MEDGEN:163239 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C133724 {source="MONDO:equivalentTo"}
-xref: OMIM:211530 {source="MONDO:equivalentTo", source="Orphanet:572543"}
-xref: Orphanet:572543 {source="MONDO:equivalentTo"}
+xref: OMIM:211530 {source="Orphanet:572550", source="MONDO:equivalentTo"}
+xref: Orphanet:572550 {source="MONDO:equivalentTo"}
 xref: UMLS:C0796274 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:163239"}
-is_a: MONDO:0008891 {source="DOID:0080785", source="MONDO:indirect", source="OMIM:211530", source="Orphanet:572543"} ! riboflavin transporter deficiency
-intersection_of: MONDO:0008891 ! riboflavin transporter deficiency
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/16187 ! SLC52A3
+is_a: MONDO:0008891 {source="DOID:0080785", source="MONDO:indirect", source="OMIM:211530", source="Orphanet:572550", source="PMID:26072523"} ! riboflavin transporter deficiency
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0024537 {source="MONDO:CLINGEN"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/16187 {source="OMIM:211530"} ! SLC52A3
 property_value: curated_content_resource "https://www.malacards.org/card/brown_vialetto_van_laere_syndrome_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 
 [Term]
 id: MONDO:0024538
@@ -557783,6 +557813,7 @@ xref: GARD:0017901 {source="MONDO:GARD"}
 xref: icd11.foundation:1471948086 {source="MONDO:equivalentTo"}
 xref: MEDGEN:99175 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:493348 {source="MONDO:equivalentObsolete"}
+xref: SCTID:238694002 {source="MONDO:equivalentTo"}
 xref: UMLS:C0473546 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:99175"}
 is_a: MONDO:0006618 {source="Orphanet:493348", source="https://orcid.org/0000-0001-9310-0163"} ! vibratory urticaria
 relationship: excluded_subClassOf MONDO:0019624 {source="OMIM:125630", source="https://orcid.org/0000-0001-9310-0163", source="https://orcid.org/0000-0002-7638-4659"} ! acquired angioedema
@@ -559646,6 +559677,7 @@ synonym: "atelencephalic microcephaly" EXACT [Orphanet:566852]
 xref: GARD:0022280 {source="MONDO:GARD"}
 xref: MEDGEN:98461 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:566852 {source="MONDO:equivalentTo"}
+xref: SCTID:277921008 {source="MONDO:equivalentTo"}
 xref: UMLS:C0431348 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:98461"}
 is_a: MONDO:0005560 {source="https://orcid.org/0000-0002-4142-7153"} ! brain disorder
 is_a: MONDO:0021147 {source="https://orcid.org/0000-0002-4142-7153"} ! disorder of development or morphogenesis
@@ -561828,6 +561860,7 @@ synonym: "tumour of spleen" EXACT OMO:0003005 []
 xref: GARD:0007683 {source="MONDO:GARD"}
 xref: MEDGEN:21292 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C3383 {source="MONDO:equivalentTo"}
+xref: SCTID:127230005 {source="MONDO:equivalentTo"}
 xref: UMLS:C0037999 {source="MEDGEN:21292", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0002332 {source="NCIT:C3383"} ! splenic disorder
 is_a: MONDO:0002334 {source="MONDO:Redundant", source="NCIT:C3383"} ! hematopoietic and lymphoid system neoplasm
@@ -563113,6 +563146,7 @@ is_obsolete: true
 id: MONDO:0040870
 name: primary polydipsia
 def: "A form of polydipsia characterized by excessive fluid intake in the absence of physiological stimuli to drink." [Wikipedia:Primary_polydipsia]
+xref: SCTID:82800008 {source="MONDO:equivalentTo"}
 is_a: MONDO:0001162 ! impulse control disorder
 relationship: disease_has_feature HP:0001959 ! Polydipsia
 
@@ -572823,6 +572857,7 @@ xref: DOID:5590 {source="MONDO:equivalentTo"}
 xref: MEDGEN:277955 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C27534 {source="ONCOTREE:ADPA", source="MONDO:equivalentTo"}
 xref: ONCOTREE:ADPA {source="MONDO:equivalentTo"}
+xref: SCTID:254709009 {source="MONDO:equivalentTo"}
 xref: UMLS:C1367789 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:277955"}
 is_a: MONDO:0002531 {source="ONCOTREE:ADPA"} ! skin neoplasm
 is_a: MONDO:0002656 {source="DOID:5590", source="MONDO:indirect"} ! skin carcinoma
@@ -573285,6 +573320,7 @@ xref: MEDGEN:98273 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D020362 {source="https://orcid.org/0000-0003-1967-3726", source="MONDO:equivalentTo"}
 xref: NCIT:C4685 {source="MONDO:equivalentTo"}
 xref: Orphanet:623626 {source="MONDO:equivalentTo"}
+xref: SCTID:192877007 {source="MONDO:equivalentTo"}
 xref: UMLS:C0393534 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:98273"}
 is_a: MONDO:0018215 {source="Orphanet:623626", source="https://orcid.org/0009-0001-6494-4831"} ! paraneoplastic neurologic syndrome
 is_a: MONDO:0021073 {source="NCIT:C4685"} ! paraneoplastic syndrome
@@ -580765,6 +580801,7 @@ xref: NANDO:2200662 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0
 xref: NCIT:C151903 {source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-5002-8648"}
 xref: NORD:1943 {source="MONDO:NORD"}
 xref: OMIM:601399 {source="Orphanet:71290/e", source="MONDO:equivalentTo", source="Orphanet:71290"}
+xref: SCTID:725034002 {source="MONDO:equivalentTo"}
 xref: UMLS:C1832388 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:321945"}
 is_a: MONDO:0011071 {source="Orphanet:71290", source="https://clinicalgenome.org/affiliation/50034/"} ! hereditary thrombocytopenia and hematologic cancer predisposition syndrome
 intersection_of: MONDO:0011071 ! hereditary thrombocytopenia and hematologic cancer predisposition syndrome
@@ -583583,6 +583620,7 @@ synonym: "ventricular fibrillation, paroxysmal familial" EXACT [GARD:0004227]
 xref: GARD:0004227 {source="MONDO:GARD"}
 xref: MEDGEN:83310 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:228140 {source="MONDO:equivalentTo", source="OMIM:603829"}
+xref: SCTID:233915000 {source="MONDO:equivalentTo"}
 xref: UMLS:C0340493 {source="MEDGEN:83310", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0000190 {source="https://orcid.org/0000-0001-5208-3432"} ! ventricular fibrillation
 is_a: MONDO:1010180 {source="https://www.clinicalgenome.org/affiliation/40104/"} ! cardiogenetic rhythm disorder
@@ -587013,13 +587051,15 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-520
 
 [Term]
 id: MONDO:0100428
-name: progressive bulbar palsy of childhood
-def: "A progressive bulbar palsy of childhood that occurs during childhood." [MONDO:patterns/childhood]
+name: Fazio-Londe disease
+def: "A progressive bulbar palsy that occurs during childhood and presents with hypotonia and respiratory insufficiency." [MONDO:patterns/childhood, OMIM:211500]
 subset: doid {source="DOID:0080632"}
 subset: gard_rare {source="GARD:0026209", source="MONDO:GARD"}
 subset: omim {source="OMIM:211500"}
 subset: rare
+synonym: "bulbar palsy, progressive, of childhood" EXACT [OMIM:211500]
 synonym: "Fazio-Londe disease" EXACT [DOID:0080632, OMIM:211500]
+synonym: "progressive bulbar palsy of childhood" EXACT [Orphanet:56965]
 xref: DOID:0080632 {source="MONDO:equivalentTo"}
 xref: GARD:0026209 {source="MONDO:GARD"}
 xref: MEDGEN:140728 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -587028,12 +587068,15 @@ xref: Orphanet:56965 {source="MONDO:equivalentObsolete"}
 xref: SCTID:230246005 {source="MONDO:equivalentTo"}
 xref: UMLS:C0393540 {source="MEDGEN:140728", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0008890 {source="DOID:0080632", source="https://orcid.org/0000-0001-5493-2602"} ! progressive bulbar palsy
+is_a: MONDO:0008891 {source="Orphanet:97229", source="PMID:30793323"} ! riboflavin transporter deficiency
 intersection_of: MONDO:0008890 ! progressive bulbar palsy
 intersection_of: has_characteristic HP:0011463 ! Childhood onset
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/16187 {source="OMIM:211500"} ! SLC52A3
 property_value: curated_content_resource "https://www.malacards.org/card/fazio_londe_disease" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/127" xsd:anyURI
 
 [Term]
@@ -589566,6 +589609,7 @@ def: "Epilepsy that is characterized by generalized seizure types and may have t
 subset: ncit {source="NCIT:C3021"}
 xref: MEDGEN:4507 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C3021 {source="MONDO:equivalentTo"}
+xref: SCTID:19598007 {source="MONDO:equivalentTo"}
 xref: UMLS:C0014548 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:4507"}
 is_a: MONDO:0005027 {source="https://www.epilepsydiagnosis.org/epilepsy/generalized-epilepsy-groupoverview.html"} ! epilepsy
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
@@ -598173,6 +598217,7 @@ name: black locks with albinism and deafness syndrome
 synonym: "BADS" EXACT ABBREVIATION []
 xref: MEDGEN:82812 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:227010 {source="MONDO:includedEntryInOMIM"}
+xref: SCTID:10170007 {source="MONDO:equivalentTo", source="UMLS:C0268501"}
 xref: UMLS:C0268501 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:82812"}
 is_a: MONDO:0002254 {source="https://orcid.org/0000-0001-5208-3432"} ! syndromic disease
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5507" xsd:anyURI
@@ -602413,6 +602458,7 @@ xref: DOID:0080842 {source="MONDO:equivalentTo", source="MONDO:preferredExternal
 xref: GARD:0026599 {source="MONDO:GARD"}
 xref: MEDGEN:83891 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C4656 {source="https://orcid.org/0009-0001-6494-4831", source="MONDO:equivalentTo"}
+xref: SCTID:302820008 {source="MONDO:equivalentTo"}
 xref: UMLS:C0349604 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:83891"}
 is_a: MONDO:0016642 {source="DOID:0060106", source="DOID:0080842", source="MONDO:Redundant"} ! meningioma
 property_value: curated_content_resource "https://www.malacards.org/card/brain_meningioma" xsd:anyURI {source="MONDO:MalaCards"}
@@ -615819,17 +615865,29 @@ relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/
 [Term]
 id: MONDO:0975829
 name: anemia, congenital dyserythropoietic, type IVb
+def: "An autosomal recessive congenital dyserythropoietic anemia in which the cause of the disease is a variation in the KLF1 gene, characterized by neonatal jaundice, hyperbilirubinemia, and severe congenital hemolytic anemia requiring transfusion." [DOID:0051002, OMIM:620969]
 subset: doid {source="DOID:0051002"}
 subset: gard_rare {source="GARD:0027326", source="MONDO:GARD"}
 subset: omim {source="OMIM:620969"}
 subset: rare
+synonym: "anemia, congenital dyserythropoietic, type IVb" EXACT [OMIM:620969]
+synonym: "anemia, congenital, with hereditary persistence of fetal and embryonic hemoglobin" EXACT [OMIM:620969]
+synonym: "autosomal recessive KLF1-related severe anemia" EXACT [Orphanet:727394]
+synonym: "CDA, type IVb" EXACT [OMIM:620969]
+synonym: "CDAN4B" EXACT ABBREVIATION [OMIM:620969]
+synonym: "congenital dyserythropoietic anemia type IVb" EXACT [DOID:0051002]
 xref: DOID:0051002 {source="MONDO:equivalentTo"}
 xref: GARD:0027326 {source="MONDO:GARD"}
 xref: MEDGEN:1874968 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:620969 {source="MONDO:equivalentTo"}
 xref: UMLS:C5975438 {source="MEDGEN:1874968", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019403 {source="OMIM:620969", source="https://orcid.org/0000-0002-4142-7153"} ! congenital dyserythropoietic anemia
+intersection_of: MONDO:0019403 ! congenital dyserythropoietic anemia
+intersection_of: has_characteristic HP:0000007 ! Autosomal recessive inheritance
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6345 ! KLF1
+relationship: has_characteristic HP:0000007 {source="OMIM:620969", source="PMID:25724378", source="PMID:34227100"} ! Autosomal recessive inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6345 {source="OMIM:620969"} ! KLF1
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10570" xsd:anyURI
 
 [Term]
 id: MONDO:0975830
@@ -702958,6 +703016,79 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/17710 {source="PMID:42128181"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10634" xsd:anyURI
+
+[Term]
+id: MONDO:1060302
+name: SAT1-related X-linked systemic lupus erythematosus
+def: "Any systemic lupus erythematosus in which the cause of the disease is a variation in the SAT1 gene. Loss-of-function variants in SAT1 cause X-linked childhood-onset systemic lupus erythematosus." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:35977808]
+synonym: "SAT1 deficiency" RELATED [https://orcid.org/0009-0001-4272-1178]
+synonym: "SSAT1 deficiency" RELATED [https://orcid.org/0009-0001-4272-1178]
+is_a: MONDO:0007915 {source="PMID:35977808", source="https://orcid.org/0009-0001-4272-1178"} ! systemic lupus erythematosus
+intersection_of: MONDO:0007915 ! systemic lupus erythematosus
+intersection_of: has_characteristic HP:0001419 ! X-linked recessive inheritance
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10540 ! SAT1
+relationship: has_characteristic HP:0001419 {source="PMID:35977808"} ! X-linked recessive inheritance
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10540 {source="PMID:35977808"} ! SAT1
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10631" xsd:anyURI
+
+[Term]
+id: MONDO:1060303
+name: DNAJC17 deficiency
+def: "Any inborn error of immunity in which the cause of the disease is a variation in the DNAJC17 gene. It is characterized by retinopathy, combined immunodeficiency, and TNF-driven autoinflammation responsive to targeted TNF blockade." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:42495638]
+synonym: "DNAJC17-related autoinflammatory disorder" RELATED [https://orcid.org/0009-0001-4272-1178]
+synonym: "DNAJC17-related retinitis pigmentosa and hypogammaglobulinemia syndrome" EXACT [PMID:35198051]
+is_a: MONDO:0003778 {source="PMID:42495638", source="https://orcid.org/0009-0001-4272-1178"} ! inborn error of immunity
+is_a: MONDO:0019200 {source="PMID:26355662", source="PMID:42495638"} ! retinitis pigmentosa
+is_a: MONDO:0019751 {source="PMID:42495638"} ! autoinflammatory syndrome
+intersection_of: MONDO:0003778 ! inborn error of immunity
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/25556
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/25556 {source="PMID:26355662", source="PMID:42495638"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10632" xsd:anyURI
+
+[Term]
+id: MONDO:1060304
+name: autosomal recessive severe congenital neutropenia due to CSF3 deficiency
+def: "Any autosomal recessive severe congenital neutropenia in which the cause of the disease is a variation in the CSF3 gene." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:37612131]
+synonym: "autosomal recessive CSF3-related severe congenital neutropenia" EXACT [PMID:42358053]
+synonym: "CSF3 deficiency" RELATED [https://orcid.org/0009-0001-4272-1178, PMID:37612131]
+synonym: "CSF3-related severe congenital neutropenia" RELATED [https://orcid.org/0009-0001-4272-1178, PMID:42358053]
+synonym: "G-CSF deficiency" RELATED [https://orcid.org/0009-0001-4272-1178]
+is_a: MONDO:0028226 {source="PMID:37612131", source="PMID:42358053", source="https://orcid.org/0009-0001-4272-1178"} ! autosomal recessive severe congenital neutropenia
+intersection_of: MONDO:0018542 ! severe congenital neutropenia
+intersection_of: has_characteristic HP:0000007 ! Autosomal recessive inheritance
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2438
+relationship: has_characteristic HP:0000007 {source="PMID:37612131", source="PMID:42358053"} ! Autosomal recessive inheritance
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2438 {source="PMID:37612131", source="PMID:42358053"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10633" xsd:anyURI
+
+[Term]
+id: MONDO:1060306
+name: SH3GL1 deficiency
+def: "Any B cell deficiency in which the cause of the disease is a variation in the SH3GL1 gene." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:39499372]
+synonym: "Endophilin A2 deficiency" EXACT [https://orcid.org/0009-0001-4272-1178, PMID:39499372]
+is_a: MONDO:0002211 {source="PMID:39499372", source="https://orcid.org/0009-0001-4272-1178"} ! B cell deficiency
+intersection_of: MONDO:0002211 ! B cell deficiency
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10830
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10830 {source="PMID:39499372"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10635" xsd:anyURI
+
+[Term]
+id: MONDO:1060313
+name: TBL1XR1-related disorder
+def: "Any disorder in which the cause of the disease is a variation in the TBL1XR1 gene." [https://orcid.org/0000-0001-9310-0163, MONDO:patterns/disease_series_by_gene, PMID:37683765, PMID:38378692, PMID:41444645]
+synonym: "TBL1XR1-related disease" EXACT [PMID:37683765]
+synonym: "TBL1XR1-related disorder" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:38378692]
+synonym: "TBL1XR1-related disorders" EXACT [https://orcid.org/0000-0001-9310-0163]
+is_a: MONDO:0003847 {source="PMID:38378692", source="https://orcid.org/0000-0001-9310-0163"} ! hereditary disease
+intersection_of: MONDO:0003847 ! hereditary disease
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29529 ! TBL1XR1
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29529 {source="PMID:37683765", source="PMID:38378692"} ! TBL1XR1
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10574" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
