@@ -703000,18 +703000,6 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10513" xsd:anyURI
 
 [Term]
-id: MONDO:1060306
-name: SH3GL1 deficiency
-def: "Any B cell deficiency in which the cause of the disease is a variation in the SH3GL1 gene." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:39499372]
-synonym: "Endophilin A2 deficiency" EXACT [https://orcid.org/0009-0001-4272-1178, PMID:39499372]
-is_a: MONDO:0002211 {source="PMID:39499372", source="https://orcid.org/0009-0001-4272-1178"} ! B cell deficiency
-intersection_of: MONDO:0002211 ! B cell deficiency
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10830
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10830 {source="PMID:39499372"}
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10635" xsd:anyURI
-
-[Term]
 id: MONDO:1060302
 name: SAT1-related X-linked systemic lupus erythematosus
 def: "Any systemic lupus erythematosus in which the cause of the disease is a variation in the SAT1 gene. Loss-of-function variants in SAT1 cause X-linked childhood-onset systemic lupus erythematosus." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:35977808]
@@ -703057,6 +703045,18 @@ relationship: has_characteristic HP:0000007 {source="PMID:37612131", source="PMI
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2438 {source="PMID:37612131", source="PMID:42358053"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10633" xsd:anyURI
+
+[Term]
+id: MONDO:1060306
+name: SH3GL1 deficiency
+def: "Any B cell deficiency in which the cause of the disease is a variation in the SH3GL1 gene." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:39499372]
+synonym: "Endophilin A2 deficiency" EXACT [https://orcid.org/0009-0001-4272-1178, PMID:39499372]
+is_a: MONDO:0002211 {source="PMID:39499372", source="https://orcid.org/0009-0001-4272-1178"} ! B cell deficiency
+intersection_of: MONDO:0002211 ! B cell deficiency
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10830
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10830 {source="PMID:39499372"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10635" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
