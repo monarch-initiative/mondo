@@ -20434,33 +20434,11 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0001213
-name: serous glue ear
-def: "Chronic form of serous otitis media." [MONDO:patterns/chronic]
-comment: This term is scheduled to be merged with MONDO:0005892 otitis media with effusion', based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0005892
-subset: doid {source="DOID:11181"}
-subset: obsoletion_candidate
-synonym: "serous otitis media, chronic" EXACT [MONDO:patterns/chronic]
-xref: DOID:11181 {source="MONDO:equivalentTo"}
-xref: ICD10CM:H65.2 {source="https://orcid.org/0009-0001-6494-4831", source="DOID:11181", source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-5002-8648"}
-xref: ICD10CM:H65.20 {source="DOID:11181"}
-xref: ICD9:381.1 {source="DOID:11181"}
-xref: ICD9:381.10 {source="MONDO:equivalentTo", source="MONDO:i2s"}
-xref: ICD9:381.19 {source="MONDO:relatedTo", source="MONDO:i2s"}
-xref: MEDGEN:509959 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: SCTID:155219009 {source="DOID:11181"}
-xref: SCTID:194245001 {source="DOID:11181"}
-xref: SCTID:194250007 {source="DOID:11181"}
-xref: SCTID:81564005 {source="DOID:11181", source="MONDO:equivalentTo"}
-xref: UMLS:C0155421 {source="MEDGEN:509959", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0001212 {source="DOID:11181", source="MONDO:Redundant"} ! non-suppurative otitis media
-is_a: MONDO:0021203 {source="MONDO:Redundant"} ! serous otitis media
-is_a: MONDO:0021206 {source="MONDO:Redundant"} ! chronic non-suppurative otitis media
-intersection_of: MONDO:0021203 ! serous otitis media
-intersection_of: has_characteristic PATO:0001863 ! chronic
-property_value: curated_content_resource "https://www.malacards.org/card/serous_glue_ear" xsd:anyURI {source="MONDO:MalaCards"}
+name: obsolete serous glue ear
+property_value: IAO:0000231 MONDO:TermsMerged
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10382" xsd:anyURI
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
-property_value: IAO:0006012 "2026-09-01" xsd:string
+is_obsolete: true
+replaced_by: MONDO:0005892
 
 [Term]
 id: MONDO:0001214
@@ -128097,21 +128075,45 @@ property_value: curated_content_resource "https://www.malacards.org/card/osterta
 id: MONDO:0005892
 name: otitis media with effusion
 def: "Otitis media associated with accumulation of fluid in the middle ear." [NCIT:C34886]
+subset: doid {source="DOID:11181"}
 subset: ncit {source="NCIT:C34886"}
 subset: otar {source="MONDO:OTAR"}
 synonym: "OME" EXACT ABBREVIATION [NCIT:C34886]
-synonym: "secretory otitis Media" NARROW [NCIT:C34886]
-synonym: "serous otitis Media" NARROW [NCIT:C34886]
+synonym: "secretory otitis media" EXACT [MESH:D010034, NCIT:C34886, Wikipedia:Otitis_media]
+synonym: "serous glue ear" NARROW [DOID:11181, PMID:25913597]
+synonym: "serous otitis media" EXACT [MESH:D010034, NCIT:C34886]
+synonym: "serous otitis media, chronic" EXACT [MONDO:patterns/chronic]
+synonym: "SOM" EXACT ABBREVIATION [Wikipedia:Otitis_media]
+xref: DOID:11181 {source="MONDO:mondoIsBroaderThanSource"}
 xref: EFO:0007415 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+xref: ICD10CM:H65.2 {source="https://orcid.org/0009-0001-6494-4831", source="DOID:11181", source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-5002-8648"}
+xref: ICD10CM:H65.20 {source="DOID:11181"}
+xref: ICD9:381.1 {source="DOID:11181"}
+xref: ICD9:381.10 {source="MONDO:equivalentTo", source="MONDO:i2s"}
+xref: ICD9:381.19 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: ICD9:381.20 {source="MONDO:equivalentTo", source="MONDO:i2s"}
 xref: ICD9:381.29 {source="MONDO:relatedTo", source="MONDO:i2s"}
+xref: MEDGEN:509959 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MEDGEN:629314 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: MEDGEN:75752 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D010034 {source="EFO:0007415", source="MONDO:equivalentTo"}
 xref: NCIT:C34886 {source="MONDO:equivalentTo"}
+xref: SCTID:155219009 {source="DOID:11181"}
+xref: SCTID:194245001 {source="DOID:11181"}
+xref: SCTID:194250007 {source="DOID:11181"}
 xref: SCTID:78868004 {source="MONDO:equivalentTo"}
+xref: SCTID:80327007 {source="MONDO:equivalentTo"}
+xref: SCTID:81564005 {source="DOID:11181", source="MONDO:equivalentTo"}
+xref: UMLS:C0155421 {source="MEDGEN:509959", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: UMLS:C0271453 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:75752"}
 xref: UMLS:C0456498 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:629314"}
+is_a: MONDO:0001212 {source="DOID:11181", source="MONDO:Redundant"} ! non-suppurative otitis media
 is_a: MONDO:0005441 {source="EFO:0007415", source="MESH:D010034", source="MONDO:Redundant", source="NCIT:C34886"} ! otitis media
-is_a: MONDO:0021206 ! chronic non-suppurative otitis media
+is_a: MONDO:0021206 {source="MONDO:Redundant"} ! chronic non-suppurative otitis media
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
+property_value: curated_content_resource "https://www.malacards.org/card/serous_glue_ear" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10382" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
 
 [Term]
 id: MONDO:0005893
@@ -210899,56 +210901,11 @@ property_value: curated_content_resource "https://www.malacards.org/card/dihydro
 
 [Term]
 id: MONDO:0009112
-name: rhizomelic chondrodysplasia punctata type 2
-def: "Any rhizomelic chondrodysplasia punctata in which the cause of the disease is a mutation in the GNPAT gene." [MONDO:patterns/disease_series_by_gene]
-comment: This term is scheduled to be merged with MONDO:0100273 glyceronephosphate O-acyltransferase deficiency', based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0100273
-subset: doid {source="DOID:0110852"}
-subset: doid_rare {source="DOID:0110852"}
-subset: gard_rare {source="GARD:0009429", source="MONDO:GARD"}
-subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
-subset: omim {source="OMIM:222765"}
-subset: ordo_etiological_subtype {source="Orphanet:309796"}
-subset: ordo_subtype_of_a_disorder {source="Orphanet:309796"}
-subset: orphanet {source="Orphanet:309796"}
-subset: otar {source="MONDO:OTAR"}
-subset: rare
-synonym: "chondrodysplasia punctata, rhizomelic, due to dihydroxyacetonephosphate" RELATED [GARD:0009429]
-synonym: "chondrodysplasia punctata, rhizomelic, due to Dihydroxyacetonephosphate acyltransferase deficiency" EXACT [DOID:0110852, OMIM:222765]
-synonym: "Dhapat deficiency" EXACT [DOID:0110852, OMIM:222765]
-synonym: "Dihydroxyacetonephosphate acyltransferase deficiency" EXACT [DOID:0110852, OMIM:222765]
-synonym: "Glyceronephosphate O-acyltransferase deficiency" BROAD [DOID:0110852, OMIM:222765]
-synonym: "Gnpat deficiency" BROAD [DOID:0110852, OMIM:222765]
-synonym: "GNPAT rhizomelic chondrodysplasia punctata" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
-synonym: "peroxisomal dihydroxyacetonephosphate acyltransferase deficiency" EXACT [DOID:0110852, OMIM:222765]
-synonym: "RCDP2" EXACT ABBREVIATION [DOID:0110852, OMIM:222765]
-synonym: "Rcdp2" EXACT ABBREVIATION [DOID:0110852, OMIM:222765]
-synonym: "rhizomelic chondrodysplasia punctata caused by mutation in GNPAT" EXACT [MONDO:design_pattern]
-synonym: "rhizomelic chondrodysplasia punctata type 2" EXACT [DOID:0110852, icd11.foundation:179969811, Orphanet:309796] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "rhizomelic chondrodysplasia punctata, type 2" EXACT [OMIM:222765]
-synonym: "type 2 rhizomelic chondrodysplasia punctata" EXACT [GARD:0009429]
-xref: DOID:0110852 {source="MONDO:equivalentTo"}
-xref: GARD:0009429 {source="MONDO:GARD"}
-xref: icd11.foundation:179969811 {source="MONDO:equivalentTo"}
-xref: MEDGEN:341734 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: MESH:C537607 {source="MONDO:equivalentTo"}
-xref: NANDO:1200771 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
-xref: OMIM:222765 {source="DOID:0110852", source="Orphanet:309796/e", source="MONDO:equivalentTo", source="Orphanet:309796"}
-xref: Orphanet:309796 {source="DOID:0110852", source="MONDO:equivalentTo", source="OMIM:222765"}
-xref: UMLS:C1857242 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:341734"}
-is_a: MONDO:0015776 {source="DC-OMIM:222765", source="DOID:0110852", source="MESH:C537607", source="MONDO:Redundant", source="OMIM:222765", source="Orphanet:309796", source="icd11.foundation:179969811"} ! rhizomelic chondrodysplasia punctata
-is_a: MONDO:0019701 {source="PMID:31633310"} ! chondrodysplasia punctata
-is_a: MONDO:0100273 {source="https://www.clinicalgenome.org/affiliation/40049/"} ! glyceronephosphate O-acyltransferase deficiency
-intersection_of: MONDO:0015776 ! rhizomelic chondrodysplasia punctata
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4416 ! GNPAT
-relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4416 {source="OMIM:222765"} ! GNPAT
-property_value: curated_content_resource "https://www.malacards.org/card/rhizomelic_chondrodysplasia_punctata_type_2_2" xsd:anyURI {source="MONDO:MalaCards"}
+name: obsolete rhizomelic chondrodysplasia punctata type 2
+property_value: IAO:0000231 MONDO:TermsMerged
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10382" xsd:anyURI
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/2632" xsd:anyURI
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
-property_value: IAO:0006012 "2026-09-01" xsd:string
-property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/9429/rhizomelic-chondrodysplasia-punctata-type-2" xsd:anyURI {source="GARD:0009429"}
+is_obsolete: true
+replaced_by: MONDO:0100273
 
 [Term]
 id: MONDO:0009113
@@ -409533,25 +409490,36 @@ is_obsolete: true
 [Term]
 id: MONDO:0016521
 name: muscular pseudohypertrophy-hypothyroidism syndrome
-def: "Muscular pseudohypertrophy - hypothyroidism, also known as Kocher-Debre-Semelaigne syndrome is a rare disorder characterized by pseudohypertrophy of muscles due to longstanding hypothyroidism." [Orphanet:2349]
-subset: gard_rare {source="GARD:0008270", source="MONDO:GARD"}
+def: "A rare disorder characterized by pseudohypertrophy of muscles due to longstanding hypothyroidism." [Orphanet:2349]
+subset: gard_rare {source="GARD:0008270", source="GARD:0025371", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: ordo_disorder {source="Orphanet:2349"}
 subset: orphanet {source="Orphanet:2349"}
 subset: orphanet_rare {source="Orphanet:2349"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
+synonym: "association of muscular pseudohypertrophy and hypothyroidism in children" RELATED [GARD:0008270]
+synonym: "Hoffmann syndrome" EXACT [Orphanet:2349]
+synonym: "Kocher debre Semelaigne disease" EXACT [GARD:0008270, MESH:C537211]
+synonym: "Kocher-Debre-Semelaigne syndrome" EXACT [MESH:C537211, Orphanet:2349]
 xref: GARD:0008270 {source="MONDO:GARD"}
+xref: GARD:0025371 {source="MONDO:GARD"}
 xref: ICD10CM:E03.1 {source="Orphanet:2349"}
+xref: icd11.foundation:109007822 {source="MONDO:equivalentTo"}
 xref: MEDGEN:82860 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: MESH:C537211 {source="MONDO:equivalentTo"}
 xref: Orphanet:2349 {source="MONDO:equivalentTo"}
 xref: SCTID:716338001 {source="MONDO:equivalentTo"}
 xref: UMLS:C0270958 {source="MEDGEN:82860", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0002254 {source="PMID:22802324", source="https://orcid.org/0000-0002-5002-8648"} ! syndromic disease
+is_a: MONDO:0002254 {source="MONDO:Redundant", source="PMID:22802324", source="https://orcid.org/0000-0002-5002-8648"} ! syndromic disease
+is_a: MONDO:0003939 {source="MESH:C537211"} ! muscle tissue disorder
 is_a: MONDO:0005151 {source="https://orcid.org/0000-0001-9310-0163"} ! endocrine system disorder
+is_a: MONDO:0018612 {source="MESH:C537211", source="MONDO:Redundant"} ! congenital hypothyroidism
 property_value: curated_content_resource "https://www.malacards.org/card/muscular_pseudohypertrophy_hypothyroidism_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10382" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6651" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6878" xsd:anyURI
+property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/8270/kocher-debre-semelaigne-syndrome" xsd:anyURI {source="GARD:0008270"}
 
 [Term]
 id: MONDO:0016522
@@ -455194,26 +455162,11 @@ property_value: curated_content_resource "https://www.malacards.org/card/necroti
 
 [Term]
 id: MONDO:0018603
-name: SFTPC-related interstitial lung disease
-comment: This term is scheduled to be merged with MONDO:0024465 surfactant metabolism dysfunction, pulmonary, 2', based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0024465
-subset: gard_rare {source="GARD:0017744", source="MONDO:GARD"}
-subset: obsoletion_candidate
-subset: ordo_disorder {source="Orphanet:440392"}
-subset: orphanet {source="Orphanet:440392"}
-subset: orphanet_rare {source="Orphanet:440392"}
-subset: rare
-synonym: "interstitial lung disease due to SP-C deficiency" EXACT [Orphanet:440392]
-synonym: "SFTPC-related ILD" EXACT [https://orcid.org/0009-0009-7379-954X]
-xref: GARD:0017744 {source="MONDO:GARD"}
-xref: ICD10CM:J84.8 {source="Orphanet:440392"}
-xref: Orphanet:440392 {source="MONDO:equivalentTo"}
-is_a: MONDO:0012580 ! hereditary pulmonary alveolar proteinosis
-is_a: MONDO:0031199 {source="https://orcid.org/0000-0001-7697-3026"} ! inherited interstitial lung disease
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10802 {source="https://orcid.org/0009-0009-7379-954X"} ! SFTPC
-property_value: curated_content_resource "https://www.malacards.org/card/surfactant_metabolism_dysfunction_pulmonary_2" xsd:anyURI {source="MONDO:MalaCards"}
+name: obsolete SFTPC-related interstitial lung disease
+property_value: IAO:0000231 MONDO:TermsMerged
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10382" xsd:anyURI
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8104" xsd:anyURI
-property_value: IAO:0006012 "2026-09-01" xsd:string
+is_obsolete: true
+replaced_by: MONDO:0024465
 
 [Term]
 id: MONDO:0018604
@@ -510178,18 +510131,11 @@ intersection_of: disease_has_basis_in_disruption_of GO:0016068 ! type I hypersen
 
 [Term]
 id: MONDO:0021203
-name: serous otitis media
-comment: This term is scheduled to be merged with MONDO:0005892 otitis media with effusion', based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0005892
-subset: obsoletion_candidate
-synonym: "otitis media with effusion" RELATED [Wikipedia:Otitis_media]
-synonym: "secretory otitis media" RELATED [Wikipedia:Otitis_media]
-synonym: "SOM" EXACT ABBREVIATION [Wikipedia:Otitis_media]
-xref: MEDGEN:75752 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: SCTID:80327007 {source="MONDO:equivalentTo"}
-xref: UMLS:C0271453 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:75752"}
-is_a: MONDO:0001212 ! non-suppurative otitis media
+name: obsolete serous otitis media
+property_value: IAO:0000231 MONDO:TermsMerged
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10382" xsd:anyURI
-property_value: IAO:0006012 "2026-09-01" xsd:string
+is_obsolete: true
+replaced_by: MONDO:0005892
 
 [Term]
 id: MONDO:0021204
@@ -526271,23 +526217,11 @@ intersection_of: disease_has_inflammation_site UBERON:0000996 ! vagina
 
 [Term]
 id: MONDO:0023558
-name: Kocher-debre-Semelaigne syndrome
-comment: This term is scheduled to be merged with MONDO:0016521 muscular pseudohypertrophy-hypothyroidism syndrome', based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0016521
-subset: gard_rare {source="GARD:0025371", source="MONDO:GARD"}
-subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
-subset: rare
-synonym: "association of muscular pseudohypertrophy and hypothyroidism in children" RELATED [GARD:0008270]
-synonym: "Kocher debre Semelaigne disease" RELATED [GARD:0008270, MESH:C537211]
-xref: GARD:0025371 {source="MONDO:GARD"}
-xref: icd11.foundation:109007822 {source="MONDO:equivalentTo"}
-xref: MESH:C537211 {source="MONDO:equivalentTo"}
-is_a: MONDO:0002254 {source="MONDO:Redundant"} ! syndromic disease
-is_a: MONDO:0003939 {source="MESH:C537211"} ! muscle tissue disorder
-is_a: MONDO:0018612 {source="MESH:C537211", source="MONDO:Redundant"} ! congenital hypothyroidism
+name: obsolete Kocher-debre-Semelaigne syndrome
+property_value: IAO:0000231 MONDO:TermsMerged
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10382" xsd:anyURI
-property_value: IAO:0006012 "2026-09-01" xsd:string
-property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/8270/kocher-debre-semelaigne-syndrome" xsd:anyURI {source="GARD:0008270"}
+is_obsolete: true
+replaced_by: MONDO:0016521
 
 [Term]
 id: MONDO:0023561
@@ -529952,25 +529886,42 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0024465
 name: surfactant metabolism dysfunction, pulmonary, 2
-subset: gard_rare {source="GARD:0025399", source="MONDO:GARD"}
+def: "A rare genetic interstitial lung disease characterized by diffuse lung disease of variable phenotype ranging from severe respiratory insufficiency in infancy to asymptomatic adults, due to surfactant protein C deficiency. Typical presentation in infancy includes dyspnea, cough, wheezing, and gradual cyanosis, with or without failure to thrive. Radiological findings include diffuse ground-glass opacities in neonates, later interstitial thickening associated with lung hyperinflation, intraparenchymal/subpleural cysts, honeycombing, subpleural nodules, or bronchiectasis. Infiltrates and air leaks are frequent complications." [Orphanet:440392]
+subset: gard_rare {source="GARD:0025399", source="GARD:0017744", source="MONDO:GARD"}
 subset: nord_rare {source="NORD:275528", source="MONDO:NORD", source="NORD:1541"}
 subset: omim {source="OMIM:610913"}
+subset: ordo_disorder {source="Orphanet:440392"}
+subset: orphanet {source="Orphanet:440392"}
+subset: orphanet_rare {source="Orphanet:440392"}
 subset: rare
 synonym: "desquamative interstitial pneumonitis due to surfactant Protein C deficiency" EXACT [OMIM:610913]
+synonym: "interstitial lung disease due to SP-C deficiency" EXACT [Orphanet:440392]
 synonym: "Interstitial Lung Disease Due To Surfactant Protein C Deficiency" EXACT [NORD:275528] {OMO:0002001="https://w3id.org/information-resource-registry/nord"}
 synonym: "interstitial lung disease due to surfactant Protein C deficiency" EXACT [OMIM:610913]
 synonym: "pulmonary alveolar proteinosis, congenital, 2" EXACT [OMIM:610913]
+synonym: "SFTPC-related ILD" EXACT [https://orcid.org/0009-0009-7379-954X]
+synonym: "SFTPC-related interstitial lung disease" EXACT [https://orcid.org/0009-0009-7379-954X]
 synonym: "SMDP2" EXACT ABBREVIATION [OMIM:610913]
-synonym: "surfactant metabolism dysfunction, pulmonary, 2" EXACT [OMIM:610913]
+xref: GARD:0017744 {source="MONDO:GARD"}
 xref: GARD:0025399 {source="MONDO:GARD"}
+xref: ICD10CM:J84.8 {source="Orphanet:440392"}
 xref: MEDGEN:410078 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C567048 {source="MONDO:equivalentTo"}
 xref: NORD:1541 {source="MONDO:NORD"}
 xref: NORD:275528 {source="MONDO:NORD"}
 xref: OMIM:610913 {source="MONDO:equivalentTo"}
+xref: Orphanet:440392 {source="MONDO:equivalentTo"}
 xref: UMLS:C1970470 {source="MEDGEN:410078", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0000426 {source="OMIM:610913"} ! autosomal dominant disease
 is_a: MONDO:0012580 {source="OMIM:610913"} ! hereditary pulmonary alveolar proteinosis
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10802 {source="OMIM:610913"} ! SFTPC
+is_a: MONDO:0031199 {source="https://orcid.org/0000-0001-7697-3026"} ! inherited interstitial lung disease
+intersection_of: MONDO:0000426 ! autosomal dominant disease
+intersection_of: MONDO:0031199 ! inherited interstitial lung disease
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10802 ! SFTPC
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10802 {source="OMIM:610913", source="https://orcid.org/0009-0009-7379-954X"} ! SFTPC
+property_value: curated_content_resource "https://www.malacards.org/card/surfactant_metabolism_dysfunction_pulmonary_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10382" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8104" xsd:anyURI
 
 [Term]
 id: MONDO:0024466
@@ -584396,21 +584347,55 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0100273
-name: glyceronephosphate O-acyltransferase deficiency
-def: "Any disorder of plasmalogen biosynthesis in which the cause of the disease is a mutation in the GNPAT gene." [MONDO:patterns/disease_series_by_gene]
+name: rhizomelic chondrodysplasia punctata, type 2
+def: "Any rhizomelic chondrodysplasia punctata in which the cause of the disease is a mutation in the GNPAT gene. It is characterized by disproportionately short stature primarily affecting the proximal parts of the extremities, a typical facial appearance including a broad nasal bridge, epicanthus, high-arched palate, dysplastic external ears, and micrognathia, congenital contractures, characteristic ocular involvement, dwarfism, and severely impaired intellectual development with spasticity." [MONDO:patterns/disease_series_by_gene, OMIM:222765]
 subset: clingen {source="MONDO:CLINGEN"}
-subset: gard_rare {source="GARD:0026115", source="MONDO:GARD"}
+subset: doid {source="DOID:0110852"}
+subset: doid_rare {source="DOID:0110852"}
+subset: gard_rare {source="GARD:0009429", source="GARD:0026115", source="MONDO:GARD"}
+subset: nord_rare {source="MONDO:NORD"}
+subset: omim {source="OMIM:222765"}
+subset: ordo_etiological_subtype {source="Orphanet:309796"}
+subset: ordo_subtype_of_a_disorder {source="Orphanet:309796"}
+subset: orphanet {source="Orphanet:309796"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "glyceronephosphate O-acyltransferase deficiency" EXACT [https://www.clinicalgenome.org/affiliation/40049/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "GNPAT deficiency" EXACT [https://www.clinicalgenome.org/affiliation/40049/, MONDO:patterns/disease_series_by_gene]
+synonym: "chondrodysplasia punctata, rhizomelic, due to dihydroxyacetonephosphate" RELATED [GARD:0009429]
+synonym: "chondrodysplasia punctata, rhizomelic, due to dihydroxyacetonephosphate acyltransferase deficiency" EXACT [DOID:0110852, OMIM:222765]
+synonym: "DHAPAT deficiency" EXACT [DOID:0110852, OMIM:222765]
+synonym: "dihydroxyacetonephosphate acyltransferase deficiency" EXACT [DOID:0110852, OMIM:222765]
+synonym: "glyceronephosphate O-acyltransferase deficiency" EXACT [https://www.clinicalgenome.org/affiliation/40049/, OMIM:222765] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "GNPAT deficiency" EXACT [https://www.clinicalgenome.org/affiliation/40049/, MONDO:patterns/disease_series_by_gene, OMIM:222765]
+synonym: "GNPAT rhizomelic chondrodysplasia punctata" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
+synonym: "peroxisomal dihydroxyacetonephosphate acyltransferase deficiency" EXACT [DOID:0110852, OMIM:222765]
+synonym: "RCDP2" EXACT ABBREVIATION [DOID:0110852, OMIM:222765]
+synonym: "rhizomelic chondrodysplasia punctata caused by mutation in GNPAT" EXACT [MONDO:design_pattern]
+synonym: "rhizomelic chondrodysplasia punctata type 2" EXACT [DOID:0110852, icd11.foundation:179969811, Orphanet:309796]
+synonym: "rhizomelic chondrodysplasia punctata, type 2" EXACT [OMIM:222765]
+synonym: "type 2 rhizomelic chondrodysplasia punctata" EXACT [GARD:0009429]
+xref: DOID:0110852 {source="MONDO:equivalentTo"}
+xref: GARD:0009429 {source="MONDO:GARD"}
 xref: GARD:0026115 {source="MONDO:GARD"}
+xref: icd11.foundation:179969811 {source="MONDO:equivalentTo"}
+xref: MEDGEN:341734 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: MESH:C537607 {source="MONDO:equivalentTo"}
+xref: NANDO:1200771 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
+xref: OMIM:222765 {source="DOID:0110852", source="Orphanet:309796/e", source="MONDO:equivalentTo", source="Orphanet:309796"}
+xref: Orphanet:309796 {source="DOID:0110852", source="MONDO:equivalentTo", source="OMIM:222765"}
+xref: UMLS:C1857242 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:341734"}
+is_a: MONDO:0015776 {source="DC-OMIM:222765", source="DOID:0110852", source="MESH:C537607", source="MONDO:Redundant", source="OMIM:222765", source="Orphanet:309796", source="icd11.foundation:179969811"} ! rhizomelic chondrodysplasia punctata
 is_a: MONDO:0017986 {source="https://www.clinicalgenome.org/affiliation/40049/"} ! disorder of plasmalogens biosynthesis
+is_a: MONDO:0019701 {source="PMID:31633310"} ! chondrodysplasia punctata
+intersection_of: MONDO:0015776 ! rhizomelic chondrodysplasia punctata
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4416 ! GNPAT
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0100273 {source="MONDO:CLINGEN"}
-relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4416 {source="https://www.clinicalgenome.org/affiliation/40049/"} ! GNPAT
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4416 {source="OMIM:222765", source="https://www.clinicalgenome.org/affiliation/40049/"} ! GNPAT
+property_value: curated_content_resource "https://www.malacards.org/card/rhizomelic_chondrodysplasia_punctata_type_2_2" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10382" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/2632" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
+property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/9429/rhizomelic-chondrodysplasia-punctata-type-2" xsd:anyURI {source="GARD:0009429"}
 
 [Term]
 id: MONDO:0100274
