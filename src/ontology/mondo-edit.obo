@@ -597411,23 +597411,36 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0800139
-name: HELIOS deficiency
-def: "A non-severe combined immunodeficiency caused by a loss-of-function variation in the IKZF2 gene that is characterized by recurrent upper respiratory infections, thrush and mucosal ulcers, and chronic lymphadenopathy." [PMID:3482625, PMID:34826260, PMID:34920454]
+name: immunodysregulation with variable immunodeficiency and autoimmunity
+def: "An inborn error of immunity caused by a loss-of-function variation in the IKZF2 gene that is characterized by recurrent upper respiratory infections and chronic fungal or viral infections often associated with lymphopenia and hypogammaglobulinemia. Other patients present with features of a primary immune regulatory disorder (PIRD), including autoimmunity, autoinflammation, lymphoproliferation, systemic lupus erythematosus (SLE), and EBV-associated hemophagocytic lymphohistiocytosis (HLH)." [OMIM:621233, PMID:34826260, PMID:34920454]
 subset: clingen {source="MONDO:CLINGEN"}
-subset: gard_rare {source="GARD:0026454", source="MONDO:GARD"}
+subset: gard_rare {source="GARD:0026454", source="GARD:0028109", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
+subset: omim {source="OMIM:621233"}
 subset: ordo_disorder {source="Orphanet:697389"}
 subset: orphanet {source="Orphanet:697389"}
 subset: orphanet_rare {source="Orphanet:697389"}
 subset: rare
+synonym: "HELIOS deficiency" EXACT [PMID:34920454]
+synonym: "IMDIA" EXACT ABBREVIATION [OMIM:621233]
+synonym: "immunodysregulation with variable immunodeficiency and autoimmunity" EXACT [OMIM:621233]
 xref: GARD:0026454 {source="MONDO:GARD"}
+xref: GARD:0028109 {source="MONDO:GARD"}
 xref: MEDGEN:1872761 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: MEDGEN:1876466 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: OMIM:621233 {source="MONDO:equivalentTo"}
 xref: Orphanet:697389 {source="MONDO:equivalentTo"}
 xref: UMLS:C5968970 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1872761"}
+xref: UMLS:C6012736 {source="MEDGEN:1876466", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0003778 {source="OMIM:621233", source="https://orcid.org/0000-0002-4142-7153"} ! inborn error of immunity
 is_a: MONDO:0018814 {source="https://orcid.org/0000-0002-7371-8158", source="https://orcid.org/0000-0003-0113-912X"} ! non-SCID combined immunodeficiency
+intersection_of: MONDO:0003778 ! inborn error of immunity
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/13177 ! IKZF2
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0800139 {source="MONDO:CLINGEN"}
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/13177 {source="OMIM:621233"} ! IKZF2
 relationship: RO:0002573 HP:0000006 {source="https://orcid.org/0000-0002-7371-8158", source="https://orcid.org/0000-0003-0113-912X"} ! has modifier Autosomal dominant inheritance
 relationship: RO:0002573 HP:0000007 {source="https://orcid.org/0000-0002-7371-8158", source="https://orcid.org/0000-0003-0113-912X"} ! has modifier Autosomal recessive inheritance
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10426" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5261" xsd:anyURI
 
 [Term]
@@ -617391,20 +617404,11 @@ relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/
 
 [Term]
 id: MONDO:0979233
-name: immunodysregulation with variable immunodeficiency and autoimmunity
-comment: This term is scheduled to be merged with MONDO:0800139 HELIOS deficiency', based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0800139
-subset: gard_rare {source="GARD:0028109", source="MONDO:GARD"}
-subset: obsoletion_candidate
-subset: omim {source="OMIM:621233"}
-subset: rare
-xref: GARD:0028109 {source="MONDO:GARD"}
-xref: MEDGEN:1876466 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: OMIM:621233 {source="MONDO:equivalentTo"}
-xref: UMLS:C6012736 {source="MEDGEN:1876466", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0003778 {source="OMIM:621233", source="https://orcid.org/0000-0002-4142-7153"} ! inborn error of immunity
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/13177 {source="OMIM:621233"} ! IKZF2
+name: obsolete immunodysregulation with variable immunodeficiency and autoimmunity
+property_value: IAO:0000231 MONDO:TermsMerged
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10426" xsd:anyURI
-property_value: IAO:0006012 "2026-10-01" xsd:string
+is_obsolete: true
+replaced_by: MONDO:0800139
 
 [Term]
 id: MONDO:0979234
