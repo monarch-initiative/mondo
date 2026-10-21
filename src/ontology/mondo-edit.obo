@@ -233175,25 +233175,39 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/4264/peho-sy
 
 [Term]
 id: MONDO:0009842
-name: Pelger-Huet-like anomaly and episodic fever with abdominal pain
-def: "An autoinflammatory disease with defective neutrophil function caused by a homozygous Arg219His mutation in the transcription factor C/EBPε." [PMID:31201888]
+name: immunodeficiency 108 with autoinflammation
+def: "An autoinflammatory syndrome with immune deficiency characterized by a combination of autoinflammation, immunodeficiency, and neutrophil dysfunction, as well as mild bleeding diathesis. Patients present recurrent attacks of abdominal pain, high fever, and systemic inflammation lasting four to five days and occurring every few weeks. Attacks may be accompanied by nailbed, tongue, submandibular, and gluteal abscesses, intra-abdominal granulomas, pyoderma gangrenosum, and buccal ulcerations. Frequent episodes of purulent paronychia, superficial skin and mucosal infections, and purulent upper respiratory tract infections have also been reported." [Orphanet:566067, PMID:31201888]
 subset: doid {source="DOID:0061077"}
-subset: gard_rare {source="GARD:0024698", source="MONDO:GARD"}
+subset: gard_rare {source="GARD:0024698", source="GARD:0022273", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:260570"}
+subset: ordo_disorder {source="Orphanet:566067"}
+subset: orphanet {source="Orphanet:566067"}
+subset: orphanet_rare {source="Orphanet:566067"}
 subset: rare
+synonym: "CAIN" EXACT ABBREVIATION [Orphanet:566067]
+synonym: "CEBPE-associated autoinflammation-immunodeficiency-neutrophil dysfunction syndrome" EXACT [Orphanet:566067]
+synonym: "IMD108" EXACT ABBREVIATION [OMIM:260570]
 synonym: "immunodeficiency 108 with autoinflammation" EXACT [DOID:0061077, OMIM:260570]
 synonym: "Pelger-Huet-like anomaly and episodic fever with abdominal pain" EXACT [OMIM:260570]
 xref: DOID:0061077 {source="MONDO:equivalentTo"}
+xref: GARD:0022273 {source="MONDO:GARD"}
 xref: GARD:0024698 {source="MONDO:GARD"}
+xref: ICD10CM:D89.8 {source="MONDO:mondoIsNarrowerThanSource", source="Orphanet:566067"}
+xref: MEDGEN:1799987 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MEDGEN:376692 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C564899 {source="MONDO:equivalentTo"}
 xref: OMIM:260570 {source="MONDO:equivalentTo"}
+xref: Orphanet:566067 {source="MONDO:equivalentTo"}
 xref: UMLS:C1850054 {source="MEDGEN:376692", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: UMLS:C5568564 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1799987"}
 is_a: MONDO:0003847 {source="https://orcid.org/0000-0001-5208-3432"} ! hereditary disease
-is_a: MONDO:0019751 {source="https://orcid.org/0000-0002-7371-8158", source="https://orcid.org/0000-0003-0113-912X"} ! autoinflammatory syndrome
+is_a: MONDO:0019751 {source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-4142-7153", source="https://orcid.org/0000-0002-7371-8158", source="https://orcid.org/0000-0003-0113-912X"} ! autoinflammatory syndrome
 is_a: MONDO:0021094 {source="OMIM:260570"} ! immunodeficiency disease
+relationship: RO:0004001 http://identifiers.org/hgnc/1836 {source="PMID:31201888"} ! has material basis in gain of function germline mutation in CEBPE
+property_value: curated_content_resource "https://www.malacards.org/card/cebpe_associated_autoinflammation_immunodeficiency_neutrophil_dysfunction_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/immunodeficiency_108_with_autoinflammation" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10407" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5261" xsd:anyURI
 
@@ -559534,27 +559548,11 @@ replaced_by: MONDO:0029133
 
 [Term]
 id: MONDO:0035437
-name: CEBPE-associated autoinflammation-immunodeficiency-neutrophil dysfunction syndrome
-def: "A rare genetic autoinflammatory syndrome with immune deficiency characterized by a combination of autoinflammation, immunodeficiency, and neutrophil dysfunction, as well as mild bleeding diathesis. Patients present recurrent attacks of abdominal pain, high fever, and systemic inflammation lasting four to five days and occurring every few weeks. Attacks may be accompanied by nailbed, tongue, submandibular, and gluteal abscesses, intra-abdominal granulomas, pyoderma gangrenosum, and buccal ulcerations. Frequent episodes of purulent paronychia, superficial skin and mucosal infections, and purulent upper respiratory tract infections have also been reported." [Orphanet:566067]
-comment: This term is scheduled to be merged with MONDO:0009842 Pelger-Huet-like anomaly and episodic fever with abdominal pain', based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0009842
-subset: gard_rare {source="GARD:0022273", source="MONDO:GARD"}
-subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
-subset: ordo_disorder {source="Orphanet:566067"}
-subset: orphanet {source="Orphanet:566067"}
-subset: orphanet_rare {source="Orphanet:566067"}
-subset: rare
-synonym: "CAIN" EXACT ABBREVIATION [Orphanet:566067]
-xref: GARD:0022273 {source="MONDO:GARD"}
-xref: ICD10CM:D89.8 {source="MONDO:mondoIsNarrowerThanSource", source="Orphanet:566067"}
-xref: MEDGEN:1799987 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:566067 {source="MONDO:equivalentTo"}
-xref: UMLS:C5568564 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1799987"}
-is_a: MONDO:0019751 {source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-4142-7153"} ! autoinflammatory syndrome
-relationship: RO:0004001 http://identifiers.org/hgnc/1836 ! has material basis in gain of function germline mutation in CEBPE
-property_value: curated_content_resource "https://www.malacards.org/card/cebpe_associated_autoinflammation_immunodeficiency_neutrophil_dysfunction_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+name: obsolete CEBPE-associated autoinflammation-immunodeficiency-neutrophil dysfunction syndrome
+property_value: IAO:0000231 MONDO:TermsMerged
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10407" xsd:anyURI
-property_value: IAO:0006012 "2026-10-01" xsd:string
+is_obsolete: true
+replaced_by: MONDO:0009842
 
 [Term]
 id: MONDO:0035441
