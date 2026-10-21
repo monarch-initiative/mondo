@@ -546730,6 +546730,7 @@ relationship: has_characteristic MONDO:0021152 {source="OMIMPS:613112"} ! inheri
 [Term]
 id: MONDO:0031481
 name: microcephaly, epilepsy, and diabetes syndrome 1
+def: "Any microcephaly, epilepsy, and diabetes syndrome in which the cause of the disease is a mutation in the IER3IP1 gene. It is an autosomal recessive disorder characterized by the triad of primary microcephaly, infantile epileptic encephalopathy, and permanent neonatal diabetes." [https://clinicalgenome.org/affiliation/40016/, PMID:22991235, PMID:24138066, PMID:34229114]
 subset: gard_rare {source="GARD:0018438", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:614231"}
@@ -546738,8 +546739,10 @@ subset: orphanet {source="Orphanet:306558"}
 subset: orphanet_rare {source="Orphanet:306558"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
+synonym: "IER3IP1-related microcephaly, epilepsy and diabetes syndrome" EXACT [https://clinicalgenome.org/affiliation/40016/, PMID:22991235, PMID:24138066, PMID:34229114] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "MEDS1" EXACT ABBREVIATION [OMIM:614231]
 synonym: "microcephaly, epilepsy, and diabetes syndrome" BROAD []
+synonym: "microcephaly, epilepsy, and diabetes syndrome 1" EXACT [OMIM:614231]
 synonym: "primary microcephaly-epilepsy-permanent neonatal diabetes syndrome" EXACT [MONDO:0013647, Orphanet:306558]
 xref: GARD:0018438 {source="MONDO:GARD"}
 xref: OMIM:614231 {source="Orphanet:306558", source="MONDO:equivalentTo", source="Orphanet:306558/e"}
@@ -546753,6 +546756,7 @@ relationship: excluded_subClassOf MONDO:0017119 {source="Orphanet:306558", sourc
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18550 {source="OMIM:614231"} ! IER3IP1
 property_value: curated_content_resource "https://www.malacards.org/card/microcephaly_epilepsy_and_diabetes_syndrome_1" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/primary_microcephaly_epilepsy_permanent_neonatal_diabetes_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10387" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 
 [Term]
