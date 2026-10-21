@@ -262245,7 +262245,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/spondyl
 
 [Term]
 id: MONDO:0010802
-name: pancreatic hypoplasia-diabetes-congenital heart disease syndrome
+name: heart defects, congenital, and other congenital anomalies
 def: "A rare, syndromic diabetes mellitus characterized by partial pancreatic agenesis, diabetes mellitus, and heart anomalies (including transposition of the great vessels, ventricular or atrial septal defects, pulmonary stenosis, or patent ductus arteriosis)." [Orphanet:2255]
 subset: doid {source="DOID:0111733"}
 subset: gard_rare {source="GARD:0000347", source="MONDO:GARD"}
@@ -262256,12 +262256,15 @@ subset: orphanet {source="Orphanet:2255"}
 subset: orphanet_rare {source="Orphanet:2255"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "congenital pancreatic hypoplasia with diabetes mellitus and congenital heart disease" RELATED [GARD:0000347]
-synonym: "HDCA" RELATED ABBREVIATION []
-synonym: "heart defects, congenital, and other congenital anomalies" RELATED []
-synonym: "hereditary pancreatic hypoplasia, diabetes mellitus and congenital heart disease" RELATED [GARD:0000347]
+synonym: "congenital pancreatic hypoplasia with diabetes mellitus and congenital heart disease" EXACT [GARD:0000347]
+synonym: "HDCA" EXACT ABBREVIATION [OMIM:600001]
+synonym: "heart defects, congenital, and other congenital anomalies" EXACT [OMIM:600001]
+synonym: "hereditary pancreatic hypoplasia, diabetes mellitus and congenital heart disease" EXACT [GARD:0000347]
+synonym: "PACHD" EXACT ABBREVIATION [OMIM:600001]
+synonym: "pancreatic agenesis and congenital heart defects" EXACT [OMIM:600001]
+synonym: "pancreatic hypoplasia, congenital, with diabetes mellitus and congenital heart disease" EXACT [OMIM:600001]
 synonym: "pancreatic hypoplasia-diabetes-congenital heart disease syndrome" EXACT [DOID:0111733, Orphanet:2255] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "Yorifuji Okuno syndrome" RELATED [GARD:0000347]
+synonym: "Yorifuji Okuno syndrome" EXACT [GARD:0000347]
 synonym: "Yorifuji-Okuno syndrome" EXACT [DOID:0111733, Orphanet:2255]
 xref: DOID:0111733 {source="MONDO:equivalentTo"}
 xref: GARD:0000347 {source="MONDO:GARD"}
@@ -262273,10 +262276,12 @@ xref: Orphanet:2255 {source="OMIM:600001", source="MONDO:equivalentTo"}
 xref: SCTID:722206009 {source="MONDO:equivalentTo"}
 xref: UMLS:C2931296 {source="MEDGEN:444022", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0002254 {source="DOID:0111733", source="https://orcid.org/0000-0001-5208-3432"} ! syndromic disease
+is_a: MONDO:0100540 {source="PMID:22962692", source="PMID:23223019", source="https://clinicalgenome.org/affiliation/40130/", source="https://www.clinicalgenome.org/affiliation/40016/"} ! GATA6-related congenital heart disease with or without pancreatic hypoplasia or diabetes
 relationship: excluded_subClassOf MONDO:0005015 {source="MONDO:0015888-obsoleted", source="Orphanet:2255", source="https://orcid.org/0000-0001-5208-3432"} ! diabetes mellitus
 relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4174 {source="OMIM:600001"} ! GATA6
 property_value: curated_content_resource "https://www.malacards.org/card/heart_defects_congenital_and_other_congenital_anomalies" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10679" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5723" xsd:anyURI
 
@@ -589150,6 +589155,7 @@ intersection_of: MONDO:0005453 ! congenital heart disease
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4174 ! GATA6
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4174 {source="https://clinicalgenome.org/affiliation/40130/"} ! GATA6
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10358" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10679" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7218" xsd:anyURI
 
 [Term]
