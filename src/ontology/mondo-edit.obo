@@ -24388,22 +24388,11 @@ property_value: curated_content_resource "https://www.malacards.org/card/periphe
 
 [Term]
 id: MONDO:0001394
-name: chronic erythremia
-comment: This term is scheduled to be merged with MONDO:0009891 acquired polycythemia vera, based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0009891
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
-xref: DOID:11868 {source="MONDO:equivalentObsolete"}
-xref: ICD9:207.1 {source="DOID:11868"}
-xref: SCTID:188753004 {source="DOID:11868"}
-xref: SCTID:190042004 {source="DOID:11868"}
-xref: SCTID:269478004 {source="DOID:11868"}
-xref: SCTID:48292007 {source="DOID:11868"}
-xref: SCTID:92810002 {source="DOID:11868"}
-is_a: MONDO:0005059 {source="DOID:11868"} ! leukemia
+name: obsolete chronic erythremia
+property_value: IAO:0000231 MONDO:TermsMerged
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10390" xsd:anyURI
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+replaced_by: MONDO:0009891
 
 [Term]
 id: MONDO:0001395
@@ -234762,10 +234751,11 @@ property_value: curated_content_resource "https://www.malacards.org/card/gilless
 [Term]
 id: MONDO:0009891
 name: acquired polycythemia vera
-def: "Polycythemia vera (PV) is an acquired myeloproliferative disorder characterized by an elevated absolute red blood cell mass caused by uncontrolled red blood cell production, frequently associated with uncontrolled white blood cell and platelet production." [Orphanet:729]
+def: "An acquired myeloproliferative disorder characterized by an elevated absolute red blood cell mass caused by uncontrolled red blood cell production, frequently associated with uncontrolled white blood cell and platelet production." [Orphanet:729]
 subset: doid {source="DOID:8997"}
 subset: doid_rare {source="DOID:8997"}
 subset: gard_rare {source="GARD:0007422", source="MONDO:GARD"}
+subset: inferred_rare
 subset: ncit {source="NCIT:C3336"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:263300"}
@@ -234775,6 +234765,7 @@ subset: orphanet_rare {source="Orphanet:729"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "acquired primary erythrocytosis" EXACT [Orphanet:729]
+synonym: "chronic erythremia" EXACT [DOID:8997]
 synonym: "Osler-Vaquez disease" EXACT [Orphanet:729]
 synonym: "polycythaemia rubra vera" EXACT [DOID:8997, icd11.foundation:818364947]
 synonym: "polycythemia rubra vera" EXACT [NCIT:C3336, OMIM:263300, Orphanet:729]
@@ -234784,12 +234775,14 @@ synonym: "primary polycythemia" RELATED [GARD:0007422]
 synonym: "PRV" RELATED ABBREVIATION [GARD:0007422]
 synonym: "PV" EXACT ABBREVIATION [OMIM:263300, Orphanet:729]
 synonym: "Vaquez disease" EXACT [icd11.foundation:818364947, Orphanet:729]
+xref: DOID:11868 {source="MONDO:equivalentObsolete"}
 xref: DOID:8997 {source="MONDO:equivalentTo", source="EFO:0002429"}
 xref: EFO:0002429 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: GARD:0007422 {source="MONDO:GARD"}
 xref: ICD10CM:D37-D48 {source="https://github.com/monarch-initiative/mondo/issues/4536", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-4142-7153"}
 xref: ICD10CM:D45 {source="Orphanet:729/e", source="DOID:8997", source="MONDO:equivalentTo", source="Orphanet:729", source="https://orcid.org/0000-0002-1780-5230", source="https://orcid.org/0000-0002-2842-8645"}
 xref: icd11.foundation:818364947 {source="MONDO:equivalentTo", source="Orphanet:729", source="https://orcid.org/0000-0002-4142-7153"}
+xref: ICD9:207.1 {source="DOID:11868"}
 xref: ICD9:238.4 {source="DOID:8997", source="EFO:0002429"}
 xref: ICDO:9950/3 {source="NCIT:C3336"}
 xref: MedDRA:10036057 {source="Orphanet:729/e", source="Orphanet:729"}
@@ -234805,16 +234798,24 @@ xref: SCTID:109992005 {source="DOID:8997"}
 xref: SCTID:128841001 {source="DOID:8997", source="EFO:0002429"}
 xref: SCTID:134182002 {source="DOID:8997"}
 xref: SCTID:154644004 {source="DOID:8997"}
+xref: SCTID:188753004 {source="DOID:11868"}
+xref: SCTID:190042004 {source="DOID:11868"}
+xref: SCTID:269478004 {source="DOID:11868"}
 xref: SCTID:269652000 {source="DOID:8997"}
 xref: SCTID:278190000 {source="DOID:8997"}
 xref: SCTID:31569001 {source="DOID:8997"}
+xref: SCTID:48292007 {source="DOID:11868"}
+xref: SCTID:92810002 {source="DOID:11868"}
 xref: UMLS:C0032463 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:45996"}
 is_a: MONDO:0005571 {source="DOID:8997", source="EFO:0002429", source="NCIT:C3336", source="Orphanet:729"} ! polycythemia
 is_a: MONDO:0020076 {source="EFO:0002429", source="MONDO:Redundant", source="NCIT:C3336", source="ONCOTREE:PV", source="Orphanet:729"} ! myeloproliferative neoplasm
 is_a: MONDO:0020703 {source="NCIT:C3336"} ! erythroid neoplasm
+relationship: excluded_subClassOf MONDO:0005059 {source="DOID:11868", source="https://orcid.org/0000-0002-7638-4659"} ! leukemia
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6192 {source="OMIM:263300"} ! JAK2
 property_value: curated_content_resource "https://www.malacards.org/card/polycythemia_vera" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10390" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0009892
@@ -262244,7 +262245,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/spondyl
 
 [Term]
 id: MONDO:0010802
-name: pancreatic hypoplasia-diabetes-congenital heart disease syndrome
+name: heart defects, congenital, and other congenital anomalies
 def: "A rare, syndromic diabetes mellitus characterized by partial pancreatic agenesis, diabetes mellitus, and heart anomalies (including transposition of the great vessels, ventricular or atrial septal defects, pulmonary stenosis, or patent ductus arteriosis)." [Orphanet:2255]
 subset: doid {source="DOID:0111733"}
 subset: gard_rare {source="GARD:0000347", source="MONDO:GARD"}
@@ -262255,12 +262256,15 @@ subset: orphanet {source="Orphanet:2255"}
 subset: orphanet_rare {source="Orphanet:2255"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "congenital pancreatic hypoplasia with diabetes mellitus and congenital heart disease" RELATED [GARD:0000347]
-synonym: "HDCA" RELATED ABBREVIATION []
-synonym: "heart defects, congenital, and other congenital anomalies" RELATED []
-synonym: "hereditary pancreatic hypoplasia, diabetes mellitus and congenital heart disease" RELATED [GARD:0000347]
+synonym: "congenital pancreatic hypoplasia with diabetes mellitus and congenital heart disease" EXACT [GARD:0000347]
+synonym: "HDCA" EXACT ABBREVIATION [OMIM:600001]
+synonym: "heart defects, congenital, and other congenital anomalies" EXACT [OMIM:600001]
+synonym: "hereditary pancreatic hypoplasia, diabetes mellitus and congenital heart disease" EXACT [GARD:0000347]
+synonym: "PACHD" EXACT ABBREVIATION [OMIM:600001]
+synonym: "pancreatic agenesis and congenital heart defects" EXACT [OMIM:600001]
+synonym: "pancreatic hypoplasia, congenital, with diabetes mellitus and congenital heart disease" EXACT [OMIM:600001]
 synonym: "pancreatic hypoplasia-diabetes-congenital heart disease syndrome" EXACT [DOID:0111733, Orphanet:2255] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "Yorifuji Okuno syndrome" RELATED [GARD:0000347]
+synonym: "Yorifuji Okuno syndrome" EXACT [GARD:0000347]
 synonym: "Yorifuji-Okuno syndrome" EXACT [DOID:0111733, Orphanet:2255]
 xref: DOID:0111733 {source="MONDO:equivalentTo"}
 xref: GARD:0000347 {source="MONDO:GARD"}
@@ -262272,10 +262276,12 @@ xref: Orphanet:2255 {source="OMIM:600001", source="MONDO:equivalentTo"}
 xref: SCTID:722206009 {source="MONDO:equivalentTo"}
 xref: UMLS:C2931296 {source="MEDGEN:444022", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0002254 {source="DOID:0111733", source="https://orcid.org/0000-0001-5208-3432"} ! syndromic disease
+is_a: MONDO:0100540 {source="PMID:22962692", source="PMID:23223019", source="https://clinicalgenome.org/affiliation/40130/", source="https://www.clinicalgenome.org/affiliation/40016/"} ! GATA6-related congenital heart disease with or without pancreatic hypoplasia or diabetes
 relationship: excluded_subClassOf MONDO:0005015 {source="MONDO:0015888-obsoleted", source="Orphanet:2255", source="https://orcid.org/0000-0001-5208-3432"} ! diabetes mellitus
 relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4174 {source="OMIM:600001"} ! GATA6
 property_value: curated_content_resource "https://www.malacards.org/card/heart_defects_congenital_and_other_congenital_anomalies" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10679" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5723" xsd:anyURI
 
@@ -322983,6 +322989,7 @@ is_a: MONDO:0020573 {source="https://orcid.org/0000-0001-5208-3432"} ! inherited
 relationship: excluded_subClassOf MONDO:0000166 {source="OMIM:613002", source="https://orcid.org/0000-0001-5208-3432"} ! encephalopathy, acute, infection-induced
 relationship: excluded_subClassOf MONDO:0012521 {source="Orphanet:1930/btnt", source="https://orcid.org/0000-0001-5208-3432"} ! herpes simplex encephalitis
 relationship: predisposes_towards MONDO:0100198 {source="OMIM:613002"} ! Mendelian encephalopathy
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10644" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4882" xsd:anyURI
 
@@ -345925,21 +345932,26 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0013920
-name: herpes simplex encephalitis, susceptibility to, 3
-def: "A Mendelian susceptibility or predisposition to herpes simplex infection induced encephalitis in which the cause of the diseas is a mutation in the TRAF3 gene." [MONDO:patterns/disease_series_by_gene]
+name: immunodeficiency 132A
+def: "An immunodeficiency disease characterized by increased susceptibility to infection with certain pathogens, including herpes simplex virus and mycobacteria, in which the cause of the disease is a dominant-negative variation in the TRAF3 gene." [OMIM:614849]
 subset: doid {source="DOID:0061101"}
 subset: omim {source="OMIM:614849"}
 subset: predisposition
+synonym: "encephalopathy, acute, infection-induced (herpes-specific), susceptibility to, 5" EXACT [OMIM:614849]
 synonym: "herpes simplex encephalitis caused by mutation in TRAF3" EXACT [MONDO:design_pattern]
 synonym: "herpes simplex encephalitis, susceptibility to, 3" EXACT [OMIM:614849]
 synonym: "Herpes simplex encephalitis, susceptibility to, type 3" EXACT []
-synonym: "IIAE5" RELATED ABBREVIATION []
+synonym: "IIAE5" EXACT ABBREVIATION [OMIM:614849]
+synonym: "IMD132A" EXACT ABBREVIATION [OMIM:614849]
+synonym: "immunodeficiency 132A" EXACT [OMIM:614849]
 synonym: "TRAF3 herpes simplex encephalitis" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 xref: DOID:0061101 {source="MONDO:equivalentTo"}
 xref: MEDGEN:766782 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:614849 {source="MONDO:equivalentTo"}
 xref: UMLS:C3553868 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:766782"}
-intersection_of: MONDO:0020573 ! inherited disease susceptibility
+is_a: MONDO:0021094 {source="OMIM:614849"} ! immunodeficiency disease
+is_a: MONDO:0800174 {source="OMIMPS:610551"} ! encephalitis, acute, infection-induced, susceptibility to
+intersection_of: MONDO:0021094 ! immunodeficiency disease
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/12033 ! TRAF3
 intersection_of: predisposes_towards MONDO:0100198 ! Mendelian encephalopathy
 relationship: excluded_subClassOf MONDO:0000166 {source="OMIM:614849", source="https://orcid.org/0000-0001-5208-3432"} ! encephalopathy, acute, infection-induced
@@ -345947,23 +345959,26 @@ relationship: excluded_subClassOf MONDO:0012521 {source="Orphanet:1930", source=
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/12033 {source="OMIM:614849"} ! TRAF3
 relationship: predisposes_towards MONDO:0100198 {source="OMIM:614849"} ! Mendelian encephalopathy
 property_value: curated_content_resource "https://www.malacards.org/card/immunodeficiency_132a" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10644" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4882" xsd:anyURI
 
 [Term]
 id: MONDO:0013921
-name: herpes simplex encephalitis, susceptibility to, 4
-def: "A Mendelian susceptibility or predisposition to herpes simplex infection induced encephalitis in which the cause of the diseas is a mutation in the TICAM1 gene." [MONDO:patterns/disease_series_by_gene]
+name: encephalopathy, acute, infection-induced (herpes-specific), susceptibility to, 6
+def: "A Mendelian susceptibility or predisposition to herpes simplex infection induced encephalitis in which the cause of the disease is a mutation in the TICAM1 gene." [MONDO:patterns/disease_series_by_gene]
 subset: omim {source="OMIM:614850"}
 subset: omim_susceptibility {source="OMIM:614850"}
 subset: predisposition
+synonym: "encephalopathy, acute, infection-induced (herpes-specific), susceptibility to, 6" EXACT [OMIM:614850]
 synonym: "herpes simplex encephalitis caused by mutation in TICAM1" EXACT [MONDO:design_pattern]
 synonym: "herpes simplex encephalitis, susceptibility to, 4" EXACT [OMIM:614850]
 synonym: "Herpes simplex encephalitis, susceptibility to, type 4" EXACT []
-synonym: "IIAE6" RELATED ABBREVIATION []
+synonym: "IIAE6" EXACT ABBREVIATION [OMIM:614850]
 synonym: "TICAM1 herpes simplex encephalitis" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 xref: MEDGEN:766783 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:614850 {source="MONDO:equivalentTo"}
 xref: UMLS:C3553869 {source="MEDGEN:766783", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0800174 {source="OMIMPS:610551"} ! encephalitis, acute, infection-induced, susceptibility to
 intersection_of: MONDO:0020573 ! inherited disease susceptibility
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18348 ! TICAM1
 intersection_of: predisposes_towards MONDO:0100198 ! Mendelian encephalopathy
@@ -345972,6 +345987,7 @@ relationship: excluded_subClassOf MONDO:0012521 {source="Orphanet:1930/btnt", so
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18348 {source="OMIM:614850"} ! TICAM1
 relationship: predisposes_towards MONDO:0100198 {source="OMIM:614850"} ! Mendelian encephalopathy
 property_value: curated_content_resource "https://www.malacards.org/card/encephalopathy_acute_infection_induced_6" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10644" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4882" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5671" xsd:anyURI
 
@@ -367619,19 +367635,22 @@ property_value: curated_content_resource "https://www.malacards.org/card/neurode
 
 [Term]
 id: MONDO:0014680
-name: herpes simplex encephalitis, susceptibility to, 7
-def: "A Mendelian susceptibility or predisposition to herpes simplex infection induced encephalitis in which the cause of the diseas is a mutation in the IRF3 gene." [MONDO:patterns/susceptibility_by_gene]
+name: encephalopathy, acute, infection-induced (herpes-specific), susceptibility to, 7
+def: "A Mendelian susceptibility or predisposition to herpes simplex infection induced encephalitis in which the cause of the disease is a mutation in the IRF3 gene." [MONDO:patterns/susceptibility_by_gene]
 subset: omim {source="OMIM:616532"}
 subset: omim_susceptibility {source="OMIM:616532"}
 subset: predisposition
+synonym: "encephalopathy, acute, infection-induced (herpes-specific), susceptibility to, 7" EXACT [OMIM:616532]
 synonym: "herpes simplex encephalitis caused by mutation in IRF3" EXACT [MONDO:design_pattern]
+synonym: "herpes simplex encephalitis, susceptibility to, 5" EXACT [OMIM:616532]
 synonym: "herpes simplex encephalitis, susceptibility to, 7" EXACT []
 synonym: "Herpes simplex encephalitis, susceptibility to, type 7" EXACT []
-synonym: "IIAE7" RELATED ABBREVIATION []
+synonym: "IIAE7" EXACT ABBREVIATION [OMIM:616532]
 synonym: "IRF3 herpes simplex encephalitis" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 xref: MEDGEN:901850 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:616532 {source="MONDO:equivalentTo"}
 xref: UMLS:C4225294 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:901850"}
+is_a: MONDO:0800174 {source="OMIMPS:610551"} ! encephalitis, acute, infection-induced, susceptibility to
 intersection_of: MONDO:0020573 ! inherited disease susceptibility
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6118 ! IRF3
 intersection_of: predisposes_towards MONDO:0100198 ! Mendelian encephalopathy
@@ -367640,6 +367659,7 @@ relationship: excluded_subClassOf MONDO:0012521 {source="Orphanet:1930/btnt", so
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6118 {source="OMIM:616532"} ! IRF3
 relationship: predisposes_towards MONDO:0100198 {source="OMIM:616532", source="https://orcid.org/0000-0001-5208-3432"} ! Mendelian encephalopathy
 property_value: curated_content_resource "https://www.malacards.org/card/encephalopathy_acute_infection_induced_7" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10644" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4882" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5671" xsd:anyURI
 
@@ -531900,18 +531920,20 @@ property_value: curated_content_resource "https://www.malacards.org/card/sick_si
 
 [Term]
 id: MONDO:0024563
-name: herpes simplex encephalitis, susceptibility to, 1
-def: "A Mendelian susceptibility or predisposition to herpes simplex infection induced encephalitis in which the cause of the diseas is a mutation in the UNC93B1 gene." [MONDO:patterns/disease_series_by_gene]
+name: encephalopathy, acute, infection-induced (herpes-specific), susceptibility to, 1
+def: "A Mendelian susceptibility or predisposition to herpes simplex infection induced encephalitis in which the cause of the disease is a mutation in the UNC93B1 gene." [MONDO:patterns/disease_series_by_gene]
 subset: omim {source="OMIM:610551"}
 subset: omim_susceptibility {source="OMIM:610551"}
 subset: predisposition
+synonym: "encephalopathy, acute, infection-induced (herpes-specific), susceptibility to, 1" EXACT [OMIM:610551]
 synonym: "herpes simplex encephalitis caused by mutation in UNC93B1" EXACT [MONDO:design_pattern]
 synonym: "herpes simplex encephalitis, susceptibility to, 1" EXACT [OMIM:610551]
-synonym: "IIAE1" RELATED ABBREVIATION []
+synonym: "IIAE1" EXACT ABBREVIATION [OMIM:610551]
 synonym: "UNC93B1 herpes simplex encephalitis" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 xref: MEDGEN:413772 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:610551 {source="MONDO:equivalentTo"}
 xref: UMLS:C2750180 {source="MEDGEN:413772", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0800174 {source="OMIMPS:610551"} ! encephalitis, acute, infection-induced, susceptibility to
 intersection_of: MONDO:0020573 ! inherited disease susceptibility
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/13481 ! UNC93B1
 intersection_of: predisposes_towards MONDO:0100198 ! Mendelian encephalopathy
@@ -531920,6 +531942,7 @@ relationship: excluded_subClassOf MONDO:0012521 {source="MONDO:Redundant", sourc
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/13481 {source="OMIM:610551"} ! UNC93B1
 relationship: predisposes_towards MONDO:0100198 {source="OMIM:610551"} ! Mendelian encephalopathy
 property_value: curated_content_resource "https://www.malacards.org/card/encephalopathy_acute_infection_induced_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10644" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4882" xsd:anyURI
 
 [Term]
@@ -548799,20 +548822,29 @@ property_value: curated_content_resource "https://www.malacards.org/card/immunod
 
 [Term]
 id: MONDO:0032667
-name: epidermodysplasia verruciformis, susceptibility to, 5
+name: immunodeficiency 130 with HPV-related verrucosis
+def: "Any combined immunodeficiency in which the cause of the disease is a variation in the IL7 gene. It is characterized mainly by the onset of warts and verrucous or plaque-like skin lesions associated with HPV infection. There is an increased risk of skin malignancy. Some patients may have other symptoms of immune dysfunction, including mycobacterial, herpes simplex virus (HSV), or fungal infections." [https://orcid.org/0009-0001-4272-1178, OMIM:618309, PMID:39352394]
 subset: doid {source="DOID:0061171", source="DOID:0061095"}
 subset: omim {source="OMIM:618309"}
-synonym: "EV5" RELATED ABBREVIATION []
+synonym: "combined immunodeficiency due to IL7 deficiency" EXACT [https://orcid.org/0009-0001-4272-1178]
+synonym: "epidermodysplasia verruciformis, susceptibility to, 5" EXACT [OMIM:618309]
+synonym: "EV5" EXACT ABBREVIATION [OMIM:618309]
+synonym: "IL7 deficiency" EXACT [https://orcid.org/0009-0001-4272-1178]
+synonym: "IMD130" EXACT ABBREVIATION [OMIM:618309]
+synonym: "immunodeficiency 130 with HPV-related verrucosis" EXACT [OMIM:618309]
 xref: DOID:0061095 {source="MONDO:equivalentTo"}
 xref: DOID:0061171 {source="MONDO:equivalentTo"}
 xref: MEDGEN:1648489 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:618309 {source="MONDO:equivalentTo"}
 xref: UMLS:C4749043 {source="MEDGEN:1648489", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0100043 {source="OMIM:618309", source="https://orcid.org/0000-0001-5208-3432"} ! epidermodysplasia verruciformis, susceptibility to
-relationship: excluded_subClassOf MONDO:0003847 {source="OMIM:618309", source="https://orcid.org/0000-0001-5208-3432"} ! hereditary disease
+is_a: MONDO:0015131 {source="OMIM:618309", source="PMID:39352394", source="https://orcid.org/0009-0001-4272-1178"} ! combined immunodeficiency
+intersection_of: MONDO:0015131 ! combined immunodeficiency
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6023 ! IL7
+relationship: excluded_subClassOf MONDO:0100043 {source="OMIM:618309", source="PMID:39352394", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-7638-4659"} ! epidermodysplasia verruciformis, susceptibility to
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6023 {source="OMIM:618309"} ! IL7
 relationship: predisposes_towards MONDO:0009176 {source="OMIM:618309"} ! epidermodysplasia verruciformis
 property_value: curated_content_resource "https://www.malacards.org/card/immunodeficiency_130_with_hpv_related_verrucosis" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10642" xsd:anyURI
 
 [Term]
 id: MONDO:0032668
@@ -589123,6 +589155,7 @@ intersection_of: MONDO:0005453 ! congenital heart disease
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4174 ! GATA6
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4174 {source="https://clinicalgenome.org/affiliation/40130/"} ! GATA6
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10358" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10679" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7218" xsd:anyURI
 
 [Term]
@@ -703082,6 +703115,85 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10635" xsd:anyURI
 
 [Term]
+id: MONDO:1060307
+name: CD48-related hemophagocytic syndrome
+def: "Any hemophagocytic syndrome in which the cause of the disease is a variation in the CD48 gene." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:31419545, PMID:41984595]
+synonym: "CD48 deficiency" RELATED [https://orcid.org/0009-0001-4272-1178]
+synonym: "CD48-related autoinflammatory syndrome" RELATED [https://orcid.org/0009-0001-4272-1178]
+is_a: MONDO:0015540 {source="PMID:31419545", source="PMID:41984595", source="https://orcid.org/0009-0001-4272-1178"} ! hemophagocytic syndrome
+intersection_of: MONDO:0015540 ! hemophagocytic syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1683
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1683 {source="PMID:31419545", source="PMID:41984595"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10636" xsd:anyURI
+
+[Term]
+id: MONDO:1060308
+name: IRAK2 deficiency
+def: "Any inborn error of immunity in which the cause of the disease is a variation in the IRAK2 gene." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:42168171]
+synonym: "IRAK2-related immune dysregulation" EXACT [https://orcid.org/0009-0001-4272-1178, PMID:42168171]
+is_a: MONDO:0003778 {source="PMID:42168171", source="https://orcid.org/0009-0001-4272-1178"} ! inborn error of immunity
+intersection_of: MONDO:0003778 ! inborn error of immunity
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6113
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6113 {source="PMID:42168171"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10637" xsd:anyURI
+
+[Term]
+id: MONDO:1060309
+name: FGR-related monogenic vasculitis
+def: "Any vasculitis in which the cause of the disease is a variation in the FGR gene." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:41920357]
+synonym: "FGR deficiency" RELATED [https://orcid.org/0009-0001-4272-1178]
+is_a: MONDO:0018882 {source="PMID:41920357", source="https://orcid.org/0009-0001-4272-1178"} ! vasculitis
+is_a: MONDO:0019751 {source="PMID:41920357"} ! autoinflammatory syndrome
+intersection_of: MONDO:0018882 ! vasculitis
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3697
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3697 {source="PMID:41920357"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10638" xsd:anyURI
+
+[Term]
+id: MONDO:1060310
+name: MAGIS syndrome, GNAI2-related
+def: "Any inborn error of immunity in which the cause of the disease is a variation in the GNAI2 gene. It is characterized by midline malformations of the brain, anterior pituitary gland dysfunction, growth retardation, immunodysregulation/immunodeficiency, and skeletal defects." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:39298586, PMID:40926810]
+synonym: "GNAI2-related immune dysregulation syndrome" EXACT [https://orcid.org/0009-0001-4272-1178]
+synonym: "MAGIS" EXACT ABBREVIATION [PMID:40926810]
+synonym: "MAGIS syndrome" EXACT [PMID:40926810]
+is_a: MONDO:0002254 {source="PMID:40926810"} ! syndromic disease
+is_a: MONDO:0003778 {source="PMID:39298586", source="PMID:40926810", source="https://orcid.org/0009-0001-4272-1178"} ! inborn error of immunity
+intersection_of: MONDO:0003778 ! inborn error of immunity
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4385 ! GNAI2
+relationship: has_characteristic HP:0000006 {source="PMID:40926810"} ! Autosomal dominant inheritance
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4385 {source="PMID:39298586", source="PMID:40926810"} ! GNAI2
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10640" xsd:anyURI
+
+[Term]
+id: MONDO:1060311
+name: CASP1-related autoinflammatory syndrome
+def: "Any autoinflammatory syndrome in which the cause of the disease is a gain-of-function variation in the CASP1 gene. It is characterized by systemic juvenile idiopathic arthritis and recurrent macrophage activation syndrome, with elevated IL-1beta and IL-18, and progressive interstitial lung disease." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:32556329]
+synonym: "CASP1 gain-of-function autoinflammatory disease" EXACT [https://orcid.org/0009-0001-4272-1178]
+is_a: MONDO:0019751 {source="PMID:32556329", source="https://orcid.org/0009-0001-4272-1178"} ! autoinflammatory syndrome
+intersection_of: MONDO:0019751 ! autoinflammatory syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1499
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1499 {source="PMID:32556329"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10641" xsd:anyURI
+
+[Term]
+id: MONDO:1060312
+name: inborn error of immunity due to STXBP3 deficiency
+def: "Any inborn error of immunity in which the cause of the disease is a variation in the STXBP3 gene. It is characterized by medically refractory infantile-onset IBD, bilateral sensorineural hearing loss and, in the majority, recurrent infections." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:33891011]
+synonym: "STXBP3-related very early onset inflammatory bowel disease with hearing loss and immune dysregulation" EXACT [https://orcid.org/0009-0001-4272-1178]
+is_a: MONDO:0003778 {source="PMID:33891011", source="https://orcid.org/0009-0001-4272-1178"} ! inborn error of immunity
+is_a: MONDO:0005265 {source="PMID:33891011"} ! inflammatory bowel disease
+intersection_of: MONDO:0003778 ! inborn error of immunity
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11446
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11446 {source="PMID:33891011", source="PMID:40575033"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10643" xsd:anyURI
+
+[Term]
 id: MONDO:1060313
 name: TBL1XR1-related disorder
 def: "Any disorder in which the cause of the disease is a variation in the TBL1XR1 gene." [https://orcid.org/0000-0001-9310-0163, MONDO:patterns/disease_series_by_gene, PMID:37683765, PMID:38378692, PMID:41444645]
@@ -703131,6 +703243,20 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/24552 {source="PMID:38697782", source="https://orcid.org/0009-0001-4272-1178"} ! TKFC
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10647" xsd:anyURI
+
+[Term]
+id: MONDO:1060314
+name: herpes simplex encephalitis due to TMEFF1 deficiency
+def: "An inherited susceptibility to acute infection-induced encephalitis in which the cause is a variation in the TMEFF1 gene, predisposing to herpes simplex encephalitis. Genetic TMEFF1 deficiency allows HSV-1 to rapidly enter cortical neurons." [https://orcid.org/0009-0001-4272-1178, PMID:39048823, PMID:39048830]
+synonym: "herpes simplex encephalitis, susceptibility to, TMEFF1-related" EXACT [https://orcid.org/0009-0001-4272-1178]
+synonym: "TMEFF1 deficiency" RELATED [https://orcid.org/0009-0001-4272-1178, PMID:39048830]
+is_a: MONDO:0800174 {source="PMID:39048830", source="https://orcid.org/0009-0001-4272-1178"} ! encephalitis, acute, infection-induced, susceptibility to
+intersection_of: MONDO:0800174 ! encephalitis, acute, infection-induced, susceptibility to
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11866
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11866 {source="PMID:39048823", source="PMID:39048830"}
+relationship: predisposes_towards MONDO:0012521 {source="PMID:39048830"} ! herpes simplex encephalitis
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10644" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
