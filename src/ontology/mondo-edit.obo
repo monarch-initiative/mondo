@@ -39814,7 +39814,7 @@ is_a: MONDO:0002122 {source="DOID:1802"} ! neuritis
 [Term]
 id: MONDO:0002122
 name: neuritis
-def: "A neuropathy arising from inflammation of one or more nerves." [https://orcid.org/0000-0002-6601-2165]
+def: "A neuropathy arising from inflammation of one or more nerves." [https://orcid.org/0000-0002-6601-2165, NCIT:C116381]
 subset: doid {source="DOID:1803"}
 subset: ncit {source="NCIT:C116381"}
 subset: otar {source="MONDO:OTAR"}
@@ -40016,14 +40016,16 @@ property_value: curated_content_resource "https://www.malacards.org/card/bone_ca
 
 [Term]
 id: MONDO:0002130
-name: upper limb mononeuronitis
+name: mononeuritis of upper limb
 def: "A disease affecting a single peripheral nerve of the upper limb." [http://bestpractice.bmj.com/topics/en-us/771]
 subset: doid {source="DOID:1844"}
 subset: gard_rare {source="GARD:0023071", source="MONDO:GARD"}
 subset: rare
 synonym: "forelimb mononeuritis simplex" EXACT [MONDO:patterns/location]
+synonym: "mononeuritis of upper limb" EXACT [DOID:1844, PMID:36694171]
 synonym: "mononeuritis of upper limb, unspecified" EXACT [ICD9CM:354.9]
 synonym: "mononeuritis simplex of forelimb" EXACT [MONDO:design_pattern]
+synonym: "upper limb mononeuronitis" RELATED EXCLUDE []
 xref: DOID:1844 {source="MONDO:equivalentTo"}
 xref: GARD:0023071 {source="MONDO:GARD"}
 xref: ICD9:354.9 {source="DOID:1844"}
@@ -40033,6 +40035,7 @@ is_a: MONDO:0003607 {source="DOID:1844", source="MONDO:Entailed", source="MONDO:
 intersection_of: MONDO:0002121 ! mononeuritis simplex
 intersection_of: disease_has_location UBERON:0002102 ! forelimb
 property_value: curated_content_resource "https://www.malacards.org/card/mononeuritis_of_upper_limb" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10436" xsd:anyURI
 
 [Term]
 id: MONDO:0002131
@@ -92118,11 +92121,10 @@ property_value: curated_content_resource "https://www.malacards.org/card/periamp
 [Term]
 id: MONDO:0004466
 name: neuronitis
-comment: This term is scheduled to be merged with MONDO:0002122 neuritis, based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0002122
+def: "A non-neoplastic inflammatory disorder of neurons." [NCIT:C34847]
 subset: doid {source="DOID:8117"}
 subset: ncit {source="NCIT:C34847"}
-subset: obsoletion_candidate
-synonym: "neuroinflammation" RELATED [Wikipedia:Neuroinflammation]
+synonym: "neuroinflammation" RELATED EXCLUDE [Wikipedia:Neuroinflammation]
 xref: DOID:8117 {source="MONDO:equivalentTo"}
 xref: MEDGEN:45064 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C34847 {source="DOID:8117", source="MONDO:equivalentTo"}
@@ -92132,7 +92134,6 @@ intersection_of: MONDO:0000001 ! disease
 intersection_of: disease_has_inflammation_site CL:0000540 ! neuron
 property_value: curated_content_resource "https://www.malacards.org/card/neuronitis" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10436" xsd:anyURI
-property_value: IAO:0006012 "2026-10-01" xsd:string
 
 [Term]
 id: MONDO:0004467
@@ -130999,12 +131000,14 @@ property_value: IAO:0000589 "vesicoureteral reflux (disease)" xsd:string
 
 [Term]
 id: MONDO:0006008
-name: vestibular neuronitis
+name: vestibular neuritis
 def: "Idiopathic inflammation of the vestibular nerve, characterized clinically by the acute or subacute onset of vertigo; nausea; and imbalance. The cochlear nerve is typically spared and hearing loss and tinnitus do not usually occur. Symptoms usually resolve over a period of days to weeks. (Adams et al., Principles of Neurology, 6th ed, p304)" [MESH:D020338]
 subset: doid {source="DOID:12683"}
 subset: gard_rare {source="GARD:0024271", source="MONDO:GARD"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
+synonym: "vestibular neuritis" EXACT [PMID:34411472]
+synonym: "vestibular neuronitis" EXACT [MESH:D020338, PMID:34411472]
 xref: DOID:12683 {source="EFO:0007537", source="MONDO:equivalentTo"}
 xref: EFO:0007537 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: GARD:0024271 {source="MONDO:GARD"}
@@ -131026,6 +131029,7 @@ is_a: MONDO:0001563 {source="DOID:12683", source="MESH:D020338", source="MONDO:R
 intersection_of: MONDO:0002122 ! neuritis
 intersection_of: disease_has_inflammation_site UBERON:0003723 ! vestibular nerve
 property_value: curated_content_resource "https://www.malacards.org/card/vestibular_neuronitis" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10436" xsd:anyURI
 
 [Term]
 id: MONDO:0006009
