@@ -489269,8 +489269,8 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10014/pellag
 
 [Term]
 id: MONDO:0019976
-name: dementia pugilistica
-def: "Conditions characterized by persistent brain damage or dysfunction as sequelae of cranial trauma. This disorder may result from diffuse axonal injury; intracranial hemorrhages; brain edema; and other conditions. Clinical features may include dementia; focal neurologic deficits; persistent vegetative state; akinetic mutism; or coma." [MESH:D020208]
+name: chronic traumatic encephalopathy
+def: "A tauopathy characterized by progressive neurodegeneration secondary to repetitive mild traumatic brain injuries. The clinical picture is variable and includes behavioral or psychiatric symptoms, cognitive impairment and motor deficits. The neuropathological hallmark is the accumulation of phosphorylated tau protein in sulci and perivascular regions." [DOID:0081291, Orphanet:97353]
 subset: doid {source="DOID:0081291"}
 subset: gard_rare {source="GARD:0019371", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -489279,18 +489279,22 @@ subset: orphanet {source="Orphanet:97353"}
 subset: orphanet_rare {source="Orphanet:97353"}
 subset: rare
 synonym: "Boxer's dementia" EXACT [Orphanet:97353]
-synonym: "chronic traumatic encephalopathy" EXACT [DOID:0081291, Orphanet:97353]
+synonym: "chronic traumatic encephalopathy" EXACT [DOID:0081291, https://orcid.org/0000-0003-2955-4640, Orphanet:97353, PMID:19535999]
+synonym: "dementia pugilistica" EXACT [Orphanet:97353, PMID:19535999, PMID:24190181]
 synonym: "punch-drunk syndrome" EXACT [Orphanet:97353]
 xref: DOID:0081291 {source="MONDO:equivalentTo"}
 xref: GARD:0019371 {source="MONDO:GARD"}
 xref: MEDGEN:508441 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: MESH:D020208 {source="MONDO:equivalentTo"}
+xref: MESH:D000070627 {source="MONDO:equivalentTo"}
+xref: MESH:D020208 {source="MONDO:mondoIsNarrowerThanSource"}
 xref: Orphanet:97353 {source="MONDO:equivalentTo"}
 xref: SCTID:230283005 {source="MONDO:equivalentTo"}
 xref: UMLS:C0149843 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:508441"}
 is_a: MONDO:0001627 {source="Orphanet:97353"} ! dementia
+is_a: MONDO:0005574 {source="DOID:0081291", source="PMID:19535999"} ! tauopathy
 property_value: curated_content_resource "https://www.malacards.org/card/chronic_traumatic_encephalopathy" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/dementia_pugilistica" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10677" xsd:anyURI
 
 [Term]
 id: MONDO:0019977
