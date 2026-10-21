@@ -703208,6 +703208,20 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10574" xsd:anyURI
 
 [Term]
+id: MONDO:1060314
+name: herpes simplex encephalitis due to TMEFF1 deficiency
+def: "An inherited susceptibility to acute infection-induced encephalitis in which the cause is a variation in the TMEFF1 gene, predisposing to herpes simplex encephalitis. Genetic TMEFF1 deficiency allows HSV-1 to rapidly enter cortical neurons." [https://orcid.org/0009-0001-4272-1178, PMID:39048823, PMID:39048830]
+synonym: "herpes simplex encephalitis, susceptibility to, TMEFF1-related" EXACT [https://orcid.org/0009-0001-4272-1178]
+synonym: "TMEFF1 deficiency" RELATED [https://orcid.org/0009-0001-4272-1178, PMID:39048830]
+is_a: MONDO:0800174 {source="PMID:39048830", source="https://orcid.org/0009-0001-4272-1178"} ! encephalitis, acute, infection-induced, susceptibility to
+intersection_of: MONDO:0800174 ! encephalitis, acute, infection-induced, susceptibility to
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11866
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11866 {source="PMID:39048823", source="PMID:39048830"}
+relationship: predisposes_towards MONDO:0012521 {source="PMID:39048830"} ! herpes simplex encephalitis
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10644" xsd:anyURI
+
+[Term]
 id: MONDO:1060316
 name: combined immunodeficiency due to RGS10 deficiency
 def: "Any combined immunodeficiency in which the cause of the disease is a variation in the RGS10 gene. It is characterized by recurrent infections, hypergammaglobulinemia, profoundly reduced lymphocyte chemotaxis, abnormal lymph node architecture, and short stature due to growth hormone deficiency." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:34315806]
@@ -703243,20 +703257,6 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/24552 {source="PMID:38697782", source="https://orcid.org/0009-0001-4272-1178"} ! TKFC
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10647" xsd:anyURI
-
-[Term]
-id: MONDO:1060314
-name: herpes simplex encephalitis due to TMEFF1 deficiency
-def: "An inherited susceptibility to acute infection-induced encephalitis in which the cause is a variation in the TMEFF1 gene, predisposing to herpes simplex encephalitis. Genetic TMEFF1 deficiency allows HSV-1 to rapidly enter cortical neurons." [https://orcid.org/0009-0001-4272-1178, PMID:39048823, PMID:39048830]
-synonym: "herpes simplex encephalitis, susceptibility to, TMEFF1-related" EXACT [https://orcid.org/0009-0001-4272-1178]
-synonym: "TMEFF1 deficiency" RELATED [https://orcid.org/0009-0001-4272-1178, PMID:39048830]
-is_a: MONDO:0800174 {source="PMID:39048830", source="https://orcid.org/0009-0001-4272-1178"} ! encephalitis, acute, infection-induced, susceptibility to
-intersection_of: MONDO:0800174 ! encephalitis, acute, infection-induced, susceptibility to
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11866
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11866 {source="PMID:39048823", source="PMID:39048830"}
-relationship: predisposes_towards MONDO:0012521 {source="PMID:39048830"} ! herpes simplex encephalitis
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10644" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
