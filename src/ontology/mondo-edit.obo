@@ -613257,16 +613257,21 @@ property_value: curated_content_resource "https://www.malacards.org/card/neuromu
 [Term]
 id: MONDO:0958333
 name: thrombocytopenia 13, syndromic
+def: "Any inherited thrombocytopenia in which the cause of the disease is a variation in the GALE gene. It is characterized by lifelong severe macrothrombocytopenia with giant or grey platelets, bleeding diathesis, intellectual disability, mitral valve prolapse, and jaundice, with B-cell lymphopenia, low IgA and IgM, impaired specific antibody responses, and recurrent viral respiratory infections." [https://orcid.org/0009-0001-4272-1178, OMIM:620776, PMID:36395340, PMID:41986803]
 subset: gard_rare {source="GARD:0027013", source="MONDO:GARD"}
 subset: omim {source="OMIM:620776"}
 subset: rare
+synonym: "GALE-related syndromic thrombocytopenia with immune dysregulation" EXACT [https://orcid.org/0009-0001-4272-1178]
+synonym: "thrombocytopenia, autosomal recessive, 13" EXACT [OMIM:620776]
 xref: GARD:0027013 {source="MONDO:GARD"}
 xref: MEDGEN:1856296 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:620776 {source="MONDO:equivalentTo"}
 xref: UMLS:C5935599 {source="MEDGEN:1856296", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0003778 {source="PMID:41986803", source="https://orcid.org/0009-0001-4272-1178"} ! inborn error of immunity
 is_a: MONDO:0100241 {source="OMIM:620776", source="https://orcid.org/0000-0002-4142-7153"} ! inherited thrombocytopenia
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4116 {source="OMIM:620776"} ! GALE
 property_value: curated_content_resource "https://www.malacards.org/card/thrombocytopenia_13_syndromic" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10648" xsd:anyURI
 
 [Term]
 id: MONDO:0958334
@@ -703215,6 +703220,43 @@ relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/
 relationship: predisposes_towards MONDO:0012521 {source="PMID:39048830"} ! herpes simplex encephalitis
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10644" xsd:anyURI
+
+[Term]
+id: MONDO:1060316
+name: combined immunodeficiency due to RGS10 deficiency
+def: "Any combined immunodeficiency in which the cause of the disease is a variation in the RGS10 gene. It is characterized by recurrent infections, hypergammaglobulinemia, profoundly reduced lymphocyte chemotaxis, abnormal lymph node architecture, and short stature due to growth hormone deficiency." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:34315806]
+synonym: "RGS10-related combined immunodeficiency" EXACT [https://orcid.org/0009-0001-4272-1178]
+is_a: MONDO:0015131 {source="PMID:34315806", source="https://orcid.org/0009-0001-4272-1178"} ! combined immunodeficiency
+intersection_of: MONDO:0015131 ! combined immunodeficiency
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9992
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9992 {source="PMID:34315806", source="https://orcid.org/0009-0001-4272-1178"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10645" xsd:anyURI
+
+[Term]
+id: MONDO:1060317
+name: combined immunodeficiency with epigenetic dysfunction, ASXL1-related
+def: "Any combined immunodeficiency in which the cause of the disease is a biallelic germline mutation in the ASXL1 gene. It is characterized by progressive B-cell loss with hypogammaglobulinemia, recurrent pneumonia, progressive cytopenias,impaired cytotoxic T and NK cell populations, chronic macrocytosis, chronic ulcerated granulomatous skin lesions, and EBV-associated Hodgkin lymphoma. Genome-wide DNA methylation showed extensive hypomethylation, epigenetic age approximately 27 years older than chronological age, and shortened telomeres." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:40742536]
+comment: This biallelic germline presentation is distinct from both Bohring-Opitz syndrome (which is caused by heterozygous, dominant germline truncating variants in ASXL1) and myelodysplastic syndrome / myeloid malignancies (which typically involve somatic ASXL1 mutations).
+synonym: "ASXL1 deficiency, germline biallelic" EXACT [https://orcid.org/0009-0001-4272-1178]
+is_a: MONDO:0015131 {source="PMID:40742536", source="https://orcid.org/0009-0001-4272-1178"} ! combined immunodeficiency
+intersection_of: MONDO:0015131 ! combined immunodeficiency
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18318 ! ASXL1
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18318 {source="PMID:40742536", source="https://orcid.org/0009-0001-4272-1178"} ! ASXL1
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10646" xsd:anyURI
+
+[Term]
+id: MONDO:1060318
+name: isolated immunodeficiency, TKFC-related
+def: "Any immunodeficiency disease in which the cause of the disease is a variation in the TKFC gene. It is characterized by chronic active Epstein-Barr virus disease, multiple bacterial and viral infections, hypogammaglobulinemia, near-absent natural killer cells, and decreased memory B cells, without the multisystem features of triokinase and FMN cyclase deficiency syndrome." [https://orcid.org/0009-0001-4272-1178, MONDO:patterns/disease_series_by_gene, PMID:38697782]
+synonym: "TKFC deficiency, isolated presentation" EXACT [https://orcid.org/0009-0001-4272-1178]
+is_a: MONDO:0021094 {source="PMID:38697782", source="https://orcid.org/0009-0001-4272-1178"} ! immunodeficiency disease
+intersection_of: MONDO:0021094 ! immunodeficiency disease
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/24552 ! TKFC
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/24552 {source="PMID:38697782", source="https://orcid.org/0009-0001-4272-1178"} ! TKFC
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10647" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
