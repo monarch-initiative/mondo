@@ -39815,6 +39815,7 @@ is_a: MONDO:0002122 {source="DOID:1802"} ! neuritis
 id: MONDO:0002122
 name: neuritis
 def: "A neuropathy arising from inflammation of one or more nerves." [https://orcid.org/0000-0002-6601-2165, NCIT:C116381]
+comment: Please do not confuse with MONDO:0004466 neuronitis, which is inflammation of neurons.
 subset: doid {source="DOID:1803"}
 subset: ncit {source="NCIT:C116381"}
 subset: otar {source="MONDO:OTAR"}
@@ -39834,6 +39835,7 @@ is_a: MONDO:0005244 {source="DOID:1803", source="MONDO:Redundant", source="NCIT:
 intersection_of: MONDO:0005244 ! peripheral neuropathy
 intersection_of: disease_has_inflammation_site UBERON:0001021 ! nerve
 property_value: curated_content_resource "https://www.malacards.org/card/neuritis" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10436" xsd:anyURI
 
 [Term]
 id: MONDO:0002123
@@ -40025,7 +40027,6 @@ synonym: "forelimb mononeuritis simplex" EXACT [MONDO:patterns/location]
 synonym: "mononeuritis of upper limb" EXACT [DOID:1844, PMID:36694171]
 synonym: "mononeuritis of upper limb, unspecified" EXACT [ICD9CM:354.9]
 synonym: "mononeuritis simplex of forelimb" EXACT [MONDO:design_pattern]
-synonym: "upper limb mononeuronitis" RELATED EXCLUDE []
 xref: DOID:1844 {source="MONDO:equivalentTo"}
 xref: GARD:0023071 {source="MONDO:GARD"}
 xref: ICD9:354.9 {source="DOID:1844"}
@@ -92122,9 +92123,9 @@ property_value: curated_content_resource "https://www.malacards.org/card/periamp
 id: MONDO:0004466
 name: neuronitis
 def: "A non-neoplastic inflammatory disorder of neurons." [NCIT:C34847]
+comment: Please do not confuse with MONDO:0002122 neuritis, which is inflammation of a nerve.
 subset: doid {source="DOID:8117"}
 subset: ncit {source="NCIT:C34847"}
-synonym: "neuroinflammation" RELATED EXCLUDE [Wikipedia:Neuroinflammation]
 xref: DOID:8117 {source="MONDO:equivalentTo"}
 xref: MEDGEN:45064 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C34847 {source="DOID:8117", source="MONDO:equivalentTo"}
