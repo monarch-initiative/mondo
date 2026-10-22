@@ -94362,6 +94362,7 @@ xref: SCTID:20307000 {source="MONDO:equivalentTo", source="DOID:8454"}
 xref: SCTID:267492001 {source="DOID:8454"}
 xref: UMLS:C5779638 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1830329"}
 is_a: MONDO:0006873 {source="DOID:8454"} ! nutritional deficiency disease
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30225 {source="OMIM:615026"} ! SLC52A1
 property_value: curated_content_resource "https://www.malacards.org/card/riboflavin_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
@@ -215848,6 +215849,9 @@ xref: UMLS:C0005129 {source="MONDO:equivalentTo", source="MEDGEN:2212", source="
 is_a: MONDO:0000009 {source="DC-OMIM:231200", source="MONDO:Redundant", source="OMIM:231200"} ! inherited bleeding disorder, platelet-type
 is_a: MONDO:0002254 {source="NCIT:C84595"} ! syndromic disease
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0009276 {source="MONDO:CLINGEN"}
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4439 {source="OMIM:231200"} ! GP1BA
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4440 {source="OMIM:231200"} ! GP1BB
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4444 {source="OMIM:231200"} ! GP9
 property_value: curated_content_resource "https://www.malacards.org/card/bernard_soulier_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 
@@ -348550,7 +348554,7 @@ is_a: MONDO:0005066 {source="https://orcid.org/0000-0002-1780-5230"} ! metabolic
 is_a: MONDO:0017757 {source="PMID:33340416", source="https://orcid.org/0000-0001-5208-3432"} ! disorder of metabolite absorption and transport
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0014013 {source="MONDO:CLINGEN"}
 relationship: excluded_subClassOf MONDO:0004573 {source="Orphanet:411712", source="PMID:21089064", source="https://orcid.org/0000-0002-4142-7153", source="https://orcid.org/0000-0002-7638-4659"} ! ariboflavinosis
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30225 {source="OMIM:615026", source="Orphanet:411712"} ! SLC52A1
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30225 {source="Orphanet:411712"} ! SLC52A1
 property_value: curated_content_resource "https://www.malacards.org/card/maternal_riboflavin_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6750" xsd:anyURI
@@ -374402,7 +374406,7 @@ xref: UMLS:C4310703 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0019502 {source="DC-OMIM:617125", source="DOID:0081217", source="MONDO:Redundant", source="OMIM:617125"} ! autosomal recessive non-syndromic intellectual disability
 intersection_of: MONDO:0019502 ! autosomal recessive non-syndromic intellectual disability
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20509 ! ZC3H14
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20509 {source="OMIM:617125"} ! ZC3H14
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20509 ! ZC3H14
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_recessive_56" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10590" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
@@ -499249,7 +499253,7 @@ is_a: MONDO:0007525 {source="OMIM:130060", source="Orphanet:99875"} ! Ehlers-Dan
 is_a: MONDO:0020066 {source="OMIM:130060"} ! Ehlers-Danlos syndrome
 intersection_of: MONDO:0007525 ! Ehlers-Danlos syndrome, arthrochalasia type
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2197 ! COL1A1
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2197 {source="OMIM:130060"} ! COL1A1
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2197 ! COL1A1
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 
 [Term]
@@ -536192,7 +536196,7 @@ xref: OMIM:619366 {source="MONDO:equivalentTo"}
 xref: UMLS:C5543526 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1784046"}
 is_a: MONDO:0019623 {source="OMIM:619366"} ! hereditary angioedema
 is_a: MONDO:0035734 {source="Orphanet:599418", source="PMID:42165046", source="https://orcid.org/0000-0001-9310-0163"} ! hereditary angioedema with normal C1inh not related to F12 or PLG variant
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3656 {source="OMIM:619366"}
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3656
 property_value: curated_content_resource "https://www.malacards.org/card/angioedema_hereditary_7" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 
@@ -539595,7 +539599,7 @@ xref: OMIM:619361 {source="MONDO:equivalentTo"}
 xref: UMLS:C5543508 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1780904"}
 is_a: MONDO:0019623 {source="OMIM:619361"} ! hereditary angioedema
 is_a: MONDO:0035734 {source="Orphanet:599418", source="PMID:42165046", source="https://orcid.org/0000-0001-9310-0163"} ! hereditary angioedema with normal C1inh not related to F12 or PLG variant
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/484 {source="OMIM:619361"}
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/484
 property_value: curated_content_resource "https://www.malacards.org/card/angioedema_hereditary_5" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 
@@ -539646,7 +539650,7 @@ xref: OMIM:619367 {source="MONDO:equivalentTo"}
 xref: UMLS:C5543528 {source="MEDGEN:1780930", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019623 {source="OMIM:619367"} ! hereditary angioedema
 is_a: MONDO:0035734 {source="Orphanet:599418", source="PMID:42165046", source="https://orcid.org/0000-0001-9310-0163"} ! hereditary angioedema with normal C1inh not related to F12 or PLG variant
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/14178 {source="OMIM:619367"}
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/14178
 property_value: curated_content_resource "https://www.malacards.org/card/angioedema_hereditary_8" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
 
@@ -540927,7 +540931,7 @@ xref: OMIM:619637 {source="MONDO:equivalentTo"}
 xref: UMLS:C5562029 {source="MEDGEN:1794239", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0044807 {source="OMIM:619637"} ! inherited dystonia
 is_a: MONDO:0100617 {source="https://orcid.org/0000-0001-5208-3432"} ! VPS11-related neurological disorder
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/14583 {source="PMID:26307567"} ! VPS11
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/14583 {source="OMIM:619637", source="PMID:26307567"} ! VPS11
 property_value: curated_content_resource "https://www.malacards.org/card/dystonia_32" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8839" xsd:anyURI
 
@@ -540969,6 +540973,7 @@ xref: MEDGEN:1794243 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619643 {source="MONDO:equivalentTo"}
 xref: UMLS:C5562033 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1794243"}
 is_a: MONDO:0014769 {source="OMIM:619643"} ! inherited oocyte maturation defect
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/31704 {source="OMIM:619643"}
 property_value: curated_content_resource "https://www.malacards.org/card/oocyte_zygote_embryo_maturation_arrest_11" xsd:anyURI {source="MONDO:MalaCards"}
 
 [Term]
@@ -544858,6 +544863,7 @@ xref: MEDGEN:1801185 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619921 {source="MONDO:equivalentTo"}
 xref: UMLS:C5677003 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1801185"}
 is_a: MONDO:0044807 {source="OMIM:619921"} ! inherited dystonia
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/25543 {source="OMIM:619921"} ! SHQ1
 property_value: curated_content_resource "https://www.malacards.org/card/dystonia_35_childhood_onset" xsd:anyURI {source="MONDO:MalaCards"}
 
 [Term]
@@ -545254,7 +545260,7 @@ xref: MEDGEN:1785588 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619226 {source="MONDO:equivalentTo"}
 xref: UMLS:C5543184 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1785588"}
 is_a: MONDO:0003847 {source="https://orcid.org/0000-0001-5208-3432"} ! hereditary disease
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3050 {source="OMIM:619226"} ! DSG3
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3050 ! DSG3
 property_value: curated_content_resource "https://www.malacards.org/card/blistering_acantholytic_of_oral_and_laryngeal_mucosa" xsd:anyURI {source="MONDO:MalaCards"}
 
 [Term]
@@ -552940,7 +552946,7 @@ is_a: MONDO:0019171 {source="OMIM:618782"} ! familial long QT syndrome
 is_a: MONDO:1060291 {source="OMIM:618782"} ! isolated congenital long QT syndrome
 intersection_of: MONDO:1060291 ! isolated congenital long QT syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1449
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1449 {source="OMIM:618782"}
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1449
 property_value: curated_content_resource "https://www.malacards.org/card/long_qt_syndrome_16" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10434" xsd:anyURI
 
@@ -555461,6 +555467,7 @@ xref: OMIM:618998 {source="MONDO:equivalentTo"}
 xref: UMLS:C5436563 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1736944"}
 is_a: MONDO:0003847 {source="https://orcid.org/0000-0001-5208-3432"} ! hereditary disease
 is_a: MONDO:0015541 {source="OMIM:618998"} ! hereditary hemophagocytic lymphohistiocytosis
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29434 {source="OMIM:618998"}
 property_value: curated_content_resource "https://www.malacards.org/card/immune_dysregulation_and_systemic_hyperinflammation_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 
@@ -577142,7 +577149,7 @@ xref: UMLS:C4748167 {source="MEDGEN:1648348", source="MONDO:equivalentTo", sourc
 is_a: MONDO:0019502 {source="DOID:0081224", source="OMIM:618095"} ! autosomal recessive non-syndromic intellectual disability
 intersection_of: MONDO:0019502 ! autosomal recessive non-syndromic intellectual disability
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1460 ! CAMK2A
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1460 {source="OMIM:618095", source="PMID:29784083"} ! CAMK2A
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1460 {source="PMID:29784083"} ! CAMK2A
 property_value: curated_content_resource "https://www.malacards.org/card/intellectual_developmental_disorder_autosomal_recessive_63" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10555" xsd:anyURI
 
@@ -580074,6 +580081,7 @@ xref: MESH:C538186 {source="DOID:0060226", source="MONDO:equivalentTo"}
 xref: OMIM:201180 {source="Orphanet:1784", source="DOID:0060226", source="MONDO:equivalentTo", source="Orphanet:1784/e"}
 xref: UMLS:C4551987 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1632008"}
 is_a: MONDO:0008715 {source="OMIM:201180"} ! acrofrontofacionasal dysostosis
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/8959 {source="OMIM:201180"} ! PIGB
 property_value: curated_content_resource "https://www.malacards.org/card/acrofrontofacionasal_dysostosis_1" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
 
@@ -584353,7 +584361,7 @@ is_a: MONDO:0019701 {source="PMID:31633310"} ! chondrodysplasia punctata
 intersection_of: MONDO:0015776 ! rhizomelic chondrodysplasia punctata
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4416 ! GNPAT
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0100273 {source="MONDO:CLINGEN"}
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4416 {source="OMIM:222765", source="https://www.clinicalgenome.org/affiliation/40049/"} ! GNPAT
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4416 {source="https://www.clinicalgenome.org/affiliation/40049/"} ! GNPAT
 property_value: curated_content_resource "https://www.malacards.org/card/rhizomelic_chondrodysplasia_punctata_type_2_2" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10382" xsd:anyURI
@@ -587030,7 +587038,7 @@ intersection_of: MONDO:0008890 ! progressive bulbar palsy
 intersection_of: has_characteristic HP:0011463 ! Childhood onset
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/16187 {source="OMIM:211500"} ! SLC52A3
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/16187 ! SLC52A3
 property_value: curated_content_resource "https://www.malacards.org/card/fazio_londe_disease" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10435" xsd:anyURI
@@ -597379,7 +597387,7 @@ is_a: MONDO:0018814 {source="https://orcid.org/0000-0002-7371-8158", source="htt
 intersection_of: MONDO:0003778 ! inborn error of immunity
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/13177 ! IKZF2
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0800139 {source="MONDO:CLINGEN"}
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/13177 {source="OMIM:621233"} ! IKZF2
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/13177 ! IKZF2
 relationship: RO:0002573 HP:0000006 {source="https://orcid.org/0000-0002-7371-8158", source="https://orcid.org/0000-0003-0113-912X"} ! has modifier Autosomal dominant inheritance
 relationship: RO:0002573 HP:0000007 {source="https://orcid.org/0000-0002-7371-8158", source="https://orcid.org/0000-0003-0113-912X"} ! has modifier Autosomal recessive inheritance
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10426" xsd:anyURI
@@ -702223,7 +702231,9 @@ is_a: MONDO:0006025 {source="https://clinicalgenome.org/affiliation/40028/"} ! a
 is_a: MONDO:0009276 {source="PMID:8481514", source="https://clinicalgenome.org/affiliation/40028/", source="https://orcid.org/0000-0002-7437-8060"} ! Bernard-Soulier syndrome
 intersection_of: MONDO:0006025 ! autosomal recessive disease
 intersection_of: MONDO:0009276 ! Bernard-Soulier syndrome
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4444 ! GP9
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4439 ! GP1BA
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4439 {source="OMIM:231200"} ! GP1BA
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4440 {source="OMIM:231200"} ! GP1BB
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4444 {source="OMIM:231200", source="PMID:8481514", source="PMID:9432024", source="https://orcid.org/0000-0002-7437-8060"} ! GP9
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9994" xsd:anyURI
@@ -702241,8 +702251,10 @@ is_a: MONDO:0006025 {source="https://clinicalgenome.org/affiliation/40028/"} ! a
 is_a: MONDO:0009276 {source="PMID:2308962", source="https://clinicalgenome.org/affiliation/40028/", source="https://orcid.org/0000-0002-7437-8060"} ! Bernard-Soulier syndrome
 intersection_of: MONDO:0006025 ! autosomal recessive disease
 intersection_of: MONDO:0009276 ! Bernard-Soulier syndrome
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4439 ! GP1BA
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4444 ! GP9
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4439 {source="OMIM:231200", source="PMID:2308962", source="PMID:9326230", source="https://orcid.org/0000-0002-7437-8060"} ! GP1BA
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4440 {source="OMIM:231200"} ! GP1BB
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4444 {source="OMIM:231200"} ! GP9
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9994" xsd:anyURI
 
@@ -702259,8 +702271,10 @@ is_a: MONDO:0006025 {source="https://clinicalgenome.org/affiliation/40028/"} ! a
 is_a: MONDO:0009276 {source="PMID:16409472", source="https://clinicalgenome.org/affiliation/40028/", source="https://orcid.org/0000-0002-7437-8060"} ! Bernard-Soulier syndrome
 intersection_of: MONDO:0006025 ! autosomal recessive disease
 intersection_of: MONDO:0009276 ! Bernard-Soulier syndrome
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4440 ! GP1BB
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4444 ! GP9
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4439 {source="OMIM:231200"} ! GP1BA
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4440 {source="OMIM:231200", source="PMID:16409472", source="PMID:9116284", source="https://orcid.org/0000-0002-7437-8060"} ! GP1BB
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4444 {source="OMIM:231200"} ! GP9
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9994" xsd:anyURI
 
