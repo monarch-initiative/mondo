@@ -292588,7 +292588,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/hypotri
 
 [Term]
 id: MONDO:0011933
-name: ALG2-congenital disorder of glycosylation
+name: congenital disorder of glycosylation, type Ii
 def: "A form of congenital disorders of N-linked glycosylation characterized by iris coloboma, cataract, infantile spasms, developmental delay and abnormal coagulation factors. The disease is caused by loss-of-function mutations in the gene ALG2 (9q31.1). Transmission is autosomal recessive." [Orphanet:79326]
 subset: doid {source="DOID:0080561"}
 subset: doid_rare {source="DOID:0080561"}
@@ -292600,16 +292600,17 @@ subset: orphanet {source="Orphanet:79326"}
 subset: orphanet_rare {source="Orphanet:79326"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "ALG2-CDG" EXACT ABBREVIATION [https://orcid.org/0000-0002-5655-9589, https://www.clinicalgenome.org/affiliation/40135/, Orphanet:79326]
+synonym: "ALG2-CDG" EXACT ABBREVIATION [Orphanet:79326, PMID:38770420]
 synonym: "ALG2-CDG (CDG-II)" RELATED [GARD:0009836]
-synonym: "ALG2-congenital disorder of glycosylation" EXACT [https://orcid.org/0000-0002-5655-9589, https://www.clinicalgenome.org/affiliation/40135/]
-synonym: "ALG2-related congenital disorder of glycosylation" EXACT [https://orcid.org/0000-0002-5655-9589, https://www.clinicalgenome.org/affiliation/40135/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "ALG2-congenital disorder of glycosylation" BROAD [https://orcid.org/0000-0002-5655-9589, https://www.clinicalgenome.org/affiliation/40135/]
 synonym: "carbohydrate deficient glycoprotein syndrome type Ii" EXACT [Orphanet:79326]
-synonym: "carbohydrate-deficient glycoprotein syndrome type 1I" RELATED [GARD:0009836]
-synonym: "CDG 1I" EXACT [GARD:0009836]
-synonym: "CDG Ii" EXACT [OMIM:607906]
+synonym: "carbohydrate-deficient glycoprotein syndrome type 1I" EXACT [GARD:0009836]
+synonym: "CDG 1I" EXACT ABBREVIATION [GARD:0009836]
+synonym: "CDG Ii" EXACT ABBREVIATION [OMIM:607906]
 synonym: "CDG syndrome type Ii" EXACT [Orphanet:79326]
+synonym: "CDG-Ii" EXACT ABBREVIATION [Orphanet:79326]
 synonym: "CDG1I" EXACT ABBREVIATION [OMIM:607906, Orphanet:79326]
+synonym: "CDGIi" EXACT ABBREVIATION [OMIM:607906]
 synonym: "congenital disorder of glycosylation type 1i" EXACT [Orphanet:79326]
 synonym: "congenital disorder of glycosylation type Ii" EXACT [Orphanet:79326]
 synonym: "congenital disorder of glycosylation, type Ii" EXACT [OMIM:607906]
@@ -292625,9 +292626,11 @@ is_a: MONDO:0005066 ! metabolic disease
 is_a: MONDO:0005500 {source="DC-OMIM:607906", source="DOID:0080561", source="OMIM:607906"} ! congenital disorder of glycosylation type I
 is_a: MONDO:0015286 {source="MONDO:0011933/inferred", source="MONDO:Redundant", source="OMIM:607906", source="Orphanet:79326/inferred"} ! congenital disorder of glycosylation
 is_a: MONDO:0017740 {source="Orphanet:79326"} ! disorder of protein N-glycosylation
+is_a: MONDO:1060320 {source="PMID:38770420"} ! ALG2-related congenital disorder of glycosylation
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql
 relationship: has_characteristic MONDO:0021140 ! congenital
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23159 {source="OMIM:607906"} ! ALG2
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10309" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10486" xsd:anyURI
 
 [Term]
@@ -363698,7 +363701,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0014543
 name: congenital myasthenic syndrome 14
-def: "Any congenital myasthenic syndromes with glycosylation defect in which the cause of the disease is a mutation in the ALG2 gene." [MONDO:patterns/disease_series_by_gene]
+def: "Any congenital myasthenic syndrome with glycosylation defect in which the cause of the disease is a variation in the ALG2 gene. It is characterized by onset of limb-girdle muscle weakness in early childhood. The disorder is slowly progressive, and some patients may become wheelchair-bound." [MONDO:patterns/disease_series_by_gene, OMIM:616228]
 subset: doid {source="DOID:0110669"}
 subset: gard_rare {source="GARD:0018454", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -363708,24 +363711,22 @@ synonym: "ALG2 congenital myasthenic syndromes with glycosylation defect" EXACT 
 synonym: "CMS14" EXACT ABBREVIATION [DOID:0110669, OMIM:616228]
 synonym: "CMSTA3" EXACT ABBREVIATION [DOID:0110669, OMIM:616228]
 synonym: "congenital myasthenic syndrome 14" EXACT [DOID:0110669] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "congenital myasthenic syndrome type 14" EXACT []
 synonym: "congenital myasthenic syndromes with glycosylation defect caused by mutation in ALG2" EXACT [MONDO:design_pattern]
-synonym: "myasthenic syndrome, congenital, 14" RELATED []
-synonym: "myasthenic syndrome, congenital, 14, with tubular aggregates" EXACT []
-synonym: "myasthenic syndrome, congenital, type 14" EXACT []
+synonym: "myasthenic syndrome, congenital, 14, with tubular aggregates" EXACT [OMIM:616228]
 xref: DOID:0110669 {source="MONDO:equivalentTo"}
 xref: GARD:0018454 {source="MONDO:GARD"}
 xref: MEDGEN:864034 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:616228 {source="DOID:0110669", source="MONDO:equivalentTo"}
 xref: UMLS:C4015597 {source="MEDGEN:864034", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0000182 {source="DC-OMIM:616228", source="OMIM:616228"} ! congenital myasthenic syndrome with tubular aggregates
-is_a: MONDO:0011933 {source="https://orcid.org/0009-0001-2576-9655"} ! ALG2-congenital disorder of glycosylation
 is_a: MONDO:0018940 {source="OMIM:616228"} ! congenital myasthenic syndrome
-relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
+is_a: MONDO:1060320 {source="https://orcid.org/0009-0001-2576-9655", source="https://www.clinicalgenome.org/affiliation/40135/"} ! ALG2-related congenital disorder of glycosylation
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql
+relationship: excluded_subClassOf MONDO:0011933 {source="Orphanet:79326", source="https://orcid.org/0000-0002-7638-4659", source="https://orcid.org/0009-0001-2576-9655"} ! congenital disorder of glycosylation, type Ii
 relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23159 {source="OMIM:616228"} ! ALG2
 property_value: curated_content_resource "https://www.malacards.org/card/myasthenic_syndrome_congenital_14" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10309" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
@@ -703243,6 +703244,19 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/24552 {source="PMID:38697782", source="https://orcid.org/0009-0001-4272-1178"} ! TKFC
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10647" xsd:anyURI
+
+[Term]
+id: MONDO:1060320
+name: ALG2-related congenital disorder of glycosylation
+def: "Any congenital disorder of glycosylation in which the cause of the disease is a variation in the ALG2 gene. It includes congenital disorder of glycosylation type Ii and congenital myasthenic syndrome 14." [PMID:23404334, PMID:24461433, PMID:38770420]
+synonym: "ALG2-congenital disorder of glycosylation" EXACT [https://orcid.org/0000-0002-5655-9589, https://www.clinicalgenome.org/affiliation/40135/]
+synonym: "ALG2-related congenital disorder of glycosylation" EXACT [https://orcid.org/0000-0002-5655-9589, https://www.clinicalgenome.org/affiliation/40135/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+is_a: MONDO:0015286 {source="PMID:23404334", source="PMID:24461433", source="PMID:38770420"} ! congenital disorder of glycosylation
+intersection_of: MONDO:0015286 ! congenital disorder of glycosylation
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23159 ! ALG2
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23159 {source="PMID:24461433", source="PMID:38770420", source="https://www.clinicalgenome.org/affiliation/40135/"} ! ALG2
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10309" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
