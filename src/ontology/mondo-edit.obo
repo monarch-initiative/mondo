@@ -436535,7 +436535,7 @@ replaced_by: MONDO:0006941
 [Term]
 id: MONDO:0017778
 name: lamellar ichthyosis
-def: "A keratinization disorder characterized by the presence of large scales all over the body without significant erythroderma." [Orphanet:313]
+def: "An inherited ichthyosis characterized by the generalized large, dark, plate-like scales all over the body without significant erythroderma.  It is usually autosomal recessive, and less often autosomal dominant." [PMID:12553849, PMID:32516568, PMID:4096524]
 subset: gard_rare {source="GARD:0010803", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C84805"}
 subset: nord_rare {source="MONDO:NORD", source="NORD:1289"}
@@ -436544,24 +436544,25 @@ subset: orphanet {source="Orphanet:313"}
 subset: orphanet_rare {source="Orphanet:313"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "classic lamellar ichthyosis" EXACT []
-synonym: "congenital lamellar ichthyosis" EXACT []
+synonym: "classic lamellar ichthyosis" NARROW [PMID:22000705, PMID:3977371]
+synonym: "congenital lamellar ichthyosis" NARROW [PMID:23192619]
 synonym: "LI" EXACT ABBREVIATION [Orphanet:313]
 xref: GARD:0010803 {source="MONDO:GARD"}
 xref: ICD10CM:Q80.2 {source="Orphanet:313", source="https://orcid.org/0009-0001-6494-4831", source="MONDO:equivalentTo", source="Orphanet:313/e", source="https://orcid.org/0000-0002-5002-8648", source="Orphanet:313/specific"}
 xref: icd11.foundation:600146417 {source="MONDO:equivalentTo"}
 xref: MedDRA:10023686 {source="Orphanet:313", source="Orphanet:313/e"}
-xref: MEDGEN:1852191 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: MEDGEN:1852191 {source="MONDO:MEDGEN", source="MONDO:mondoIsBroaderThanSource"}
 xref: NANDO:1200617 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
-xref: NCIT:C84805 {source="MONDO:equivalentTo"}
+xref: NCIT:C84805 {source="MONDO:mondoIsBroaderThanSource"}
 xref: NORD:1289 {source="MONDO:NORD"}
-xref: Orphanet:313 {source="MONDO:equivalentTo"}
+xref: Orphanet:313 {source="MONDO:mondoIsBroaderThanSource"}
 xref: SCTID:205550003 {source="MONDO:equivalentTo"}
-xref: UMLS:C5848247 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1852191"}
+xref: UMLS:C5848247 {source="MONDO:MEDGEN", source="MONDO:mondoIsBroaderThanSource", source="MEDGEN:1852191"}
 is_a: MONDO:0003847 {source="https://orcid.org/0000-0002-5002-8648"} ! hereditary disease
 is_a: MONDO:0005093 {source="Orphanet:313/inferred"} ! skin disorder
-is_a: MONDO:0005328 ! eye disorder
-relationship: excluded_subClassOf MONDO:0019269 {source="MESH:D017490/inferred", source="NCIT:C84805", source="Orphanet:313/inferred", source="https://orcid.org/0000-0001-5208-3432"} ! ichthyosis
+is_a: MONDO:0015947 {source="Orphanet:313", source="PMID:20643494", source="https://orcid.org/0009-0007-9195-5820"} ! inherited ichthyosis
+relationship: excluded_subClassOf MONDO:0005328 {source="PMID:20643494", source="https://orcid.org/0000-0002-7638-4659"} ! eye disorder
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10703" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/2114" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6877" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
