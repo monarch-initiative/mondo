@@ -474608,7 +474608,7 @@ subset: orphanet {source="Orphanet:83452"}
 subset: orphanet_rare {source="Orphanet:83452"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "algoneurodystrophy" EXACT [DOID:14022, ICD10CM:M89.0, icd11.foundation:1834504950, MONDO:0001859]
+synonym: "algoneurodystrophy" EXACT [DOID:14022, icd11.foundation:1834504950, MONDO:0001859, PMID:28387091]
 synonym: "CRPS" EXACT ABBREVIATION [GARD:0004647]
 synonym: "reflex sympathetic dystrophy" RELATED [GARD:0004647]
 xref: DOID:14022 {source="MONDO:equivalentTo"}
@@ -474616,7 +474616,7 @@ xref: DOID:3223 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
 xref: EFO:1001998 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: GARD:0004647 {source="MONDO:GARD"}
 xref: ICD10CM:G56.4 {source="Orphanet:83452/btnt", source="Orphanet:83452"}
-xref: ICD10CM:M89.0 {source="Orphanet:83452/btnt", source="Orphanet:83452", source="MONDO:equivalentTo", source="DOID:14022"}
+xref: ICD10CM:M89.0 {source="Orphanet:83452/btnt", source="Orphanet:83452", source="DOID:14022", source="MONDO:mondoIsBroaderThanSource"}
 xref: icd11.foundation:1834504950 {source="Orphanet:83452", source="MONDO:equivalentTo"}
 xref: MedDRA:10064332 {source="Orphanet:83452", source="Orphanet:83452/e"}
 xref: MEDGEN:96846 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -474631,6 +474631,7 @@ xref: UMLS:C0458219 {source="MONDO:equivalentTo", source="MEDGEN:96846", source=
 is_a: MONDO:0024317 {source="PMID:32149194", source="https://orcid.org/0000-0002-6601-2165"} ! chronic pain syndrome
 property_value: curated_content_resource "https://www.malacards.org/card/algoneurodystrophy" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/complex_regional_pain_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10706" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9487" xsd:anyURI
 
 [Term]
