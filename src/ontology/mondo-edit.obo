@@ -368047,8 +368047,8 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0014699
-name: intellectual disability, autosomal dominant 40
-def: "Any autosomal dominant non-syndromic intellectual disability in which the cause of the disease is a mutation in the CHAMP1 gene." [MONDO:patterns/disease_series_by_gene]
+name: neurodevelopmental disorder with hypotonia, impaired language, and dysmorphic features
+def: "An autosomal dominant intellectual disability caused by variation in the CHAMP1 gene. It is characterized by global developmental delay, intellectual disability with severe speech impairment, hypotonia and dysmorphic facial features, often with autism, attention deficit hyperactivity disorder and other behavioral symptoms." [OMIM:616579, PMID:26340335, PMID:26751395, PMID:35271727]
 subset: doid {source="DOID:0070070"}
 subset: gard_rare {source="GARD:0013539", source="MONDO:GARD"}
 subset: omim {source="OMIM:616579"}
@@ -368056,14 +368056,16 @@ subset: ordo_disorder {source="Orphanet:692193"}
 subset: orphanet {source="Orphanet:692193"}
 subset: orphanet_rare {source="Orphanet:692193"}
 subset: rare
-synonym: "autosomal dominant intellectual disability 40" EXACT []
-synonym: "autosomal dominant non-syndromic intellectual disability caused by mutation in CHAMP1" EXACT [MONDO:design_pattern]
-synonym: "CHAMP1 autosomal dominant non-syndromic intellectual disability" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
-synonym: "intellectual disability, autosomal dominant 40" EXACT []
-synonym: "intellectual disability, autosomal dominant type 40" EXACT []
-synonym: "mental retardation, autosomal dominant 40" RELATED DEPRECATED [OMIM:616579]
+synonym: "CHAMP1 disorder" RELATED [https://champ1foundation.org, PMID:35271727, PMID:37454340]
+synonym: "CHAMP1-related intellectual disability-facial dysmorphism-behavioral abnormalities syndrome" EXACT [Orphanet:692193]
+synonym: "CHAMP1-related neurodevelopmental disorder" EXACT [https://champ1foundation.org, PMID:35271727]
+synonym: "intellectual developmental disorder, autosomal dominant 40" EXACT [OMIM:616579]
+synonym: "intellectual disability, autosomal dominant 40" EXACT [MEDGEN:1810363]
+synonym: "mental retardation, autosomal dominant 40" EXACT DEPRECATED [OMIM:616579]
 synonym: "mental retardation, autosomal dominant type 40" EXACT DEPRECATED []
-synonym: "MRD40" EXACT ABBREVIATION [DOID:0070070]
+synonym: "MRD40" EXACT ABBREVIATION [DOID:0070070, OMIM:616579]
+synonym: "NEDHILD" EXACT ABBREVIATION [OMIM:616579]
+synonym: "neurodevelopmental disorder with hypotonia, impaired language, and dysmorphic features" EXACT [OMIM:616579]
 xref: DOID:0070070 {source="MONDO:equivalentTo"}
 xref: GARD:0013539 {source="MONDO:GARD"}
 xref: MEDGEN:1810363 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -368077,6 +368079,7 @@ relationship: has_characteristic HP:0000006 ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20311 {source="OMIM:616579"} ! CHAMP1
 property_value: curated_content_resource "https://www.malacards.org/card/autosomal_dominant_intellectual_developmental_disorder_40" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/neurodevelopmental_disorder_with_hypotonia_impaired_language_and_dysmorphic_features" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10739" xsd:anyURI
 
 [Term]
 id: MONDO:0014700
