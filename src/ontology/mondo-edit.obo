@@ -703251,6 +703251,19 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10647" xsd:anyURI
 
 [Term]
+id: MONDO:1060319
+name: ELP1-related medulloblastoma predisposition
+def: "A hereditary neoplastic syndrome caused by germline loss-of-function variation in the ELP1 gene. It is characterized by an increased risk of childhood Sonic Hedgehog (SHH)-activated medulloblastoma." [https://orcid.org/0000-0002-5529-1461, https://www.clinicalgenome.org/affiliation/40157/, PMID:32296180]
+synonym: "ELP1-related medulloblastoma predisposition" EXACT [https://www.clinicalgenome.org/affiliation/40157/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+is_a: MONDO:0015356 {source="PMID:32296180", source="https://orcid.org/0000-0002-5529-1461", source="https://www.clinicalgenome.org/affiliation/40157/"} ! hereditary neoplastic syndrome
+intersection_of: MONDO:0015356 ! hereditary neoplastic syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5959 ! ELP1
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5959 {source="PMID:32296180", source="https://orcid.org/0000-0002-5529-1461", source="https://www.clinicalgenome.org/affiliation/40157/"} ! ELP1
+relationship: predisposes_towards MONDO:0850197 {source="PMID:32296180"} ! medulloblastoma SHH activated
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10701" xsd:anyURI
+
+[Term]
 id: MONDO:1061000
 name: TUBB-related tubulinopathy
 def: "Any tubulinopathy in which the cause of the disease is a mutation in the TUBB gene. Heterozygous TUBB variants cause two overlapping developmental disorders, complex cortical dysplasia with other brain malformations (CDCBM) and congenital symmetric circumferential skin creases (CSCSC), also known as circumferential skin creases Kunze type. The clinical findings are diverse and include abnormalities of the cortex, basal ganglia, corpus callosum, brain stem and cerebellum, microcephaly, intellectual disability, facial dysmorphism, excess skin folding and growth retardation." [https://www.clinicalgenome.org/affiliation/40020/, PMID:32085672, PMID:34211110]
