@@ -194983,7 +194983,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0008559
 name: thrombophilia due to thrombin defect
-def: "The formation of a blood clot (thrombus) in the lumen of a vein." [NCIT:C99107]
+def: "Any inherited thrombophilia in which the cause of the disease is a variation in the F2 gene, most often the 20210G>A variant. It is characterized by an increased risk of venous thromboembolism, most commonly deep-vein thrombosis in the legs or pulmonary embolism." [OMIM:188050, PMID:20301327]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: doid {source="DOID:0111907"}
 subset: doid_rare {source="DOID:0111907"}
@@ -194993,31 +194993,32 @@ subset: omim {source="OMIM:188050"}
 subset: omim_susceptibility {source="OMIM:188050"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "factor II-related thrombophilia" RELATED [GARD:0010815]
+synonym: "factor II-related thrombophilia" EXACT [GARD:0010815]
 synonym: "hyperprothrombinemia" RELATED [GARD:0010815]
-synonym: "prothrombin 20210G>A thrombophilia" RELATED [GARD:0010815]
-synonym: "prothrombin G20210A thrombophilia" RELATED [GARD:0010815]
-synonym: "prothrombin thrombophilia" EXACT [DOID:0111907, GARD:0010815]
+synonym: "prothrombin 20210G>A thrombophilia" NARROW [GARD:0010815]
+synonym: "prothrombin G20210A thrombophilia" NARROW [GARD:0010815, PMID:33470458]
+synonym: "prothrombin thrombophilia" EXACT [DOID:0111907, GARD:0010815, PMID:20301327]
 synonym: "prothrombin-related thrombophilia" EXACT [DOID:0111907, GARD:0010815]
-synonym: "THPH1" RELATED ABBREVIATION []
-synonym: "thrombophilia 1 due to thrombin defect" EXACT []
-synonym: "thrombophilia due to thrombin defect" EXACT [DOID:0111907, OMIM:188050] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "Venous thromboembolism" BROAD []
-synonym: "venous thromboembolism, susceptibility to" EXACT []
-synonym: "venous thrombosis, protection against" EXACT []
+synonym: "THPH1" EXACT ABBREVIATION [DOID:0111907, OMIM:188050]
+synonym: "thrombophilia due to factor 2 defect" EXACT [DOID:0111907, OMIM:188050]
+synonym: "thrombophilia due to thrombin defect" EXACT [DOID:0111907, OMIM:188050]
+synonym: "venous thromboembolism" RELATED [OMIM:188050]
+synonym: "venous thrombosis" RELATED [OMIM:188050]
 xref: DOID:0080701 {source="MONDO:equivalentObsolete"}
 xref: DOID:0111907 {source="MONDO:equivalentTo"}
 xref: GARD:0010815 {source="MONDO:GARD"}
-xref: ICD9:453.9 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:463623 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:188050 {source="MONDO:equivalentTo"}
-xref: SCTID:111293003 {source="MONDO:equivalentTo"}
 xref: UMLS:C3160733 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:463623"}
 is_a: MONDO:0003847 {source="MONDO:Redundant"} ! hereditary disease
 is_a: MONDO:0100240 {source="DC-OMIM:188050", source="OMIM:188050"} ! inherited thrombophilia
+intersection_of: MONDO:0100240 ! inherited thrombophilia
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3535 ! F2
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0008559 {source="MONDO:CLINGEN"}
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3535 {source="OMIM:188050", source="PMID:20301327"} ! F2
 property_value: curated_content_resource "https://www.malacards.org/card/prothrombin_thrombophilia" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/thrombophilia_due_to_thrombin_defect" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10743" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 
 [Term]
