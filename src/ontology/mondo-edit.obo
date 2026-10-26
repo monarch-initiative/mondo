@@ -703252,19 +703252,6 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10647" xsd:anyURI
 
 [Term]
-id: MONDO:1060320
-name: ALG2-related congenital disorder of glycosylation
-def: "Any congenital disorder of glycosylation in which the cause of the disease is a variation in the ALG2 gene. It includes congenital disorder of glycosylation type Ii and congenital myasthenic syndrome 14." [PMID:23404334, PMID:24461433, PMID:38770420]
-synonym: "ALG2-congenital disorder of glycosylation" EXACT [https://orcid.org/0000-0002-5655-9589, https://www.clinicalgenome.org/affiliation/40135/]
-synonym: "ALG2-related congenital disorder of glycosylation" EXACT [https://orcid.org/0000-0002-5655-9589, https://www.clinicalgenome.org/affiliation/40135/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-is_a: MONDO:0015286 {source="PMID:23404334", source="PMID:24461433", source="PMID:38770420"} ! congenital disorder of glycosylation
-intersection_of: MONDO:0015286 ! congenital disorder of glycosylation
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23159 ! ALG2
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23159 {source="PMID:24461433", source="PMID:38770420", source="https://www.clinicalgenome.org/affiliation/40135/"} ! ALG2
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10309" xsd:anyURI
-
-[Term]
 id: MONDO:1060319
 name: ELP1-related medulloblastoma predisposition
 def: "A hereditary neoplastic syndrome caused by germline loss-of-function variation in the ELP1 gene. It is characterized by an increased risk of childhood Sonic Hedgehog (SHH)-activated medulloblastoma." [https://orcid.org/0000-0002-5529-1461, https://www.clinicalgenome.org/affiliation/40157/, PMID:32296180]
@@ -703276,6 +703263,19 @@ relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/
 relationship: predisposes_towards MONDO:0850197 {source="PMID:32296180"} ! medulloblastoma SHH activated
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10701" xsd:anyURI
+
+[Term]
+id: MONDO:1060320
+name: ALG2-related congenital disorder of glycosylation
+def: "Any congenital disorder of glycosylation in which the cause of the disease is a variation in the ALG2 gene. It includes congenital disorder of glycosylation type Ii and congenital myasthenic syndrome 14." [PMID:23404334, PMID:24461433, PMID:38770420]
+synonym: "ALG2-congenital disorder of glycosylation" EXACT [https://orcid.org/0000-0002-5655-9589, https://www.clinicalgenome.org/affiliation/40135/]
+synonym: "ALG2-related congenital disorder of glycosylation" EXACT [https://orcid.org/0000-0002-5655-9589, https://www.clinicalgenome.org/affiliation/40135/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+is_a: MONDO:0015286 {source="PMID:23404334", source="PMID:24461433", source="PMID:38770420"} ! congenital disorder of glycosylation
+intersection_of: MONDO:0015286 ! congenital disorder of glycosylation
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23159 ! ALG2
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23159 {source="PMID:24461433", source="PMID:38770420", source="https://www.clinicalgenome.org/affiliation/40135/"} ! ALG2
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10309" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
