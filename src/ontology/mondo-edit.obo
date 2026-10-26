@@ -31167,7 +31167,7 @@ xref: MEDGEN:1826154 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D029502 {source="DOID:1342", source="MONDO:equivalentTo"}
 xref: NANDO:1200302 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
 xref: NANDO:2201275 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
-xref: Orphanet:397692 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
+xref: Orphanet:397692 {source="MONDO:equivalentObsolete"}
 xref: Orphanet:68383 {source="MONDO:equivalentTo"}
 xref: SCTID:154808006 {source="DOID:1342"}
 xref: SCTID:188588001 {source="DOID:1342"}
@@ -39776,7 +39776,8 @@ is_a: MONDO:0002122 {source="DOID:1802"} ! neuritis
 [Term]
 id: MONDO:0002122
 name: neuritis
-def: "A neuropathy arising from inflammation of one or more nerves." [https://orcid.org/0000-0002-6601-2165]
+def: "A neuropathy arising from inflammation of one or more nerves." [https://orcid.org/0000-0002-6601-2165, NCIT:C116381]
+comment: Please do not confuse with MONDO:0004466 neuronitis, which is inflammation of neurons.
 subset: doid {source="DOID:1803"}
 subset: ncit {source="NCIT:C116381"}
 subset: otar {source="MONDO:OTAR"}
@@ -39796,6 +39797,7 @@ is_a: MONDO:0005244 {source="DOID:1803", source="MONDO:Redundant", source="NCIT:
 intersection_of: MONDO:0005244 ! peripheral neuropathy
 intersection_of: disease_has_inflammation_site UBERON:0001021 ! nerve
 property_value: curated_content_resource "https://www.malacards.org/card/neuritis" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10436" xsd:anyURI
 
 [Term]
 id: MONDO:0002123
@@ -39978,12 +39980,13 @@ property_value: curated_content_resource "https://www.malacards.org/card/bone_ca
 
 [Term]
 id: MONDO:0002130
-name: upper limb mononeuronitis
+name: mononeuritis of upper limb
 def: "A disease affecting a single peripheral nerve of the upper limb." [http://bestpractice.bmj.com/topics/en-us/771]
 subset: doid {source="DOID:1844"}
 subset: gard_rare {source="GARD:0023071", source="MONDO:GARD"}
 subset: rare
 synonym: "forelimb mononeuritis simplex" EXACT [MONDO:patterns/location]
+synonym: "mononeuritis of upper limb" EXACT [DOID:1844, PMID:36694171]
 synonym: "mononeuritis of upper limb, unspecified" EXACT [ICD9CM:354.9]
 synonym: "mononeuritis simplex of forelimb" EXACT [MONDO:design_pattern]
 xref: DOID:1844 {source="MONDO:equivalentTo"}
@@ -39995,6 +39998,7 @@ is_a: MONDO:0003607 {source="DOID:1844", source="MONDO:Entailed", source="MONDO:
 intersection_of: MONDO:0002121 ! mononeuritis simplex
 intersection_of: disease_has_location UBERON:0002102 ! forelimb
 property_value: curated_content_resource "https://www.malacards.org/card/mononeuritis_of_upper_limb" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10436" xsd:anyURI
 
 [Term]
 id: MONDO:0002131
@@ -43927,7 +43931,7 @@ xref: icd11.foundation:1146548497 {source="MONDO:equivalentTo"}
 xref: ICD9:362.35 {source="DOID:2450", source="MONDO:equivalentTo", source="MONDO:i2s"}
 xref: MEDGEN:509679 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C118859 {source="DOID:2450", source="MONDO:equivalentTo"}
-xref: Orphanet:411527 {source="MONDO:equivalentTo"}
+xref: Orphanet:411527 {source="MONDO:equivalentObsolete"}
 xref: SCTID:193378003 {source="DOID:2450"}
 xref: SCTID:68478007 {source="DOID:2450", source="MONDO:equivalentTo"}
 xref: UMLS:C0154841 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:509679"}
@@ -89691,7 +89695,7 @@ xref: ICD9:200.50 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:79344 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D064090 {source="DOID:775", source="MONDO:equivalentTo"}
 xref: NCIT:C9184 {source="DOID:775", source="MONDO:equivalentTo"}
-xref: Orphanet:279904 {source="MONDO:equivalentTo"}
+xref: Orphanet:279904 {source="MONDO:equivalentObsolete"}
 xref: SCTID:420788006 {source="MONDO:equivalentTo"}
 xref: UMLS:C0281658 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:79344"}
 is_a: MONDO:0004034 {source="DOID:775", source="NCIT:C9184"} ! eye lymphoma
@@ -92073,11 +92077,10 @@ property_value: curated_content_resource "https://www.malacards.org/card/periamp
 [Term]
 id: MONDO:0004466
 name: neuronitis
-comment: This term is scheduled to be merged with MONDO:0002122 neuritis, based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0002122
+def: "A non-neoplastic inflammatory disorder of neurons." [NCIT:C34847]
+comment: Please do not confuse with MONDO:0002122 neuritis, which is inflammation of a nerve.
 subset: doid {source="DOID:8117"}
 subset: ncit {source="NCIT:C34847"}
-subset: obsoletion_candidate
-synonym: "neuroinflammation" RELATED [Wikipedia:Neuroinflammation]
 xref: DOID:8117 {source="MONDO:equivalentTo"}
 xref: MEDGEN:45064 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C34847 {source="DOID:8117", source="MONDO:equivalentTo"}
@@ -92087,7 +92090,6 @@ intersection_of: MONDO:0000001 ! disease
 intersection_of: disease_has_inflammation_site CL:0000540 ! neuron
 property_value: curated_content_resource "https://www.malacards.org/card/neuronitis" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10436" xsd:anyURI
-property_value: IAO:0006012 "2026-10-01" xsd:string
 
 [Term]
 id: MONDO:0004467
@@ -122137,10 +122139,7 @@ name: bartonellosis
 def: "An infectious disease produced by bacteria of the genus Bartonella." [https://github.com/NCI-Thesaurus/thesaurus-obo-edition/issues/33, Wikipedia:Bartonellosis]
 subset: doid {source="DOID:11102"}
 subset: ncit {source="NCIT:C84586"}
-subset: nord_rare {source="MONDO:NORD"}
 subset: otar {source="MONDO:OTAR"}
-subset: rare
-synonym: "123" EXACT [] {OMO:0002001="https://w3id.org/information-resource-registry/nord"}
 synonym: "Bartonella caused disease or disorder" EXACT [MONDO:patterns/specific_infectious_disease_by_agent]
 synonym: "Bartonella disease or disorder" EXACT []
 synonym: "Bartonella infection" EXACT [NCIT:C84586]
@@ -122954,7 +122953,7 @@ xref: ICD9:013.20 {source="DOID:1638"}
 xref: ICD9:013.35 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:82907 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D016862 {source="DOID:1638", source="EFO:0007199"}
-xref: Orphanet:641396 {source="MONDO:equivalentTo"}
+xref: Orphanet:641396 {source="MONDO:equivalentObsolete"}
 xref: SCTID:186217006 {source="MONDO:equivalentTo"}
 xref: SCTID:40769007 {source="DOID:1638"}
 xref: SCTID:416265003 {source="DOID:1638"}
@@ -130978,12 +130977,14 @@ property_value: IAO:0000589 "vesicoureteral reflux (disease)" xsd:string
 
 [Term]
 id: MONDO:0006008
-name: vestibular neuronitis
+name: vestibular neuritis
 def: "Idiopathic inflammation of the vestibular nerve, characterized clinically by the acute or subacute onset of vertigo; nausea; and imbalance. The cochlear nerve is typically spared and hearing loss and tinnitus do not usually occur. Symptoms usually resolve over a period of days to weeks. (Adams et al., Principles of Neurology, 6th ed, p304)" [MESH:D020338]
 subset: doid {source="DOID:12683"}
 subset: gard_rare {source="GARD:0024271", source="MONDO:GARD"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
+synonym: "vestibular neuritis" EXACT [PMID:34411472]
+synonym: "vestibular neuronitis" EXACT [MESH:D020338, PMID:34411472]
 xref: DOID:12683 {source="EFO:0007537", source="MONDO:equivalentTo"}
 xref: EFO:0007537 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: GARD:0024271 {source="MONDO:GARD"}
@@ -131005,6 +131006,7 @@ is_a: MONDO:0001563 {source="DOID:12683", source="MESH:D020338", source="MONDO:R
 intersection_of: MONDO:0002122 ! neuritis
 intersection_of: disease_has_inflammation_site UBERON:0003723 ! vestibular nerve
 property_value: curated_content_resource "https://www.malacards.org/card/vestibular_neuronitis" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10436" xsd:anyURI
 
 [Term]
 id: MONDO:0006009
@@ -131574,7 +131576,7 @@ xref: MESH:D000080443 {source="MONDO:equivalentTo"}
 xref: NCIT:C94764 {source="MONDO:equivalentTo", source="EFO:1000026"}
 xref: NORD:280634 {source="MONDO:NORD"}
 xref: ONCOTREE:DIPG {source="MONDO:equivalentTo"}
-xref: Orphanet:497188 {source="MONDO:equivalentTo"}
+xref: Orphanet:497188 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C2986658 {source="MEDGEN:458884", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0003869 {source="NCIT:C94764"} ! childhood brain stem glioma
 is_a: MONDO:0005499 {source="EFO:1000026", source="MONDO:Redundant", source="MONDO:indirect"} ! brain glioma
@@ -141633,7 +141635,7 @@ xref: MESH:C536494 {source="DOID:6039", source="MONDO:equivalentTo", source="Orp
 xref: NCIT:C7712 {source="DOID:6039", source="MONDO:equivalentTo", source="EFO:1000616"}
 xref: OMIM:155720 {source="DOID:6039", source="MONDO:equivalentTo", source="Orphanet:39044", source="Orphanet:39044/e"}
 xref: ONCOTREE:UM {source="MONDO:equivalentTo"}
-xref: Orphanet:39044 {source="DOID:6039", source="MONDO:equivalentTo"}
+xref: Orphanet:39044 {source="DOID:6039", source="MONDO:equivalentObsolete"}
 xref: UMLS:C0220633 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:65077"}
 is_a: MONDO:0002659 {source="DOID:6039", source="MONDO:Redundant", source="NCIT:C7712"} ! uveal cancer
 is_a: MONDO:0006325 {source="MONDO:Redundant", source="NCIT:C7712", source="ONCOTREE:UM"} ! ocular melanoma
@@ -168428,7 +168430,7 @@ xref: ICD10CM:G40.0 {source="Orphanet:25968"}
 xref: icd11.foundation:49954675 {source="MONDO:equivalentTo"}
 xref: MEDGEN:377052 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:132090 {source="Orphanet:25968", source="MONDO:equivalentTo", source="Orphanet:25968/e"}
-xref: Orphanet:25968 {source="MONDO:equivalentTo", source="OMIM:132090"}
+xref: Orphanet:25968 {source="MONDO:equivalentObsolete", source="OMIM:132090"}
 xref: UMLS:C1851549 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:377052"}
 is_a: MONDO:0015650 {source="https://orcid.org/0000-0001-5208-3432"} ! epilepsy syndrome
 is_a: MONDO:0020072 {source="https://orcid.org/0000-0001-5208-3432", source="https://www.epilepsydiagnosis.org/syndrome/epilepsy-syndrome-groupoverview.html"} ! childhood-onset epilepsy syndrome
@@ -178295,7 +178297,7 @@ xref: icd11.foundation:1839503243 {source="MONDO:equivalentTo"}
 xref: MEDGEN:1794135 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C537833 {source="MONDO:equivalentTo"}
 xref: OMIM:153870 {source="Orphanet:251287", source="MONDO:equivalentTo", source="Orphanet:251287/e"}
-xref: Orphanet:251287 {source="MONDO:equivalentTo", source="OMIM:153870"}
+xref: Orphanet:251287 {source="MONDO:equivalentObsolete", source="OMIM:153870"}
 xref: SCTID:719520001 {source="MONDO:equivalentTo"}
 xref: UMLS:C5561925 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1794135"}
 is_a: MONDO:0019200 {source="OMIM:153870"} ! retinitis pigmentosa
@@ -200607,7 +200609,7 @@ xref: ICD10CM:G40.4 {source="Orphanet:2574"}
 xref: MEDGEN:120535 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C537052 {source="MONDO:equivalentTo"}
 xref: OMIM:203600 {source="Orphanet:2574", source="MONDO:equivalentTo", source="Orphanet:2574/e"}
-xref: Orphanet:2574 {source="MONDO:equivalentTo", source="OMIM:203600"}
+xref: Orphanet:2574 {source="MONDO:equivalentObsolete", source="OMIM:203600"}
 xref: UMLS:C0265328 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:120535"}
 is_a: MONDO:0003847 {source="https://orcid.org/0000-0001-5208-3432"} ! hereditary disease
 relationship: excluded_subClassOf MONDO:0000508 {source="Orphanet:2574", source="https://orcid.org/0000-0001-5208-3432"} ! syndromic intellectual disability
@@ -202296,7 +202298,7 @@ xref: MedDRA:10049005 {source="Orphanet:2356", source="Orphanet:2356/e"}
 xref: MEDGEN:86860 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D016080 {source="Orphanet:2356", source="MONDO:equivalentTo", source="Orphanet:2356/e"}
 xref: NCIT:C3455 {source="MONDO:equivalentTo"}
-xref: Orphanet:2356 {source="GARD:0000017", source="MONDO:equivalentTo", source="OMIM:207790"}
+xref: Orphanet:2356 {source="MONDO:equivalentObsolete", source="GARD:0000017", source="OMIM:207790"}
 xref: SCTID:33595009 {source="MONDO:equivalentTo"}
 xref: UMLS:C0078981 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:86860"}
 is_a: MONDO:0020022 {source="https://orcid.org/0000-0002-4142-7153"} ! central nervous system malformation
@@ -204190,7 +204192,7 @@ xref: ICD10CM:Q77.8 {source="Orphanet:1842"}
 xref: MEDGEN:347872 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C565896 {source="MONDO:equivalentTo"}
 xref: OMIM:211120 {source="MONDO:equivalentTo", source="Orphanet:1842", source="Orphanet:1842/e"}
-xref: Orphanet:1842 {source="OMIM:211120", source="MONDO:equivalentTo"}
+xref: Orphanet:1842 {source="MONDO:equivalentObsolete", source="OMIM:211120"}
 xref: SCTID:732249002 {source="MONDO:equivalentTo"}
 xref: UMLS:C1859407 {source="MEDGEN:347872", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0003847 {source="https://orcid.org/0000-0002-5002-8648"} ! hereditary disease
@@ -245257,7 +245259,7 @@ xref: MEDGEN:338393 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C564715 {source="MONDO:equivalentTo"}
 xref: NANDO:1200599 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
 xref: OMIM:300088 {source="MONDO:equivalentTo", source="Orphanet:101039", source="DOID:0060848", source="Orphanet:101039/e"}
-xref: Orphanet:101039 {source="OMIM:300088", source="MONDO:equivalentTo", source="DOID:0060848"}
+xref: Orphanet:101039 {source="MONDO:equivalentObsolete", source="OMIM:300088", source="DOID:0060848"}
 xref: UMLS:C1848137 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:338393"}
 is_a: MONDO:0016160 {source="Orphanet:101039"} ! X-linked intellectual disability-epilepsy syndrome
 is_a: MONDO:0100062 {source="DC-OMIM:300088", source="DOID:0060848", source="MONDO:Redundant", source="OMIM:300088"} ! genetic developmental and epileptic encephalopathy
@@ -260019,7 +260021,7 @@ xref: GARD:0004680 {source="MONDO:GARD"}
 xref: ICD10CM:Q14.1 {source="Orphanet:1852"}
 xref: MEDGEN:909011 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:312550 {source="MONDO:equivalentTo", source="Orphanet:1852", source="Orphanet:1852/e"}
-xref: Orphanet:1852 {source="OMIM:312550", source="MONDO:equivalentTo"}
+xref: Orphanet:1852 {source="OMIM:312550", source="MONDO:equivalentObsolete"}
 xref: SCTID:715240000 {source="MONDO:equivalentTo"}
 xref: UMLS:C4275241 {source="MEDGEN:909011", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019118 {source="Orphanet:1852"} ! inherited retinal dystrophy
@@ -260960,7 +260962,7 @@ xref: GARD:0005453 {source="MONDO:GARD"}
 xref: MEDGEN:162920 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C563129 {source="MONDO:equivalentTo"}
 xref: OMIM:314500 {source="MONDO:equivalentTo", source="Orphanet:3417", source="Orphanet:3417/e"}
-xref: Orphanet:3417 {source="MONDO:equivalentTo", source="OMIM:314500"}
+xref: Orphanet:3417 {source="MONDO:equivalentObsolete", source="OMIM:314500"}
 xref: SCTID:733110004 {source="MONDO:equivalentTo"}
 xref: UMLS:C0796192 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:162920"}
 is_a: MONDO:0002254 {source="https://orcid.org/0000-0001-5208-3432"} ! syndromic disease
@@ -261059,7 +261061,7 @@ xref: MESH:C537472 {source="Orphanet:85283/e", source="MONDO:equivalentObsolete"
 xref: NORD:91159 {source="MONDO:NORD"}
 xref: OMIM:314580 {source="Orphanet:3454", source="MONDO:equivalentTo", source="Orphanet:3454/e", source="Orphanet:85283"}
 xref: Orphanet:3454 {source="MONDO:equivalentTo", source="MONDO:preferredExternal", source="OMIM:314580"}
-xref: Orphanet:85283 {source="MONDO:equivalentTo", source="OMIM:309605", source="DOID:0060815"}
+xref: Orphanet:85283 {source="MONDO:equivalentObsolete", source="OMIM:309605", source="DOID:0060815"}
 xref: SCTID:719012009 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
 xref: SCTID:722456001 {source="MONDO:equivalentTo"}
 xref: UMLS:C0796200 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:163227"}
@@ -272532,7 +272534,7 @@ xref: MEDGEN:356123 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C535522 {source="MONDO:equivalentTo"}
 xref: NCIT:C126650 {source="MONDO:equivalentTo"}
 xref: OMIM:602066 {source="Orphanet:31709/e", source="MONDO:equivalentTo", source="Orphanet:31709"}
-xref: Orphanet:31709 {source="MONDO:equivalentTo", source="OMIM:602066"}
+xref: Orphanet:31709 {source="MONDO:equivalentObsolete", source="OMIM:602066"}
 xref: SCTID:715534008 {source="MONDO:equivalentTo"}
 xref: UMLS:C1865926 {source="MEDGEN:356123", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0002254 {source="NCIT:C126650"} ! syndromic disease
@@ -279360,7 +279362,7 @@ xref: MEDGEN:11159 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D012019 {source="EFO:1001147", source="MONDO:equivalentTo", source="DOID:1811"}
 xref: NCIT:C85042 {source="MONDO:equivalentTo", source="DOID:1811"}
 xref: OMIM:604335 {source="Orphanet:99995", source="MONDO:equivalentTo", source="Orphanet:99995/e", source="DOID:1811"}
-xref: Orphanet:99995 {source="OMIM:604335", source="MONDO:equivalentTo"}
+xref: Orphanet:99995 {source="OMIM:604335", source="MONDO:equivalentObsolete"}
 xref: SCTID:128079007 {source="DOID:1811"}
 xref: SCTID:156849009 {source="DOID:1811"}
 xref: SCTID:15743005 {source="DOID:1811"}
@@ -281109,7 +281111,7 @@ xref: GARD:0017521 {source="MONDO:GARD"}
 xref: ICD10CM:G40.3 {source="Orphanet:352582"}
 xref: MEDGEN:181488 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:605021 {source="Orphanet:352582", source="MONDO:equivalentTo", source="Orphanet:352582/e"}
-xref: Orphanet:352582 {source="MONDO:equivalentTo", source="OMIM:605021"}
+xref: Orphanet:352582 {source="MONDO:equivalentObsolete", source="OMIM:605021"}
 xref: UMLS:C0917800 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:181488"}
 is_a: MONDO:0015653 {source="Orphanet:352582"} ! monogenic epilepsy
 is_a: MONDO:0100577 {source="https://orcid.org/0000-0001-5208-3432"} ! myoclonic epilepsy
@@ -306250,7 +306252,7 @@ synonym: "congenital absence of lens" EXACT [DOID:11367, icd11.foundation:885383
 synonym: "congenital aphakia" EXACT [DOID:11367, ICD10CM:Q12.3, icd11.foundation:885383581, NCIT:C35172]
 synonym: "CPA" RELATED ABBREVIATION []
 xref: DOID:0080607 {source="MONDO:equivalentTo"}
-xref: DOID:11367 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
+xref: DOID:11367 {source="MONDO:equivalentObsolete"}
 xref: GARD:0009952 {source="MONDO:GARD"}
 xref: ICD10CM:Q12.3 {source="Orphanet:83461", source="MONDO:equivalentTo", source="Orphanet:83461/e", source="DOID:11367", source="Orphanet:83461/specific"}
 xref: icd11.foundation:885383581 {source="Orphanet:83461", source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-4142-7153"}
@@ -340472,7 +340474,7 @@ xref: MEDGEN:482274 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C535353 {source="Orphanet:85186/e", source="MONDO:equivalentTo", source="Orphanet:85186"}
 xref: OMIM:213002 {source="MONDO:equivalentObsolete", source="Orphanet:85186/e", source="Orphanet:85186"}
 xref: OMIM:614381 {source="MONDO:equivalentTo", source="DOID:0060797"}
-xref: Orphanet:85186 {source="OMIM:213002", source="MONDO:equivalentTo"}
+xref: Orphanet:85186 {source="MONDO:equivalentObsolete", source="OMIM:213002"}
 xref: UMLS:C3280644 {source="MONDO:equivalentTo", source="MEDGEN:482274", source="MONDO:MEDGEN"}
 is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-5002-8648"} ! syndromic disease
 is_a: MONDO:0005039 {source="https://orcid.org/0000-0001-9310-0163"} ! reproductive system disorder
@@ -342739,7 +342741,7 @@ synonym: "mental retardation, autosomal dominant 13" EXACT DEPRECATED [OMIM:6145
 synonym: "mental retardation, autosomal dominant type 13" EXACT DEPRECATED []
 synonym: "mental retardation, autosomal dominant, 13, with neuronal migration defects" RELATED DEPRECATED []
 synonym: "MRD13" EXACT ABBREVIATION [DOID:0070043]
-xref: DOID:0061144 {source="MONDO:equivalentTo"}
+xref: DOID:0061144 {source="MONDO:equivalentObsolete"}
 xref: DOID:0070043 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
 xref: GARD:0016462 {source="MONDO:GARD"}
 xref: MEDGEN:482832 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -348426,7 +348428,7 @@ synonym: "ichthyosis, congenital, autosomal recessive 7" RELATED []
 xref: DOID:0060716 {source="MONDO:equivalentTo"}
 xref: GARD:0015895 {source="MONDO:GARD"}
 xref: MEDGEN:767262 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: OMIM:615022 {source="MONDO:equivalentTo", source="DOID:0060716"}
+xref: OMIM:615022 {source="MONDO:equivalentObsolete", source="DOID:0060716"}
 xref: UMLS:C3554348 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:767262"}
 is_a: MONDO:0017265 {source="MONDO:Redundant", source="OMIM:615022"} ! autosomal recessive congenital ichthyosis
 is_a: MONDO:0019306 {source="Orphanet:79394/btnt"} ! congenital non-bullous ichthyosiform erythroderma
@@ -374942,7 +374944,7 @@ synonym: "intellectual developmental disorder, autosomal recessive 74" EXACT [OM
 synonym: "Sotos syndrome caused by mutation in APC2" EXACT DEPRECATED [MONDO:design_pattern]
 synonym: "Sotos syndrome type 3" EXACT DEPRECATED []
 xref: DOID:0081218 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
-xref: DOID:0112104 {source="MONDO:equivalentTo"}
+xref: DOID:0112104 {source="MONDO:equivalentObsolete"}
 xref: GARD:0016208 {source="MONDO:GARD"}
 xref: MEDGEN:934651 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:617169 {source="MONDO:equivalentTo"}
@@ -379912,7 +379914,7 @@ subset: orphanet {source="Orphanet:103920"}
 subset: rare
 xref: GARD:0019840 {source="MONDO:GARD"}
 xref: MEDGEN:1842621 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:103920 {source="MONDO:equivalentTo"}
+xref: Orphanet:103920 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5681748 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1842621"}
 is_a: MONDO:0005265 {source="Orphanet:103920"} ! inflammatory bowel disease
 property_value: curated_content_resource "https://www.malacards.org/card/undetermined_colitis" xsd:anyURI {source="MONDO:MalaCards"}
@@ -380745,7 +380747,7 @@ name: obsolete non-syndromic central nervous system malformation
 def: "OBSOLETE. A central nervous system malformation that is not part of a larger syndrome." [MONDO:patterns/isolated]
 synonym: "isolated central nervous system malformation" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "nonsyndromic central nervous system malformation" EXACT [https://orcid.org/0000-0002-6601-2165, MONDO:patterns/isolated]
-xref: Orphanet:108989 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:108989 {source="MONDO:obsoleteEquivalentObsolete"}
 property_value: curated_content_resource "https://www.malacards.org/card/non_syndromic_central_nervous_system_malformation" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGrouping"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5114" xsd:anyURI
@@ -380757,7 +380759,7 @@ is_obsolete: true
 id: MONDO:0015220
 name: obsolete syndrome with a central nervous system malformation as major feature
 comment: Reason: out of scope. This is an Orphanet grouping class that is considered out of scope for Mondo. Term to consider: syndromic disease'
-xref: Orphanet:108991 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:108991 {source="MONDO:obsoleteEquivalentObsolete"}
 property_value: curated_content_resource "https://www.malacards.org/card/syndrome_with_a_central_nervous_system_malformation_as_a_major_feature" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000231 OMO:0001000
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/3886" xsd:anyURI
@@ -383055,7 +383057,7 @@ synonym: "rare endometriosis" EXACT []
 synonym: "rare endometriosis (disease)" EXACT [MONDO:patterns/rare]
 xref: ICD10CM:N80.8 {source="Orphanet:137820", source="Orphanet:137820/btnt"}
 xref: ICD10CM:N80.9 {source="Orphanet:137820", source="Orphanet:137820/btnt"}
-xref: Orphanet:137820 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:137820 {source="MONDO:obsoleteEquivalentObsolete"}
 xref: SCTID:237117005 {source="MONDO:obsoleteEquivalent"}
 property_value: curated_content_resource "https://www.malacards.org/card/extrapelvic_endometriosis" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/254" xsd:anyURI
@@ -383361,7 +383363,7 @@ xref: GARD:0000192 {source="MONDO:GARD"}
 xref: ICD10CM:Q87.8 {source="Orphanet:1381"}
 xref: MEDGEN:419068 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C537009 {source="MONDO:equivalentTo"}
-xref: Orphanet:1381 {source="MONDO:equivalentTo"}
+xref: Orphanet:1381 {source="MONDO:equivalentObsolete"}
 xref: SCTID:715989002 {source="MONDO:equivalentTo"}
 xref: UMLS:C2931391 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:419068"}
 is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-5002-8648"} ! syndromic disease
@@ -385116,7 +385118,7 @@ xref: GARD:0019955 {source="MONDO:GARD"}
 xref: ICD10CM:Q27.3 {source="Orphanet:141168"}
 xref: icd11.foundation:1779519580 {source="MONDO:equivalentTo"}
 xref: MEDGEN:824839 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:141168 {source="MONDO:equivalentTo"}
+xref: Orphanet:141168 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C3838993 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:824839"}
 is_a: MONDO:0015500 {source="Orphanet:141168", source="icd11.foundation:1779519580"} ! facial arteriovenous malformation
 property_value: curated_content_resource "https://www.malacards.org/card/frontonasal_arteriovenous_malformation" xsd:anyURI {source="MONDO:MalaCards"}
@@ -385135,7 +385137,7 @@ xref: GARD:0019956 {source="MONDO:GARD"}
 xref: ICD10CM:Q27.3 {source="Orphanet:141171"}
 xref: icd11.foundation:1755286955 {source="MONDO:equivalentTo"}
 xref: MEDGEN:825655 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:141171 {source="MONDO:equivalentTo"}
+xref: Orphanet:141171 {source="MONDO:equivalentObsolete"}
 xref: SCTID:703335004 {source="MONDO:equivalentTo"}
 xref: UMLS:C3839810 {source="MEDGEN:825655", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0015500 {source="Orphanet:141171", source="icd11.foundation:1755286955"} ! facial arteriovenous malformation
@@ -385155,7 +385157,7 @@ xref: GARD:0019957 {source="MONDO:GARD"}
 xref: ICD10CM:Q27.3 {source="Orphanet:141174"}
 xref: icd11.foundation:113998538 {source="MONDO:equivalentTo"}
 xref: MEDGEN:825297 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:141174 {source="MONDO:equivalentTo"}
+xref: Orphanet:141174 {source="MONDO:equivalentObsolete"}
 xref: SCTID:703334000 {source="MONDO:equivalentTo"}
 xref: UMLS:C3839452 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:825297"}
 is_a: MONDO:0015500 {source="Orphanet:141174", source="icd11.foundation:113998538"} ! facial arteriovenous malformation
@@ -385249,7 +385251,7 @@ xref: GARD:0019959 {source="MONDO:GARD"}
 xref: ICD10CM:Q28.2 {source="Orphanet:141194"}
 xref: icd11.foundation:796738143 {source="MONDO:equivalentTo"}
 xref: MEDGEN:825947 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:141194 {source="MONDO:equivalentTo"}
+xref: Orphanet:141194 {source="MONDO:equivalentObsolete"}
 xref: SCTID:703267003 {source="MONDO:equivalentTo"}
 xref: UMLS:C3840102 {source="MONDO:equivalentTo", source="MEDGEN:825947", source="MONDO:MEDGEN"}
 is_a: MONDO:0015405 {source="Orphanet:141194", source="icd11.foundation:796738143"} ! cerebrofacial arteriovenous metameric syndrome
@@ -385268,7 +385270,7 @@ xref: GARD:0019960 {source="MONDO:GARD"}
 xref: ICD10CM:Q28.2 {source="Orphanet:141199"}
 xref: icd11.foundation:1048965538 {source="MONDO:equivalentTo"}
 xref: MEDGEN:824537 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:141199 {source="MONDO:equivalentTo"}
+xref: Orphanet:141199 {source="MONDO:equivalentObsolete"}
 xref: SCTID:703268008 {source="MONDO:equivalentTo"}
 xref: UMLS:C3838691 {source="MEDGEN:824537", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0015405 {source="Orphanet:141199", source="icd11.foundation:1048965538"} ! cerebrofacial arteriovenous metameric syndrome
@@ -387532,7 +387534,7 @@ xref: GARD:0012663 {source="MONDO:GARD"}
 xref: ICD10CM:Q27.3 {source="Orphanet:156230"}
 xref: icd11.foundation:926860967 {source="MONDO:equivalentTo"}
 xref: MEDGEN:1842762 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:156230 {source="MONDO:equivalentTo"}
+xref: Orphanet:156230 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5680665 {source="MEDGEN:1842762", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0001256 {source="Orphanet:156230"} ! arteriovenous hemangioma/malformation
 property_value: curated_content_resource "https://www.malacards.org/card/facial_arteriovenous_malformation" xsd:anyURI {source="MONDO:MalaCards"}
@@ -390552,7 +390554,7 @@ subset: rare
 synonym: "BIMSE" EXACT ABBREVIATION [Orphanet:166308]
 xref: GARD:0020075 {source="MONDO:GARD"}
 xref: MEDGEN:1663004 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:166308 {source="MONDO:equivalentTo"}
+xref: Orphanet:166308 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C4749346 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1663004"}
 is_a: MONDO:0015642 {source="Orphanet:166308"} ! benign partial infantile seizures
 property_value: curated_content_resource "https://www.malacards.org/card/benign_infantile_focal_epilepsy_with_midline_spikes_and_waves_during_sleep" xsd:anyURI {source="MONDO:MalaCards"}
@@ -390567,7 +390569,7 @@ subset: orphanet {source="Orphanet:166311"}
 subset: rare
 xref: GARD:0020076 {source="MONDO:GARD"}
 xref: MEDGEN:1842641 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:166311 {source="MONDO:equivalentTo"}
+xref: Orphanet:166311 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5680426 {source="MEDGEN:1842641", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0020071 {source="Orphanet:166311"} ! infantile epilepsy syndrome
 property_value: curated_content_resource "https://www.malacards.org/card/benign_partial_infantile_seizures" xsd:anyURI {source="MONDO:MalaCards"}
@@ -399353,7 +399355,7 @@ xref: GARD:0000435 {source="MONDO:GARD"}
 xref: ICD10CM:Q87.8 {source="Orphanet:1995"}
 xref: MEDGEN:419494 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C538272 {source="MONDO:equivalentTo"}
-xref: Orphanet:1995 {source="MONDO:equivalentTo"}
+xref: Orphanet:1995 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C2931789 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:419494"}
 is_a: MONDO:0002254 {source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-5002-8648"} ! syndromic disease
 is_a: MONDO:0015161 {source="Orphanet:1995"} ! multiple congenital anomalies/dysmorphic syndrome without intellectual disability
@@ -399980,7 +399982,7 @@ subset: rare
 xref: GARD:0018758 {source="MONDO:GARD"}
 xref: ICD10CM:Q27.3 {source="Orphanet:2039"}
 xref: MEDGEN:1679454 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:2039 {source="MONDO:equivalentTo"}
+xref: Orphanet:2039 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5191839 {source="MEDGEN:1679454", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0020296 {source="Orphanet:2039"} ! congenital arteriovenous fistula
 property_value: curated_content_resource "https://www.malacards.org/card/congenital_systemic_arteriovenous_fistula" xsd:anyURI {source="MONDO:MalaCards"}
@@ -403023,7 +403025,7 @@ is_obsolete: true
 [Term]
 id: MONDO:0016230
 name: obsolete simple vascular malformation
-xref: Orphanet:211243 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:211243 {source="MONDO:obsoleteEquivalentObsolete"}
 property_value: curated_content_resource "https://www.malacards.org/card/simple_vascular_malformation" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGrouping"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5114" xsd:anyURI
@@ -407135,7 +407137,7 @@ xref: MEDGEN:87542 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C562840 {source="MONDO:equivalentTo"}
 xref: NCIT:C4503 {source="MONDO:equivalentTo"}
 xref: OMIM:114480 {source="Orphanet:227535", source="MONDO:equivalentTo"}
-xref: Orphanet:227535 {source="MONDO:equivalentTo"}
+xref: Orphanet:227535 {source="MONDO:equivalentObsolete"}
 xref: SCTID:254843006 {source="MONDO:equivalentTo"}
 xref: UMLS:C0346153 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:87542"}
 is_a: MONDO:0003847 {source="MONDO:Redundant", source="Orphanet:227535/inferred"} ! hereditary disease
@@ -409996,7 +409998,7 @@ subset: rare
 synonym: "acquired secondary erythrocytosis" EXACT [Orphanet:238547]
 synonym: "acquired secondary polycythemia" EXACT [MONDO:patterns/acquired, Orphanet:238547]
 xref: GARD:0020636 {source="MONDO:GARD"}
-xref: Orphanet:238547 {source="MONDO:equivalentTo"}
+xref: Orphanet:238547 {source="MONDO:equivalentObsolete"}
 is_a: MONDO:0020115 {source="MONDO:Redundant", source="Orphanet:238547"} ! secondary polycythemia
 intersection_of: MONDO:0020115 ! secondary polycythemia
 intersection_of: has_characteristic MONDO:0021141 ! acquired
@@ -410147,7 +410149,7 @@ subset: rare
 xref: GARD:0017178 {source="MONDO:GARD"}
 xref: ICD10CM:Q87.3 {source="Orphanet:238613"}
 xref: MEDGEN:1825953 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:238613 {source="MONDO:equivalentTo"}
+xref: Orphanet:238613 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5680933 {source="MONDO:equivalentTo", source="MEDGEN:1825953", source="MONDO:MEDGEN"}
 is_a: MONDO:0007534 {source="Orphanet:238613"} ! Beckwith-Wiedemann syndrome
 
@@ -422606,7 +422608,7 @@ subset: rare
 xref: GARD:0020993 {source="MONDO:GARD"}
 xref: ICD10CM:Q03.1 {source="Orphanet:269212"}
 xref: MEDGEN:1842616 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:269212 {source="MONDO:equivalentTo"}
+xref: Orphanet:269212 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5680779 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1842616"}
 is_a: MONDO:0009072 {source="Orphanet:269212"} ! Dandy-Walker syndrome
 property_value: curated_content_resource "https://www.malacards.org/card/isolated_dandy_walker_malformation_with_hydrocephalus" xsd:anyURI {source="MONDO:MalaCards"}
@@ -422622,7 +422624,7 @@ subset: rare
 xref: GARD:0020994 {source="MONDO:GARD"}
 xref: ICD10CM:Q03.1 {source="Orphanet:269215"}
 xref: MEDGEN:1842486 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:269215 {source="MONDO:equivalentTo"}
+xref: Orphanet:269215 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5680778 {source="MONDO:equivalentTo", source="MEDGEN:1842486", source="MONDO:MEDGEN"}
 is_a: MONDO:0009072 {source="Orphanet:269215"} ! Dandy-Walker syndrome
 property_value: curated_content_resource "https://www.malacards.org/card/isolated_dandy_walker_malformation_without_hydrocephalus" xsd:anyURI {source="MONDO:MalaCards"}
@@ -435044,7 +435046,7 @@ synonym: "hereditary partial epilepsy" EXACT [MONDO:patterns/hereditary]
 xref: GARD:0002173 {source="MONDO:GARD"}
 xref: ICD10CM:G40.1 {source="Orphanet:309"}
 xref: MEDGEN:1826100 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:309 {source="MONDO:equivalentTo"}
+xref: Orphanet:309 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5680862 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1826100"}
 is_a: MONDO:0020072 {source="Orphanet:309"} ! childhood-onset epilepsy syndrome
 intersection_of: MONDO:0005384 ! focal epilepsy
@@ -442527,7 +442529,7 @@ id: MONDO:0018041
 name: obsolete other immunodeficiency syndrome with predominantly antibody defects
 subset: disease_grouping
 xref: ICD10CM:D80.8 {source="Orphanet:331244", source="Orphanet:331244/e", source="Orphanet:331244/specific"}
-xref: Orphanet:331244 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:331244 {source="MONDO:obsoleteEquivalentObsolete"}
 property_value: curated_content_resource "https://www.malacards.org/card/other_immunodeficiency_syndrome_with_predominantly_antibody_defects" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000231 OMO:0001000
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/2662" xsd:anyURI
@@ -442967,7 +442969,7 @@ xref: MedDRA:10027276 {source="EFO:1001040"}
 xref: MEDGEN:6299 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D008585 {source="DOID:0080176", source="Orphanet:33475/e", source="MONDO:equivalentTo", source="EFO:1001040", source="Orphanet:33475"}
 xref: NORD:1438 {source="MONDO:NORD"}
-xref: Orphanet:33475 {source="MONDO:equivalentTo"}
+xref: Orphanet:33475 {source="MONDO:equivalentObsolete"}
 xref: SCTID:192644005 {source="MONDO:equivalentTo", source="EFO:1001040"}
 xref: UMLS:C0025294 {source="MEDGEN:6299", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0005373 {source="ICD10CM:A39.0", source="https://orcid.org/0000-0001-5208-3432"} ! meningococcal infection
@@ -452176,7 +452178,7 @@ synonym: "PPI-responsive esophageal eosinophilia" EXACT [Orphanet:411696]
 synonym: "PPIRee" EXACT [Orphanet:411696]
 xref: GARD:0021735 {source="MONDO:GARD"}
 xref: MEDGEN:1669432 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:411696 {source="MONDO:equivalentTo"}
+xref: Orphanet:411696 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C4749332 {source="MEDGEN:1669432", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0018438 {source="Orphanet:411696"} ! eosinophilic gastrointestinal disease
 property_value: curated_content_resource "https://www.malacards.org/card/proton_pump_inhibitor_responsive_esophageal_eosinophilia" xsd:anyURI {source="MONDO:MalaCards"}
@@ -455183,7 +455185,7 @@ subset: orphanet {source="Orphanet:440724"}
 subset: rare
 xref: GARD:0021842 {source="MONDO:GARD"}
 xref: MEDGEN:1842279 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:440724 {source="MONDO:equivalentTo"}
+xref: Orphanet:440724 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5681187 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1842279"}
 is_a: MONDO:0005328 ! eye disorder
 relationship: disease_has_location UBERON:0000941 ! cranial nerve II
@@ -456811,7 +456813,7 @@ xref: MedDRA:10067265 {source="Orphanet:450/e", source="Orphanet:450"}
 xref: MEDGEN:465273 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C117273 {source="MONDO:equivalentTo"}
 xref: OMIMPS:306955 {source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-6601-2165"}
-xref: Orphanet:157769 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
+xref: Orphanet:157769 {source="MONDO:equivalentObsolete"}
 xref: Orphanet:450 {source="MONDO:equivalentTo", source="DOID:0050545"}
 xref: SCTID:14821001 {source="MONDO:equivalentTo"}
 xref: UMLS:C3178805 {source="MEDGEN:465273", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -457348,7 +457350,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 id: MONDO:0018699
 name: obsolete pseudohypoparathyroidism with Albright hereditary osteodystrophy
 subset: disease_grouping
-xref: Orphanet:457059 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:457059 {source="MONDO:obsoleteEquivalentObsolete"}
 property_value: curated_content_resource "https://www.malacards.org/card/pseudohypoparathyroidism_with_albright_hereditary_osteodystrophy" xsd:anyURI {source="MONDO:MalaCards"}
 is_obsolete: true
 
@@ -457356,7 +457358,7 @@ is_obsolete: true
 id: MONDO:0018700
 name: obsolete pseudohypoparathyroidism without Albright hereditary osteodystrophy
 subset: disease_grouping
-xref: Orphanet:457062 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:457062 {source="MONDO:obsoleteEquivalentObsolete"}
 property_value: curated_content_resource "https://www.malacards.org/card/pseudohypoparathyroidism_without_albright_hereditary_osteodystrophy" xsd:anyURI {source="MONDO:MalaCards"}
 is_obsolete: true
 
@@ -461720,7 +461722,7 @@ xref: MedDRA:10048661 {source="Orphanet:53719/e", source="Orphanet:53719"}
 xref: MEDGEN:120534 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C536752 {source="Orphanet:53719/e", source="MONDO:equivalentTo", source="Orphanet:53719"}
 xref: NORD:1863 {source="MONDO:NORD"}
-xref: Orphanet:53719 {source="MONDO:equivalentTo"}
+xref: Orphanet:53719 {source="MONDO:equivalentObsolete"}
 xref: SCTID:6729006 {source="MONDO:equivalentTo"}
 xref: UMLS:C0265321 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:120534"}
 is_a: MONDO:0002235 ! eyelid neoplasm
@@ -468004,7 +468006,7 @@ xref: MEDGEN:208903 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D058499 {source="DOID:8501", source="MONDO:equivalentTo", source="Orphanet:71862", source="Orphanet:71862/e"}
 xref: NCIT:C35194 {source="DOID:8500", source="MONDO:equivalentTo"}
 xref: NCIT:C35625 {source="DOID:8501", source="MONDO:equivalentTo"}
-xref: Orphanet:71862 {source="MONDO:equivalentTo"}
+xref: Orphanet:71862 {source="MONDO:equivalentObsolete"}
 xref: SCTID:193399000 {source="DOID:8500"}
 xref: SCTID:193417000 {source="DOID:8500"}
 xref: SCTID:267615006 {source="DOID:8500"}
@@ -469122,7 +469124,7 @@ synonym: "Phlebectatic osteohypoplastic angiodysplasia" EXACT [Orphanet:75508]
 synonym: "Servelle-Martorell syndrome" EXACT [Orphanet:75508]
 xref: GARD:0018927 {source="MONDO:GARD"}
 xref: MEDGEN:1641209 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:75508 {source="MONDO:equivalentTo"}
+xref: Orphanet:75508 {source="MONDO:equivalentObsolete"}
 xref: SCTID:765750001 {source="MONDO:equivalentTo"}
 xref: UMLS:C4707561 {source="MEDGEN:1641209", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-5002-8648"} ! syndromic disease
@@ -470373,7 +470375,7 @@ xref: ICD10CM:G37.4 {source="Orphanet:79093"}
 xref: icd11.foundation:937824238 {source="Orphanet:79093", source="MONDO:equivalentTo", source="https://orcid.org/0000-0001-5208-3432"}
 xref: ICD9:323.9 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:141629 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:79093 {source="MONDO:equivalentTo"}
+xref: Orphanet:79093 {source="MONDO:equivalentObsolete"}
 xref: SCTID:230379007 {source="MONDO:equivalentTo"}
 xref: UMLS:C0472347 {source="MEDGEN:141629", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0001256 {source="Orphanet:79093"} ! arteriovenous hemangioma/malformation
@@ -474039,7 +474041,7 @@ synonym: "Sotos' syndrome" EXACT [NCIT:C75019]
 synonym: "SOTOS1" RELATED DEPRECATED [OMIM:117550]
 xref: DECIPHER:17 {source="MONDO:equivalentTo"}
 xref: DOID:0112103 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
-xref: DOID:14748 {source="MONDO:equivalentTo"}
+xref: DOID:14748 {source="MONDO:equivalentObsolete"}
 xref: GARD:0010091 {source="MONDO:GARD"}
 xref: ICD10CM:Q87.3 {source="Orphanet:821/inclusion", source="DOID:14748", source="Orphanet:821"}
 xref: icd11.foundation:1887392960 {source="MONDO:equivalentTo"}
@@ -477948,7 +477950,7 @@ synonym: "myoclonus epilepsy in non-progressive encephalopathies" EXACT [Orphane
 xref: GARD:0019088 {source="MONDO:GARD"}
 xref: ICD10CM:G40.4 {source="Orphanet:86913"}
 xref: MEDGEN:1661865 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:86913 {source="MONDO:equivalentTo"}
+xref: Orphanet:86913 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C4755298 {source="MEDGEN:1661865", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0100577 {source="https://orcid.org/0000-0001-5208-3432"} ! myoclonic epilepsy
 relationship: excluded_subClassOf MONDO:0020071 {source="Orphanet:86913", source="https://orcid.org/0000-0001-5208-3432"} ! infantile epilepsy syndrome
@@ -479268,7 +479270,7 @@ xref: MedDRA:10042217 {source="Orphanet:90041", source="Orphanet:90041/e"}
 xref: MedDRA:10053885 {source="Orphanet:90041", source="Orphanet:90041/e"}
 xref: MEDGEN:745735 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C27174 {source="MONDO:equivalentTo", source="DOID:2838"}
-xref: Orphanet:90041 {source="MONDO:equivalentTo"}
+xref: Orphanet:90041 {source="MONDO:equivalentObsolete"}
 xref: SCTID:191371001 {source="DOID:2838"}
 xref: SCTID:36874002 {source="MONDO:equivalentTo", source="DOID:2838"}
 xref: UMLS:C2242785 {source="MONDO:equivalentTo", source="MEDGEN:745735", source="MONDO:MEDGEN"}
@@ -486271,7 +486273,7 @@ xref: MedDRA:10071015 {source="Orphanet:95854", source="Orphanet:95854/e"}
 xref: MEDGEN:7331 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D007979 {source="MONDO:equivalentTo", source="Orphanet:95854", source="Orphanet:95854/e"}
 xref: NCIT:C111647 {source="MONDO:equivalentTo"}
-xref: Orphanet:95854 {source="MONDO:equivalentTo"}
+xref: Orphanet:95854 {source="MONDO:equivalentObsolete"}
 xref: SCTID:205769006 {source="MONDO:equivalentTo"}
 xref: UMLS:C0023569 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:7331"}
 is_a: MONDO:0018677 {source="Orphanet:95854"} ! visceral heterotaxy
@@ -489154,8 +489156,8 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10014/pellag
 
 [Term]
 id: MONDO:0019976
-name: dementia pugilistica
-def: "Conditions characterized by persistent brain damage or dysfunction as sequelae of cranial trauma. This disorder may result from diffuse axonal injury; intracranial hemorrhages; brain edema; and other conditions. Clinical features may include dementia; focal neurologic deficits; persistent vegetative state; akinetic mutism; or coma." [MESH:D020208]
+name: chronic traumatic encephalopathy
+def: "A tauopathy characterized by progressive neurodegeneration secondary to repetitive mild traumatic brain injuries. The clinical picture is variable and includes behavioral or psychiatric symptoms, cognitive impairment and motor deficits. The neuropathological hallmark is the accumulation of phosphorylated tau protein in sulci and perivascular regions." [DOID:0081291, Orphanet:97353]
 subset: doid {source="DOID:0081291"}
 subset: gard_rare {source="GARD:0019371", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -489164,18 +489166,22 @@ subset: orphanet {source="Orphanet:97353"}
 subset: orphanet_rare {source="Orphanet:97353"}
 subset: rare
 synonym: "Boxer's dementia" EXACT [Orphanet:97353]
-synonym: "chronic traumatic encephalopathy" EXACT [DOID:0081291, Orphanet:97353]
+synonym: "chronic traumatic encephalopathy" EXACT [DOID:0081291, https://orcid.org/0000-0003-2955-4640, Orphanet:97353, PMID:19535999]
+synonym: "dementia pugilistica" EXACT [Orphanet:97353, PMID:19535999, PMID:24190181]
 synonym: "punch-drunk syndrome" EXACT [Orphanet:97353]
 xref: DOID:0081291 {source="MONDO:equivalentTo"}
 xref: GARD:0019371 {source="MONDO:GARD"}
 xref: MEDGEN:508441 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: MESH:D020208 {source="MONDO:equivalentTo"}
+xref: MESH:D000070627 {source="MONDO:equivalentTo"}
+xref: MESH:D020208 {source="MONDO:mondoIsNarrowerThanSource"}
 xref: Orphanet:97353 {source="MONDO:equivalentTo"}
 xref: SCTID:230283005 {source="MONDO:equivalentTo"}
 xref: UMLS:C0149843 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:508441"}
 is_a: MONDO:0001627 {source="Orphanet:97353"} ! dementia
+is_a: MONDO:0005574 {source="DOID:0081291", source="PMID:19535999"} ! tauopathy
 property_value: curated_content_resource "https://www.malacards.org/card/chronic_traumatic_encephalopathy" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/dementia_pugilistica" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10677" xsd:anyURI
 
 [Term]
 id: MONDO:0019977
@@ -490795,7 +490801,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 id: MONDO:0020073
 name: obsolete adolescent-onset epilepsy syndrome
 xref: ICD10CM:G40.4 {source="Orphanet:98260"}
-xref: Orphanet:98260 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:98260 {source="MONDO:obsoleteEquivalentObsolete"}
 property_value: curated_content_resource "https://www.malacards.org/card/adolescent_onset_epilepsy_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludePhenotype"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/1640" xsd:anyURI
@@ -491617,7 +491623,7 @@ xref: ICD10CM:D75.1 {source="https://orcid.org/0009-0001-6494-4831", source="MON
 xref: MedDRA:10036062 {source="Orphanet:98428", source="Orphanet:98428/e"}
 xref: MEDGEN:231144 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C27178 {source="MONDO:equivalentTo"}
-xref: Orphanet:98428 {source="MONDO:equivalentTo"}
+xref: Orphanet:98428 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C1318533 {source="MONDO:equivalentTo", source="MEDGEN:231144", source="MONDO:MEDGEN"}
 is_a: MONDO:0005571 {source="NCIT:C27178/inferred", source="Orphanet:98428", source="Orphanet:98428/inferred"} ! polycythemia
 relationship: excluded_subClassOf MONDO:0015549 {source="Orphanet:98428", source="https://orcid.org/0000-0001-5208-3432"} ! obsolete rare genetic hematologic disease
@@ -491995,7 +492001,7 @@ is_obsolete: true
 id: MONDO:0020133
 name: obsolete posterior fossa malformation
 subset: otar {source="MONDO:OTAR"}
-xref: Orphanet:98519 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:98519 {source="MONDO:obsoleteEquivalentObsolete"}
 relationship: excluded_subClassOf MONDO:0015219 {source="Orphanet:98519", source="https://orcid.org/0000-0001-5208-3432"} ! obsolete non-syndromic central nervous system malformation
 property_value: curated_content_resource "https://www.malacards.org/card/posterior_fossa_malformation" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGrouping"}
@@ -493375,7 +493381,7 @@ def: "OBSOLETE. A retinitis pigmentosa that is part of a larger syndrome." [MOND
 subset: otar {source="MONDO:OTAR"}
 synonym: "syndrome associated with retinitis pigmentosa" EXACT [MONDO:patterns/syndromic]
 synonym: "syndromic retinitis pigmentosa" EXACT [MONDO:patterns/syndromic]
-xref: Orphanet:98661 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:98661 {source="MONDO:obsoleteEquivalentObsolete"}
 property_value: curated_content_resource "https://www.malacards.org/card/syndromic_rod_cone_dystrophy" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGrouping"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5114" xsd:anyURI
@@ -494150,7 +494156,7 @@ xref: MedDRA:10003226 {source="Orphanet:98731", source="Orphanet:98731/e"}
 xref: MEDGEN:137676 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D001164 {source="Orphanet:98731", source="MONDO:equivalentTo", source="Orphanet:98731/e"}
 xref: NCIT:C35377 {source="MONDO:equivalentTo"}
-xref: Orphanet:98731 {source="MONDO:equivalentTo"}
+xref: Orphanet:98731 {source="MONDO:equivalentObsolete"}
 xref: SCTID:234148007 {source="MONDO:equivalentTo"}
 xref: UMLS:C0332965 {source="MEDGEN:137676", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0024239 {source="NCIT:C35377"} ! congenital anomaly of cardiovascular system
@@ -497776,7 +497782,7 @@ xref: GARD:0019670 {source="MONDO:GARD"}
 xref: ICD9:282.7 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:82893 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NANDO:2200625 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
-xref: Orphanet:99139 {source="MONDO:equivalentTo"}
+xref: Orphanet:99139 {source="MONDO:equivalentObsolete"}
 xref: SCTID:18273004 {source="MONDO:equivalentTo"}
 xref: UMLS:C0272006 {source="MEDGEN:82893", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019050 {source="Orphanet:99139", source="https://orcid.org/0000-0001-5208-3432"} ! inherited hemoglobinopathy
@@ -500451,7 +500457,7 @@ xref: MedDRA:10064335 {source="Orphanet:99994", source="Orphanet:99994/e"}
 xref: MEDGEN:2918 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D002422 {source="DOID:3222", source="MONDO:equivalentTo", source="EFO:1000854"}
 xref: NCIT:C121572 {source="DOID:3222", source="MONDO:equivalentTo"}
-xref: Orphanet:99994 {source="MONDO:equivalentTo"}
+xref: Orphanet:99994 {source="MONDO:equivalentObsolete"}
 xref: SCTID:155074001 {source="DOID:3222"}
 xref: SCTID:247397004 {source="DOID:3222"}
 xref: SCTID:267705008 {source="DOID:3222"}
@@ -523051,7 +523057,7 @@ synonym: "Hallermam Streiff like syndrome" RELATED [GARD:0000290, MESH:C538210]
 xref: GARD:0000290 {source="MONDO:GARD"}
 xref: MEDGEN:419158 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C538210 {source="MONDO:equivalentTo"}
-xref: Orphanet:2109 {source="MONDO:equivalentTo"}
+xref: Orphanet:2109 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C2931775 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:419158"}
 is_a: MONDO:0002254 ! syndromic disease
 relationship: disease_shares_features_of MONDO:0009318 {source="MESH:C538210"} ! Hallermann-Streiff syndrome
@@ -558010,7 +558016,7 @@ consider: HP:0001083
 [Term]
 id: MONDO:0034943
 name: obsolete isolated vitreoretinopathy
-xref: Orphanet:519304 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:519304 {source="MONDO:obsoleteEquivalentObsolete"}
 property_value: curated_content_resource "https://www.malacards.org/card/isolated_vitreoretinopathy" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludePhenotype"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4776" xsd:anyURI
@@ -558020,7 +558026,7 @@ consider: HP:0007773
 [Term]
 id: MONDO:0034953
 name: obsolete syndromic inherited retinal disorder
-xref: Orphanet:519325 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:519325 {source="MONDO:obsoleteEquivalentObsolete"}
 property_value: curated_content_resource "https://www.malacards.org/card/syndromic_inherited_retinal_disorder" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGroupingModifier", source="MONDO:excludeGroupingOrigin"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4781" xsd:anyURI
@@ -558030,7 +558036,7 @@ consider: MONDO:0005283
 [Term]
 id: MONDO:0034954
 name: obsolete syndromic vitreoretinopathy
-xref: Orphanet:519327 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:519327 {source="MONDO:obsoleteEquivalentObsolete"}
 property_value: curated_content_resource "https://www.malacards.org/card/syndromic_vitreoretinopathy" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGrouping"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5114" xsd:anyURI
@@ -558259,7 +558265,7 @@ consider: MONDO:0021084
 [Term]
 id: MONDO:0035002
 name: obsolete isolated inherited retinal disorder
-xref: Orphanet:520817 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:520817 {source="MONDO:obsoleteEquivalentObsolete"}
 property_value: curated_content_resource "https://www.malacards.org/card/isolated_inherited_retinal_disorder" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGrouping"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5114" xsd:anyURI
@@ -560164,7 +560170,7 @@ subset: rare
 xref: GARD:0022341 {source="MONDO:GARD"}
 xref: MEDGEN:396322 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C80328 {source="MONDO:equivalentTo"}
-xref: Orphanet:585877 {source="MONDO:equivalentTo"}
+xref: Orphanet:585877 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C2698313 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:396322"}
 is_a: MONDO:0003538 {source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-4142-7153"} ! precursor lymphoblastic lymphoma/leukemia
 property_value: curated_content_resource "https://www.malacards.org/card/b_lymphoblastic_leukemia_lymphoma_with_recurrent_genetic_abnormality" xsd:anyURI {source="MONDO:MalaCards"}
@@ -568630,7 +568636,7 @@ synonym: "T+B+ SCID" EXACT []
 synonym: "T-cell positive B-cell positive SCID" EXACT []
 xref: ICD10CM:D81.2 {source="Orphanet:397802"}
 xref: MEDGEN:1842248 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:397802 {source="MONDO:equivalentTo"}
+xref: Orphanet:397802 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5681156 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1842248"}
 is_a: MONDO:0015974 {source="Orphanet:397802"} ! severe combined immunodeficiency
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7461" xsd:anyURI
@@ -594489,7 +594495,7 @@ xref: GARD:0027144 {source="MONDO:GARD"}
 xref: MEDGEN:419810 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C537243 {source="MONDO:equivalentTo"}
 xref: OMIM:176807 {source="MONDO:equivalentTo"}
-xref: Orphanet:1331 {source="MONDO:equivalentTo"}
+xref: Orphanet:1331 {source="MONDO:equivalentObsolete"}
 xref: SCTID:715412008 {source="MONDO:equivalentTo"}
 xref: UMLS:C2931456 {source="MEDGEN:419810", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0008315 {source="OMIM:176807", source="Orphanet:1331"} ! prostate cancer
@@ -608040,7 +608046,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 id: MONDO:0957009
 name: obsolete hereditary posterior fossa malformation
 synonym: "genetic posterior fossa malformation" EXACT []
-xref: Orphanet:269557 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:269557 {source="MONDO:obsoleteEquivalentObsolete"}
 property_value: curated_content_resource "https://www.malacards.org/card/genetic_posterior_fossa_malformation" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGrouping"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5114" xsd:anyURI
@@ -608100,7 +608106,7 @@ subset: orphanet {source="Orphanet:519302"}
 subset: rare
 xref: GARD:0022097 {source="MONDO:GARD"}
 xref: MEDGEN:1842262 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:519302 {source="MONDO:equivalentTo"}
+xref: Orphanet:519302 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5681367 {source="MEDGEN:1842262", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0003004 {source="Orphanet:519302", source="https://orcid.org/0000-0001-5208-3432"} ! macular degeneration
 relationship: has_characteristic MONDO:0021128 {source="Orphanet:519302"} ! has an isolated presentation
@@ -608999,7 +609005,7 @@ subset: orphanet {source="Orphanet:519300"}
 subset: rare
 xref: GARD:0022096 {source="MONDO:GARD"}
 xref: MEDGEN:1842795 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:519300 {source="MONDO:equivalentTo"}
+xref: Orphanet:519300 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5681368 {source="MEDGEN:1842795", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0005283 {source="https://orcid.org/0000-0001-5208-3432"} ! retinal disorder
 property_value: curated_content_resource "https://www.malacards.org/card/isolated_chorioretinal_dystrophy" xsd:anyURI {source="MONDO:MalaCards"}
@@ -609497,7 +609503,7 @@ subset: rare
 xref: GARD:0026840 {source="MONDO:GARD"}
 xref: icd11.foundation:870345553 {source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-3458-4839", source="Orphanet:645807"}
 xref: MEDGEN:1843412 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:645807 {source="MONDO:equivalentTo"}
+xref: Orphanet:645807 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5816704 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1843412"}
 is_a: MONDO:0018076 {source="Orphanet:645807", source="https://orcid.org/0000-0001-5208-3432"} ! tuberculosis
 property_value: curated_content_resource "https://www.malacards.org/card/primary_tuberculous_lymphadenitis" xsd:anyURI {source="MONDO:MalaCards"}
@@ -609523,7 +609529,7 @@ subset: orphanet {source="Orphanet:645822"}
 subset: rare
 xref: GARD:0026842 {source="MONDO:GARD"}
 xref: MEDGEN:1843400 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:645822 {source="MONDO:equivalentTo"}
+xref: Orphanet:645822 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5816705 {source="MEDGEN:1843400", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0018076 {source="Orphanet:645822", source="https://orcid.org/0000-0001-5208-3432"} ! tuberculosis
 property_value: curated_content_resource "https://www.malacards.org/card/primary_bone_and_joint_tuberculosis" xsd:anyURI {source="MONDO:MalaCards"}
@@ -609536,7 +609542,7 @@ subset: orphanet {source="Orphanet:645849"}
 subset: rare
 xref: GARD:0026843 {source="MONDO:GARD"}
 xref: MEDGEN:1843421 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:645849 {source="MONDO:equivalentTo"}
+xref: Orphanet:645849 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5816706 {source="MONDO:equivalentTo", source="MEDGEN:1843421", source="MONDO:MEDGEN"}
 is_a: MONDO:0021948 {source="https://orcid.org/0000-0001-5208-3432"} ! cutaneous tuberculosis
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
@@ -609565,7 +609571,7 @@ subset: rare
 xref: GARD:0026845 {source="MONDO:GARD"}
 xref: icd11.foundation:1873777499 {source="MONDO:equivalentTo", source="Orphanet:645859", source="https://orcid.org/0000-0002-3458-4839"}
 xref: MEDGEN:1843420 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:645859 {source="MONDO:equivalentTo"}
+xref: Orphanet:645859 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5816702 {source="MEDGEN:1843420", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0018076 {source="Orphanet:645859", source="https://orcid.org/0000-0001-5208-3432"} ! tuberculosis
 property_value: curated_content_resource "https://www.malacards.org/card/primary_tuberculosis_of_the_digestive_system" xsd:anyURI {source="MONDO:MalaCards"}
@@ -609577,7 +609583,7 @@ subset: gard_rare {source="GARD:0026846", source="MONDO:GARD"}
 subset: orphanet {source="Orphanet:645874"}
 subset: rare
 xref: GARD:0026846 {source="MONDO:GARD"}
-xref: Orphanet:645874 {source="MONDO:equivalentTo"}
+xref: Orphanet:645874 {source="MONDO:equivalentObsolete"}
 is_a: MONDO:0006002 {source="https://orcid.org/0000-0001-5208-3432"} ! urogenital tuberculosis
 property_value: curated_content_resource "https://www.malacards.org/card/primary_genito_urinary_tuberculosis" xsd:anyURI {source="MONDO:MalaCards"}
 
@@ -703257,6 +703263,19 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23159 {source="PMID:24461433", source="PMID:38770420", source="https://www.clinicalgenome.org/affiliation/40135/"} ! ALG2
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10309" xsd:anyURI
+
+[Term]
+id: MONDO:1060319
+name: ELP1-related medulloblastoma predisposition
+def: "A hereditary neoplastic syndrome caused by germline loss-of-function variation in the ELP1 gene. It is characterized by an increased risk of childhood Sonic Hedgehog (SHH)-activated medulloblastoma." [https://orcid.org/0000-0002-5529-1461, https://www.clinicalgenome.org/affiliation/40157/, PMID:32296180]
+synonym: "ELP1-related medulloblastoma predisposition" EXACT [https://www.clinicalgenome.org/affiliation/40157/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+is_a: MONDO:0015356 {source="PMID:32296180", source="https://orcid.org/0000-0002-5529-1461", source="https://www.clinicalgenome.org/affiliation/40157/"} ! hereditary neoplastic syndrome
+intersection_of: MONDO:0015356 ! hereditary neoplastic syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5959 ! ELP1
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5959 {source="PMID:32296180", source="https://orcid.org/0000-0002-5529-1461", source="https://www.clinicalgenome.org/affiliation/40157/"} ! ELP1
+relationship: predisposes_towards MONDO:0850197 {source="PMID:32296180"} ! medulloblastoma SHH activated
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10701" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
