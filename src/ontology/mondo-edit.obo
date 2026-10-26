@@ -52817,7 +52817,7 @@ synonym: "brain infarction of telencephalon" EXACT [MONDO:design_pattern]
 synonym: "cerebral infarct" EXACT [DOID:3526, icd11.foundation:1614716959]
 synonym: "cerebral infarction" EXACT [DOID:3526, ICD10CM:I63, ICD10WHO:I63, NCIT:C50486]
 synonym: "cerebral infarction NOS" RELATED EXCLUDE []
-synonym: "cerebral ischemia" EXACT [NCIT:C50486]
+synonym: "cerebral ischemia" RELATED [NCIT:C50486]
 synonym: "cerebral, infarction" EXACT []
 synonym: "CVA - cerebral infarction" EXACT []
 synonym: "infarction, cerebral" EXACT []
@@ -52849,6 +52849,7 @@ is_a: MONDO:1060198 {source="https://orcid.org/0000-0002-1149-7767"} ! ischemic 
 intersection_of: MONDO:0005394 ! brain infarction
 intersection_of: disease_has_location UBERON:0001893 ! telencephalon
 property_value: curated_content_resource "https://www.malacards.org/card/stroke_ischemic" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10741" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9754" xsd:anyURI
 
@@ -113522,9 +113523,9 @@ subset: otar {source="MONDO:OTAR"}
 synonym: "brain ischaemic disease" EXACT OMO:0003005 []
 synonym: "brain ischemia" EXACT [DOID:2316, MONDO:patterns/location]
 synonym: "brain ischemic disease" EXACT [MONDO:patterns/location]
+synonym: "cerebral ischemia" EXACT [DOID:2316, MESH:D002545]
 synonym: "cerebrovascular ischemia" EXACT [NCIT:C78394]
 synonym: "ischaemic disease of brain" EXACT OMO:0003005 []
-synonym: "ischemia cerebrovascular" EXACT []
 synonym: "ischemic disease of brain" EXACT [MONDO:design_pattern]
 xref: DOID:2316 {source="EFO:0003883", source="MONDO:equivalentTo"}
 xref: ICD9:348.89 {source="MONDO:relatedTo", source="MONDO:i2s"}
@@ -113542,6 +113543,7 @@ is_a: MONDO:0011057 {source="DOID:2316", source="MESH:D002545", source="NCIT:C78
 intersection_of: MONDO:0005053 ! ischemic disease
 intersection_of: disease_has_location UBERON:0000955 ! brain
 relationship: disease_has_location UBERON:0000955 {source="EFO:0000784"} ! brain
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10741" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
 property_value: IAO:0006012 "2026-05-01" xsd:string
 
@@ -209061,7 +209063,7 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10824/acth-i
 id: MONDO:0009050
 name: Cushing disease due to pituitary adenoma
 def: "A form of adrenocorticotropic hormone (ACTH)-dependent Cushing syndrome, an endogenous Cushing syndrome (CS), characterized by chronic over-secretion of adrenocorticotropic hormone (ACTH) due to a pituitary corticotroph adenoma." [Orphanet:96253]
-subset: doid {source="DOID:7004"}
+subset: doid {source="DOID:7004", source="DOID:3946"}
 subset: doid_rare {source="DOID:7004"}
 subset: gard_rare {source="GARD:0012867", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C113210"}
@@ -209073,38 +209075,46 @@ subset: orphanet_rare {source="Orphanet:96253"}
 subset: rare
 synonym: "ACTH producing pituitary adenoma" EXACT [NCIT:C113210]
 synonym: "ACTH-producing pituitary adenoma" RELATED EXCLUDE []
+synonym: "adrenocorticotropic hormone, inappropriate secretion" RELATED [MESH:D047748]
 synonym: "corticotroph adenoma" RELATED [MONDO:patterns/location]
 synonym: "corticotroph pituitary adenoma" EXACT [icd11.foundation:380861892, Orphanet:96253]
 synonym: "Cushing disease" EXACT [GARD:0012867, icd11.foundation:380861892, NCIT:C113210, Orphanet:96253]
 synonym: "Cushing disease, pituitary" EXACT [OMIM:219090]
 synonym: "Cushing's disease" EXACT [GARD:0012867, icd11.foundation:380861892, NCIT:C113210, PMID:25945066]
 synonym: "PITA4" EXACT ABBREVIATION [OMIM:219090]
+synonym: "pituitary ACTH hypersecretion" EXACT [MESH:D047748]
 synonym: "pituitary adenoma 4, ACTH-secreting" EXACT [OMIM:219090]
-synonym: "pituitary adenoma 4, ACTH-secreting, somatic" EXACT []
-synonym: "pituitary adenoma, ACTH-secreting" EXACT []
 synonym: "pituitary corticotroph micro-adenoma" EXACT [Orphanet:96253]
+synonym: "pituitary Cushing disease" EXACT [MESH:D047748]
+synonym: "pituitary Cushing syndrome" EXACT [MESH:D047748]
 synonym: "pituitary dependent Cushing syndrome" EXACT [GARD:0012867]
 synonym: "pituitary-dependent Cushing syndrome" EXACT [Orphanet:96253]
-xref: DOID:7004 {source="MONDO:equivalentTo"}
+synonym: "pituitary-dependent Cushing's disease" EXACT [doi:10.1093/jama/9780195176339.003.0016, DOID:3946, ICD10CM:E24.0]
+xref: DOID:3946 {source="MONDO:equivalentTo"}
+xref: DOID:7004 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
 xref: GARD:0012867 {source="MONDO:GARD"}
+xref: ICD10CM:E24.0 {source="MONDO:equivalentTo", source="DOID:3946", source="Orphanet:96253"}
 xref: icd11.foundation:380861892 {source="MONDO:equivalentTo", source="https://orcid.org/0000-0001-5208-3432", source="Orphanet:96253"}
 xref: MedDRA:10035109 {source="Orphanet:96253/e", source="Orphanet:96253"}
 xref: MEDGEN:66381 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: MESH:D049913 {source="DOID:7004", source="MONDO:equivalentTo"}
+xref: MESH:D047748 {source="MONDO:equivalentTo", source="DOID:3946"}
+xref: MESH:D049913 {source="DOID:7004", source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
 xref: NANDO:1200379 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
 xref: NANDO:2200350 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
 xref: NCIT:C113210 {source="MONDO:equivalentTo"}
 xref: OMIM:219090 {source="DOID:7004", source="Orphanet:96253/e", source="MONDO:equivalentTo", source="Orphanet:96253"}
 xref: Orphanet:96253 {source="OMIM:219090", source="MONDO:equivalentTo"}
-xref: SCTID:21109002 {source="DOID:7004"}
-xref: SCTID:254958004 {source="DOID:7004", source="MONDO:equivalentTo"}
+xref: SCTID:190502001 {source="MONDO:equivalentTo", source="DOID:3946"}
+xref: SCTID:254958004 {source="DOID:7004", source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
 xref: UMLS:C0221406 {source="MEDGEN:66381", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0003429 {source="DOID:7004", source="Orphanet:96253"} ! functioning pituitary gland adenoma
+is_a: MONDO:0006793 {source="DOID:3946", source="MESH:D047748"} ! hyperpituitarism
 is_a: MONDO:0017824 {source="DOID:7004/inferred", source="MONDO:0009050/inferred", source="MONDO:Redundant", source="OMIM:219090", source="Orphanet:96253/inferred"} ! familial isolated pituitary adenoma
 is_a: MONDO:0020528 {source="Orphanet:96253", source="icd11.foundation:380861892"} ! ACTH-dependent Cushing syndrome
 relationship: RO:0004004 http://identifiers.org/hgnc/12631 {source="OMIM:219090"} ! has material basis in somatic mutation in USP8
 property_value: curated_content_resource "https://www.malacards.org/card/acth_secreting_pituitary_adenoma" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/pituitary_adenoma_4_acth_secreting" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10741" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6475" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/12867/acth-secreting-pituitary-adenoma" xsd:anyURI {source="GARD:0012867"}
@@ -499367,7 +499377,6 @@ id: MONDO:0020528
 name: ACTH-dependent Cushing syndrome
 def: "A group of endogenous Cushing syndrome caused by abnormal production of ACTH due to pituitary adenoma or an extrapituitary tumor." [Orphanet:99892]
 subset: disease_grouping
-subset: doid {source="DOID:3946"}
 subset: gard_rare {source="GARD:0019699", source="MONDO:GARD"}
 subset: ordo_group_of_disorders {source="Orphanet:99892"}
 subset: orphanet {source="Orphanet:99892"}
@@ -499381,21 +499390,16 @@ synonym: "corticotropin-dependent Cushing syndrome" EXACT [Orphanet:99892]
 synonym: "pituitary Cushing disease" RELATED [MESH:D047748]
 synonym: "pituitary Cushing diseases" RELATED [MESH:D047748]
 synonym: "pituitary Cushing syndrome" RELATED [MESH:D047748]
-synonym: "pituitary-dependent Cushing's disease" EXACT [doi:10.1093/jama/9780195176339.003.0016, DOID:3946, ICD10CM:E24.0]
-xref: DOID:3946 {source="EFO:1001110", source="MONDO:equivalentTo"}
+synonym: "pituitary-dependent Cushing's disease" RELATED [doi:10.1093/jama/9780195176339.003.0016, DOID:3946, ICD10CM:E24.0]
 xref: EFO:1001110 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: GARD:0019699 {source="MONDO:GARD"}
-xref: ICD10CM:E24.0 {source="EFO:1001110", source="MONDO:equivalentTo", source="DOID:3946", source="Orphanet:99892"}
 xref: icd11.foundation:212778081 {source="MONDO:equivalentTo"}
 xref: MedDRA:10035109 {source="EFO:1001110"}
 xref: MEDGEN:575036 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: MESH:D047748 {source="EFO:1001110", source="MONDO:equivalentTo", source="DOID:3946"}
 xref: Orphanet:99892 {source="MONDO:equivalentTo"}
-xref: SCTID:190502001 {source="EFO:1001110", source="MONDO:equivalentTo", source="DOID:3946"}
 xref: SCTID:237734007 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
 xref: SCTID:9545009 {source="DOID:3946"}
 xref: UMLS:C0342442 {source="MEDGEN:575036", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0006793 {source="DOID:3946", source="MESH:D047748"} ! hyperpituitarism
 is_a: MONDO:0018912 {source="EFO:1001110", source="ICD10CM:E24.0", source="MONDO:Redundant", source="Orphanet:99892", source="icd11.foundation:212778081"} ! Cushing syndrome
 is_a: MONDO:0957431 {source="PMID:25945066"} ! endogenous Cushing syndrome
 intersection_of: MONDO:0018912 ! Cushing syndrome
@@ -499403,10 +499407,12 @@ intersection_of: MONDO:0957431 ! endogenous Cushing syndrome
 intersection_of: disease_has_basis_in_disruption_of GO:0051458 ! corticotropin secretion
 disjoint_from: MONDO:0020529 ! ACTH-independent Cushing syndrome
 relationship: disease_has_feature HP:0011043 ! Abnormal circulating adrenocorticotropin concentration
+relationship: excluded_subClassOf MONDO:0006793 {source="DOID:3946", source="MESH:D047748", source="https://orcid.org/0000-0002-7638-4659"} ! hyperpituitarism
 relationship: excluded_subClassOf MONDO:0018387 {source="Orphanet:99892", source="https://orcid.org/0000-0001-5208-3432"} ! obsolete rare male infertility due to adrenal disorder
 relationship: excluded_subClassOf MONDO:0018400 {source="Orphanet:99892", source="https://orcid.org/0000-0001-5208-3432"} ! obsolete rare female infertility due to an adrenal disorder
 property_value: curated_content_resource "https://www.malacards.org/card/acth_dependent_cushing_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/pituitary_dependent_cushings_disease" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10741" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6475" xsd:anyURI
 
 [Term]
