@@ -428961,6 +428961,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/pre_des
 [Term]
 id: MONDO:0017393
 name: blepharophimosis - intellectual disability syndrome
+def: "Any multiple congenital anomalies/dysmorphic syndrome-intellectual disability characterized by global developmental delay or intellectual disability, blepharophimosis and other craniofacial dysmorphisms, and organ anomalies." [https://orcid.org/0000-0002-3991-0859, Orphanet:293642, PMID:16700052]
 subset: disease_grouping
 subset: gard_rare {source="GARD:0010892", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -428968,10 +428969,10 @@ subset: ordo_group_of_disorders {source="Orphanet:293642"}
 subset: orphanet {source="Orphanet:293642"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "blepharophimosis intellectual disability syndromes" RELATED [GARD:0010892]
-synonym: "blepharophimosis mental retardation syndromes" RELATED DEPRECATED [GARD:0010892]
+synonym: "blepharophimosis intellectual disability syndromes" EXACT [GARD:0010892]
+synonym: "blepharophimosis mental retardation syndromes" EXACT DEPRECATED [GARD:0010892, PMID:16700052]
 synonym: "blepharophimosis syndrome Ohdo type" RELATED [GARD:0010892]
-synonym: "BMRS" EXACT ABBREVIATION []
+synonym: "BMRS" EXACT ABBREVIATION [PMID:16700052]
 synonym: "Say Barber Biesecker Young-Simpson syndrome" RELATED [GARD:0010892]
 synonym: "SBBYS syndrome" RELATED [GARD:0010892]
 synonym: "Young Simpson syndrome" RELATED [GARD:0010892]
@@ -428982,6 +428983,7 @@ xref: UMLS:C5229849 {source="MONDO:equivalentTo", source="MEDGEN:1698793", sourc
 is_a: MONDO:0015159 {source="Orphanet:293642"} ! multiple congenital anomalies/dysmorphic syndrome-intellectual disability
 relationship: excluded_subClassOf MONDO:0000508 {source="MONDO:Redundant", source="Orphanet:293642", source="https://orcid.org/0000-0001-5208-3432"} ! syndromic intellectual disability
 property_value: curated_content_resource "https://www.malacards.org/card/blepharophimosis_intellectual_disability_syndrome_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10783" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5588" xsd:anyURI
 
 [Term]
