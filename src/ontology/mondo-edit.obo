@@ -703290,6 +703290,21 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10309" xsd:anyURI
 
 [Term]
+id: MONDO:1060322
+name: DROSHA-related tumor predisposition
+def: "Any hereditary neoplastic syndrome in which the cause of the disease is a variation in the DROSHA gene. It is characterized by pineoblastoma, usually in childhood, which may be recurrent or metastatic. Wilms tumor has also been reported. Tumors carry a somatic second variation in DROSHA." [PMID:39992227]
+synonym: "DROSHA-related pineoblastoma" RELATED [PMID:39992227]
+synonym: "DROSHA-related Wilms tumor" RELATED [PMID:39992227]
+is_a: MONDO:0015356 {source="PMID:39992227"} ! hereditary neoplastic syndrome
+intersection_of: MONDO:0015356 ! hereditary neoplastic syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/17904
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/17904 {source="PMID:39992227"}
+relationship: predisposes_towards MONDO:0016722 {source="PMID:39992227"} ! pineoblastoma
+relationship: predisposes_towards MONDO:0019004 {source="PMID:39992227"} ! kidney Wilms tumor
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10784" xsd:anyURI
+
+[Term]
 id: MONDO:1061000
 name: TUBB-related tubulinopathy
 def: "Any tubulinopathy in which the cause of the disease is a mutation in the TUBB gene. Heterozygous TUBB variants cause two overlapping developmental disorders, complex cortical dysplasia with other brain malformations (CDCBM) and congenital symmetric circumferential skin creases (CSCSC), also known as circumferential skin creases Kunze type. The clinical findings are diverse and include abnormalities of the cortex, basal ganglia, corpus callosum, brain stem and cerebellum, microcephaly, intellectual disability, facial dysmorphism, excess skin folding and growth retardation." [https://www.clinicalgenome.org/affiliation/40020/, PMID:32085672, PMID:34211110]
