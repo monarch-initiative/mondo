@@ -281810,10 +281810,12 @@ xref: OMIM:605280 {source="DOID:0110766", source="Orphanet:100994", source="MOND
 xref: Orphanet:100994 {source="DOID:0110766", source="MONDO:equivalentTo", source="OMIM:605280"}
 xref: UMLS:C1854467 {source="MEDGEN:344289", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0019064 {source="DOID:0110766", source="MESH:C537485", source="MONDO:Redundant", source="OMIM:605280", source="Orphanet:100994/inferred"} ! hereditary spastic paraplegia
+is_a: MONDO:1060323 {source="PMID:39500555", source="https://clinicalgenome.org/affiliation/40107/"} ! HSPD1-related neurologic disorder
 intersection_of: MONDO:0019064 ! hereditary spastic paraplegia
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5261 ! HSPD1
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5261 {source="OMIM:605280"} ! HSPD1
 property_value: curated_content_resource "https://www.malacards.org/card/spastic_paraplegia_13_autosomal_dominant" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10788" xsd:anyURI
 
 [Term]
 id: MONDO:0011533
@@ -316121,11 +316123,13 @@ xref: Orphanet:280288 {source="OMIM:612233", source="MONDO:equivalentTo", source
 xref: UMLS:C2677109 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:383026"}
 is_a: MONDO:0017226 {source="Orphanet:280288"} ! Pelizaeus-Merzbacher-like disease
 is_a: MONDO:0019046 {source="DOID:0060789", source="DOID:0060789/inferred", source="MONDO:Redundant", source="OMIM:612233", source="Orphanet:280288/inferred"} ! leukodystrophy
+is_a: MONDO:1060323 {source="PMID:39500555", source="https://clinicalgenome.org/affiliation/40107/"} ! HSPD1-related neurologic disorder
 intersection_of: MONDO:0019046 ! leukodystrophy
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5261 ! HSPD1
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5261 {source="OMIM:612233"} ! HSPD1
 property_value: curated_content_resource "https://www.malacards.org/card/leukodystrophy_hypomyelinating_4" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10237" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10788" xsd:anyURI
 
 [Term]
 id: MONDO:0012825
@@ -703288,6 +703292,19 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23159 {source="PMID:24461433", source="PMID:38770420", source="https://www.clinicalgenome.org/affiliation/40135/"} ! ALG2
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10309" xsd:anyURI
+
+[Term]
+id: MONDO:1060323
+name: HSPD1-related neurologic disorder
+def: "Any hereditary neurological disease in which the cause of the disease is a variation in the HSPD1 gene." [https://clinicalgenome.org/affiliation/40107/, PMID:39500555]
+synonym: "HSPD1-related neurologic disorder" EXACT [https://clinicalgenome.org/affiliation/40107/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "HSPD1-related neurologic disorders" EXACT [https://clinicalgenome.org/affiliation/40107/]
+is_a: MONDO:0100545 {source="PMID:39500555", source="https://clinicalgenome.org/affiliation/40107/"} ! hereditary neurological disease
+intersection_of: MONDO:0100545 ! hereditary neurological disease
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5261 ! HSPD1
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5261 {source="PMID:39500555", source="https://clinicalgenome.org/affiliation/40107/"} ! HSPD1
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10788" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
