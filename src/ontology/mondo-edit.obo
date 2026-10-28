@@ -212486,7 +212486,9 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/2113/encepha
 
 [Term]
 id: MONDO:0009168
-name: Fowler syndrome
+name: proliferative vasculopathy and hydranencephaly-hydrocephaly syndrome
+def: "Any disorder of development or morphogenesis in which the cause of the disease is a variation in the FLVCR2 gene. It is characterized by hydranencephaly, distinctive glomeruloid vasculopathy in the central nervous system and retina, polyhydramnios and fetal akinesia with arthrogryposis. The disorder is usually prenatally lethal." [OMIM:225790, Orphanet:221126]
+comment: Please do not confuse with MONDO:0017200 Fowler urethral sphincter dysfunction syndrome that can also be referred to as Fowler syndrome (PMID:20518025 and PMID:20206334).
 subset: doid {source="DOID:0111666"}
 subset: doid_rare {source="DOID:0111666"}
 subset: gard_rare {source="GARD:0017138", source="MONDO:GARD"}
@@ -212499,12 +212501,15 @@ subset: orphanet_rare {source="Orphanet:221126"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "cerebral proliferative glomeruloid vasculopathy" EXACT [DOID:0111666, Orphanet:221126]
-synonym: "Encephaloclastic proliferative vasculopathy" EXACT [DOID:0111666, OMIM:225790, Orphanet:221126]
-synonym: "Fowler syndrome" EXACT [DOID:0111666, OMIM:225790] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "encephaloclastic proliferative vasculopathy" EXACT [DOID:0111666, OMIM:225790, Orphanet:221126]
+synonym: "EPV" EXACT ABBREVIATION [OMIM:225790]
+synonym: "Fowler syndrome" RELATED [DOID:0111666, OMIM:225790]
+synonym: "Fowler vasculopathy" EXACT [Orphanet:221126]
+synonym: "hydranencephaly, Fowler type" EXACT [OMIM:225790]
 synonym: "hydrocephaly/hydranencephaly due to cerebral vasculopathy" EXACT [DOID:0111666, OMIM:225790, Orphanet:221126]
-synonym: "proliferative vasculopathy and hydranencephaly-hydrocephaly syndrome" RELATED []
+synonym: "proliferative vasculopathy and hydranencephaly-hydrocephaly syndrome" EXACT [OMIM:225790]
 synonym: "proliferative vasculopathy and hydranencephaly/hydrocephaly" EXACT [DOID:0111666, Orphanet:221126]
-synonym: "PVHH" RELATED ABBREVIATION []
+synonym: "PVHH" EXACT ABBREVIATION [OMIM:225790]
 xref: DOID:0111666 {source="MONDO:equivalentTo"}
 xref: GARD:0017138 {source="MONDO:GARD"}
 xref: ICD9:596.59 {source="MONDO:relatedTo", source="MONDO:i2s"}
@@ -212513,11 +212518,13 @@ xref: MEDGEN:384026 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C565593 {source="MONDO:equivalentTo"}
 xref: OMIM:225790 {source="MONDO:equivalentTo", source="Orphanet:221126", source="Orphanet:221126/e"}
 xref: Orphanet:221126 {source="OMIM:225790", source="MONDO:equivalentTo"}
-xref: SCTID:700242002 {source="MONDO:equivalentTo"}
 xref: UMLS:C1856972 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:384026"}
 is_a: MONDO:0021147 {source="MONDO:Redundant", source="Orphanet:221126", source="Orphanet:221126/inferred"} ! disorder of development or morphogenesis
+intersection_of: MONDO:0021147 ! disorder of development or morphogenesis
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20105 ! FLVCR2
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20105 {source="OMIM:225790"} ! FLVCR2
 property_value: curated_content_resource "https://www.malacards.org/card/proliferative_vasculopathy_and_hydranencephaly_hydrocephaly_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10740" xsd:anyURI
 
 [Term]
 id: MONDO:0009169
@@ -424527,26 +424534,31 @@ relationship: excluded_subClassOf MONDO:0019704 {source="Orphanet:2787", source=
 
 [Term]
 id: MONDO:0017200
-name: polycystic ovaries-urethral sphincter dysfunction syndrome
-def: "Polycystic ovaries-urethral sphincter dysfunction syndrome is characterized by urinary retention and incomplete emptying of the bladder associated with abnormal electromyographic activity. It has been described in 33 women, 14 of whom also had polycystic ovaries." [Orphanet:2795]
+name: Fowler urethral sphincter dysfunction syndrome
+def: "A urethral disorder characterized by otherwise unexplained chronic urinary retention of more than 1 liter of sterile urine on catheterization, an asensitive bladder with loss of urge to void, and no help of straining. It is associated with abnormal electromyographic activity. Poor tolerance of self-catheterization is typically reported. The condition occurs in women between menarche and menopause, some of whom also have polycystic ovaries." [Orphanet:2795]
+comment: Please do not confuse with MONDO:0009168 proliferative vasculopathy and hydranencephaly-hydrocephaly syndrome that can also be referred to as Fowler syndrome (PMID:30680238).
 subset: gard_rare {source="GARD:0002365", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: ordo_disorder {source="Orphanet:2795"}
 subset: orphanet {source="Orphanet:2795"}
 subset: orphanet_rare {source="Orphanet:2795"}
 subset: rare
-synonym: "fowler Christmas Chapple syndrome" RELATED [GARD:0002365]
-synonym: "fowler's syndrome" RELATED [GARD:0002365]
-synonym: "fowler-Christmas-Chapple syndrome" EXACT [Orphanet:2795]
+synonym: "Fowler syndrome" RELATED [Orphanet:2795]
+synonym: "Fowler's syndrome" RELATED [GARD:0002365, PMID:30680238]
+synonym: "Fowler-Christmas-Chapple syndrome" EXACT [Orphanet:2795]
 synonym: "polycystic ovaries urethral sphincter dysfunction" RELATED [GARD:0002365]
+synonym: "polycystic ovaries-urethral sphincter dysfunction syndrome" EXACT [MEDGEN:419813]
 synonym: "voiding dysfunction and polycystic ovaries" RELATED [GARD:0002365]
 xref: GARD:0002365 {source="MONDO:GARD"}
 xref: MEDGEN:419813 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C537271 {source="MONDO:equivalentTo"}
 xref: Orphanet:2795 {source="MONDO:equivalentTo"}
+xref: SCTID:700242002 {source="MONDO:equivalentTo"}
 xref: UMLS:C2931462 {source="MEDGEN:419813", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0002263 {source="MONDO:0015875-obsoleted"} ! female reproductive system disorder
+is_a: MONDO:0004184 {source="Orphanet:2795"} ! urethral disorder
 property_value: curated_content_resource "https://www.malacards.org/card/fowler_urethral_sphincter_dysfunction_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10740" xsd:anyURI
 
 [Term]
 id: MONDO:0017201
