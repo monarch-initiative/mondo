@@ -563506,13 +563506,18 @@ relationship: excluded_subClassOf MONDO:0021063 {source="NCIT:C8411", source="ht
 [Term]
 id: MONDO:0041448
 name: metastasis from malignant tumor of colon
-synonym: "metastasis from malignant tumor of colon" EXACT []
+def: "A metastatic malignant neoplasm that originates from a primary malignant neoplasm of the colon and has spread to a secondary site." [https://orcid.org/0000-0002-7356-1779]
+synonym: "colon metastasis from malignant tumor" EXACT [https://orcid.org/0000-0002-7356-1779]
+synonym: "metastasis from malignant tumor of colon" EXACT [SCTID:314998002]
+synonym: "metastatic malignant neoplasm from the colon" EXACT [https://orcid.org/0000-0002-7356-1779]
 xref: MEDGEN:705366 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: SCTID:314998002 {source="MONDO:equivalentTo"}
 xref: UMLS:C1282500 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:705366"}
+is_a: MONDO:0024880 {source="PMID:35070067", source="https://orcid.org/0000-0002-7356-1779"} ! metastatic malignant neoplasm
 is_a: MONDO:0024881 ! secondary malignant neoplasm
 intersection_of: MONDO:0021063 ! malignant colon neoplasm
 intersection_of: has_characteristic PATO:0002098 ! neoplastic, metastatic
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10589" xsd:anyURI
 
 [Term]
 id: MONDO:0041526
@@ -703023,6 +703028,54 @@ is_a: MONDO:0019696 {source="PMID:26105076", source="PMID:36779427", source="htt
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1077 {source="PMID:26105076", source="PMID:36779427"} ! BMPR1B
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10549" xsd:anyURI
+
+[Term]
+id: MONDO:1060294
+name: metastatic malignant neoplasm from the breast
+def: "A metastatic malignant neoplasm that originates from a primary malignant neoplasm of the breast and has spread to a secondary site." [https://orcid.org/0000-0002-7356-1779, NCIT:C170728]
+synonym: "breast metastasis from malignant tumor" EXACT [https://orcid.org/0000-0002-7356-1779]
+synonym: "metastasis from malignant tumor of breast" EXACT [https://orcid.org/0000-0002-7356-1779]
+synonym: "metastatic malignant breast neoplasm" EXACT [NCIT:C170728]
+is_a: MONDO:0007254 {source="NCIT:C170728", source="https://orcid.org/0000-0002-7356-1779"} ! breast cancer
+is_a: MONDO:0024880 {source="NCIT:C170728", source="https://orcid.org/0000-0002-7356-1779"} ! metastatic malignant neoplasm
+intersection_of: MONDO:0007254 ! breast cancer
+intersection_of: has_characteristic PATO:0002098 ! neoplastic, metastatic
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10589" xsd:anyURI
+
+[Term]
+id: MONDO:1060295
+name: metastatic breast cancer in the liver
+def: "A metastatic malignant neoplasm in the liver that originates from a primary malignant neoplasm of the breast." [https://orcid.org/0000-0002-7356-1779]
+synonym: "breast cancer liver metastasis" EXACT [https://orcid.org/0000-0002-7356-1779, PMID:36387238]
+synonym: "secondary breast cancer in the liver" EXACT [https://orcid.org/0000-0002-7356-1779]
+is_a: MONDO:1060294 {source="PMID:36387238", source="https://orcid.org/0000-0002-7356-1779"} ! metastatic malignant neoplasm from the breast
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10589" xsd:anyURI
+
+[Term]
+id: MONDO:1060296
+name: metastatic colon cancer in the liver
+def: "A metastatic malignant neoplasm in the liver that originates from a primary malignant neoplasm of the colon." [https://orcid.org/0000-0002-7356-1779]
+synonym: "colon cancer liver metastasis" EXACT [https://orcid.org/0000-0002-7356-1779, PMID:35070067]
+synonym: "secondary colon cancer in the liver" EXACT [https://orcid.org/0000-0002-7356-1779]
+is_a: MONDO:0041448 {source="PMID:35070067", source="https://orcid.org/0000-0002-7356-1779"} ! metastasis from malignant tumor of colon
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10589" xsd:anyURI
+
+[Term]
+id: MONDO:1060297
+name: metastatic malignant neoplasm in the liver
+def: "A malignant neoplasm that has spread to the liver from another (primary) anatomic site. Representative examples include carcinomas, lymphomas, melanomas, or sarcomas." [NCIT:C4758]
+synonym: "liver metastasis" EXACT [NCIT:C4758]
+synonym: "metastatic malignant neoplasm to the liver" EXACT [NCIT:C4758]
+synonym: "metastatic neoplasm to the liver" EXACT [NCIT:C4758]
+synonym: "metastatic tumor to the liver" EXACT [NCIT:C4758]
+is_a: MONDO:0024880 {source="NCIT:C4758", source="https://orcid.org/0000-0002-7356-1779"} ! metastatic malignant neoplasm
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10589" xsd:anyURI
 
 [Term]
 id: MONDO:1060298
