@@ -108196,6 +108196,7 @@ synonym: "malignant epidermoid cell tumour" EXACT OMO:0003005 []
 synonym: "malignant squamous cell neoplasm" EXACT [NCIT:C2929]
 synonym: "malignant squamous cell tumor" EXACT [DOID:1749, NCIT:C2929]
 synonym: "malignant squamous cell tumour" EXACT OMO:0003005 []
+synonym: "SCC" EXACT ABBREVIATION [DOID:1749, NCIT:C2929]
 synonym: "squamous carcinoma" EXACT [DOID:1749, NCIT:C2929]
 synonym: "squamous cell cancer" EXACT [DOID:1749, NCIT:C2929]
 synonym: "squamous cell carcinoma" EXACT [DOID:1749, NCIT:C2929]
@@ -108218,6 +108219,7 @@ is_a: MONDO:0004993 {source="DOID:1749", source="EFO:0000707", source="EFO:00007
 intersection_of: MONDO:0004993 ! carcinoma
 intersection_of: disease_arises_from_structure CL:0000076 ! squamous epithelial cell
 property_value: curated_content_resource "https://www.malacards.org/card/squamous_cell_carcinoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10770" xsd:anyURI
 
 [Term]
 id: MONDO:0005097
@@ -110724,6 +110726,7 @@ synonym: "pancreatic ductal carcinoma" EXACT [DOID:3587, MONDO:0002699]
 synonym: "pancreatic infiltrating duct carcinoma, NOS" RELATED EXCLUDE []
 synonym: "pancreatic infiltrating duct carcinoma, not otherwise specified" RELATED EXCLUDE []
 synonym: "pancreatic tubular adenocarcinoma" EXACT [NCIT:C9120]
+synonym: "PDAC" EXACT ABBREVIATION [DOID:3498, NCIT:C9120]
 xref: DOID:3498 {source="MONDO:equivalentTo", source="MONDO:preferredExternal", source="EFO:0002517"}
 xref: DOID:3587 {source="MONDO:equivalentTo", source="EFO:0002517"}
 xref: EFO:0002517 {source="MONDO:equivalentTo", source="MONDO:EFO"}
@@ -110744,6 +110747,7 @@ intersection_of: disease_has_location UBERON:0007329 ! pancreatic duct
 relationship: disease_has_location UBERON:0001264 {source="EFO:0000784"} ! pancreas
 property_value: curated_content_resource "https://www.malacards.org/card/pancreatic_ductal_adenocarcinoma" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/pancreatic_ductal_carcinoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10772" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7215" xsd:anyURI
 
 [Term]
@@ -117827,6 +117831,7 @@ def: "An invasive breast carcinoma which is negative for expression of estrogen 
 subset: doid {source="DOID:0060081"}
 subset: ncit {source="NCIT:C71732"}
 subset: otar {source="MONDO:OTAR"}
+synonym: "TNBC" EXACT ABBREVIATION [DOID:0060081, NCIT:C71732]
 synonym: "triple-negative breast cancer" EXACT [NCIT:C71732]
 synonym: "triple-negative breast carcinoma" EXACT [NCIT:C71732]
 synonym: "triple-receptor negative breast cancer" EXACT [DOID:0060081, MONDO:0000619]
@@ -117845,6 +117850,7 @@ intersection_of: disease_has_feature NCIT:C15493 ! Estrogen Receptor Negative
 intersection_of: disease_has_feature NCIT:C15497 ! Progesterone Receptor Negative
 intersection_of: disease_has_feature NCIT:C68749 ! HER2/Neu Negative
 property_value: curated_content_resource "https://www.malacards.org/card/triple_receptor_negative_breast_cancer" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10771" xsd:anyURI
 
 [Term]
 id: MONDO:0005495
