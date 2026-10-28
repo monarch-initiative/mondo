@@ -703308,6 +703308,18 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10309" xsd:anyURI
 
 [Term]
+id: MONDO:1060321
+name: PTPN1-related type 1 interferonopathy
+def: "Any type 1 interferonopathy in which the cause of the disease is a variation in the PTPN1 gene." [https://clinicalgenome.org/affiliation/40107/, PMID:39986310]
+synonym: "PTPN1-related type 1 interferonopathy" EXACT [https://clinicalgenome.org/affiliation/40107/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+is_a: MONDO:0700264 {source="PMID:39986310", source="https://clinicalgenome.org/affiliation/40107/"} ! type 1 interferonopathy
+intersection_of: MONDO:0700264 ! type 1 interferonopathy
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9642 ! PTPN1
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9642 {source="PMID:39986310", source="https://clinicalgenome.org/affiliation/40107/"} ! PTPN1
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10781" xsd:anyURI
+
+[Term]
 id: MONDO:1060322
 name: DROSHA-related tumor predisposition
 def: "Hereditary tumor predisposition due to variation(s) in the DROSHA gene. Pathogenic germline loss-of-function variants in DROSHA confer a predisposition to pineoblastoma, usually in childhood, which may be recurrent or metastatic. Wilms tumor has also been reported. Tumors carry a somatic second variation in DROSHA." [PMID:39992227]
@@ -703321,18 +703333,6 @@ relationship: predisposes_towards MONDO:0016722 {source="PMID:39992227"} ! pineo
 relationship: predisposes_towards MONDO:0019004 {source="PMID:39992227"} ! kidney Wilms tumor
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10784" xsd:anyURI
-
-[Term]
-id: MONDO:1060321
-name: PTPN1-related type 1 interferonopathy
-def: "Any type 1 interferonopathy in which the cause of the disease is a variation in the PTPN1 gene." [https://clinicalgenome.org/affiliation/40107/, PMID:39986310]
-synonym: "PTPN1-related type 1 interferonopathy" EXACT [https://clinicalgenome.org/affiliation/40107/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-is_a: MONDO:0700264 {source="PMID:39986310", source="https://clinicalgenome.org/affiliation/40107/"} ! type 1 interferonopathy
-intersection_of: MONDO:0700264 ! type 1 interferonopathy
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9642 ! PTPN1
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9642 {source="PMID:39986310", source="https://clinicalgenome.org/affiliation/40107/"} ! PTPN1
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10781" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
