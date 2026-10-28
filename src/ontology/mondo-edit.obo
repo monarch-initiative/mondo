@@ -108196,6 +108196,7 @@ synonym: "malignant epidermoid cell tumour" EXACT OMO:0003005 []
 synonym: "malignant squamous cell neoplasm" EXACT [NCIT:C2929]
 synonym: "malignant squamous cell tumor" EXACT [DOID:1749, NCIT:C2929]
 synonym: "malignant squamous cell tumour" EXACT OMO:0003005 []
+synonym: "SCC" EXACT ABBREVIATION [DOID:1749, NCIT:C2929]
 synonym: "squamous carcinoma" EXACT [DOID:1749, NCIT:C2929]
 synonym: "squamous cell cancer" EXACT [DOID:1749, NCIT:C2929]
 synonym: "squamous cell carcinoma" EXACT [DOID:1749, NCIT:C2929]
@@ -108218,6 +108219,7 @@ is_a: MONDO:0004993 {source="DOID:1749", source="EFO:0000707", source="EFO:00007
 intersection_of: MONDO:0004993 ! carcinoma
 intersection_of: disease_arises_from_structure CL:0000076 ! squamous epithelial cell
 property_value: curated_content_resource "https://www.malacards.org/card/squamous_cell_carcinoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10770" xsd:anyURI
 
 [Term]
 id: MONDO:0005097
@@ -110724,6 +110726,7 @@ synonym: "pancreatic ductal carcinoma" EXACT [DOID:3587, MONDO:0002699]
 synonym: "pancreatic infiltrating duct carcinoma, NOS" RELATED EXCLUDE []
 synonym: "pancreatic infiltrating duct carcinoma, not otherwise specified" RELATED EXCLUDE []
 synonym: "pancreatic tubular adenocarcinoma" EXACT [NCIT:C9120]
+synonym: "PDAC" EXACT ABBREVIATION [DOID:3498, NCIT:C9120]
 xref: DOID:3498 {source="MONDO:equivalentTo", source="MONDO:preferredExternal", source="EFO:0002517"}
 xref: DOID:3587 {source="MONDO:equivalentTo", source="EFO:0002517"}
 xref: EFO:0002517 {source="MONDO:equivalentTo", source="MONDO:EFO"}
@@ -110744,6 +110747,7 @@ intersection_of: disease_has_location UBERON:0007329 ! pancreatic duct
 relationship: disease_has_location UBERON:0001264 {source="EFO:0000784"} ! pancreas
 property_value: curated_content_resource "https://www.malacards.org/card/pancreatic_ductal_adenocarcinoma" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/pancreatic_ductal_carcinoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10772" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7215" xsd:anyURI
 
 [Term]
@@ -117827,6 +117831,7 @@ def: "An invasive breast carcinoma which is negative for expression of estrogen 
 subset: doid {source="DOID:0060081"}
 subset: ncit {source="NCIT:C71732"}
 subset: otar {source="MONDO:OTAR"}
+synonym: "TNBC" EXACT ABBREVIATION [DOID:0060081, NCIT:C71732]
 synonym: "triple-negative breast cancer" EXACT [NCIT:C71732]
 synonym: "triple-negative breast carcinoma" EXACT [NCIT:C71732]
 synonym: "triple-receptor negative breast cancer" EXACT [DOID:0060081, MONDO:0000619]
@@ -117845,6 +117850,7 @@ intersection_of: disease_has_feature NCIT:C15493 ! Estrogen Receptor Negative
 intersection_of: disease_has_feature NCIT:C15497 ! Progesterone Receptor Negative
 intersection_of: disease_has_feature NCIT:C68749 ! HER2/Neu Negative
 property_value: curated_content_resource "https://www.malacards.org/card/triple_receptor_negative_breast_cancer" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10771" xsd:anyURI
 
 [Term]
 id: MONDO:0005495
@@ -212486,7 +212492,9 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/2113/encepha
 
 [Term]
 id: MONDO:0009168
-name: Fowler syndrome
+name: proliferative vasculopathy and hydranencephaly-hydrocephaly syndrome
+def: "Any disorder of development or morphogenesis in which the cause of the disease is a variation in the FLVCR2 gene. It is characterized by hydranencephaly, distinctive glomeruloid vasculopathy in the central nervous system and retina, polyhydramnios and fetal akinesia with arthrogryposis. The disorder is usually prenatally lethal." [OMIM:225790, Orphanet:221126]
+comment: Please do not confuse with MONDO:0017200 Fowler urethral sphincter dysfunction syndrome that can also be referred to as Fowler syndrome (PMID:20518025 and PMID:20206334).
 subset: doid {source="DOID:0111666"}
 subset: doid_rare {source="DOID:0111666"}
 subset: gard_rare {source="GARD:0017138", source="MONDO:GARD"}
@@ -212499,12 +212507,15 @@ subset: orphanet_rare {source="Orphanet:221126"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "cerebral proliferative glomeruloid vasculopathy" EXACT [DOID:0111666, Orphanet:221126]
-synonym: "Encephaloclastic proliferative vasculopathy" EXACT [DOID:0111666, OMIM:225790, Orphanet:221126]
-synonym: "Fowler syndrome" EXACT [DOID:0111666, OMIM:225790] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "encephaloclastic proliferative vasculopathy" EXACT [DOID:0111666, OMIM:225790, Orphanet:221126]
+synonym: "EPV" EXACT ABBREVIATION [OMIM:225790]
+synonym: "Fowler syndrome" RELATED [DOID:0111666, OMIM:225790]
+synonym: "Fowler vasculopathy" EXACT [Orphanet:221126]
+synonym: "hydranencephaly, Fowler type" EXACT [OMIM:225790]
 synonym: "hydrocephaly/hydranencephaly due to cerebral vasculopathy" EXACT [DOID:0111666, OMIM:225790, Orphanet:221126]
-synonym: "proliferative vasculopathy and hydranencephaly-hydrocephaly syndrome" RELATED []
+synonym: "proliferative vasculopathy and hydranencephaly-hydrocephaly syndrome" EXACT [OMIM:225790]
 synonym: "proliferative vasculopathy and hydranencephaly/hydrocephaly" EXACT [DOID:0111666, Orphanet:221126]
-synonym: "PVHH" RELATED ABBREVIATION []
+synonym: "PVHH" EXACT ABBREVIATION [OMIM:225790]
 xref: DOID:0111666 {source="MONDO:equivalentTo"}
 xref: GARD:0017138 {source="MONDO:GARD"}
 xref: ICD9:596.59 {source="MONDO:relatedTo", source="MONDO:i2s"}
@@ -212513,11 +212524,13 @@ xref: MEDGEN:384026 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C565593 {source="MONDO:equivalentTo"}
 xref: OMIM:225790 {source="MONDO:equivalentTo", source="Orphanet:221126", source="Orphanet:221126/e"}
 xref: Orphanet:221126 {source="OMIM:225790", source="MONDO:equivalentTo"}
-xref: SCTID:700242002 {source="MONDO:equivalentTo"}
 xref: UMLS:C1856972 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:384026"}
 is_a: MONDO:0021147 {source="MONDO:Redundant", source="Orphanet:221126", source="Orphanet:221126/inferred"} ! disorder of development or morphogenesis
+intersection_of: MONDO:0021147 ! disorder of development or morphogenesis
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20105 ! FLVCR2
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20105 {source="OMIM:225790"} ! FLVCR2
 property_value: curated_content_resource "https://www.malacards.org/card/proliferative_vasculopathy_and_hydranencephaly_hydrocephaly_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10740" xsd:anyURI
 
 [Term]
 id: MONDO:0009169
@@ -424527,26 +424540,31 @@ relationship: excluded_subClassOf MONDO:0019704 {source="Orphanet:2787", source=
 
 [Term]
 id: MONDO:0017200
-name: polycystic ovaries-urethral sphincter dysfunction syndrome
-def: "Polycystic ovaries-urethral sphincter dysfunction syndrome is characterized by urinary retention and incomplete emptying of the bladder associated with abnormal electromyographic activity. It has been described in 33 women, 14 of whom also had polycystic ovaries." [Orphanet:2795]
+name: Fowler urethral sphincter dysfunction syndrome
+def: "A urethral disorder characterized by otherwise unexplained chronic urinary retention of more than 1 liter of sterile urine on catheterization, an asensitive bladder with loss of urge to void, and no help of straining. It is associated with abnormal electromyographic activity. Poor tolerance of self-catheterization is typically reported. The condition occurs in women between menarche and menopause, some of whom also have polycystic ovaries." [Orphanet:2795]
+comment: Please do not confuse with MONDO:0009168 proliferative vasculopathy and hydranencephaly-hydrocephaly syndrome that can also be referred to as Fowler syndrome (PMID:30680238).
 subset: gard_rare {source="GARD:0002365", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: ordo_disorder {source="Orphanet:2795"}
 subset: orphanet {source="Orphanet:2795"}
 subset: orphanet_rare {source="Orphanet:2795"}
 subset: rare
-synonym: "fowler Christmas Chapple syndrome" RELATED [GARD:0002365]
-synonym: "fowler's syndrome" RELATED [GARD:0002365]
-synonym: "fowler-Christmas-Chapple syndrome" EXACT [Orphanet:2795]
+synonym: "Fowler syndrome" RELATED [Orphanet:2795]
+synonym: "Fowler's syndrome" RELATED [GARD:0002365, PMID:30680238]
+synonym: "Fowler-Christmas-Chapple syndrome" EXACT [Orphanet:2795]
 synonym: "polycystic ovaries urethral sphincter dysfunction" RELATED [GARD:0002365]
+synonym: "polycystic ovaries-urethral sphincter dysfunction syndrome" EXACT [MEDGEN:419813]
 synonym: "voiding dysfunction and polycystic ovaries" RELATED [GARD:0002365]
 xref: GARD:0002365 {source="MONDO:GARD"}
 xref: MEDGEN:419813 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C537271 {source="MONDO:equivalentTo"}
 xref: Orphanet:2795 {source="MONDO:equivalentTo"}
+xref: SCTID:700242002 {source="MONDO:equivalentTo"}
 xref: UMLS:C2931462 {source="MEDGEN:419813", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0002263 {source="MONDO:0015875-obsoleted"} ! female reproductive system disorder
+is_a: MONDO:0004184 {source="Orphanet:2795"} ! urethral disorder
 property_value: curated_content_resource "https://www.malacards.org/card/fowler_urethral_sphincter_dysfunction_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10740" xsd:anyURI
 
 [Term]
 id: MONDO:0017201
@@ -703303,6 +703321,18 @@ relationship: predisposes_towards MONDO:0016722 {source="PMID:39992227"} ! pineo
 relationship: predisposes_towards MONDO:0019004 {source="PMID:39992227"} ! kidney Wilms tumor
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10784" xsd:anyURI
+
+[Term]
+id: MONDO:1060321
+name: PTPN1-related type 1 interferonopathy
+def: "Any type 1 interferonopathy in which the cause of the disease is a variation in the PTPN1 gene." [https://clinicalgenome.org/affiliation/40107/, PMID:39986310]
+synonym: "PTPN1-related type 1 interferonopathy" EXACT [https://clinicalgenome.org/affiliation/40107/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+is_a: MONDO:0700264 {source="PMID:39986310", source="https://clinicalgenome.org/affiliation/40107/"} ! type 1 interferonopathy
+intersection_of: MONDO:0700264 ! type 1 interferonopathy
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9642 ! PTPN1
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9642 {source="PMID:39986310", source="https://clinicalgenome.org/affiliation/40107/"} ! PTPN1
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10781" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
