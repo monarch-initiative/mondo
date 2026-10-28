@@ -4971,14 +4971,19 @@ relationship: realized_in_response_to_stimulus CL:0000216 ! Sertoli cell
 
 [Term]
 id: MONDO:0000379
-name: obsolete malignant Sertoli-Leydig cell tumor
-def: "OBSOLETE. A malignant form of Sertoli-leydig cell tumor." [MONDO:patterns/malignant]
+name: malignant Sertoli-Leydig cell tumor
+def: "A malignant form of Sertoli-leydig cell tumor." [MONDO:patterns/malignant]
+comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
+subset: nord_rare {source="MONDO:NORD"}
+subset: obsoletion_candidate
+subset: rare
 synonym: "Sertoli-Leydig cell tumor, malignant" EXACT [MONDO:patterns/malignant]
-xref: DOID:0050618 {source="MONDO:obsoleteEquivalentObsolete"}
-property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
+xref: DOID:0050618 {source="MONDO:equivalentObsolete"}
+is_a: MONDO:0002479 {source="MONDO:Redundant", source="https://orcid.org/0000-0002-6601-2165"} ! Sertoli-Leydig cell tumor
+intersection_of: MONDO:0002479 ! Sertoli-Leydig cell tumor
+intersection_of: has_characteristic PATO:0002097 ! neoplastic, malignant
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-is_obsolete: true
-consider: MONDO:0002479
+property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0000380
@@ -77869,6 +77874,7 @@ is_a: MONDO:0002869 {source="DOID:62", source="MONDO:Redundant", source="NCIT:C7
 is_a: MONDO:0005561 {source="DOID:62", source="https://orcid.org/0000-0002-6601-2165"} ! aortic disorder
 intersection_of: MONDO:0000001 ! disease
 intersection_of: disease_has_location UBERON:0002137 ! aortic valve
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 property_value: curated_content_resource "https://www.malacards.org/card/aortic_valve_disease_1" xsd:anyURI {source="MONDO:MalaCards"}
 
 [Term]
@@ -381681,13 +381687,16 @@ consider: MONDO:0021147
 
 [Term]
 id: MONDO:0015257
-name: obsolete sino-auricular heart block
+name: sino-auricular heart block
+comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
+subset: nord_rare {source="MONDO:NORD"}
+subset: obsoletion_candidate
+subset: rare
 xref: ICD10CM:I45.5 {source="Orphanet:1260/inclusion", source="Orphanet:1260"}
-xref: Orphanet:1260 {source="MONDO:obsoleteEquivalentObsolete"}
-property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
+xref: Orphanet:1260 {source="MONDO:equivalentObsolete"}
+is_a: MONDO:0007263 {source="https://orcid.org/0000-0001-5208-3432"} ! cardiac rhythm disease
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-is_obsolete: true
-consider: MONDO:0007263
+property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0015258
@@ -417563,15 +417572,23 @@ relationship: has_characteristic SO:1000008 ! point_mutation
 
 [Term]
 id: MONDO:0016857
-name: obsolete blepharophimosis-epicanthus inversus-ptosis due to 3q23 rearrangement syndrome
-def: "OBSOLETE. Blepharophimosis - epicanthus inversus - ptosis (BPES) due to 3q23 microdeletion is a form of BPES, which in addition to the classical eyelids features of BPES, present genitourinary anomalies, spastic diplegia and speech delay." [Orphanet:261559]
+name: blepharophimosis-epicanthus inversus-ptosis due to 3q23 rearrangement syndrome
+def: "Blepharophimosis - epicanthus inversus - ptosis (BPES) due to 3q23 microdeletion is a form of BPES, which in addition to the classical eyelids features of BPES, present genitourinary anomalies, spastic diplegia and speech delay." [Orphanet:261559]
+comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
+subset: nord_rare {source="MONDO:NORD"}
+subset: obsoletion_candidate
+subset: ordo_etiological_subtype {source="Orphanet:261559"}
+subset: rare
 xref: ICD10CM:Q10.3 {source="Orphanet:261559"}
-xref: Orphanet:261559 {source="MONDO:obsoleteEquivalentObsolete"}
-property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
+xref: Orphanet:261559 {source="MONDO:equivalentObsolete"}
+is_a: MONDO:0007201 {source="Orphanet:261559"} ! blepharophimosis, ptosis, and epicanthus inversus syndrome
+is_a: MONDO:0016902 {source="Orphanet:261559"} ! partial deletion of the long arm of chromosome 3
+relationship: disease_arises_from_structure CHR:9606-chr3q23 {source="https://orcid.org/0000-0002-4142-7153"} ! 3q23 (Human)
+relationship: has_characteristic HP:0000006 {source="Orphanet:261559"} ! Autosomal dominant inheritance
+relationship: has_characteristic SO:1000029 {source="https://orcid.org/0000-0002-4142-7153"} ! chromosomal_deletion
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/3664" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-is_obsolete: true
-consider: MONDO:0007201
+property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0016858
@@ -431363,14 +431380,18 @@ property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0017523
-name: obsolete polydactyly of a biphalangeal thumb, unilateral
+name: polydactyly of a biphalangeal thumb, unilateral
+comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
+subset: nord_rare {source="MONDO:NORD"}
+subset: obsoletion_candidate
+subset: rare
 synonym: "preaxial polydactyly type 1, unilateral" EXACT []
 xref: ICD10CM:Q69.1 {source="Orphanet:295144"}
-xref: Orphanet:295144 {source="MONDO:obsoleteEquivalentObsolete"}
-property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
+xref: Orphanet:295144 {source="MONDO:equivalentObsolete"}
+is_a: MONDO:0008269 {source="Orphanet:295144"} ! polydactyly of a biphalangeal thumb
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-is_obsolete: true
-consider: MONDO:0008269
+property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0017524
@@ -456557,7 +456578,6 @@ xref: Orphanet:449291 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5681104 {source="MEDGEN:1814467", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0010383 {source="https://orcid.org/0000-0001-5208-3432"} ! fragile X syndrome
 is_a: MONDO:0019852 {source="Orphanet:449291"} ! inherited primary ovarian failure
-relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 property_value: curated_content_resource "https://www.malacards.org/card/symptomatic_form_of_fragile_x_syndrome_in_female_carrier" xsd:anyURI {source="MONDO:MalaCards"}
 
 [Term]
@@ -520621,14 +520641,19 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/8313/angiomy
 
 [Term]
 id: MONDO:0022454
-name: obsolete angiosarcoma of the scalp
-def: "OBSOLETE. Angiosarcoma of the scalp is a rare cancer which most commonly affects the elderly. This condition is characterized by bruise-like lesions that escalate to elevated, nodular, or ulcerated tumors. Extensive local growth is common and metastasis to regional lymph nodes and to the lungs may occur. The cause of angiosarcoma of the scalp is unknown, although several associations have been reported, including lymphedema, prior radiation treatment, and environmental exposures. Treatment may include surgery, radiation and chemotherapy." [GARD:0005814]
+name: angiosarcoma of the scalp
+def: "Angiosarcoma of the scalp is a rare cancer which most commonly affects the elderly. This condition is characterized by bruise-like lesions that escalate to elevated, nodular, or ulcerated tumors. Extensive local growth is common and metastasis to regional lymph nodes and to the lungs may occur. The cause of angiosarcoma of the scalp is unknown, although several associations have been reported, including lymphedema, prior radiation treatment, and environmental exposures. Treatment may include surgery, radiation and chemotherapy." [GARD:0005814]
+comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
+subset: nord_rare {source="MONDO:NORD"}
+subset: obsoletion_candidate
+subset: rare
 synonym: "angiosarcoma (disease) of scalp" EXACT []
 synonym: "scalp angiosarcoma (disease)" EXACT [MONDO:patterns/location]
-property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
+intersection_of: MONDO:0016982 ! angiosarcoma
+intersection_of: disease_has_location UBERON:0000403 ! scalp
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
+property_value: IAO:0006012 "2024-09-01" xsd:string
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/5814/angiosarcoma-of-the-scalp" xsd:anyURI {source="GARD:0005814"}
-is_obsolete: true
 
 [Term]
 id: MONDO:0022456
@@ -520640,11 +520665,13 @@ is_obsolete: true
 
 [Term]
 id: MONDO:0022457
-name: obsolete ankyloblepharon filiforme imperforate anus
-property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
+name: ankyloblepharon filiforme imperforate anus
+comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
+subset: obsoletion_candidate
+is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-6601-2165"} ! syndromic disease
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
+property_value: IAO:0006012 "2024-09-01" xsd:string
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/697/ankyloblepharon-filiforme-imperforate-anus" xsd:anyURI {source="GARD:0000697"}
-is_obsolete: true
 
 [Term]
 id: MONDO:0022458
@@ -523507,7 +523534,6 @@ is_a: MONDO:0004782 {source="DOID:0081058", source="MESH:C548013", source="MONDO
 is_a: MONDO:0040870 ! primary polydipsia
 intersection_of: MONDO:0004782 ! diabetes insipidus
 intersection_of: disease_arises_from_feature HP:0001959 ! Polydipsia
-relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 property_value: curated_content_resource "https://www.malacards.org/card/dipsogenic_diabetes_insipidus" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10703/dipsogenic-diabetes-insipidus" xsd:anyURI {source="GARD:0010703"}
 
@@ -523639,35 +523665,43 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1918/duker-w
 
 [Term]
 id: MONDO:0023015
-name: obsolete duodenal atresia tetralogy of fallot
-property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
+name: duodenal atresia tetralogy of fallot
+comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
+subset: obsoletion_candidate
+is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-6601-2165"} ! syndromic disease
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
+property_value: IAO:0006012 "2024-09-01" xsd:string
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1919/duodenal-atresia-tetralogy-of-fallot" xsd:anyURI {source="GARD:0001919"}
-is_obsolete: true
 
 [Term]
 id: MONDO:0023016
-name: obsolete duplication of leg mirror foot
-property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
+name: duplication of leg mirror foot
+comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
+subset: obsoletion_candidate
+is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-6601-2165"} ! syndromic disease
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
+property_value: IAO:0006012 "2024-09-01" xsd:string
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1976/duplication-of-leg-mirror-foot" xsd:anyURI {source="GARD:0001976"}
-is_obsolete: true
 
 [Term]
 id: MONDO:0023017
-name: obsolete duplication of the thumb unilateral biphalangeal
-property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
+name: duplication of the thumb unilateral biphalangeal
+comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
+subset: obsoletion_candidate
+is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-6601-2165"} ! syndromic disease
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
+property_value: IAO:0006012 "2024-09-01" xsd:string
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1977/duplication-of-the-thumb-unilateral-biphalangeal" xsd:anyURI {source="GARD:0001977"}
-is_obsolete: true
 
 [Term]
 id: MONDO:0023018
-name: obsolete dupont sellier chochillon syndrome
-property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
+name: dupont sellier chochillon syndrome
+comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
+subset: obsoletion_candidate
+is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-6601-2165"} ! syndromic disease
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
+property_value: IAO:0006012 "2024-09-01" xsd:string
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1983/dupont-sellier-chochillon-syndrome" xsd:anyURI {source="GARD:0001983"}
-is_obsolete: true
 
 [Term]
 id: MONDO:0023019
