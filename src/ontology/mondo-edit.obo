@@ -330863,6 +330863,7 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/2235/factor-
 [Term]
 id: MONDO:0013362
 name: THOC6-related developmental delay-microcephaly-facial dysmorphism syndrome
+def: "Any multiple congenital anomalies/dysmorphic syndrome-intellectual disability in which the cause of the disease is a variation in the THOC6 gene. It is characterized by global developmental delay, mild microcephaly, mild to severe intellectual disability and non-specific facial dysmorphism in association with variable multiple congenital anomalies including congenital heart defects, dental anomalies, cryptorchidism, renal and cerebral malformations. Short stature is frequent." [https://orcid.org/0000-0002-3991-0859, Orphanet:363444, PMID:23621916]
 subset: gard_rare {source="GARD:0017558", source="MONDO:GARD"}
 subset: omim {source="OMIM:613680"}
 subset: ordo_disorder {source="Orphanet:363444"}
@@ -330872,7 +330873,6 @@ subset: orphanet_rare {source="Orphanet:363444"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "BBIS" EXACT ABBREVIATION [OMIM:613680, Orphanet:363444]
-synonym: "BEAULIEU-BOYCOTT-Innes syndrome" RELATED []
 synonym: "Beaulieu-Boycott-Innes syndrome" EXACT [OMIM:613680, Orphanet:363444]
 synonym: "microcephaly, mental retardation, and distinctive facies, with Cardiac and genitourinary malformations" RELATED DEPRECATED []
 xref: GARD:0017558 {source="MONDO:GARD"}
@@ -330882,9 +330882,12 @@ xref: OMIM:613680 {source="MONDO:equivalentTo", source="Orphanet:363444", source
 xref: Orphanet:363444 {source="MONDO:equivalentTo", source="OMIM:613680"}
 xref: UMLS:C3150939 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:462289"}
 is_a: MONDO:0015159 {source="Orphanet:363444"} ! multiple congenital anomalies/dysmorphic syndrome-intellectual disability
+intersection_of: MONDO:0015159 ! multiple congenital anomalies/dysmorphic syndrome-intellectual disability
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/28369 ! THOC6
 relationship: excluded_subClassOf MONDO:0000508 {source="MONDO:Redundant", source="Orphanet:363444", source="https://orcid.org/0000-0001-5208-3432"} ! syndromic intellectual disability
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/28369 {source="OMIM:613680"} ! THOC6
 property_value: curated_content_resource "https://www.malacards.org/card/beaulieu_boycott_innes_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10783" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5588" xsd:anyURI
 
 [Term]
@@ -336580,6 +336583,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0013572
 name: Keppen-Lubinsky syndrome
+def: "Any hereditary lipodystrophy in which the cause of the disease is a variation in the KCNJ6 gene. It is characterized by severe developmental delay and intellectual disability, hypertonia, hyperreflexia, microcephaly, tightly adherent skin, an aged appearance, severe generalized lipodystrophy, and distinct facial dysmorphism which includes large prominent eyes, narrow nasal bridge, tented upper lip vermilion, an open mouth, and high-arched palate." [https://orcid.org/0000-0002-3991-0859, Orphanet:435628, PMID:25620207]
 subset: gard_rare {source="GARD:0017716", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:614098"}
@@ -336592,7 +336596,7 @@ subset: rare
 synonym: "generalised lipodystrophy-progeroid features-severe intellectual disability syndrome" EXACT OMO:0003005 []
 synonym: "generalized lipodystrophy-progeroid features-severe intellectual disability syndrome" EXACT [Orphanet:435628]
 synonym: "Keppen-Lubinsky syndrome" EXACT [OMIM:614098, Orphanet:435628]
-synonym: "KPLBS" RELATED ABBREVIATION []
+synonym: "KPLBS" EXACT ABBREVIATION [OMIM:614098]
 xref: GARD:0017716 {source="MONDO:GARD"}
 xref: ICD10CM:E88.1 {source="Orphanet:435628"}
 xref: MEDGEN:481430 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -336600,8 +336604,11 @@ xref: OMIM:614098 {source="MONDO:equivalentTo", source="Orphanet:435628", source
 xref: Orphanet:435628 {source="MONDO:equivalentTo"}
 xref: UMLS:C3279800 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:481430"}
 is_a: MONDO:0020087 {source="Orphanet:435628"} ! hereditary lipodystrophy
+intersection_of: MONDO:0020087 ! hereditary lipodystrophy
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6267 ! KCNJ6
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6267 {source="OMIM:614098"} ! KCNJ6
 property_value: curated_content_resource "https://www.malacards.org/card/keppen_lubinsky_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10783" xsd:anyURI
 
 [Term]
 id: MONDO:0013573
@@ -353890,7 +353897,8 @@ property_value: curated_content_resource "https://www.malacards.org/card/basal_g
 
 [Term]
 id: MONDO:0014205
-name: severe feeding difficulties-failure to thrive-microcephaly due to ASXL3 deficiency syndrome
+name: Bainbridge-Ropers syndrome
+def: "Any multiple congenital anomalies/dysmorphic syndrome-intellectual disability in which the cause of the disease is a variation in the ASXL3 gene. It is characterized by microcephaly, severe feeding difficulties, failure to thrive, severe global developmental delay that frequently results in absent or poor speech, moderate to severe intellectual disability and hypotonia. Distinctive craniofacial features include prominent forehead, high-arched, thin eyebrows, hypertelorism, downslanting palpebral fissures, long, tubular nose with broad tip and prominent nasal bridge and wide mouth with full, everted lower lip. Joint laxity and ulnar deviation of wrists are also frequently observed." [https://orcid.org/0000-0002-3991-0859, Orphanet:352577, PMID:23383720]
 subset: doid {source="DOID:0080893"}
 subset: doid_rare {source="DOID:0080893"}
 subset: gard_rare {source="GARD:0013259", source="MONDO:GARD"}
@@ -353902,10 +353910,9 @@ subset: orphanet_rare {source="Orphanet:352577"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "ASXL3-Related Disorder" EXACT [DOID:0080893, NORD:139551] {OMO:0002001="https://w3id.org/information-resource-registry/nord"}
-synonym: "BAINBRIDGE-ROPERS syndrome" RELATED []
-synonym: "Bainbridge-Roppers syndrome" EXACT []
-synonym: "BRPS" RELATED ABBREVIATION []
-synonym: "severe feeding difficulties-failure to thrive-microcephaly due to ASXL3 deficiency syndrome" EXACT [Orphanet:352577] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "Bainbridge-Ropers syndrome" EXACT [Orphanet:352577]
+synonym: "BRPS" EXACT ABBREVIATION [OMIM:615485]
+synonym: "severe feeding difficulties-failure to thrive-microcephaly due to ASXL3 deficiency syndrome" EXACT [Orphanet:352577]
 xref: DOID:0080893 {source="MONDO:equivalentTo"}
 xref: GARD:0013259 {source="MONDO:GARD"}
 xref: ICD10CM:Q87.0 {source="Orphanet:352577"}
@@ -353915,9 +353922,12 @@ xref: OMIM:615485 {source="MONDO:equivalentTo", source="Orphanet:352577", source
 xref: Orphanet:352577 {source="MONDO:equivalentTo", source="OMIM:615485"}
 xref: UMLS:C4750837 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1656239"}
 is_a: MONDO:0015159 {source="Orphanet:352577"} ! multiple congenital anomalies/dysmorphic syndrome-intellectual disability
+intersection_of: MONDO:0015159 ! multiple congenital anomalies/dysmorphic syndrome-intellectual disability
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29357 ! ASXL3
 relationship: excluded_subClassOf MONDO:0000508 {source="MONDO:Redundant", source="Orphanet:352577", source="https://orcid.org/0000-0001-5208-3432"} ! syndromic intellectual disability
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29357 {source="OMIM:615485"} ! ASXL3
 property_value: curated_content_resource "https://www.malacards.org/card/bainbridge_ropers_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10783" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5588" xsd:anyURI
 
 [Term]
@@ -355929,6 +355939,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0014274
 name: L-ferritin deficiency
+def: "Any hematologic disorder in which the cause of the disease is a variation in the FTL gene. It is characterized by decreased or undetectable serum L-ferritin with otherwise normal laboratory parameters. Clinical signs and symptoms include generalized seizures, atypical restless leg syndrome, mild neuropsychologic impairment, and progressive hair loss. Asymptomatic cases have also been reported." [https://orcid.org/0000-0002-3991-0859, Orphanet:440731, PMID:23940258]
 subset: gard_rare {source="GARD:0017748", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:615604"}
@@ -355940,15 +355951,18 @@ subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "L-ferritin deficiency" EXACT [OMIM:615604, Orphanet:440731]
 synonym: "L-ferritin deficiency, dominant and recessive" EXACT []
-synonym: "LFTD" RELATED ABBREVIATION []
+synonym: "LFTD" EXACT ABBREVIATION [OMIM:615604]
 xref: GARD:0017748 {source="MONDO:GARD"}
 xref: MEDGEN:816420 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:615604 {source="MONDO:equivalentTo", source="Orphanet:440731", source="Orphanet:440731/e"}
 xref: Orphanet:440731 {source="MONDO:equivalentTo"}
 xref: UMLS:C3810090 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:816420"}
 is_a: MONDO:0005570 {source="Orphanet:440731"} ! hematologic disorder
+intersection_of: MONDO:0005570 ! hematologic disorder
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3999 ! FTL
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3999 {source="OMIM:615604"} ! FTL
 property_value: curated_content_resource "https://www.malacards.org/card/l_ferritin_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10783" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 
 [Term]
@@ -428979,6 +428993,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/pre_des
 [Term]
 id: MONDO:0017393
 name: blepharophimosis - intellectual disability syndrome
+def: "Any multiple congenital anomalies/dysmorphic syndrome-intellectual disability characterized by global developmental delay or intellectual disability, blepharophimosis and other craniofacial dysmorphisms, and organ anomalies." [https://orcid.org/0000-0002-3991-0859, Orphanet:293642, PMID:16700052]
 subset: disease_grouping
 subset: gard_rare {source="GARD:0010892", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -428986,10 +429001,10 @@ subset: ordo_group_of_disorders {source="Orphanet:293642"}
 subset: orphanet {source="Orphanet:293642"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "blepharophimosis intellectual disability syndromes" RELATED [GARD:0010892]
-synonym: "blepharophimosis mental retardation syndromes" RELATED DEPRECATED [GARD:0010892]
+synonym: "blepharophimosis intellectual disability syndromes" EXACT [GARD:0010892]
+synonym: "blepharophimosis mental retardation syndromes" EXACT DEPRECATED [GARD:0010892, PMID:16700052]
 synonym: "blepharophimosis syndrome Ohdo type" RELATED [GARD:0010892]
-synonym: "BMRS" EXACT ABBREVIATION []
+synonym: "BMRS" EXACT ABBREVIATION [PMID:16700052]
 synonym: "Say Barber Biesecker Young-Simpson syndrome" RELATED [GARD:0010892]
 synonym: "SBBYS syndrome" RELATED [GARD:0010892]
 synonym: "Young Simpson syndrome" RELATED [GARD:0010892]
@@ -429000,6 +429015,7 @@ xref: UMLS:C5229849 {source="MONDO:equivalentTo", source="MEDGEN:1698793", sourc
 is_a: MONDO:0015159 {source="Orphanet:293642"} ! multiple congenital anomalies/dysmorphic syndrome-intellectual disability
 relationship: excluded_subClassOf MONDO:0000508 {source="MONDO:Redundant", source="Orphanet:293642", source="https://orcid.org/0000-0001-5208-3432"} ! syndromic intellectual disability
 property_value: curated_content_resource "https://www.malacards.org/card/blepharophimosis_intellectual_disability_syndrome_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10783" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5588" xsd:anyURI
 
 [Term]
@@ -449637,13 +449653,17 @@ replaced_by: MONDO:0700371
 [Term]
 id: MONDO:0018338
 name: activated PI3K-delta syndrome
+def: "An immunodeficiency disease characterized by increased susceptibility to recurrent and/or severe bacterial and viral infections (in particular, sinopulmonary bacterial and herpesvirus infections), chronic benign lymphoproliferation (manifesting as lymphadenopathy, hepatosplenomegaly and focal nodular lymphoid hyperplasia), and/or autoimmune disease. Immunophenotypically, variable degrees of agammaglobulinemia with increased IgM levels, increased circulating transitional B cells, decreased naive CD4 and CD8 T-cells with increased CD8 effector/memory T cells are observed." [https://orcid.org/0000-0002-3991-0859, Orphanet:397596, PMID:24136356]
 subset: gard_rare {source="GARD:0011983", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: ordo_group_of_disorders {source="Orphanet:397596"}
 subset: orphanet {source="Orphanet:397596"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
+synonym: "activated p110-delta syndrome" EXACT [Orphanet:397596]
 synonym: "APDS" EXACT ABBREVIATION [Orphanet:397596]
+synonym: "PASLI" EXACT ABBREVIATION [Orphanet:397596]
+synonym: "PI3K delta activating mutations causing senescent T cells, lymphadenopathy and immunodeficiency" EXACT [Orphanet:397596]
 synonym: "senescent T-cells-lymphadenopathy-immunodeficiency syndrome due to p110delta-activating mutation" EXACT [Orphanet:397596]
 xref: GARD:0011983 {source="MONDO:GARD"}
 xref: ICD10CM:D81.8 {source="Orphanet:397596"}
@@ -449654,6 +449674,8 @@ xref: Orphanet:397596 {source="MONDO:equivalentTo"}
 xref: SCTID:711480000 {source="MONDO:equivalentTo"}
 xref: UMLS:C3714976 {source="MEDGEN:811535", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0015977 {source="Orphanet:397596"} ! agammaglobulinemia
+is_a: MONDO:0021094 {source="Orphanet:397596", source="PMID:24136356"} ! immunodeficiency disease
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10783" xsd:anyURI
 
 [Term]
 id: MONDO:0018339
