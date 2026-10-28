@@ -703316,19 +703316,6 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10309" xsd:anyURI
 
 [Term]
-id: MONDO:1060323
-name: HSPD1-related neurologic disorder
-def: "Any hereditary neurological disease in which the cause of the disease is a variation in the HSPD1 gene." [https://clinicalgenome.org/affiliation/40107/, PMID:39500555]
-synonym: "HSPD1-related neurologic disorder" EXACT [https://clinicalgenome.org/affiliation/40107/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "HSPD1-related neurologic disorders" EXACT [https://clinicalgenome.org/affiliation/40107/]
-is_a: MONDO:0100545 {source="PMID:39500555", source="https://clinicalgenome.org/affiliation/40107/"} ! hereditary neurological disease
-intersection_of: MONDO:0100545 ! hereditary neurological disease
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5261 ! HSPD1
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5261 {source="PMID:39500555", source="https://clinicalgenome.org/affiliation/40107/"} ! HSPD1
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10788" xsd:anyURI
-
-[Term]
 id: MONDO:1060321
 name: PTPN1-related type 1 interferonopathy
 def: "Any type 1 interferonopathy in which the cause of the disease is a variation in the PTPN1 gene." [https://clinicalgenome.org/affiliation/40107/, PMID:39986310]
@@ -703354,6 +703341,19 @@ relationship: predisposes_towards MONDO:0016722 {source="PMID:39992227"} ! pineo
 relationship: predisposes_towards MONDO:0019004 {source="PMID:39992227"} ! kidney Wilms tumor
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10784" xsd:anyURI
+
+[Term]
+id: MONDO:1060323
+name: HSPD1-related neurologic disorder
+def: "Any hereditary neurological disease in which the cause of the disease is a variation in the HSPD1 gene." [https://clinicalgenome.org/affiliation/40107/, PMID:39500555]
+synonym: "HSPD1-related neurologic disorder" EXACT [https://clinicalgenome.org/affiliation/40107/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "HSPD1-related neurologic disorders" EXACT [https://clinicalgenome.org/affiliation/40107/]
+is_a: MONDO:0100545 {source="PMID:39500555", source="https://clinicalgenome.org/affiliation/40107/"} ! hereditary neurological disease
+intersection_of: MONDO:0100545 ! hereditary neurological disease
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5261 ! HSPD1
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5261 {source="PMID:39500555", source="https://clinicalgenome.org/affiliation/40107/"} ! HSPD1
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10788" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
