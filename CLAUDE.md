@@ -62,8 +62,8 @@ relationship: excluded_subClassOf MONDO:0002129 {source="https://orcid.org/0000-
 ## OBO Format Guidelines
 - Term ID format: MONDO:NNNNNNN (7-digit number)
 - Handling New Term Requests (NTRs):
-  - New terms start  MONDO:777xxxx
-  - Do do `grep id: MONDO:777 src/ontology/mondo-edit.obo` to check for clashes
+  - New terms use the curator's ID range allocated in `src/ontology/mondo-idranges.owl`
+  - Grep `id: MONDO:<range prefix>` in `src/ontology/mondo-edit.obo` to find the last used ID and avoid clashes
 - Each term requires: id, name, namespace, definition with references
 - NEVER guess MONDO IDs, use search tools above to determine actual term
 - NEVER guess PMIDs for references, do a web search if needed
@@ -96,7 +96,6 @@ subset: predisposition
 synonym: "BDPLT13" EXACT ABBREVIATION [MONDO:Lexical, OMIM:614009]
 synonym: "bleeding disorder, platelet-type, 13, susceptibility to" EXACT [MONDO:Lexical, OMIM:614009]
 synonym: "bleeding disorder, susceptibility to, due to defective platelet thromboxane A2 receptor" EXACT [OMIM:614009]
-synonym: "susceptibility to platelet-type bleeding disorder 13" EXACT []
 xref: MEDGEN:481244 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:614009 {source="Orphanet:220443", source="MONDO:equivalentTo", source="Orphanet:220443/e"}
 xref: UMLS:C3279614 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:481244"}
@@ -123,7 +122,6 @@ subset: ordo_malformation_syndrome {source="Orphanet:3220"}
 synonym: "bilateral sensorineural hearing loss, enamel hypoplasia and nail defects" RELATED [GARD:0001687]
 synonym: "deafness enamel hypoplasia nail defects" RELATED [GARD:0001687]
 synonym: "deafness-enamel hypoplasia-nail defects syndrome" EXACT [MONDO:0009325]
-synonym: "Heimler syndrome" EXACT []
 synonym: "sensorineural hearing loss, enamel hypoplasia, and nail abnormalities" RELATED [GARD:0001687]
 xref: MESH:C535994 {source="MONDO:obsoleteEquivalent", source="Orphanet:3220/e", source="Orphanet:3220"}
 xref: Orphanet:3220 {source="OMIM:234580", source="MONDO:obsoleteEquivalent"}
@@ -163,10 +161,10 @@ terms to "skip" the obsoleted term.
 - All terms should have definitions, with at least one definition xref, ideally a PMID
 
 
-You can sign NEW terms using with a tag-value like this: (don't tag pre-existing terms)
+Sign NEW terms with the curator's ORCID (don't tag pre-existing terms). Never use `doi:10.1186/s13326-024-00320-3`.
 
 ```
-property_value: http://purl.org/dc/terms/creator doi:10.1186/s13326-024-00320-3
+property_value: http://purl.org/dc/terms/creator https://orcid.org/<curator ORCID>
 ```
 
 You don't need to add a date, this will be handled for you
@@ -222,6 +220,8 @@ Examples:
 - TUBB4B-related ciliopathy
 
 This pattern should be used even when users request alternative formats like "disease - GENE" format.
+
+Applies to terms without an OMIM equivalent (new terms, groupings). Terms with an OMIM `equivalentTo` xref keep the OMIM title as label; a requested GENE-related name becomes an EXACT synonym.
 ```
 
 ## 2. Synonym Attribution and Citation Requirements
@@ -245,10 +245,12 @@ synonym: "CHD4-related neurodevelopmental disorder" EXACT [https://orcid.org/000
 synonym: "term name" EXACT []  # INCORRECT
 ```
 
+Synonym with `[]`: look for a source in OMIM, Orphanet, MedGen or other databases and cite it. None found → delete.
+
 ### ClinGen Label Handling
 When ClinGen provides preferred labels, use the "preferred label by community" qualifier:
 ```
-synonym: "Hajdu-Cheney syndrome-NOTCH2" EXACT [] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "Hajdu-Cheney syndrome-NOTCH2" EXACT [https://clinicalgenome.org/affiliation/<GCEP ID>/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 ```
 ```
 
@@ -279,7 +281,7 @@ relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/
 
 **Definition template:**
 ```
-def: "Any [parent disease class] in which the cause of the disease is a mutation in the [GENE] gene." [PMID:references]
+def: "Any [parent disease class] in which the cause of the disease is a variation in the [GENE] gene." [PMID:references]
 ```
 ```
 
@@ -357,6 +359,10 @@ id: MONDO:0008038
 name: ataxia-pancytopenia syndrome
 is_a: MONDO:1060111 ! SAMD9L-related spectrum and myeloid neoplasm risk
 ```
+
+Exceptions:
+- Cancer and immunodeficiency susceptibilities are diseases.
+- Gene-related tumor/cancer predisposition (e.g. MONDO:0700268 BRCA1-related cancer predisposition): parent MONDO:0015356 hereditary neoplastic syndrome, `predisposes_towards` each tumor.
 ```
 
 ## 8. Term Obsolescence and Merging
@@ -390,7 +396,7 @@ Remove ALL logical axioms and definitions from obsoleted terms.
 ## Definition Guidelines
 
 ### Gene-Related Diseases
-Use the pattern: "Any [parent disease] in which the cause of the disease is a mutation in the [GENE] gene."
+Use the pattern: "Any [parent disease] in which the cause of the disease is a variation in the [GENE] gene."
 
 ### Clinical Descriptions  
 - Use sentence case for medical terms
@@ -423,7 +429,7 @@ The documentation should include complete examples showing all required elements
 [Term]
 id: MONDO:1060117
 name: MYCBP2-related developmental delay with corpus callosum defects
-def: "Any neurodevelopmental disorder in which the cause of the disease is a mutation in the MYCBP2 gene. This condition is characterized by variable corpus callosum defects consistent with dysgenesis, and a broad spectrum of neurobehavioural deficits including developmental delay, intellectual disability, epilepsy, and autistic features." [https://orcid.org/0000-0001-9310-0163, PMID:36200388]
+def: "Any neurodevelopmental disorder in which the cause of the disease is a variation in the MYCBP2 gene. This condition is characterized by variable corpus callosum defects consistent with dysgenesis, and a broad spectrum of neurobehavioural deficits including developmental delay, intellectual disability, epilepsy, and autistic features." [https://orcid.org/0000-0001-9310-0163, PMID:36200388]
 synonym: "MDCD" EXACT ABBREVIATION [PMID:36200388]
 is_a: MONDO:0700092 {source="PMID:36200388", source="https://orcid.org/0000-0001-9310-0163"} ! neurodevelopmental disorder
 intersection_of: MONDO:0700092 ! neurodevelopmental disorder
@@ -434,6 +440,64 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 ```
 
 These improvements would help AI systems better understand MONDO's specific conventions and produce changes that more closely align with human expert curation practices.
+
+## 12. Curation Rules
+
+### Evidence
+- Every cited PMID must contain the cited text (synonym or def).
+- ORCID alone is never axiom evidence. Pair it with a PMID, URL, ClinGen GCEP URL or DB xref (OMIM, Orphanet, DOID, NCIT, MEDGEN, design pattern).
+- Put the requester's ORCID on the axioms and synonyms added for their request.
+
+### ClinGen
+- GCEP request: add the ClinGen preferred label as `synonym: "name" EXACT [<GCEP URL>] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}`.
+- Flag only a name ClinGen actually gave, never an OMIM/Orphanet label.
+- The ClinGen qualifier is only valid with a ClinGen WG/GCEP URL as evidence. Without one, remove the qualifier and keep the synonym on its other sources.
+- Never add `subset: clingen` or the ClinGen `curated_content_resource` link. The sync pipeline adds them.
+
+### OMIM
+- Any term with an OMIM `equivalentTo` xref: label = current OMIM title (never an `includedEntryInOMIM` title). Old label → EXACT, with `[OMIM:N]` only if it was an OMIM title; otherwise keep its existing sources.
+- Current and former titles: `EXACT [OMIM:N]`, not DEPRECATED. Abbreviations: `EXACT ABBREVIATION [OMIM:N]`.
+- Exception: keep DEPRECATED on outdated wording ("mental retardation"). Never remove an existing DEPRECATED tag.
+- `..., INCLUDED` titles are separate entities and never a synonym on the main-entry term. If Mondo has a term for one, xref it with `{source="MONDO:includedEntryInOMIM"}`, never `MONDO:equivalentTo`.
+- Check names in MedGen: `esearch db=medgen term=<MIM>[MIM]` gives one concept per entity, with `SAB="OMIM"` names.
+- An OMIM title that names a different concept (MedGen files it under another concept) → RELATED [OMIM:N], not EXACT.
+- A provisional OMIM gene-disease association ("?") needs a supporting PMID on the gene axiom, not OMIM alone.
+
+### Synonyms
+- Scope (RELATED is not a safe default):
+  - this disease → EXACT (incl. gene-named names with a category, e.g. "GENE-related neurodevelopmental disorder");
+  - generic gene names ("GENE disorder", "GENE disease", "GENE-related disease") → RELATED, because they are used as grouping terms;
+  - a more specific type (e.g. "gain-of-function") → NARROW;
+  - a different concept used for this disease → RELATED.
+- Lowercase except proper nouns and gene symbols, including NORD/ClinGen labels.
+- Never tag EXCLUDE.
+- No source (`[]`): look for it in OMIM, Orphanet, MedGen or other databases and cite it. None found → delete.
+- Patient foundation request with a website: cite the website URL on the names they asked for.
+- Orphanet evidence only if the name is on the current Orphanet page. Never use MedGen's ORDO names, which are out of date.
+- Numbered subtypes get a "GENE-related X" synonym.
+
+### Definitions
+- Use "variation", not "mutation".
+- Genus-differentia: start with the parent class, even when adapting a source def.
+- Gene-related tumor/cancer predisposition: "Hereditary tumor (or cancer) predisposition due to variation(s) in the GENE gene.", then the germline variants and the tumors they predispose to.
+- Distinguish from siblings. "Parent + variation in GENE" is not enough if the gene causes another disease under the same parent.
+- Deletions are variants. Write "deletions" or "most often deletions", not "variants or deletions".
+- Text and logical defs change together.
+- Relabel → update the def. Leave no old name in the def or comment.
+- Merge or rewrite → keep the old def's content in the def or a comment.
+
+### Classification
+- Edit because it is correct, not because it fails QC.
+- Never change a term's concept. The label, def and equivalent xrefs must describe the same disease. If one names another concept, fix that one; don't shift the term to fit it. Adding details or clinical features is fine.
+- Check the reasoner: parent + gene can make a term a subclass of another gene term, and a new logical def can lump terms.
+- OMIM "also cause(s) ... a similar disorder" means sibling disorders from the same gene, not a subtype. Check that a shared gene and parent don't make the reasoner infer one under the other.
+- No `has_characteristic SO:` in logical defs. No variant-type subtype term without an external xref.
+- Drop the equivalence axiom if OBO cannot express the term. No differentia the parent already entails.
+- Predisposition means raised risk. De novo or unaffected-carrier cases are not predisposition.
+
+### Gene-related groupings
+- Assert `is_a` on each child, with PMID evidence.
+- Labels are "GENE-related <category>". Never use a vague "condition".
 
 ## IMPORTANT
 
