@@ -81,7 +81,7 @@ owltools transfers content but several things need manual attention:
 
 3. **Decide which definition to keep.** Default = whichever the **issue** says is correct. If the issue is silent, keep the surviving term's existing definition. If the surviving term had no definition and the obsoleted one did, use the obsoleted one's. State the choice in the final summary so the user can override.
 
-4. **Check for redundant `is_a`.** If a transferred `is_a` is a superclass of another `is_a` already on the surviving term (e.g. `MONDO:0000001` "disease" alongside a more specific class), remove the redundant one along with its source qualifiers.
+4. **Keep redundant `is_a`.** If a transferred `is_a` is a superclass of another `is_a` already on the surviving term (e.g. `MONDO:0000001` "disease" alongside a more specific class), keep it. Its `{source=...}` qualifiers record where that parent came from. Only an `is_a` pointing at the obsoleted term itself is rewired (Step 6).
 
 5. **Check for an unwanted `alt_id`.** Some owltools versions add `alt_id: MONDO:XXXXXXX` to the surviving term. If present, remove it (Mondo policy: no `alt_id` for merges).
 
@@ -184,7 +184,6 @@ obo-grep.pl --noheader -r 'id: MONDO:YYYYYYY' src/ontology/mondo-edit.obo \
 
    Walk through every `xref:`, `synonym:`, `is_a:`, `relationship:`, `intersection_of:`, and `property_value:` on the obsolete stanza. Each must have an equivalent on the surviving term unless it was explicitly dropped. Allowed drops:
    - obsoletion-tracking metadata (see Step 5.2)
-   - a redundant superclass `is_a` (see Step 5.4)
    - the owltools-injected `[MONDO:XXXXXXX]` synonym evidence
    - any `MONDO:Lexical`-qualified xref — these are auto-generated string-match cross-refs and don't need to survive a merge
 
@@ -199,7 +198,7 @@ Show the user `git diff src/ontology/mondo-edit.obo` and the table below, filled
 | Synonyms | "..." [evidence] | transferred / merged citations / already on surviving / scope reconciled |
 | Xrefs | PREFIX:ID | transferred / merged sources / skipped (duplicate) |
 | Subsets | subset_name | transferred / source merged / removed (obsoletion-tracking) |
-| `is_a` | MONDO:NNNNNNN ! parent | transferred / source merged / removed (redundant) |
+| `is_a` | MONDO:NNNNNNN ! parent | transferred / source merged (redundant kept for provenance) |
 | `intersection_of` | ... | transferred / already on surviving |
 | Relationships | ... | transferred / source merged |
 | Property values | curated_content_resource, etc. | transferred / removed (`IAO:0006012` scheduled date) |
