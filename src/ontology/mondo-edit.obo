@@ -98239,10 +98239,12 @@ property_value: curated_content_resource "https://www.malacards.org/card/lower_g
 id: MONDO:0004714
 name: atrophic muscular disease
 def: "A group of primary or secondary disorders affecting the muscles. It is characterized by an abnormal reduction in the muscle volume and atrophy. The atrophy may be caused by diseases of the muscle tissues or diseases of the peripheral nerves." [NCIT:P378]
+comment: This term is scheduled for obsoletion based on the fact that it is a grouping class (classification not supported in Mondo). After obsoletion, this term will not have a replacement ID, but one could consider the following term: -
 subset: doid {source="DOID:913"}
 subset: gard_rare {source="GARD:0024096", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C84574"}
 subset: ncit_rare {source="NCIT:C84574"}
+subset: obsoletion_candidate
 subset: rare
 synonym: "atrophic muscular disorder" EXACT [NCIT:C84574]
 xref: DOID:913 {source="MONDO:equivalentTo"}
@@ -98253,6 +98255,8 @@ xref: NCIT:C84574 {source="MONDO:equivalentTo", source="DOID:913"}
 xref: UMLS:C0752352 {source="MONDO:equivalentTo", source="MEDGEN:156267", source="MONDO:MEDGEN"}
 is_a: MONDO:0003939 {source="DOID:913"} ! muscle tissue disorder
 is_a: MONDO:0019056 {source="DOID:913"} ! neuromuscular disease
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10816" xsd:anyURI
+property_value: IAO:0006012 "2027-01-01" xsd:string
 
 [Term]
 id: MONDO:0004715
@@ -557815,7 +557819,9 @@ is_obsolete: true
 id: MONDO:0034556
 name: vibratory angioedema
 def: "Vibratory angioedema is a rare, inherited or sporadic, urticaria characterized by localized, typically long-lasting (hours to days), initially pruritic, painful, normocutaneous or erythematous, mucosal and/or cutaneous edema which is triggered by vibration. Laryngeal snoring-induced swelling may be life-threatening." [Orphanet:493348]
+comment: This term is scheduled to be merged with MONDO:0007447 autosomal dominant vibratory urticaria, based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0007447
 subset: gard_rare {source="GARD:0017901", source="MONDO:GARD"}
+subset: obsoletion_candidate
 subset: rare
 xref: GARD:0017901 {source="MONDO:GARD"}
 xref: icd11.foundation:1471948086 {source="MONDO:equivalentTo"}
@@ -557826,6 +557832,8 @@ xref: UMLS:C0473546 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0006618 {source="Orphanet:493348", source="https://orcid.org/0000-0001-9310-0163"} ! vibratory urticaria
 relationship: excluded_subClassOf MONDO:0019624 {source="OMIM:125630", source="https://orcid.org/0000-0001-9310-0163", source="https://orcid.org/0000-0002-7638-4659"} ! acquired angioedema
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10727" xsd:anyURI
+property_value: IAO:0006012 "2027-01-01" xsd:string
 
 [Term]
 id: MONDO:0034641
@@ -558769,8 +558777,10 @@ property_value: curated_content_resource "https://www.malacards.org/card/9q2113_
 [Term]
 id: MONDO:0035220
 name: PLG-related hereditary angioedema with normal C1inh
+comment: This term is scheduled to be merged with MONDO:0025712 angioedema, hereditary, 4, based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0025712
 subset: gard_rare {source="GARD:0022217", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
+subset: obsoletion_candidate
 subset: ordo_subtype_of_a_disorder {source="Orphanet:537072"}
 subset: orphanet {source="Orphanet:537072"}
 subset: rare
@@ -558788,10 +558798,12 @@ is_a: MONDO:0100567 {source="Orphanet:537072"} ! hereditary angioedema with norm
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9071 {source="Orphanet:537072", source="https://orcid.org/0000-0002-4142-7153"} ! PLG
 property_value: curated_content_resource "https://www.malacards.org/card/plg_related_hereditary_angioedema_with_normal_c1inh" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10432" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10726" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6740" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6748" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6749" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6877" xsd:anyURI
+property_value: IAO:0006012 "2027-01-01" xsd:string
 
 [Term]
 id: MONDO:0035235
