@@ -269,9 +269,9 @@ Synonym with `[]`: look for a source in OMIM, Orphanet, MedGen or other database
 ### OMIM synonyms
 - Current and former titles: `EXACT [OMIM:N]`, not DEPRECATED. Abbreviations: `EXACT ABBREVIATION [OMIM:N]`.
 - Exception: keep DEPRECATED on outdated wording ("mental retardation"). Never remove an existing DEPRECATED tag.
-- `..., INCLUDED` titles are never EXACT on the main-entry term. Use RELATED [OMIM:N].
+- `..., INCLUDED` titles are separate entities. Never add them as synonyms on the main-entry term.
 - Check names in MedGen: `esearch db=medgen term=<MIM>[MIM]` gives one concept per entity, with `SAB="OMIM"` names.
-- An OMIM title that names a different concept (MedGen files it under another concept) → RELATED [OMIM:N], not EXACT.
+- Warning: MedGen may file an OMIM title under a separate concept. This can mean the title names a different disease (e.g. "venous thrombosis" on OMIM:188050 thrombophilia due to thrombin defect). Then use RELATED [OMIM:N], not EXACT. MedGen also splits some main OMIM titles into a second concept, so check the meaning before choosing the scope.
 
 ### ClinGen Label Handling
 When ClinGen provides preferred labels, use the "preferred label by community" qualifier:
@@ -279,7 +279,7 @@ When ClinGen provides preferred labels, use the "preferred label by community" q
 synonym: "Hajdu-Cheney syndrome-NOTCH2" EXACT [https://clinicalgenome.org/affiliation/<GCEP ID>/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 ```
 - Always add it for a GCEP request.
-- Flag only a name ClinGen actually gave, never an OMIM/Orphanet label.
+- Add the qualifier only to a name ClinGen gave. If ClinGen chose the same name as OMIM or Orphanet, it still gets the qualifier.
 - The qualifier is only valid with a ClinGen WG/GCEP URL as evidence. Without one, remove the qualifier and keep the synonym on its other sources.
 - Never add `subset: clingen` or the ClinGen `curated_content_resource` link. The sync pipeline adds them.
 ```
@@ -350,7 +350,7 @@ relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/
 
 Multiple sources can be cited for the same relationship.
 
-A provisional OMIM gene-disease association ("?") needs a supporting PMID on the gene axiom, not OMIM alone.
+A provisional OMIM gene-disease association ("?") needs a supporting PMID or ClinGen WG/GCEP curation on the gene axiom, not OMIM alone.
 ```
 
 ## 6. Gene Identifier Verification
