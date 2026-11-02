@@ -440444,15 +440444,16 @@ replaced_by: MONDO:0010560
 [Term]
 id: MONDO:0017939
 name: classic multiminicore myopathy
-comment: This term is scheduled to be merged with MONDO:0100100 congenital myopathy 3 with rigid spine, based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0100100
+def: "A multiminicore myopathy characterized by predominantly axial muscle weakness, spinal rigidity, early scoliosis and severe respiratory insufficiency. It is the most common form of multiminicore myopathy and usually inherited in an autosomal recessive manner. It is genetically heterogeneous, with variations in the SELENON gene as the main known cause." [PMID:11079538, PMID:12192640, PMID:17631035]
+comment: Please do not confuse with MONDO:0100100 congenital myopathy 3 with rigid spine, which is caused by SELENON gene.
 subset: gard_rare {source="GARD:0013661", source="MONDO:GARD"}
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://github.com/monarch-initiative/mondo/issues/10596", source="https://orcid.org/0000-0002-7638-4659"}
 subset: ordo_subtype_of_a_disorder {source="Orphanet:324604"}
 subset: orphanet {source="Orphanet:324604"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "classic MmD" BROAD []
-synonym: "classic multiminicore disease" BROAD []
+synonym: "classic MmD" EXACT [Orphanet:324604]
+synonym: "classic multiminicore disease" EXACT [Orphanet:324604]
 synonym: "classic multiminicore myopathy" EXACT [Orphanet:324604]
 synonym: "minicore myopathy" RELATED [HP:0003789]
 xref: GARD:0013661 {source="MONDO:GARD"}
@@ -440467,7 +440468,6 @@ relationship: excluded_subClassOf MONDO:0100493 {source="Orphanet:324604", sourc
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10596" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10598" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6905" xsd:anyURI
-property_value: IAO:0006012 "2026-11-01" xsd:string
 
 [Term]
 id: MONDO:0017940
@@ -581163,6 +581163,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 id: MONDO:0100100
 name: congenital myopathy 3 with rigid spine
 def: "Myopathy caused by pathogenic variants in SELENON that is congenital or present early in childhood with neonatal hypotonia, delayed motor development, axial muscle weakness, scoliosis, and significant respiratory involvement. Spinal rigidity of varying severity is often present." [PMID:12192640]
+comment: Please do not confuse with MONDO:0017939 classic multiminicore myopathy, which is a genetically heterogeneous clinical subtype of multiminicore myopathy.
 subset: clingen {source="MONDO:CLINGEN"}
 subset: doid {source="DOID:0110633"}
 subset: doid_rare {source="DOID:0110633"}
@@ -581219,6 +581220,7 @@ relationship: excluded_subClassOf MONDO:0016187 {source="Orphanet:84132", source
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/15999 {source="OMIM:602771"} ! SELENON
 property_value: curated_content_resource "https://www.malacards.org/card/congenital_myopathy_3_with_rigid_spine" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10596" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9976" xsd:anyURI
 
