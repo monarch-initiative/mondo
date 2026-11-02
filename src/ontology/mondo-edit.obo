@@ -270101,21 +270101,21 @@ property_value: curated_content_resource "https://www.malacards.org/card/inflamm
 
 [Term]
 id: MONDO:0011088
-name: congenital myasthenic syndrome 1A
-def: "Any congenital myasthenic syndrome in which the cause of the disease is a mutation in the CHRNA1 gene." [MONDO:patterns/disease_series_by_gene]
+name: myasthenic syndrome, congenital, 1A, slow-channel
+def: "A congenital myasthenic syndrome in which the cause of the disease is a variation in the CHRNA1 gene that causes abnormal prolongation of the opening time of the acetylcholine receptor (AChR)." [PMID:36835142]
 subset: doid {source="DOID:0110663"}
 subset: gard_rare {source="GARD:0015330", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:601462"}
 subset: rare
-synonym: "CHRNA1 congenital myasthenic syndrome" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
-synonym: "Cms IIa" RELATED [OMIM:601462]
+synonym: "CHRNA1 congenital myasthenic syndrome" RELATED [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
+synonym: "CMS IIa" EXACT [DOID:0110663, OMIM:601462]
 synonym: "CMS1A" EXACT ABBREVIATION [DOID:0110663, OMIM:601462]
-synonym: "CMS2A" RELATED EXCLUDE []
-synonym: "congenital myasthenic syndrome caused by mutation in CHRNA1" EXACT [MONDO:design_pattern]
-synonym: "congenital myasthenic syndrome type 1A" EXACT []
-synonym: "myasthenic syndrome, congenital, 1A, slow-channel" RELATED []
-synonym: "myasthenic syndrome, congenital, type IIa" RELATED [OMIM:601462]
+synonym: "CMS2A" EXACT ABBREVIATION [OMIM:601462]
+synonym: "congenital myasthenic syndrome 1A" EXACT [DOID:0110663]
+synonym: "congenital myasthenic syndrome caused by mutation in CHRNA1" RELATED [MONDO:design_pattern]
+synonym: "myasthenic syndrome, congenital, 1A, slow-channel" EXACT [OMIM:601462]
+synonym: "myasthenic syndrome, congenital, type IIa" EXACT [OMIM:601462]
 xref: DOID:0110663 {source="MONDO:equivalentTo"}
 xref: GARD:0015330 {source="MONDO:GARD"}
 xref: MEDGEN:419336 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -270123,10 +270123,9 @@ xref: OMIM:601462 {source="MONDO:equivalentTo", source="DOID:0110663"}
 xref: UMLS:C2931107 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:419336"}
 is_a: MONDO:0018940 {source="DOID:0110663", source="MONDO:Redundant", source="OMIM:601462"} ! congenital myasthenic syndrome
 is_a: MONDO:0020344 {source="Orphanet:98913/btnt"} ! postsynaptic congenital myasthenic syndrome
-intersection_of: MONDO:0018940 ! congenital myasthenic syndrome
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1955 ! CHRNA1
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1955 {source="OMIM:601462"} ! CHRNA1
 property_value: curated_content_resource "https://www.malacards.org/card/myasthenic_syndrome_congenital_1a_slow_channel" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8449" xsd:anyURI
 
 [Term]
 id: MONDO:0011089
@@ -298480,20 +298479,21 @@ property_value: curated_content_resource "https://www.malacards.org/card/choanal
 [Term]
 id: MONDO:0012156
 name: myasthenic syndrome, congenital, 1B, fast-channel
-def: "A congenital myasthenic syndrome characterized by defects in postsynaptic neuromuscular junctions with early-onset progressive muscle weakness that has material basis in mutation in the CHRNA1 gene on chromosome 2q." [DOID:0110662, PMID:10195214, PMID:15079006, PMID:25792100]
+def: "A congenital myasthenic syndrome characterized by defects in postsynaptic neuromuscular junctions with early-onset progressive muscle weakness that has material basis in variation in the CHRNA1 gene on chromosome 2q." [DOID:0110662, PMID:10195214, PMID:15079006, PMID:25792100]
 subset: doid {source="DOID:0110662"}
 subset: gard_rare {source="GARD:0015445", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:608930"}
 subset: rare
+synonym: "CHRNA1 associated fetal hypo-akinesia disorder of prenatal onset" EXACT [https://www.clinicalgenome.org/affiliation/40106/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "CMS1B" EXACT ABBREVIATION [DOID:0110662, OMIM:608930]
-synonym: "congenital myasthenic syndrome type 1B" EXACT []
 synonym: "myasthenic syndrome, congenital, 1B, fast-channel" EXACT [OMIM:608930]
 xref: DOID:0110662 {source="MONDO:equivalentTo"}
 xref: GARD:0015445 {source="MONDO:GARD"}
 xref: MEDGEN:909200 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:608930 {source="MONDO:equivalentTo", source="DOID:0110662"}
 xref: UMLS:C4225405 {source="MEDGEN:909200", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0009668 {source="PMID:36835142", source="https://www.clinicalgenome.org/affiliation/40106/"} ! lethal multiple pterygium syndrome
 is_a: MONDO:0018940 {source="DOID:0110662", source="MONDO:Redundant", source="OMIM:608930"} ! congenital myasthenic syndrome
 is_a: MONDO:0020344 {source="MONDO:Redundant", source="Orphanet:98913/btnt"} ! postsynaptic congenital myasthenic syndrome
 relationship: disease_has_basis_in_dysfunction_of GO:0098975 ! postsynapse of neuromuscular junction
@@ -298501,6 +298501,7 @@ relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1955 {source="OMIM:608930"} ! CHRNA1
 property_value: curated_content_resource "https://www.malacards.org/card/myasthenic_syndrome_congenital_1b_fast_channel" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8449" xsd:anyURI
 
 [Term]
 id: MONDO:0012157
