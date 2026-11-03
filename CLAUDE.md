@@ -200,7 +200,8 @@ The reasoner can find the most specific `is_a`, so it's OK to leave this off, un
 
 - Text and logical defs change together.
 - Check the reasoner: parent + gene can make a term a subclass of another gene term, and a new logical def can lump terms.
-- No `has_characteristic SO:` in logical defs. No variant-type subtype term (e.g. point-mutation form) without an external xref.
+- Gene-disease terms: no `has_characteristic SO:` in the logical def, and no variant-type subtype (e.g. a point-mutation form) without an external xref. Mondo cannot relate a disease to a variant type at that level.
+- This does not apply to the chromosomal grouping terms, where `has_characteristic SO:` is the established pattern (MONDO:0000761 syndrome caused by partial chromosomal deletion, MONDO:0700064 aneuploidy, MONDO:0020639 monosomy, MONDO:0019934 polyploidy, MONDO:0700091 ring chromosome disorder). Leave those alone.
 - Drop the equivalence axiom if OBO cannot express the term. No differentia the parent already entails (inheritance, syndromic).
 
 ## Design patterns
@@ -225,11 +226,10 @@ Examples:
 - MYCBP2-related developmental delay with corpus callosum defects
 - TUBB4B-related ciliopathy
 
-This pattern should be used even when users request alternative formats like "disease - GENE" format.
+Which name becomes the label depends on whether the term has an OMIM `equivalentTo` xref.
 
-Applies to terms without an OMIM equivalent (new terms, groupings). Use "GENE-related <category>"; never a vague "condition".
-
-Terms with an OMIM `equivalentTo` xref take the current OMIM title as label (never an `includedEntryInOMIM` title). A requested GENE-related name becomes an EXACT synonym. On relabel, keep the old label as EXACT, with `[OMIM:N]` only if it was an OMIM title; otherwise keep its existing sources.
+- No OMIM `equivalentTo` xref (new terms, groupings): use the `{GENE}-related {disease description}` pattern above, even when the requester asks for another format such as "disease - GENE". The description names a category, never a vague "condition".
+- With an OMIM `equivalentTo` xref: the label is the current OMIM title, never an `includedEntryInOMIM` title. A requested GENE-related name becomes an EXACT synonym instead. On relabel, keep the old label as EXACT, with `[OMIM:N]` only if it was itself an OMIM title; otherwise keep its existing sources.
 ```
 
 ## 2. Synonym Attribution and Citation Requirements
@@ -271,7 +271,7 @@ Synonym with `[]`: look for a source in OMIM, Orphanet, MedGen or other database
 - Exception: keep DEPRECATED on outdated wording ("mental retardation"). Never remove an existing DEPRECATED tag.
 - `..., INCLUDED` titles are separate entities. Never add them as synonyms on the main-entry term.
 - Check names in MedGen: `esearch db=medgen term=<MIM>[MIM]` gives one concept per entity, with `SAB="OMIM"` names.
-- Warning: MedGen may file an OMIM title under a separate concept. This can mean the title names a different disease (e.g. "venous thrombosis" on OMIM:188050 thrombophilia due to thrombin defect). Then use RELATED [OMIM:N], not EXACT. MedGen also splits some main OMIM titles into a second concept, so check the meaning before choosing the scope.
+- Check what the title actually means before choosing EXACT. MedGen filing an OMIM title under a separate concept is a hint to look closer, not proof of anything. Sometimes the title names a different disease and takes RELATED [OMIM:N] (e.g. "venous thrombosis" on OMIM:188050 thrombophilia due to thrombin defect, which `omim.owl` also shows as a `skos:exactMatch` to UMLS:C0042487). Sometimes MedGen has only split a main OMIM title into a second concept, and EXACT is still right.
 
 ### ClinGen Label Handling
 When ClinGen provides preferred labels, use the "preferred label by community" qualifier:
@@ -321,12 +321,12 @@ def: "Any [parent disease class] in which the cause of the disease is a variatio
 ## Parent Term Selection Guidelines
 
 ### General
-- Edit because it is correct, not because it fails QC.
+- Edit because it is correct, not because it fails QC. Where the term is right and the check is wrong, add an `excluded_from_qc_check` annotation (section 10) or flag it to a curator. Never reclassify a term just to silence a check.
 - Never change a term's concept. The label, def and equivalent xrefs must describe the same disease. If one names another concept, fix that one; don't shift the term to fit it. Adding details or clinical features is fine.
 - OMIM "also cause(s) ... a similar disorder" means sibling disorders from the same gene, not a subtype. Check that a shared gene and parent don't make the reasoner infer one under the other.
 
 ### For Gene-Related Diseases
-- Grouping terms: assert `is_a` on each child, with PMID evidence.
+- For a GENE-related grouping term, assert an `is_a` to the grouping on each of its children instead of leaving it to the reasoner. Source each of those `is_a` axioms with a PMID, and add the requester's ORCID or the ClinGen WG/GCEP URL alongside it where there is one.
 - Use the most general appropriate disease category that encompasses all known phenotypes
 - For multi-system diseases, consider dual parentage rather than single broad syndromic parent
 - Example: For neuro-urological conditions, use both `nervous system disorder` AND `urinary system disorder`
@@ -400,9 +400,9 @@ is_a: MONDO:1060111 ! SAMD9L-related spectrum and myeloid neoplasm risk
 
 Predisposition means raised risk. De novo or unaffected-carrier cases are not predisposition.
 
-Exceptions:
-- Cancer and immunodeficiency susceptibilities are diseases.
-- Gene-related tumor/cancer predisposition (e.g. MONDO:0700268 BRCA1-related cancer predisposition): parent MONDO:0015356 hereditary neoplastic syndrome, `predisposes_towards` each tumor.
+Cancer and immunodeficiency susceptibilities are treated as diseases, so they take a disease parent and not only `predisposes_towards`:
+- Susceptibility to infection caused by an immune gene goes under MONDO:0021094 immunodeficiency disease, with no `predisposes_towards` (e.g. MONDO:0030970 immunodeficiency 106, susceptibility to viral infections).
+- Gene-related tumor or cancer predisposition goes under MONDO:0015356 hereditary neoplastic syndrome, with `predisposes_towards` each tumor (e.g. MONDO:0700268 BRCA1-related cancer predisposition). MONDO:0015356 is itself defined as `inherited disease susceptibility` that `predisposes_towards` a neoplasm, so the child adds only the gene differentia.
 ```
 
 ## 8. Term Obsolescence and Merging
