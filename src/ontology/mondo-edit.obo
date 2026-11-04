@@ -370076,11 +370076,14 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0014768
 name: cerebral arteriopathy, autosomal dominant, with subcortical infarcts and leukoencephalopathy, type 2
-def: "Any CADASIL in which the cause of the disease is a mutation in the HTRA1 gene." [MONDO:patterns/disease_series_by_gene]
+def: "Any cerebral arteriopathy with subcortical infarcts and leukoencephalopathy in which the cause of the disease is a variation in the HTRA1 gene and that has autosomal dominant inheritance. It is characterized by subcortical ischemic events associated with cognitive decline and gait disturbance, with onset typically in the sixth or seventh decade of life. Imaging shows white matter hyperintensities, status cribrosum, lacunar infarcts and sometimes microbleeds. Compared with CARASIL, it has a later age of onset and lacks the typical extraneurological features." [MONDO:patterns/disease_series_by_gene, Orphanet:482077, PMID:26063658]
 subset: doid {source="DOID:0111036"}
-subset: gard_rare {source="GARD:0025015", source="MONDO:GARD"}
+subset: gard_rare {source="GARD:0017877", source="GARD:0025015", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:616779"}
+subset: ordo_disorder {source="Orphanet:482077"}
+subset: orphanet {source="Orphanet:482077"}
+subset: orphanet_rare {source="Orphanet:482077"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "CADASIL caused by mutation in HTRA1" EXACT [MONDO:design_pattern]
@@ -370088,19 +370091,31 @@ synonym: "CADASIL2" EXACT ABBREVIATION [OMIM:616779]
 synonym: "cerebral arteriopathy, autosomal dominant, with subcortical infarcts and leukoencephalopathy, type 2" EXACT [OMIM:616779]
 synonym: "HTRA1 CADASIL" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
 synonym: "HTRA1 deficiency" RELATED [https://orcid.org/0000-0003-2955-4640]
+synonym: "HTRA1-related autosomal dominant cerebral angiopathy" EXACT [Orphanet:482077]
+synonym: "HTRA1-related autosomal dominant cerebral small vessel disease" EXACT [Orphanet:482077, PMID:33109952]
 xref: DOID:0111036 {source="MONDO:equivalentTo"}
+xref: GARD:0017877 {source="MONDO:GARD"}
 xref: GARD:0025015 {source="MONDO:GARD"}
 xref: ICD10CM:F01.1 {source="DOID:0111036"}
-xref: MEDGEN:895965 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: MEDGEN:1799991 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: MEDGEN:895965 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MONDO:preferredExternal"}
 xref: OMIM:616779 {source="MONDO:equivalentTo", source="DOID:0111036"}
-xref: UMLS:C4225211 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:895965"}
+xref: Orphanet:482077 {source="MONDO:equivalentTo"}
+xref: UMLS:C4225211 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:895965", source="MONDO:preferredExternal"}
+xref: UMLS:C5568568 {source="MEDGEN:1799991", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0004995 {source="Orphanet:482077", source="https://orcid.org/0000-0001-6718-3559", source="https://orcid.org/0000-0001-9310-0163"} ! cardiovascular disorder
 is_a: MONDO:0007432 {source="DOID:0111036", source="MONDO:Redundant", source="OMIM:616779"} ! cerebral arteriopathy with subcortical infarcts and leukoencephalopathy
+is_a: MONDO:0011057 {source="Orphanet:482077", source="https://orcid.org/0000-0002-3458-4839", source="https://orcid.org/0000-0002-4142-7153"} ! cerebrovascular disorder
 intersection_of: MONDO:0007432 ! cerebral arteriopathy with subcortical infarcts and leukoencephalopathy
 intersection_of: has_characteristic HP:0000006 ! Autosomal dominant inheritance
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9476 ! HTRA1
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9476 {source="OMIM:616779"} ! HTRA1
 property_value: curated_content_resource "https://www.malacards.org/card/cerebral_arteriopathy_autosomal_dominant_with_subcortical_infarcts_and_leukoencephalopathy_type_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: curated_content_resource "https://www.malacards.org/card/htra1_related_autosomal_dominant_cerebral_small_vessel_disease" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10230" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10538" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6740" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6752" xsd:anyURI
 
 [Term]
 id: MONDO:0014769
@@ -460059,26 +460074,11 @@ is_obsolete: true
 
 [Term]
 id: MONDO:0018832
-name: HTRA1-related autosomal dominant cerebral small vessel disease
-comment: This term is scheduled to be merged with MONDO:0014768 cerebral arteriopathy, autosomal dominant, with subcortical infarcts and leukoencephalopathy, type 2, based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0014768
-subset: gard_rare {source="GARD:0017877", source="MONDO:GARD"}
-subset: obsoletion_candidate
-subset: ordo_disorder {source="Orphanet:482077"}
-subset: orphanet {source="Orphanet:482077"}
-subset: orphanet_rare {source="Orphanet:482077"}
-subset: rare
-synonym: "HTRA1-related autosomal dominant cerebral angiopathy" EXACT [Orphanet:482077]
-xref: GARD:0017877 {source="MONDO:GARD"}
-xref: MEDGEN:1799991 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: Orphanet:482077 {source="MONDO:equivalentTo"}
-xref: UMLS:C5568568 {source="MEDGEN:1799991", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0004995 {source="https://orcid.org/0000-0001-6718-3559", source="https://orcid.org/0000-0001-9310-0163"} ! cardiovascular disorder
-is_a: MONDO:0011057 {source="https://orcid.org/0000-0002-3458-4839", source="https://orcid.org/0000-0002-4142-7153"} ! cerebrovascular disorder
-property_value: curated_content_resource "https://www.malacards.org/card/htra1_related_autosomal_dominant_cerebral_small_vessel_disease" xsd:anyURI {source="MONDO:MalaCards"}
+name: obsolete HTRA1-related autosomal dominant cerebral small vessel disease
+property_value: IAO:0000231 MONDO:TermsMerged
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10538" xsd:anyURI
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6740" xsd:anyURI
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6752" xsd:anyURI
-property_value: IAO:0006012 "2026-11-01" xsd:string
+is_obsolete: true
+replaced_by: MONDO:0014768
 
 [Term]
 id: MONDO:0018833
