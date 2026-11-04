@@ -189054,7 +189054,7 @@ synonym: "pseudo-von Willebrand disease" EXACT [DOID:0111056, NCIT:C131681, OMIM
 synonym: "pseudo-von Willebrand disease type 2B" EXACT [Orphanet:52530]
 synonym: "PT-VWD" EXACT ABBREVIATION [DOID:0111056, Orphanet:52530]
 synonym: "Von Willebrand disease, platelet type" EXACT [GARD:0008312]
-synonym: "VWDP" EXACT ABBREVIATION []
+synonym: "VWDP" EXACT ABBREVIATION [OMIM:177820]
 xref: DOID:0111056 {source="MONDO:equivalentTo"}
 xref: GARD:0008312 {source="MONDO:GARD"}
 xref: ICD10CM:D69.8 {source="Orphanet:52530", source="DOID:0111056"}
@@ -189069,11 +189069,10 @@ is_a: MONDO:0000009 {source="DC-OMIM:177820", source="DOID:0111056", source="MON
 is_a: MONDO:0019565 {source="MONDO:Redundant", source="NCIT:C131681"} ! hereditary von Willebrand disease
 is_a: MONDO:0021181 {source="MONDO:0017142-obsoleted"} ! inherited blood coagulation disorder
 is_a: MONDO:0024574 {source="MESH:C536458", source="NCIT:C131681"} ! von Willebrand disease (hereditary or acquired)
-intersection_of: MONDO:0000009 ! inherited bleeding disorder, platelet-type
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4439 ! GP1BA
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0008332 {source="MONDO:CLINGEN"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4439 {source="OMIM:177820"} ! GP1BA
 property_value: curated_content_resource "https://www.malacards.org/card/von_willebrand_disease_platelet_type" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10494" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5623" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9994" xsd:anyURI
 
