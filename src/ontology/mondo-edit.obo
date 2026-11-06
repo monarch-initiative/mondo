@@ -116614,15 +116614,11 @@ is_a: MONDO:0006597 {source="EFO:0004795"} ! photosensitivity disease
 
 [Term]
 id: MONDO:0005435
-name: anti-neutrophil antibody associated vasculitis
-def: "Group of systemic vasculitis with a strong association with ANCA. The disorders are characterized by necrotizing inflammation of small and medium size vessels, with little or no immune-complex deposits in vessel walls." [EFO:0004826]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-subset: otar {source="MONDO:OTAR"}
-xref: EFO:0004826 {source="MONDO:equivalentTo", source="MONDO:EFO"}
-is_a: MONDO:0007179 {source="EFO:0004826"} ! autoimmune disease
+name: obsolete anti-neutrophil antibody associated vasculitis
+property_value: IAO:0000231 MONDO:TermsMerged
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+replaced_by: MONDO:0015492
 
 [Term]
 id: MONDO:0005436
@@ -173352,12 +173348,15 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0007751
-name: hypercholesterolemia, autosomal dominant, type B
+name: hypercholesterolemia, familial, 2
+def: "Any familial hypercholesterolemia in which the cause of the disease is a variation in the APOB gene. The defective apolipoprotein B-100 has reduced binding to the LDL receptor, which results in inefficient clearance of LDL and hypercholesterolemia." [OMIM:144010, PMID:3477815]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: gard_rare {source="GARD:0027779", source="MONDO:GARD"}
 subset: omim {source="OMIM:144010"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
+synonym: "apolipoprotein B-100, familial defective" EXACT [OMIM:144010]
+synonym: "familial defective apolipoprotein B-100" EXACT [PMID:3477815, SCTID:238081000]
 synonym: "hypercholesterolemia, autosomal dominant, type B" EXACT [OMIM:144010] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "hypercholesterolemia, familial, 2" EXACT [OMIM:144010]
 xref: GARD:0027779 {source="MONDO:GARD"}
@@ -173372,6 +173371,7 @@ relationship: curated_content_resource https://search.clinicalgenome.org/kb/cond
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/603 {source="OMIM:144010"} ! APOB
 property_value: curated_content_resource "https://www.malacards.org/card/hypercholesterolemia_familial_2" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0007752
@@ -387480,16 +387480,20 @@ subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "AAV" EXACT ABBREVIATION [Orphanet:156152]
 synonym: "ANCA-associated vasculitis" EXACT [Orphanet:156152]
+synonym: "anti-neutrophil antibody associated vasculitis" EXACT [EFO:0004826]
 synonym: "antineutrophil cytoplasmic antibody-associated vasculitis" EXACT [icd11.foundation:1404622826, Orphanet:156152]
+xref: EFO:0004826 {source="MONDO:equivalentObsolete", source="MONDO:EFO"}
 xref: GARD:0013011 {source="MONDO:GARD"}
 xref: icd11.foundation:1404622826 {source="MONDO:equivalentTo", source="https://orcid.org/0000-0001-5208-3432", source="Orphanet:156152"}
 xref: MEDGEN:403453 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D056648 {source="Orphanet:156152/e", source="MONDO:equivalentTo", source="Orphanet:156152"}
 xref: Orphanet:156152 {source="MONDO:equivalentTo"}
 xref: UMLS:C2717865 {source="MEDGEN:403453", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0007179 {source="EFO:0004826"} ! autoimmune disease
 is_a: MONDO:0800113 {source="https://orcid.org/0000-0002-7371-8158", source="https://orcid.org/0000-0003-0113-912X"} ! necrotizing vasculitis
 property_value: curated_content_resource "https://www.malacards.org/card/anti_neutrophil_cytoplasmic_antibody_associated_vasculitis" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5261" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0015493
@@ -478025,12 +478029,13 @@ property_value: seeAlso "https://www.epilepsydiagnosis.org/syndrome/epilepsy-myo
 [Term]
 id: MONDO:0019488
 name: myoclonic epilepsy in non-progressive encephalopathies
-def: "A rare epilepsy syndrome characterized by recurrent, long-lasting myoclonic status in infants and young children with a non-progressive encephalopathy, associated with transient and recurring motor, cognitive and/or behavioral disturbances." [Orphanet:86913]
+def: "A rare epilepsy syndrome characterized by recurrent, long-lasting myoclonic status in infants and young children with a non-progressive encephalopathy, associated with transient and recurring motor, cognitive and/or behavioral disturbances. Seizure onset is from day 1 of life to 5 years (peak 12 months), with a male to female ratio of 1:2. Myoclonic status epilepticus is often the initial seizure type. Prognosis is unfavorable, with severe neurological and developmental impairments." [https://www.epilepsydiagnosis.org/syndrome/menpd-overview.html, Orphanet:86913]
 subset: gard_rare {source="GARD:0019088", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: ordo_malformation_syndrome {source="Orphanet:86913"}
 subset: orphanet {source="Orphanet:86913"}
 subset: rare
+synonym: "myoclonic encephalopathy in non-progressive disorders" EXACT [https://www.epilepsydiagnosis.org/syndrome/menpd-overview.html, PMID:24288601]
 synonym: "myoclonic status in non-progressive encephalopathies" EXACT [Orphanet:86913]
 synonym: "myoclonus epilepsy in non-progressive encephalopathies" EXACT [Orphanet:86913]
 xref: GARD:0019088 {source="MONDO:GARD"}
@@ -478038,9 +478043,11 @@ xref: ICD10CM:G40.4 {source="Orphanet:86913"}
 xref: MEDGEN:1661865 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:86913 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C4755298 {source="MEDGEN:1661865", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0100022 {source="https://orcid.org/0000-0001-8486-0558", source="https://www.epilepsydiagnosis.org/syndrome/menpd-overview.html"} ! neonatal/infantile epilepsy syndrome
 is_a: MONDO:0100577 {source="https://orcid.org/0000-0001-5208-3432"} ! myoclonic epilepsy
 relationship: excluded_subClassOf MONDO:0020071 {source="Orphanet:86913", source="https://orcid.org/0000-0001-5208-3432"} ! infantile epilepsy syndrome
 property_value: curated_content_resource "https://www.malacards.org/card/myoclonic_epilepsy_in_non_progressive_encephalopathies" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8602" xsd:string
 
 [Term]
@@ -523775,15 +523782,11 @@ relationship: disease_has_feature MONDO:0019269 {source="MESH:C538206"} ! ichthy
 
 [Term]
 id: MONDO:0022949
-name: defective apolipoprotein b-100
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
-is_a: MONDO:0019052 ! inborn errors of metabolism
+name: obsolete defective apolipoprotein b-100
+property_value: IAO:0000231 MONDO:TermsMerged
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
-property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1720/defective-apolipoprotein-b-100" xsd:anyURI {source="GARD:0001720"}
+is_obsolete: true
+replaced_by: MONDO:0007751
 
 [Term]
 id: MONDO:0022953
@@ -549340,21 +549343,30 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0032703
 name: short stature, amelogenesis imperfecta, and skeletal dysplasia with scoliosis
+def: "Any congenital disorder of glycosylation in which the cause of the disease is a variation in the SLC10A7 gene. It is characterized by short stature, skeletal dysplasia with multiple large joint dislocations, amelogenesis imperfecta and decreased bone mineral density. Hearing loss has been reported in some patients." [PMID:29878199, PMID:30082715, PMID:34999954]
 subset: gard_rare {source="GARD:0025723", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:618363"}
 subset: rare
-synonym: "SSASKS" RELATED ABBREVIATION []
+synonym: "SLC10A7 deficiency" EXACT [PMID:30082715]
+synonym: "SLC10A7-CDG" EXACT ABBREVIATION [PMID:34999954]
+synonym: "SLC10A7-congenital disorder of glycosylation" EXACT [PMID:34999954]
+synonym: "SSASKS" EXACT ABBREVIATION [OMIM:618363]
 xref: GARD:0025723 {source="MONDO:GARD"}
 xref: MEDGEN:1676818 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:618363 {source="MONDO:equivalentTo"}
 xref: UMLS:C5193055 {source="MEDGEN:1676818", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0003847 {source="OMIM:618363"} ! hereditary disease
 is_a: MONDO:0005172 {source="https://orcid.org/0000-0002-4142-7153"} ! skeletal system disorder
+is_a: MONDO:0005381 {source="PMID:30082715"} ! bone disorder
+is_a: MONDO:0015286 {source="PMID:34999954", source="https://orcid.org/0000-0001-5208-3432"} ! congenital disorder of glycosylation
+intersection_of: MONDO:0015286 ! congenital disorder of glycosylation
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23088 ! SLC10A7
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23088 {source="OMIM:618363"} ! SLC10A7
 property_value: curated_content_resource "https://www.malacards.org/card/short_stature_amelogenesis_imperfecta_and_skeletal_dysplasia_with_scoliosis" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6751" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0032705
@@ -579870,17 +579882,11 @@ replaced_by: MONDO:0017385
 
 [Term]
 id: MONDO:0100026
-name: myoclonic encephalopathy in non-progressive disorder
-def: "This group of epilepsies are typically is characterized by onset of seizures from day 1 of life to 5 years (peak 12 months). Both sexes are affected, however the male to female ratio is 1:2. Antecedent (including birth) history, head size, neurological and developmental findings reflect the underlying cause (if known). Myoclonic status epilepticus is often the initial presenting seizure type, however other initial seizure types may also occur. Prognosis is unfavorable with severe neurological and developmental impairments typically seen." [https://orcid.org/0000-0001-8486-0558, https://www.epilepsydiagnosis.org/syndrome/menpd-overview.html]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
-is_a: MONDO:0100022 {source="https://orcid.org/0000-0001-8486-0558"} ! neonatal/infantile epilepsy syndrome
-property_value: http://purl.org/dc/elements/1.1/date "2018-06-22T23:56:39Z" xsd:dateTime
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+name: obsolete myoclonic encephalopathy in non-progressive disorder
+property_value: IAO:0000231 MONDO:TermsMerged
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+replaced_by: MONDO:0019488
 
 [Term]
 id: MONDO:0100027
@@ -580587,23 +580593,11 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-520
 
 [Term]
 id: MONDO:0100068
-name: SLC10A7-congenital disorder of glycosylation
-def: "SLC10A7 deficiency is characterized by compound heterozygous mutations in the SLC10A7 gene, a gene of unknown function in humans. It combines overlapping clinical phenotypes characterized by short stature, defective enamel formation (amelogenesis imperfecta), skeletal dysplasia, facial dysmorphism, moderate hearing impairment and mildly impaired intellectual developmen." [https://orcid.org/0000-0001-9969-8610, PMID:29878199]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
-subset: rare
-synonym: "SLC10A7 deficiency" EXACT []
-synonym: "SLC10A7-CDG" EXACT ABBREVIATION []
-synonym: "SLC10A7-congenital disorder of glycosylation" EXACT [] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-is_a: MONDO:0005381 ! bone disorder
-is_a: MONDO:0015286 {source="https://orcid.org/0000-0001-5208-3432"} ! congenital disorder of glycosylation
-intersection_of: MONDO:0015286 ! congenital disorder of glycosylation
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23088 ! SLC10A7
-property_value: http://purl.org/dc/elements/1.1/date "2018-12-14T19:28:28Z" xsd:dateTime
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+name: obsolete SLC10A7-congenital disorder of glycosylation
+property_value: IAO:0000231 MONDO:TermsMerged
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+replaced_by: MONDO:0032703
 
 [Term]
 id: MONDO:0100069
