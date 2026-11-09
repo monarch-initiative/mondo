@@ -572442,15 +572442,14 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0044763
-name: diarrheal disease secondary to decreased bowel motility
-def: "A diarrhea that results from decreased motility in the bowel; the resultant bowel stasis encourages bacterial overgrowth and subsequent bile salt deconjugation. Diarrhea is then the direct result of fat malabsorption and increased colonic secretion." [https://www.ncbi.nlm.nih.gov/books/NBK414/]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
+name: obsolete diarrheal disease secondary to decreased bowel motility
+def: "OBSOLETE. A diarrhea that results from decreased motility in the bowel; the resultant bowel stasis encourages bacterial overgrowth and subsequent bile salt deconjugation. Diarrhea is then the direct result of fat malabsorption and increased colonic secretion." [https://www.ncbi.nlm.nih.gov/books/NBK414/]
 synonym: "diarrhea from decreased bowel motility" EXACT []
 synonym: "diarrhoea from decreased bowel motility" EXACT OMO:0003005 []
-is_a: MONDO:0001673 {source="https://www.ncbi.nlm.nih.gov/books/NBK414/"} ! diarrheal disease
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGroupingOriginProcess"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0001673
 
 [Term]
 id: MONDO:0044764
