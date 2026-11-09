@@ -235,12 +235,11 @@ replaced_by: MONDO:0008982
 
 [Term]
 id: MONDO:0000014
-name: colorblindness, partial
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-is_a: MONDO:0001703 {source="https://orcid.org/0000-0001-5208-3432"} ! color vision disorder
+name: obsolete colorblindness, partial
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0001703
 
 [Term]
 id: MONDO:0000015
@@ -1191,12 +1190,10 @@ is_obsolete: true
 
 [Term]
 id: MONDO:0000114
-name: cerebelloparenchymal disorder
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-is_a: MONDO:0003847 ! hereditary disease
+name: obsolete cerebelloparenchymal disorder
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
 
 [Term]
 id: MONDO:0000115
@@ -2961,19 +2958,16 @@ property_value: curated_content_resource "https://www.malacards.org/card/osmotic
 
 [Term]
 id: MONDO:0000251
-name: diarrheal disease secondary to altered bowel motility
-def: "A diarrhea that results from either increased or decreased motility in the bowel." [https://www.ncbi.nlm.nih.gov/books/NBK414/]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
+name: obsolete diarrheal disease secondary to altered bowel motility
+def: "OBSOLETE. A diarrhea that results from either increased or decreased motility in the bowel." [https://www.ncbi.nlm.nih.gov/books/NBK414/]
 synonym: "diarrhea secondary to altered bowel motility" EXACT [https://www.ncbi.nlm.nih.gov/books/NBK414/]
 synonym: "diarrhoea secondary to altered bowel motility" EXACT OMO:0003005 []
 synonym: "motility-related diarrhea" EXACT []
 synonym: "motility-related diarrhoea" EXACT OMO:0003005 []
-is_a: MONDO:0001673 {source="DOID:0050131", source="MONDO:Redundant"} ! diarrheal disease
-intersection_of: MONDO:0001673 ! diarrheal disease
-intersection_of: disease_arises_from_feature HP:0030895 ! Abnormal gastrointestinal motility
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0001673
 
 [Term]
 id: MONDO:0000252
@@ -4502,10 +4496,10 @@ xref: SCTID:43123004 {source="MONDO:equivalentTo"}
 xref: UMLS:C4048705 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:887708"}
 is_a: MONDO:0004736 {source="DOID:0050544"} ! inborn disorder of amino acid metabolism
 is_a: MONDO:0019222 {source="MONDO:Redundant"} ! inborn disorder of methionine cycle and sulfur amino acid metabolism
-is_a: MONDO:0037938 {source="MONDO:Inferred"} ! inborn disorder of aspartate family metabolism
 intersection_of: MONDO:0019052 ! inborn errors of metabolism
 intersection_of: disease_has_basis_in_disruption_of GO:0009087 ! L-methionine catabolic process
 property_value: curated_content_resource "https://www.malacards.org/card/hypermethioninemia" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0000352
@@ -103829,7 +103823,6 @@ xref: SCTID:91857003 {source="DOID:9952", source="EFO:0000220", source="MONDO:eq
 xref: SCTID:93170002 {source="DOID:1037"}
 xref: UMLS:C0023449 {source="MEDGEN:7317", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0003538 {source="EFO:0000220", source="NCIT:C3167"} ! precursor lymphoblastic lymphoma/leukemia
-is_a: MONDO:0005168 {source="EFO:0000220"} ! neoplasm of immature B and T cells
 is_a: MONDO:0005402 {source="NCIT:C3167"} ! lymphoid leukemia
 is_a: MONDO:0010643 {source="DOID:9952", source="NCIT:C3167"} ! acute leukemia
 is_a: MONDO:0018908 {source="Orphanet:513"} ! non-Hodgkin lymphoma
@@ -103838,6 +103831,7 @@ intersection_of: has_characteristic PATO:0000389 ! acute
 relationship: disease_has_feature HP:0002027 {source="MONDO:Wikidata"} ! Abdominal pain
 relationship: has_characteristic PATO:0000389 ! acute
 property_value: curated_content_resource "https://www.malacards.org/card/leukemia_acute_lymphoblastic" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
 property_value: IAO:0000589 "acute lymphoblastic leukemia (disease)" xsd:string
 
@@ -110380,15 +110374,12 @@ property_value: curated_content_resource "https://www.malacards.org/card/fibroma
 
 [Term]
 id: MONDO:0005168
-name: neoplasm of immature B and T cells
-def: "A neoplasm arising from immature B and T cells" [EFO:0002425]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
-is_a: MONDO:0005157 {source="EFO:0002425"} ! lymphoid neoplasm
+name: obsolete neoplasm of immature B and T cells
+def: "OBSOLETE. A neoplasm arising from immature B and T cells" [EFO:0002425]
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0005157
 
 [Term]
 id: MONDO:0005169
@@ -112377,54 +112368,46 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0005254
-name: symptomatic heart failure
-def: "A heart failure which results in symptoms such as shortness of breath, fatigue, inability to exerciseb& etc" [EFO:0003146]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-subset: otar {source="MONDO:OTAR"}
-xref: EFO:0003146 {source="MONDO:equivalentTo", source="MONDO:EFO"}
-is_a: MONDO:0005252 {source="EFO:0003146"} ! heart failure
+name: obsolete symptomatic heart failure
+def: "OBSOLETE. A heart failure which results in symptoms such as shortness of breath, fatigue, inability to exerciseb& etc" [EFO:0003146]
+xref: EFO:0003146 {source="MONDO:obsoleteEquivalent", source="MONDO:EFO"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGroupingModifier"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0005252
 
 [Term]
 id: MONDO:0005255
-name: mild heart failure
-def: "Heart failure characterized by mild symptoms (mild shortness of breath and/or angina) and slight limitation during ordinary activity." [EFO:0003147]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-subset: otar {source="MONDO:OTAR"}
-xref: EFO:0003147 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+name: obsolete mild heart failure
+def: "OBSOLETE. Heart failure characterized by mild symptoms (mild shortness of breath and/or angina) and slight limitation during ordinary activity." [EFO:0003147]
+xref: EFO:0003147 {source="MONDO:obsoleteEquivalent", source="MONDO:EFO"}
 xref: Wikipedia:New_York_Heart_Association_Functional_Classification {source="EFO:0003147"}
-is_a: MONDO:0005254 {source="EFO:0003147"} ! symptomatic heart failure
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGroupingModifier"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0005252
 
 [Term]
 id: MONDO:0005256
-name: moderate heart failure
-def: "Heart failure characterized by marked limitation in activity due to symptoms, even during less-than-ordinary activity, e.g. walking short distances (20b100 m). Patients with moderate heart failure are comfortable only at rest." [EFO:0003148]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-subset: otar {source="MONDO:OTAR"}
-xref: EFO:0003148 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+name: obsolete moderate heart failure
+def: "OBSOLETE. Heart failure characterized by marked limitation in activity due to symptoms, even during less-than-ordinary activity, e.g. walking short distances (20b100 m). Patients with moderate heart failure are comfortable only at rest." [EFO:0003148]
+xref: EFO:0003148 {source="MONDO:obsoleteEquivalent", source="MONDO:EFO"}
 xref: Wikipedia:New_York_Heart_Association_Functional_Classification {source="EFO:0003148"}
-is_a: MONDO:0005254 {source="EFO:0003148"} ! symptomatic heart failure
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGroupingModifier"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0005252
 
 [Term]
 id: MONDO:0005257
-name: advanced heart failure
-def: "Patients with advanced heart failure have severe limitations, experiences symptoms even while at rest and are mostly bedbound patients." [EFO:0003149]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-subset: otar {source="MONDO:OTAR"}
-xref: EFO:0003149 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+name: obsolete advanced heart failure
+def: "OBSOLETE. Patients with advanced heart failure have severe limitations, experiences symptoms even while at rest and are mostly bedbound patients." [EFO:0003149]
+xref: EFO:0003149 {source="MONDO:obsoleteEquivalent", source="MONDO:EFO"}
 xref: Wikipedia:New_York_Heart_Association_Functional_Classification {source="EFO:0003149"}
-is_a: MONDO:0005254 {source="EFO:0003149"} ! symptomatic heart failure
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGroupingModifier"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0005252
 
 [Term]
 id: MONDO:0005258
@@ -116559,15 +116542,13 @@ property_value: curated_content_resource "https://www.malacards.org/card/prion_d
 
 [Term]
 id: MONDO:0005430
-name: early onset hypertension
-def: "A form of hypertension with early onset relative to normal range for a given population." [EFO:0004772]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-subset: otar {source="MONDO:OTAR"}
-xref: EFO:0004772 {source="MONDO:equivalentTo", source="MONDO:EFO"}
-is_a: MONDO:0005044 {source="EFO:0004772"} ! hypertensive disorder
+name: obsolete early onset hypertension
+def: "OBSOLETE. A form of hypertension with early onset relative to normal range for a given population." [EFO:0004772]
+xref: EFO:0004772 {source="MONDO:obsoleteEquivalent", source="MONDO:EFO"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGroupingModifier"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0005044
 
 [Term]
 id: MONDO:0005431
@@ -117283,15 +117264,13 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0005465
-name: methamphetamine-induced psychosis
-def: "Abnormal mental state resulting from an abuse of methamphetamine" [EFO:0005242]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-subset: otar {source="MONDO:OTAR"}
-xref: EFO:0005242 {source="MONDO:equivalentTo", source="MONDO:EFO"}
-is_a: MONDO:0005485 {source="https://orcid.org/0000-0002-6601-2165"} ! psychotic disorder
+name: obsolete methamphetamine-induced psychosis
+def: "OBSOLETE. Abnormal mental state resulting from an abuse of methamphetamine" [EFO:0005242]
+xref: EFO:0005242 {source="MONDO:obsoleteEquivalent", source="MONDO:EFO"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0004630
 
 [Term]
 id: MONDO:0005466
@@ -117372,23 +117351,21 @@ property_value: IAO:0000589 "orthostatic hypotension (disease)" xsd:string
 
 [Term]
 id: MONDO:0005470
-name: postprandial hypotension
-def: "Drastic decline in blood pressure which happens after eating a meal and most likely due to insufficient compensation in cardiac output by the autonomic nervous system for the diversion of blood to the intestines." [EFO:0005253]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-is_a: MONDO:0005468 {source="EFO:0005253"} ! hypotensive disorder
+name: obsolete postprandial hypotension
+def: "OBSOLETE. Drastic decline in blood pressure which happens after eating a meal and most likely due to insufficient compensation in cardiac output by the autonomic nervous system for the diversion of blood to the intestines." [EFO:0005253]
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0005468
 
 [Term]
 id: MONDO:0005471
-name: neurally mediated hypotension
-def: "Neurally mediated hypotension is a sudden drop in blood pressure while an individual stands up. It occurs when there is an abnormal reflex interaction between the heart and the brain, both of which usually are structurally normal" [EFO:0005254]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-is_a: MONDO:0005468 {source="EFO:0005254"} ! hypotensive disorder
+name: obsolete neurally mediated hypotension
+def: "OBSOLETE. Neurally mediated hypotension is a sudden drop in blood pressure while an individual stands up. It occurs when there is an abnormal reflex interaction between the heart and the brain, both of which usually are structurally normal" [EFO:0005254]
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0005468
 
 [Term]
 id: MONDO:0005472
@@ -120457,33 +120434,25 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0005597
-name: cystic renal cell carcinoma
-def: "Cystic renal cell carcinoma includes any malignant neoplasm of renal tubular epithelium which presents as a fluid-filled mass. Approximately 15 per cent of cases of renal cell carcinoma will be cystic on radiologic and pathologic examination. The clinical features of cystic renal cell carcinoma are similar to those which are solid. The radiographic and pathologic findings of cystic renal cell carcinoma are often more confusing and less specific than the findings of renal cell carcinoma which are predominantly solid. There are four basic pathologic mechanisms resulting in cystic renal cell carcinoma: intrinsic multiloculated growth; intrinsic unilocular growth (cystadenocarcinoma); cystic necrosis; and origin from the epithelial lining of a preexisting simple cyst. There are three basic radiologic patterns of cystic renal cell carcinoma: unilocular cystic mass, multiloculated cystic mass, and discrete mural nodule in a cystic mass. Cystic renal cell carcinoma is often extremely difficult to differentiate from non-neoplastic, benign neoplastic, and other malignant neoplastic masses utilizing radiologic studies alone. This review presents the clinical, pathologic, and radiographic features of cystic renal cell carcinoma and discusses its radiologic differential diagnosis." [EFO:0006388]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: otar {source="MONDO:OTAR"}
-subset: rare
-xref: EFO:0006388 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+name: obsolete cystic renal cell carcinoma
+def: "OBSOLETE. Cystic renal cell carcinoma includes any malignant neoplasm of renal tubular epithelium which presents as a fluid-filled mass. Approximately 15 per cent of cases of renal cell carcinoma will be cystic on radiologic and pathologic examination. The clinical features of cystic renal cell carcinoma are similar to those which are solid. The radiographic and pathologic findings of cystic renal cell carcinoma are often more confusing and less specific than the findings of renal cell carcinoma which are predominantly solid. There are four basic pathologic mechanisms resulting in cystic renal cell carcinoma: intrinsic multiloculated growth; intrinsic unilocular growth (cystadenocarcinoma); cystic necrosis; and origin from the epithelial lining of a preexisting simple cyst. There are three basic radiologic patterns of cystic renal cell carcinoma: unilocular cystic mass, multiloculated cystic mass, and discrete mural nodule in a cystic mass. Cystic renal cell carcinoma is often extremely difficult to differentiate from non-neoplastic, benign neoplastic, and other malignant neoplastic masses utilizing radiologic studies alone. This review presents the clinical, pathologic, and radiographic features of cystic renal cell carcinoma and discusses its radiologic differential diagnosis." [EFO:0006388]
+xref: EFO:0006388 {source="MONDO:obsoleteEquivalent", source="MONDO:EFO"}
 xref: PMID:3739121 {source="EFO:0006388"}
-is_a: MONDO:0005086 {source="EFO:0006388"} ! renal cell carcinoma
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0005086
 
 [Term]
 id: MONDO:0005598
-name: dopaminergic neuroblastoma
-def: "A neuroblastoma associated with increased dopamine excretion." [EFO:0006391]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: otar {source="MONDO:OTAR"}
-subset: rare
-xref: EFO:0006391 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+name: obsolete dopaminergic neuroblastoma
+def: "OBSOLETE. A neuroblastoma associated with increased dopamine excretion." [EFO:0006391]
+xref: EFO:0006391 {source="MONDO:obsoleteEquivalent", source="MONDO:EFO"}
 xref: PMID:3385588 {source="EFO:0006391"}
-is_a: MONDO:0005072 {source="EFO:0006391"} ! neuroblastoma
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeBiomarker"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0005072
 
 [Term]
 id: MONDO:0005599
@@ -166016,18 +165985,15 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0007466
-name: DNA, satellite, 3
-comment: Editor note: TODO check; Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-subset: omim {source="OMIM:126370"}
+name: obsolete DNA, satellite, 3
 synonym: "D1Z1" RELATED ABBREVIATION []
 synonym: "DNA, satellite, III" RELATED []
 synonym: "DNA, satellite, type 3" EXACT []
 synonym: "HS3" RELATED ABBREVIATION []
-xref: OMIM:126370 {source="MONDO:equivalentTo"}
-is_a: MONDO:0003847 {source="https://orcid.org/0000-0001-5208-3432"} ! hereditary disease
+xref: OMIM:126370 {source="MONDO:obsoleteEquivalent"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeNonDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
 
 [Term]
 id: MONDO:0007467
@@ -166130,11 +166096,12 @@ xref: Orphanet:75376 {source="MONDO:equivalentTo", source="DOID:0060745", source
 xref: SCTID:193411004 {source="MONDO:equivalentTo"}
 xref: UMLS:C1832174 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:321900"}
 is_a: MONDO:0006949 {source="DOID:0060745"} ! retinal drusen
-is_a: MONDO:0016420 {source="Orphanet:75376"} ! familial flecked retinopathy
+is_a: MONDO:0020242 {source="Orphanet:75376"} ! hereditary macular dystrophy
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0007471 {source="MONDO:CLINGEN"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3218 {source="OMIM:126600"} ! EFEMP1
 property_value: curated_content_resource "https://www.malacards.org/card/doyne_honeycomb_retinal_dystrophy" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/familial_drusen" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1912/doyne-honeycomb-retinal-dystrophy" xsd:anyURI {source="GARD:0001912"}
 
 [Term]
@@ -166202,13 +166169,14 @@ xref: OMIMPS:126800 {source="MONDO:equivalentTo", source="https://orcid.org/0000
 xref: Orphanet:233 {source="MONDO:equivalentTo", source="GARD:0006288"}
 xref: SCTID:60318001 {source="DOID:12557", source="MONDO:equivalentTo"}
 xref: UMLS:C0013261 {source="MEDGEN:4413", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0001584 {source="Orphanet:233"} ! ocular motility disease
 is_a: MONDO:0002254 {source="MONDO:Redundant", source="NCIT:C84678", source="https://orcid.org/0000-0002-6601-2165"} ! syndromic disease
-is_a: MONDO:0015083 {source="Orphanet:233"} ! nuclear oculomotor paralysis
 relationship: disease_has_feature HP:0000486 ! Strabismus
 relationship: excluded_subClassOf MONDO:0003432 {source="DOID:12557", source="https://orcid.org/0000-0001-5208-3432"} ! strabismus
 relationship: excluded_subClassOf MONDO:0015368 {source="https://orcid.org/0000-0001-5208-3432"} ! obsolete neuro-ophthalmological disease
 relationship: has_characteristic MONDO:0021152 {source="OMIMPS:126800"} ! inherited
 property_value: curated_content_resource "https://www.malacards.org/card/duane_retraction_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/6288/duane-syndrome" xsd:anyURI {source="GARD:0006288"}
 
@@ -168691,7 +168659,7 @@ xref: UMLS:C0546476 {source="MEDGEN:154270", source="MONDO:equivalentTo", source
 is_a: MONDO:0015356 {source="NCIT:C4461"} ! hereditary neoplastic syndrome
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0007566 {source="MONDO:CLINGEN"}
 relationship: disease_has_feature MONDO:0002527 {source="NCIT:C4461"} ! keratoacanthoma
-relationship: disease_has_feature MONDO:0020173 {source="Orphanet:65748"} ! benign tumor of palpebral epidermis
+relationship: disease_has_feature MONDO:0020172 {source="Orphanet:65748"} ! palpebral epidermal tumor
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11772 {source="MONDO:NCIT", source="OMIM:132800"} ! TGFBR1
 property_value: curated_content_resource "https://www.malacards.org/card/ferguson_smith_tumor" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/multiple_self_healing_squamous_epithelioma_2" xsd:anyURI {source="MONDO:MalaCards"}
@@ -170145,7 +170113,6 @@ xref: MESH:C565007 {source="MONDO:equivalentTo"}
 xref: OMIM:136480 {source="MONDO:equivalentTo", source="Orphanet:91498", source="Orphanet:91498/e"}
 xref: Orphanet:91498 {source="MONDO:equivalentTo", source="OMIM:136480"}
 xref: UMLS:C1850996 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:338185"}
-is_a: MONDO:0015083 {source="Orphanet:91498", source="Orphanet:91498/inferred"} ! nuclear oculomotor paralysis
 is_a: MONDO:0700463 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital trochlear nerve palsy
 intersection_of: MONDO:0001146 ! fourth cranial nerve palsy
 intersection_of: has_characteristic MONDO:0021152 ! inherited
@@ -170153,6 +170120,7 @@ relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0
 property_value: curated_content_resource "https://www.malacards.org/card/fourth_cranial_nerve_palsy_familial_congenital" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7693" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10355/familial-congenital-palsy-of-trochlear-nerve" xsd:anyURI {source="GARD:0010355"}
 
 [Term]
@@ -170488,11 +170456,11 @@ xref: OMIM:136880 {source="DOID:11105", source="Orphanet:227796/e", source="MOND
 xref: Orphanet:227796 {source="OMIM:136880", source="MONDO:equivalentTo"}
 xref: SCTID:68222009 {source="DOID:11105", source="MONDO:equivalentTo"}
 xref: UMLS:C0311338 {source="MEDGEN:86317", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0016420 {source="Orphanet:227796"} ! familial flecked retinopathy
 is_a: MONDO:0100443 {source="https://clinicalgenome.org/affiliation/40072/"} ! RDH5-related retinopathy
 is_a: MONDO:0100444 {source="https://clinicalgenome.org/affiliation/40072/"} ! RLBP1-related retinopathy
 is_a: MONDO:1040055 {source="https://orcid.org/0000-0002-0587-4693", source="https://www.clinicalgenome.org/working-groups/lumping-and-splitting/"} ! PRPH2-related retinopathy
 property_value: curated_content_resource "https://www.malacards.org/card/fundus_albipunctatus" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0007640
@@ -171209,8 +171177,8 @@ xref: SCTID:189910001 {source="DOID:4843"}
 xref: SCTID:4553004 {source="EFO:1001197", source="DOID:4843"}
 xref: UMLS:C0206725 {source="MEDGEN:64637", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0003266 {source="MONDO:Redundant", source="NCIT:C3795", source="ONCOTREE:SUBE", source="Orphanet:251639/inferred"} ! ependymal tumor
-is_a: MONDO:0016697 {source="Orphanet:251639"} ! low grade ependymoma
 property_value: curated_content_resource "https://www.malacards.org/card/subependymal_glioma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0007668
@@ -180264,15 +180232,16 @@ xref: Orphanet:570 {source="MONDO:equivalentTo", source="OMIM:157900"}
 xref: SCTID:393607001 {source="DOID:13501"}
 xref: SCTID:89444000 {source="MONDO:equivalentTo", source="DOID:13501"}
 xref: UMLS:C0221060 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:66357"}
+is_a: MONDO:0001584 {source="Orphanet:570"} ! ocular motility disease
 is_a: MONDO:0002098 {source="DOID:13501", source="MESH:D020331"} ! facial nerve disorder
 is_a: MONDO:0002254 {source="NCIT:C84893"} ! syndromic disease
-is_a: MONDO:0015083 {source="Orphanet:570"} ! nuclear oculomotor paralysis
 is_a: MONDO:0015160 {source="Orphanet:570"} ! multiple congenital anomalies/dysmorphic syndrome-variable intellectual disability syndrome
 relationship: disease_has_feature HP:0000486 ! Strabismus
 property_value: curated_content_resource "https://www.malacards.org/card/moebius_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10220" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6751" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0008007
@@ -180608,7 +180577,6 @@ is_a: MONDO:0018630 {source="https://github.com/monarch-initiative/mondo/issues/
 relationship: excluded_subClassOf MONDO:0005835 {source="DOID:0050465", source="Orphanet:587", source="https://orcid.org/0000-0001-5208-3432"} ! Lynch syndrome
 relationship: excluded_subClassOf MONDO:0015950 {source="Orphanet:587", source="https://orcid.org/0000-0001-5208-3432"} ! obsolete inherited skin tumor
 relationship: excluded_subClassOf MONDO:0019300 {source="Orphanet:587", source="https://orcid.org/0000-0001-5208-3432"} ! obsolete rare skin tumor or hamartoma
-relationship: excluded_subClassOf MONDO:0020173 {source="Orphanet:587", source="https://orcid.org/0000-0001-5208-3432"} ! benign tumor of palpebral epidermis
 relationship: excluded_subClassOf MONDO:0020176 {source="Orphanet:587", source="https://orcid.org/0000-0001-5208-3432"} ! obsolete palpebral sebaceous gland tumor
 relationship: has_characteristic HP:0000006 {source="MONDO:HPOA", source="OMIM:158320", source="Orphanet:587"} ! Autosomal dominant inheritance
 property_value: curated_content_resource "https://www.malacards.org/card/muir_torre_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
@@ -203817,10 +203785,11 @@ xref: Orphanet:41751 {source="OMIM:210370", source="MONDO:equivalentTo"}
 xref: SCTID:312927001 {source="MONDO:equivalentTo"}
 xref: UMLS:C1859486 {source="MEDGEN:347895", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0004580 {source="DOID:0050664", source="MONDO:Redundant", source="MONDO:indirect"} ! retinal degeneration
-is_a: MONDO:0016420 {source="Orphanet:41751"} ! familial flecked retinopathy
+is_a: MONDO:0019118 {source="NCIT:C179299", source="Orphanet:41751"} ! inherited retinal dystrophy
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0008865 {source="MONDO:CLINGEN"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/23198 {source="OMIM:210370"} ! CYP4V2
 property_value: curated_content_resource "https://www.malacards.org/card/bietti_crystalline_corneoretinal_dystrophy" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/10050/bietti-crystalline-corneoretinal-dystrophy" xsd:anyURI {source="GARD:0010050"}
 
 [Term]
@@ -206121,11 +206090,12 @@ xref: SCTID:192871008 {source="DOID:12707"}
 xref: SCTID:41009006 {source="DOID:12707"}
 xref: SCTID:73495003 {source="MONDO:equivalentTo", source="DOID:12707"}
 xref: UMLS:C3489626 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:483579"}
-is_a: MONDO:0000114 {source="DC-OMIM:213400"} ! cerebelloparenchymal disorder
+is_a: MONDO:0002427 {source="MESH:D002527"} ! cerebellar disorder
 is_a: MONDO:0003847 {source="https://orcid.org/0000-0001-5208-3432"} ! hereditary disease
 is_a: MONDO:0024237 {source="MESH:D002527/inferred"} ! inherited neurodegenerative disorder
 property_value: curated_content_resource "https://www.malacards.org/card/myoclonic_cerebellar_dyssynergia" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4429" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0008946
@@ -214559,8 +214529,9 @@ xref: OMIM:228990 {source="Orphanet:99179/e", source="MONDO:equivalentTo", sourc
 xref: Orphanet:99179 {source="MONDO:equivalentTo", source="OMIM:228990"}
 xref: SCTID:765191009 {source="MONDO:equivalentTo"}
 xref: UMLS:C0271257 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:78764"}
-is_a: MONDO:0016420 {source="Orphanet:99179", source="icd11.foundation:697904956"} ! familial flecked retinopathy
+is_a: MONDO:0019118 {source="Orphanet:99179"} ! inherited retinal dystrophy
 property_value: curated_content_resource "https://www.malacards.org/card/fleck_retina_of_kandori" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0009237
@@ -255089,11 +255060,12 @@ xref: Orphanet:319698 {source="MONDO:equivalentObsolete", source="OMIM:303800", 
 xref: SCTID:246674000 {source="DOID:13909"}
 xref: SCTID:77479002 {source="MONDO:equivalentTo", source="DOID:13909", source="EFO:0005581"}
 xref: UMLS:C0155016 {source="MEDGEN:102324", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0000014 {source="DC-OMIM:303800"} ! colorblindness, partial
+is_a: MONDO:0001703 {source="DOID:13909"} ! color vision disorder
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4206 {source="OMIM:303800"} ! OPN1MW
 property_value: curated_content_resource "https://www.malacards.org/card/colorblindness_partial_deutan_series" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/red_green_color_blindness" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0010565
@@ -288412,7 +288384,6 @@ xref: OMIM:607136 {source="MONDO:equivalentTo", source="Orphanet:98759", source=
 xref: Orphanet:98759 {source="MONDO:equivalentTo", source="OMIM:607136"}
 xref: SCTID:719249005 {source="MONDO:equivalentTo"}
 xref: UMLS:C1846707 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:337637"}
-is_a: MONDO:0000114 {source="DC-OMIM:213100"} ! cerebelloparenchymal disorder
 is_a: MONDO:0003847 {source="MESH:C563505/inferred"} ! hereditary disease
 is_a: MONDO:0005395 ! movement disorder
 is_a: MONDO:0015548 {source="Orphanet:98759"} ! Huntington disease-like syndrome
@@ -288424,6 +288395,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/spinoce
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/3805" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4444" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0011782
@@ -378261,16 +378233,12 @@ property_value: curated_content_resource "https://www.malacards.org/card/alopeci
 
 [Term]
 id: MONDO:0015083
-name: nuclear oculomotor paralysis
-comment: Editor note: see notes for supranuclear; Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: disease_grouping
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
-xref: Orphanet:100932 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0001309 {source="Orphanet:100932"} ! oculomotor nerve paralysis
+name: obsolete nuclear oculomotor paralysis
+xref: Orphanet:100932 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0001309
 
 [Term]
 id: MONDO:0015084
@@ -378522,6 +378490,7 @@ xref: MESH:C537885 {source="Orphanet:101033", source="MONDO:equivalentTo", sourc
 xref: Orphanet:101033 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C2931652 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:419463"}
 is_a: MONDO:0011414 {source="Orphanet:101033"} ! Peters anomaly
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
 id: MONDO:0015096
@@ -379943,17 +379912,14 @@ is_obsolete: true
 
 [Term]
 id: MONDO:0015174
-name: autoimmune enteropathy type 3
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete autoimmune enteropathy type 3
 xref: ICD10CM:K52.8 {source="Orphanet:103917"}
-xref: icd11.foundation:1137579941 {source="MONDO:equivalentTo"}
-xref: Orphanet:103917 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0019787 {source="Orphanet:103917"} ! autoimmune enteropathy
+xref: icd11.foundation:1137579941 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:103917 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0019787
 
 [Term]
 id: MONDO:0015175
@@ -404116,25 +404082,20 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0016271
-name: adenoid cystic carcinoma of the corpus uteri
-def: "A adenoid cystic carcinoma that involves the body of uterus." [MONDO:patterns/location]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete adenoid cystic carcinoma of the corpus uteri
+def: "OBSOLETE. A adenoid cystic carcinoma that involves the body of uterus." [MONDO:patterns/location]
 synonym: "body of uterus adenoid cystic carcinoma" EXACT [MONDO:patterns/location]
 synonym: "endometrial adenoid cystic carcinoma" EXACT []
 xref: ICD10CM:C54.0 {source="Orphanet:213741/btnt", source="Orphanet:213741"}
 xref: ICD10CM:C54.2 {source="Orphanet:213741/btnt", source="Orphanet:213741"}
 xref: ICD10CM:C54.3 {source="Orphanet:213741/btnt", source="Orphanet:213741"}
 xref: ICD10CM:C54.8 {source="Orphanet:213741/btnt", source="Orphanet:213741"}
-xref: icd11.foundation:350868040 {source="MONDO:equivalentTo"}
-xref: Orphanet:213741 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0004992 {source="Orphanet:213741"} ! cancer
-intersection_of: MONDO:0004971 ! adenoid cystic carcinoma
-intersection_of: disease_has_location UBERON:0009853 ! body of uterus
+xref: icd11.foundation:350868040 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:213741 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0006003
 
 [Term]
 id: MONDO:0016272
@@ -407236,18 +407197,13 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0016420
-name: familial flecked retinopathy
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: disease_grouping
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete familial flecked retinopathy
 synonym: "hereditary flecked retinopathy" EXACT []
-xref: icd11.foundation:979898273 {source="MONDO:equivalentTo"}
-xref: Orphanet:227786 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0020242 {source="Orphanet:227786"} ! hereditary macular dystrophy
+xref: icd11.foundation:979898273 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:227786 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGroupingPhenotype"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
 
 [Term]
 id: MONDO:0016421
@@ -413792,21 +413748,14 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/9472/anaplas
 
 [Term]
 id: MONDO:0016697
-name: low grade ependymoma
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: otar {source="MONDO:OTAR"}
-subset: rare
+name: obsolete low grade ependymoma
 xref: ICD10CM:D43.2 {source="Orphanet:251633"}
-xref: icd11.foundation:641455939 {source="MONDO:equivalentTo"}
-xref: Orphanet:251633 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0003266 {source="MONDO:Redundant", source="Orphanet:251633"} ! ependymal tumor
-is_a: MONDO:0016698 {source="MONDO:Redundant"} ! ependymoma
-intersection_of: MONDO:0016698 ! ependymoma
-intersection_of: has_characteristic MONDO:0024491 ! tumor grade 1, general grading system
+xref: icd11.foundation:641455939 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:251633 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0003266
 
 [Term]
 id: MONDO:0016698
@@ -413854,7 +413803,6 @@ is_a: MONDO:0003266 {source="MONDO:Redundant", source="NCIT:C3017", source="ONCO
 is_a: MONDO:0021639 {source="MONDO:Redundant", source="NCIT:C3017"} ! grade II glioma
 intersection_of: MONDO:0003266 {source="NCIT:C3017"} ! ependymal tumor
 intersection_of: has_characteristic MONDO:0024492 {source="NCIT:C3017"} ! tumor grade 2, general grading system
-relationship: excluded_subClassOf MONDO:0016697 {source="https://orcid.org/0000-0001-5208-3432"} ! low grade ependymoma
 property_value: curated_content_resource "https://www.malacards.org/card/benign_ependymoma" xsd:anyURI {source="MONDO:MalaCards"}
 
 [Term]
@@ -421469,20 +421417,15 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/3963/neuroep
 
 [Term]
 id: MONDO:0017047
-name: infantile axonal neuropathy
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: otar {source="MONDO:OTAR"}
-subset: rare
+name: obsolete infantile axonal neuropathy
 xref: ICD10CM:G60.8 {source="Orphanet:2679"}
-xref: Orphanet:2679 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0004183 {source="https://orcid.org/0000-0001-5208-3432"} ! axonal neuropathy
-is_a: MONDO:0020127 {source="Orphanet:2679"} ! hereditary peripheral neuropathy
-relationship: has_characteristic HP:0003593 ! Infantile onset
+xref: Orphanet:2679 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/2996/infantile-axonal-neuropathy" xsd:anyURI {source="GARD:0002996"}
+is_obsolete: true
+consider: MONDO:0004183
+consider: MONDO:0020127
 
 [Term]
 id: MONDO:0017048
@@ -427942,9 +427885,9 @@ xref: Orphanet:289832 {source="MONDO:equivalentTo"}
 xref: SCTID:237929000 {source="MONDO:equivalentTo"}
 xref: UMLS:C0268552 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:541359"}
 is_a: MONDO:0019189 {source="Orphanet:289832"} ! inborn disorder of amino acid and other organic acid metabolism
-is_a: MONDO:0037938 {source="https://orcid.org/0000-0002-6601-2165"} ! inborn disorder of aspartate family metabolism
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0017351 {source="MONDO:CLINGEN"}
 property_value: curated_content_resource "https://www.malacards.org/card/disorder_of_lysine_and_hydroxylysine_metabolism" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0017352
@@ -433551,17 +433494,14 @@ property_value: curated_content_resource "https://www.malacards.org/card/self_li
 
 [Term]
 id: MONDO:0017616
-name: X-linked intellectual disability, Schutz type
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
-subset: rare
+name: obsolete X-linked intellectual disability, Schutz type
 xref: ICD10CM:Q87.8 {source="Orphanet:3062"}
-xref: Orphanet:3062 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0020119 {source="Orphanet:3062", source="https://clinicalgenome.org/affiliation/40060/"} ! X-linked syndromic intellectual disability
+xref: Orphanet:3062 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5588" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0100284
 
 [Term]
 id: MONDO:0017617
@@ -455163,10 +455103,11 @@ xref: icd11.foundation:2135160463 {source="MONDO:equivalentTo"}
 xref: MEDGEN:1804232 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:440221 {source="MONDO:equivalentTo"}
 xref: UMLS:C5680054 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1804232"}
-is_a: MONDO:0015083 {source="Orphanet:440221"} ! nuclear oculomotor paralysis
+is_a: MONDO:0001309 {source="Orphanet:440221"} ! oculomotor nerve paralysis
 relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
 property_value: curated_content_resource "https://www.malacards.org/card/congenital_oculomotor_nerve_palsy" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0018600
@@ -455184,10 +455125,12 @@ xref: ICD10CM:Q07.8 {source="Orphanet:440233"}
 xref: MEDGEN:724505 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:440233 {source="MONDO:equivalentTo"}
 xref: UMLS:C1302994 {source="MONDO:equivalentTo", source="MEDGEN:724505", source="MONDO:MEDGEN"}
-is_a: MONDO:0015083 {source="Orphanet:440233"} ! nuclear oculomotor paralysis
+is_a: MONDO:0007033 {source="Orphanet:440233"} ! abducens nerve palsy
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
 property_value: curated_content_resource "https://www.malacards.org/card/congenital_abducens_nerve_palsy" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0018601
@@ -460597,7 +460540,7 @@ is_a: MONDO:0002527 {source="MONDO:Redundant"} ! keratoacanthoma
 is_a: MONDO:0003847 {source="MONDO:Entailed", source="Orphanet:493/inferred"} ! hereditary disease
 intersection_of: MONDO:0002527 ! keratoacanthoma
 intersection_of: has_characteristic MONDO:0021152 ! inherited
-relationship: disease_has_feature MONDO:0020173 {source="Orphanet:493"} ! benign tumor of palpebral epidermis
+relationship: disease_has_feature MONDO:0020172 {source="Orphanet:493"} ! palpebral epidermal tumor
 relationship: excluded_subClassOf MONDO:0019300 {source="Orphanet:493", source="https://orcid.org/0000-0001-5208-3432"} ! obsolete rare skin tumor or hamartoma
 property_value: curated_content_resource "https://www.malacards.org/card/familial_keratoacanthoma" xsd:anyURI {source="MONDO:MalaCards"}
 
@@ -464679,8 +464622,8 @@ xref: SCTID:95794005 {source="DOID:1278", source="MONDO:equivalentTo"}
 xref: UMLS:C0040381 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:21197"}
 is_a: MONDO:0001584 {source="DOID:1278"} ! ocular motility disease
 is_a: MONDO:0002254 {source="NCIT:C85193"} ! syndromic disease
-is_a: MONDO:0015083 {source="Orphanet:64686"} ! nuclear oculomotor paralysis
 property_value: curated_content_resource "https://www.malacards.org/card/tolosa_hunt_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/7777/tolosa-hunt-syndrome" xsd:anyURI {source="GARD:0007777"}
 
 [Term]
@@ -474273,9 +474216,10 @@ xref: Orphanet:827 {source="MONDO:equivalentTo"}
 xref: SCTID:47673003 {source="MONDO:equivalentTo"}
 xref: UMLS:C0271093 {source="MEDGEN:75734", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0003004 {source="DOID:0050817/inferred", source="MONDO:Redundant", source="NCIT:C85078"} ! macular degeneration
-is_a: MONDO:0016420 {source="Orphanet:827"} ! familial flecked retinopathy
+is_a: MONDO:0020242 {source="Orphanet:827"} ! hereditary macular dystrophy
 relationship: excluded_subClassOf MONDO:0005150 {source="DOID:0050817", source="PMID:10442900", source="PMID:11346402", source="https://orcid.org/0000-0002-0587-4693"} ! age-related macular degeneration
 relationship: has_characteristic MONDO:0021152 {source="OMIMPS:248200"} ! inherited
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/181/stargardt-disease" xsd:anyURI {source="GARD:0000181"}
 
 [Term]
@@ -475968,17 +475912,15 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0019417
-name: X-linked intellectual disability-precocious puberty-obesity syndrome
-def: "X-linked intellectual disability-precocious puberty-obesity syndrome is characterized by moderate intellectual deficit and precocious puberty. It has been described in three males from two generations of one Australian family. Morbid obesity was noted in the mothers of the patients. Transmission is X-linked." [Orphanet:85318]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-subset: ordo_malformation_syndrome {source="Orphanet:85318"}
+name: obsolete X-linked intellectual disability-precocious puberty-obesity syndrome
+def: "OBSOLETE. X-linked intellectual disability-precocious puberty-obesity syndrome is characterized by moderate intellectual deficit and precocious puberty. It has been described in three males from two generations of one Australian family. Morbid obesity was noted in the mothers of the patients. Transmission is X-linked." [Orphanet:85318]
 xref: ICD10CM:Q87.8 {source="Orphanet:85318"}
-xref: Orphanet:85318 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0020119 {source="Orphanet:85318", source="https://clinicalgenome.org/affiliation/40060/"} ! X-linked syndromic intellectual disability
+xref: Orphanet:85318 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5588" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0020119
 
 [Term]
 id: MONDO:0019418
@@ -483791,24 +483733,19 @@ property_value: curated_content_resource "https://www.malacards.org/card/thrombo
 
 [Term]
 id: MONDO:0019738
-name: atypical hemolytic-uremic syndrome with H factor anomaly
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: ordo_etiological_subtype {source="Orphanet:93579"}
-subset: otar {source="MONDO:OTAR"}
-subset: rare
+name: obsolete atypical hemolytic-uremic syndrome with H factor anomaly
 synonym: "aHUS with H factor anomaly" EXACT []
 synonym: "atypical HUS with H factor anomaly" EXACT []
 synonym: "D-HUS with H factor anomaly" EXACT []
 synonym: "hemolytic-uremic syndrome without diarrhea with H factor anomaly" EXACT []
 synonym: "hemolytic-uremic syndrome without diarrhoea with H factor anomaly" EXACT OMO:0003005 []
 xref: ICD10CM:D58.8 {source="Orphanet:93579"}
-xref: Orphanet:93579 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0009335 ! hemolytic uremic syndrome, atypical, susceptibility to, 1
-is_a: MONDO:0016244 {source="MONDO:Redundant", source="Orphanet:93579"} ! atypical hemolytic-uremic syndrome
+xref: Orphanet:93579 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0009335
+consider: MONDO:0035290
 
 [Term]
 id: MONDO:0019739
@@ -483832,6 +483769,7 @@ xref: Orphanet:93581 {source="MONDO:equivalentTo"}
 xref: UMLS:C5680286 {source="MEDGEN:1825998", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0009335 ! hemolytic uremic syndrome, atypical, susceptibility to, 1
 is_a: MONDO:0016244 {source="MONDO:Redundant", source="Orphanet:93581"} ! atypical hemolytic-uremic syndrome
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
 id: MONDO:0019740
@@ -485591,22 +485529,16 @@ property_value: curated_content_resource "https://www.malacards.org/card/univent
 
 [Term]
 id: MONDO:0019821
-name: aneurysm or dilatation of ascending aorta
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: ordo_morphological_anomaly {source="Orphanet:95484"}
-subset: otar {source="MONDO:OTAR"}
-subset: rare
+name: obsolete aneurysm or dilatation of ascending aorta
 xref: ICD10CM:Q25.4 {source="Orphanet:95484"}
-xref: Orphanet:95484 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0004995 {source="https://orcid.org/0000-0001-6718-3559", source="https://orcid.org/0000-0001-9310-0163"} ! cardiovascular disorder
-is_a: MONDO:0020292 {source="https://orcid.org/0000-0002-3458-4839"} ! congenital anomaly of the great arteries
-is_a: MONDO:0021147 {source="https://orcid.org/0000-0002-4142-7153"} ! disorder of development or morphogenesis
+xref: Orphanet:95484 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6740" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6876" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0005396
+consider: MONDO:0019625
 
 [Term]
 id: MONDO:0019822
@@ -492621,18 +492553,14 @@ intersection_of: disease_has_location UBERON:0001457 ! skin of eyelid
 
 [Term]
 id: MONDO:0020173
-name: benign tumor of palpebral epidermis
-def: "A benign neoplasm that involves the skin of eyelid." [MONDO:patterns/location]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: disease_grouping
-subset: obsoletion_candidate
+name: obsolete benign tumor of palpebral epidermis
+def: "OBSOLETE. A benign neoplasm that involves the skin of eyelid." [MONDO:patterns/location]
 synonym: "skin of eyelid benign neoplasm" EXACT [MONDO:patterns/location]
-xref: Orphanet:98582 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0020172 {source="MONDO:Redundant", source="Orphanet:98582"} ! palpebral epidermal tumor
-intersection_of: MONDO:0005165 ! benign neoplasm
-intersection_of: disease_has_location UBERON:0001457 ! skin of eyelid
+xref: Orphanet:98582 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0020172
 
 [Term]
 id: MONDO:0020174
@@ -493651,14 +493579,13 @@ is_obsolete: true
 
 [Term]
 id: MONDO:0020252
-name: essential strabismus
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-xref: Orphanet:98682 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0005328 {source="https://orcid.org/0000-0001-5208-3432"} ! eye disorder
+name: obsolete essential strabismus
+xref: Orphanet:98682 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6744" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0003432
 
 [Term]
 id: MONDO:0020253
@@ -493691,7 +493618,6 @@ replaced_by: MONDO:0001309
 id: MONDO:0020256
 name: obsolete congenital trochlear nerve palsy
 xref: ICD10CM:H49.1 {source="Orphanet:98686"}
-relationship: excluded_subClassOf MONDO:0015083 {source="Orphanet:98686", source="https://orcid.org/0000-0001-5208-3432"} ! nuclear oculomotor paralysis
 property_value: curated_content_resource "https://www.malacards.org/card/congenital_trochlear_nerve_palsy" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGrouping"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5114" xsd:anyURI
@@ -495537,17 +495463,13 @@ property_value: curated_content_resource "https://www.malacards.org/card/multipl
 
 [Term]
 id: MONDO:0020353
-name: von Hippel anomaly
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: ordo_malformation_syndrome {source="Orphanet:98941"}
-subset: rare
-xref: icd11.foundation:1620371681 {source="MONDO:equivalentTo"}
-xref: Orphanet:98941 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0011414 {source="Orphanet:98941"} ! Peters anomaly
+name: obsolete von Hippel anomaly
+xref: icd11.foundation:1620371681 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:98941 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0011414
 
 [Term]
 id: MONDO:0020354
@@ -501855,31 +501777,21 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0020651
-name: mixed germ cell tumor of vulva
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
-xref: ONCOTREE:VMGCT {source="MONDO:equivalentTo"}
-is_a: MONDO:0020650 {source="ONCOTREE:VMGCT"} ! germ cell tumor of the vulva
-intersection_of: MONDO:0015864 ! mixed germ cell tumor
-intersection_of: disease_has_location UBERON:0000997 ! mammalian vulva
+name: obsolete mixed germ cell tumor of vulva
+xref: ONCOTREE:VMGCT {source="MONDO:obsoleteEquivalent"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0020650
 
 [Term]
 id: MONDO:0020652
-name: immature teratoma of vulva
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
-xref: ONCOTREE:VIMT {source="MONDO:equivalentTo"}
-is_a: MONDO:0020650 {source="ONCOTREE:VIMT"} ! germ cell tumor of the vulva
-intersection_of: MONDO:0024746 ! immature teratoma
-intersection_of: disease_has_location UBERON:0000997 ! mammalian vulva
+name: obsolete immature teratoma of vulva
+xref: ONCOTREE:VIMT {source="MONDO:obsoleteEquivalent"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0020650
 
 [Term]
 id: MONDO:0020653
@@ -521650,13 +521562,12 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1174/cdg-syn
 
 [Term]
 id: MONDO:0022623
-name: CDK4 linked melanoma
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-is_a: MONDO:0005105 {source="https://orcid.org/0000-0001-5208-3432"} ! melanoma
+name: obsolete CDK4 linked melanoma
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1175/cdk4-linked-melanoma" xsd:anyURI {source="GARD:0001175"}
+is_obsolete: true
+consider: MONDO:0012183
 
 [Term]
 id: MONDO:0022633
@@ -522555,15 +522466,12 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1352/chronic
 
 [Term]
 id: MONDO:0022768
-name: chronic polyradiculoneuritis
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
-is_a: MONDO:0006915 ! polyradiculoneuropathy
+name: obsolete chronic polyradiculoneuritis
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1355/chronic-polyradiculoneuritis" xsd:anyURI {source="GARD:0001355"}
+is_obsolete: true
+consider: MONDO:0006702
 
 [Term]
 id: MONDO:0022769
@@ -523346,13 +523254,12 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1573/craniof
 
 [Term]
 id: MONDO:0022887
-name: craniofrontonasal syndrome Teebi type
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-6601-2165"} ! syndromic disease
+name: obsolete craniofrontonasal syndrome Teebi type
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1579/craniofrontonasal-syndrome-teebi-type" xsd:anyURI {source="GARD:0001579"}
+is_obsolete: true
+consider: MONDO:0800025
 
 [Term]
 id: MONDO:0022888
@@ -524115,15 +524022,12 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1910/double-
 
 [Term]
 id: MONDO:0023006
-name: doxorubicin induced cardiomyopathy
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
-subset: rare
-is_a: MONDO:0004994 {source="https://orcid.org/0000-0001-5208-3432"} ! cardiomyopathy
+name: obsolete doxorubicin induced cardiomyopathy
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/6285/doxorubicin-induced-cardiomyopathy" xsd:anyURI {source="GARD:0006285"}
+is_obsolete: true
+consider: MONDO:0022653
 
 [Term]
 id: MONDO:0023007
@@ -524184,13 +524088,11 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1918/duker-w
 
 [Term]
 id: MONDO:0023015
-name: duodenal atresia tetralogy of fallot
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-6601-2165"} ! syndromic disease
+name: obsolete duodenal atresia tetralogy of fallot
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1919/duodenal-atresia-tetralogy-of-fallot" xsd:anyURI {source="GARD:0001919"}
+is_obsolete: true
 
 [Term]
 id: MONDO:0023016
@@ -562723,18 +562625,14 @@ intersection_of: disease_has_basis_in_disruption_of GO:0006206 ! pyrimidine nucl
 
 [Term]
 id: MONDO:0037938
-name: inborn disorder of aspartate family metabolism
-def: "An inherited metabolic disease that is has its basis in the disruption of aspartate family amino acid metabolic process." [MONDO:patterns/inborn_metabolic]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete inborn disorder of aspartate family metabolism
+def: "OBSOLETE. An inherited metabolic disease that is has its basis in the disruption of aspartate family amino acid metabolic process." [MONDO:patterns/inborn_metabolic]
 synonym: "inborn aspartate family amino acid metabolic process disorder" EXACT []
 synonym: "inborn error of aspartate family amino acid metabolic process" EXACT [MONDO:patterns/inborn_metabolic]
 synonym: "rare inborn error of aspartate family amino acid metabolic process" EXACT [MONDO:patterns/inborn_metabolic]
-is_a: MONDO:0019052 ! inborn errors of metabolism
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeGroupingOriginProcess"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
 
 [Term]
 id: MONDO:0037939
@@ -572534,8 +572432,9 @@ synonym: "diarrhoea from increased bowel motility" EXACT OMO:0003005 []
 synonym: "motility-related diarrhea" BROAD []
 synonym: "motility-related diarrhoea" BROAD OMO:0003005 []
 xref: DOID:0050131 {source="MONDO:equivalentTo"}
-is_a: MONDO:0000251 ! diarrheal disease secondary to altered bowel motility
+is_a: MONDO:0001673 {source="DOID:0050131"} ! diarrheal disease
 property_value: curated_content_resource "https://www.malacards.org/card/motility_related_diarrhea" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 
 [Term]
 id: MONDO:0044763
@@ -572545,7 +572444,7 @@ comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Te
 subset: obsoletion_candidate
 synonym: "diarrhea from decreased bowel motility" EXACT []
 synonym: "diarrhoea from decreased bowel motility" EXACT OMO:0003005 []
-is_a: MONDO:0000251 ! diarrheal disease secondary to altered bowel motility
+is_a: MONDO:0001673 {source="https://www.ncbi.nlm.nih.gov/books/NBK414/"} ! diarrheal disease
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 property_value: IAO:0006012 "2024-09-01" xsd:string
 
@@ -579767,20 +579666,17 @@ property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0100020
-name: atypical childhood epilepsy with centrotemporal spikes
-def: "A childhood-onset epilepsy that is characterized by frequent seizures of multiple types, including nocturnal focal motor and fronto-parietal opercular seizures, and daytime focal motor seizures with negative myoclonus and atypical absence seizures. Centrotemporal sharp waves are seen on EEG. During the phase of the epilepsy when seizures are frequent, neuropsychological deficits and motor impairment may be present. These deficits improve when seizures remit." [https://orcid.org/0000-0001-8486-0558, https://www.epilepsydiagnosis.org/syndrome/atypical-ects-overview.html]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete atypical childhood epilepsy with centrotemporal spikes
+def: "OBSOLETE. A childhood-onset epilepsy that is characterized by frequent seizures of multiple types, including nocturnal focal motor and fronto-parietal opercular seizures, and daytime focal motor seizures with negative myoclonus and atypical absence seizures. Centrotemporal sharp waves are seen on EEG. During the phase of the epilepsy when seizures are frequent, neuropsychological deficits and motor impairment may be present. These deficits improve when seizures remit." [https://orcid.org/0000-0001-8486-0558, https://www.epilepsydiagnosis.org/syndrome/atypical-ects-overview.html]
 synonym: "atonic-benign childhood epilepsy with centrotemporal spikes" EXACT []
 synonym: "atypical benign partial epilepsy of childhood" EXACT []
 synonym: "pseudo-Lennox syndrome" EXACT []
-is_a: MONDO:0020072 ! childhood-onset epilepsy syndrome
 property_value: http://purl.org/dc/elements/1.1/date "2018-06-22T22:43:29Z" xsd:dateTime
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0800501
 
 [Term]
 id: MONDO:0100021
@@ -581349,15 +581245,12 @@ consider: MONDO:0100455
 
 [Term]
 id: MONDO:0100107
-name: non-neonatal early infantile epileptic encephalopathy
-def: "Non-neonatal early-onset epileptic encephalopathy is a form an of age-related epileptic encephalopathies, characterized by the onset of seizures later than the first 4 weeks of life but within the first three months. Seizures can be generalized or lateralized, independent of the sleep cycle and can occur multiple times per day, leading to psychomotor impairment and death." [https://clinicalgenome.org/affiliation/40005/]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
-is_a: MONDO:0100062 {source="https://clinicalgenome.org/affiliation/40005/"} ! genetic developmental and epileptic encephalopathy
+name: obsolete non-neonatal early infantile epileptic encephalopathy
+def: "OBSOLETE. Non-neonatal early-onset epileptic encephalopathy is a form an of age-related epileptic encephalopathies, characterized by the onset of seizures later than the first 4 weeks of life but within the first three months. Seizures can be generalized or lateralized, independent of the sleep cycle and can occur multiple times per day, leading to psychomotor impairment and death." [https://clinicalgenome.org/affiliation/40005/]
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0800490
 
 [Term]
 id: MONDO:0100108
@@ -581436,15 +581329,12 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0100113
-name: hearing loss with skin disease
-def: "Nonsyndromic deafness, keratitis-ichthyosis-deafness syndrome, and palmoplantar keratoderma with deafness have all been associated with autosomal dominant variants in GJB2. Reported cases share hearing loss as a feature, therefore it is likely that these phenotypes exist along a spectrum of the same disease, differing in severity of skin phenotypes." [https://clinicalgenome.org/affiliation/50007/, PMID:16059934, PMID:20583176, PMID:24945352, PMID:9856479]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
-is_a: MONDO:0017666 {source="MONDO:0017669-obsoleted"} ! diffuse palmoplantar keratoderma
+name: obsolete hearing loss with skin disease
+def: "OBSOLETE. Nonsyndromic deafness, keratitis-ichthyosis-deafness syndrome, and palmoplantar keratoderma with deafness have all been associated with autosomal dominant variants in GJB2. Reported cases share hearing loss as a feature, therefore it is likely that these phenotypes exist along a spectrum of the same disease, differing in severity of skin phenotypes." [https://clinicalgenome.org/affiliation/50007/, PMID:16059934, PMID:20583176, PMID:24945352, PMID:9856479]
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeHistoricalDisease"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:1060236
 
 [Term]
 id: MONDO:0100114
