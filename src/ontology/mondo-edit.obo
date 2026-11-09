@@ -161319,8 +161319,9 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0007294
-name: central core myopathy
-def: "An autosomal dominant congenital disorder affecting the skeletal muscles. Microscopically, it is characterized by disorganized areas, which are called cores, seen usually in the center of the muscle fibers. Clinically it presents as mild to severe muscle weakness. It may be associated with skeletal abnormalities including scoliosis, joint deformities, and hip dislocation." [NCIT:P378]
+name: congenital myopathy 1A, autosomal dominant, with susceptibility to malignant hyperthermia
+def: "A congenital myopathy caused by variation in the RYR1 gene and inherited in an autosomal dominant manner, with susceptibility to malignant hyperthermia. Microscopically, it is characterized by disorganized areas, which are called central cores, seen usually in the center of the muscle fibers. Clinically it presents as mild to severe muscle weakness. It may be associated with skeletal abnormalities including scoliosis, joint deformities, and hip dislocation." [NCIT:P378, OMIM:117000]
+comment: Please do not confuse with MONDO:0015793 moderate multiminicore disease with hand involvement, which has been associated with recessive variation in the same gene and shows multiple minicores on the initial muscle biopsy.
 subset: doid {source="DOID:3529"}
 subset: doid_rare {source="DOID:3529"}
 subset: gard_rare {source="GARD:0006014", source="MONDO:GARD"}
@@ -161332,16 +161333,18 @@ subset: orphanet {source="Orphanet:597"}
 subset: orphanet_rare {source="Orphanet:597"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "CCD" RELATED ABBREVIATION []
+synonym: "CCD" EXACT ABBREVIATION [PMID:17631035, PMID:22784669]
 synonym: "Central Core Disease" EXACT [NORD:148] {OMO:0002001="https://w3id.org/information-resource-registry/nord"}
 synonym: "central core disease" EXACT [DOID:3529, icd11.foundation:2065822840, NCIT:C83010, Orphanet:597]
-synonym: "central CORE disease of muscle" RELATED []
+synonym: "central core disease of muscle" EXACT [MESH:D020512]
+synonym: "central core myopathy" EXACT [DOID:3529, MESH:D020512, NCIT:C83010]
+synonym: "CMYO1A" EXACT ABBREVIATION [GARD:0006014, OMIM:117000]
+synonym: "congenital myopathy 1A, autosomal dominant, with susceptibility to malignant hyperthermia" EXACT [GARD:0006014, OMIM:117000]
 synonym: "muscle core disease" RELATED [GARD:0006014]
 synonym: "muscular central core disease" RELATED [GARD:0006014]
-synonym: "myopathy, central core" RELATED [GARD:0006014]
+synonym: "myopathy, central core" EXACT [GARD:0006014, MESH:D020512]
 synonym: "myopathy, central fibrillar" RELATED [GARD:0006014]
-synonym: "neuromuscular disease, congenital, with uniform type 1 Fibre" RELATED OMO:0003005 []
-synonym: "Shy-Magee syndrome" RELATED [GARD:0006014]
+synonym: "Shy-Magee syndrome" EXACT [GARD:0006014, MESH:D020512]
 xref: DOID:3529 {source="MONDO:equivalentTo", source="EFO:1000855"}
 xref: EFO:1000855 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: GARD:0006014 {source="MONDO:GARD"}
@@ -161364,6 +161367,7 @@ is_a: MONDO:0100196 {source="PMID:23413262", source="https://clinicalgenome.org/
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10483 {source="OMIM:117000"} ! RYR1
 property_value: curated_content_resource "https://www.malacards.org/card/congenital_myopathy_1a" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/congenital_myopathy_1a_autosomal_dominant_with_malignant_hyperthermia" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10599" xsd:anyURI
 
 [Term]
 id: MONDO:0007295
@@ -394008,10 +394012,11 @@ property_value: curated_content_resource "https://www.malacards.org/card/transie
 [Term]
 id: MONDO:0015793
 name: moderate multiminicore disease with hand involvement
-comment: This term is scheduled to be merged with MONDO:0007294 central core myopathy, based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0007294
+def: "A multiminicore myopathy characterized by onset in infancy of moderate, slowly progressive muscle weakness predominantly affecting the axial muscles, pelvic girdle and hands, with marked hand amyotrophy and joint hyperlaxity. It has been associated with autosomal recessive inheritance and variation in the RYR1 gene, reported in four families linked to the 19q13 locus. Multiple minicores are seen on the initial muscle biopsy, which may later show central cores with rods. It differs from the classic form of multiminicore disease, which has axial weakness with severe respiratory insufficiency and scoliosis." [PMID:11079538, PMID:12112081, PMID:17631035]
+comment: Please do not confuse with MONDO:0007294 congenital myopathy 1A, autosomal dominant, with susceptibility to malignant hyperthermia, which is the autosomal dominant RYR1 form and shows central cores on muscle biopsy.
 subset: gard_rare {source="GARD:0017078", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/10599"}
 subset: ordo_subtype_of_a_disorder {source="Orphanet:178145"}
 subset: orphanet {source="Orphanet:178145"}
 subset: otar {source="MONDO:OTAR"}
@@ -394023,7 +394028,6 @@ xref: Orphanet:178145 {source="MONDO:equivalentTo"}
 xref: UMLS:C1861753 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:396213"}
 is_a: MONDO:0018948 {source="Orphanet:178145"} ! multiminicore myopathy
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10599" xsd:anyURI
-property_value: IAO:0006012 "2026-11-01" xsd:string
 
 [Term]
 id: MONDO:0015794
@@ -622016,7 +622020,7 @@ def: "Central core myopathy that occurs in non-human animals." [MONDO:patterns/n
 xref: OMIA:000172 {source="MONDO:equivalentTo"}
 is_a: MONDO:0005583 {source="OMIA:000172"} ! non-human animal disease
 intersection_of: MONDO:0005583 {source="https://orcid.org/0000-0002-5002-8648"} ! non-human animal disease
-intersection_of: MONDO:0700097 MONDO:0007294 {source="https://orcid.org/0000-0002-5002-8648"} ! cross-species analog central core myopathy
+intersection_of: MONDO:0700097 MONDO:0007294 {source="https://orcid.org/0000-0002-5002-8648"} ! cross-species analog congenital myopathy 1A, autosomal dominant, with susceptibility to malignant hyperthermia
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
@@ -629614,7 +629618,7 @@ xref: OMIA:000172-9615 {source="MONDO:equivalentTo"}
 is_a: MONDO:1010192 {source="OMIA:000172", source="https://orcid.org/0000-0002-5002-8648"} ! central core myopathy, non-human animal
 intersection_of: MONDO:0005583 ! non-human animal disease
 intersection_of: in_taxon NCBITaxon:9615 ! Canis lupus familiaris
-intersection_of: MONDO:0700097 MONDO:0007294 ! cross-species analog central core myopathy
+intersection_of: MONDO:0700097 MONDO:0007294 ! cross-species analog congenital myopathy 1A, autosomal dominant, with susceptibility to malignant hyperthermia
 relationship: in_taxon NCBITaxon:9615 {source="OMIA:000172-9615", source="https://orcid.org/0000-0002-5002-8648"} ! Canis lupus familiaris
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7075" xsd:anyURI
 
@@ -629626,7 +629630,7 @@ xref: OMIA:000172-9796 {source="MONDO:equivalentTo"}
 is_a: MONDO:1010192 {source="OMIA:000172", source="https://orcid.org/0000-0002-5002-8648"} ! central core myopathy, non-human animal
 intersection_of: MONDO:0005583 ! non-human animal disease
 intersection_of: in_taxon NCBITaxon:9796 ! Equus caballus
-intersection_of: MONDO:0700097 MONDO:0007294 ! cross-species analog central core myopathy
+intersection_of: MONDO:0700097 MONDO:0007294 ! cross-species analog congenital myopathy 1A, autosomal dominant, with susceptibility to malignant hyperthermia
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 relationship: in_taxon NCBITaxon:9796 {source="OMIA:000172-9796", source="https://orcid.org/0000-0002-5002-8648"} ! Equus caballus
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7075" xsd:anyURI
