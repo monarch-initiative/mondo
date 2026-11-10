@@ -94965,14 +94965,13 @@ replaced_by: MONDO:0019735
 [Term]
 id: MONDO:0004603
 name: collagenopathy
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
+def: "A disease that has its basis in the dysfunction of a collagen trimer. Most are genetic defects of collagen formation and can affect almost every organ system." [PMID:24338780]
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/7700"}
 subset: otar {source="MONDO:OTAR"}
 is_a: MONDO:0003900 {source="https://orcid.org/0000-0001-5208-3432"} ! connective tissue disorder
 intersection_of: MONDO:0000001 ! disease
 intersection_of: disease_has_basis_in_dysfunction_of GO:0005581 ! collagen trimer
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0004604
@@ -388884,16 +388883,16 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0015559
 name: lymphoadenopathic mastocytosis with eosinophilia
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
+def: "An aggressive systemic mastocytosis characterized by mast cell infiltration of the lymph nodes with lymphadenopathy and marked eosinophilia." [PMID:2115055, PMID:36553063]
+comment: Lymphadenopathic mastocytosis with eosinophilia was a category of aggressive systemic mastocytosis in an earlier WHO classification. It is no longer an official diagnosis (PMID:36553063).
 subset: inferred_rare
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/7700"}
 subset: rare
 xref: ICD10CM:C96.2 {source="Orphanet:158793"}
 xref: icd11.foundation:809306056 {source="MONDO:equivalentTo"}
 xref: Orphanet:158793 {source="MONDO:equivalentObsolete"}
 is_a: MONDO:0020333 {source="Orphanet:158793", source="icd11.foundation:809306056"} ! aggressive systemic mastocytosis
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0015560
@@ -502129,14 +502128,12 @@ consider: HP:0002140
 [Term]
 id: MONDO:0020672
 name: vascular occlusion disorder
-def: "A disorder characterized by occlusion of blood vessels. It differs from thrombosis in that it can be used to describe any form of blockage, not just one formed by a clot." [Wikipedia:Vascular_occlusion]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
+def: "A vascular disorder characterized by occlusion of blood vessels. It differs from thrombosis in that it can be used to describe any form of blockage, not just one formed by a clot." [https://my.clevelandclinic.org/health/diseases/24682-vascular-occlusion, Wikipedia:Vascular_occlusion]
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/7700"}
 subset: otar {source="MONDO:OTAR"}
-synonym: "vascular occlusion" EXACT [Wikipedia:Vascular_occlusion]
+synonym: "vascular occlusion" EXACT [https://my.clevelandclinic.org/health/diseases/24682-vascular-occlusion, Wikipedia:Vascular_occlusion]
 is_a: MONDO:0005385 ! vascular disorder
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0020673
@@ -511284,20 +511281,16 @@ property_value: curated_content_resource "https://www.malacards.org/card/nodular
 [Term]
 id: MONDO:0021260
 name: sensory ganglionopathy
-def: "A disease or disorder that involves the sensory ganglion." [MONDO:patterns/location]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
+def: "A disease that involves the sensory ganglion, most often the dorsal root ganglia. It presents with asymmetric, usually non-length-dependent sensory symptoms, often with sensory ataxia and reduced or absent tendon reflexes; small-fiber forms do not cause sensory ataxia. Sensory nerve action potentials are absent or asymmetric. Causes include genetic, autoimmune and paraneoplastic disorders." [MONDO:patterns/location, PMID:33085862, PMID:33497563, PMID:42287493]
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/7700"}
 synonym: "disease of sensory ganglion" EXACT [MONDO:patterns/location_top]
-synonym: "disease or disorder of sensory ganglion" EXACT []
 synonym: "disorder of sensory ganglion" EXACT [MONDO:patterns/location_top]
-synonym: "sensory ganglion disease" EXACT []
 synonym: "sensory ganglion disease or disorder" EXACT [MONDO:patterns/location]
 is_a: MONDO:0000001 {source="MONDO:Redundant", source="MONDO:indirect"} ! disease
 intersection_of: MONDO:0700096 ! human disease
 intersection_of: disease_has_location UBERON:0001800 ! sensory ganglion
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0021271
@@ -517281,16 +517274,13 @@ intersection_of: disease_has_location UBERON:0000014 ! zone of skin
 [Term]
 id: MONDO:0021635
 name: neurocristopathy
-def: "That disease that arises from defects in the development of tissues containing cells commonly derived from the embryonic neural crest cell lineage." [https://orcid.org/0000-0002-6601-2165, Wikipedia:Neurocristopathy]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
+def: "A disease that arises from defects in the development of tissues containing cells commonly derived from the embryonic neural crest cell lineage." [https://orcid.org/0000-0002-6601-2165, PMID:29802835, Wikipedia:Neurocristopathy]
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/7700"}
 synonym: "disorder of neural crest cell development" EXACT [MONDO:patterns/basis_in_disruption_of_process]
 synonym: "disorder of neural crest development" EXACT [https://orcid.org/0000-0002-6601-2165]
-synonym: "neural crest cell development disease" EXACT []
 intersection_of: MONDO:0700096 ! human disease
 intersection_of: disease_has_basis_in_disruption_of GO:0014032 ! neural crest cell development
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0021636
@@ -529610,17 +529600,12 @@ intersection_of: disease_arises_from_structure CL:0000076 ! squamous epithelial 
 id: MONDO:0024476
 name: epithelial neoplasm of rectum
 def: "A epithelial neoplasm that involves the rectum." [MONDO:patterns/location]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/7700"}
 subset: otar {source="MONDO:OTAR"}
-synonym: "rectal epithelial neoplasm" EXACT []
-synonym: "rectal epithelial tumor" EXACT []
-synonym: "rectal epithelial tumour" EXACT OMO:0003005 []
 synonym: "rectum epithelial neoplasm" EXACT [MONDO:patterns/location]
 intersection_of: MONDO:0005626 ! epithelial neoplasm
 intersection_of: disease_has_location UBERON:0001052 ! rectum
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0024477
@@ -529670,14 +529655,12 @@ is_a: MONDO:0006499 {source="NCIT:C40427"} ! hamartoma
 id: MONDO:0024479
 name: epithelial tumor of colon
 def: "A epithelial neoplasm that involves the colon." [MONDO:patterns/location]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/7700"}
 subset: otar {source="MONDO:OTAR"}
 synonym: "colon epithelial neoplasm" EXACT [MONDO:patterns/location]
 intersection_of: MONDO:0005626 ! epithelial neoplasm
 intersection_of: disease_has_location UBERON:0001155 ! colon
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0024480
@@ -572819,22 +572802,23 @@ xref: ONCOTREE:MCN {source="MONDO:equivalentTo"}
 xref: UMLS:C1518872 {source="MEDGEN:274120", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0021076 {source="NCIT:C41247"} ! pancreatic exocrine neoplasm
 is_a: MONDO:0024338 {source="MONDO:Redundant", source="NCIT:C41247"} ! mucinous neoplasm
-is_a: MONDO:0044880 {source="MONDO:Redundant", source="ONCOTREE:MCN"} ! cystic tumor of the pancreas
+is_a: MONDO:0044880 {source="MONDO:Redundant", source="ONCOTREE:MCN"} ! pancreatic cystic neoplasm
 intersection_of: MONDO:0024338 ! mucinous neoplasm
-intersection_of: MONDO:0044880 ! cystic tumor of the pancreas
+intersection_of: MONDO:0044880 ! pancreatic cystic neoplasm
 
 [Term]
 id: MONDO:0044880
-name: cystic tumor of the pancreas
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
+name: pancreatic cystic neoplasm
+def: "A pancreatic exocrine neoplasm that is cystic and can be benign, borderline or malignant. It includes mucinous cystic neoplasms, serous cystadenomas and cystadenocarcinomas. Intraductal papillary mucinous neoplasms and mucinous cystic neoplasms are the most common." [NCIT:C200227, PMID:27013368]
 subset: ncit {source="NCIT:C200227"}
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/7700"}
+synonym: "cystic tumor of the pancreas" EXACT [ONCOTREE:PACT]
+synonym: "pancreatic cystic neoplasm" EXACT [NCIT:C200227]
 xref: NCIT:C200227 {source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-5002-8648"}
 xref: ONCOTREE:PACT {source="MONDO:equivalentTo"}
 is_a: MONDO:0021076 ! pancreatic exocrine neoplasm
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8567" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0044881
@@ -579058,13 +579042,11 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-520
 id: MONDO:0100012
 name: paratenonitis
 def: "Inflammation of the outer layer of the tendon (paratenon) alone, whether or not the paratenon is lined by synovium." [PMID:14560540]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/7700"}
 is_a: MONDO:0004857 ! tendinitis
 property_value: http://purl.org/dc/elements/1.1/date "2018-07-17T16:02:16Z" xsd:dateTime
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0100013
