@@ -26,6 +26,11 @@ This includes instructions for editing the npso ontology.
 - This also works for other URLs for scientific papers and for DOIs, if there are no access restrictions
 - ALWAYS check proposed parent terms for consistency
 
+## OMIM
+- NEVER fetch omim.org web pages (WebFetch, curl, browser tools). OMIM's terms of use cover automated access; the website is for people.
+- Check OMIM content through the OMIM API only, and only if a key is configured (`OMIM_API_KEY`).
+- No key: do not work around it (no mirrors, no web search for entry text). Use what `mondo-edit.obo` already says about the OMIM xref, and list in your summary the OMIM checks a curator needs to do by hand.
+
 ## Edits
 - IMPORTANT: Do not edit the edit file directly, it's large
 - Add edits should be made in the `terms/` folder
