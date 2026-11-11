@@ -539454,10 +539454,12 @@ property_value: curated_content_resource "https://www.malacards.org/card/cardiom
 [Term]
 id: MONDO:0030331
 name: Ritscher-Schinzel syndrome 4
+def: "Any Ritscher-Schinzel syndrome in which the cause of the disease is a variation in the DPYSL5 gene. It is characterized by brain malformations, including corpus callosum agenesis and/or posterior fossa abnormalities, associated with variable degrees of intellectual disability." [PMID:33894126]
 subset: gard_rare {source="GARD:0025541", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:619435"}
 subset: rare
+synonym: "DPYSL5-related complex neurodevelopmental disorder" EXACT [PMID:33894126]
 synonym: "Ritscher-Schinzel syndrome 4" EXACT [OMIM:619435]
 synonym: "RTSC4" EXACT ABBREVIATION [OMIM:619435]
 xref: GARD:0025541 {source="MONDO:GARD"}
@@ -539465,8 +539467,12 @@ xref: MEDGEN:1794149 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619435 {source="MONDO:equivalentTo"}
 xref: UMLS:C5561939 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1794149"}
 is_a: MONDO:0019078 {source="OMIM:619435"} ! Ritscher-Schinzel syndrome
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20637 {source="OMIM:619435"} ! DPYSL5
+is_a: MONDO:0100038 {source="PMID:33894126"} ! complex neurodevelopmental disorder
+intersection_of: MONDO:0019078 ! Ritscher-Schinzel syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20637 ! DPYSL5
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20637 {source="OMIM:619435", source="PMID:33894126"} ! DPYSL5
 property_value: curated_content_resource "https://www.malacards.org/card/ritscher_schinzel_syndrome_4" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10796" xsd:anyURI
 
 [Term]
 id: MONDO:0030332
@@ -702965,6 +702971,17 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5261 {source="PMID:39500555", source="https://clinicalgenome.org/affiliation/40107/"} ! HSPD1
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10788" xsd:anyURI
+
+[Term]
+id: MONDO:1060326
+name: SCAMP5-related complex neurodevelopmental disorder
+def: "Any complex neurodevelopmental disorder in which the cause of the disease is a variation in the SCAMP5 gene. It is characterized by developmental delay, intellectual disability, seizures, and autistic features. Abnormal neurological findings, including extrapyramidal signs, may be present." [PMID:31439720, PMID:33390987]
+is_a: MONDO:0100038 {source="PMID:31439720", source="PMID:33390987"} ! complex neurodevelopmental disorder
+intersection_of: MONDO:0100038 ! complex neurodevelopmental disorder
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30386
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30386 {source="PMID:31439720", source="PMID:33390987"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10797" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
