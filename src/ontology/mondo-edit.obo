@@ -366614,7 +366614,8 @@ property_value: curated_content_resource "https://www.malacards.org/card/candidi
 
 [Term]
 id: MONDO:0014643
-name: congenital cataract-microcephaly-nevus flammeus simplex-severe intellectual disability syndrome
+name: Basel-Vanagaite-Smirin-Yosef syndrome
+def: "A multiple congenital anomalies/dysmorphic syndrome-intellectual disability characterized by severe global developmental delay with intellectual disability, microcephaly, growth retardation, ocular defects such as congenital cataract, and nevus flammeus simplex on the forehead. Cardiac, urogenital, and skeletal abnormalities, as well as seizures are present in most patients. Dysmorphic craniofacial features include sparse hair, downslanting palpebral fissures, hypertelorism, broad and overhanging nasal tip and short philtrum, among others." [https://orcid.org/0000-0002-3991-0859, Orphanet:464738, PMID:25792360]
 subset: gard_rare {source="GARD:0017821", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:616449"}
@@ -366624,9 +366625,9 @@ subset: orphanet {source="Orphanet:464738"}
 subset: orphanet_rare {source="Orphanet:464738"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "Basel-Vanagait-Smirin-Yosef syndrome" EXACT []
-synonym: "BASEL-Vanagaite-SMIRIN-YOSEF syndrome" RELATED []
-synonym: "BVSYS" RELATED ABBREVIATION []
+synonym: "Basel-Vanagaite-Smirin-Yosef syndrome" EXACT [OMIM:616449, Orphanet:464738]
+synonym: "BVSYS" EXACT ABBREVIATION [OMIM:616449]
+synonym: "congenital cataract-microcephaly-nevus flammeus simplex-severe intellectual disability syndrome" EXACT [MEDGEN:897292]
 xref: GARD:0017821 {source="MONDO:GARD"}
 xref: MEDGEN:897292 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:616449 {source="Orphanet:464738/e", source="MONDO:equivalentTo", source="Orphanet:464738"}
@@ -366637,6 +366638,7 @@ relationship: excluded_subClassOf MONDO:0000508 {source="MONDO:Redundant", sourc
 relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/28845 {source="OMIM:616449"} ! MED25
 property_value: curated_content_resource "https://www.malacards.org/card/basel_vanagaite_smirin_yosef_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10833" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5588" xsd:anyURI
@@ -372803,7 +372805,8 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0014869
-name: hydrops-lactic acidosis-sideroblastic anemia-multisystemic failure syndrome
+name: hydrops, lactic acidosis, and sideroblastic anemia
+def: "A mitochondrial oxidative phosphorylation disorder characterized by prenatal complications including oligohydramnios, fetal growth restriction, hydrops, and anemia, followed by severe lactic acidosis, hyaline membrane disease, pulmonary hypertension, cardiac anomalies, liver dysfunction, urogenital abnormalities and progressive renal disease, seizures, thrombocytopenia, and sideroblastic anemia resulting in multisystem organ failure and death shortly after birth. Less severely affected patients surviving the neonatal period and showing sensorineural hearing loss and developmental delay have been reported." [https://orcid.org/0000-0002-3991-0859, Orphanet:528091, PMID:26537577]
 subset: gard_rare {source="GARD:0017966", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:617021"}
@@ -372813,7 +372816,7 @@ subset: orphanet_rare {source="Orphanet:528091"}
 subset: rare
 synonym: "HLASA" EXACT ABBREVIATION [OMIM:617021]
 synonym: "hydrops, lactic acidosis, and sideroblastic anaemia" EXACT OMO:0003005 []
-synonym: "hydrops, lactic acidosis, and sideroblastic anemia" EXACT [OMIM:617021]
+synonym: "hydrops-lactic acidosis-sideroblastic anemia-multisystemic failure syndrome" EXACT [Orphanet:528091]
 xref: GARD:0017966 {source="MONDO:GARD"}
 xref: MEDGEN:934728 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:617021 {source="MONDO:equivalentTo", source="Orphanet:528091"}
@@ -372823,6 +372826,7 @@ is_a: MONDO:0003847 {source="https://orcid.org/0000-0001-5208-3432"} ! hereditar
 is_a: MONDO:0016387 ! mitochondrial oxidative phosphorylation disorder
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/17095 {source="OMIM:617021"} ! LARS2
 property_value: curated_content_resource "https://www.malacards.org/card/hydrops_lactic_acidosis_and_sideroblastic_anemia" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10833" xsd:anyURI
 
 [Term]
 id: MONDO:0014870
@@ -374936,7 +374940,8 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0014948
-name: short stature, rhizomelic, with microcephaly, micrognathia, and developmental delay
+name: short stature-micrognathia syndrome
+def: "A multiple congenital anomalies/dysmorphic syndrome characterized by intrauterine growth restriction, microcephaly, short stature, rhizomelic shortening and facial dysmorphism (including prominent forehead, downslanted palpebral fissures, bulbous nasal tip, large or prominent ears and notably severe micrognathia). Developmental delay is commonly reported. Intellectual disability may also be present. Additional clinical features may include genitourinary malformations in males, transient liver dysfunction, glycosylation abnormalities, giant cell hepatitis, hepatoblastoma, and cataracts. Severity of the disease varies from mild to very severe which may lead to intrauterine death or stillbirth in some cases." [https://orcid.org/0000-0002-3991-0859, Orphanet:659702, PMID:27476655]
 subset: gard_rare {source="GARD:0027128", source="MONDO:GARD"}
 subset: omim {source="OMIM:617164"}
 subset: ordo_disorder {source="Orphanet:659702"}
@@ -374944,9 +374949,11 @@ subset: orphanet {source="Orphanet:659702"}
 subset: orphanet_rare {source="Orphanet:659702"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
+synonym: "ARCN1-related syndrome" RELATED [Orphanet:659702]
+synonym: "intrauterine growth retardation-micrognathia-short stature-facial dysmorphism-rhizomelic shortening syndrome" EXACT [Orphanet:659702]
 synonym: "short stature, rhizomelic, with microcephaly, micrognathia, and developmental delay" EXACT [OMIM:617164] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "short stature, rhizomelic, with microcephaly, micrognathia, and developmental delay; SRMMD" EXACT []
 synonym: "SRMMD" EXACT ABBREVIATION [OMIM:617164]
+synonym: "SSMG" EXACT ABBREVIATION [OMIM:617164]
 xref: GARD:0027128 {source="MONDO:GARD"}
 xref: MEDGEN:934653 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:617164 {source="MONDO:equivalentTo"}
@@ -374955,6 +374962,7 @@ xref: UMLS:C4310686 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0003847 {source="https://orcid.org/0000-0001-5208-3432"} ! hereditary disease
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/649 {source="OMIM:617164"} ! ARCN1
 property_value: curated_content_resource "https://www.malacards.org/card/short_stature_micrognathia_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10833" xsd:anyURI
 
 [Term]
 id: MONDO:0014949
@@ -375039,7 +375047,8 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0014952
-name: intellectual disability-epilepsy-extrapyramidal syndrome
+name: neurodevelopmental disorder with hypotonia and impaired expressive language and with or without seizures
+def: "A neurodevelopmental disorder characterized by hypotonia, delayed motor development, dyskinesia of the limbs, intellectual disability with impaired speech development, seizures, autistic features, stereotypic movements, and sleep disturbance. Onset of symptoms is in infancy. Bilateral abnormalities in the putamen on brain MRI have been reported in some patients." [https://orcid.org/0000-0002-3991-0859, Orphanet:468620, PMID:26048982]
 subset: gard_rare {source="GARD:0013474", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:617171"}
@@ -375047,8 +375056,10 @@ subset: ordo_disorder {source="Orphanet:468620"}
 subset: orphanet {source="Orphanet:468620"}
 subset: orphanet_rare {source="Orphanet:468620"}
 subset: rare
-synonym: "DYSEIDD" RELATED ABBREVIATION []
-synonym: "neurodevelopmental disorder with hypotonia, impaired expressive language, and with or without seizures" EXACT []
+synonym: "DYSEIDD" EXACT ABBREVIATION [OMIM:617171]
+synonym: "dyskinesia, seizures, and intellectual developmental disorder" EXACT [OMIM:617171]
+synonym: "intellectual disability-epilepsy-extrapyramidal syndrome" EXACT [Orphanet:468620]
+synonym: "NEDHELS" EXACT ABBREVIATION [OMIM:617171]
 xref: GARD:0013474 {source="MONDO:GARD"}
 xref: MEDGEN:934650 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:617171 {source="Orphanet:468620", source="MONDO:equivalentTo", source="Orphanet:468620/e"}
@@ -375059,6 +375070,7 @@ is_a: MONDO:0700092 {source="OMIM:617171", source="https://orcid.org/0000-0002-4
 relationship: excluded_subClassOf MONDO:0000508 {source="Orphanet:468620", source="https://orcid.org/0000-0001-5208-3432"} ! syndromic intellectual disability
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/14677 {source="OMIM:617171"} ! DEAF1
 property_value: curated_content_resource "https://www.malacards.org/card/neurodevelopmental_disorder_with_hypotonia_and_impaired_expressive_language_and_with_or_without_seizures" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10833" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5588" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9787" xsd:anyURI
@@ -438441,6 +438453,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/t_b_sev
 [Term]
 id: MONDO:0017856
 name: X-linked spasticity-intellectual disability-epilepsy syndrome
+def: "A syndromic disease characterized by infantile onset of myoclonic epilepsy with generalized spasticity, severe global developmental delay, and moderate to profound intellectual disability. Obligate female carriers show subtle, generalized hyperreflexia. Late onset progressive spastic ataxia has also been reported." [https://orcid.org/0000-0002-3991-0859, Orphanet:3175, PMID:12177367]
 subset: gard_rare {source="GARD:0016622", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: ordo_disorder {source="Orphanet:3175"}
@@ -438457,6 +438470,7 @@ is_a: MONDO:0002254 {source="https://orcid.org/0000-0001-5208-3432"} ! syndromic
 relationship: excluded_subClassOf MONDO:0015921 {source="Orphanet:3175", source="https://orcid.org/0000-0001-5208-3432"} ! obsolete ARX-related epileptic encephalopathy
 relationship: excluded_subClassOf MONDO:0020119 {source="Orphanet:3175", source="https://orcid.org/0000-0001-5208-3432"} ! X-linked syndromic intellectual disability
 property_value: curated_content_resource "https://www.malacards.org/card/x_linked_spasticity_intellectual_disability_epilepsy_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10833" xsd:anyURI
 
 [Term]
 id: MONDO:0017857
@@ -549006,6 +549020,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0032724
 name: spondyloepimetaphyseal dysplasia with joint laxity, type 3
+def: "A spondyloepimetaphyseal dysplasia with joint laxity characterized by multiple joint dislocations, in particular in hips and knees present at birth, but the elbows, wrists, ankles, and patellae can also be affected; severe joint laxity, scoliosis, slender fingers with distal tapering, and growth deficiency developing in the postnatal period resulting in short stature. Gracile metacarpals and metatarsals, delayed bone age with poorly ossified carpal and tarsal bones, metaphyseal and epiphyseal dysplasia, slender ribs, and spondylar dysplasia are radiographic signs. Intelligence is usually normal." [https://orcid.org/0000-0002-3991-0859, Orphanet:642085, PMID:26669664]
 subset: doid {source="DOID:0112200"}
 subset: gard_rare {source="GARD:0016348", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -549014,6 +549029,7 @@ subset: ordo_disorder {source="Orphanet:642085"}
 subset: orphanet {source="Orphanet:642085"}
 subset: orphanet_rare {source="Orphanet:642085"}
 subset: rare
+synonym: "EXOC6B-related spondyloepimetaphyseal dysplasia with joint laxity" EXACT [Orphanet:642085]
 synonym: "SEMDJL3" EXACT ABBREVIATION [DOID:0112200, OMIM:618395, Orphanet:642085]
 synonym: "spondyloepimetaphyseal dysplasia with joint laxity, EXOC6b type" EXACT []
 xref: DOID:0112200 {source="MONDO:equivalentTo"}
@@ -549028,6 +549044,7 @@ is_a: MONDO:0019675 {source="DOID:0112200", source="OMIM:618395"} ! spondyloepim
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/17085 {source="OMIM:618395"} ! EXOC6B
 property_value: curated_content_resource "https://www.malacards.org/card/exoc6b_related_spondyloepimetaphyseal_dysplasia_with_joint_laxity" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/spondyloepimetaphyseal_dysplasia_with_joint_laxity_type_3" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10833" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 
 [Term]
@@ -570290,6 +570307,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/autosom
 [Term]
 id: MONDO:0044626
 name: female infertility due to oocyte meiotic arrest
+def: "A female infertility characterized by oocyte maturation arrest during any of the various stages of meiosis I or II. In some patients, first polar body oocytes may be retrieved, but these either show fertilization failure or early embryonic arrest. Affected women have regular menstrual cycles." [https://orcid.org/0000-0002-3991-0859, Orphanet:488191, PMID:26789871]
 subset: gard_rare {source="GARD:0017887", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: ordo_disorder {source="Orphanet:488191"}
@@ -570305,6 +570323,7 @@ is_a: MONDO:0021124 {source="MONDO:Redundant", source="Orphanet:488191"} ! femal
 intersection_of: MONDO:0021124 ! female infertility
 intersection_of: disease_has_basis_in_disruption_of GO:0051321 ! meiotic cell cycle
 property_value: curated_content_resource "https://www.malacards.org/card/female_infertility_due_to_oocyte_meiotic_arrest" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10833" xsd:anyURI
 
 [Term]
 id: MONDO:0044627
@@ -577348,6 +577367,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0060510
 name: Cohen-Gibson syndrome
+def: "A hereditary disease characterized by tall stature, intellectual disability (more severe than in the other diseases in the spectrum, Weaver syndrome and Imagawa-Matsumoto syndrome), persistent dysmorphic features (including hypertelorism, large fleshy ears, retrognathia, crease between the mouth and the chin) that remain distinguishable in adulthood, and severe musculoskeletal abnormalities (including kyphosis and/or scoliosis, abnormalities of the cervical spine, restricted joint movement and unusually large hands). Cardiac problems, cryptorchidism and umbilical hernias are more frequent whereas presence of tumors is less frequent compared to other diseases in the spectrum." [https://orcid.org/0000-0002-3991-0859, Orphanet:659396, PMID:25787343]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: gard_rare {source="GARD:0016235", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -577357,8 +577377,9 @@ subset: orphanet {source="Orphanet:659396"}
 subset: orphanet_rare {source="Orphanet:659396"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "COGIS" RELATED ABBREVIATION []
+synonym: "COGIS" EXACT ABBREVIATION [OMIM:617561]
 synonym: "Cohen-Gibson syndrome" EXACT [OMIM:617561, Orphanet:659396]
+synonym: "EED-related overgrowth syndrome" EXACT [Orphanet:659396]
 xref: GARD:0016235 {source="MONDO:GARD"}
 xref: MEDGEN:1386939 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:617561 {source="MONDO:equivalentTo"}
@@ -577368,6 +577389,7 @@ is_a: MONDO:0003847 {source="https://orcid.org/0000-0001-5208-3432"} ! hereditar
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0060510 {source="MONDO:CLINGEN"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/3188 {source="OMIM:617561"} ! EED
 property_value: curated_content_resource "https://www.malacards.org/card/cohen_gibson_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10833" xsd:anyURI
 
 [Term]
 id: MONDO:0060527
@@ -597172,6 +597194,7 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-520
 [Term]
 id: MONDO:0800167
 name: Knobloch syndrome 1
+def: "Any Knobloch syndrome in which the cause of the disease is a variation in the COL18A1 gene. It is characterized by vitreoretinal and macular degeneration, as well as occipital encephalocele." [https://orcid.org/0000-0002-3991-0859, Orphanet:1571, PMID:10942434]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: gard_rare {source="GARD:0000380", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -597183,12 +597206,9 @@ subset: orphanet_rare {source="Orphanet:1571"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "KNO1" EXACT ABBREVIATION [OMIM:267750]
-synonym: "KNOBLOCH syndrome 1" EXACT [OMIM:267750]
-synonym: "Knobloch syndrome type 1" EXACT []
-synonym: "Knobloch syndrome, type 1" EXACT []
-synonym: "Knobloch-Layer syndrome" EXACT [Orphanet:1571]
+synonym: "Knobloch syndrome 1" EXACT [OMIM:267750]
 synonym: "myopia retinal detachment encephalocele" RELATED [GARD:0000380]
-synonym: "retinal detachment-occipital encephalocele syndrome" EXACT [Orphanet:1571]
+synonym: "retinal detachment and occipital encephalocele" EXACT [OMIM:267750]
 xref: GARD:0000380 {source="MONDO:GARD"}
 xref: ICD10CM:Q15.8 {source="Orphanet:1571"}
 xref: ICD9:759.89 {source="MONDO:relatedTo", source="MONDO:i2s"}
@@ -597206,6 +597226,7 @@ relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/
 property_value: curated_content_resource "https://www.malacards.org/card/knobloch_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/knobloch_syndrome_1" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10833" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 https://github.com/monarch-initiative/mondo/issues/5404
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/380/knobloch-syndrome" xsd:anyURI {source="GARD:0000380"}
@@ -604212,12 +604233,18 @@ property_value: curated_content_resource "https://www.malacards.org/card/neurode
 [Term]
 id: MONDO:0859208
 name: Hengel-Maroofian-Schols syndrome
+def: "A multiple congenital anomalies/dysmorphic syndrome characterized by infancy/early childhood-onset severe global developmental delay (manifests mostly by delayed sitting and walking/inability to walk), severe intellectual disability with minimal or no speech, pyramidal signs (including lower limb spasticity, hyperreflexia, spastic gait and feet contractures), short stature, microcephaly and dysmorphic facial features (including a long face, strabismus, short philtrum, open mouth, full lips or everted lower lip and teeth abnormalities). Seizures and dystonic/dyskinetic movements may also be present in some patients." [https://orcid.org/0000-0002-3991-0859, Orphanet:697067, PMID:34022130]
 subset: doid {source="DOID:0070408"}
 subset: omim {source="OMIM:619641"}
 subset: ordo_disorder {source="Orphanet:697067"}
 subset: orphanet {source="Orphanet:697067"}
 subset: orphanet_rare {source="Orphanet:697067"}
 subset: rare
+synonym: "BCAS3-related neurodevelopmental disorder" EXACT [Orphanet:697067]
+synonym: "global developmental delay-intellectual disability-microcephaly-short stature-brain iron accumulation syndrome" EXACT [Orphanet:697067]
+synonym: "HEMARS" EXACT ABBREVIATION [OMIM:619641]
+synonym: "Hengel-Maroofian-Schols syndrome" EXACT [OMIM:619641, Orphanet:697067]
+synonym: "neurodevelopmental disorder with spasticity, facial dysmorphism, and brain abnormalities" EXACT [OMIM:619641]
 xref: DOID:0070408 {source="MONDO:equivalentTo"}
 xref: MEDGEN:1794242 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619641 {source="MONDO:equivalentTo"}
@@ -604226,6 +604253,7 @@ xref: UMLS:C5562032 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0003847 {source="OMIM:619641"} ! hereditary disease
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/14347 {source="OMIM:619641"} ! BCAS3
 property_value: curated_content_resource "https://www.malacards.org/card/hengel_maroofian_schols_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10833" xsd:anyURI
 
 [Term]
 id: MONDO:0859209
