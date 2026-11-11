@@ -159334,8 +159334,9 @@ subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "BDB1" EXACT ABBREVIATION [DOID:0110969, OMIM:113000]
 synonym: "brachydactyly type B caused by mutation in ROR2" EXACT [MONDO:design_pattern]
-synonym: "brachydactyly, type B1" RELATED []
+synonym: "brachydactyly, type B1" EXACT [OMIM:113000]
 synonym: "ROR2 brachydactyly type B" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
+synonym: "ROR2-related brachydactyly type B" EXACT [PMID:10700182, PMID:10986040]
 xref: DOID:0110969 {source="MONDO:equivalentTo"}
 xref: GARD:0018009 {source="MONDO:GARD"}
 xref: MEDGEN:349432 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -159348,6 +159349,7 @@ intersection_of: MONDO:0019676 ! brachydactyly type B
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10257 ! ROR2
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10257 {source="OMIM:113000"} ! ROR2
 property_value: curated_content_resource "https://www.malacards.org/card/brachydactyly_type_b1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10795" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 
 [Term]
@@ -237923,33 +237925,26 @@ subset: doid {source="DOID:0060764"}
 subset: doid_rare {source="DOID:0060764"}
 subset: gard_rare {source="GARD:0016568", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
-subset: omim {source="OMIM:268310"}
 subset: ordo_subtype_of_a_disorder {source="Orphanet:1507"}
 subset: orphanet {source="Orphanet:1507"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "costovertebral segmentation defect with mesomelia" RELATED [OMIM:268310]
 synonym: "costovertebral segmentation defect-mesomelia syndrome" EXACT [DOID:0060764, Orphanet:1507]
 synonym: "COVESDEM syndrome" EXACT [DOID:0060764, Orphanet:1507]
-synonym: "Covesdem syndrome" RELATED [OMIM:268310]
 synonym: "Robinow syndrome, autosomal recessive" EXACT [MONDO:patterns/autosomal_recessive]
 synonym: "RRS" EXACT ABBREVIATION [DOID:0060764, Orphanet:1507]
 xref: DOID:0060764 {source="MONDO:equivalentTo"}
 xref: GARD:0016568 {source="MONDO:GARD"}
 xref: ICD10CM:Q87.1 {source="DOID:0060764", source="Orphanet:1507"}
 xref: icd11.foundation:793292660 {source="MONDO:equivalentTo"}
-xref: MEDGEN:1770070 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C535863 {source="Orphanet:1507/e", source="MONDO:equivalentTo", source="Orphanet:1507"}
-xref: OMIM:268310 {source="Orphanet:1507/e", source="MONDO:equivalentTo", source="DOID:0060764", source="Orphanet:1507"}
 xref: Orphanet:1507 {source="OMIM:268310", source="MONDO:equivalentTo", source="DOID:0060764"}
-xref: UMLS:C5399974 {source="MEDGEN:1770070", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0006025 {source="DOID:0060764"} ! autosomal recessive disease
 is_a: MONDO:0019978 {source="DC-OMIM:268310", source="DOID:0060764", source="MONDO:Redundant", source="OMIM:268310", source="Orphanet:1507", source="icd11.foundation:793292660"} ! Robinow syndrome
 intersection_of: MONDO:0019978 ! Robinow syndrome
 intersection_of: has_characteristic HP:0000007 ! Autosomal recessive inheritance
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10257 {source="OMIM:268310"} ! ROR2
 property_value: curated_content_resource "https://www.malacards.org/card/autosomal_recessive_robinow_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
-property_value: curated_content_resource "https://www.malacards.org/card/robinow_syndrome_autosomal_recessive_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10794" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 
 [Term]
@@ -550377,22 +550372,26 @@ property_value: curated_content_resource "https://www.malacards.org/card/mitocho
 
 [Term]
 id: MONDO:0032800
-name: robinow syndrome, autosomal recessive 2
+name: Robinow syndrome, autosomal recessive 2
 subset: doid {source="DOID:0060974"}
 subset: gard_rare {source="GARD:0025750", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:618529"}
 subset: rare
-synonym: "RRS2" RELATED ABBREVIATION []
+synonym: "RRS2" EXACT ABBREVIATION [OMIM:618529]
 xref: DOID:0060974 {source="MONDO:equivalentTo"}
 xref: GARD:0025750 {source="MONDO:GARD"}
 xref: MEDGEN:1676687 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:618529 {source="MONDO:equivalentTo"}
 xref: UMLS:C5193143 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1676687"}
 is_a: MONDO:0003847 {source="OMIM:618529"} ! hereditary disease
+is_a: MONDO:0009999 {source="OMIM:618529"} ! autosomal recessive Robinow syndrome
 is_a: MONDO:0019978 {source="DOID:0060974", source="OMIM:618529"} ! Robinow syndrome
+intersection_of: MONDO:0009999 ! autosomal recessive Robinow syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18008 ! NXN
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18008 {source="OMIM:618529"} ! NXN
 property_value: curated_content_resource "https://www.malacards.org/card/robinow_syndrome_autosomal_recessive_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10794" xsd:anyURI
 
 [Term]
 id: MONDO:0032801
@@ -702965,6 +702964,27 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5261 {source="PMID:39500555", source="https://clinicalgenome.org/affiliation/40107/"} ! HSPD1
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10788" xsd:anyURI
+
+[Term]
+id: MONDO:1060325
+name: Robinow syndrome, autosomal recessive 1
+def: "Any autosomal recessive Robinow syndrome in which the cause of the disease is a mutation in the ROR2 gene. It is characterized by limb shortening and abnormalities of the head, face and external genitalia. Common features include short stature, characteristic facial features (hypertelorism, midface hypoplasia, large nasal bridge, short upturned nose, and anteverted nares), mesomelic limb shortening, brachydactyly, clinodactyly, gingival hyperplasia, and genital hypoplasia." [PMID:20301418, PMID:35344616]
+subset: omim {source="OMIM:268310"}
+synonym: "costovertebral segmentation defect with mesomelia" EXACT [OMIM:268310]
+synonym: "Covesdem syndrome" EXACT [OMIM:268310]
+synonym: "Robinow syndrome, autosomal recessive 1" EXACT [OMIM:268310]
+synonym: "ROR2-related Robinow syndrome" EXACT [PMID:20301418, PMID:35344616]
+synonym: "RRS1" EXACT ABBREVIATION [OMIM:268310]
+xref: MEDGEN:1770070 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: OMIM:268310 {source="MONDO:equivalentTo"}
+xref: UMLS:C5399974 {source="MEDGEN:1770070", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0009999 {source="OMIM:268310", source="PMID:20301418"} ! autosomal recessive Robinow syndrome
+intersection_of: MONDO:0009999 ! autosomal recessive Robinow syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10257 ! ROR2
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10257 {source="OMIM:268310", source="PMID:20301418"} ! ROR2
+property_value: curated_content_resource "https://www.malacards.org/card/robinow_syndrome_autosomal_recessive_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10794" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
