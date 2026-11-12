@@ -702967,6 +702967,20 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10788" xsd:anyURI
 
 [Term]
+id: MONDO:1060327
+name: RNU4-2-related autosomal recessive neurodevelopmental disorder
+def: "Any neurodevelopmental disorder in which the cause of the disease is a variation in the RNU4-2 gene and has autosomal recessive inheritance. It is characterized by mild to severe global developmental delay or intellectual disability, impaired speech development (majority non-verbal), gross motor delay (though majority able to walk by age 5), hypotonia, abnormal brain MRI (dilated perivascular spaces, abnormal cerebral white matter, abnormal corpus callosum, abnormal cerebellum), seizures, dysmorphic facial features, ocular anomalies (strabismus and nystagmus are common), behavioral abnormalities and feeding difficulties, as well as variable microcephaly, short stature, autism, spasticity, movement, skeletal, genitourinary, and endocrine abnormalities." [PMID:41408479, PMID:41951959]
+synonym: "RNU4-2 autosomal recessive neurodevelopmental condition" EXACT [PMID:41951959]
+is_a: MONDO:0100500 {source="PMID:41408479", source="PMID:41951959"} ! Mendelian neurodevelopmental disorder
+is_a: MONDO:0800439 {source="PMID:41951959"} ! syndromic complex neurodevelopmental disorder
+intersection_of: MONDO:0800439 ! syndromic complex neurodevelopmental disorder
+intersection_of: has_characteristic HP:0000007 ! Autosomal recessive inheritance
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10193 ! RNU4-2
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10193 {source="PMID:41408479", source="PMID:41951959"} ! RNU4-2
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10806" xsd:anyURI
+
+[Term]
 id: MONDO:1061000
 name: TUBB-related tubulinopathy
 def: "Any tubulinopathy in which the cause of the disease is a mutation in the TUBB gene. Heterozygous TUBB variants cause two overlapping developmental disorders, complex cortical dysplasia with other brain malformations (CDCBM) and congenital symmetric circumferential skin creases (CSCSC), also known as circumferential skin creases Kunze type. The clinical findings are diverse and include abnormalities of the cortex, basal ganglia, corpus callosum, brain stem and cerebellum, microcephaly, intellectual disability, facial dysmorphism, excess skin folding and growth retardation." [https://www.clinicalgenome.org/affiliation/40020/, PMID:32085672, PMID:34211110]
