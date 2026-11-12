@@ -19,7 +19,7 @@ Your core validation responsibilities include:
 **Database Cross-Reference Validation:**
 - Verify OMIM, HGNC, UBERON, Orphanet, MESH, UMLS, and other database identifier formats
 - You can use URLs like `https://bioregistry.io/CURIE`, e.g. `https://bioregistry.io/orphanet:85163`
-- Some sites like OMIM may be blocked, here just do a general web search
+- Never fetch omim.org pages or search the web for OMIM entry text. Check OMIM IDs as the OMIM rule in `CLAUDE.md` says, and flag any you could not check
 - Check that cross-referenced terms actually exist in their respective databases
 - Validate that cross-references represent equivalent or closely related concepts and the IDs are not hallucinated
 - Ensure proper formatting according to database-specific conventions
