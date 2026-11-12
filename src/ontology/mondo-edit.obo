@@ -593693,7 +593693,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0700250
 name: mitochondrial complex IV deficiency, nuclear type 1
-def: "Any mitochondrial complex IV deficiency in which the cause of the disease is a mutation in the SURF1 gene." [OMIM:220110]
+def: "Any mitochondrial complex IV deficiency in which the cause of the disease is a variation in the SURF1 gene. It is characterized by Leigh syndrome with cytochrome c oxidase deficiency." [OMIM:220110, PMID:10443880]
 subset: doid {source="DOID:0070491"}
 subset: gard_rare {source="GARD:0015158", source="MONDO:GARD"}
 subset: omim {source="OMIM:220110"}
@@ -593703,9 +593703,11 @@ xref: GARD:0015158 {source="MONDO:GARD"}
 xref: MEDGEN:1750917 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:220110 {source="MONDO:equivalentTo"}
 xref: UMLS:C5435656 {source="MEDGEN:1750917", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0009723 {source="OMIM:220110", source="PMID:10443880", source="https://orcid.org/0000-0001-6330-7526", source="https://www.clinicalgenome.org/affiliation/40027/"} ! Leigh syndrome
 is_a: MONDO:0033885 {source="OMIM:220110"} ! mitochondrial complex IV deficiency, nuclear-type
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11474 {source="OMIM:220110"} ! SURF1
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-4142-7153
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8215" xsd:anyURI
 
 [Term]
 id: MONDO:0700251
