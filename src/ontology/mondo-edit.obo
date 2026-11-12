@@ -22735,6 +22735,7 @@ relationship: excluded_subClassOf MONDO:0003117 {source="DOID:11569", source="ht
 relationship: excluded_subClassOf MONDO:0005618 {source="MESH:D009449", source="https://orcid.org/0000-0002-7638-4659"} ! anxiety disorder
 property_value: curated_content_resource "https://www.malacards.org/card/orthostatic_intolerance" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10150" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10509" xsd:anyURI
 
 [Term]
 id: MONDO:0001316
@@ -102354,17 +102355,15 @@ property_value: curated_content_resource "https://www.malacards.org/card/urethra
 id: MONDO:0004910
 name: mitral valve prolapse
 def: "A fairly common and often benign valvular heart disorder characterized by redundancy or hooding of mitral valve leaflets so that they prolapse into the left atrium, often causing mitral regurgitation. It is often a symptomless condition but may be marked by varied symptoms (e.g. chest pain, fatigue, dizziness, dyspnea, or palpitations) leading in some cases to endocarditis or ventricular tachycardia." [NCIT:P378]
-comment: This term is scheduled to be merged with MONDO:0001315 orthostatic intolerance, based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0001315
 subset: doid {source="DOID:988"}
 subset: ncit {source="NCIT:C50655"}
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/10509"}
 synonym: "barlow's syndrome" EXACT [DOID:988, MTH:097]
 synonym: "floppy mitral valve" EXACT [DOID:988, NCIT:C50655]
 synonym: "mitral valve prolapse" EXACT [DOID:988, icd11.foundation:1085590500, MONDO:ambiguous, NCIT:C50655]
 synonym: "mitral valve prolapse (disease)" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "mitral valve prolapse syndrome" EXACT [NCIT:C50655]
-synonym: "prolapse, mitral valve" EXACT []
-synonym: "valve, prolapse Of mitral" EXACT []
+synonym: "prolapse, mitral valve" EXACT [MESH:D008945]
 xref: DOID:988 {source="MONDO:equivalentTo"}
 xref: HP:0001634 {source="MONDO:otherHierarchy"}
 xref: icd11.foundation:1085590500 {source="MONDO:equivalentTo"}
@@ -102382,7 +102381,6 @@ xref: UMLS:C0026267 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0003767 {source="DOID:988", source="NCIT:C50655"} ! mitral valve disorder
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10509" xsd:anyURI
 property_value: IAO:0000589 "mitral valve prolapse (disease)" xsd:string
-property_value: IAO:0006012 "2026-10-01" xsd:string
 
 [Term]
 id: MONDO:0004911
