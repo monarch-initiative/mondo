@@ -116635,7 +116635,7 @@ relationship: disease_has_location UBERON:0000473 {source="EFO:0000784"} ! testi
 [Term]
 id: MONDO:0005438
 name: metastatic malignant neoplasm in the lymph nodes
-def: "The spread of a malignant neoplasm to the lymph nodes." [NCIT:C4904]
+def: "A metastatic malignant neoplasm that has spread to the lymph nodes from another anatomic site." [NCIT:C4904]
 subset: gard_rare {source="GARD:0024186", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C4904"}
 subset: otar {source="MONDO:OTAR"}
@@ -116652,10 +116652,10 @@ xref: MEDGEN:151947 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C4904 {source="MONDO:equivalentTo", source="EFO:0004906"}
 xref: UMLS:C0686619 {source="MEDGEN:151947", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0001082 {source="MONDO:Redundant", source="NCIT:C4904"} ! lymph node cancer
-intersection_of: MONDO:0001082 ! lymph node cancer
-intersection_of: has_characteristic PATO:0002098 ! neoplastic, metastatic
+is_a: MONDO:0024880 {source="NCIT:C4904"} ! metastatic malignant neoplasm
 relationship: disease_has_location UBERON:0000029 {source="EFO:0000784"} ! lymph node
 relationship: excluded_subClassOf MONDO:0004993 {source="EFO:0004906", source="https://orcid.org/0000-0001-5208-3432"} ! carcinoma
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7838" xsd:anyURI
 
 [Term]
 id: MONDO:0005439
