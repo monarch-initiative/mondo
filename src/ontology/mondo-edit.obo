@@ -188902,29 +188902,31 @@ is_obsolete: true
 [Term]
 id: MONDO:0008327
 name: exfoliation syndrome
-def: "An autosomal dominant disorder caused by mutations in the LOXL1 gene, encoding lysyl oxidase homolog 1. The condition is characterized by abnormal fibrillar extracellular material in anterior segment tissues, and may lead to glaucoma." [NCIT:C129025]
+def: "A syndromic disease that is an age-related systemic disorder of the extracellular matrix, characterized by the deposition of abnormal fibrillar material in the anterior segment of the eye. It increases the risk of glaucoma (exfoliation glaucoma) and is associated with cataract progression. Variations in the LOXL1 gene are the major genetic risk factor." [PMID:10749381, PMID:31563608]
+comment: Please do not confuse with MONDO:1060284 exfoliation glaucoma, which is a secondary open-angle glaucoma that develops in only some individuals with exfoliation syndrome.
 subset: doid {source="DOID:13641"}
 subset: gard_rare {source="GARD:0027786", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C129025"}
 subset: ncit_rare {source="NCIT:C129025"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "XFG" RELATED ABBREVIATION [NCIT:C129025]
 synonym: "XFS" EXACT ABBREVIATION [NCIT:C129025]
 xref: DOID:13641 {source="EFO:0004235", source="MONDO:equivalentTo"}
 xref: EFO:0004235 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: GARD:0027786 {source="MONDO:GARD"}
+xref: MEDGEN:60133 {source="MONDO:equivalentTo"}
 xref: MESH:D017889 {source="EFO:0004235", source="MONDO:equivalentTo", source="DOID:13641"}
 xref: NCIT:C129025 {source="MONDO:equivalentTo"}
 xref: Orphanet:529819 {source="MONDO:equivalentObsolete"}
 xref: SCTID:44219007 {source="DOID:13641"}
+xref: UMLS:C0206368 {source="MEDGEN:60133", source="MONDO:equivalentTo"}
 is_a: MONDO:0002254 {source="NCIT:C129025"} ! syndromic disease
 is_a: MONDO:0002289 {source="DOID:13641", source="MESH:D017889"} ! iris disorder
 is_a: MONDO:0003847 {source="MONDO:Redundant"} ! hereditary disease
 relationship: excluded_subClassOf MONDO:0001554 {source="DOID:13641", source="NCIT:C129025", source="https://orcid.org/0000-0002-7638-4659"} ! phacogenic glaucoma
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6665 {source="PMID:31563608"} ! LOXL1
 property_value: curated_content_resource "https://www.malacards.org/card/exfoliation_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10449" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10798" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4882" xsd:anyURI
 
@@ -702438,14 +702440,16 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 id: MONDO:1060284
 name: exfoliation glaucoma
 def: "A secondary open-angle glaucoma that develops in individuals with exfoliation syndrome. Exfoliation syndrome is associated with raised intraocular pressure in up to 44% of patients, making it the most commonly identifiable cause of secondary open-angle glaucoma." [PMID:34662036, PMID:35074716]
+comment: Please do not confuse with MONDO:0008327 exfoliation syndrome, which is the underlying deposition disorder. Exfoliation glaucoma develops in only some individuals with exfoliation syndrome.
 synonym: "pseudoexfoliation glaucoma" EXACT [PMID:34662036]
 synonym: "XFG" EXACT ABBREVIATION [PMID:35074716, PMID:36278673]
 xref: ICD9:365.52 {source="MONDO:equivalentTo"}
 xref: SCTID:111514006 {source="MONDO:equivalentTo"}
 is_a: MONDO:0005338 {source="PMID:34662036", source="PMID:35074716"} ! open-angle glaucoma
-is_a: MONDO:1060277 {source="PMID:34662036", source="PMID:35074716"} ! secondary glaucoma
+is_a: MONDO:1060277 {source="PMID:10749381", source="PMID:34662036", source="PMID:35074716"} ! secondary glaucoma
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10449" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10798" xsd:anyURI
 
 [Term]
 id: MONDO:1060285
