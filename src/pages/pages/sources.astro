@@ -1,0 +1,34 @@
+---
+import Page from "../../layouts/Page.astro";
+import { loadYaml } from "../../lib/data";
+
+const sources = loadYaml<any[]>("sources.yaml");
+const roles = ["Source", "xref/Alignments", "linkouts"];
+const label: Record<string, string> = { Source: "Sources merged into Mondo", "xref/Alignments": "Cross-references and alignments", linkouts: "Linkouts" };
+---
+<Page title="Sources" eyebrow="About" intro="Mondo uses the following ontologies and resources as sources, or for cross-references (xrefs) and alignments." wide>
+  {roles.map((r) => (
+    <section class="role">
+      <h2>{label[r]} <span>{sources.filter((s) => s.role === r).length}</span></h2>
+      <div class="grid grid-3">
+        {sources.filter((s) => s.role === r).map((s) => (
+          <a class="card src" href={s.url}>
+            <h3>{s.name}</h3>
+            <p>{s.prefix.split(",").map((p: string) => <code>{p.trim()}</code>)}</p>
+            {s.historic && <span class="pill">Historic</span>}
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+  <div style="height:72px"></div>
+</Page>
+
+<style>
+  .role { padding: 44px 0 0; }
+  .role h2 { font-size: 1.35rem; display: flex; align-items: center; gap: 10px; }
+  .role h2 span { font-size: 0.85rem; background: var(--teal-deep); color: #fff; border-radius: 999px; padding: 1px 10px; }
+  .src h3 { font-size: 1rem; }
+  .src p { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .src .pill { margin-top: 10px; }
+</style>

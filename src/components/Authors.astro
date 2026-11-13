@@ -1,0 +1,24 @@
+---
+// Shows the first few authors, with the rest behind a toggle.
+interface Props { authors: string; show?: number }
+const { authors, show = 6 } = Astro.props;
+const list = authors.split(/,\s*/);
+const head = list.slice(0, show).join(", ");
+const rest = list.slice(show);
+---
+{rest.length === 0 ? (
+  <p class="authors">{authors}</p>
+) : (
+  <details class="authors">
+    <summary>{head}, <span class="et">+{rest.length} more</span></summary>
+    <span>{list.join(", ")}</span>
+  </details>
+)}
+
+<style>
+  .authors { font-size: 0.88rem; color: var(--ink-muted); margin: 6px 0 0; }
+  details.authors summary { cursor: pointer; list-style: none; }
+  details.authors summary::-webkit-details-marker { display: none; }
+  details.authors[open] summary { display: none; }
+  .et { color: var(--teal-deep); font-weight: 500; white-space: nowrap; }
+</style>

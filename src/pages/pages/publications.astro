@@ -1,0 +1,103 @@
+---
+import Page from "../../layouts/Page.astro";
+import Authors from "../../components/Authors.astro";
+import { loadYaml } from "../../lib/data";
+
+const pubs = loadYaml<any>("publications.yaml");
+const c = pubs.cite;
+const citation = `${c.authors}. ${c.title}. ${c.venue}. ${c.year}. https://doi.org/${c.doi}`;
+---
+<Page title="Publications" eyebrow="Publications & Talks" intro="Peer-reviewed papers, preprints and blog posts about the Mondo Disease Ontology." wide>
+  <section class="cite card">
+    <div>
+      <span class="pill">How to cite Mondo</span>
+      <h2><a href={c.url}>{c.title}</a></h2>
+      <p class="venue"><em>{c.venue}</em> ({c.year}) · doi:{c.doi}</p>
+      <Authors authors={c.authors} show={8} />
+    </div>
+    <div class="cite-actions">
+      <a class="btn btn-solid" href={c.url}>Read the paper</a>
+      <button class="btn btn-outline" id="copy" data-cite={citation}>Copy citation</button>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Manuscripts</h2>
+    <ol class="pubs">
+      {pubs.manuscripts.map((p: any) => (
+        <li>
+          <span class="year">{p.year}</span>
+          <div>
+            <h3><a href={p.url}>{p.title}</a></h3>
+            <p class="venue"><em>{p.venue}</em></p>
+            <Authors authors={p.authors} />
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="block two">
+    <div>
+      <h2>Related publications</h2>
+      <ol class="pubs">
+        {pubs.related.map((p: any) => (
+          <li>
+            <span class="year">{p.year ?? ""}</span>
+            <div>
+              <h3><a href={p.url}>{p.title}</a></h3>
+              {p.authors && <p class="authors">{p.authors}</p>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+    <div>
+      <h2>Blogs</h2>
+      <ul class="blogs">
+        {pubs.blogs.map((b: any) => (
+          <li>
+            <a href={b.url}>{b.title}</a>
+            <span>{b.authors}{b.date ? ` · ${b.date}` : ""}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Page>
+
+<style>
+  .cite { margin: 48px 0 0; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; border: 2px solid var(--teal); }
+  .cite h2 { font-size: 1.4rem; margin: 12px 0 4px; }
+  .cite h2 a { color: var(--ink); text-decoration: none; }
+  .cite h2 a:hover { color: var(--teal-deep); }
+  .cite-actions { display: flex; flex-direction: column; gap: 10px; }
+  .cite-actions button { font: inherit; cursor: pointer; background: none; }
+  @media (max-width: 760px) { .cite { grid-template-columns: 1fr; } .cite-actions { flex-direction: row; flex-wrap: wrap; } }
+  .venue { margin: 2px 0 0; font-size: 0.92rem; }
+  .block { padding: 48px 0 0; }
+  .block:last-of-type { padding-bottom: 72px; }
+  .block h2 { font-size: 1.5rem; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  @media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+  .pubs { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+  .pubs li { display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .pubs .year { font-weight: 600; color: var(--teal-deep); }
+  .pubs h3 { font-size: 1rem; margin: 0; font-weight: 500; }
+  .pubs h3 a { color: var(--ink); text-decoration: none; }
+  .pubs h3 a:hover { color: var(--teal-deep); text-decoration: underline; }
+  .authors { font-size: 0.88rem; color: var(--ink-muted); margin: 6px 0 0; }
+  .blogs { list-style: none; margin: 0; padding: 0; }
+  .blogs li { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .blogs a { font-weight: 500; }
+  .blogs span { display: block; font-size: 0.86rem; color: var(--ink-muted); }
+</style>
+
+<script>
+  const b = document.getElementById("copy") as HTMLButtonElement | null;
+  b?.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(b.dataset.cite!); b.textContent = "Copied!"; }
+    catch { b.textContent = "Copy failed"; }
+    setTimeout(() => (b.textContent = "Copy citation"), 2000);
+  });
+</script>

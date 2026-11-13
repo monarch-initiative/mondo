@@ -1,0 +1,127 @@
+---
+import Page from "../../layouts/Page.astro";
+import Icon from "../../components/Icon.astro";
+import { loadYaml, url } from "../../lib/data";
+
+const workshops = loadYaml<any[]>("workshops.yaml");
+const d = (s: string) => new Date(String(s) + "T12:00:00");
+const years = workshops.map((w) => d(w.date).getFullYear());
+
+// Minimal Markdown for descriptions: paragraphs, links and bold.
+const md = (s: string) =>
+  s.trim().split(/\n\s*\n/).map((p) =>
+    "<p>" +
+    p.replace(/&/g, "&amp;").replace(/</g, "&lt;")
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>') +
+    "</p>"
+  ).join("");
+const inline = (s: string) => md(s).replace(/^<p>|<\/p>$/g, "");
+---
+<Page title="Mondo Workshops" eyebrow="Community" intro="Expert workshops that shape how Mondo classifies disease, with agendas, slides, recordings and reports." wide>
+  <section class="ws-intro">
+    <p>
+      Mondo workshops bring together clinicians, curators and ontologists to review and improve specific areas of Mondo.
+      Looking for our monthly community talks? See the <a href={url("/pages/community-calls/")}>Mondo Community Calls</a>.
+    </p>
+    <dl class="glance">
+      <div><dt>Sessions</dt><dd>{workshops.length}</dd></div>
+      <div><dt>Running workshops</dt><dd>Since {Math.min(...years)}</dd></div>
+    </dl>
+  </section>
+
+  <ol class="ws-list">
+    {workshops.map((w) => (
+      <li id={w.id}>
+        <div class="badge" aria-hidden="true">
+          <span class="m">{d(w.date).toLocaleDateString("en-US", { month: "short" })}</span>
+          <span class="y">{d(w.date).getFullYear()}</span>
+        </div>
+        <article class="card ws" aria-labelledby={`${w.id}-title`}>
+          <span class="pill">{w.type}</span>
+          <h2 id={`${w.id}-title`}>{w.title}</h2>
+          <p class="summary">{w.summary}</p>
+
+          <ul class="meta">
+            <li><Icon name="calendar" /><span>{w.when.join(" · ")}</span></li>
+            {w.people && <li><Icon name="user" /><span>{w.people.label}: {w.people.names}</span></li>}
+            {w.location && <li><Icon name="pin" /><span>{w.location}</span></li>}
+          </ul>
+
+          {w.outcome && (
+            <p class="outcome"><Icon name="target" size={18} /><span><strong>Outcome:</strong> {w.outcome}</span></p>
+          )}
+
+          {w.resources?.length > 0 && (
+            <ul class="resources" aria-label={`Materials for ${w.title}`}>
+              {w.resources.map((r: any) => (
+                <li>
+                  <a class={`res res-${r.kind}`} href={r.url}>
+                    <Icon name={r.kind === "recording" ? "play" : r.kind} />
+                    {r.kind === "recording" && r.label.startsWith("Part") ? `Recording, ${r.label}` : r.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <details class="more-info">
+            <summary><Icon name="chevron" class="chev" />About this workshop</summary>
+            <div class="desc" set:html={md(w.description)} />
+            {w.funding && <p class="funding"><strong>Funding:</strong> <span set:html={inline(w.funding)} /></p>}
+          </details>
+        </article>
+      </li>
+    ))}
+  </ol>
+</Page>
+
+<style>
+  .ws-intro { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: center; padding: 44px 0 8px; }
+  .ws-intro p { margin: 0; font-size: 1.02rem; max-width: 62ch; }
+  @media (max-width: 860px) { .ws-intro { grid-template-columns: 1fr; } }
+  .glance { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0; }
+  .glance div { background: var(--teal-wash); border-radius: 12px; padding: 12px 16px; display: flex; flex-direction: column-reverse; }
+  .glance dt { font-size: 0.82rem; color: var(--ink-soft); }
+  .glance dd { margin: 0; font-size: 1.4rem; font-weight: 600; color: var(--teal-deep); line-height: 1.2; font-variant-numeric: tabular-nums; }
+
+  .ws-list { list-style: none; margin: 0; padding: 28px 0 72px; position: relative; display: grid; gap: 20px; }
+  .ws-list::before { content: ""; position: absolute; left: 31px; top: 40px; bottom: 80px; width: 2px; background: var(--teal-mist); }
+  .ws-list > li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 18px; align-items: start; scroll-margin-top: 96px; }
+  .badge { width: 64px; height: 64px; border-radius: 50%; background: var(--teal-deep); color: #fff; display: grid; place-content: center; text-align: center; line-height: 1.05; position: relative; z-index: 1; box-shadow: 0 0 0 5px #fff; }
+  .badge .m { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .badge .y { font-size: 0.95rem; font-weight: 600; }
+  @media (max-width: 560px) {
+    .ws-list::before { display: none; }
+    .ws-list > li { grid-template-columns: 1fr; gap: 8px; }
+    .badge { width: auto; height: auto; border-radius: 999px; padding: 4px 12px; display: inline-flex; gap: 6px; justify-self: start; box-shadow: none; }
+  }
+
+  .ws { padding: 24px 26px; }
+  .ws h2 { font-size: 1.25rem; margin: 10px 0 6px; text-wrap: balance; }
+  .ws .summary { font-size: 1rem; color: var(--ink); max-width: 70ch; }
+  .meta { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 6px; font-size: 0.9rem; color: var(--ink-soft); }
+  .meta li { display: flex; gap: 8px; align-items: flex-start; }
+  .meta .ico { margin-top: 3px; color: var(--teal-deep); }
+
+  .outcome { display: flex; gap: 10px; align-items: flex-start; margin: 16px 0 0 !important; padding: 12px 14px; border-radius: 10px; background: var(--teal-wash); color: var(--ink); font-size: 0.93rem; }
+  .outcome .ico { color: var(--teal-deep); margin-top: 2px; }
+
+  .resources { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .res { display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--teal-deep); color: var(--teal-deep); background: #fff; text-decoration: none; font-size: 0.87rem; font-weight: 500; }
+  .res:hover { background: var(--teal-deep); color: #fff; }
+  .res:focus-visible { outline: 3px solid var(--teal-deep); outline-offset: 2px; }
+  .res-recording { background: var(--teal-deep); color: #fff; }
+  .res-recording:hover { background: #003d43; border-color: #003d43; }
+
+  .more-info { margin-top: 18px; border-top: 1px solid var(--line); padding-top: 12px; }
+  .more-info summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 6px; color: var(--teal-deep); font-weight: 500; font-size: 0.92rem; border-radius: 6px; padding: 2px 4px; margin-left: -4px; }
+  .more-info summary::-webkit-details-marker { display: none; }
+  .more-info summary:focus-visible { outline: 3px solid var(--teal-deep); outline-offset: 2px; }
+  .more-info .chev { transition: transform 0.2s; }
+  .more-info[open] .chev { transform: rotate(180deg); }
+  .desc { max-width: 72ch; font-size: 0.95rem; }
+  .desc :global(p) { margin: 12px 0 0; }
+  .desc :global(a), .funding :global(a) { color: var(--teal-deep); }
+  .funding { font-size: 0.88rem; color: var(--ink-soft); margin-top: 12px !important; }
+</style>
