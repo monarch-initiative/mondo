@@ -374239,7 +374239,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0014970
 name: spermatogenic failure 17
-def: "Any spermatogenic failure in which the cause of the disease is a mutation in the PLCZ1 gene." [MONDO:patterns/disease_series_by_gene]
+def: "Any spermatogenic failure in which the cause of the disease is a variation in the PLCZ1 gene. It is characterized by male infertility due to acrosomal defects, causing oocyte activation deficiency resulting in total fertilization failure. Fertilization can be rescued by assisted oocyte activation." [MONDO:patterns/disease_series_by_gene, OMIM:617214]
 subset: doid {source="DOID:0070174"}
 subset: omim {source="OMIM:617214"}
 synonym: "male infertility due to oocyte activation failure" EXACT [OMIM:617214]
@@ -374250,12 +374250,11 @@ xref: MEDGEN:934633 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:617214 {source="MONDO:equivalentTo"}
 xref: UMLS:C4310666 {source="MEDGEN:934633", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0004983 {source="DC-OMIM:617214", source="DOID:0070174", source="MONDO:Redundant", source="OMIM:617214"} ! spermatogenic failure
-is_a: MONDO:1060234 {source="PMID:40572651", source="https://www.clinicalgenome.org/affiliation/40073/"} ! male infertility due to fertilization failure
+is_a: MONDO:1060234 {source="PMID:40572651", source="https://orcid.org/0000-0003-2745-9965", source="https://orcid.org/0000-0003-3828-8970", source="https://www.clinicalgenome.org/affiliation/40073/"} ! male infertility due to fertilization failure
 intersection_of: MONDO:0004983 ! spermatogenic failure
 intersection_of: disease_has_basis_in_dysfunction_of http://identifiers.org/hgnc/19218 ! PLCZ1
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/19218 ! PLCZ1
 relationship: disease_has_basis_in_dysfunction_of http://identifiers.org/hgnc/19218 ! PLCZ1
-relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/19218 {source="OMIM:617214"} ! PLCZ1
 property_value: curated_content_resource "https://www.malacards.org/card/spermatogenic_failure_17" xsd:anyURI {source="MONDO:MalaCards"}
 
@@ -543950,6 +543949,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/develop
 [Term]
 id: MONDO:0030989
 name: spermatogenic failure 53
+def: "Any spermatogenic failure in which the cause of the disease is a variation in the ACTL9 gene. It is characterized by oocyte fertilization failure due to lack of oocyte activation, associated with ultrastructural abnormalities of the sperm head." [OMIM:619258, PMID:33626338]
 subset: doid {source="DOID:0112279"}
 subset: omim {source="OMIM:619258"}
 synonym: "spermatogenic failure 53" EXACT [DOID:0112279, OMIM:619258]
@@ -543959,8 +543959,10 @@ xref: MEDGEN:1787013 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619258 {source="MONDO:equivalentTo"}
 xref: UMLS:C5543253 {source="MONDO:equivalentTo", source="MEDGEN:1787013", source="MONDO:MEDGEN"}
 is_a: MONDO:0004983 {source="DOID:0112279", source="OMIM:619258"} ! spermatogenic failure
+is_a: MONDO:1060234 {source="PMID:33626338", source="https://orcid.org/0000-0003-2745-9965", source="https://orcid.org/0000-0003-3828-8970", source="https://www.clinicalgenome.org/affiliation/40073/"} ! male infertility due to fertilization failure
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/28494 {source="OMIM:619258"} ! ACTL9
 property_value: curated_content_resource "https://www.malacards.org/card/spermatogenic_failure_53" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10154" xsd:anyURI
 
 [Term]
 id: MONDO:0030990
@@ -604313,6 +604315,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/combine
 [Term]
 id: MONDO:0859338
 name: spermatogenic failure 78
+def: "Any spermatogenic failure in which the cause of the disease is a variation in the IQCN gene. It is an autosomal recessive disorder characterized by male infertility caused by an abnormal acrosome structure resulting from a manchette assembly defect. The acrosome is detached from the nuclear envelope of affected sperm, resulting in fertilization failure. Defects in sperm flagellar assembly have also been observed." [OMIM:620170, PMID:37140151, PMID:37184908]
 subset: doid {source="DOID:0070577"}
 subset: omim {source="OMIM:620170"}
 xref: DOID:0070577 {source="MONDO:equivalentTo"}
@@ -604320,8 +604323,10 @@ xref: MEDGEN:1824049 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:620170 {source="MONDO:equivalentTo"}
 xref: UMLS:C5774276 {source="MEDGEN:1824049", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0004983 {source="DOID:0070577", source="OMIM:620170"} ! spermatogenic failure
+is_a: MONDO:1060234 {source="PMID:37184908", source="https://orcid.org/0000-0003-2745-9965", source="https://orcid.org/0000-0003-3828-8970", source="https://www.clinicalgenome.org/affiliation/40073/"} ! male infertility due to fertilization failure
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29350 {source="OMIM:620170"} ! IQCN
 property_value: curated_content_resource "https://www.malacards.org/card/spermatogenic_failure_78" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10154" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7693" xsd:anyURI
 
 [Term]
@@ -608213,6 +608218,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/neurode
 [Term]
 id: MONDO:0957593
 name: spermatogenic failure 86
+def: "Any spermatogenic failure in which the cause of the disease is a variation in the ACTL7A gene. It is characterized by male infertility due to acrosomal defects of the spermatozoa, resulting in oocyte activation deficiency and fertilization failure. Some oocytes exhibit early embryonic arrest after successful fertilization with patient sperm using assisted reproductive technology." [OMIM:620499]
 subset: doid {source="DOID:0070585"}
 subset: omim {source="OMIM:620499"}
 xref: DOID:0070585 {source="MONDO:equivalentTo"}
@@ -608221,8 +608227,10 @@ xref: OMIM:620499 {source="MONDO:equivalentTo"}
 xref: UMLS:C5882755 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1847370"}
 is_a: MONDO:0003847 {source="OMIM:620499"} ! hereditary disease
 is_a: MONDO:0004983 {source="DOID:0070585", source="OMIM:620499"} ! spermatogenic failure
+is_a: MONDO:1060234 {source="PMID:34727571", source="https://orcid.org/0000-0003-2745-9965", source="https://orcid.org/0000-0003-3828-8970", source="https://www.clinicalgenome.org/affiliation/40073/"} ! male infertility due to fertilization failure
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/161 {source="OMIM:620499"} ! ACTL7A
 property_value: curated_content_resource "https://www.malacards.org/card/spermatogenic_failure_86" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10154" xsd:anyURI
 
 [Term]
 id: MONDO:0957594
@@ -677605,7 +677613,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:1060234
 name: male infertility due to fertilization failure
-def: "A form of male infertility characterized by failure of oocyte activation following sperm-oocyte interaction, resulting in complete absence of fertilization (e.g., failure to form pronuclei) or severely reduced fertilization rate." [https://www.clinicalgenome.org/affiliation/40073/, PMID:40572651]
+def: "A form of male infertility characterized by failure or severely reduced efficiency of fertilization resulting from defects in sperm-oocyte interaction, sperm penetration or fusion, oocyte activation, or subsequent events required for normal pronuclear formation." [https://www.clinicalgenome.org/affiliation/40073/]
 is_a: MONDO:0005372 {source="PMID:40572651", source="https://www.clinicalgenome.org/affiliation/40073/"} ! male infertility
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10154" xsd:anyURI
