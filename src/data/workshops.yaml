@@ -1,0 +1,178 @@
+# Mondo workshops, shown on /pages/workshop/ (newest first).
+# Fields:
+#   id: anchor used in links (keep stable once published)
+#   title, type, date (YYYY-MM-DD, used for sorting and the date badge)
+#   when: list of display dates/times
+#   summary: one or two plain sentences shown on the card
+#   outcome: optional result of the workshop
+#   people: optional { label, names }
+#   location: optional
+#   resources: list of { kind, label, url }  kind = agenda | slides | recording | report | link
+#   description: full text (Markdown links and **bold** allowed), shown under "About this workshop"
+#   funding: optional
+
+- id: neuromuscular
+  title: Mondo Neuromuscular Disease Workshop
+  type: Workshop series
+  date: 2026-10-16
+  when:
+    - "Session 1: October 16, 2026"
+    - "Session 2: November 13, 2026"
+    - "Session 3: December 11, 2026"
+  summary: A three-session series reviewing how neuromuscular disease terms are classified in Mondo.
+  resources:
+    - { kind: agenda, label: Agenda and how to join, url: "https://docs.google.com/document/d/113fRe4ctmBnG8xUV65tPQmARt_4cYMYDJhdFdP4CDVg/edit" }
+  description: >-
+    The goal of this workshop series is to review the classification of neuromuscular disease terms in Mondo to ensure
+    that the branch is scientifically accurate, aligns with the current understanding of the disease features, and is
+    maximally useful for our users. The agenda includes information on how to join the workshop.
+  funding: "'Are all diseases n-of-1? Meaningful classification and characterization within and across rare diseases' (Chan Zuckerberg Initiative DAF2025-367759), 'Mondo: A community consensus knowledge base for computational disease definitions' (NHGRI 1U24HG014770) and the [Critical Path Institute](https://c-path.org/fda-acknowledgement/)"
+
+- id: Oct-2024
+  title: Mondo Epilepsy Workshop
+  type: Workshop series
+  date: 2024-10-25
+  when:
+    - "Part 1: October 25, 2024"
+    - "Part 2: November 22, 2024"
+    - "Part 3: January 17, 2025"
+  summary: A three-part series where experts reviewed how epilepsy terms are classified in Mondo.
+  resources:
+    - { kind: agenda, label: Agenda, url: "https://docs.google.com/document/d/1Cg6fSNXaC3PZGIEnWHq_R8InKkQ1J2wVgkpbbxHhLZY/edit" }
+    - { kind: slides, label: Slides, url: "https://docs.google.com/presentation/d/1mWdReVvXRyxz7AZzbdGaJdrMt_YDcLKi_9S3oacWhA8/edit#slide=id.g1050aaf62ea_0_607" }
+    - { kind: report, label: Summary report, url: "https://zenodo.org/records/14894999" }
+    - { kind: recording, label: Part 1, url: "https://www.youtube.com/watch?v=heVEumM5710" }
+    - { kind: recording, label: Part 2, url: "https://youtu.be/W_WC7QZsL0M?si=tsXpcN2E9Zo4q6zZ" }
+    - { kind: recording, label: Part 3, url: "https://youtu.be/_Nr42VNv_7Y?si=D5Qe9jMs0ps0O0cm" }
+  description: >-
+    The goal of this workshop series was to review the classification of terms in Mondo based on your expert opinions,
+    to ensure that the epilepsy branch is scientifically accurate, aligns with the current understanding of the disease
+    features, and is maximally useful for your projects.
+  funding: NHGRI Phenomics First (1RM1HG010860-01) and the [Critical Path Institute](https://c-path.org/fda-acknowledgement/)
+
+- id: june-2022
+  title: Using the Mondo Disease Ontology for Disease Data Curation
+  type: Conference workshop
+  date: 2022-06-08
+  when:
+    - June 8, 2022
+    - 9-10:30am PT / 12-1:30pm ET / 5-6:30pm UK / 6-7:30pm Europe
+  summary: An introduction to Mondo and disease curation best practices at the virtual Curating the Clinical Genome conference. 31 participants attended.
+  people: { label: Presenters, names: "Sabrina Toro, Nicole Vasilevsky, Nico Matentzoglu" }
+  resources:
+    - { kind: slides, label: Slides, url: "https://docs.google.com/presentation/d/1lRnASIv9zmrnmqJvCFRwnpYRPCL8tI4ImCmAXbQIJUc/edit#slide=id.p" }
+  description: |-
+    This workshop was presented at the virtual Curating the Clinical Genome conference. 31 participants attended. We introduced participants to Mondo, its advantages, and how it relates to other disease terminologies. The focus was on disease curation best practices, how to use Mondo to annotate disease data, where to find disease terms, what to do if required terms do not exist in Mondo, and how to request changes or improvements. Mondo is a collaborative and community-developed resource; workshop attendees learned how to contribute to Mondo. This workshop also introduced the Mondo ontology curation workflow, including new term creation, and how different user requests are reconciled (e.g. disease naming), term obsoletions and merges, and ontology releases. In addition, technical aspects of Mondo, including quality control and automated pipelines, were discussed.
+
+    Participants were polled at the beginning of the workshop about their usage and familiarity with Mondo. Participants were either very familiar with ontologies (8 respondents, 50%), or had heard about ontologies but didn't understand what they were (7 respondents, 44%); one respondent (6%) did not know what ontology is. Half of the respondents use ontologies for curation anytime possible (8 respondents, 50%), while the other half either occasionally use ontologies for curation (4 respondents, 25%) or do not use ontology for data curation (4 respondents, 25%).
+
+    Most respondents used Mondo for disease curation (7 respondents, 39%) or knew about Mondo but did not use it (7 respondents, 39%). 2 respondents used Mondo for disease annotations and were active members of the Mondo community, 2 respondents were Mondo users for reasons other than curation, and 1 respondent had never heard of Mondo.
+
+    Most respondents (13, 72%) had never requested changes to Mondo; the other respondents had either created GitHub issues (4 respondents) and/or contacted the Mondo team (3 respondents).
+
+- id: november-2021
+  title: Mondo Clinical Reclassification Workshop Part 2
+  type: Workshop
+  date: 2021-11-17
+  when:
+    - November 17, 2021
+    - 12-2pm PT / 3-5pm ET / 8-10pm UK / 9-11pm Europe
+  summary: A follow-up session proposing an updated top-level classification that more closely resembles the clinical view of diseases.
+  resources:
+    - { kind: report, label: Reclassification description, url: "https://zenodo.org/record/5273598" }
+  description: >-
+    This workshop is a follow-up to the Mondo Clinical Reclassification Workshop (April 2021). Mondo was reclassified to
+    create a clinical-centric view (see [description](https://zenodo.org/record/5273598)), however, many clinically useful
+    terms are still difficult to find as they are subClasses of general grouping terms such as "disease of anatomical
+    system". In this workshop, we proposed an updated top-level classification of Mondo which more closely resembles the
+    clinical view of diseases, and gathered stakeholders and community members for their comments, requests, and input.
+  funding: NHGRI Phenomics First (1RM1HG010860-01)
+
+- id: renal
+  title: Renal Disease and Phenotype Workshop
+  type: Workshop
+  date: 2021-07-14
+  when:
+    - July 14, 2021
+    - 2-3pm PT
+  summary: Kidney disease clinical experts discussed improvements to the "kidney disease" hierarchy in Mondo.
+  outcome: The kidney disease hierarchy will be revised to follow the classifications in Brenner and Rector's The Kidney.
+  people: { label: Hosts, names: "Nicole Vasilevsky (Mondo) and Peter Robinson (Human Phenotype Ontology)" }
+  resources:
+    - { kind: link, label: GitHub ticket, url: "https://github.com/monarch-initiative/mondo/issues/3282" }
+  description: >-
+    This workshop was hosted by Nicole Vasilevsky (Mondo) and Peter Robinson (Human Phenotype Ontology), and brought
+    together experts in kidney disease clinical care. We discussed improvements to classification of the
+    ['kidney disease' (MONDO:0005240)](https://www.ebi.ac.uk/ols/ontologies/mondo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMONDO_0005240)
+    hierarchy in Mondo. As an outcome of this meeting, the kidney disease hierarchy will be revised in accordance to the
+    classifications described in [Brenner and Rector's The Kidney](https://www.us.elsevierhealth.com/brenner-and-rectors-the-kidney-2-volume-set-9780323532655.html)
+    textbook. See the [GitHub ticket](https://github.com/monarch-initiative/mondo/issues/3282) for more details.
+  funding: NHGRI Phenomics First (1RM1HG010860-01)
+
+- id: june-2021
+  title: ClinGen Virtual Retreat 2021
+  type: Presentation
+  date: 2021-06-24
+  when:
+    - June 24, 2021
+    - 3:40-5:10pm ET
+  summary: "How ClinGen curators work with the Mondo Disease Ontology, presented at ClinGen's virtual retreat for contributors."
+  people: { label: Presenter, names: Nicole Vasilevsky }
+  resources:
+    - { kind: slides, label: Slides, url: "https://figshare.com/articles/presentation/Mondo_Disease_Ontology_How_ClinGen_curators_work_with_the_Mondo_Disease_Ontology_which_aims_to_harmonize_disease_definitions_across_the_world_/15101529" }
+    - { kind: recording, label: Recording, url: "https://www.youtube.com/watch?v=Qb0mr0YTPcI&list=PLrik3QIJ5Zvug1zD1C_Vl3P2Vzt3R6ces&index=9" }
+    - { kind: agenda, label: Retreat agenda, url: "https://clinicalgenome.org/about/events/clingen-retreat-2021/agenda/" }
+  description: >-
+    **Presentation title:** Mondo Disease Ontology (How ClinGen curators work with the Mondo Disease Ontology, which aims
+    to harmonize disease definitions across the world).
+    [ClinGen](https://clinicalgenome.org/) hosted a virtual retreat for all ClinGen contributors June 24-25, 2021. The
+    retreat provided the ClinGen community and collaborators with an event to learn about and share new and existing
+    work, as well as best practices across ClinGen. This presentation discussed the Mondo Disease Ontology, which is used
+    for gene-disease annotations by ClinGen curators.
+  funding: NHGRI Phenomics First (1RM1HG010860-01)
+
+- id: april-2021
+  title: Mondo Clinical Reclassification Workshop
+  type: Workshop
+  date: 2021-04-05
+  when:
+    - Monday, April 5, 2021
+    - 8-11am PT / 11am-2pm ET / 4-7pm UK / 5-8pm Europe
+  summary: Invited clinicians, ontologists and expert curators worked on the top-level classification of Mondo.
+  outcome: The Mondo hierarchy was revised to follow the classifications in Harrison's Principles of Internal Medicine.
+  resources:
+    - { kind: slides, label: Slides, url: "https://docs.google.com/presentation/d/1wlxXxha2QAXxF-nca8heVsSQ8ifkI9FO0GkKzJCbu3o/edit" }
+    - { kind: recording, label: Recording, url: "https://drive.google.com/file/d/1bksTsCk9RChMwvZ_7LMXymK1Yhfa91Ab/view?usp=sharing" }
+    - { kind: report, label: Report, url: "https://zenodo.org/record/5273598" }
+    - { kind: link, label: GitHub tickets, url: "https://github.com/monarch-initiative/mondo/issues?q=is%3Aopen+is%3Aissue+label%3A%22Harrison+reclassification%22" }
+  description: >-
+    A workshop with invited members of the community to work on the top-level classification of Mondo. The workshop
+    focused on semantic modeling of disease and defining ontology patterns. There is a great need for expert clinicians
+    to define clinically relevant navigational grouping classes. These top down and bottom up approaches need to meet in
+    the middle harmoniously. This workshop included clinicians and ontologists, as well as expert curators working on
+    genes for clinical utility. As an outcome of this meeting, the Mondo hierarchy was revised in accordance to the
+    classifications described in Harrison's Principles of Internal Medicine textbook. A report with a full description
+    of the workshop and outcomes is [available on Zenodo](https://zenodo.org/record/5273598).
+  funding: NHGRI Phenomics First (1RM1HG010860-01)
+
+- id: november-2018
+  title: Mondo Introductory Workshop
+  type: Workshop
+  date: 2018-11-01
+  when:
+    - November 2018
+  location: Broad Institute, Cambridge, MA
+  summary: Curators, clinicians and ontologists defined ontology patterns and community development processes for describing diseases.
+  resources:
+    - { kind: slides, label: Slides, url: "https://drive.google.com/drive/u/1/folders/1OV_3RCHk1GyDe2T1kobAF4aP7YD5ccfO" }
+    - { kind: link, label: More details, url: "https://monarch-initiative.github.io/phenomics/pages/mondo.html" }
+  description: >-
+    The workshop focused on defining ontology patterns and community development processes for ontological disease
+    descriptions. Specifically, there was a need to provision multiple attributes to a disease for computational
+    classification. The attributes need to take into account penetrance, expressivity, genetic variation, histology,
+    biomarkers, temporality, somatic and mosaic characteristics, environmental interactions, etc. There was a need to
+    enable expert curation groups such as in ClinGen, EBI, Orphanet, GARD, MedGen, and OMIM to create disease
+    definitions on the fly, capture the provenance and evidence robustly, and have an identifier for use immediately.
+    This workshop included invited curators, clinicians and ontologists and provided an opportunity to get an overview
+    of Mondo and the source terminologies, as well as networking opportunities.
+  funding: Phenomics BD2K Forums for Integrative Phenomics (1 U13 CA221044-01)

@@ -1,0 +1,80 @@
+---
+// Single-series horizontal bars of disease classes by type, from src/data/stats.md.
+import { loadStats, fmt } from "../lib/data";
+const { types } = loadStats();
+
+// Group rows under their depth-1 parent (Human / Non-human diseases).
+const groups: { name: string; total: number; rows: { label: string; count: number }[] }[] = [];
+for (const r of types) {
+  if (r.depth === 1) groups.push({ name: r.label, total: r.count, rows: [] });
+  else if (r.depth === 2 && groups.length) groups.at(-1)!.rows.push({ label: r.label, count: r.count });
+}
+const max = Math.max(...groups.flatMap((g) => g.rows.map((r) => r.count)));
+---
+<div class="bars-wrap">
+  {groups.map((g) => (
+    <div class="bar-group">
+      <h3>{g.name} <span>{fmt(g.total)} classes</span></h3>
+      <ul class="bars" role="list">
+        {g.rows.map((r) => (
+          <li tabindex="0" data-tip={`${g.name}: ${r.label}, ${fmt(r.count)} classes (${Math.round((r.count / g.total) * 100)}% of ${g.name.toLowerCase()})`}>
+            <span class="lbl">{r.label}</span>
+            <span class="track"><span class="fill" style={`--w:${(r.count / max) * 100}%`}></span></span>
+            <span class="val">{fmt(r.count)}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+  <div class="tip" role="status" aria-live="polite" hidden></div>
+</div>
+<details class="table-view">
+  <summary>View as a table</summary>
+  <table class="table">
+    <thead><tr><th>Category</th><th style="text-align:right">Count (classes)</th></tr></thead>
+    <tbody>
+      {types.map((r) => (
+        <tr><td style={`padding-left:${14 + r.depth * 18}px;font-weight:${r.depth < 2 ? 600 : 400}`}>{r.label}</td><td style="text-align:right">{fmt(r.count)}</td></tr>
+      ))}
+    </tbody>
+  </table>
+</details>
+<p class="note">Categories overlap (a disease can be both rare and Mendelian). Susceptibilities are not included in these counts.</p>
+
+<style>
+  .bars-wrap { position: relative; display: grid; gap: 28px; }
+  .bar-group h3 { font-size: 1rem; margin: 0 0 10px; }
+  .bar-group h3 span { font-weight: 400; color: var(--ink-muted); font-size: 0.9rem; margin-left: 6px; }
+  .bars { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .bars li { display: grid; grid-template-columns: 96px 1fr 64px; align-items: center; gap: 12px; padding: 6px 8px; margin: 0 -8px; border-radius: 8px; cursor: default; outline: none; }
+  .bars li:hover, .bars li:focus-visible { background: var(--teal-wash); }
+  .lbl { font-size: 0.92rem; color: var(--ink); }
+  .val { font-size: 0.92rem; text-align: right; font-variant-numeric: tabular-nums; color: var(--ink); }
+  .track { height: 14px; }
+  .fill { display: block; height: 100%; width: var(--w); background: var(--teal); border-radius: 0 4px 4px 0; transform-origin: left; animation: grow 1s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes grow { from { transform: scaleX(0); } }
+  .tip { position: absolute; pointer-events: none; background: #1f2d30; color: #fff; font-size: 0.82rem; padding: 6px 10px; border-radius: 6px; white-space: nowrap; transform: translate(-50%, -120%); z-index: 2; }
+  .table-view { margin-top: 20px; }
+  .table-view summary { cursor: pointer; color: var(--teal-deep); font-weight: 500; font-size: 0.92rem; }
+  .table-view .table { margin-top: 12px; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .note { font-size: 0.82rem; color: var(--ink-muted); margin: 12px 0 0; }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".bars-wrap").forEach((wrap) => {
+    const tip = wrap.querySelector<HTMLElement>(".tip")!;
+    const show = (li: HTMLElement, x: number, y: number) => {
+      tip.textContent = li.dataset.tip!;
+      tip.hidden = false;
+      const b = wrap.getBoundingClientRect();
+      tip.style.left = `${Math.min(Math.max(x - b.left, 140), b.width - 140)}px`;
+      tip.style.top = `${y - b.top}px`;
+    };
+    wrap.querySelectorAll<HTMLElement>(".bars li").forEach((li) => {
+      li.addEventListener("mousemove", (e) => show(li, e.clientX, e.clientY));
+      li.addEventListener("focus", () => { const r = li.getBoundingClientRect(); show(li, r.left + r.width / 2, r.top); });
+      li.addEventListener("mouseleave", () => (tip.hidden = true));
+      li.addEventListener("blur", () => (tip.hidden = true));
+    });
+  });
+</script>

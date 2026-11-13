@@ -1,0 +1,139 @@
+---
+import Page from "../../layouts/Page.astro";
+import Icon from "../../components/Icon.astro";
+import { url } from "../../lib/data";
+import { GOVERNANCE_LIVE, governance } from "../../lib/governance";
+
+const editions = [
+  { id: "international", name: "International edition", file: "mondo-international.owl", href: "https://purl.obolibrary.org/obo/mondo/mondo-international.owl", fmt: "OWL",
+    desc: "Like the main OWL edition, plus language translations.",
+    note: 'Created in 2025 for the first community-curated translation, <a href="https://github.com/dbcls/mondo-japanese">Japanese</a>, led by Toyofumi Fujiwara and Terue Takatsuki for the <a href="https://dbcls.rois.ac.jp/index-en.html">Database Center for Life Science</a> (DBCLS).' },
+  { id: "rare", name: "Rare disease subset", file: "mondo-rare.owl", href: "https://purl.obolibrary.org/obo/mondo/subsets/mondo-rare.owl", fmt: "OWL",
+    desc: "All human rare diseases, as designated by a rare disease authoritative resource such as GARD, NORD or Orphanet.",
+    note: `Each term records which authority calls it rare (<code>gard_rare</code>, <code>nord_rare</code>, <code>orphanet_rare</code>). <a href="${url("/pages/rare-disease/")}">More on rare diseases in Mondo</a>.` },
+  { name: "OBO-format edition", file: "mondo.obo", href: "https://purl.obolibrary.org/obo/mondo.obo", fmt: "OBO",
+    desc: "As OWL, but omits equivalence axioms. xrefs can be used as a proxy for equivalence. Uses Mondo IDs." },
+  { name: "JSON edition", file: "mondo.json", href: "https://purl.obolibrary.org/obo/mondo.json", fmt: "JSON",
+    desc: "Equivalent to the OWL edition." },
+];
+
+const viewers = [
+  { name: "Ontology Lookup Service (OLS)", href: "https://www.ebi.ac.uk/ols4/ontologies/mondo", note: "Updated about one week after each release" },
+  { name: "Monarch Initiative", href: "https://monarchinitiative.org/disease/MONDO:0000001", note: "Updated about one week after each release" },
+  { name: "BioPortal", href: "https://bioportal.bioontology.org/ontologies/MONDO" },
+  { name: "OBO Foundry", href: "http://obofoundry.org/ontology/mondo.html" },
+  { name: "AberOWL", href: "http://aber-owl.net/ontology/MONDO/#/" },
+  { name: "Ontobee" },
+];
+---
+<Page title="Download Mondo" eyebrow="Downloads" intro="Stable releases in OWL, OBO and JSON. Free to use under CC BY 4.0." wide>
+  <section class="hero-dl" aria-labelledby="main-owl">
+    <div>
+      <p class="eyebrow">Start here</p>
+      <h2 id="main-owl">Main OWL edition</h2>
+      <p>The complete ontology, plus inter-ontology equivalence axioms. Uses Mondo IDs.</p>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-solid big" href="https://purl.obolibrary.org/obo/mondo.owl">
+        <Icon name="download" size={18} /> Download mondo.owl
+      </a>
+      <a class="btn btn-outline" href="https://github.com/monarch-initiative/mondo/releases/latest">
+        <Icon name="github" size={18} /> Latest release on GitHub
+      </a>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="editions">
+    <h2 id="editions">Other editions</h2>
+    <p class="sub">Each link is a permanent URL (PURL) that always points to the latest stable release.</p>
+    <ul class="editions">
+      {editions.map((e: any) => (
+        <li id={e.id}>
+          <div class="ed-text">
+            <h3>{e.name} <span class="fmt">{e.fmt}</span></h3>
+            <p>{e.desc}</p>
+            {e.note && <p class="note" set:html={e.note} />}
+          </div>
+          <a class="dl" href={e.href}>
+            <Icon name="download" />
+            <span class="file">{e.file}</span>
+            <span class="sr">, download {e.name}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="block" aria-labelledby="browse">
+    <h2 id="browse">Browse Mondo online</h2>
+    <ul class="viewers">
+      {viewers.map((v) => (
+        <li>
+          {v.href ? <a href={v.href}>{v.name} <Icon name="external" size={14} /></a> : <span class="plain">{v.name}</span>}
+          {v.note && <span>{v.note}</span>}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="help" aria-label="Help">
+    <div>
+      <Icon name="book" size={22} />
+      <p><strong>Documentation:</strong> the {GOVERNANCE_LIVE
+        ? <a href={governance.home}>Mondo Governance and Operations documentation</a>
+        : <a href="https://mondo.readthedocs.io/en/latest/">Mondo Editor's Guide</a>} and the <a href="https://monarch-initiative.github.io/mondo-ingest/">Mondo Ingest Guide</a>.</p>
+    </div>
+    <div>
+      <Icon name="bug" size={22} />
+      <p><strong>Found a problem or need a new term?</strong> Report issues, bugs, new term requests and changes on the <a href="https://github.com/monarch-initiative/mondo/issues">GitHub tracker</a>.</p>
+    </div>
+  </section>
+</Page>
+
+<style>
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  .hero-dl { margin: 44px 0 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 40px; align-items: center; padding: 28px 32px; border-radius: var(--radius-lg); background: var(--teal-wash); border: 1px solid var(--teal-mist); }
+  .hero-dl h2 { margin: 0 0 6px; font-size: 1.5rem; }
+  .hero-dl p { margin: 0; max-width: 60ch; }
+  .hero-dl .eyebrow { color: var(--teal-deep); margin-bottom: 6px; }
+  .hero-actions { display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
+  .hero-actions .btn { justify-content: center; }
+  .btn.big { padding: 14px 26px; font-size: 1rem; }
+  .hero-actions .btn-solid { background: var(--teal-deep); }
+  .hero-actions .btn-solid:hover { background: #003d43; }
+  .hero-actions .btn-outline { border-color: var(--teal-deep); color: var(--teal-deep); background: #fff; }
+  .hero-actions .btn-outline:hover { background: var(--teal-deep); color: #fff; }
+  .btn:focus-visible, .dl:focus-visible { outline: 3px solid var(--teal-deep); outline-offset: 3px; }
+  @media (max-width: 760px) { .hero-dl { grid-template-columns: 1fr; padding: 22px; } }
+
+  .block { padding: 48px 0 0; }
+  .block h2 { font-size: 1.35rem; margin: 0 0 4px; }
+  .sub { margin: 0 0 16px; color: var(--ink-soft); font-size: 0.93rem; }
+
+  .editions { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .editions li { scroll-margin-top: 96px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 32px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .editions h3 { font-size: 1.02rem; margin: 0 0 2px; display: flex; align-items: center; gap: 10px; }
+  .editions p { margin: 0; color: var(--ink); max-width: 70ch; }
+  .editions .note { margin-top: 6px; font-size: 0.86rem; color: var(--ink-soft); }
+  .editions .note :global(a) { color: var(--teal-deep); }
+  .fmt { font-family: var(--mono); font-size: 0.75rem; font-weight: 700; color: var(--teal-deep); background: var(--teal-wash); padding: 1px 8px; border-radius: 4px; }
+  .dl { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; border: 1px solid var(--teal-deep); color: var(--teal-deep); text-decoration: none; font-family: var(--mono); font-size: 0.85rem; white-space: nowrap; }
+  .dl:hover { background: var(--teal-deep); color: #fff; }
+  @media (max-width: 640px) { .editions li { grid-template-columns: 1fr; } .dl { justify-self: start; } }
+
+  .viewers { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 32px; }
+  .viewers li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .viewers a { display: inline-flex; align-items: center; gap: 5px; color: var(--teal-deep); font-weight: 500; }
+  .viewers .plain { display: inline; font-weight: 500; color: var(--ink); font-size: inherit; }
+  .viewers span:not(.plain) { display: block; font-size: 0.84rem; color: var(--ink-soft); }
+  @media (max-width: 860px) { .viewers { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .viewers { grid-template-columns: 1fr; } }
+
+  .help { margin: 56px 0 72px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 40px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .help div { display: flex; gap: 14px; align-items: flex-start; }
+  .help .ico { color: var(--teal-deep); margin-top: 2px; flex-shrink: 0; }
+  .help p { margin: 0; font-size: 0.95rem; }
+  .help a { color: var(--teal-deep); }
+  @media (max-width: 760px) { .help { grid-template-columns: 1fr; } }
+</style>

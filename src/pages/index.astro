@@ -1,0 +1,341 @@
+---
+import Base from "../layouts/Base.astro";
+import Icon from "../components/Icon.astro";
+import NetBg from "../components/NetBg.astro";
+import SourceHub from "../components/SourceHub.astro";
+import DiseaseBars from "../components/DiseaseBars.astro";
+import { loadStats, loadYaml, fmt, url } from "../lib/data";
+
+const { metrics, types } = loadStats();
+const get = (rows: typeof metrics, label: string) => rows.find((r) => r.label.toLowerCase() === label.toLowerCase())?.count ?? 0;
+const synonyms = metrics.filter((m) => /synonyms$/i.test(m.label)).reduce((a, m) => a + m.count, 0);
+const rare = types.find((r) => r.label === "Rare")?.count ?? 0;
+
+const stats = [
+  { n: get(metrics, "Total number of diseases"), label: "Disease concepts" },
+  { n: get(metrics, "Database cross references"), label: "Database cross-references" },
+  { n: synonyms, label: "Synonyms" },
+  { n: rare, label: "Rare human diseases" },
+];
+const synRows = metrics.filter((m) => /synonyms$/i.test(m.label));
+const defs = get(metrics, "Term definitions");
+
+const users = loadYaml<{ name: string; url: string }[]>("users.yaml");
+const sources = loadYaml<any[]>("sources.yaml");
+const calls = loadYaml<any[]>("community-calls.yaml");
+const latest = calls[0];
+const latestDate = new Date(latest.date + "T12:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+const pubs = loadYaml<any>("publications.yaml");
+---
+<Base>
+  <!-- Hero -->
+  <section class="hero">
+    <NetBg seed={11} nodes={60} />
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Mondo Disease Ontology</p>
+        <h1>The world's disease concepts, <span>unified.</span></h1>
+        <p class="hero-lede">
+          Mondo harmonizes disease definitions from more than 20 resources into one open, logic-based ontology.
+          The name comes from the Latin <em>mundus</em>: "for the world."
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href={url("/pages/download/")}>Get Mondo</a>
+          <a class="btn btn-ghost" href="https://www.ebi.ac.uk/ols4/ontologies/mondo">Browse in OLS</a>
+          <a class="btn btn-ghost" href="https://monarchinitiative.org/disease/MONDO:0000001">Browse in the Monarch Knowledge Graph</a>
+        </div>
+        <p class="hero-meta">Free and open under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · OWL, OBO and JSON</p>
+      </div>
+      <div class="hero-visual">
+        <SourceHub />
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-band" aria-label="Mondo at a glance">
+    <div class="container stats">
+      {stats.map((s) => (
+        <div class="stat">
+          <span class="num" data-count={s.n}>{fmt(s.n)}</span>
+          <span class="lbl">{s.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section class="section">
+    <div class="container">
+      <div class="why">
+        <div>
+          <p class="eyebrow">Why Mondo</p>
+          <h2>Disease data is scattered. Mondo connects it.</h2>
+          <p class="lede">
+            HPO, OMIM, SNOMED CT, ICD, PhenoDB, MedDRA, MedGen, Orphanet, DO, GARD and more all describe diseases.
+            They partially overlap and sometimes conflict. Loose mappings between them are expensive to maintain
+            and often inconsistent, especially for fast-evolving areas like rare disease.
+          </p>
+          <p class="lede">
+            Mondo fills that gap with a unified terminology that provides <strong>precise equivalences</strong> between disease concepts.
+          </p>
+        </div>
+        <div class="grid feature-grid">
+          <div class="card">
+            <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+            <h3>Precise 1:1 mappings</h3>
+            <p>Curated equivalence axioms, validated by OWL reasoning, make it safe to propagate data across OMIM, Orphanet, EFO and DOID.</p>
+          </div>
+          <div class="card">
+            <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v5M12 12l-6 5M12 12l6 5"/></svg></div>
+            <h3>A real hierarchy</h3>
+            <p>Classify or "roll up" diseases into higher-level groupings. Development is coordinated with the Human Phenotype Ontology (HPO).</p>
+          </div>
+          <div class="card">
+            <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h3>Built by the community</h3>
+            <p>Clinicians, curators and ontologists shape Mondo through GitHub, community calls and expert workshops.</p>
+          </div>
+          <div class="card">
+            <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <h3>Human and animal</h3>
+            <p>Covers {fmt(types.find((t) => t.label === "Human diseases")?.count ?? 0)} human and {fmt(types.find((t) => t.label === "Non-human diseases")?.count ?? 0)} non-human disease classes, with a Japanese translation in the international edition.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coverage -->
+  <section class="section tint" id="stats">
+    <div class="container">
+      <p class="eyebrow">What's inside</p>
+      <h2>Broad, deep disease coverage</h2>
+      <p class="lede">Counts from the latest release. See every release and its statistics on <a href="https://github.com/monarch-initiative/mondo/releases/latest">GitHub</a>.</p>
+      <div class="coverage">
+        <div class="card"><DiseaseBars /></div>
+        <div class="card richness">
+          <h3>Rich terms, not just labels</h3>
+          <p class="big"><strong>{fmt(defs)}</strong> term definitions</p>
+          <p class="big"><strong>{fmt(synonyms)}</strong> synonyms, typed by scope:</p>
+          <ul class="syn">
+            {synRows.map((r) => <li><span>{r.label.replace(/ synonyms$/i, "")}</span><strong>{fmt(r.count)}</strong></li>)}
+          </ul>
+          <details class="syn-help">
+            <summary>What do the synonym scopes mean?</summary>
+            <dl>
+              <dt>Exact</dt><dd>Means exactly the same as the primary label, e.g. <em>hereditary Wilms tumor</em> = "familial Wilms tumor".</dd>
+              <dt>Narrow</dt><dd>More specific than the primary label, e.g. <em>asthma</em> has narrow synonym "exercise-induced asthma".</dd>
+              <dt>Broad</dt><dd>May encompass other concepts too, e.g. <em>autoimmune hepatitis</em> has broad synonym "autoimmune liver disease".</dd>
+              <dt>Related</dt><dd>Used synonymously in the literature, though not strictly correct, e.g. <em>Brugada syndrome</em> and "sudden unexpected nocturnal death syndrome".</dd>
+            </dl>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it was built -->
+  <section class="section">
+    <div class="container how">
+      <div>
+        <p class="eyebrow">How Mondo was created</p>
+        <h2>Merged by machine, refined by experts</h2>
+        <p>
+          Mondo is a semi-automatically constructed ontology that merges multiple disease resources into one coherent ontology.
+          Early versions were built entirely automatically using source IDs. Later, manually curated cross-ontology axioms were added,
+          along with a native Mondo ID system to avoid confusion with source databases.
+        </p>
+        <p>Today Mondo integrates <a href={url("/pages/sources/")}>{sources.length} resources</a> and is released as stable versions in OWL, OBO and JSON.</p>
+        <a class="btn btn-solid" href={url("/pages/download/")}>See all downloads</a>
+      </div>
+      <ol class="steps">
+        <li><strong>Merge</strong><span>Sources like OMIM, Orphanet, NCIT, DO and GARD are merged in.</span></li>
+        <li><strong>Axiomatize</strong><span>Curators add precise equivalence axioms, checked by OWL reasoning.</span></li>
+        <li><strong>Classify</strong><span>Diseases are organized into a clinically useful hierarchy.</span></li>
+        <li><strong>Release</strong><span>Stable Mondo IDs ship in OWL, OBO and JSON editions.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Users -->
+  <section class="section tint">
+    <div class="container center">
+      <p class="eyebrow">Trusted across the community</p>
+      <h2>Who uses Mondo</h2>
+      <p class="lede">From clinical variant curation to drug repurposing, {users.length}+ organizations build on Mondo.</p>
+    </div>
+    <div class="marquee" aria-label="Organizations that use Mondo">
+      {[0, 1].map((dup) => (
+        <ul aria-hidden={dup === 1 ? "true" : undefined}>
+          {users.map((u) => <li>{u.url
+            ? <a href={u.url} tabindex={dup === 1 ? -1 : undefined}>{u.name.replace(/\s*\(.*?\)\s*$/, "")}</a>
+            : <span>{u.name.replace(/\s*\(.*?\)\s*$/, "")}</span>}</li>)}
+        </ul>
+      ))}
+    </div>
+    <div class="container center" style="margin-top:28px">
+      <a class="btn btn-outline" href={url("/pages/users/")}>See all users</a>
+    </div>
+  </section>
+
+  <!-- Get involved -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Get involved</p>
+      <h2>Join the Mondo community</h2>
+      <p class="lede">Mondo is a collaborative, community-developed resource. Here is how to take part.</p>
+      <div class="grid grid-4">
+        <a class="card" href={url("/pages/community-calls/")}>
+          <span class="pill">Latest community call</span>
+          <h3 style="margin-top:12px">{latest.topic}</h3>
+          <p>{latest.presenters}{latest.org ? ` (${latest.org})` : ""} · {latestDate}</p>
+          <span class="more">All community calls <Icon name="arrow-right" /></span>
+        </a>
+        <a class="card" href={url("/pages/workshop/")}>
+          <span class="pill">Workshops</span>
+          <h3 style="margin-top:12px">Shape the hierarchy with experts</h3>
+          <p>From epilepsy to renal disease, workshops bring clinicians and ontologists together to improve Mondo.</p>
+          <span class="more">Past workshops <Icon name="arrow-right" /></span>
+        </a>
+        <a class="card" href={url("/pages/rare-disease/")}>
+          <span class="pill alt">Rare diseases</span>
+          <h3 style="margin-top:12px">300 million people</h3>
+          <p>Mondo brings together the world's rare disease resources to help shorten diagnostic odysseys.</p>
+          <span class="more">Rare diseases in Mondo <Icon name="arrow-right" /></span>
+        </a>
+        <a class="card" href="https://github.com/monarch-initiative/mondo/issues">
+          <span class="pill">Contribute</span>
+          <h3 style="margin-top:12px">Request a term or report an issue</h3>
+          <p>The best way to contribute is by addressing tickets or reporting issues on the GitHub tracker.</p>
+          <span class="more">Open the tracker <Icon name="arrow-right" /></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cite -->
+  <section class="cite-band">
+    <NetBg seed={5} nodes={30} />
+    <div class="container cite-inner">
+      <div>
+        <p class="eyebrow">Cite Mondo</p>
+        <h2>{pubs.cite.title}</h2>
+        <p>Vasilevsky NA, Toro S, Matentzoglu N, et al. <em>{pubs.cite.venue.split(",")[0]}</em>, {pubs.cite.year}. doi:{pubs.cite.doi}</p>
+      </div>
+      <div class="cite-actions">
+        <a class="btn btn-primary" href={pubs.cite.url}>Read the paper</a>
+        <button class="btn btn-ghost" id="copy-cite" data-cite={`Vasilevsky NA, Toro S, Matentzoglu N, et al. ${pubs.cite.title}. ${pubs.cite.venue}. ${pubs.cite.year}. https://doi.org/${pubs.cite.doi}`}>Copy citation</button>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--band) 0%, var(--band-deep) 100%); color: #fff; padding: 64px 0 56px; }
+  /* Fade the background network out before it reaches the source diagram, so the two don't compete. */
+  .hero :global(.net-bg) {
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 28%, transparent 55%);
+    mask-image: linear-gradient(90deg, #000 0%, #000 28%, transparent 55%);
+  }
+  @media (max-width: 900px) {
+    .hero :global(.net-bg) {
+      -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 30%, transparent 52%);
+      mask-image: linear-gradient(180deg, #000 0%, #000 30%, transparent 52%);
+    }
+  }
+  .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; }
+  .hero h1 { color: #fff; font-size: clamp(2.2rem, 5vw, 3.5rem); margin: 0 0 18px; letter-spacing: -0.01em; }
+  .hero h1 span { color: var(--on-band-accent); }
+  .hero .eyebrow { color: var(--on-band-accent); }
+  .hero-lede { font-size: 1.15rem; color: #e3f6f8; max-width: 560px; margin: 0 0 28px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero-meta { margin: 22px 0 0; font-size: 0.85rem; color: var(--on-band); }
+  .hero-meta a { color: #fff; }
+  .hero-visual { max-width: 540px; justify-self: center; width: 100%; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-visual { max-width: 460px; } }
+
+  .stats-band { background: #fff; border-bottom: 1px solid var(--line); }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat { padding: 32px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: 0; }
+  .stat .num { display: block; font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-weight: 700; color: var(--teal-deep); font-variant-numeric: tabular-nums; line-height: 1.1; }
+  .stat .lbl { display: block; margin-top: 6px; font-size: 0.9rem; color: var(--ink-muted); }
+  @media (max-width: 700px) { .stats { grid-template-columns: 1fr 1fr; } .stat:nth-child(2) { border-right: 0; } .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); } }
+
+  .why { display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; align-items: start; }
+  .why .lede { margin-bottom: 16px; }
+  .feature-grid { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 900px) { .why { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .feature-grid { grid-template-columns: 1fr; } }
+
+  .coverage { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; align-items: start; }
+  @media (max-width: 900px) { .coverage { grid-template-columns: 1fr; } }
+  .richness .big { font-size: 1rem; margin: 10px 0; }
+  .richness .big strong { color: var(--teal-deep); font-size: 1.5rem; margin-right: 4px; }
+  .syn { list-style: none; padding: 0; margin: 8px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .syn li { display: flex; justify-content: space-between; background: var(--teal-wash); border-radius: 8px; padding: 8px 12px; font-size: 0.9rem; }
+  .syn-help { margin-top: 16px; font-size: 0.88rem; }
+  .syn-help summary { cursor: pointer; color: var(--teal-deep); font-weight: 500; }
+  .syn-help dt { font-weight: 600; margin-top: 10px; color: var(--ink); }
+  .syn-help dd { margin: 2px 0 0; }
+
+  .how { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  @media (max-width: 900px) { .how { grid-template-columns: 1fr; } }
+  .steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 14px; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 48px 1fr; grid-template-rows: auto auto; column-gap: 16px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow); }
+  .steps li::before { content: counter(s); grid-row: span 2; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--teal-deep); color: #fff; font-weight: 600; }
+  .steps strong { color: var(--ink); }
+  .steps span { font-size: 0.93rem; }
+
+  .marquee { overflow: hidden; display: flex; gap: 12px; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .marquee ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 12px; flex-shrink: 0; animation: scroll 70s linear infinite; }
+  .marquee:hover ul { animation-play-state: paused; }
+  .marquee li a, .marquee li span { display: block; white-space: nowrap; padding: 12px 20px; background: #fff; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+  .marquee li a:hover { border-color: var(--teal); color: var(--teal-deep); }
+  @keyframes scroll { to { transform: translateX(calc(-100% - 12px)); } }
+  @media (prefers-reduced-motion: reduce) { .marquee { flex-wrap: wrap; justify-content: center; mask-image: none; } .marquee ul { flex-wrap: wrap; justify-content: center; flex-shrink: 1; } .marquee ul[aria-hidden] { display: none; } }
+
+  .cite-band { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--band-deep), var(--band)); color: var(--on-band); padding: 56px 0; }
+  .cite-inner { position: relative; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between; }
+  .cite-band h2 { color: #fff; margin: 0 0 8px; font-size: clamp(1.3rem, 2.6vw, 1.8rem); max-width: 720px; }
+  .cite-band .eyebrow { color: var(--on-band-accent); }
+  .cite-band p { margin: 0; }
+  .cite-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .cite-actions button { font: inherit; cursor: pointer; background: none; }
+</style>
+
+<script>
+  // Count-up animation for the stat band.
+  const nums = document.querySelectorAll<HTMLElement>(".stat .num");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target as HTMLElement;
+        const target = Number(el.dataset.count);
+        const t0 = performance.now();
+        const tick = (t: number) => {
+          const p = Math.min((t - t0) / 1400, 1);
+          el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))).toLocaleString("en-US");
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        io.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    nums.forEach((n) => io.observe(n));
+  }
+
+  const copy = document.getElementById("copy-cite") as HTMLButtonElement | null;
+  copy?.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(copy.dataset.cite!);
+      copy.textContent = "Copied!";
+    } catch {
+      copy.textContent = "Copy failed";
+    }
+    setTimeout(() => (copy.textContent = "Copy citation"), 2000);
+  });
+</script>

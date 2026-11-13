@@ -1,0 +1,64 @@
+---
+import Page from "../../layouts/Page.astro";
+import Icon from "../../components/Icon.astro";
+import { loadYaml } from "../../lib/data";
+
+const talks = loadYaml<any[]>("presentations.yaml");
+const years = [...new Set(talks.map((t) => t.year))].sort((a, b) => b - a);
+const types = [...new Set(talks.map((t) => (/poster/i.test(t.type) ? "Poster" : /keynote/i.test(t.type) ? "Keynote" : "Talk")))];
+const kind = (t: any) => (/poster/i.test(t.type) ? "Poster" : /keynote/i.test(t.type) ? "Keynote" : "Talk");
+---
+<Page title="Presentations" eyebrow="Publications & Talks" intro="Talks, keynotes and posters about Mondo from the team and our collaborators." wide>
+  <div class="filters" role="group" aria-label="Filter by type">
+    <button class="chip active" data-filter="all">All ({talks.length})</button>
+    {types.map((t) => <button class="chip" data-filter={t}>{t}s ({talks.filter((x) => kind(x) === t).length})</button>)}
+  </div>
+
+  {years.map((y) => (
+    <section class="year-block" data-year={y}>
+      <h2>{y}</h2>
+      <div class="grid grid-2">
+        {talks.filter((t) => t.year === y).map((t) => (
+          <article class="card talk" data-kind={kind(t)}>
+            <span class={`pill${kind(t) === "Poster" ? " alt" : ""}`}>{t.type}</span>
+            <h3>{t.url ? <a href={t.url}>{t.title}</a> : t.title}</h3>
+            <p class="who">{t.who}</p>
+            <p class="event">{t.event}{t.date ? ` · ${t.date}` : ""}</p>
+            {t.extra && (
+              <p class="extra">{t.extra.map((e: any) => <a href={e.url}>{e.label} <Icon name="external" size={14} /></a>)}</p>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  ))}
+  <p class="outro">Looking for community talks? See the <a href="/pages/community-calls/">Mondo Community Calls</a>.</p>
+</Page>
+
+<style>
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; padding: 36px 0 8px; }
+  .chip { font: inherit; font-size: 0.88rem; padding: 7px 16px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; }
+  .chip:hover { border-color: var(--teal); }
+  .chip.active { background: var(--teal-deep); border-color: var(--teal-deep); color: #fff; }
+  .year-block { padding: 28px 0 0; }
+  .year-block h2 { font-size: 1.3rem; color: var(--teal-deep); margin: 0 0 14px; }
+  .talk h3 { font-size: 1.02rem; margin: 10px 0 6px; font-weight: 500; }
+  .talk h3 a { color: var(--ink); text-decoration: none; }
+  .talk h3 a:hover { color: var(--teal-deep); text-decoration: underline; }
+  .who { font-size: 0.9rem; color: var(--ink); }
+  .event { font-size: 0.86rem; color: var(--ink-muted); margin-top: 4px !important; }
+  .extra { margin-top: 10px !important; display: flex; gap: 14px; font-size: 0.88rem; }
+  .extra a { display: inline-flex; align-items: center; gap: 4px; }
+  .outro { padding: 36px 0 72px; }
+  [hidden] { display: none !important; }
+</style>
+
+<script>
+  const chips = document.querySelectorAll<HTMLButtonElement>(".chip");
+  chips.forEach((c) => c.addEventListener("click", () => {
+    chips.forEach((x) => x.classList.toggle("active", x === c));
+    const f = c.dataset.filter;
+    document.querySelectorAll<HTMLElement>(".talk").forEach((t) => (t.hidden = f !== "all" && t.dataset.kind !== f));
+    document.querySelectorAll<HTMLElement>(".year-block").forEach((b) => (b.hidden = !b.querySelector(".talk:not([hidden])")));
+  }));
+</script>

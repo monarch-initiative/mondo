@@ -1,0 +1,180 @@
+---
+import Page from "../../layouts/Page.astro";
+import Icon from "../../components/Icon.astro";
+import { loadYaml, url } from "../../lib/data";
+import { GOVERNANCE_LIVE, governance } from "../../lib/governance";
+
+interface Person { name?: string; affiliation?: string; github?: string[] }
+const data = loadYaml<{ last_confirmed?: string; people: Person[] }>("contributors.yaml");
+// Named people first (A to Z), then people known only by GitHub handle.
+const sortKey = (p: Person) => (p.name ?? p.github?.[0] ?? "").toLowerCase();
+const people = [...data.people].sort((a, b) => Number(!a.name) - Number(!b.name) || sortKey(a).localeCompare(sortKey(b)));
+
+const byOrg = new Map<string, number>();
+people.forEach((p) => p.affiliation && byOrg.set(p.affiliation, (byOrg.get(p.affiliation) ?? 0) + 1));
+const topOrgs = [...byOrg.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 8);
+
+const confirmed = data.last_confirmed
+  ? new Date(String(data.last_confirmed) + "T12:00:00").toLocaleDateString("en-US", { month: "long", year: "numeric" })
+  : null;
+
+// Used until the governance site launches: the links the old Contributors page already had.
+const fallbackActions = [
+  { label: "Report an issue or request a term", href: "https://github.com/monarch-initiative/mondo/issues", blurb: "The GitHub tracker is the best way to contribute." },
+  { label: "How to make a good term request", href: "https://mondo.readthedocs.io/en/latest/editors-guide/c-make-good-term-request/", blurb: "A short guide to writing a request the team can act on." },
+  { label: "Lend medical expertise", href: "https://github.com/monarch-initiative/mondo/labels/medical%20input%20needed", blurb: "Issues that need medical input." },
+  { label: "Join a community call or workshop", href: url("/pages/community-calls/"), blurb: "Community talks and expert workshops." },
+];
+const actions = GOVERNANCE_LIVE ? governance.routes : fallbackActions;
+---
+<Page title="Contribute" eyebrow="Community" intro="Mondo is built by a global community of curators, clinicians, ontologists and developers. Here is how to join them." wide>
+  <section class="block" aria-labelledby="involved">
+    <h2 id="involved">Ways to contribute</h2>
+    <p class="lede-sm">
+      {GOVERNANCE_LIVE
+        ? "There are several ways to contribute, depending on your interests and expertise. Each one is described in the Mondo Governance and Operations documentation."
+        : "Everyone is welcome to contribute, whatever your expertise."}
+    </p>
+    <ul class="actions">
+      {actions.map((a) => (
+        <li>
+          <a href={a.href}>
+            <span class="a-label">{a.label}<Icon name="arrow-right" /></span>
+            <span class="a-blurb">{a.blurb}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    {GOVERNANCE_LIVE && (
+      <p class="fine">All contributors are expected to follow the <a href={governance.codeOfConduct}>Code of Conduct</a>.</p>
+    )}
+  </section>
+
+  {GOVERNANCE_LIVE && (
+    <section class="team-band" aria-labelledby="team">
+      <div>
+        <h2 id="team">Meet the Mondo team</h2>
+        <p>The curation, technical and leadership roles behind Mondo are listed in the governance documentation.</p>
+      </div>
+      <a class="btn-team" href={governance.roles}>See project roles <Icon name="external" size={14} /></a>
+    </section>
+  )}
+
+  <section class="block" aria-labelledby="community">
+    <h2 id="community">Thank you to our contributors</h2>
+    <div class="headline">
+      <p class="count"><strong>{people.length}</strong> people have contributed to Mondo{confirmed && <span class="confirmed"> · List last confirmed {confirmed}</span>}</p>
+    </div>
+
+    <div class="orgs" role="group" aria-label="Filter by organization">
+      <span class="orgs-label">Top organizations:</span>
+      {topOrgs.map(([org, n]) => (
+        <button type="button" class="org" data-org={org} aria-pressed="false">{org} <span class="n">{n}</span></button>
+      ))}
+    </div>
+
+    <div class="search">
+      <label for="people-q">Search contributors</label>
+      <input id="people-q" type="search" placeholder="Name, organization or GitHub handle" autocomplete="off" />
+      <p class="results" id="people-results" aria-live="polite">Showing all {people.length}</p>
+    </div>
+
+    <ul class="people">
+      {people.map((p) => {
+        const handle = p.github?.[0];
+        const label = p.name ?? `@${handle}`;
+        return (
+          <li data-text={`${p.name ?? ""} ${p.affiliation ?? ""} ${(p.github ?? []).join(" ")}`.toLowerCase()} data-org={p.affiliation ?? ""}>
+            {handle ? (
+              <a href={`https://github.com/${handle}`}>
+                {label}<span class="sr"> on GitHub</span>
+              </a>
+            ) : <span class="nolink">{label}</span>}
+            {p.affiliation && <span class="aff">{p.affiliation}</span>}
+          </li>
+        );
+      })}
+    </ul>
+    <p class="none" id="people-none" hidden>No contributors match that search.</p>
+  </section>
+</Page>
+
+<style>
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .block { padding: 48px 0 0; }
+  .block:last-of-type { padding-bottom: 72px; }
+  .block h2, .team-band h2 { font-size: 1.4rem; margin: 0 0 6px; }
+  .lede-sm { margin: 0 0 18px; max-width: 65ch; }
+  .fine { font-size: 0.9rem; color: var(--ink-soft); margin: 14px 0 0; }
+  .fine a { color: var(--teal-deep); }
+
+  .actions { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .actions a { display: flex; flex-direction: column; gap: 4px; height: 100%; padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: #fff; text-decoration: none; color: var(--ink); }
+  .actions a:hover { border-color: var(--teal-deep); }
+  .actions a:focus-visible { outline: 3px solid var(--teal-deep); outline-offset: 2px; }
+  .a-label { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 600; color: var(--teal-deep); }
+  .actions a:hover .ico-arrow-right { transform: translateX(3px); }
+  .a-blurb { font-size: 0.9rem; color: var(--ink-soft); }
+
+  .team-band { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between; padding: 22px 26px; border-radius: var(--radius-lg); background: var(--teal-wash); }
+  .team-band p { margin: 0; }
+  .btn-team { display: inline-flex; align-items: center; gap: 6px; padding: 10px 18px; border-radius: 999px; background: var(--teal-deep); color: #fff; text-decoration: none; font-weight: 500; }
+  .btn-team:hover { background: #003d43; color: #fff; }
+  .btn-team:focus-visible { outline: 3px solid var(--teal-deep); outline-offset: 3px; }
+
+  .count { margin: 4px 0 18px; font-size: 1.05rem; }
+  .count strong { font-size: 1.6rem; color: var(--teal-deep); margin-right: 4px; }
+  .confirmed { color: var(--ink-soft); font-size: 0.9rem; }
+
+  .orgs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .orgs-label { font-size: 0.9rem; color: var(--ink-soft); margin-right: 4px; }
+  .org { font: inherit; font-size: 0.86rem; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
+  .org .n { font-variant-numeric: tabular-nums; color: var(--ink-soft); }
+  .org:hover { border-color: var(--teal-deep); }
+  .org[aria-pressed="true"] { background: var(--teal-deep); border-color: var(--teal-deep); color: #fff; }
+  .org[aria-pressed="true"] .n { color: #fff; }
+  .org:focus-visible { outline: 3px solid var(--teal-deep); outline-offset: 2px; }
+
+  .search { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-bottom: 18px; }
+  .search label { font-weight: 600; font-size: 0.92rem; color: var(--ink); }
+  .search input { flex: 1 1 260px; max-width: 420px; font: inherit; padding: 10px 16px; border-radius: 999px; border: 1px solid #8a9a9d; }
+  .search input:focus-visible { outline: 3px solid var(--teal-deep); outline-offset: 1px; }
+  .results { margin: 0; font-size: 0.88rem; color: var(--ink-soft); flex-basis: 100%; }
+
+  .people { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0 24px; }
+  .people li { padding: 9px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+  .people a, .nolink { color: var(--ink); text-decoration: none; font-weight: 500; overflow-wrap: anywhere; }
+  .people a:hover { color: var(--teal-deep); text-decoration: underline; }
+  .people a:focus-visible { outline: 3px solid var(--teal-deep); outline-offset: 2px; border-radius: 2px; }
+  .aff { display: block; font-size: 0.82rem; color: var(--ink-soft); overflow-wrap: anywhere; }
+  .none { color: var(--ink-soft); }
+  [hidden] { display: none !important; }
+</style>
+
+<script>
+  const input = document.getElementById("people-q") as HTMLInputElement;
+  const results = document.getElementById("people-results")!;
+  const none = document.getElementById("people-none")!;
+  const items = [...document.querySelectorAll<HTMLElement>(".people li")];
+  const orgButtons = [...document.querySelectorAll<HTMLButtonElement>(".org")];
+  let org = "";
+
+  const apply = () => {
+    const q = input.value.trim().toLowerCase();
+    let shown = 0;
+    items.forEach((li) => {
+      const ok = (!q || li.dataset.text!.includes(q)) && (!org || li.dataset.org === org);
+      li.hidden = !ok;
+      if (ok) shown++;
+    });
+    results.textContent = shown === items.length ? `Showing all ${items.length}` : `Showing ${shown} of ${items.length}`;
+    none.hidden = shown > 0;
+  };
+
+  input.addEventListener("input", apply);
+  orgButtons.forEach((b) => b.addEventListener("click", () => {
+    org = org === b.dataset.org ? "" : b.dataset.org!;
+    orgButtons.forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.org === org)));
+    apply();
+  }));
+</script>

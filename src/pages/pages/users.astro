@@ -1,0 +1,52 @@
+---
+import Page from "../../layouts/Page.astro";
+import { loadYaml } from "../../lib/data";
+
+const users = loadYaml<any[]>("users.yaml");
+// Descriptions may contain Markdown links; convert them to HTML.
+const md = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+---
+<Page title="Who Uses Mondo" eyebrow="About" intro="Mondo powers clinical curation, research platforms, drug discovery and data standards around the world." wide>
+  <div class="search">
+    <label for="q" class="sr">Filter organizations</label>
+    <input id="q" type="search" placeholder={`Filter ${users.length} organizations…`} />
+  </div>
+  <div class="grid grid-3 users">
+    {users.map((u) => (
+      <article class="card user" data-text={`${u.name} ${u.description}`.toLowerCase()}>
+        <h2>{u.url ? <a href={u.url}>{u.name}</a> : u.name}</h2>
+        <p set:html={md(u.description)} />
+      </article>
+    ))}
+  </div>
+  <section class="card cta">
+    <div>
+      <h2>Using Mondo?</h2>
+      <p>Tell us about it, or report issues, bugs and new term requests on GitHub.</p>
+    </div>
+    <a class="btn btn-solid" href="https://github.com/monarch-initiative/mondo/issues">Open the tracker</a>
+  </section>
+</Page>
+
+<style>
+  .search { padding: 40px 0 20px; }
+  .search input { width: 100%; max-width: 420px; font: inherit; padding: 12px 18px; border-radius: 999px; border: 1px solid var(--line); }
+  .search input:focus { outline: 2px solid var(--teal); border-color: transparent; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .user h2 { font-size: 1rem; margin: 0 0 8px; }
+  .user h2 a { color: var(--ink); text-decoration: none; }
+  .user h2 a:hover { color: var(--teal-deep); text-decoration: underline; }
+  .user p { font-size: 0.9rem; }
+  .cta { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; margin: 40px 0 72px; background: var(--teal-wash); border: 0; }
+  .cta h2 { margin: 0 0 4px; font-size: 1.3rem; }
+  [hidden] { display: none !important; }
+</style>
+
+<script>
+  const q = document.getElementById("q") as HTMLInputElement;
+  q.addEventListener("input", () => {
+    const v = q.value.trim().toLowerCase();
+    document.querySelectorAll<HTMLElement>(".user").forEach((c) => (c.hidden = !!v && !c.dataset.text!.includes(v)));
+  });
+</script>

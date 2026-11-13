@@ -1,0 +1,93 @@
+---
+import Page from "../../layouts/Page.astro";
+import Icon from "../../components/Icon.astro";
+import { loadYaml, url } from "../../lib/data";
+
+const calls = loadYaml<any[]>("community-calls.yaml");
+const byYear = new Map<number, any[]>();
+for (const c of calls) {
+  const y = Number(String(c.date).slice(0, 4));
+  byYear.set(y, [...(byYear.get(y) ?? []), c]);
+}
+const d = (s: string) => new Date(String(s) + "T12:00:00");
+const orgs = new Set(calls.map((c) => c.org).filter(Boolean));
+---
+<Page title="Mondo Community Calls" eyebrow="Community" intro="Monthly calls where the community shares how they use Mondo, and where we work out together how Mondo can better support them." wide>
+  <section class="intro-grid">
+    <div>
+      <h2>What happens on a call</h2>
+      <p>
+        The goal of the Mondo Community Calls is to bring together stakeholders and clinical terminology experts to discuss
+        specific use cases and requirements, and to improve Mondo with user needs in mind.
+      </p>
+      <p>
+        Each call, the Mondo technical team gives an overview of the latest developments. Then an invited group presents their
+        use case (not necessarily directly related to Mondo) in a ~20 minute talk and discussion about paths forward.
+      </p>
+      <div class="actions">
+        <a class="btn btn-solid" href="https://docs.google.com/document/d/16eMB-x3iANHfiTxw7vUXFoTHtdxscjnfVQ_OrRsnzvE/edit">Call notes</a>
+        <a class="btn btn-outline" href="mailto:info@monarchinitiative.org?subject=Mondo%20Community%20Calls">Get involved</a>
+      </div>
+    </div>
+    <div class="mini-stats">
+      <div><strong>{calls.length}</strong><span>community talks</span></div>
+      <div><strong>{orgs.size}</strong><span>organizations presented</span></div>
+      <div><strong>{byYear.size}</strong><span>years of calls</span></div>
+    </div>
+  </section>
+
+  {[...byYear.entries()].map(([year, list]) => (
+    <section class="year">
+      <h2>{year} presentations</h2>
+      <ol class="timeline">
+        {list.map((c) => (
+          <li>
+            <time datetime={c.date}>
+              <span class="m">{d(c.date).toLocaleDateString("en-US", { month: "short" })}</span>
+              <span class="day">{d(c.date).getDate()}</span>
+            </time>
+            <div class="card">
+              <h3>{c.topic_url ? <a href={c.topic_url}>{c.topic}</a> : c.topic}</h3>
+              <p class="who">
+                {c.presenters}
+                {c.org && <> · {c.org_url ? <a href={c.org_url}>{c.org}</a> : c.org}</>}
+              </p>
+              <p class="links">
+                <span class="time">{c.time}</span>
+                {c.recording && <a class="rec" href={c.recording}><Icon name="play" /> Recording</a>}
+                {c.slides && <a href={c.slides}>Slides <Icon name="external" size={14} /></a>}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  ))}
+  <p class="outro">Looking for in-depth sessions? See our <a href={url("/pages/workshop/")}>workshops</a>.</p>
+</Page>
+
+<style>
+  .intro-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px; padding: 48px 0 12px; align-items: center; }
+  @media (max-width: 860px) { .intro-grid { grid-template-columns: 1fr; } }
+  .intro-grid h2 { margin-top: 0; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+  .mini-stats { display: grid; gap: 12px; }
+  .mini-stats div { background: var(--teal-wash); border-radius: var(--radius-lg); padding: 16px 20px; display: flex; align-items: baseline; gap: 12px; }
+  .mini-stats strong { font-size: 2rem; color: var(--teal-deep); line-height: 1; }
+  .year { padding: 36px 0 0; }
+  .year h2 { font-size: 1.3rem; color: var(--teal-deep); }
+  .timeline { list-style: none; margin: 0; padding: 0 0 0 0; position: relative; display: grid; gap: 14px; }
+  .timeline::before { content: ""; position: absolute; left: 31px; top: 8px; bottom: 8px; width: 2px; background: var(--teal-mist); }
+  .timeline li { display: grid; grid-template-columns: 64px 1fr; gap: 18px; align-items: start; position: relative; }
+  time { width: 64px; height: 64px; border-radius: 50%; background: var(--teal-deep); color: #fff; display: grid; place-content: center; text-align: center; line-height: 1.05; position: relative; z-index: 1; box-shadow: 0 0 0 5px #fff; }
+  time .m { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  time .day { font-size: 1.3rem; font-weight: 600; }
+  .timeline .card { padding: 18px 22px; }
+  .timeline h3 { font-size: 1.02rem; font-weight: 600; margin: 0 0 4px; }
+  .who { font-size: 0.92rem; }
+  .links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 10px !important; font-size: 0.88rem; align-items: center; }
+  .time { color: var(--ink-muted); }
+  .rec { font-weight: 600; }
+  .links a { display: inline-flex; align-items: center; gap: 5px; }
+  .outro { padding: 40px 0 72px; }
+</style>
