@@ -1,14 +1,17 @@
 name: Dragon AI Agent GitHub Mentions
 
 on:
-  issues:
-    types: [opened, edited]
-  issue_comment:
-    types: [created, edited]
-  pull_request:
-    types: [opened, edited]
-  pull_request_review_comment:
-    types: [created, edited]
+  workflow_dispatch:
+
+# on:
+#   issues:
+#     types: [opened, edited]
+#   issue_comment:
+#     types: [created, edited]
+#   pull_request:
+#     types: [opened, edited]
+#   pull_request_review_comment:
+#     types: [created, edited]
 
 jobs:
   check-mention:
@@ -22,7 +25,7 @@ jobs:
       controllers: ${{ steps.detect.outputs.controllers }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         
       - name: Detect AI mention
         id: detect
@@ -41,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 1
           token: ${{ secrets.PAT_FOR_PR }}

@@ -706,12 +706,19 @@ update-gard:
 
 ##### NORD #########################
 
+# NOTE: the logic for removing the previous NORD contribution before re-merging
+# now lives in two places: the grep -v below (xrefs and subsets) and
+# cleanup-nord-synonym-attribution.ru (synonyms, their evidence, and community
+# label markers). If you change what NORD is allowed to contribute, both need
+# updating.
 .PHONY: update-nord
 update-nord:
 	make $(TMPDIR)/external/processed-nord.robot.owl -B
 	grep -vE '^(xref: NORD:|subset: nord_rare)' $(SRC) > $(TMPDIR)/mondo-edit.tmp || true
 	mv $(TMPDIR)/mondo-edit.tmp mondo-edit.obo
-	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/external/processed-nord.robot.owl --collapse-import-closure false \
+	$(ROBOT) merge -i $(SRC) --collapse-import-closure false \
+		query --update ../sparql/update/cleanup-nord-synonym-attribution.ru \
+		merge -i $(TMPDIR)/external/processed-nord.robot.owl --collapse-import-closure false \
 		convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
@@ -787,8 +794,9 @@ update-omim-genes:
 		-i $(TMPDIR)/mondo-genes-axioms.owl \
 		-i $(TMPDIR)/keep-susceptibility-gene-assocation-axioms.owl \
 		--collapse-import-closure false \
-		query --update ../sparql/update/omim-gene-equivalence.ru \
-		query --update ../sparql/update/remove_gene_associations_from_obsolete.ru \
+		query --temporary-file true \
+		--update ../sparql/update/omim-gene-equivalence.ru \
+		--update ../sparql/update/remove_gene_associations_from_obsolete.ru \
 		convert -f obo --check false -o $(SRC).obo
 	mv $(SRC).obo $(SRC) && make NORM && mv NORM $(SRC)
 
@@ -1729,7 +1737,7 @@ TRANSLATE_PREDICATES=rdfs:label
 .PHONY: update-mondo-japanese-translation
 update-mondo-japanese-translation:
 	@echo "DOWNLOADING JAPANESE TRANSLATION IS SKIPPED"
-	wget "https://raw.githubusercontent.com/dbcls/mondo-japanese/refs/heads/main/babelon/mondo-jp.babelon.tsv" -O ../translations/mondo-jp.babelon.tsv
+	#wget "https://raw.githubusercontent.com/dbcls/mondo-japanese/refs/heads/main/babelon/mondo-jp.babelon.tsv" -O ../translations/mondo-jp.babelon.tsv
 
 validate-%: $(TRANSLATIONSDIR)/%.babelon.tsv
 	@output=$$(tsvalid $(TRANSLATIONSDIR)/$*.babelon.tsv --skip "W1" --skip "E1"); \

@@ -1,5 +1,5 @@
 ---
-name: Revise textual definition
+name: Term definition issue
 about: Change the textual definition of an Mondo term
 title: "[Revise text def]"
 labels: ''

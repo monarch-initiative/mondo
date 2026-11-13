@@ -17,7 +17,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 1
 
@@ -25,7 +25,7 @@ jobs:
         run: git fetch --tags --depth=1
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -44,13 +44,13 @@ jobs:
         working-directory: src/ontology
 
       - name: Upload stats report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: github-issue-stats
           path: src/ontology/reports/mondo_stats/mondo-community-stats/gh_issue_status.csv
       
       - name: Upload usernames report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: github-issue-usernames
           path: src/ontology/reports/mondo_stats/mondo-community-stats/gh_issue_usernames.csv
