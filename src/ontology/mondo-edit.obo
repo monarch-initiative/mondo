@@ -430225,8 +430225,7 @@ property_value: IAO:0000589 "split foot (disease)" xsd:string
 id: MONDO:0017451
 name: non-syndromic brachydactyly of fingers
 def: "A non-syndromic brachydactyly that involves the manus." [MONDO:patterns/location]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/7700"}
 subset: ordo_morphological_anomaly {source="Orphanet:294996"}
 synonym: "manus non-syndromic brachydactyly" EXACT [MONDO:design_pattern, MONDO:patterns/location]
 synonym: "non-syndromic brachydactyly of manus" EXACT [MONDO:design_pattern]
@@ -430237,7 +430236,6 @@ is_a: MONDO:0017424 {source="MONDO:Redundant", source="Orphanet:294996"} ! non-s
 intersection_of: MONDO:0017424 ! non-syndromic brachydactyly
 intersection_of: disease_has_location UBERON:0002398 ! manus
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0017452
@@ -430792,45 +430790,36 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0017478
-name: amelia of upper limb, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
-subset: rare
+name: obsolete amelia of upper limb, unilateral
 xref: ICD10CM:Q71.0 {source="Orphanet:295053"}
-xref: icd11.foundation:790781203 {source="MONDO:equivalentTo"}
-xref: Orphanet:295053 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017437 {source="Orphanet:295053", source="icd11.foundation:790781203"} ! amelia of upper limb
+xref: icd11.foundation:790781203 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295053 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017437
 
 [Term]
 id: MONDO:0017479
-name: amelia of upper limb, bilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete amelia of upper limb, bilateral
 xref: ICD10CM:Q71.0 {source="Orphanet:295055"}
-xref: icd11.foundation:587439983 {source="MONDO:equivalentTo"}
-xref: Orphanet:295055 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017437 {source="Orphanet:295055", source="icd11.foundation:587439983"} ! amelia of upper limb
+xref: icd11.foundation:587439983 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295055 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017437
 
 [Term]
 id: MONDO:0017480
-name: amelia of lower limb, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete amelia of lower limb, unilateral
 xref: ICD10CM:Q72.0 {source="Orphanet:295057"}
-xref: icd11.foundation:1342789404 {source="MONDO:equivalentTo"}
-xref: Orphanet:295057 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017438 {source="Orphanet:295057", source="icd11.foundation:1342789404"} ! amelia of lower limb
+xref: icd11.foundation:1342789404 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295057 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017438
 
 [Term]
 id: MONDO:0017481
@@ -430844,6 +430833,7 @@ xref: MEDGEN:1775586 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:295059 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C2910294 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1775586"}
 is_a: MONDO:0017438 {source="Orphanet:295059", source="icd11.foundation:1627185647"} ! amelia of lower limb
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
 id: MONDO:0017482
@@ -430891,76 +430881,61 @@ consider: MONDO:0016032
 
 [Term]
 id: MONDO:0017486
-name: radial hemimelia, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete radial hemimelia, unilateral
 synonym: "radial longitidinal meromelia, unilateral" EXACT []
-xref: icd11.foundation:1956537587 {source="MONDO:equivalentTo"}
-xref: Orphanet:295069 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0019671 {source="Orphanet:295069", source="icd11.foundation:1956537587"} ! radial hemimelia
+xref: icd11.foundation:1956537587 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295069 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0019671
 
 [Term]
 id: MONDO:0017487
-name: radial hemimelia, bilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete radial hemimelia, bilateral
 synonym: "radial longitidinal meromelia, bilateral" EXACT []
-xref: icd11.foundation:1701238542 {source="MONDO:equivalentTo"}
-xref: Orphanet:295071 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0019671 {source="Orphanet:295071", source="icd11.foundation:1701238542"} ! radial hemimelia
+xref: icd11.foundation:1701238542 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295071 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0019671
 
 [Term]
 id: MONDO:0017488
-name: ulnar hemimelia, bilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete ulnar hemimelia, bilateral
 synonym: "ulnar longitudinal meromelia, bilateral" EXACT []
 xref: ICD10CM:Q71.5 {source="Orphanet:295073"}
-xref: icd11.foundation:837973744 {source="MONDO:equivalentTo"}
-xref: Orphanet:295073 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0019670 {source="Orphanet:295073", source="icd11.foundation:837973744"} ! ulnar hemimelia
+xref: icd11.foundation:837973744 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295073 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0019670
 
 [Term]
 id: MONDO:0017489
-name: ulnar hemimelia, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete ulnar hemimelia, unilateral
 synonym: "ulnar longitudinal meromelia, unilateral" EXACT []
 xref: ICD10CM:Q71.5 {source="Orphanet:295075"}
-xref: icd11.foundation:1826480139 {source="MONDO:equivalentTo"}
-xref: Orphanet:295075 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0019670 {source="Orphanet:295075", source="icd11.foundation:1826480139"} ! ulnar hemimelia
+xref: icd11.foundation:1826480139 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295075 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0019670
 
 [Term]
 id: MONDO:0017490
-name: tibial hemimelia, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete tibial hemimelia, unilateral
 synonym: "tibial longitudinal meromelia, unilateral" EXACT []
 xref: ICD10CM:Q72.5 {source="Orphanet:295077"}
-xref: icd11.foundation:863808263 {source="MONDO:equivalentTo"}
-xref: Orphanet:295077 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0010144 {source="Orphanet:295077", source="icd11.foundation:863808263"} ! tibial hemimelia
+xref: icd11.foundation:863808263 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295077 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0010144
 
 [Term]
 id: MONDO:0017491
@@ -430975,36 +430950,31 @@ xref: MEDGEN:1776601 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:295079 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5438440 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1776601"}
 is_a: MONDO:0010144 {source="Orphanet:295079", source="icd11.foundation:1562926182"} ! tibial hemimelia
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
 id: MONDO:0017492
-name: fibular hemimelia, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete fibular hemimelia, unilateral
 synonym: "fibular longitudinal meromelia, unilateral" EXACT []
 xref: ICD10CM:Q72.6 {source="Orphanet:295081"}
-xref: icd11.foundation:1359584794 {source="MONDO:equivalentTo"}
-xref: Orphanet:295081 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0019672 {source="Orphanet:295081", source="icd11.foundation:1359584794"} ! fibular hemimelia
+xref: icd11.foundation:1359584794 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295081 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0019672
 
 [Term]
 id: MONDO:0017493
-name: fibular hemimelia, bilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete fibular hemimelia, bilateral
 synonym: "fibular longitudinal meromelia, bilateral" EXACT []
 xref: ICD10CM:Q72.6 {source="Orphanet:295083"}
-xref: icd11.foundation:1479927692 {source="MONDO:equivalentTo"}
-xref: Orphanet:295083 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0019672 {source="Orphanet:295083", source="icd11.foundation:1479927692"} ! fibular hemimelia
+xref: icd11.foundation:1479927692 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295083 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0019672
 
 [Term]
 id: MONDO:0017494
@@ -431054,20 +431024,16 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0017498
-name: congenital absence of both forearm and hand, unilateral
-def: "Congenital absence of both forearm and hand, unilateral is a rare developmental defect during embryogenesis characterized by a unilateral, transverse absence of the radius and ulna (of varying terminal lengths), as well as all the elements composing the hand. Left or right side may be involved." [Orphanet:295093]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
-subset: rare
+name: obsolete congenital absence of both forearm and hand, unilateral
+def: "OBSOLETE. Congenital absence of both forearm and hand, unilateral is a rare developmental defect during embryogenesis characterized by a unilateral, transverse absence of the radius and ulna (of varying terminal lengths), as well as all the elements composing the hand. Left or right side may be involved." [Orphanet:295093]
 synonym: "radio-ulnar terminal transverse meromelia, unilateral" EXACT []
-xref: icd11.foundation:2019491585 {source="MONDO:equivalentTo"}
-xref: Orphanet:295093 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017443 {source="Orphanet:295093", source="icd11.foundation:2019491585"} ! congenital absence of both forearm and hand
-relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
+xref: icd11.foundation:2019491585 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295093 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017443
 
 [Term]
 id: MONDO:0017499
@@ -431084,24 +431050,21 @@ xref: MEDGEN:1843505 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:295095 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C2910270 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1843505"}
 is_a: MONDO:0017443 {source="ICD10CM:Q71.23", source="Orphanet:295095", source="icd11.foundation:1524444518"} ! congenital absence of both forearm and hand
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
 
 [Term]
 id: MONDO:0017500
-name: congenital absence of both lower leg and foot, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete congenital absence of both lower leg and foot, unilateral
 synonym: "tibiofibular terminal transverse meromelia, unilateral" EXACT []
-xref: icd11.foundation:608099172 {source="MONDO:equivalentTo"}
-xref: Orphanet:295097 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017444 {source="Orphanet:295097", source="icd11.foundation:608099172"} ! congenital absence of both lower leg and foot
-relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
+xref: icd11.foundation:608099172 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295097 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017444
 
 [Term]
 id: MONDO:0017501
@@ -431116,23 +431079,21 @@ xref: MEDGEN:1759560 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:295099 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C2910300 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1759560"}
 is_a: MONDO:0017444 {source="ICD10CM:Q72.23", source="Orphanet:295099", source="icd11.foundation:113051911"} ! congenital absence of both lower leg and foot
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
 
 [Term]
 id: MONDO:0017502
-name: acheiria, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete acheiria, unilateral
 synonym: "congenital absence of hand, unilateral" EXACT []
 xref: ICD10CM:Q71.3 {source="Orphanet:295101"}
-xref: icd11.foundation:1906312110 {source="MONDO:equivalentTo"}
-xref: Orphanet:295101 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017445 {source="Orphanet:295101", source="icd11.foundation:1906312110"} ! acheiria
+xref: icd11.foundation:1906312110 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295101 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017445
 
 [Term]
 id: MONDO:0017503
@@ -431149,21 +431110,19 @@ xref: Orphanet:295103 {source="MONDO:equivalentObsolete"}
 xref: SCTID:371189003 {source="MONDO:equivalentTo"}
 xref: UMLS:C0685394 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:672347"}
 is_a: MONDO:0017445 {source="Orphanet:295103", source="icd11.foundation:1430605018"} ! acheiria
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
 id: MONDO:0017504
-name: apodia, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete apodia, unilateral
 synonym: "congenital absence of foot, unilateral" EXACT []
 xref: ICD10CM:Q72.3 {source="Orphanet:295105"}
-xref: icd11.foundation:1499762342 {source="MONDO:equivalentTo"}
-xref: Orphanet:295105 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017446 {source="Orphanet:295105", source="icd11.foundation:1499762342"} ! apodia
+xref: icd11.foundation:1499762342 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295105 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017446
 
 [Term]
 id: MONDO:0017505
@@ -431178,6 +431137,7 @@ xref: MEDGEN:672391 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:295107 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C0685440 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:672391"}
 is_a: MONDO:0017446 {source="Orphanet:295107", source="icd11.foundation:1292290082"} ! apodia
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
 id: MONDO:0017506
@@ -431245,18 +431205,15 @@ relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql
 
 [Term]
 id: MONDO:0017511
-name: split hand, unilateral
-def: "Split hand, unilateral is a rare, non-syndromic limb reduction defect, clinically and genetically heterogeneous, characterized by unilateral underdevelopment or absence of the central rays of the autopod, with absence of all, or just some, of the central phalanges and at least part of the associated metacarpal bones, yielding a cleft appearance of the hand. It is frequently associated with syndactyly and aplasia/hypoplasia of remaining digits and metacarpal bones. No other dysmorphic features are observed and development is appropriate for age." [Orphanet:295120]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete split hand, unilateral
+def: "OBSOLETE. Split hand, unilateral is a rare, non-syndromic limb reduction defect, clinically and genetically heterogeneous, characterized by unilateral underdevelopment or absence of the central rays of the autopod, with absence of all, or just some, of the central phalanges and at least part of the associated metacarpal bones, yielding a cleft appearance of the hand. It is frequently associated with syndactyly and aplasia/hypoplasia of remaining digits and metacarpal bones. No other dysmorphic features are observed and development is appropriate for age." [Orphanet:295120]
 xref: ICD10CM:Q71.6 {source="Orphanet:295120"}
-xref: icd11.foundation:1675694993 {source="MONDO:equivalentTo"}
-xref: Orphanet:295120 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017449 {source="Orphanet:295120", source="icd11.foundation:1675694993"} ! split hand
+xref: icd11.foundation:1675694993 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295120 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017449
 
 [Term]
 id: MONDO:0017512
@@ -431272,19 +431229,17 @@ xref: MEDGEN:1752875 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:295122 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5438934 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1752875"}
 is_a: MONDO:0017449 {source="Orphanet:295122", source="icd11.foundation:1096991220"} ! split hand
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
 id: MONDO:0017513
-name: split foot, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
-xref: icd11.foundation:1995563146 {source="MONDO:equivalentTo"}
-xref: Orphanet:295124 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017450 {source="Orphanet:295124", source="icd11.foundation:1995563146"} ! split foot
+name: obsolete split foot, unilateral
+xref: icd11.foundation:1995563146 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295124 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017450
 
 [Term]
 id: MONDO:0017514
@@ -431298,19 +431253,19 @@ xref: MEDGEN:1757565 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:295126 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C2910315 {source="MEDGEN:1757565", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0017450 {source="Orphanet:295126", source="icd11.foundation:1227623929"} ! split foot
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
 id: MONDO:0017515
-name: brachydactyly of fingers, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
+name: obsolete brachydactyly of fingers, unilateral
 synonym: "short fingers, unilateral" EXACT []
 xref: ICD10CM:Q71.8 {source="Orphanet:295128"}
-xref: icd11.foundation:825108601 {source="MONDO:equivalentTo"}
-xref: Orphanet:295128 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017451 {source="Orphanet:295128"} ! non-syndromic brachydactyly of fingers
+xref: icd11.foundation:825108601 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295128 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017451
 
 [Term]
 id: MONDO:0017516
@@ -431322,19 +431277,19 @@ xref: MEDGEN:1665318 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:295130 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C4751023 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1665318"}
 is_a: MONDO:0017451 {source="Orphanet:295130"} ! non-syndromic brachydactyly of fingers
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
 id: MONDO:0017517
-name: brachydactyly of toes, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
+name: obsolete brachydactyly of toes, unilateral
 synonym: "short toes, unilateral" EXACT []
 xref: ICD10CM:Q72.8 {source="Orphanet:295132"}
-xref: icd11.foundation:714196201 {source="MONDO:equivalentTo"}
-xref: Orphanet:295132 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017452 {source="Orphanet:295132"} ! non-syndromic brachydactyly of toes
+xref: icd11.foundation:714196201 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295132 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017452
 
 [Term]
 id: MONDO:0017518
@@ -431346,6 +431301,7 @@ xref: MEDGEN:1702894 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:295134 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5229808 {source="MEDGEN:1702894", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0017452 {source="Orphanet:295134"} ! non-syndromic brachydactyly of toes
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
 id: MONDO:0017519
@@ -431373,51 +431329,41 @@ relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql
 
 [Term]
 id: MONDO:0017521
-name: hyperphalangy, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete hyperphalangy, unilateral
 synonym: "hyperphalangy in digits 2-5" EXACT []
 synonym: "supernumerary phalanges, unilateral" EXACT []
 synonym: "supernumerary phalanx, unilateral" EXACT []
 xref: ICD10CM:Q74.8 {source="Orphanet:295140"}
-xref: icd11.foundation:1023621052 {source="MONDO:equivalentTo"}
-xref: Orphanet:295140 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017455 {source="Orphanet:295140", source="icd11.foundation:1023621052"} ! hyperphalangy
+xref: icd11.foundation:1023621052 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295140 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017455
 
 [Term]
 id: MONDO:0017522
-name: hyperphalangy, bilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
-subset: rare
+name: obsolete hyperphalangy, bilateral
 synonym: "supernumerary phalanges, bilateral" EXACT []
 synonym: "supernumerary phalanx, bilateral" EXACT []
 xref: ICD10CM:Q74.8 {source="Orphanet:295142"}
-xref: icd11.foundation:528541151 {source="MONDO:equivalentTo"}
-xref: Orphanet:295142 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017455 {source="Orphanet:295142", source="icd11.foundation:528541151"} ! hyperphalangy
+xref: icd11.foundation:528541151 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295142 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017455
 
 [Term]
 id: MONDO:0017523
-name: polydactyly of a biphalangeal thumb, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
-subset: rare
+name: obsolete polydactyly of a biphalangeal thumb, unilateral
 synonym: "preaxial polydactyly type 1, unilateral" EXACT []
 xref: ICD10CM:Q69.1 {source="Orphanet:295144"}
-xref: Orphanet:295144 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0008269 {source="Orphanet:295144"} ! polydactyly of a biphalangeal thumb
-relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
+xref: Orphanet:295144 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0008269
 
 [Term]
 id: MONDO:0017524
@@ -431432,50 +431378,41 @@ consider: MONDO:0008269
 
 [Term]
 id: MONDO:0017525
-name: polydactyly of a triphalangeal thumb, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
-subset: rare
+name: obsolete polydactyly of a triphalangeal thumb, unilateral
 synonym: "preaxial polydactyly type 2, unilateral" EXACT []
 synonym: "unilateral PPD2" EXACT []
 xref: ICD10CM:Q69.1 {source="Orphanet:295148"}
-xref: icd11.foundation:71240015 {source="MONDO:equivalentTo"}
-xref: Orphanet:295148 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0008270 {source="Orphanet:295148", source="icd11.foundation:71240015"} ! polydactyly of a triphalangeal thumb
+xref: icd11.foundation:71240015 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295148 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0008270
 
 [Term]
 id: MONDO:0017526
-name: polydactyly of a triphalangeal thumb, bilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
-subset: rare
+name: obsolete polydactyly of a triphalangeal thumb, bilateral
 synonym: "bilateral PPD2" EXACT []
 synonym: "preaxial polydactyly type 2, bilateral" EXACT []
 xref: ICD10CM:Q69.1 {source="Orphanet:295150"}
-xref: icd11.foundation:866920497 {source="MONDO:equivalentTo"}
-xref: Orphanet:295150 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0008270 {source="Orphanet:295150", source="icd11.foundation:866920497"} ! polydactyly of a triphalangeal thumb
+xref: icd11.foundation:866920497 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295150 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0008270
 
 [Term]
 id: MONDO:0017527
-name: polydactyly of an index finger, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
-subset: rare
+name: obsolete polydactyly of an index finger, unilateral
 synonym: "preaxial polydactyly type 3, unilateral" EXACT []
 xref: ICD10CM:Q69.0 {source="Orphanet:295152"}
-xref: icd11.foundation:734031453 {source="MONDO:equivalentTo"}
-xref: Orphanet:295152 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0008271 {source="Orphanet:295152", source="icd11.foundation:734031453"} ! polydactyly of an index finger
+xref: icd11.foundation:734031453 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295152 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0008271
 
 [Term]
 id: MONDO:0017528
@@ -431490,108 +431427,88 @@ xref: MEDGEN:1727346 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:295154 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5438861 {source="MEDGEN:1727346", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0008271 {source="Orphanet:295154", source="icd11.foundation:806174152"} ! polydactyly of an index finger
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
 id: MONDO:0017529
-name: polysyndactyly, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete polysyndactyly, unilateral
 synonym: "preaxial polydactyly type 4, unilateral" EXACT []
 xref: ICD10CM:Q70.4 {source="Orphanet:295159"}
-xref: icd11.foundation:127802550 {source="MONDO:equivalentTo"}
-xref: Orphanet:295159 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0008272 {source="Orphanet:295159", source="icd11.foundation:127802550"} ! polysyndactyly 4
+xref: icd11.foundation:127802550 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295159 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0008272
 
 [Term]
 id: MONDO:0017530
-name: polysyndactyly, bilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete polysyndactyly, bilateral
 synonym: "preaxial polydactyly type 4, bilateral" EXACT []
 xref: ICD10CM:Q70.4 {source="Orphanet:295161"}
-xref: icd11.foundation:622710483 {source="MONDO:equivalentTo"}
-xref: Orphanet:295161 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0008272 {source="Orphanet:295161", source="icd11.foundation:622710483"} ! polysyndactyly 4
+xref: icd11.foundation:622710483 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295161 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0008272
 
 [Term]
 id: MONDO:0017531
-name: postaxial polydactyly type A, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete postaxial polydactyly type A, unilateral
 xref: ICD10CM:Q69.0 {source="Orphanet:295163"}
-xref: icd11.foundation:471986216 {source="MONDO:equivalentTo"}
-xref: Orphanet:295163 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0019673 {source="Orphanet:295163", source="icd11.foundation:471986216"} ! postaxial polydactyly type A
+xref: icd11.foundation:471986216 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295163 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0019673
 
 [Term]
 id: MONDO:0017532
-name: postaxial polydactyly type A, bilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete postaxial polydactyly type A, bilateral
 xref: ICD10CM:Q69.0 {source="Orphanet:295165"}
-xref: icd11.foundation:1050812995 {source="MONDO:equivalentTo"}
-xref: Orphanet:295165 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0019673 {source="Orphanet:295165", source="icd11.foundation:1050812995"} ! postaxial polydactyly type A
+xref: icd11.foundation:1050812995 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295165 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0019673
 
 [Term]
 id: MONDO:0017533
-name: postaxial polydactyly type B, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete postaxial polydactyly type B, unilateral
 xref: ICD10CM:Q69.0 {source="Orphanet:295167"}
-xref: icd11.foundation:154207037 {source="MONDO:equivalentTo"}
-xref: Orphanet:295167 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0019674 {source="Orphanet:295167", source="icd11.foundation:154207037"} ! postaxial polydactyly type B
+xref: icd11.foundation:154207037 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295167 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0019674
 
 [Term]
 id: MONDO:0017534
-name: postaxial polydactyly type B, bilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete postaxial polydactyly type B, bilateral
 xref: ICD10CM:Q69.0 {source="Orphanet:295169"}
-xref: icd11.foundation:921497168 {source="MONDO:equivalentTo"}
-xref: Orphanet:295169 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0019674 {source="Orphanet:295169", source="icd11.foundation:921497168"} ! postaxial polydactyly type B
+xref: icd11.foundation:921497168 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295169 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0019674
 
 [Term]
 id: MONDO:0017535
-name: central polydactyly of fingers, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
-subset: rare
+name: obsolete central polydactyly of fingers, unilateral
 synonym: "mesoaxial polydactyly of fingers, unilateral" EXACT []
 synonym: "mirror hand, unilateral" EXACT []
 xref: ICD10CM:Q69.0 {source="Orphanet:295171"}
-xref: icd11.foundation:738371690 {source="MONDO:equivalentTo"}
-xref: Orphanet:295171 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017456 {source="Orphanet:295171", source="icd11.foundation:738371690"} ! central polydactyly of fingers
+xref: icd11.foundation:738371690 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295171 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017456
 
 [Term]
 id: MONDO:0017536
@@ -431607,23 +431524,21 @@ xref: MEDGEN:1747972 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:295173 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5437814 {source="MEDGEN:1747972", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0017456 {source="Orphanet:295173", source="icd11.foundation:462522644"} ! central polydactyly of fingers
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
 id: MONDO:0017537
-name: Preaxial polydactyly of toes, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete Preaxial polydactyly of toes, unilateral
 synonym: "bifid great toes, unilateral" EXACT []
 synonym: "bifid halluces, unilateral" EXACT []
 synonym: "bifid hallux, unilateral" EXACT []
 xref: ICD10CM:Q69.2 {source="Orphanet:295175"}
-xref: icd11.foundation:841462147 {source="MONDO:equivalentTo"}
-xref: Orphanet:295175 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017457 {source="Orphanet:295175", source="icd11.foundation:841462147"} ! Preaxial polydactyly of toes
+xref: icd11.foundation:841462147 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295175 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017457
 
 [Term]
 id: MONDO:0017538
@@ -431640,6 +431555,7 @@ xref: MEDGEN:1741594 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:295177 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5437916 {source="MONDO:equivalentTo", source="MEDGEN:1741594", source="MONDO:MEDGEN"}
 is_a: MONDO:0017457 {source="Orphanet:295177", source="icd11.foundation:3040646"} ! Preaxial polydactyly of toes
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
 id: MONDO:0017539
@@ -431792,18 +431708,15 @@ is_a: MONDO:0008652 {source="Orphanet:295203", source="icd11.foundation:12249873
 
 [Term]
 id: MONDO:0017548
-name: humero-radio-ulnar synostosis, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete humero-radio-ulnar synostosis, unilateral
 synonym: "humero-radio-ulnar fusion, unilateral" EXACT []
 xref: ICD10CM:Q74.0 {source="Orphanet:295205"}
-xref: icd11.foundation:322904301 {source="MONDO:equivalentTo"}
-xref: Orphanet:295205 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017983 {source="Orphanet:295205", source="icd11.foundation:322904301"} ! humero-radio-ulnar synostosis
+xref: icd11.foundation:322904301 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295205 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017983
 
 [Term]
 id: MONDO:0017549
@@ -431818,36 +431731,31 @@ xref: MEDGEN:1744773 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:295207 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5438978 {source="MONDO:equivalentTo", source="MEDGEN:1744773", source="MONDO:MEDGEN"}
 is_a: MONDO:0017983 {source="Orphanet:295207", source="icd11.foundation:557249772"} ! humero-radio-ulnar synostosis
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
 id: MONDO:0017550
-name: humero-radial synostosis, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete humero-radial synostosis, unilateral
 synonym: "humero-radial fusion, unilateral" EXACT []
 xref: ICD10CM:Q74.0 {source="Orphanet:295209"}
-xref: icd11.foundation:695744743 {source="MONDO:equivalentTo"}
-xref: Orphanet:295209 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0007737 {source="Orphanet:295209", source="icd11.foundation:695744743"} ! humeroradial synostosis
+xref: icd11.foundation:695744743 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295209 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0007737
 
 [Term]
 id: MONDO:0017551
-name: humero-radial synostosis, bilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete humero-radial synostosis, bilateral
 synonym: "humero-radial fusion, bilateral" EXACT []
 xref: ICD10CM:Q74.0 {source="Orphanet:295211"}
-xref: icd11.foundation:1424025632 {source="MONDO:equivalentTo"}
-xref: Orphanet:295211 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0007737 {source="Orphanet:295211", source="icd11.foundation:1424025632"} ! humeroradial synostosis
+xref: icd11.foundation:1424025632 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295211 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0007737
 
 [Term]
 id: MONDO:0017552
@@ -431905,17 +431813,14 @@ is_a: MONDO:0017985 {source="Orphanet:295219", source="icd11.foundation:15151901
 
 [Term]
 id: MONDO:0017556
-name: Madelung deformity, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete Madelung deformity, unilateral
 xref: ICD10CM:Q74.0 {source="Orphanet:295221"}
-xref: icd11.foundation:1964514438 {source="MONDO:equivalentTo"}
-xref: Orphanet:295221 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0018154 {source="Orphanet:295221", source="icd11.foundation:1964514438"} ! Madelung deformity
+xref: icd11.foundation:1964514438 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295221 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0018154
 
 [Term]
 id: MONDO:0017557
@@ -431929,6 +431834,7 @@ xref: MEDGEN:1723370 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:295223 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5437754 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1723370"}
 is_a: MONDO:0018154 {source="Orphanet:295223", source="icd11.foundation:1577029287"} ! Madelung deformity
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 
 [Term]
 id: MONDO:0017558
@@ -432016,19 +431922,15 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0017562
-name: congenital patella dislocation, unilateral
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: inferred_rare
-subset: obsoletion_candidate
-subset: rare
+name: obsolete congenital patella dislocation, unilateral
 xref: ICD10CM:Q74.1 {source="Orphanet:295234"}
-xref: icd11.foundation:1894799098 {source="MONDO:equivalentTo"}
-xref: Orphanet:295234 {source="MONDO:equivalentObsolete"}
-is_a: MONDO:0017471 {source="Orphanet:295234", source="icd11.foundation:1894799098"} ! congenital patella dislocation
-relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
+xref: icd11.foundation:1894799098 {source="MONDO:obsoleteEquivalent"}
+xref: Orphanet:295234 {source="MONDO:obsoleteEquivalentObsolete"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
+is_obsolete: true
+consider: MONDO:0017471
 
 [Term]
 id: MONDO:0017563
@@ -432042,6 +431944,7 @@ xref: MEDGEN:1741152 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: Orphanet:295237 {source="MONDO:equivalentObsolete"}
 xref: UMLS:C5437898 {source="MEDGEN:1741152", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0017471 {source="Orphanet:295237", source="icd11.foundation:1604828649"} ! congenital patella dislocation
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 relationship: has_characteristic MONDO:0021140 {source="https://orcid.org/0000-0002-4142-7153"} ! congenital
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4069" xsd:anyURI
 
@@ -523640,13 +523543,12 @@ replaced_by: MONDO:0015773
 
 [Term]
 id: MONDO:0023017
-name: duplication of the thumb unilateral biphalangeal
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
-subset: obsoletion_candidate
-is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-6601-2165"} ! syndromic disease
+name: obsolete duplication of the thumb unilateral biphalangeal
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludeObsoleteSource"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/1977/duplication-of-the-thumb-unilateral-biphalangeal" xsd:anyURI {source="GARD:0001977"}
+is_obsolete: true
+consider: MONDO:0008269
 
 [Term]
 id: MONDO:0023018
