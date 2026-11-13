@@ -233808,11 +233808,12 @@ is_a: MONDO:0016543 {source="DC-OMIM:261630", source="Orphanet:226"} ! hyperphen
 intersection_of: MONDO:0000001 ! disease
 intersection_of: disease_has_basis_in_disruption_of GO:0004155 ! 6,7-dihydropteridine reductase activity
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0009862 {source="MONDO:CLINGEN"}
-relationship: disease_has_basis_in_disruption_of GO:0046146 ! tetrahydrobiopterin metabolic process
+relationship: disease_has_basis_in_disruption_of GO:0006729 {source="PMID:21867484", source="https://orcid.org/0000-0003-1813-6857"}
 relationship: disease_shares_features_of MONDO:0009861 {source="MONDO:Redundant", source="NCIT:C138173", source="OMIM:261630"} ! phenylketonuria
 relationship: has_characteristic HP:0000007 {source="MONDO:HPOA", source="OMIM:261630", source="Orphanet:226"} ! Autosomal recessive inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9752 {source="OMIM:261630"} ! QDPR
 property_value: curated_content_resource "https://www.malacards.org/card/hyperphenylalaninemia_bh4_deficient_c" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10744" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/4319/dihydropteridine-reductase-deficiency" xsd:anyURI {source="GARD:0004319"}
 
 [Term]
@@ -320654,9 +320655,10 @@ is_a: MONDO:0044807 {source="DOID:0111168", source="MONDO:indirect"} ! inherited
 intersection_of: MONDO:0016812 ! dopa-responsive dystonia
 intersection_of: disease_has_basis_in_disruption_of GO:0004757 ! sepiapterin reductase (NADP+) activity
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0012994 {source="MONDO:CLINGEN"}
-relationship: disease_has_basis_in_disruption_of GO:0046146 ! tetrahydrobiopterin metabolic process
+relationship: disease_has_basis_in_disruption_of GO:0006729 {source="PMID:21867484", source="https://orcid.org/0000-0003-1813-6857"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11257 {source="OMIM:612716"} ! SPR
 property_value: curated_content_resource "https://www.malacards.org/card/dystonia_dopa_responsive_due_to_sepiapterin_reductase_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10744" xsd:anyURI
 
 [Term]
 id: MONDO:0012995
@@ -573679,7 +573681,7 @@ intersection_of: disease_has_location UBERON:0005631 ! extraembryonic membrane
 [Term]
 id: MONDO:0045014
 name: tetrahydrobiopterin metabolic process disease
-def: "A disease that has its basis in the disruption of tetrahydrobiopterin metabolic process." [MONDO:design_pattern]
+def: "A disease that has its basis in the disruption of tetrahydrobiopterin biosynthetic process." [MONDO:design_pattern]
 subset: gard_rare {source="GARD:0025930", source="MONDO:GARD"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
@@ -573692,7 +573694,8 @@ xref: SCTID:237913008 {source="MONDO:equivalentTo"}
 xref: UMLS:C0342676 {source="MEDGEN:575174", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0017306 ! disorder of phenylalanine metabolism
 intersection_of: MONDO:0000001 ! disease
-intersection_of: disease_has_basis_in_disruption_of GO:0046146 ! tetrahydrobiopterin metabolic process
+intersection_of: disease_has_basis_in_disruption_of GO:0006729
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10744" xsd:anyURI
 
 [Term]
 id: MONDO:0045015
@@ -581927,11 +581930,12 @@ xref: Orphanet:2102 {source="MONDO:equivalentTo", source="OMIM:233910"}
 xref: SCTID:23447005 {source="MONDO:equivalentTo"}
 is_a: MONDO:0016543 {source="DC-OMIM:233910", source="Orphanet:2102"} ! hyperphenylalaninemia due to tetrahydrobiopterin deficiency
 is_a: MONDO:0100184 {source="https://github.com/monarch-initiative/mondo/issues/1491", source="https://orcid.org/0000-0002-5655-9589"} ! GTP cyclohydrolase I deficiency
-relationship: disease_has_basis_in_disruption_of GO:0046146 ! tetrahydrobiopterin metabolic process
+relationship: disease_has_basis_in_disruption_of GO:0006729 {source="PMID:21867484", source="https://orcid.org/0000-0003-1813-6857"}
 relationship: has_characteristic HP:0000007 {source="MONDO:HPOA", source="OMIM:233910", source="Orphanet:2102"} ! Autosomal recessive inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4193 {source="OMIM:233910"} ! GCH1
 property_value: curated_content_resource "https://www.malacards.org/card/hyperphenylalaninemia_bh4_deficient_b" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10744" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/2844/gtp-cyclohydrolase-i-deficiency" xsd:anyURI {source="GARD:0002844"}
 
 [Term]
