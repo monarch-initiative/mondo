@@ -291,7 +291,7 @@ const pubs = loadYaml<any>("publications.yaml");
   .marquee { overflow: hidden; display: flex; gap: 12px; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
   .marquee ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 12px; flex-shrink: 0; animation: scroll 70s linear infinite; }
   .marquee:hover ul { animation-play-state: paused; }
-  .marquee li a { display: block; white-space: nowrap; padding: 12px 20px; background: #fff; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+  .marquee li a, .marquee li span { display: block; white-space: nowrap; padding: 12px 20px; background: #fff; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
   .marquee li a:hover { border-color: var(--teal); color: var(--teal-deep); }
   @keyframes scroll { to { transform: translateX(calc(-100% - 12px)); } }
   @media (prefers-reduced-motion: reduce) { .marquee { flex-wrap: wrap; justify-content: center; mask-image: none; } .marquee ul { flex-wrap: wrap; justify-content: center; flex-shrink: 1; } .marquee ul[aria-hidden] { display: none; } }
