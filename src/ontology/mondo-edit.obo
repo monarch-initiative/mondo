@@ -4966,18 +4966,17 @@ relationship: realized_in_response_to_stimulus CL:0000216 ! Sertoli cell
 [Term]
 id: MONDO:0000379
 name: malignant Sertoli-Leydig cell tumor
-def: "A malignant form of Sertoli-leydig cell tumor." [MONDO:patterns/malignant]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
+def: "A Sertoli-Leydig cell tumor that is malignant. It occurs in the ovary or the testis." [MONDO:patterns/malignant, PMID:17235570, PMID:32519016]
 subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="PMID:17235570", source="https://orcid.org/0000-0002-7638-4659", source="PMID:32519016", source="PMID:39173553", source="https://github.com/monarch-initiative/mondo/issues/7700"}
 subset: rare
-synonym: "Sertoli-Leydig cell tumor, malignant" EXACT [MONDO:patterns/malignant]
+synonym: "Sertoli-Leydig cell tumor, malignant" EXACT [MONDO:patterns/malignant, PMID:39173553]
 xref: DOID:0050618 {source="MONDO:equivalentObsolete"}
 is_a: MONDO:0002479 {source="MONDO:Redundant", source="https://orcid.org/0000-0002-6601-2165"} ! Sertoli-Leydig cell tumor
 intersection_of: MONDO:0002479 ! Sertoli-Leydig cell tumor
 intersection_of: has_characteristic PATO:0002097 ! neoplastic, malignant
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10624" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0000380
@@ -48182,11 +48181,12 @@ xref: DOID:2997 {source="MONDO:equivalentTo"}
 xref: GARD:0009967 {source="MONDO:GARD"}
 xref: MEDGEN:61669 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D018310 {source="MONDO:equivalentTo", source="DOID:2997"}
-xref: ONCOTREE:SLCT {source="MONDO:equivalentTo"}
 xref: SCTID:34110004 {source="DOID:2997"}
 xref: UMLS:C0206723 {source="MEDGEN:61669", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0003125 {source="DOID:2997"} ! testicular sex cord-stromal neoplasm
+is_a: MONDO:0006055 {source="MESH:D018310", source="PMID:1512847", source="PMID:37907261", source="PMID:39173553"} ! sex cord-stromal tumor
+relationship: excluded_subClassOf MONDO:0003125 {source="DOID:2997", source="https://orcid.org/0000-0002-7638-4659"} ! testicular sex cord-stromal neoplasm
 property_value: curated_content_resource "https://www.malacards.org/card/sertoli_leydig_cell_tumor" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10624" xsd:anyURI
 
 [Term]
 id: MONDO:0002480
@@ -561081,11 +561081,14 @@ synonym: "Sertoli-Leydig neoplasm of the ovary" EXACT [NCIT:C2880]
 xref: GARD:0027954 {source="MONDO:GARD"}
 xref: MEDGEN:2038 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C2880 {source="MONDO:equivalentTo"}
+xref: ONCOTREE:SLCT {source="MONDO:equivalentTo"}
 xref: SCTID:254866007 {source="MONDO:equivalentTo"}
 xref: UMLS:C0003810 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:2038"}
+is_a: MONDO:0002479 {source="PMID:37907261"} ! Sertoli-Leydig cell tumor
 is_a: MONDO:0020807 {source="NCIT:C2880"} ! ovarian sertoli-stromal cell tumor
 relationship: disease_arises_from_structure CL:0000178 ! Leydig cell
 relationship: disease_has_location UBERON:0000992 ! ovary
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10624" xsd:anyURI
 
 [Term]
 id: MONDO:0036688
