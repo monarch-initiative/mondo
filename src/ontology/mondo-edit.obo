@@ -708433,22 +708433,31 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:8000023
-name: type 3 autoimmune lymphoproliferative syndrome
-def: "A rare, primary immunodeficiency. It is caused by a currently undetermined defect in the Fas-induced apoptosis pathway. No mutations in Fas, FASLG or CASP10 are detectable. Disruption of Fas-induced apoptosis impairs lymphocyte homeostasis and immune tolerance. Characteristic laboratory findings include an increase in circulating, double-negative (CD4-/CD8-) T cells in the setting of immune-mediated anemia, thrombocytopenia and neutropenia. Clinical signs present in childhood include fatigue, pallor, bruising, hepatosplenomegaly and chronic, non-malignant, non-infectious lymphadenopathy. The clinical course is influenced by a strong association with other autoimmune disorders and an increased risk for developing Hodgkin and non-Hodgkin lymphoma." [NCIT:C39577]
+name: autoimmune lymphoproliferative syndrome-unknown underlying mutation
+def: "An autoimmune lymphoproliferative syndrome caused by a currently undetermined defect in the Fas-induced apoptosis pathway. No variations in FAS, FASLG or CASP10 are detectable. Disruption of Fas-induced apoptosis impairs lymphocyte homeostasis and immune tolerance. Characteristic laboratory findings include an increase in circulating, double-negative (CD4-/CD8-) T cells in the setting of immune-mediated anemia, thrombocytopenia and neutropenia. Clinical signs present in childhood include fatigue, pallor, bruising, hepatosplenomegaly and chronic, non-malignant, non-infectious lymphadenopathy. The clinical course is influenced by a strong association with other autoimmune disorders and an increased risk for developing Hodgkin and non-Hodgkin lymphoma." [NCIT:C39577]
+comment: Please do not confuse with MONDO:8000024 'autoimmune lymphoproliferative syndrome, type III caused by mutation in PRKCD', which is caused by variation in the PRKCD gene.
 subset: gard_rare {source="GARD:0027040", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C39577"}
 subset: rare
+synonym: "ALPS-U" EXACT ABBREVIATION [NCIT:C39577]
+synonym: "ALPS-unknown underlying mutation" EXACT [NCIT:C39577]
+synonym: "autoimmune lymphoproliferative syndrome with unknown underlying mutation" EXACT [NCIT:C39577]
+synonym: "autoimmune lymphoproliferative syndrome-undetermined variant" EXACT [NCIT:C39577]
+synonym: "autoimmune lymphoproliferative syndrome-unknown underlying mutation" EXACT [NCIT:C39577]
+synonym: "type 3 autoimmune lymphoproliferative syndrome" EXACT [NCIT:C39577]
 xref: GARD:0027040 {source="MONDO:GARD"}
 xref: MEDGEN:274327 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C39577 {source="MONDO:equivalentTo"}
 xref: UMLS:C1519711 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:274327"}
 is_a: MONDO:0017979 {source="NCIT:C39577"} ! autoimmune lymphoproliferative syndrome
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4098" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9474" xsd:anyURI
 
 [Term]
 id: MONDO:8000024
 name: autoimmune lymphoproliferative syndrome, type III caused by mutation in PRKCD
 def: "Any autoimmune lymphoproliferative syndrome in which the cause of the disease is a mutation in the PRKCD gene." [MONDO:patterns/disease_series_by_gene]
+comment: Please do not confuse with MONDO:8000023 'autoimmune lymphoproliferative syndrome-unknown underlying mutation', which has an undetermined genetic cause.
 subset: doid {source="DOID:0110119"}
 subset: gard_rare {source="GARD:0015987", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -708469,6 +708478,7 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9399 {source="OMIM:615559"} ! PRKCD
 property_value: curated_content_resource "https://www.malacards.org/card/autoimmune_lymphoproliferative_syndrome_type_iii" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4098" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9474" xsd:anyURI
 
 [Term]
 id: MONDO:8000030
