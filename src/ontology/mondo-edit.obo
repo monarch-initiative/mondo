@@ -113771,7 +113771,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/ciliopa
 [Term]
 id: MONDO:0005309
 name: spinal fracture
-def: "Traumatic or pathological injury to the spine in which the continuity of a vertebral bone is broken. Symptoms include back pain and difficulty bending and twisting." [NCIT:P378]
+def: "Traumatic or pathological injury to the spine in which the continuity of a vertebral bone is broken. Symptoms include back pain and difficulty bending and twisting." [NCIT:C80516]
 subset: otar {source="MONDO:OTAR"}
 synonym: "bone fracture of vertebral column" EXACT [MONDO:design_pattern]
 synonym: "vertebral column bone fracture" EXACT [MONDO:patterns/location]
@@ -113782,6 +113782,7 @@ xref: SCTID:50448004 {source="MONDO:equivalentTo"}
 is_a: MONDO:0005315 {source="EFO:0003902", source="MESH:D016103", source="MONDO:Redundant"} ! bone fracture
 intersection_of: MONDO:0005315 ! bone fracture
 intersection_of: disease_has_location UBERON:0001130 ! vertebral column
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8067" xsd:anyURI
 
 [Term]
 id: MONDO:0005310
@@ -113920,7 +113921,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/relapsi
 [Term]
 id: MONDO:0005315
 name: bone fracture
-def: "Breaks in bones." [MESH:D050723]
+def: "An injury or bone disorder in which the continuity of a bone is broken. It can be traumatic or pathological (due to a disease that weakens the bone)." [MESH:D050723, NCIT:C26794, NCIT:C80516]
 subset: ncit {source="NCIT:C3046"}
 subset: otar {source="MONDO:OTAR"}
 subset: other_hierarchy
@@ -113932,8 +113933,10 @@ xref: ICD10CM:M97-M97 {source="https://github.com/monarch-initiative/mondo/issue
 xref: MESH:D050723 {source="EFO:0003931", source="MONDO:equivalentTo"}
 xref: NCIT:C3046 {source="MONDO:equivalentTo"}
 xref: SCTID:125605004 {source="MONDO:equivalentTo"}
+is_a: MONDO:0005381 {source="NCIT:C26794", source="NCIT:C80516"} ! bone disorder
 is_a: MONDO:0021178 {source="MESH:D050723", source="NCIT:C3046/inferred", source="https://orcid.org/0000-0002-6601-2165"} ! injury
 relationship: excluded_subClassOf MONDO:0005381 {source="MONDO:Redundant", source="https://orcid.org/0000-0001-5208-3432"} ! bone disorder
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8067" xsd:anyURI
 
 [Term]
 id: MONDO:0005316
@@ -114134,7 +114137,7 @@ is_a: MONDO:0005093 {source="EFO:0003958", source="MESH:D013471/inferred"} ! ski
 [Term]
 id: MONDO:0005327
 name: hip fracture
-def: "Traumatic or pathological injury to the hip in which the continuity of either the femoral head, femoral neck, intertrochanteric or subtrochanteric regions is broken. Symptoms include pain in the hip or groin, bruising and swelling in and around the hip area. The injured hip is turned outward and the leg appears shorter on that side." [NCIT:P378]
+def: "Traumatic or pathological injury to the hip in which the continuity of either the femoral head, femoral neck, intertrochanteric or subtrochanteric regions is broken. Symptoms include pain in the hip or groin, bruising and swelling in and around the hip area. The injured hip is turned outward and the leg appears shorter on that side." [NCIT:C26794]
 subset: otar {source="MONDO:OTAR"}
 xref: EFO:0003964 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: MESH:D006620 {source="EFO:0003964", source="MONDO:equivalentTo"}
@@ -114142,6 +114145,7 @@ xref: NCIT:C26794 {source="EFO:0003964", source="MONDO:otherHierarchy"}
 xref: SCTID:263225007 {source="MONDO:equivalentTo"}
 is_a: MONDO:0005315 {source="EFO:0003964", source="MESH:D006620/inferred"} ! bone fracture
 relationship: disease_has_location UBERON:0000981 {source="EFO:0000784"} ! femur
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8067" xsd:anyURI
 
 [Term]
 id: MONDO:0005328
@@ -579879,7 +579883,7 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-520
 [Term]
 id: MONDO:0100075
 name: jaw fracture
-def: "A traumatic or pathologic injury to the jaw in which the continuity of the bone is broken." []
+def: "A bone fracture that affects one or both bones that comprise the jaw." [NCIT:C26803]
 subset: otar {source="MONDO:OTAR"}
 synonym: "lower jaw fracture" NARROW []
 synonym: "upper jaw fracture" NARROW []
@@ -579888,6 +579892,7 @@ xref: MESH:D007572 {source="MONDO:equivalentTo"}
 is_a: MONDO:0005315 {source="https://orcid.org/0000-0002-1382-4768"} ! bone fracture
 property_value: http://purl.org/dc/elements/1.1/date "2019-02-06T06:57:26Z" xsd:dateTime
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8067" xsd:anyURI
 
 [Term]
 id: MONDO:0100076
