@@ -4966,18 +4966,17 @@ relationship: realized_in_response_to_stimulus CL:0000216 ! Sertoli cell
 [Term]
 id: MONDO:0000379
 name: malignant Sertoli-Leydig cell tumor
-def: "A malignant form of Sertoli-leydig cell tumor." [MONDO:patterns/malignant]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
+def: "A Sertoli-Leydig cell tumor that is malignant. It occurs in the ovary or the testis." [MONDO:patterns/malignant, PMID:17235570, PMID:32519016]
 subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="PMID:17235570", source="https://orcid.org/0000-0002-7638-4659", source="PMID:32519016", source="PMID:39173553", source="https://github.com/monarch-initiative/mondo/issues/7700"}
 subset: rare
-synonym: "Sertoli-Leydig cell tumor, malignant" EXACT [MONDO:patterns/malignant]
+synonym: "Sertoli-Leydig cell tumor, malignant" EXACT [MONDO:patterns/malignant, PMID:39173553]
 xref: DOID:0050618 {source="MONDO:equivalentObsolete"}
 is_a: MONDO:0002479 {source="MONDO:Redundant", source="https://orcid.org/0000-0002-6601-2165"} ! Sertoli-Leydig cell tumor
 intersection_of: MONDO:0002479 ! Sertoli-Leydig cell tumor
 intersection_of: has_characteristic PATO:0002097 ! neoplastic, malignant
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10624" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0000380
@@ -22729,6 +22728,7 @@ relationship: excluded_subClassOf MONDO:0003117 {source="DOID:11569", source="ht
 relationship: excluded_subClassOf MONDO:0005618 {source="MESH:D009449", source="https://orcid.org/0000-0002-7638-4659"} ! anxiety disorder
 property_value: curated_content_resource "https://www.malacards.org/card/orthostatic_intolerance" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10150" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10509" xsd:anyURI
 
 [Term]
 id: MONDO:0001316
@@ -48182,11 +48182,12 @@ xref: DOID:2997 {source="MONDO:equivalentTo"}
 xref: GARD:0009967 {source="MONDO:GARD"}
 xref: MEDGEN:61669 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D018310 {source="MONDO:equivalentTo", source="DOID:2997"}
-xref: ONCOTREE:SLCT {source="MONDO:equivalentTo"}
 xref: SCTID:34110004 {source="DOID:2997"}
 xref: UMLS:C0206723 {source="MEDGEN:61669", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0003125 {source="DOID:2997"} ! testicular sex cord-stromal neoplasm
+is_a: MONDO:0006055 {source="MESH:D018310", source="PMID:1512847", source="PMID:37907261", source="PMID:39173553"} ! sex cord-stromal tumor
+relationship: excluded_subClassOf MONDO:0003125 {source="DOID:2997", source="https://orcid.org/0000-0002-7638-4659"} ! testicular sex cord-stromal neoplasm
 property_value: curated_content_resource "https://www.malacards.org/card/sertoli_leydig_cell_tumor" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10624" xsd:anyURI
 
 [Term]
 id: MONDO:0002480
@@ -102348,17 +102349,15 @@ property_value: curated_content_resource "https://www.malacards.org/card/urethra
 id: MONDO:0004910
 name: mitral valve prolapse
 def: "A fairly common and often benign valvular heart disorder characterized by redundancy or hooding of mitral valve leaflets so that they prolapse into the left atrium, often causing mitral regurgitation. It is often a symptomless condition but may be marked by varied symptoms (e.g. chest pain, fatigue, dizziness, dyspnea, or palpitations) leading in some cases to endocarditis or ventricular tachycardia." [NCIT:P378]
-comment: This term is scheduled to be merged with MONDO:0001315 orthostatic intolerance, based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0001315
 subset: doid {source="DOID:988"}
 subset: ncit {source="NCIT:C50655"}
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/10509"}
 synonym: "barlow's syndrome" EXACT [DOID:988, MTH:097]
 synonym: "floppy mitral valve" EXACT [DOID:988, NCIT:C50655]
 synonym: "mitral valve prolapse" EXACT [DOID:988, icd11.foundation:1085590500, MONDO:ambiguous, NCIT:C50655]
 synonym: "mitral valve prolapse (disease)" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "mitral valve prolapse syndrome" EXACT [NCIT:C50655]
-synonym: "prolapse, mitral valve" EXACT []
-synonym: "valve, prolapse Of mitral" EXACT []
+synonym: "prolapse, mitral valve" EXACT [MESH:D008945]
 xref: DOID:988 {source="MONDO:equivalentTo"}
 xref: HP:0001634 {source="MONDO:otherHierarchy"}
 xref: icd11.foundation:1085590500 {source="MONDO:equivalentTo"}
@@ -102376,7 +102375,6 @@ xref: UMLS:C0026267 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0003767 {source="DOID:988", source="NCIT:C50655"} ! mitral valve disorder
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10509" xsd:anyURI
 property_value: IAO:0000589 "mitral valve prolapse (disease)" xsd:string
-property_value: IAO:0006012 "2026-10-01" xsd:string
 
 [Term]
 id: MONDO:0004911
@@ -116616,7 +116614,7 @@ relationship: disease_has_location UBERON:0000473 {source="EFO:0000784"} ! testi
 [Term]
 id: MONDO:0005438
 name: metastatic malignant neoplasm in the lymph nodes
-def: "The spread of a malignant neoplasm to the lymph nodes." [NCIT:C4904]
+def: "A metastatic malignant neoplasm that has spread to the lymph nodes from another anatomic site." [NCIT:C4904]
 subset: gard_rare {source="GARD:0024186", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C4904"}
 subset: otar {source="MONDO:OTAR"}
@@ -116633,10 +116631,10 @@ xref: MEDGEN:151947 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C4904 {source="MONDO:equivalentTo", source="EFO:0004906"}
 xref: UMLS:C0686619 {source="MEDGEN:151947", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0001082 {source="MONDO:Redundant", source="NCIT:C4904"} ! lymph node cancer
-intersection_of: MONDO:0001082 ! lymph node cancer
-intersection_of: has_characteristic PATO:0002098 ! neoplastic, metastatic
+is_a: MONDO:0024880 {source="NCIT:C4904"} ! metastatic malignant neoplasm
 relationship: disease_has_location UBERON:0000029 {source="EFO:0000784"} ! lymph node
 relationship: excluded_subClassOf MONDO:0004993 {source="EFO:0004906", source="https://orcid.org/0000-0001-5208-3432"} ! carcinoma
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7838" xsd:anyURI
 
 [Term]
 id: MONDO:0005439
@@ -159303,8 +159301,9 @@ subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "BDB1" EXACT ABBREVIATION [DOID:0110969, OMIM:113000]
 synonym: "brachydactyly type B caused by mutation in ROR2" EXACT [MONDO:design_pattern]
-synonym: "brachydactyly, type B1" RELATED []
+synonym: "brachydactyly, type B1" EXACT [OMIM:113000]
 synonym: "ROR2 brachydactyly type B" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
+synonym: "ROR2-related brachydactyly type B" EXACT [PMID:10700182, PMID:10986040]
 xref: DOID:0110969 {source="MONDO:equivalentTo"}
 xref: GARD:0018009 {source="MONDO:GARD"}
 xref: MEDGEN:349432 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -159317,6 +159316,7 @@ intersection_of: MONDO:0019676 ! brachydactyly type B
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10257 ! ROR2
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10257 {source="OMIM:113000"} ! ROR2
 property_value: curated_content_resource "https://www.malacards.org/card/brachydactyly_type_b1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10795" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 
 [Term]
@@ -188870,29 +188870,31 @@ is_obsolete: true
 [Term]
 id: MONDO:0008327
 name: exfoliation syndrome
-def: "An autosomal dominant disorder caused by mutations in the LOXL1 gene, encoding lysyl oxidase homolog 1. The condition is characterized by abnormal fibrillar extracellular material in anterior segment tissues, and may lead to glaucoma." [NCIT:C129025]
+def: "A syndromic disease that is an age-related systemic disorder of the extracellular matrix, characterized by the deposition of abnormal fibrillar material in the anterior segment of the eye. It increases the risk of glaucoma (exfoliation glaucoma) and is associated with cataract progression. Variations in the LOXL1 gene are the major genetic risk factor." [PMID:10749381, PMID:31563608]
+comment: Please do not confuse with MONDO:1060284 exfoliation glaucoma, which is a secondary open-angle glaucoma that develops in only some individuals with exfoliation syndrome.
 subset: doid {source="DOID:13641"}
 subset: gard_rare {source="GARD:0027786", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C129025"}
 subset: ncit_rare {source="NCIT:C129025"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "XFG" RELATED ABBREVIATION [NCIT:C129025]
 synonym: "XFS" EXACT ABBREVIATION [NCIT:C129025]
 xref: DOID:13641 {source="EFO:0004235", source="MONDO:equivalentTo"}
 xref: EFO:0004235 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: GARD:0027786 {source="MONDO:GARD"}
+xref: MEDGEN:60133 {source="MONDO:equivalentTo"}
 xref: MESH:D017889 {source="EFO:0004235", source="MONDO:equivalentTo", source="DOID:13641"}
 xref: NCIT:C129025 {source="MONDO:equivalentTo"}
 xref: Orphanet:529819 {source="MONDO:equivalentObsolete"}
 xref: SCTID:44219007 {source="DOID:13641"}
+xref: UMLS:C0206368 {source="MEDGEN:60133", source="MONDO:equivalentTo"}
 is_a: MONDO:0002254 {source="NCIT:C129025"} ! syndromic disease
 is_a: MONDO:0002289 {source="DOID:13641", source="MESH:D017889"} ! iris disorder
 is_a: MONDO:0003847 {source="MONDO:Redundant"} ! hereditary disease
 relationship: excluded_subClassOf MONDO:0001554 {source="DOID:13641", source="NCIT:C129025", source="https://orcid.org/0000-0002-7638-4659"} ! phacogenic glaucoma
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6665 {source="PMID:31563608"} ! LOXL1
 property_value: curated_content_resource "https://www.malacards.org/card/exfoliation_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10449" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10798" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4882" xsd:anyURI
 
@@ -233808,11 +233810,12 @@ is_a: MONDO:0016543 {source="DC-OMIM:261630", source="Orphanet:226"} ! hyperphen
 intersection_of: MONDO:0000001 ! disease
 intersection_of: disease_has_basis_in_disruption_of GO:0004155 ! 6,7-dihydropteridine reductase activity
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0009862 {source="MONDO:CLINGEN"}
-relationship: disease_has_basis_in_disruption_of GO:0046146 ! tetrahydrobiopterin metabolic process
+relationship: disease_has_basis_in_disruption_of GO:0006729 {source="PMID:21867484", source="https://orcid.org/0000-0003-1813-6857"}
 relationship: disease_shares_features_of MONDO:0009861 {source="MONDO:Redundant", source="NCIT:C138173", source="OMIM:261630"} ! phenylketonuria
 relationship: has_characteristic HP:0000007 {source="MONDO:HPOA", source="OMIM:261630", source="Orphanet:226"} ! Autosomal recessive inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9752 {source="OMIM:261630"} ! QDPR
 property_value: curated_content_resource "https://www.malacards.org/card/hyperphenylalaninemia_bh4_deficient_c" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10744" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/4319/dihydropteridine-reductase-deficiency" xsd:anyURI {source="GARD:0004319"}
 
 [Term]
@@ -237894,33 +237897,26 @@ subset: doid {source="DOID:0060764"}
 subset: doid_rare {source="DOID:0060764"}
 subset: gard_rare {source="GARD:0016568", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
-subset: omim {source="OMIM:268310"}
 subset: ordo_subtype_of_a_disorder {source="Orphanet:1507"}
 subset: orphanet {source="Orphanet:1507"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "costovertebral segmentation defect with mesomelia" RELATED [OMIM:268310]
 synonym: "costovertebral segmentation defect-mesomelia syndrome" EXACT [DOID:0060764, Orphanet:1507]
 synonym: "COVESDEM syndrome" EXACT [DOID:0060764, Orphanet:1507]
-synonym: "Covesdem syndrome" RELATED [OMIM:268310]
 synonym: "Robinow syndrome, autosomal recessive" EXACT [MONDO:patterns/autosomal_recessive]
 synonym: "RRS" EXACT ABBREVIATION [DOID:0060764, Orphanet:1507]
 xref: DOID:0060764 {source="MONDO:equivalentTo"}
 xref: GARD:0016568 {source="MONDO:GARD"}
 xref: ICD10CM:Q87.1 {source="DOID:0060764", source="Orphanet:1507"}
 xref: icd11.foundation:793292660 {source="MONDO:equivalentTo"}
-xref: MEDGEN:1770070 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C535863 {source="Orphanet:1507/e", source="MONDO:equivalentTo", source="Orphanet:1507"}
-xref: OMIM:268310 {source="Orphanet:1507/e", source="MONDO:equivalentTo", source="DOID:0060764", source="Orphanet:1507"}
 xref: Orphanet:1507 {source="OMIM:268310", source="MONDO:equivalentTo", source="DOID:0060764"}
-xref: UMLS:C5399974 {source="MEDGEN:1770070", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0006025 {source="DOID:0060764"} ! autosomal recessive disease
 is_a: MONDO:0019978 {source="DC-OMIM:268310", source="DOID:0060764", source="MONDO:Redundant", source="OMIM:268310", source="Orphanet:1507", source="icd11.foundation:793292660"} ! Robinow syndrome
 intersection_of: MONDO:0019978 ! Robinow syndrome
 intersection_of: has_characteristic HP:0000007 ! Autosomal recessive inheritance
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10257 {source="OMIM:268310"} ! ROR2
 property_value: curated_content_resource "https://www.malacards.org/card/autosomal_recessive_robinow_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
-property_value: curated_content_resource "https://www.malacards.org/card/robinow_syndrome_autosomal_recessive_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10794" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 
 [Term]
@@ -320654,9 +320650,10 @@ is_a: MONDO:0044807 {source="DOID:0111168", source="MONDO:indirect"} ! inherited
 intersection_of: MONDO:0016812 ! dopa-responsive dystonia
 intersection_of: disease_has_basis_in_disruption_of GO:0004757 ! sepiapterin reductase (NADP+) activity
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0012994 {source="MONDO:CLINGEN"}
-relationship: disease_has_basis_in_disruption_of GO:0046146 ! tetrahydrobiopterin metabolic process
+relationship: disease_has_basis_in_disruption_of GO:0006729 {source="PMID:21867484", source="https://orcid.org/0000-0003-1813-6857"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11257 {source="OMIM:612716"} ! SPR
 property_value: curated_content_resource "https://www.malacards.org/card/dystonia_dopa_responsive_due_to_sepiapterin_reductase_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10744" xsd:anyURI
 
 [Term]
 id: MONDO:0012995
@@ -324135,51 +324132,45 @@ subset: ncit {source="NCIT:C163755"}
 subset: ncit_rare {source="NCIT:C163755"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:613091"}
-subset: ordo_disorder {source="Orphanet:93270", source="Orphanet:93271"}
-subset: ordo_malformation_syndrome {source="Orphanet:93270", source="Orphanet:93271"}
-subset: orphanet {source="Orphanet:93270", source="Orphanet:93271"}
-subset: orphanet_rare {source="Orphanet:93270", source="Orphanet:93271"}
+subset: ordo_disorder {source="Orphanet:93270"}
+subset: ordo_malformation_syndrome {source="Orphanet:93270"}
+subset: orphanet {source="Orphanet:93270"}
+subset: orphanet_rare {source="Orphanet:93270"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "asphyxiating thoracic dystrophy 3" EXACT [DOID:0110087, OMIM:613091] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "asphyxiating thoracic dystrophy type 3" EXACT []
 synonym: "ATD3" EXACT ABBREVIATION [DOID:0110087, OMIM:613091]
 synonym: "DYNC2H1-related short rib thoracic dysplasia" EXACT [https://orcid.org/0009-0009-9147-3105]
-synonym: "polydactyly with neonatal chondrodystrophy type 1" EXACT [GARD:0004834]
-synonym: "polydactyly with neonatal chondrodystrophy type III" EXACT [GARD:0004835]
-synonym: "polydactyly with neonatal chondrodystrophy, type 3" EXACT [OMIM:613091]
-synonym: "Saldino-Noonan syndrome" EXACT [DOID:0110087, OMIM:613091]
-synonym: "short rib polydactyly syndrome Verma Naumoff type" EXACT [GARD:0004835, MONDO:0019664]
-synonym: "short rib-polydactyly syndrome Saldino-Noonan type" EXACT [GARD:0004834, MONDO:0019663]
-synonym: "short rib-polydactyly syndrome type 1" EXACT [Orphanet:93270]
-synonym: "short rib-polydactyly syndrome type 3" EXACT [GARD:0004835, Orphanet:93271]
-synonym: "short rib-polydactyly syndrome type III" EXACT [GARD:0004835]
+synonym: "polydactyly with neonatal chondrodystrophy type 1" EXACT [OMIM:613091]
+synonym: "polydactyly with neonatal chondrodystrophy type III" RELATED [OMIM:613091]
+synonym: "polydactyly with neonatal chondrodystrophy, type 3" RELATED [OMIM:613091]
+synonym: "Saldino-Noonan syndrome" EXACT [DOID:0110087, OMIM:613091, PMID:40339774]
+synonym: "short rib polydactyly syndrome Verma Naumoff type" RELATED [PMID:29458881]
+synonym: "short rib-polydactyly syndrome Saldino-Noonan type" EXACT [Orphanet:93270, PMID:27925158]
+synonym: "short rib-polydactyly syndrome type 1" EXACT [OMIM:613091, Orphanet:93270]
+synonym: "short rib-polydactyly syndrome type 3" RELATED [OMIM:613091]
+synonym: "short rib-polydactyly syndrome type III" RELATED [OMIM:613091]
 synonym: "short rib-polydactyly syndrome, type 2B" EXACT [OMIM:613091]
 synonym: "short-rib thoracic dysplasia 3 with or without polydactyly" EXACT [DOID:0110087, NCIT:C163755, OMIM:613091]
-synonym: "SRPS type 1" EXACT [GARD:0004834]
-synonym: "SRPS type 3" EXACT [GARD:0004835]
 synonym: "SRPS1" EXACT ABBREVIATION [DOID:0110087, OMIM:613091]
 synonym: "SRPS2B" EXACT ABBREVIATION [DOID:0110087, OMIM:613091]
-synonym: "SRPS3" EXACT ABBREVIATION [DOID:0110087, OMIM:613091]
+synonym: "SRPS3" RELATED ABBREVIATION [DOID:0110087, OMIM:613091]
 synonym: "SRTD3" EXACT ABBREVIATION [DOID:0110087, NCIT:C163755, OMIM:613091]
-synonym: "type I short rib polydactyly syndrome" EXACT []
-synonym: "Verma-Naumoff syndrome" EXACT [DOID:0110087, GARD:0004835, OMIM:613091]
+synonym: "Verma-Naumoff syndrome" RELATED [DOID:0110087, OMIM:613091, PMID:40339774]
 xref: DOID:0050549 {source="MONDO:equivalentObsolete"}
 xref: DOID:0110087 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
 xref: GARD:0015613 {source="MONDO:GARD"}
-xref: ICD10CM:Q77.2 {source="DOID:0110087", source="Orphanet:93270", source="Orphanet:93271"}
+xref: ICD10CM:Q77.2 {source="DOID:0110087", source="Orphanet:93270"}
 xref: ICD9:759.89 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:19860 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: MESH:C537602 {source="Orphanet:93271/e", source="MONDO:equivalentTo", source="Orphanet:93271"}
 xref: NCIT:C163755 {source="MONDO:equivalentTo"}
-xref: OMIM:613091 {source="MONDO:equivalentTo", source="Orphanet:93271/btnt", source="DOID:0110087", source="Orphanet:93270", source="Orphanet:93271"}
+xref: OMIM:613091 {source="MONDO:equivalentTo", source="DOID:0110087", source="Orphanet:93270"}
 xref: Orphanet:93270 {source="MONDO:equivalentTo", source="OMIM:613091"}
-xref: Orphanet:93271 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
-xref: SCTID:254051008 {source="MONDO:equivalentTo"}
 xref: SCTID:27330009 {source="MONDO:equivalentObsolete"}
+xref: SCTID:726032008 {source="MONDO:equivalentTo"}
 xref: UMLS:C0036069 {source="MEDGEN:19860", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0002254 {source="DOID:0050549", source="MONDO:0019663/inferred", source="MONDO:Redundant"} ! syndromic disease
-is_a: MONDO:0015461 {source="MESH:C537602", source="Orphanet:93270", source="Orphanet:93271"} ! short rib-polydactyly syndrome
+is_a: MONDO:0015461 {source="OMIM:613091", source="PMID:36779427"} ! short rib-polydactyly syndrome
 is_a: MONDO:0018770 {source="DOID:0110087", source="OMIM:613091"} ! Jeune syndrome
 is_a: MONDO:0019691 {source="PMID:31633310"} ! short rib dysplasia
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2962 {source="OMIM:613091"} ! DYNC2H1
@@ -324188,6 +324179,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/short_r
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4148" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8405" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9060" xsd:anyURI
 
 [Term]
 id: MONDO:0013128
@@ -386746,16 +386738,20 @@ xref: ICD10CM:Q77.2 {source="Orphanet:1505"}
 xref: icd11.foundation:960900212 {source="MONDO:equivalentTo", source="Orphanet:1505"}
 xref: ICD9:756.3 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:11412 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: MESH:C537602 {source="MONDO:mondoIsBroaderThanSource"}
 xref: MESH:D012779 {source="Orphanet:1505/e", source="MONDO:equivalentTo", source="Orphanet:1505"}
 xref: NCIT:C85065 {source="MONDO:equivalentTo"}
 xref: Orphanet:1505 {source="MONDO:equivalentTo"}
+xref: Orphanet:93271 {source="MONDO:mondoIsBroaderThanSource"}
 xref: SCTID:205484001 {source="MONDO:equivalentTo"}
+xref: SCTID:254051008 {source="MONDO:mondoIsBroaderThanSource"}
 xref: UMLS:C0036996 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:11412"}
 is_a: MONDO:0002254 {source="NCIT:C85065"} ! syndromic disease
 is_a: MONDO:0005087 {source="MONDO:Entailed"} ! respiratory system disorder
 is_a: MONDO:0015929 {source="Orphanet:1505"} ! thoracic malformation
 is_a: MONDO:0019691 {source="Orphanet:1505"} ! short rib dysplasia
 property_value: curated_content_resource "https://www.malacards.org/card/short_rib_polydactyly_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9060" xsd:anyURI
 
 [Term]
 id: MONDO:0015462
@@ -539258,10 +539254,12 @@ property_value: curated_content_resource "https://www.malacards.org/card/cardiom
 [Term]
 id: MONDO:0030331
 name: Ritscher-Schinzel syndrome 4
+def: "Any Ritscher-Schinzel syndrome in which the cause of the disease is a variation in the DPYSL5 gene. It is characterized by brain malformations, including corpus callosum agenesis and/or posterior fossa abnormalities, associated with variable degrees of intellectual disability." [PMID:33894126]
 subset: gard_rare {source="GARD:0025541", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:619435"}
 subset: rare
+synonym: "DPYSL5-related complex neurodevelopmental disorder" EXACT [PMID:33894126]
 synonym: "Ritscher-Schinzel syndrome 4" EXACT [OMIM:619435]
 synonym: "RTSC4" EXACT ABBREVIATION [OMIM:619435]
 xref: GARD:0025541 {source="MONDO:GARD"}
@@ -539269,8 +539267,12 @@ xref: MEDGEN:1794149 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619435 {source="MONDO:equivalentTo"}
 xref: UMLS:C5561939 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1794149"}
 is_a: MONDO:0019078 {source="OMIM:619435"} ! Ritscher-Schinzel syndrome
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20637 {source="OMIM:619435"} ! DPYSL5
+is_a: MONDO:0100038 {source="PMID:33894126"} ! complex neurodevelopmental disorder
+intersection_of: MONDO:0019078 ! Ritscher-Schinzel syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20637 ! DPYSL5
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20637 {source="OMIM:619435", source="PMID:33894126"} ! DPYSL5
 property_value: curated_content_resource "https://www.malacards.org/card/ritscher_schinzel_syndrome_4" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10796" xsd:anyURI
 
 [Term]
 id: MONDO:0030332
@@ -550184,22 +550186,26 @@ property_value: curated_content_resource "https://www.malacards.org/card/mitocho
 
 [Term]
 id: MONDO:0032800
-name: robinow syndrome, autosomal recessive 2
+name: Robinow syndrome, autosomal recessive 2
 subset: doid {source="DOID:0060974"}
 subset: gard_rare {source="GARD:0025750", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:618529"}
 subset: rare
-synonym: "RRS2" RELATED ABBREVIATION []
+synonym: "RRS2" EXACT ABBREVIATION [OMIM:618529]
 xref: DOID:0060974 {source="MONDO:equivalentTo"}
 xref: GARD:0025750 {source="MONDO:GARD"}
 xref: MEDGEN:1676687 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:618529 {source="MONDO:equivalentTo"}
 xref: UMLS:C5193143 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1676687"}
 is_a: MONDO:0003847 {source="OMIM:618529"} ! hereditary disease
+is_a: MONDO:0009999 {source="OMIM:618529"} ! autosomal recessive Robinow syndrome
 is_a: MONDO:0019978 {source="DOID:0060974", source="OMIM:618529"} ! Robinow syndrome
+intersection_of: MONDO:0009999 ! autosomal recessive Robinow syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18008 ! NXN
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18008 {source="OMIM:618529"} ! NXN
 property_value: curated_content_resource "https://www.malacards.org/card/robinow_syndrome_autosomal_recessive_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10794" xsd:anyURI
 
 [Term]
 id: MONDO:0032801
@@ -561084,11 +561090,14 @@ synonym: "Sertoli-Leydig neoplasm of the ovary" EXACT [NCIT:C2880]
 xref: GARD:0027954 {source="MONDO:GARD"}
 xref: MEDGEN:2038 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C2880 {source="MONDO:equivalentTo"}
+xref: ONCOTREE:SLCT {source="MONDO:equivalentTo"}
 xref: SCTID:254866007 {source="MONDO:equivalentTo"}
 xref: UMLS:C0003810 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:2038"}
+is_a: MONDO:0002479 {source="PMID:37907261"} ! Sertoli-Leydig cell tumor
 is_a: MONDO:0020807 {source="NCIT:C2880"} ! ovarian sertoli-stromal cell tumor
 relationship: disease_arises_from_structure CL:0000178 ! Leydig cell
 relationship: disease_has_location UBERON:0000992 ! ovary
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10624" xsd:anyURI
 
 [Term]
 id: MONDO:0036688
@@ -573682,7 +573691,7 @@ intersection_of: disease_has_location UBERON:0005631 ! extraembryonic membrane
 [Term]
 id: MONDO:0045014
 name: tetrahydrobiopterin metabolic process disease
-def: "A disease that has its basis in the disruption of tetrahydrobiopterin metabolic process." [MONDO:design_pattern]
+def: "A disease that has its basis in the disruption of tetrahydrobiopterin biosynthetic process." [MONDO:design_pattern]
 subset: gard_rare {source="GARD:0025930", source="MONDO:GARD"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
@@ -573695,7 +573704,8 @@ xref: SCTID:237913008 {source="MONDO:equivalentTo"}
 xref: UMLS:C0342676 {source="MEDGEN:575174", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0017306 ! disorder of phenylalanine metabolism
 intersection_of: MONDO:0000001 ! disease
-intersection_of: disease_has_basis_in_disruption_of GO:0046146 ! tetrahydrobiopterin metabolic process
+intersection_of: disease_has_basis_in_disruption_of GO:0006729
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10744" xsd:anyURI
 
 [Term]
 id: MONDO:0045015
@@ -581930,11 +581940,12 @@ xref: Orphanet:2102 {source="MONDO:equivalentTo", source="OMIM:233910"}
 xref: SCTID:23447005 {source="MONDO:equivalentTo"}
 is_a: MONDO:0016543 {source="DC-OMIM:233910", source="Orphanet:2102"} ! hyperphenylalaninemia due to tetrahydrobiopterin deficiency
 is_a: MONDO:0100184 {source="https://github.com/monarch-initiative/mondo/issues/1491", source="https://orcid.org/0000-0002-5655-9589"} ! GTP cyclohydrolase I deficiency
-relationship: disease_has_basis_in_disruption_of GO:0046146 ! tetrahydrobiopterin metabolic process
+relationship: disease_has_basis_in_disruption_of GO:0006729 {source="PMID:21867484", source="https://orcid.org/0000-0003-1813-6857"}
 relationship: has_characteristic HP:0000007 {source="MONDO:HPOA", source="OMIM:233910", source="Orphanet:2102"} ! Autosomal recessive inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4193 {source="OMIM:233910"} ! GCH1
 property_value: curated_content_resource "https://www.malacards.org/card/hyperphenylalaninemia_bh4_deficient_b" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10744" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/2844/gtp-cyclohydrolase-i-deficiency" xsd:anyURI {source="GARD:0002844"}
 
 [Term]
@@ -702238,14 +702249,16 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 id: MONDO:1060284
 name: exfoliation glaucoma
 def: "A secondary open-angle glaucoma that develops in individuals with exfoliation syndrome. Exfoliation syndrome is associated with raised intraocular pressure in up to 44% of patients, making it the most commonly identifiable cause of secondary open-angle glaucoma." [PMID:34662036, PMID:35074716]
+comment: Please do not confuse with MONDO:0008327 exfoliation syndrome, which is the underlying deposition disorder. Exfoliation glaucoma develops in only some individuals with exfoliation syndrome.
 synonym: "pseudoexfoliation glaucoma" EXACT [PMID:34662036]
 synonym: "XFG" EXACT ABBREVIATION [PMID:35074716, PMID:36278673]
 xref: ICD9:365.52 {source="MONDO:equivalentTo"}
 xref: SCTID:111514006 {source="MONDO:equivalentTo"}
 is_a: MONDO:0005338 {source="PMID:34662036", source="PMID:35074716"} ! open-angle glaucoma
-is_a: MONDO:1060277 {source="PMID:34662036", source="PMID:35074716"} ! secondary glaucoma
+is_a: MONDO:1060277 {source="PMID:10749381", source="PMID:34662036", source="PMID:35074716"} ! secondary glaucoma
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10449" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10798" xsd:anyURI
 
 [Term]
 id: MONDO:1060285
@@ -702773,6 +702786,38 @@ def: "A form of male infertility characterized by failure or severely reduced ef
 is_a: MONDO:0005372 {source="PMID:40572651", source="https://www.clinicalgenome.org/affiliation/40073/"} ! male infertility
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10154" xsd:anyURI
+
+[Term]
+id: MONDO:1060325
+name: Robinow syndrome, autosomal recessive 1
+def: "Any autosomal recessive Robinow syndrome in which the cause of the disease is a mutation in the ROR2 gene. It is characterized by limb shortening and abnormalities of the head, face and external genitalia. Common features include short stature, characteristic facial features (hypertelorism, midface hypoplasia, large nasal bridge, short upturned nose, and anteverted nares), mesomelic limb shortening, brachydactyly, clinodactyly, gingival hyperplasia, and genital hypoplasia." [PMID:20301418, PMID:35344616]
+subset: omim {source="OMIM:268310"}
+synonym: "costovertebral segmentation defect with mesomelia" EXACT [OMIM:268310]
+synonym: "Covesdem syndrome" EXACT [OMIM:268310]
+synonym: "Robinow syndrome, autosomal recessive 1" EXACT [OMIM:268310]
+synonym: "ROR2-related Robinow syndrome" EXACT [PMID:20301418, PMID:35344616]
+synonym: "RRS1" EXACT ABBREVIATION [OMIM:268310]
+xref: MEDGEN:1770070 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: OMIM:268310 {source="MONDO:equivalentTo"}
+xref: UMLS:C5399974 {source="MEDGEN:1770070", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0009999 {source="OMIM:268310", source="PMID:20301418"} ! autosomal recessive Robinow syndrome
+intersection_of: MONDO:0009999 ! autosomal recessive Robinow syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10257 ! ROR2
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10257 {source="OMIM:268310", source="PMID:20301418"} ! ROR2
+property_value: curated_content_resource "https://www.malacards.org/card/robinow_syndrome_autosomal_recessive_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10794" xsd:anyURI
+
+[Term]
+id: MONDO:1060326
+name: SCAMP5-related complex neurodevelopmental disorder
+def: "Any complex neurodevelopmental disorder in which the cause of the disease is a variation in the SCAMP5 gene. It is characterized by developmental delay, intellectual disability, seizures, and autistic features. Abnormal neurological findings, including extrapyramidal signs, may be present." [PMID:31439720, PMID:33390987]
+is_a: MONDO:0100038 {source="PMID:31439720", source="PMID:33390987"} ! complex neurodevelopmental disorder
+intersection_of: MONDO:0100038 ! complex neurodevelopmental disorder
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30386
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30386 {source="PMID:31439720", source="PMID:33390987"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10797" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
