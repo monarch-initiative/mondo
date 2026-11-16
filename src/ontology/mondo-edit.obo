@@ -614841,7 +614841,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/muscula
 [Term]
 id: MONDO:0971172
 name: neurodevelopmental disorder with hypotonia, brain anomalies, distinctive facies, and absent language
-def: "A syndromic neurodevelopmental disorder in which the cause of the disease is a variation in RNU4-2 gene and is inherited in an autosomal dominant pattern. It is characterized by moderate to severe global developmental delay/intellectual disability, speech anomalies (mostly non-verbal), hypotonia, abnormal brain MRI (reduced white matter volume, hypoplasia of the corpus callosum, ventriculomegaly, and delayed myelination), dysmorphic facial features, short stature, microcephaly, behavioral issues, seizures and feeding difficulties, as well as variable vision, gastrointestinal, endocrine, skeletal, genitourinary, cardiac, and cutaneous anomalies. It has autosomal dominant inheritance." [https://clinicalgenome.org/affiliation/40060/, PMID:38821540, PMID:38991538, PMID:40379786]
+def: "Any neurodevelopmental disorder in which the cause of the disease is a variation in the RNU4-2 gene and has autosomal dominant inheritance, most often due to de novo variants. It is characterized by moderate to severe global developmental delay/intellectual disability, speech anomalies (mostly non-verbal), hypotonia, abnormal brain MRI (reduced white matter volume, hypoplasia of the corpus callosum, ventriculomegaly, and delayed myelination), dysmorphic facial features, short stature, microcephaly, behavioral issues, seizures and feeding difficulties, as well as variable vision, gastrointestinal, endocrine, skeletal, genitourinary, cardiac, and cutaneous anomalies." [https://clinicalgenome.org/affiliation/40060/, PMID:38821540, PMID:38991538, PMID:40379786]
 subset: doid {source="DOID:0061190"}
 subset: gard_rare {source="GARD:0027315", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -614865,8 +614865,10 @@ xref: UMLS:C5935628 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0003847 {source="OMIM:620851", source="https://orcid.org/0000-0002-4142-7153"} ! hereditary disease
 is_a: MONDO:0100500 {source="https://clinicalgenome.org/affiliation/40060/"} ! Mendelian neurodevelopmental disorder
 is_a: MONDO:0700092 {source="OMIM:620851", source="https://orcid.org/0000-0002-4142-7153"} ! neurodevelopmental disorder
+relationship: has_characteristic HP:0000006 {source="PMID:38991538", source="https://clinicalgenome.org/affiliation/40060/"} ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10193 {source="OMIM:620851"} ! RNU4-2
 property_value: curated_content_resource "https://www.malacards.org/card/renu_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10806" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8496" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9547" xsd:anyURI
 
