@@ -388947,10 +388947,12 @@ xref: SCTID:238809002 {source="DOID:0111157"}
 xref: SCTID:367497006 {source="DOID:0111157"}
 xref: SCTID:69484003 {source="DOID:0111157"}
 xref: UMLS:C0017531 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:42211"}
+is_a: MONDO:0005570 {source="Orphanet:160"} ! hematologic disorder
 is_a: MONDO:0016537 {source="DOID:0111157", source="NCIT:C3056/inferred"} ! lymphoproliferative syndrome
 relationship: excluded_subClassOf MONDO:0015157 {source="Orphanet:160", source="https://orcid.org/0000-0001-5208-3432"} ! human herpesvirus 8-related tumor
 relationship: excluded_subClassOf MONDO:0015757 {source="Orphanet:160", source="https://orcid.org/0000-0001-5208-3432"} ! lymphoid hemopathy
 property_value: curated_content_resource "https://www.malacards.org/card/castleman_disease" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
 
 [Term]
 id: MONDO:0015565
@@ -409953,7 +409955,6 @@ xref: OMIMPS:308240 {source="MONDO:mondoIsBroaderThanSource"}
 xref: Orphanet:238510 {source="MONDO:equivalentObsolete"}
 xref: SCTID:277466009 {source="MONDO:equivalentTo"}
 xref: UMLS:C0024314 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:6162"}
-is_a: MONDO:0005570 {source="NCIT:C9308"} ! hematologic disorder
 is_a: MONDO:0005833 {source="MESH:D008232"} ! lymphatic system disorder
 is_a: MONDO:0021334 {source="MESH:D008232"} ! immunoproliferative disorder
 relationship: excluded_subClassOf MONDO:0003778 {source="DOID:0060704", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-7638-4659"} ! inborn error of immunity
@@ -702787,6 +702788,7 @@ def: "A lymphoproliferative syndrome characterized by autoimmune hemolytic anemi
 subset: ncit {source="NCIT:C37864"}
 synonym: "ALPS" EXACT ABBREVIATION [NCIT:C37864]
 xref: NCIT:C37864 {source="MONDO:equivalentTo"}
+is_a: MONDO:0005570 {source="NCIT:C37864"} ! hematologic disorder
 is_a: MONDO:0007179 {source="MESH:D056735", source="PMID:37683818"} ! autoimmune disease
 is_a: MONDO:0016537 {source="NCIT:C37864"} ! lymphoproliferative syndrome
 is_a: MONDO:0021058 {source="NCIT:C37864"} ! neoplastic syndrome
