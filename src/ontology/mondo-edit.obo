@@ -257080,12 +257080,14 @@ xref: Orphanet:2442 {source="MONDO:equivalentTo", source="GARD:0007906", source=
 xref: SCTID:77121009 {source="MONDO:equivalentTo"}
 xref: UMLS:C0549463 {source="MEDGEN:107498", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0000425 {source="MONDO:Redundant"} ! X-linked disease
+is_a: MONDO:0003778 {source="DOID:0060705", source="Orphanet:2442"} ! inborn error of immunity
 is_a: MONDO:0016537 {source="DC-OMIM:308240", source="DOID:0060705", source="MONDO:Redundant", source="Orphanet:2442"} ! lymphoproliferative syndrome
 is_a: MONDO:0021094 {source="NCIT:C61246"} ! immunodeficiency disease
 intersection_of: MONDO:0016537 ! lymphoproliferative syndrome
 intersection_of: has_characteristic HP:0001417 ! X-linked inheritance
 relationship: excluded_subClassOf MONDO:0015541 {source="Orphanet:2442", source="https://orcid.org/0000-0001-9310-0163"} ! hereditary hemophagocytic lymphohistiocytosis
 property_value: curated_content_resource "https://www.malacards.org/card/lymphoproliferative_syndrome_x_linked_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/7906/x-linked-lymphoproliferative-syndrome-1" xsd:anyURI {source="GARD:0007906"}
 
 [Term]
@@ -271968,21 +271970,17 @@ subset: omim {source="OMIM:601859"}
 subset: omim_susceptibility {source="OMIM:601859"}
 subset: rare
 synonym: "ALPS" RELATED ABBREVIATION []
-synonym: "autoimmune lymphoproliferative syndrome" RELATED []
 synonym: "autoimmune lymphoproliferative syndrome type 1" EXACT [] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "autoimmune lymphoproliferative syndrome, type 1A" NARROW []
-synonym: "autoimmune lymphoproliferative syndrome, type 1B" NARROW []
-synonym: "autoimmune lymphoproliferative syndrome, type IA" EXACT []
-synonym: "autoimmune lymphoproliferative syndrome, type IB" EXACT []
 xref: GARD:0024776 {source="MONDO:GARD"}
 xref: ICD9:279.41 {source="MONDO:equivalentTo", source="MONDO:i2s"}
 xref: MEDGEN:403982 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:601859 {source="MONDO:equivalentTo"}
 xref: SCTID:702444009 {source="MONDO:equivalentTo"}
 xref: UMLS:C2717884 {source="MEDGEN:403982", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0017979 {source="DC-OMIM:601859"} ! autoimmune lymphoproliferative syndrome
+is_a: MONDO:0017979 {source="DC-OMIM:601859"} ! hereditary autoimmune lymphoproliferative syndrome
 property_value: curated_content_resource "https://www.malacards.org/card/autoimmune_lymphoproliferative_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
 
 [Term]
 id: MONDO:0011159
@@ -277719,8 +277717,8 @@ xref: MESH:C565833 {source="MONDO:equivalentTo"}
 xref: NCIT:C39576 {source="MONDO:equivalentTo"}
 xref: OMIM:603909 {source="DOID:0110115", source="MONDO:equivalentTo"}
 xref: UMLS:C1858968 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:349065"}
-is_a: MONDO:0017979 {source="DC-OMIM:603909", source="DOID:0110115", source="MESH:C565833", source="MONDO:Redundant", source="NCIT:C39576"} ! autoimmune lymphoproliferative syndrome
-intersection_of: MONDO:0017979 ! autoimmune lymphoproliferative syndrome
+is_a: MONDO:0017979 {source="DC-OMIM:603909", source="DOID:0110115", source="MESH:C565833", source="MONDO:Redundant", source="NCIT:C39576"} ! hereditary autoimmune lymphoproliferative syndrome
+intersection_of: MONDO:0017979 ! hereditary autoimmune lymphoproliferative syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1500 ! CASP10
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1500 {source="OMIM:603909"} ! CASP10
 property_value: curated_content_resource "https://www.malacards.org/card/autoimmune_lymphoproliferative_syndrome_type_iia" xsd:anyURI {source="MONDO:MalaCards"}
@@ -289014,8 +289012,8 @@ xref: OMIM:607271 {source="DOID:0110116", source="Orphanet:275517/e", source="MO
 xref: Orphanet:275517 {source="DOID:0110116", source="MONDO:equivalentTo", source="OMIM:607271"}
 xref: SCTID:722290008 {source="MONDO:equivalentTo"}
 xref: UMLS:C1846545 {source="MEDGEN:339548", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0017979 {source="DC-OMIM:607271", source="DOID:0110116", source="MONDO:Redundant"} ! autoimmune lymphoproliferative syndrome
-intersection_of: MONDO:0017979 ! autoimmune lymphoproliferative syndrome
+is_a: MONDO:0017979 {source="DC-OMIM:607271", source="DOID:0110116", source="MONDO:Redundant"} ! hereditary autoimmune lymphoproliferative syndrome
+intersection_of: MONDO:0017979 ! hereditary autoimmune lymphoproliferative syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1509 ! CASP8
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1509 {source="OMIM:607271"} ! CASP8
 property_value: curated_content_resource "https://www.malacards.org/card/caspase_8_deficiency_2" xsd:anyURI {source="MONDO:MalaCards"}
@@ -323050,6 +323048,7 @@ xref: NCIT:C126344 {source="MONDO:equivalentTo"}
 xref: OMIM:613011 {source="MONDO:equivalentTo", source="DOID:0060707", source="Orphanet:538963"}
 xref: Orphanet:538963 {source="MONDO:equivalentTo"}
 xref: UMLS:C3552634 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:765548"}
+is_a: MONDO:0003778 {source="DOID:0060707", source="Orphanet:538963"} ! inborn error of immunity
 is_a: MONDO:0016537 {source="DOID:0060707", source="MESH:C567815", source="MONDO:Redundant", source="OMIM:613011", source="Orphanet:538963"} ! lymphoproliferative syndrome
 is_a: MONDO:0021094 {source="NCIT:C126344"} ! immunodeficiency disease
 intersection_of: MONDO:0016537 ! lymphoproliferative syndrome
@@ -323061,6 +323060,7 @@ relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/
 property_value: curated_content_resource "https://www.malacards.org/card/lymphoproliferative_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/lymphoproliferative_syndrome_1" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
 
 [Term]
 id: MONDO:0013082
@@ -341733,8 +341733,8 @@ xref: OMIM:614470 {source="DOID:0110117", source="Orphanet:268114", source="MOND
 xref: Orphanet:268114 {source="DOID:0110117", source="MONDO:equivalentTo", source="OMIM:614470"}
 xref: SCTID:723508002 {source="MONDO:equivalentTo"}
 xref: UMLS:C2674723 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:382434"}
-is_a: MONDO:0017979 {source="DC-OMIM:614470", source="DOID:0110117", source="MONDO:Redundant"} ! autoimmune lymphoproliferative syndrome
-intersection_of: MONDO:0017979 ! autoimmune lymphoproliferative syndrome
+is_a: MONDO:0017979 {source="DC-OMIM:614470", source="DOID:0110117", source="MONDO:Redundant"} ! hereditary autoimmune lymphoproliferative syndrome
+intersection_of: MONDO:0017979 ! hereditary autoimmune lymphoproliferative syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/7989 ! NRAS
 property_value: curated_content_resource "https://www.malacards.org/card/ras_associated_autoimmune_leukoproliferative_disorder" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
@@ -349777,6 +349777,7 @@ xref: MEDGEN:767454 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:615122 {source="DOID:0060708", source="MONDO:equivalentTo"}
 xref: Orphanet:238505 {source="MONDO:equivalentTo", source="OMIM:615122"}
 xref: UMLS:C3554540 {source="MEDGEN:767454", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0003778 {source="DOID:0060708", source="Orphanet:238505"} ! inborn error of immunity
 is_a: MONDO:0016537 {source="DOID:0060708", source="MONDO:Redundant", source="OMIM:615122"} ! lymphoproliferative syndrome
 intersection_of: MONDO:0016537 ! lymphoproliferative syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11922 ! CD27
@@ -349785,6 +349786,7 @@ relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/
 property_value: curated_content_resource "https://www.malacards.org/card/lymphoproliferative_syndrome_2" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10132" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7693" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
 
 [Term]
 id: MONDO:0014055
@@ -362246,43 +362248,17 @@ property_value: curated_content_resource "https://www.malacards.org/card/palmopl
 [Term]
 id: MONDO:0014493
 name: autoimmune lymphoproliferative syndrome due to CTLA4 haploinsufficiency
-def: "A somatic mutation in the CTLA4 gene resulting in only a single functional gene. Haploinsufficiency for CTLA4 is associated with autoimmune lymphoproliferative syndrome, type V." [NCIT:C126341]
+def: "A somatic mutation in the CTLA4 gene resulting in only a single functional gene. Haploinsufficiency for CTLA4 is associated with autoimmune lymphoproliferative syndrome, type V." [https://orcid.org/0000-0003-2360-2664]
 subset: clingen {source="MONDO:CLINGEN"}
-subset: gard_rare {source="GARD:0012316", source="MONDO:GARD"}
-subset: ncit {source="NCIT:C126341"}
-subset: omim {source="OMIM:616100"}
-subset: ordo_disorder {source="Orphanet:436159"}
-subset: orphanet {source="Orphanet:436159"}
-subset: orphanet_rare {source="Orphanet:436159"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "ALPS due to CTLA4 haploinsufficiency" EXACT []
-synonym: "ALPS type 5" EXACT []
-synonym: "ALPS type V" EXACT []
-synonym: "ALPS5" RELATED ABBREVIATION []
-synonym: "autoimmune lymphoproliferative syndrome due to CTLA4 haploinsufficiency" EXACT [] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "autoimmune lymphoproliferative syndrome type 5" EXACT []
-synonym: "autoimmune lymphoproliferative syndrome type V" EXACT []
-synonym: "autoimmune lymphoproliferative syndrome, type V" RELATED [GARD:0012316]
-synonym: "CHAI" EXACT ABBREVIATION [NCIT:C126341, OMIM:616100, Orphanet:436159]
-synonym: "chai" EXACT ABBREVIATION [NCIT:C126341, OMIM:616100, Orphanet:436159]
-synonym: "CTLA-4 haploinsufficiency with autoimmune infiltration disease" EXACT [Orphanet:436159]
-synonym: "CTLA4 haploinsufficiency" EXACT [NCIT:C126341]
-synonym: "immune dysregulation with autoimmunity, immunodeficiency, and lymphoproliferation" EXACT [OMIM:616100]
-xref: GARD:0012316 {source="MONDO:GARD"}
-xref: ICD10CM:D47.9 {source="Orphanet:436159"}
-xref: MEDGEN:863651 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: NCIT:C126341 {source="MONDO:equivalentTo"}
-xref: OMIM:616100 {source="Orphanet:436159", source="MONDO:equivalentTo", source="Orphanet:436159/e"}
-xref: Orphanet:436159 {source="MONDO:equivalentTo"}
-xref: UMLS:C4015214 {source="MEDGEN:863651", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0007179 {source="NCIT:C126341"} ! autoimmune disease
-is_a: MONDO:0017979 {source="DC-OMIM:616100"} ! autoimmune lymphoproliferative syndrome
+synonym: "autoimmune lymphoproliferative syndrome due to CTLA4 haploinsufficiency" EXACT [https://clinicalgenome.org/affiliation/40080/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+is_a: MONDO:0007179 {source="https://orcid.org/0000-0003-2360-2664"} ! autoimmune disease
+is_a: MONDO:1060330 {source="https://orcid.org/0000-0003-2360-2664"} ! autoimmune lymphoproliferative syndrome
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0014493 {source="MONDO:CLINGEN"}
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2505 {source="OMIM:616100"} ! CTLA4
-property_value: curated_content_resource "https://www.malacards.org/card/immune_dysregulation_with_autoimmunity_immunodeficiency_and_lymphoproliferation" xsd:anyURI {source="MONDO:MalaCards"}
+relationship: excluded_subClassOf MONDO:0017979 {source="DC-OMIM:616100", source="https://orcid.org/0000-0002-7638-4659", source="https://orcid.org/0000-0003-2360-2664"} ! hereditary autoimmune lymphoproliferative syndrome
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
-property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/12316/autoimmune-lymphoproliferative-syndrome-due-to-ctla4-haploinsufficiency" xsd:anyURI {source="GARD:0012316"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
 
 [Term]
 id: MONDO:0014494
@@ -409962,28 +409938,28 @@ id: MONDO:0016537
 name: lymphoproliferative syndrome
 def: "A disorder characterized by proliferation of lymphocytes at various stages of differentiation. Lymphoproliferative disorders can be neoplastic (clonal, as in lymphomas and leukemias) or reactive (polyclonal, as in infectious mononucleosis)." [NCIT:C9308]
 subset: disease_grouping
-subset: doid {source="DOID:0060704"}
-subset: doid_rare {source="DOID:0060704"}
 subset: gard_rare {source="GARD:0020633", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C9308"}
-subset: omim {source="OMIMPS:308240"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "lymphoproliferative disorder" EXACT [NCIT:C9308]
 synonym: "lymphoproliferative syndrome" EXACT [DOID:0060704, OMIMPS:308240]
-xref: DOID:0060704 {source="MONDO:equivalentTo"}
+xref: DOID:0060704 {source="MONDO:mondoIsBroaderThanSource"}
 xref: GARD:0020633 {source="MONDO:GARD"}
 xref: MEDGEN:6162 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D008232 {source="MONDO:equivalentTo"}
 xref: NCIT:C9308 {source="MONDO:equivalentTo"}
-xref: OMIMPS:308240 {source="MONDO:equivalentTo", source="DOID:0060704"}
+xref: OMIMPS:308240 {source="MONDO:mondoIsBroaderThanSource"}
 xref: Orphanet:238510 {source="MONDO:equivalentObsolete"}
 xref: SCTID:277466009 {source="MONDO:equivalentTo"}
 xref: UMLS:C0024314 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:6162"}
-is_a: MONDO:0003778 {source="DOID:0060704", source="https://orcid.org/0000-0001-5208-3432"} ! inborn error of immunity
+is_a: MONDO:0005570 {source="NCIT:C9308"} ! hematologic disorder
+is_a: MONDO:0005833 {source="MESH:D008232"} ! lymphatic system disorder
+is_a: MONDO:0021334 {source="MESH:D008232"} ! immunoproliferative disorder
+relationship: excluded_subClassOf MONDO:0003778 {source="DOID:0060704", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-7638-4659"} ! inborn error of immunity
 relationship: excluded_subClassOf MONDO:0015356 {source="Orphanet:238510", source="https://orcid.org/0000-0001-5208-3432"} ! hereditary neoplastic syndrome
-relationship: has_characteristic MONDO:0021152 {source="OMIMPS:308240"} ! inherited
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6116" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
 
 [Term]
 id: MONDO:0016538
@@ -440953,20 +440929,18 @@ consider: MONDO:0002145
 
 [Term]
 id: MONDO:0017979
-name: autoimmune lymphoproliferative syndrome
-def: "Autoimmune lymphoproliferative syndrome (ALPS) is a rare, inherited disorder characterized by non-malignant lymphoproliferation, multilineage cytopenias, and a lifelong increased risk of Hodgkin's and non-Hodgkin's lymphoma." [Orphanet:3261]
+name: hereditary autoimmune lymphoproliferative syndrome
+def: "An inherited autoimmune lymphoproliferative syndrome characterized by non-malignant lymphoproliferation, multilineage cytopenias, and a lifelong increased risk of Hodgkin's and non-Hodgkin's lymphoma." [Orphanet:3261]
 subset: doid {source="DOID:6688"}
 subset: doid_rare {source="DOID:6688"}
 subset: gard_rare {source="GARD:0008686", source="MONDO:GARD"}
-subset: ncit {source="NCIT:C37864"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: ordo_disorder {source="Orphanet:3261"}
 subset: orphanet {source="Orphanet:3261"}
 subset: orphanet_rare {source="Orphanet:3261"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "ALPS" EXACT ABBREVIATION [DOID:6688, NCIT:C37864, Orphanet:3261]
-synonym: "ALPS (autoimmune lymphoproliferative syndrome)" EXACT []
+synonym: "ALPS" EXACT ABBREVIATION [DOID:6688, Orphanet:3261]
 synonym: "autoimmune lymphoproliferative syndrome type 1, autosomal dominant" RELATED [GARD:0008686]
 synonym: "Canale-Smith syndrome" EXACT [DOID:6688, icd11.foundation:1072688797, NCIT:C37864, Orphanet:3261]
 synonym: "FAS deficiency" EXACT [icd11.foundation:1072688797]
@@ -440981,16 +440955,18 @@ xref: MEDGEN:231300 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D056735 {source="DOID:6688", source="Orphanet:3261/e", source="MONDO:equivalentTo", source="Orphanet:3261"}
 xref: NANDO:1200352 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
 xref: NANDO:2200726 {source="MONDO:NANDO", source="https://orcid.org/0000-0003-0011-764X", source="https://orcid.org/0000-0002-0170-9172"}
-xref: NCIT:C37864 {source="DOID:6688", source="MONDO:equivalentTo"}
 xref: Orphanet:3261 {source="DOID:6688", source="MONDO:equivalentTo"}
 xref: UMLS:C1328840 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:231300"}
 is_a: MONDO:0002459 {source="DOID:6688"} ! type IV hypersensitivity disease
+is_a: MONDO:0003778 {source="PMID:39644063"} ! inborn error of immunity
 is_a: MONDO:0016537 {source="MESH:D056735", source="MONDO:Redundant", source="Orphanet:3261"} ! lymphoproliferative syndrome
 is_a: MONDO:0021058 {source="MONDO:Redundant", source="NCIT:C37864"} ! neoplastic syndrome
-intersection_of: MONDO:0016537 ! lymphoproliferative syndrome
-intersection_of: disease_arises_from_feature HP:0002960 ! Autoimmunity
+intersection_of: MONDO:1060330 ! autoimmune lymphoproliferative syndrome
+intersection_of: has_characteristic MONDO:0021152 ! inherited
 relationship: excluded_subClassOf MONDO:0015757 {source="Orphanet:3261", source="https://orcid.org/0000-0001-5208-3432"} ! lymphoid hemopathy
+relationship: has_characteristic MONDO:0021152 {source="DOID:6688", source="Orphanet:3261"} ! inherited
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
 
 [Term]
 id: MONDO:0017980
@@ -556635,12 +556611,14 @@ xref: MEDGEN:1799982 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:618261 {source="Orphanet:538958", source="MONDO:equivalentTo"}
 xref: Orphanet:538958 {source="MONDO:equivalentTo"}
 xref: UMLS:C5568559 {source="MONDO:equivalentTo", source="MEDGEN:1799982", source="MONDO:MEDGEN"}
+is_a: MONDO:0003778 {source="Orphanet:538958"} ! inborn error of immunity
 is_a: MONDO:0016537 {source="OMIM:618261", source="Orphanet:538958", source="https://orcid.org/0000-0001-5208-3432"} ! lymphoproliferative syndrome
 intersection_of: MONDO:0015974 ! severe combined immunodeficiency
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11937 ! CD70
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11937 {source="OMIM:618261", source="Orphanet:538958"} ! CD70
 property_value: curated_content_resource "https://www.malacards.org/card/lymphoproliferative_syndrome_3" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
 
 [Term]
 id: MONDO:0034082
@@ -594165,14 +594143,19 @@ id: MONDO:0700306
 name: FASLG-related immunodeficiency
 def: "An immunodeficiency disease in which the cause of the disease is a variation in the FASLG gene." [https://www.clinicalgenome.org/working-groups/clinical-domain/immunology/, MONDO:patterns/disease_series_by_gene, PMID:22857792]
 synonym: "ALPS-FASLG" EXACT ABBREVIATION [https://www.clinicalgenome.org/working-groups/clinical-domain/immunology/, PMID:22857792]
+synonym: "ALPS1B" EXACT ABBREVIATION [OMIM:601859]
 synonym: "Autoimmune lymphoproliferative syndrome caused by a homozygous null FAS ligand (FASLG) mutation" EXACT [https://www.clinicalgenome.org/working-groups/clinical-domain/immunology/, PMID:22857792]
+synonym: "autoimmune lymphoproliferative syndrome, type IB" EXACT [OMIM:601859]
 synonym: "FASLG-related immunodeficiency" EXACT [] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "TNFSF6-related immunodeficiency" EXACT [https://www.clinicalgenome.org/working-groups/clinical-domain/immunology/, PMID:22857792]
+xref: OMIM:601859 {source="MONDO:includedEntryInOMIM"}
+is_a: MONDO:0017979 {source="OMIM:601859", source="PMID:22857792", source="https://orcid.org/0000-0003-2360-2664"} ! hereditary autoimmune lymphoproliferative syndrome
 is_a: MONDO:0021094 {source="PMID:22857792", source="https://www.clinicalgenome.org/working-groups/clinical-domain/immunology/"} ! immunodeficiency disease
 intersection_of: MONDO:0021094 ! immunodeficiency disease
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11936 ! FASLG
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11936 {source="PMID:22857792", source="https://www.clinicalgenome.org/working-groups/clinical-domain/immunology/"} ! FASLG
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8090" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
 
 [Term]
 id: MONDO:0700307
@@ -620466,7 +620449,7 @@ def: "Autoimmune lymphoproliferative syndrome that occurs in non-human animals."
 xref: OMIA:002064 {source="MONDO:equivalentTo"}
 is_a: MONDO:0005583 {source="OMIA:002064"} ! non-human animal disease
 intersection_of: MONDO:0005583 {source="https://orcid.org/0000-0002-5002-8648"} ! non-human animal disease
-intersection_of: MONDO:0700097 MONDO:0017979 {source="https://orcid.org/0000-0002-5002-8648"} ! cross-species analog autoimmune lymphoproliferative syndrome
+intersection_of: MONDO:0700097 MONDO:0017979 {source="https://orcid.org/0000-0002-5002-8648"} ! cross-species analog hereditary autoimmune lymphoproliferative syndrome
 
 [Term]
 id: MONDO:1010125
@@ -626908,7 +626891,7 @@ xref: OMIA:002064-9685 {source="MONDO:equivalentTo"}
 is_a: MONDO:1010124 {source="OMIA:002064", source="https://orcid.org/0000-0002-5002-8648"} ! autoimmune lymphoproliferative syndrome, non-human animal
 intersection_of: MONDO:0005583 ! non-human animal disease
 intersection_of: in_taxon NCBITaxon:9685 ! Felis catus
-intersection_of: MONDO:0700097 MONDO:0017979 ! cross-species analog autoimmune lymphoproliferative syndrome
+intersection_of: MONDO:0700097 MONDO:0017979 ! cross-species analog hereditary autoimmune lymphoproliferative syndrome
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/ncbigene/493945 {source="OMIA:002064-9685"} ! FASLG
 relationship: in_taxon NCBITaxon:9685 {source="OMIA:002064-9685", source="https://orcid.org/0000-0002-5002-8648"} ! Felis catus
@@ -701099,15 +701082,19 @@ name: FAS-related autoimmune lymphoproliferative immune disorder
 def: "An autoimmune lymphoproliferative syndrome that results from defective lymphocyte homoestasis, and is caused by variants in the FAS gene. It is characterized by non-malignant lymphoproliferation, autoimmune disease, and lifelong increased risk for both Hodgkin and non-Hodgkin lymphoma." [https://clinicalgenome.org/affiliation/40157/]
 subset: gard_rare {source="GARD:0028187", source="MONDO:GARD"}
 subset: rare
+synonym: "ALPS1A" EXACT ABBREVIATION [OMIM:601859]
+synonym: "autoimmune lymphoproliferative syndrome, type IA" EXACT [OMIM:601859]
 synonym: "FAS-related autoimmune lymphoproliferative immune disorder" EXACT [https://clinicalgenome.org/affiliation/40157/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 xref: GARD:0028187 {source="MONDO:GARD"}
-is_a: MONDO:0017979 {source="https://clinicalgenome.org/affiliation/40157/"} ! autoimmune lymphoproliferative syndrome
-intersection_of: MONDO:0017979 ! autoimmune lymphoproliferative syndrome
+xref: OMIM:601859 {source="MONDO:includedEntryInOMIM"}
+is_a: MONDO:0017979 {source="https://clinicalgenome.org/affiliation/40157/"} ! hereditary autoimmune lymphoproliferative syndrome
+intersection_of: MONDO:0017979 ! hereditary autoimmune lymphoproliferative syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11920 ! FAS
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11920 {source="https://clinicalgenome.org/affiliation/40157/"} ! FAS
 relationship: predisposes_towards MONDO:0004952 {source="https://clinicalgenome.org/affiliation/40157/"} ! Hodgkins lymphoma
 relationship: predisposes_towards MONDO:0018908 {source="https://clinicalgenome.org/affiliation/40157/"} ! non-Hodgkin lymphoma
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9749" xsd:anyURI
 
 [Term]
@@ -702756,6 +702743,55 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/5261 {source="PMID:39500555", source="https://clinicalgenome.org/affiliation/40107/"} ! HSPD1
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10788" xsd:anyURI
+
+[Term]
+id: MONDO:1060329
+name: immune dysregulation with autoimmunity, immunodeficiency, and lymphoproliferation
+def: "Any autoimmune lymphoproliferative syndrome in which the cause of the disease is a variation in the CTLA4 gene. It is an autosomal dominant immune dysregulation syndrome with incomplete penetrance, caused by impaired regulatory T cell function. It is characterized by hypogammaglobulinemia, recurrent infections, autoimmunity, progressive loss of circulating B cells, and lymphocytic infiltration of target organs." [https://orcid.org/0000-0003-2360-2664, PMID:25213377, PMID:25329329]
+subset: ncit {source="NCIT:C126341"}
+subset: omim {source="OMIM:616100"}
+subset: orphanet {source="Orphanet:436159"}
+synonym: "ALPS due to CTLA4 haploinsufficiency" EXACT [Orphanet:436159]
+synonym: "ALPS5" EXACT ABBREVIATION [OMIM:616100]
+synonym: "autoimmune lymphoproliferative syndrome type V" EXACT [MEDGEN:863651]
+synonym: "autoimmune lymphoproliferative syndrome, type V" EXACT [GARD:0012316, OMIM:616100]
+synonym: "CHAI" EXACT ABBREVIATION [NCIT:C126341, OMIM:616100, Orphanet:436159]
+synonym: "CTLA-4 haploinsufficiency with autoimmune infiltration disease" EXACT [Orphanet:436159]
+synonym: "CTLA4 haploinsufficiency" EXACT [NCIT:C126341]
+synonym: "CTLA4 haploinsufficiency with autoimmune infiltration" EXACT [OMIM:616100]
+synonym: "CTLA4-related immune dysregulation with autoimmunity, immunodeficiency, and lymphoproliferation" EXACT [https://clinicalgenome.org/affiliation/40080/, https://orcid.org/0000-0003-2360-2664]
+synonym: "IDAIL" EXACT ABBREVIATION [OMIM:616100]
+synonym: "immune dysregulation with autoimmunity, immunodeficiency, and lymphoproliferation" EXACT [OMIM:616100]
+xref: GARD:0012316 {source="MONDO:GARD"}
+xref: ICD10CM:D47.9 {source="Orphanet:436159"}
+xref: MEDGEN:863651 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: NCIT:C126341 {source="MONDO:equivalentTo"}
+xref: OMIM:616100 {source="Orphanet:436159", source="MONDO:equivalentTo", source="Orphanet:436159/e"}
+xref: Orphanet:436159 {source="MONDO:equivalentTo"}
+xref: UMLS:C4015214 {source="MEDGEN:863651", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0007179 {source="NCIT:C126341"} ! autoimmune disease
+is_a: MONDO:0017979 {source="DC-OMIM:616100", source="PMID:25213377", source="https://orcid.org/0000-0003-2360-2664"} ! hereditary autoimmune lymphoproliferative syndrome
+intersection_of: MONDO:0017979 ! hereditary autoimmune lymphoproliferative syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2505 ! CTLA4
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2505 {source="OMIM:616100", source="PMID:25213377", source="PMID:25329329"} ! CTLA4
+property_value: curated_content_resource "https://www.malacards.org/card/immune_dysregulation_with_autoimmunity_immunodeficiency_and_lymphoproliferation" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
+property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/12316/autoimmune-lymphoproliferative-syndrome-due-to-ctla4-haploinsufficiency" xsd:anyURI {source="GARD:0012316"}
+
+[Term]
+id: MONDO:1060330
+name: autoimmune lymphoproliferative syndrome
+def: "A lymphoproliferative syndrome characterized by autoimmune hemolytic anemia, thrombocytopenia, lymphadenopathy, hepatomegaly and splenomegaly, with an increased risk of Hodgkin and non-Hodgkin lymphomas. It is caused by germline or somatic variation, or the cause is unknown." [NCIT:C37864, PMID:41997376]
+subset: ncit {source="NCIT:C37864"}
+synonym: "ALPS" EXACT ABBREVIATION [NCIT:C37864]
+xref: NCIT:C37864 {source="MONDO:equivalentTo"}
+is_a: MONDO:0007179 {source="MESH:D056735", source="PMID:37683818"} ! autoimmune disease
+is_a: MONDO:0016537 {source="NCIT:C37864"} ! lymphoproliferative syndrome
+is_a: MONDO:0021058 {source="NCIT:C37864"} ! neoplastic syndrome
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
@@ -708442,7 +708478,8 @@ xref: GARD:0027040 {source="MONDO:GARD"}
 xref: MEDGEN:274327 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C39577 {source="MONDO:equivalentTo"}
 xref: UMLS:C1519711 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:274327"}
-is_a: MONDO:0017979 {source="NCIT:C39577"} ! autoimmune lymphoproliferative syndrome
+is_a: MONDO:1060330 {source="NCIT:C39577"} ! autoimmune lymphoproliferative syndrome
+relationship: excluded_subClassOf MONDO:0017979 {source="NCIT:C39577", source="https://orcid.org/0000-0002-7638-4659"} ! hereditary autoimmune lymphoproliferative syndrome
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4098" xsd:anyURI
 
 [Term]
@@ -708463,8 +708500,8 @@ xref: MEDGEN:816258 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:615559 {source="DOID:0110119", source="MONDO:equivalentTo"}
 xref: Orphanet:664711 {source="MONDO:equivalentTo"}
 xref: UMLS:C3809928 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:816258"}
-is_a: MONDO:0017979 {source="DOID:0110119", source="OMIM:615559"} ! autoimmune lymphoproliferative syndrome
-intersection_of: MONDO:0017979 ! autoimmune lymphoproliferative syndrome
+is_a: MONDO:0017979 {source="DOID:0110119", source="OMIM:615559"} ! hereditary autoimmune lymphoproliferative syndrome
+intersection_of: MONDO:0017979 ! hereditary autoimmune lymphoproliferative syndrome
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9399 ! PRKCD
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9399 {source="OMIM:615559"} ! PRKCD
 property_value: curated_content_resource "https://www.malacards.org/card/autoimmune_lymphoproliferative_syndrome_type_iii" xsd:anyURI {source="MONDO:MalaCards"}
