@@ -14408,32 +14408,27 @@ property_value: curated_content_resource "https://www.malacards.org/card/acute_h
 
 [Term]
 id: MONDO:0000944
-name: cerebral artery occlusion
-comment: This term is scheduled for obsoletion based on the fact that it is a not a disease. After obsoletion, this term will not have a replacement ID, but one could consider the following term: -
+name: obsolete cerebral artery occlusion
 subset: doid {source="DOID:10127"}
-subset: obsoletion_candidate
 subset: otar {source="MONDO:OTAR"}
-xref: DOID:10127 {source="MONDO:equivalentTo"}
+xref: DOID:10127 {source="MONDO:obsoleteEquivalent"}
 xref: ICD9:434 {source="DOID:10127"}
 xref: ICD9:434.9 {source="DOID:10127"}
-xref: ICD9:434.90 {source="MONDO:equivalentTo", source="MONDO:i2s"}
+xref: ICD9:434.90 {source="MONDO:obsoleteEquivalent", source="MONDO:i2s"}
 xref: ICD9:434.91 {source="MONDO:relatedTo", source="MONDO:i2s"}
-xref: MEDGEN:507994 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: MEDGEN:507994 {source="MONDO:obsoleteEquivalent", source="MONDO:MEDGEN"}
 xref: SCTID:155400001 {source="DOID:10127"}
 xref: SCTID:155403004 {source="DOID:10127"}
 xref: SCTID:195188006 {source="DOID:10127"}
-xref: SCTID:20059004 {source="DOID:10127", source="MONDO:equivalentTo"}
+xref: SCTID:20059004 {source="DOID:10127", source="MONDO:obsoleteEquivalent"}
 xref: SCTID:266255008 {source="DOID:10127"}
 xref: SCTID:286956007 {source="DOID:10127"}
-xref: UMLS:C0028790 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:507994"}
-is_a: MONDO:0011057 {source="DOID:10127"} ! cerebrovascular disorder
-is_a: MONDO:1040016 {source="https://orcid.org/0000-0002-0587-4693"} ! cerebral artery stenosis
-intersection_of: MONDO:0020672 ! vascular occlusion disorder
-intersection_of: disease_has_location UBERON:0004449 ! cerebral artery
-relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
+xref: UMLS:C0028790 {source="MONDO:obsoleteEquivalent", source="MONDO:MEDGEN", source="MEDGEN:507994"}
 property_value: curated_content_resource "https://www.malacards.org/card/cerebral_artery_occlusion" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludePhenotype"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
-property_value: IAO:0006012 "2026-05-01" xsd:string
+is_obsolete: true
+consider: MONDO:1060198
 
 [Term]
 id: MONDO:0000945
@@ -52802,23 +52797,20 @@ property_value: curated_content_resource "https://www.malacards.org/card/childho
 [Term]
 id: MONDO:0002679
 name: cerebral infarction
-def: "An ischemic condition of the brain, producing a persistent focal neurological deficit in the area of distribution of the cerebral arteries." [NCIT:C50486]
+def: "A brain infarction that involves the cerebrum. It is characterized by necrosis in the cerebrum caused by an insufficiency of arterial or venous blood flow, producing a persistent focal neurological deficit in the area of distribution of the cerebral arteries. It is classified by hemisphere, lobe, arterial distribution, and etiology." [MESH:D002544, NCIT:C50486]
 subset: doid {source="DOID:3526"}
 subset: ncit {source="NCIT:C50486"}
 subset: otar {source="MONDO:OTAR"}
 synonym: "brain infarction of telencephalon" EXACT [MONDO:design_pattern]
 synonym: "cerebral infarct" EXACT [DOID:3526, icd11.foundation:1614716959]
-synonym: "cerebral infarction" EXACT [DOID:3526, ICD10CM:I63, ICD10WHO:I63, NCIT:C50486]
-synonym: "cerebral infarction NOS" RELATED EXCLUDE []
+synonym: "cerebral infarction" EXACT [DOID:3526, NCIT:C50486]
 synonym: "cerebral ischemia" RELATED [NCIT:C50486]
-synonym: "cerebral, infarction" EXACT []
-synonym: "CVA - cerebral infarction" EXACT []
-synonym: "infarction, cerebral" EXACT []
+synonym: "infarction, cerebral" EXACT [MESH:D002544]
 synonym: "telencephalon brain infarction" EXACT [MONDO:design_pattern, MONDO:patterns/location]
 xref: DOID:3526 {source="MONDO:equivalentTo"}
-xref: ICD10CM:I63 {source="https://orcid.org/0009-0001-6494-4831", source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-5002-8648", source="DOID:3526"}
-xref: ICD10CM:I63.9 {source="MONDO:equivalentTo", source="DOID:3526"}
-xref: ICD10WHO:I63 {source="https://orcid.org/0000-0002-7941-5545", source="MONDO:equivalentTo", source="https://orcid.org/0000-0001-9439-5346"}
+xref: ICD10CM:I63 {source="MONDO:mondoIsNarrowerThanSource", source="https://orcid.org/0009-0001-6494-4831", source="https://orcid.org/0000-0002-5002-8648", source="DOID:3526"}
+xref: ICD10CM:I63.9 {source="MONDO:mondoIsNarrowerThanSource", source="DOID:3526"}
+xref: ICD10WHO:I63 {source="MONDO:mondoIsNarrowerThanSource", source="https://orcid.org/0000-0002-7941-5545", source="https://orcid.org/0000-0001-9439-5346"}
 xref: icd11.foundation:1614716959 {source="MONDO:equivalentTo"}
 xref: icd11.foundation:636274910 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
 xref: ICD9:433.01 {source="MONDO:relatedTo", source="MONDO:i2s"}
@@ -52845,6 +52837,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/stroke_
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10741" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9754" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
 
 [Term]
 id: MONDO:0002680
@@ -112529,7 +112522,7 @@ replaced_by: MONDO:0002009
 [Term]
 id: MONDO:0005264
 name: transient ischemic attack
-def: "A brief attack (from a few minutes to an hour) of cerebral dysfunction of vascular origin, with no persistent neurological deficit." [NCIT:C50781]
+def: "A brain ischemia characterized by a transient episode of neurological dysfunction caused by focal brain, spinal cord, or retinal ischemia, without acute infarction. It is distinguished from ischemic stroke by the absence of infarction. The attack of cerebral dysfunction of vascular origin is brief (from a few minutes to an hour), leaves no persistent neurological deficit, and carries a high risk of early stroke." [NCIT:C50781, PMID:19423857]
 subset: doid {source="DOID:224"}
 subset: ncit {source="NCIT:C50781"}
 subset: otar {source="MONDO:OTAR"}
@@ -112537,6 +112530,7 @@ synonym: "attack, transient ischaemic" EXACT OMO:0003005 []
 synonym: "attack, transient ischemic" EXACT []
 synonym: "ischaemic attack, transient" EXACT OMO:0003005 []
 synonym: "ischemic attack, transient" EXACT []
+synonym: "mini stroke" EXACT [HP:0002326]
 synonym: "TIA" EXACT ABBREVIATION [DOID:224, NCIT:C50781]
 synonym: "TIA - transient ischemic attack" EXACT []
 synonym: "transient cerebral ischaemia NOS" RELATED EXCLUDE []
@@ -112547,7 +112541,7 @@ synonym: "transient ischemic attack" EXACT [DOID:224, MONDO:ambiguous, MTH:NOCOD
 synonym: "transient ischemic attack (disease)" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "transient ischemic attacks" EXACT [DOID:224, NCIT:C50781]
 xref: DOID:224 {source="EFO:0003764", source="MONDO:equivalentTo"}
-xref: EFO:0003764 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+xref: EFO:0003764 {source="MONDO:equivalentObsolete", source="MONDO:EFO"}
 xref: HP:0002326 {source="MONDO:otherHierarchy"}
 xref: ICD10CM:G45.9 {source="DOID:224"}
 xref: icd11.foundation:826335789 {source="MONDO:equivalentTo"}
@@ -112567,11 +112561,12 @@ xref: SCTID:38609002 {source="DOID:224"}
 xref: UMLS:C0007787 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:853"}
 is_a: MONDO:0005299 {source="DOID:224", source="MESH:D002546", source="MONDO:Redundant", source="NCIT:C50781"} ! brain ischemia
 is_a: MONDO:0011057 {source="EFO:0003764", source="MESH:D002546/inferred", source="MONDO:Redundant", source="NCIT:C50781/inferred"} ! cerebrovascular disorder
-is_a: MONDO:1060198 {source="https://orcid.org/0000-0002-1149-7767"} ! ischemic stroke
 intersection_of: MONDO:0005299 ! brain ischemia
 intersection_of: has_characteristic HP:0025153 ! Transient
+relationship: excluded_subClassOf MONDO:1060198 {source="PMID:23652265", source="https://orcid.org/0000-0002-1149-7767", source="https://orcid.org/0000-0002-7638-4659"} ! ischemic stroke
 property_value: curated_content_resource "https://www.malacards.org/card/transient_cerebral_ischemia" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9754" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
 property_value: IAO:0000589 "transient ischemic attack (disease)" xsd:string
 
 [Term]
@@ -113492,11 +113487,10 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0005299
 name: brain ischemia
-def: "Diminished or absent blood supply to the brain caused by obstruction (thrombosis or embolism) of an artery resulting in neurologic damage." [NCIT:C78394]
-comment: This term is scheduled for obsoletion based on the fact that it is a not a disease. After obsoletion, this term will not have a replacement ID, but one could consider the following term: -
+def: "An ischemic disease characterized by a decrease or absence of blood supply to the brain caused by obstruction (thrombosis or embolism) of an artery resulting in neurological damage." [NCIT:C78394]
 subset: doid {source="DOID:2316"}
 subset: ncit {source="NCIT:C78394"}
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/9952"}
 subset: otar {source="MONDO:OTAR"}
 synonym: "brain ischaemic disease" EXACT OMO:0003005 []
 synonym: "brain ischemia" EXACT [DOID:2316, MONDO:patterns/location]
@@ -113523,7 +113517,6 @@ intersection_of: disease_has_location UBERON:0000955 ! brain
 relationship: disease_has_location UBERON:0000955 {source="EFO:0000784"} ! brain
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10741" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
-property_value: IAO:0006012 "2026-05-01" xsd:string
 
 [Term]
 id: MONDO:0005300
@@ -115850,13 +115843,12 @@ property_value: curated_content_resource "https://www.malacards.org/card/gout" x
 [Term]
 id: MONDO:0005394
 name: brain infarction
-def: "Tissue necrosis in any area of the brain, including the cerebral hemispheres, the cerebellum, and the brain stem. Brain infarction is the result of a cascade of events initiated by inadequate blood flow through the brain that is followed by hypoxia and hypoglycemia in brain tissue. Damage may be temporary, permanent, selective or pan-necrosis." [MESH:D020520]
-comment: This term is scheduled for obsoletion based on the fact that it is a not a disease. After obsoletion, this term will not have a replacement ID, but one could consider the following term: -
+def: "A cerebrovascular disorder characterized by tissue necrosis in any area of the brain, including the cerebral hemispheres, the cerebellum, and the brain stem. It is the result of a cascade of events initiated by inadequate blood flow through the brain that is followed by hypoxia and hypoglycemia in brain tissue. Damage may be temporary, permanent, selective or pan-necrosis. It ranges from symptomatic infarction (ischemic stroke) to silent infarction, which causes no known symptoms." [DOID:3454, MESH:D020520, PMID:23652265]
 subset: doid {source="DOID:3454"}
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/9952"}
 subset: otar {source="MONDO:OTAR"}
 xref: DOID:3454 {source="EFO:0004277", source="MONDO:equivalentTo"}
-xref: EFO:0004277 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+xref: EFO:0004277 {source="MONDO:equivalentObsolete", source="MONDO:EFO"}
 xref: MEDGEN:148426 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D020520 {source="EFO:0004277", source="DOID:3454", source="MONDO:equivalentTo"}
 xref: SCTID:230693009 {source="EFO:0004277"}
@@ -115865,7 +115857,6 @@ xref: UMLS:C0751955 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0011057 {source="DOID:3454", source="MESH:D020520/inferred"} ! cerebrovascular disorder
 relationship: disease_has_location UBERON:0003499 {source="EFO:0000784"} ! brain blood vessel
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
-property_value: IAO:0006012 "2026-05-01" xsd:string
 
 [Term]
 id: MONDO:0005395
@@ -117699,15 +117690,15 @@ property_value: IAO:0000589 "dyslexia (disease)" xsd:string
 [Term]
 id: MONDO:0005490
 name: large artery stroke
-def: "Stroke caused by the blockage of blood flow in one of the large arteries feeding the brain." [EFO:0005524]
-comment: This term is scheduled for obsoletion based on the fact that it is a not a disease. After obsoletion, this term will not have a replacement ID, but one could consider the following term: -
-subset: obsoletion_candidate
+def: "An ischemic stroke caused by the blockage of blood flow in one of the large arteries feeding the brain. It corresponds to the large artery atherosclerosis subtype of the Causative Classification of Stroke System (CCS)." [EFO:0005524, PMID:17901381]
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/9952"}
 subset: otar {source="MONDO:OTAR"}
-xref: EFO:0005524 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+synonym: "LAA" EXACT ABBREVIATION [PMID:38585349]
+xref: EFO:0005524 {source="MONDO:equivalentObsolete", source="MONDO:EFO"}
 is_a: MONDO:0005098 {source="EFO:0005524"} ! stroke disorder
+is_a: MONDO:1060198 {source="PMID:17901381"} ! ischemic stroke
 relationship: disease_has_location UBERON:0001637 ! artery
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
-property_value: IAO:0006012 "2026-05-01" xsd:string
 
 [Term]
 id: MONDO:0005491
@@ -146173,8 +146164,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/brain_e
 id: MONDO:0006685
 name: brain hypoxia - ischemia
 def: "A disorder characterized by a reduction of oxygen in the blood combined with reduced blood flow (ischemia) to the brain from a localized obstruction of a cerebral artery or from systemic hypoperfusion. Prolonged hypoxia-ischemia is associated with ischemic attack, transient; brain infarction; brain edema; coma; and other conditions." [MESH:D020925]
-comment: This term is scheduled for obsoletion based on the fact that it is a not a disease. After obsoletion, this term will not have a replacement ID, but one could consider the following term: -
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/9952"}
 xref: MEDGEN:199862 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D020925 {source="MONDO:equivalentTo", source="EFO:1000846"}
 xref: UMLS:C0752308 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:199862"}
@@ -146182,7 +146172,6 @@ is_a: MONDO:0005299 {source="EFO:1000846", source="MESH:68020925", source="https
 relationship: disease_has_feature MONDO:0100035 {source="https://orcid.org/0000-0001-8486-0558"} ! structural epilepsy
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
-property_value: IAO:0006012 "2026-05-01" xsd:string
 
 [Term]
 id: MONDO:0006686
@@ -146194,7 +146183,7 @@ synonym: "brain infarction of brainstem" EXACT [MONDO:design_pattern]
 synonym: "brainstem brain infarction" EXACT [MONDO:design_pattern, MONDO:patterns/location]
 synonym: "brainstem infarction NOS" RELATED EXCLUDE []
 xref: DOID:3523 {source="MONDO:equivalentTo", source="EFO:1000847"}
-xref: EFO:1000847 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+xref: EFO:1000847 {source="MONDO:equivalentObsolete", source="MONDO:EFO"}
 xref: ICD9:434.91 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:101068 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D020526 {source="MONDO:equivalentTo", source="DOID:3523", source="EFO:1000847"}
@@ -146209,6 +146198,7 @@ intersection_of: MONDO:0005394 ! brain infarction
 intersection_of: disease_has_location UBERON:0002298 ! brainstem
 property_value: curated_content_resource "https://www.malacards.org/card/brain_stem_infarction" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9754" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
 
 [Term]
 id: MONDO:0006687
@@ -148854,7 +148844,7 @@ def: "Blocking of a blood vessel in the skull by an embolus which can be a blood
 subset: doid {source="DOID:4372"}
 subset: otar {source="MONDO:OTAR"}
 xref: DOID:4372 {source="EFO:1000991", source="MONDO:equivalentTo"}
-xref: EFO:1000991 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+xref: EFO:1000991 {source="MONDO:equivalentObsolete", source="MONDO:EFO"}
 xref: ICD10CM:I66 {source="DOID:4372"}
 xref: icd11.foundation:816982857 {source="MONDO:equivalentTo"}
 xref: ICD9:434.1 {source="DOID:4372"}
@@ -148868,6 +148858,7 @@ is_a: MONDO:0011057 {source="DOID:4372", source="EFO:1000991", source="MESH:D020
 is_a: MONDO:1060198 {source="https://orcid.org/0000-0002-1149-7767"} ! ischemic stroke
 property_value: curated_content_resource "https://www.malacards.org/card/intracranial_embolism" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9754" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
 
 [Term]
 id: MONDO:0006810
@@ -502243,7 +502234,7 @@ is_a: MONDO:0004245 {source="NCIT:C131611"} ! ependymal tumor of brain
 [Term]
 id: MONDO:0020688
 name: spinal cord ischemia
-def: "Reduced blood flow to the spinal cord which is supplied by the anterior spinal artery and the paired posterior spinal arteries. This condition may be associated with arteriosclerosis, trauma, emboli, diseases of the aorta, and other disorders. Prolonged ischemia may lead to infarction of spinal cord tissue." [MESH:D020760]
+def: "An ischemic disease characterized by reduced blood flow to the spinal cord, which is supplied by the anterior spinal artery and the paired posterior spinal arteries. This condition may be associated with arteriosclerosis, trauma, emboli, diseases of the aorta, and other disorders. Prolonged ischemia may lead to infarction of spinal cord tissue." [MESH:D020760]
 subset: otar {source="MONDO:OTAR"}
 synonym: "cord ischemia, spinal" RELATED [MESH:D020760]
 synonym: "cord Ischemias, spinal" RELATED [MESH:D020760]
@@ -502260,11 +502251,15 @@ synonym: "myelopathy, ischaemic" RELATED OMO:0003005 []
 synonym: "myelopathy, ischemic" RELATED [MESH:D020760]
 synonym: "spinal cord ischemia, experimental" RELATED [MESH:D020760]
 synonym: "spinal cord Ischemias" RELATED [MESH:D020760]
-xref: EFO:1001426 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+xref: EFO:1001426 {source="MONDO:equivalentObsolete", source="MONDO:EFO"}
 xref: MEDGEN:155706 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D020760 {source="MONDO:equivalentTo"}
 xref: UMLS:C0752130 {source="MEDGEN:155706", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0005098 ! stroke disorder
+is_a: MONDO:0002552 {source="MESH:D020760"} ! vascular myelopathy
+is_a: MONDO:0005053 {source="MESH:D020760"} ! ischemic disease
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
+relationship: excluded_subClassOf MONDO:0005098 {source="PMID:22125530", source="PMID:23652265", source="https://orcid.org/0000-0002-7638-4659"} ! stroke disorder
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
 
 [Term]
 id: MONDO:0020689
@@ -518672,12 +518667,15 @@ is_a: MONDO:0006862 {source="MESH:D013706", source="UMLS:C0039496"} ! myofascial
 [Term]
 id: MONDO:0021896
 name: anterior spinal artery stroke
+def: "An ischemic stroke in which spinal cord infarction occurs in the territory of the anterior spinal artery. It presents with acute onset of severe motor and sensory deficits, often with pain, that reach nadir within hours. Sensory loss selectively affects pain and temperature sensation, with preservation of proprioception and vibratory sensation." [PMID:30264146, PMID:33358345, PMID:40004823]
 xref: MEDGEN:419851 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C537776 {source="MONDO:equivalentTo"}
 xref: UMLS:C2931608 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:419851"}
 is_a: MONDO:0005098 ! stroke disorder
 is_a: MONDO:0020688 {source="MESH:C537776"} ! spinal cord ischemia
+is_a: MONDO:1060198 {source="PMID:23652265", source="PMID:33358345", source="PMID:40004823"} ! ischemic stroke
 relationship: disease_has_location UBERON:0002458 ! spinal artery
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/9653/anterior-spinal-artery-stroke" xsd:anyURI {source="GARD:0009653"}
 
 [Term]
