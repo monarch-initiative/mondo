@@ -607834,13 +607834,20 @@ property_value: curated_content_resource "https://www.malacards.org/card/intelle
 [Term]
 id: MONDO:0957229
 name: hatipoglu immunodeficiency syndrome
+def: "Any immunodeficiency disease in which the cause of the disease is a variation in the DPP9 gene and has autosomal recessive inheritance. It is characterized by immune-associated defects, poor growth, pancytopenia, and skin pigmentation abnormalities." [PMID:36112693]
 subset: omim {source="OMIM:620331"}
+synonym: "DPP9-related AR immune deficiency" EXACT [https://www.clinicalgenome.org/affiliation/40145/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 xref: MEDGEN:1841075 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:620331 {source="MONDO:equivalentTo"}
 xref: UMLS:C5830439 {source="MEDGEN:1841075", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0021094 {source="OMIM:620331"} ! immunodeficiency disease
+intersection_of: MONDO:0021094 ! immunodeficiency disease
+intersection_of: has_characteristic HP:0000007 ! Autosomal recessive inheritance
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18648 ! DPP9
+relationship: has_characteristic HP:0000007 {source="PMID:36112693"} ! Autosomal recessive inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18648 {source="OMIM:620331"} ! DPP9
 property_value: curated_content_resource "https://www.malacards.org/card/hatipoglu_immunodeficiency_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10825" xsd:anyURI
 
 [Term]
 id: MONDO:0957230
@@ -702818,6 +702825,20 @@ def: "A form of male infertility characterized by failure or severely reduced ef
 is_a: MONDO:0005372 {source="PMID:40572651", source="https://www.clinicalgenome.org/affiliation/40073/"} ! male infertility
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10154" xsd:anyURI
+
+[Term]
+id: MONDO:1060331
+name: DPP9-related autosomal dominant immune disorder
+def: "Any immunodeficiency disease in which the cause of the disease is a variation in the DPP9 gene and has autosomal dominant inheritance. The variant acts in a dominant-negative manner and leads to constitutive NLRP1 and CARD8 inflammasome activation. It is characterized by severe infancy-onset hyperinflammation with features of hemophagocytic lymphohistiocytosis and pancytopenia." [https://www.clinicalgenome.org/affiliation/40145/, PMID:37544411]
+synonym: "DPP9-related AD immune disorder" EXACT [https://www.clinicalgenome.org/affiliation/40145/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+is_a: MONDO:0021094 {source="PMID:37544411", source="https://www.clinicalgenome.org/affiliation/40145/"} ! immunodeficiency disease
+intersection_of: MONDO:0021094 ! immunodeficiency disease
+intersection_of: has_characteristic HP:0000006 ! Autosomal dominant inheritance
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18648 ! DPP9
+relationship: has_characteristic HP:0000006 {source="PMID:37544411"} ! Autosomal dominant inheritance
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18648 {source="PMID:37544411", source="https://www.clinicalgenome.org/affiliation/40145/"} ! DPP9
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10826" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
