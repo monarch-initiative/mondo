@@ -53987,7 +53987,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0002727
 name: olfactory nerve disorder
-def: "A disease involving the olfactory nerve." [https://orcid.org/0000-0002-6601-2165]
+def: "A disease affecting the olfactory nerve (first cranial nerve). It can be non-neoplastic or neoplastic." [https://orcid.org/0000-0002-6601-2165, NCIT:C27210]
 subset: doid {source="DOID:367"}
 subset: ncit {source="NCIT:C27210"}
 synonym: "disease of olfactory nerve" EXACT [MONDO:patterns/location_top]
@@ -54008,11 +54008,12 @@ xref: NCIT:C27210 {source="MONDO:equivalentTo", source="DOID:367"}
 xref: SCTID:68982002 {source="MONDO:equivalentTo", source="DOID:367"}
 xref: UMLS:C0751937 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:155962"}
 is_a: MONDO:0003569 {source="DOID:367/inferred", source="MESH:D020431", source="MONDO:Redundant", source="NCIT:C27210"} ! cranial nerve neuropathy
-is_a: MONDO:0005560 {source="DOID:367"} ! brain disorder
 intersection_of: MONDO:0000001 ! disease
 intersection_of: disease_has_location UBERON:0001579 ! olfactory nerve
 relationship: excluded_subClassOf MONDO:0002639 {source="DOID:367", source="https://orcid.org/0000-0001-5208-3432"} ! glossopharyngeal nerve disorder
+relationship: excluded_subClassOf MONDO:0005560 {source="DOID:367", source="https://orcid.org/0000-0002-7638-4659"} ! brain disorder
 property_value: curated_content_resource "https://www.malacards.org/card/olfactory_nerve_disease" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10832" xsd:anyURI
 
 [Term]
 id: MONDO:0002728
@@ -57890,7 +57891,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/differe
 [Term]
 id: MONDO:0002900
 name: cerebral neuroblastoma
-def: "A neuroblastoma arising from the cerebral hemispheres." [NCIT:C4826]
+def: "An intracranial primitive neuroectodermal tumor arising from the cerebral hemispheres." [NCIT:C4826, PMID:26919435]
 subset: doid {source="DOID:0080905", source="DOID:4164"}
 subset: gard_rare {source="GARD:0023294", source="MONDO:GARD"}
 subset: rare
@@ -57909,11 +57910,11 @@ xref: NCIT:C4826 {source="MONDO:equivalentObsolete", source="DOID:4164"}
 xref: SCTID:281560004 {source="MONDO:equivalentTo", source="DOID:4164"}
 xref: UMLS:C0559458 {source="MEDGEN:107851", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0002731 {source="DOID:4164", source="NCIT:C4826"} ! cerebral hemisphere cancer
-is_a: MONDO:0005072 {source="DOID:4164", source="MONDO:Redundant", source="NCIT:C4826"} ! neuroblastoma
-intersection_of: MONDO:0005072 ! neuroblastoma
-intersection_of: disease_has_location UBERON:0001893 ! telencephalon
+is_a: MONDO:0003142 {source="PMID:26919435"} ! intracranial primitive neuroectodermal tumor
+relationship: excluded_subClassOf MONDO:0005072 {source="DOID:4164", source="NCIT:C4826", source="PMID:26919435", source="PMID:39495206", source="https://orcid.org/0000-0002-7638-4659"} ! neuroblastoma
 property_value: curated_content_resource "https://www.malacards.org/card/central_nervous_system_neuroblastoma" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/cerebral_neuroblastoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10832" xsd:anyURI
 
 [Term]
 id: MONDO:0002901
@@ -138138,7 +138139,7 @@ is_a: MONDO:0005070 {source="EFO:1000406", source="MESH:D009807/inferred"} ! neo
 [Term]
 id: MONDO:0006329
 name: olfactory neuroblastoma
-def: "An olfactory neuroblastoma arising in the paranasal sinus." [NCIT:P378]
+def: "A malignant cranial nerve neoplasm of the sinonasal cavity, arising from the basal layers of olfactory neuroepithelial cells in the superior nasal vault. It usually occurs in the 5th to 6th decades of life and is characterized clinically by non-specific symptoms such as progressive ipsilateral nasal block, sinusitis, facial pain, intermittent headaches, hyposmia/dysosmia, rhinorrhea and epistaxis as well as proptosis, diplopia and excessive lacrimation due to orbital extension. With early treatment and in the absence of distant metastases, it appears to have a good prognosis (compared to other superior nasal malignancies), despite a high rate of cervical metastases." [NCIT:C3789, Orphanet:1957]
 subset: doid {source="DOID:369"}
 subset: doid_rare {source="DOID:369"}
 subset: gard_rare {source="GARD:0024371", source="MONDO:GARD"}
@@ -138172,10 +138173,11 @@ xref: SCTID:68614005 {source="DOID:369"}
 xref: SCTID:76060004 {source="DOID:369"}
 is_a: MONDO:0002433 {source="DOID:369/inferred", source="MONDO:Redundant", source="NCIT:C3789/inferred"} ! malignant cranial nerve neoplasm
 is_a: MONDO:0002722 {source="DOID:369", source="NCIT:C3789/inferred"} ! olfactory nerve neoplasm
-is_a: MONDO:0002749 {source="NCIT:C3789"} ! extracranial neuroblastoma
-is_a: MONDO:0005072 {source="EFO:1000407", source="MONDO:Redundant", source="NCIT:C3789/inferred"} ! neuroblastoma
 is_a: MONDO:0016713 {source="Orphanet:1957"} ! central nervous system Ewing sarcoma/peripheral primitive neuroectodermal tumor
+relationship: excluded_subClassOf MONDO:0002749 {source="NCIT:C3789", source="PMID:28640941", source="PMID:29730775", source="PMID:38878689", source="https://orcid.org/0000-0002-7638-4659"} ! extracranial neuroblastoma
+relationship: excluded_subClassOf MONDO:0005072 {source="EFO:1000407", source="NCIT:C3789", source="PMID:28640941", source="PMID:29730775", source="PMID:38878689", source="https://orcid.org/0000-0002-7638-4659"} ! neuroblastoma
 property_value: curated_content_resource "https://www.malacards.org/card/olfactory_neuroblastoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10832" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8583" xsd:anyURI
 
 [Term]
@@ -606823,7 +606825,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0859597
 name: cns neuroblastoma with FOXR2 activation
-def: "A central nervous system neuroblastoma that is characterized by FOXR2 activation and that is composed of small, round cells with hyperchromatic nuclei surrounded by a clear halo." [DOID:0080906]
+def: "A cerebral neuroblastoma that is characterized by FOXR2 activation and that is composed of small, round cells with hyperchromatic nuclei surrounded by a clear halo." [DOID:0080906]
 subset: doid {source="DOID:0080906"}
 subset: gard_rare {source="GARD:0026755", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C186547"}
@@ -606834,6 +606836,7 @@ xref: NCIT:C186547 {source="MONDO:equivalentTo", source="https://orcid.org/0000-
 is_a: MONDO:0002900 {source="DOID:0080906"} ! cerebral neuroblastoma
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 property_value: curated_content_resource "https://www.malacards.org/card/cns_neuroblastoma_with_foxr2_activation" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10832" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8567" xsd:anyURI
 
 [Term]
