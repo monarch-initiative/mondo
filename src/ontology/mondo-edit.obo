@@ -533245,7 +533245,6 @@ intersection_of: has_characteristic PATO:0002098 ! neoplastic, metastatic
 id: MONDO:0024880
 name: metastatic malignant neoplasm
 def: "A malignant tumor that has spread from its original (primary) site of growth to another site close to or distant from the primary site." [NCIT:C36263]
-comment: Note that we currently treat secondary neoplasms as being neoplastic diseases that are derived from neoplasm; classes such as 'neoplasm', 'carcinoma' are implicitly primary. This may change in future.
 subset: ncit {source="NCIT:C36263"}
 subset: otar {source="MONDO:OTAR"}
 synonym: "malignant metastatic neoplasm" EXACT []
@@ -533260,6 +533259,7 @@ is_a: MONDO:0024881 {source="NCIT:C36263"} ! secondary malignant neoplasm
 is_a: MONDO:0024883 {source="MONDO:Redundant", source="NCIT:C36263"} ! metastatic neoplasm
 intersection_of: MONDO:0024883 ! metastatic neoplasm
 intersection_of: has_characteristic PATO:0002097 ! neoplastic, malignant
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7838" xsd:anyURI
 
 [Term]
 id: MONDO:0024881
@@ -533285,7 +533285,6 @@ is_a: MONDO:0024882 {source="NCIT:C4968"} ! secondary neoplasm
 id: MONDO:0024882
 name: secondary neoplasm
 def: "A neoplasm that arises from a pre-existing lower grade lesion, or as a result of a primary lesion that has spread to secondary sites, or due to a complication of a cancer treatment." [NCIT:C36255]
-comment: Note that we currently treat secondary neoplasms as being neoplastic diseases that are derived from neoplasm; classes such as 'neoplasm', 'carcinoma' are implicitly primary. This may change in future.
 subset: ncit {source="NCIT:C36255"}
 subset: otar {source="MONDO:OTAR"}
 synonym: "secondary neoplasm" EXACT [NCIT:C36255]
@@ -533294,8 +533293,10 @@ synonym: "secondary tumour" EXACT OMO:0003005 []
 xref: MEDGEN:1851572 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C36255 {source="MONDO:equivalentTo"}
 xref: UMLS:C5848363 {source="MONDO:equivalentTo", source="MEDGEN:1851572", source="MONDO:MEDGEN"}
-intersection_of: MONDO:0023370 ! neoplastic disease or syndrome
+is_a: MONDO:0005070 {source="NCIT:C36255"} ! neoplasm
+intersection_of: MONDO:0005070 ! neoplasm
 intersection_of: disease_arises_from_feature MONDO:0005070 ! neoplasm
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7838" xsd:anyURI
 
 [Term]
 id: MONDO:0024883
