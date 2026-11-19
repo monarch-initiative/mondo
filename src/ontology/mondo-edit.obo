@@ -8023,11 +8023,13 @@ def: "A endometrial carcinoma (disease) that involves the body of uterus." [MOND
 subset: doid {source="DOID:0050939"}
 synonym: "body of uterus endometrial carcinoma (disease)" EXACT [MONDO:patterns/location]
 synonym: "endometrial carcinoma (disease) of body of uterus" EXACT []
+synonym: "UCEC" RELATED ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations]
 xref: DOID:0050939 {source="MONDO:equivalentTo"}
 is_a: MONDO:0006003 {source="DOID:0050939", source="MONDO:Entailed", source="MONDO:Redundant"} ! uterine corpus cancer
 intersection_of: MONDO:0002447 ! endometrial carcinoma
 intersection_of: disease_has_location UBERON:0009853 ! body of uterus
 property_value: curated_content_resource "https://www.malacards.org/card/uterine_corpus_endometrial_carcinoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 
 [Term]
 id: MONDO:0000554
@@ -103331,6 +103333,7 @@ subset: doid {source="DOID:3008"}
 subset: ncit {source="NCIT:C4194"}
 subset: otar {source="MONDO:OTAR"}
 synonym: "breast invasive ductal carcinoma" RELATED [ONCOTREE:IDC]
+synonym: "IDC" EXACT ABBREVIATION [ONCOTREE:IDC, PMID:39806949]
 synonym: "infiltrating ductal adenocarcinoma" EXACT [NCIT:C4194]
 synonym: "infiltrating ductal breast carcinoma" EXACT [NCIT:C4194]
 synonym: "infiltrating ductal carcinoma" EXACT [NCIT:C4194]
@@ -103360,6 +103363,7 @@ is_a: MONDO:0005590 {source="DOID:3008", source="MONDO:Redundant", source="NCIT:
 is_a: MONDO:0006256 {source="MONDO:Redundant", source="NCIT:C4194", source="ONCOTREE:IDC"} ! invasive breast carcinoma
 intersection_of: MONDO:0005590 ! breast ductal adenocarcinoma
 intersection_of: has_characteristic PATO:0002129 ! neoplastic, invasive
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 
 [Term]
 id: MONDO:0004954
@@ -103458,6 +103462,7 @@ synonym: "oral cavity scc" EXACT [NCIT:C4833]
 synonym: "oral cavity squamous cell cancer" EXACT [NCIT:C4833]
 synonym: "oral cavity squamous cell carcinoma" EXACT [NCIT:C4833]
 synonym: "oral squamous cell carcinoma" RELATED [GARD:0007263]
+synonym: "OSCC" EXACT ABBREVIATION [NCIT:C4833]
 synonym: "scc of mouth" EXACT [NCIT:C4833]
 synonym: "scc of oral cavity" EXACT [NCIT:C4833]
 synonym: "scc of the mouth" EXACT [NCIT:C4833]
@@ -103484,6 +103489,7 @@ intersection_of: disease_has_location UBERON:0000165 ! mouth
 relationship: disease_has_location UBERON:0000165 {source="EFO:0000784"} ! mouth
 property_value: curated_content_resource "https://www.malacards.org/card/oral_squamous_cell_carcinoma" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/squamous_cell_carcinoma_head_and_neck" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/7263/oral-squamous-cell-carcinoma" xsd:anyURI {source="GARD:0007263"}
 
 [Term]
@@ -105022,11 +105028,12 @@ synonym: "conventional (clear cell) renal cell carcinoma" EXACT [DOID:4467, MTH:
 synonym: "conventional renal cell carcinoma" EXACT [DOID:4467, NCIT:C4033]
 synonym: "Grawitz tumor" EXACT DEPRECATED [NCIT:C4033]
 synonym: "Grawitz tumour" EXACT OMO:0003005 []
-synonym: "hypernephroma" RELATED DEPRECATED []
+synonym: "hypernephroma" RELATED DEPRECATED [NCIT:C4033]
 synonym: "kidney clear cell adenocarcinoma" EXACT [MONDO:patterns/location, NCIT:C4033]
 synonym: "kidney clear cell carcinoma" EXACT [NCIT:C4033]
-synonym: "RCC, clear cell adenocarcinoma" EXACT []
-synonym: "renal cell carcinoma, clear cell adenocarcinoma" EXACT []
+synonym: "KIRC" RELATED ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations]
+synonym: "RCC, clear cell adenocarcinoma" EXACT [NCIT:C4033]
+synonym: "renal cell carcinoma, clear cell adenocarcinoma" EXACT [NCIT:C4033]
 synonym: "renal clear cell adenocarcinoma" EXACT [NCIT:C4033]
 synonym: "renal clear cell carcinoma" EXACT [DOID:4467, NCIT:C4033]
 xref: DOID:4467 {source="MONDO:equivalentTo", source="EFO:0000349"}
@@ -105047,6 +105054,7 @@ is_a: MONDO:0007763 ! nonpapillary renal cell carcinoma
 intersection_of: MONDO:0005004 ! clear cell adenocarcinoma
 intersection_of: disease_has_location UBERON:0002113 ! kidney
 property_value: curated_content_resource "https://www.malacards.org/card/clear_cell_renal_cell_carcinoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 
 [Term]
 id: MONDO:0005006
@@ -105331,6 +105339,7 @@ synonym: "malignant melanoma of skin stage unspecified" EXACT [NCIT:C3510]
 synonym: "melanoma (disease) of zone of skin" EXACT []
 synonym: "melanoma of skin" EXACT [NCIT:C3510]
 synonym: "melanoma of the skin" EXACT [NCIT:C3510]
+synonym: "SKCM" RELATED ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations, ONCOTREE:SKCM]
 synonym: "skin melanoma" EXACT [DOID:8923, NCIT:C3510]
 synonym: "skin, melanoma" EXACT [NCIT:C3510]
 synonym: "zone of skin melanoma" EXACT []
@@ -105377,6 +105386,7 @@ intersection_of: MONDO:0005105 ! melanoma
 intersection_of: disease_has_location UBERON:0000014 ! zone of skin
 disjoint_from: MONDO:0006320 ! non-cutaneous melanoma
 property_value: curated_content_resource "https://www.malacards.org/card/skin_melanoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
 property_value: IAO:0000589 "cutaneous melanoma (disease)" xsd:string
 
@@ -107010,6 +107020,7 @@ subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "adenocarcinoma of lung" EXACT [NCIT:C3512]
 synonym: "adenocarcinoma of the lung" EXACT [NCIT:C3512]
+synonym: "LUAD" RELATED ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations, ONCOTREE:LUAD]
 synonym: "lung adenocarcinoma" EXACT [DOID:3910, MONDO:patterns/location, NCIT:C3512]
 synonym: "non-small cell lung adenocarcinoma" EXACT [MONDO:0005474]
 xref: DOID:3910 {source="EFO:0005288", source="EFO:0000571", source="MONDO:equivalentTo"}
@@ -107028,6 +107039,7 @@ intersection_of: MONDO:0004970 ! adenocarcinoma
 intersection_of: disease_has_location UBERON:0002048 ! lung
 relationship: disease_has_location UBERON:0002048 {source="EFO:0000784"} ! lung
 property_value: curated_content_resource "https://www.malacards.org/card/lung_cancer_susceptibility_3" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/5742/lung-adenocarcinoma" xsd:anyURI {source="GARD:0005742"}
 
 [Term]
@@ -108212,6 +108224,7 @@ synonym: "epidermoid cell carcinoma of lung" EXACT [NCIT:C3493]
 synonym: "epidermoid cell carcinoma of the lung" EXACT [DOID:3907, NCIT:C3493]
 synonym: "epidermoid cell lung carcinoma" EXACT [NCIT:C3493]
 synonym: "lung squamous cell carcinoma" EXACT [DOID:3907, MONDO:patterns/location, NCIT:C3493]
+synonym: "LUSC" RELATED ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations, ONCOTREE:LUSC]
 synonym: "squamous cell carcinoma of lung" EXACT [NCIT:C3493]
 synonym: "squamous cell carcinoma of the lung" EXACT [NCIT:C3493]
 synonym: "squamous cell lung cancer" EXACT [NCIT:C3493]
@@ -108231,6 +108244,7 @@ intersection_of: disease_has_location UBERON:0002048 ! lung
 relationship: disease_has_location UBERON:0002048 {source="EFO:0000784"} ! lung
 relationship: excluded_subClassOf MONDO:0005233 {source="DOID:3907", source="ONCOTREE:LUSC", source="https://orcid.org/0000-0001-5208-3432"} ! non-small cell lung carcinoma
 property_value: curated_content_resource "https://www.malacards.org/card/lung_squamous_cell_carcinoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 
 [Term]
 id: MONDO:0005098
@@ -110538,6 +110552,7 @@ subset: doid {source="DOID:8398"}
 subset: ncit {source="NCIT:C3293"}
 subset: otar {source="MONDO:OTAR"}
 synonym: "degenerative joint disease" EXACT [DOID:8398, NCIT:C3293]
+synonym: "OA" EXACT ABBREVIATION [PMID:31908149]
 xref: DOID:8398 {source="MONDO:equivalentTo", source="EFO:0002506"}
 xref: HP:0002758 {source="MONDO:otherHierarchy", source="EFO:0002506"}
 xref: ICD10CM:M15-M19 {source="https://github.com/monarch-initiative/mondo/issues/4536", source="MONDO:equivalentTo", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-4142-7153"}
@@ -110552,6 +110567,7 @@ xref: UMLS:C0029408 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0005578 {source="DOID:8398", source="EFO:0002506", source="MESH:D010003", source="MONDO:Redundant", source="NCIT:C3293"} ! arthritic joint disease
 relationship: disease_has_feature HP:0001369 ! Arthritis
 property_value: curated_content_resource "https://www.malacards.org/card/osteoarthritis" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/1395" xsd:anyURI
 
 [Term]
@@ -141521,17 +141537,18 @@ subset: gard_rare {source="GARD:0027758", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C42700"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "carcinosarcoma of the uterus" EXACT []
+synonym: "carcinosarcoma of the uterus" EXACT [NCIT:C42700]
 synonym: "malignant mixed mesodermal (Mullerian) tumor of the uterus" EXACT [NCIT:C42700]
 synonym: "malignant mixed mesodermal (Mullerian) tumour of the uterus" EXACT OMO:0003005 []
 synonym: "malignant mixed mesodermal (Müllerian) tumor of the uterus" EXACT [NCIT:C42700]
 synonym: "malignant mixed mesodermal (Müllerian) tumour of the uterus" EXACT OMO:0003005 []
+synonym: "UCS" RELATED ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations, ONCOTREE:UCS]
 synonym: "uterine carcinosarcoma" EXACT [DOID:6171]
 synonym: "uterine carcinosarcoma/uterine malignant mixed mullerian tumor" RELATED [ONCOTREE:UCS]
 synonym: "uterine carcinosarcoma/uterine malignant mixed mullerian tumour" RELATED OMO:0003005 []
 synonym: "uterine malignant mixed mesodermal (Mullerian) tumor" EXACT [NCIT:C42700]
 synonym: "uterine malignant mixed mesodermal (Mullerian) tumour" EXACT OMO:0003005 []
-synonym: "uterine malignant mixed mesodermal (Müllerian) tumor" EXACT []
+synonym: "uterine malignant mixed mesodermal (Müllerian) tumor" EXACT [NCIT:C42700]
 synonym: "uterine malignant mixed mesodermal (Müllerian) tumour" EXACT OMO:0003005 []
 synonym: "uterus carcinosarcoma" EXACT [MONDO:patterns/location]
 xref: DOID:6171 {source="MONDO:equivalentTo"}
@@ -141548,6 +141565,7 @@ is_a: MONDO:0002928 {source="MONDO:Redundant", source="NCIT:C42700/inferred"} ! 
 intersection_of: MONDO:0002928 ! carcinosarcoma
 intersection_of: disease_has_location UBERON:0000995 ! uterus
 property_value: curated_content_resource "https://www.malacards.org/card/uterine_carcinosarcoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 
 [Term]
 id: MONDO:0006486
@@ -141571,6 +141589,7 @@ synonym: "melanoma, uveal, malignant" EXACT [NCIT:C7712]
 synonym: "uvea melanoma" EXACT []
 synonym: "uvea melanoma (disease)" EXACT [MONDO:patterns/location]
 synonym: "uveal melanoma" EXACT [DOID:6039, MONDO:0018313, NCIT:C7712, Orphanet:39044]
+synonym: "UVM" RELATED ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations]
 xref: DOID:6039 {source="MONDO:equivalentTo"}
 xref: EFO:1000616 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: GARD:0008621 {source="MONDO:GARD"}
@@ -141588,6 +141607,7 @@ is_a: MONDO:0021220 {source="Orphanet:39044"} ! eye neoplasm
 intersection_of: MONDO:0005105 ! melanoma
 intersection_of: disease_has_location UBERON:0001768 ! uvea
 property_value: curated_content_resource "https://www.malacards.org/card/melanoma_uveal" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 
 [Term]
 id: MONDO:0006487
@@ -160318,6 +160338,7 @@ synonym: "hepatocellular carcinoma" EXACT [DOID:684, ICD10CM:C22.0, icd11.founda
 synonym: "hepatocellular carcinoma, childhood type, somatic" EXACT []
 synonym: "hepatocellular carcinoma, somatic" EXACT []
 synonym: "hepatoma" EXACT [DOID:684, https://orcid.org/0000-0002-6601-2165, ICD10CM:C22.0, NCIT:C3099, OMIM:114550]
+synonym: "LIHC" RELATED ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations]
 synonym: "liver carcinoma" EXACT [DOID:686, MONDO:0004018, MONDO:patterns/location]
 synonym: "liver cell cancer (hepatocellular carcinoma)" EXACT [NCIT:C3099]
 synonym: "liver cell carcinoma" EXACT [ICD10CM:C22.0, icd11.foundation:1294035808, NCIT:C3099, OMIM:114550]
@@ -160351,6 +160372,7 @@ intersection_of: disease_arises_from_structure CL:0000182 ! hepatocyte
 relationship: disease_arises_from_structure CL:0000182 {source="NCIT:C3099"} ! hepatocyte
 relationship: disease_has_feature HP:0002027 {source="MONDO:Wikidata"} ! Abdominal pain
 relationship: disease_has_location UBERON:0002107 {source="EFO:0000784"} ! liver
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
 
@@ -166525,10 +166547,11 @@ subset: omim {source="OMIM:127750"}
 subset: omim_susceptibility {source="OMIM:127750"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "cortical Lewy body disease" EXACT []
+synonym: "cortical Lewy body disease" EXACT [MESH:D020961]
 synonym: "dementia with Lewy bodies" EXACT [DOID:12217, ICD9CM:331.82, ISBN-13:978-1-259-64403-0]
-synonym: "dementia, Lewy body" RELATED []
+synonym: "dementia, Lewy body" EXACT [OMIM:127750]
 synonym: "DLB" EXACT ABBREVIATION [OMIM:127750]
+synonym: "LBD" RELATED ABBREVIATION [PMID:39620839]
 synonym: "Lewy body dementia" EXACT [DOID:12217, ICD10CM:G31.83, NCIT:C84826, OMIM:127750]
 synonym: "lewy body dementia, susceptibility to" EXACT []
 synonym: "Lewy body disease" EXACT [DOID:12217, ICD10CM:G31.83, NCIT:C84826]
@@ -166551,6 +166574,7 @@ xref: UMLS:C0752347 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0000510 {source="DOID:12217"} ! synucleinopathy
 is_a: MONDO:0001627 {source="DOID:12217", source="MONDO:Redundant", source="NCIT:C84826"} ! dementia
 property_value: curated_content_resource "https://www.malacards.org/card/dementia_lewy_body" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 
 [Term]
@@ -242223,15 +242247,16 @@ subset: ordo_group_of_disorders {source="Orphanet:67037"}
 subset: orphanet {source="Orphanet:67037"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "carcinoma of the head and neck" NARROW []
+synonym: "carcinoma of the head and neck" BROAD [DOID:5520]
 synonym: "craniocervical region squamous cell carcinoma" EXACT [MONDO:patterns/location]
 synonym: "head and neck squamous cell carcinoma" EXACT [DOID:5520, NCIT:C34447, Orphanet:67037]
 synonym: "head and neck squamous cell carcinoma, NOS" RELATED EXCLUDE []
+synonym: "HNSC" RELATED ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations, ONCOTREE:HNSC]
 synonym: "HNSCC" EXACT ABBREVIATION [NCIT:C34447, OMIM:275355, Orphanet:67037]
 synonym: "SCCHN" EXACT ABBREVIATION [NCIT:C34447]
 synonym: "squamous cell carcinoma of head and neck" EXACT [NCIT:C34447, Orphanet:67037]
 synonym: "squamous cell carcinoma of the head and neck" EXACT [DOID:5520, NCIT:C34447]
-synonym: "squamous cell carcinoma, head and neck" RELATED []
+synonym: "squamous cell carcinoma, head and neck" EXACT [OMIM:275355]
 synonym: "squamous cell carcinoma, head and neck, somatic" EXACT []
 xref: DOID:5520 {source="MONDO:equivalentTo", source="EFO:0000181"}
 xref: EFO:0000181 {source="MONDO:equivalentTo", source="MONDO:EFO"}
@@ -242250,6 +242275,7 @@ is_a: MONDO:0005096 {source="DOID:5520", source="EFO:0000181", source="MESH:C535
 is_a: MONDO:0005586 {source="Orphanet:67037"} ! head and neck neoplasm
 intersection_of: MONDO:0005096 ! squamous cell carcinoma
 intersection_of: disease_has_location UBERON:0007811 ! craniocervical region
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 
 [Term]
@@ -378104,17 +378130,18 @@ subset: ordo_group_of_disorders {source="Orphanet:100088"}
 subset: orphanet {source="Orphanet:100088"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "cancer of the thyroid" BROAD []
-synonym: "cancer of thyroid" BROAD []
+synonym: "cancer of the thyroid" BROAD [NCIT:C4815]
+synonym: "cancer of thyroid" BROAD [NCIT:C4815]
 synonym: "carcinoma of the thyroid" EXACT [NCIT:C4815]
 synonym: "carcinoma of the thyroid gland" EXACT [NCIT:C4815]
 synonym: "carcinoma of thyroid" EXACT [NCIT:C4815]
 synonym: "carcinoma of thyroid gland" EXACT [MONDO:patterns/carcinoma, NCIT:C4815]
-synonym: "head and neck cancer, thyroid" BROAD []
-synonym: "thyroid cancer" BROAD []
+synonym: "head and neck cancer, thyroid" BROAD [DOID:3963]
+synonym: "THCA" RELATED ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations]
+synonym: "thyroid cancer" BROAD [NCIT:C4815]
 synonym: "thyroid cancer, NOS" BROAD EXCLUDE []
 synonym: "thyroid carcinoma" EXACT [DOID:3963, MONDO:ambiguous, NCIT:C4815]
-synonym: "thyroid gland cancer" BROAD []
+synonym: "thyroid gland cancer" BROAD [NCIT:C4815]
 synonym: "thyroid gland carcinoma" EXACT [DOID:3963, MONDO:0006461, MONDO:patterns/location, NCIT:C4815]
 xref: DOID:3963 {source="MONDO:equivalentTo"}
 xref: EFO:0002892 {source="MONDO:equivalentTo", source="MONDO:EFO"}
@@ -378134,6 +378161,7 @@ is_a: MONDO:0015074 {source="MONDO:Redundant", source="NCIT:C4815/inferred", sou
 intersection_of: MONDO:0004993 ! carcinoma
 intersection_of: disease_has_location UBERON:0002046 ! thyroid gland
 property_value: curated_content_resource "https://www.malacards.org/card/rare_thyroid_carcinoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 
 [Term]
 id: MONDO:0015076
@@ -439008,6 +439036,7 @@ synonym: "chromophil carcinoma of the kidney" EXACT [NCIT:C6975]
 synonym: "chromophil RCC" RELATED [GARD:0009575]
 synonym: "chromophil renal cell carcinoma" EXACT [NCIT:C6975]
 synonym: "HPRCC" EXACT ABBREVIATION []
+synonym: "KIRP" RELATED ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations]
 synonym: "papillary (chromophil) renal cell carcinoma" EXACT [NCIT:C6975]
 synonym: "papillary renal carcinoma, malignant - (subtype)" RELATED [GARD:0009572]
 synonym: "papillary renal cell adenocarcinoma" EXACT [Orphanet:319298]
@@ -439042,6 +439071,7 @@ relationship: curated_content_resource https://search.clinicalgenome.org/kb/cond
 relationship: disease_has_location UBERON:0002113 {source="EFO:0000784"} ! kidney
 relationship: excluded_subClassOf MONDO:0017891 {source="Orphanet:47044", source="https://orcid.org/0000-0001-5208-3432"} ! obsolete inherited renal cancer-predisposing syndrome
 property_value: curated_content_resource "https://www.malacards.org/card/papillary_renal_cell_carcinoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/9572/papillary-renal-cell-carcinoma" xsd:anyURI {source="GARD:0009572"}
 
 [Term]
@@ -439070,6 +439100,7 @@ synonym: "chromophobe renal cell adenocarcinoma" EXACT [Orphanet:319303]
 synonym: "chromophobe renal cell cancer" EXACT [NCIT:C4146]
 synonym: "chromophobe renal cell carcinoma" EXACT [DOID:4471, NCIT:C4146, Orphanet:319303]
 synonym: "CRCC" RELATED ABBREVIATION [GARD:0006064]
+synonym: "KICH" RELATED ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations]
 synonym: "renal cell carcinoma, chromophobe type" EXACT [NCIT:C4146]
 xref: DOID:4471 {source="MONDO:equivalentTo", source="EFO:0000335"}
 xref: EFO:0000335 {source="MONDO:equivalentTo", source="MONDO:EFO"}
@@ -439089,6 +439120,7 @@ is_a: MONDO:0005086 {source="DOID:4471", source="EFO:0000335", source="MONDO:001
 is_a: MONDO:0005549 {source="NCIT:C4146"} ! renal cell adenocarcinoma
 relationship: disease_has_location UBERON:0002113 {source="EFO:0000784"} ! kidney
 property_value: curated_content_resource "https://www.malacards.org/card/chromophobe_renal_cell_carcinoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/6064/chromophobe-renal-cell-carcinoma" xsd:anyURI {source="GARD:0006064"}
 
 [Term]
@@ -461028,7 +461060,8 @@ synonym: "AML - acute myeloid leukemia" EXACT [DOID:9119, NCIT:C3171]
 synonym: "ANLL" EXACT ABBREVIATION [NCIT:C3171]
 synonym: "hematopoeitic - acute Myleogenous leukaemia (AML)" EXACT OMO:0003005 []
 synonym: "hematopoeitic - acute Myleogenous leukemia (AML)" EXACT [NCIT:C3171]
-synonym: "leukemia, acute myeloid" RELATED []
+synonym: "LAML" RELATED ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations]
+synonym: "leukemia, acute myeloid" EXACT [OMIM:601626]
 synonym: "leukemia, acute myeloid, autosomal dominant, somatic mutation" EXACT []
 synonym: "leukemia, acute myeloid, reduced survival in, somatic" EXACT []
 synonym: "leukemia, acute myeloid, somatic" EXACT []
@@ -461069,6 +461102,7 @@ relationship: disease_has_feature HP:0001903 {source="MONDO:Wikidata"} ! Anemia
 relationship: disease_has_feature MONDO:0002280 {source="MONDO:Wikidata"} ! anemia
 relationship: has_characteristic PATO:0000389 ! acute
 property_value: curated_content_resource "https://www.malacards.org/card/leukemia_acute_myeloid" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/12757/acute-myeloid-leukemia" xsd:anyURI {source="GARD:0012757"}
@@ -467092,15 +467126,16 @@ subset: ordo_group_of_disorders {source="Orphanet:70482"}
 subset: orphanet {source="Orphanet:70482"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "cancer of esophagus" NARROW []
-synonym: "cancer of oesophagus" NARROW OMO:0003005 []
-synonym: "cancer of the esophagus" NARROW []
-synonym: "cancer of the oesophagus" NARROW OMO:0003005 []
+synonym: "cancer of esophagus" BROAD [DOID:1107, NCIT:C3513]
+synonym: "cancer of oesophagus" BROAD OMO:0003005 [DOID:1107]
+synonym: "cancer of the esophagus" BROAD [NCIT:C3513]
+synonym: "cancer of the oesophagus" BROAD OMO:0003005 []
 synonym: "carcinoma of esophagus" EXACT [DOID:1107, MONDO:patterns/carcinoma, MTH:NOCODE, NCIT:C3513, Orphanet:70482]
 synonym: "carcinoma of the esophagus" EXACT [NCIT:C3513]
 synonym: "carcinoma of the oesophagus" EXACT OMO:0003005 []
-synonym: "esophageal cancer" NARROW []
-synonym: "esophageal cancer, NOS" NARROW []
+synonym: "ESCA" RELATED ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations]
+synonym: "esophageal cancer" BROAD [NCIT:C3513]
+synonym: "esophageal cancer, NOS" BROAD [NCIT:C3513]
 synonym: "esophageal carcinoma" EXACT [DOID:1107, MONDO:0001189, NCIT:C3513, Orphanet:70482]
 synonym: "esophagus carcinoma" EXACT [MONDO:patterns/location, NCIT:C3513]
 synonym: "oesophagus carcinoma" EXACT OMO:0003005 []
@@ -467120,6 +467155,7 @@ is_a: MONDO:0006181 {source="MONDO:Redundant", source="NCIT:C3513"} ! digestive 
 is_a: MONDO:0007576 {source="DOID:1107", source="MONDO:Redundant", source="NCIT:C3513"} ! esophageal cancer
 intersection_of: MONDO:0004993 ! carcinoma
 intersection_of: disease_has_location UBERON:0001043 ! esophagus
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 
 [Term]
 id: MONDO:0019087
