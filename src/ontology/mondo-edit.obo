@@ -362259,21 +362259,45 @@ property_value: curated_content_resource "https://www.malacards.org/card/palmopl
 
 [Term]
 id: MONDO:0014493
-name: autoimmune lymphoproliferative syndrome due to CTLA4 haploinsufficiency
-def: "An autoimmune lymphoproliferative syndrome caused by a somatic variation in the CTLA4 gene, resulting in CTLA4 haploinsufficiency in the affected cells. It is distinct from the germline CTLA4 disease, immune dysregulation with autoimmunity, immunodeficiency, and lymphoproliferation (autoimmune lymphoproliferative syndrome, type V)." [https://orcid.org/0000-0003-2360-2664]
+name: immune dysregulation with autoimmunity, immunodeficiency, and lymphoproliferation
+def: "Any hereditary autoimmune lymphoproliferative syndrome in which the cause of the disease is a variation in the CTLA4 gene. It is an autosomal dominant immune dysregulation syndrome with incomplete penetrance, caused by impaired regulatory T cell function. It is characterized by hypogammaglobulinemia, recurrent infections, autoimmunity, progressive loss of circulating B cells, and lymphocytic infiltration of target organs." [https://orcid.org/0000-0003-2360-2664, PMID:25213377, PMID:25329329]
 subset: clingen {source="MONDO:CLINGEN"}
+subset: ncit {source="NCIT:C126341"}
+subset: omim {source="OMIM:616100"}
+subset: orphanet {source="Orphanet:436159"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "autoimmune lymphoproliferative syndrome due to CTLA4 haploinsufficiency" EXACT [https://clinicalgenome.org/affiliation/40080/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-is_a: MONDO:0007179 {source="https://orcid.org/0000-0003-2360-2664"} ! autoimmune disease
+synonym: "ALPS due to CTLA4 haploinsufficiency" EXACT [Orphanet:436159]
+synonym: "ALPS5" EXACT ABBREVIATION [OMIM:616100]
+synonym: "autoimmune lymphoproliferative syndrome due to CTLA4 haploinsufficiency" EXACT [https://clinicalgenome.org/affiliation/40080/, Orphanet:436159]
+synonym: "autoimmune lymphoproliferative syndrome type V" EXACT [MEDGEN:863651]
+synonym: "autoimmune lymphoproliferative syndrome, type V" EXACT [GARD:0012316, OMIM:616100]
+synonym: "CHAI" EXACT ABBREVIATION [NCIT:C126341, OMIM:616100, Orphanet:436159]
+synonym: "CTLA-4 haploinsufficiency with autoimmune infiltration disease" EXACT [Orphanet:436159]
+synonym: "CTLA4 haploinsufficiency" EXACT [NCIT:C126341]
+synonym: "CTLA4 haploinsufficiency with autoimmune infiltration" EXACT [OMIM:616100]
+synonym: "CTLA4-related immune dysregulation with autoimmunity, immunodeficiency, and lymphoproliferation" EXACT [https://clinicalgenome.org/affiliation/40080/, https://orcid.org/0000-0003-2360-2664] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "IDAIL" EXACT ABBREVIATION [OMIM:616100]
+synonym: "immune dysregulation with autoimmunity, immunodeficiency, and lymphoproliferation" EXACT [OMIM:616100]
+xref: GARD:0012316 {source="MONDO:GARD"}
+xref: ICD10CM:D47.9 {source="Orphanet:436159"}
+xref: MEDGEN:863651 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: NCIT:C126341 {source="MONDO:equivalentTo"}
+xref: OMIM:616100 {source="Orphanet:436159", source="MONDO:equivalentTo", source="Orphanet:436159/e"}
+xref: Orphanet:436159 {source="MONDO:equivalentTo"}
+xref: UMLS:C4015214 {source="MEDGEN:863651", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0007179 {source="NCIT:C126341", source="https://orcid.org/0000-0003-2360-2664"} ! autoimmune disease
+is_a: MONDO:0017979 {source="DC-OMIM:616100", source="PMID:25213377", source="https://orcid.org/0000-0003-2360-2664"} ! hereditary autoimmune lymphoproliferative syndrome
 is_a: MONDO:1060330 {source="NCIT:C37864", source="https://orcid.org/0000-0003-2360-2664"} ! autoimmune lymphoproliferative syndrome
-intersection_of: MONDO:1060330 ! autoimmune lymphoproliferative syndrome
-intersection_of: RO:0004004 http://identifiers.org/hgnc/2505 ! has material basis in somatic mutation in CTLA4
+intersection_of: MONDO:0017979 ! hereditary autoimmune lymphoproliferative syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2505 ! CTLA4
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0014493 {source="MONDO:CLINGEN"}
-relationship: excluded_subClassOf MONDO:0017979 {source="DC-OMIM:616100", source="https://orcid.org/0000-0002-7638-4659", source="https://orcid.org/0000-0003-2360-2664"} ! hereditary autoimmune lymphoproliferative syndrome
-relationship: RO:0004004 http://identifiers.org/hgnc/2505 ! has material basis in somatic mutation in CTLA4
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2505 {source="OMIM:616100", source="PMID:25213377", source="PMID:25329329"} ! CTLA4
+property_value: curated_content_resource "https://www.malacards.org/card/immune_dysregulation_with_autoimmunity_immunodeficiency_and_lymphoproliferation" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
+property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/12316/autoimmune-lymphoproliferative-syndrome-due-to-ctla4-haploinsufficiency" xsd:anyURI {source="GARD:0012316"}
 
 [Term]
 id: MONDO:0014494
@@ -702879,42 +702903,6 @@ def: "A form of male infertility characterized by failure or severely reduced ef
 is_a: MONDO:0005372 {source="PMID:40572651", source="https://www.clinicalgenome.org/affiliation/40073/"} ! male infertility
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10154" xsd:anyURI
-
-[Term]
-id: MONDO:1060329
-name: immune dysregulation with autoimmunity, immunodeficiency, and lymphoproliferation
-def: "Any autoimmune lymphoproliferative syndrome in which the cause of the disease is a variation in the CTLA4 gene. It is an autosomal dominant immune dysregulation syndrome with incomplete penetrance, caused by impaired regulatory T cell function. It is characterized by hypogammaglobulinemia, recurrent infections, autoimmunity, progressive loss of circulating B cells, and lymphocytic infiltration of target organs." [https://orcid.org/0000-0003-2360-2664, PMID:25213377, PMID:25329329]
-subset: ncit {source="NCIT:C126341"}
-subset: omim {source="OMIM:616100"}
-subset: orphanet {source="Orphanet:436159"}
-synonym: "ALPS due to CTLA4 haploinsufficiency" EXACT [Orphanet:436159]
-synonym: "ALPS5" EXACT ABBREVIATION [OMIM:616100]
-synonym: "autoimmune lymphoproliferative syndrome type V" EXACT [MEDGEN:863651]
-synonym: "autoimmune lymphoproliferative syndrome, type V" EXACT [GARD:0012316, OMIM:616100]
-synonym: "CHAI" EXACT ABBREVIATION [NCIT:C126341, OMIM:616100, Orphanet:436159]
-synonym: "CTLA-4 haploinsufficiency with autoimmune infiltration disease" EXACT [Orphanet:436159]
-synonym: "CTLA4 haploinsufficiency" EXACT [NCIT:C126341]
-synonym: "CTLA4 haploinsufficiency with autoimmune infiltration" EXACT [OMIM:616100]
-synonym: "CTLA4-related immune dysregulation with autoimmunity, immunodeficiency, and lymphoproliferation" EXACT [https://clinicalgenome.org/affiliation/40080/, https://orcid.org/0000-0003-2360-2664]
-synonym: "IDAIL" EXACT ABBREVIATION [OMIM:616100]
-synonym: "immune dysregulation with autoimmunity, immunodeficiency, and lymphoproliferation" EXACT [OMIM:616100]
-xref: GARD:0012316 {source="MONDO:GARD"}
-xref: ICD10CM:D47.9 {source="Orphanet:436159"}
-xref: MEDGEN:863651 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: NCIT:C126341 {source="MONDO:equivalentTo"}
-xref: OMIM:616100 {source="Orphanet:436159", source="MONDO:equivalentTo", source="Orphanet:436159/e"}
-xref: Orphanet:436159 {source="MONDO:equivalentTo"}
-xref: UMLS:C4015214 {source="MEDGEN:863651", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0007179 {source="NCIT:C126341"} ! autoimmune disease
-is_a: MONDO:0017979 {source="DC-OMIM:616100", source="PMID:25213377", source="https://orcid.org/0000-0003-2360-2664"} ! hereditary autoimmune lymphoproliferative syndrome
-intersection_of: MONDO:0017979 ! hereditary autoimmune lymphoproliferative syndrome
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2505 ! CTLA4
-relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2505 {source="OMIM:616100", source="PMID:25213377", source="PMID:25329329"} ! CTLA4
-property_value: curated_content_resource "https://www.malacards.org/card/immune_dysregulation_with_autoimmunity_immunodeficiency_and_lymphoproliferation" xsd:anyURI {source="MONDO:MalaCards"}
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
-property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
-property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/12316/autoimmune-lymphoproliferative-syndrome-due-to-ctla4-haploinsufficiency" xsd:anyURI {source="GARD:0012316"}
 
 [Term]
 id: MONDO:1060330
