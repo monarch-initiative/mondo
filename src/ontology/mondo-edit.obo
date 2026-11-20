@@ -362248,15 +362248,18 @@ property_value: curated_content_resource "https://www.malacards.org/card/palmopl
 [Term]
 id: MONDO:0014493
 name: autoimmune lymphoproliferative syndrome due to CTLA4 haploinsufficiency
-def: "A somatic mutation in the CTLA4 gene resulting in only a single functional gene. Haploinsufficiency for CTLA4 is associated with autoimmune lymphoproliferative syndrome, type V." [https://orcid.org/0000-0003-2360-2664]
+def: "An autoimmune lymphoproliferative syndrome caused by a somatic variation in the CTLA4 gene, resulting in CTLA4 haploinsufficiency in the affected cells. It is distinct from the germline CTLA4 disease, immune dysregulation with autoimmunity, immunodeficiency, and lymphoproliferation (autoimmune lymphoproliferative syndrome, type V)." [https://orcid.org/0000-0003-2360-2664]
 subset: clingen {source="MONDO:CLINGEN"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "autoimmune lymphoproliferative syndrome due to CTLA4 haploinsufficiency" EXACT [https://clinicalgenome.org/affiliation/40080/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 is_a: MONDO:0007179 {source="https://orcid.org/0000-0003-2360-2664"} ! autoimmune disease
-is_a: MONDO:1060330 {source="https://orcid.org/0000-0003-2360-2664"} ! autoimmune lymphoproliferative syndrome
+is_a: MONDO:1060330 {source="NCIT:C37864", source="https://orcid.org/0000-0003-2360-2664"} ! autoimmune lymphoproliferative syndrome
+intersection_of: MONDO:1060330 ! autoimmune lymphoproliferative syndrome
+intersection_of: RO:0004004 http://identifiers.org/hgnc/2505 ! has material basis in somatic mutation in CTLA4
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0014493 {source="MONDO:CLINGEN"}
 relationship: excluded_subClassOf MONDO:0017979 {source="DC-OMIM:616100", source="https://orcid.org/0000-0002-7638-4659", source="https://orcid.org/0000-0003-2360-2664"} ! hereditary autoimmune lymphoproliferative syndrome
+relationship: RO:0004004 http://identifiers.org/hgnc/2505 ! has material basis in somatic mutation in CTLA4
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
 
@@ -409945,7 +409948,7 @@ subset: ncit {source="NCIT:C9308"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "lymphoproliferative disorder" EXACT [NCIT:C9308]
-synonym: "lymphoproliferative syndrome" EXACT [DOID:0060704, OMIMPS:308240]
+synonym: "lymphoproliferative syndrome" EXACT [MEDGEN:6162]
 xref: DOID:0060704 {source="MONDO:mondoIsBroaderThanSource"}
 xref: GARD:0020633 {source="MONDO:GARD"}
 xref: MEDGEN:6162 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -409957,6 +409960,7 @@ xref: SCTID:277466009 {source="MONDO:equivalentTo"}
 xref: UMLS:C0024314 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:6162"}
 is_a: MONDO:0005833 {source="MESH:D008232"} ! lymphatic system disorder
 is_a: MONDO:0021334 {source="MESH:D008232"} ! immunoproliferative disorder
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 relationship: excluded_subClassOf MONDO:0003778 {source="DOID:0060704", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-7638-4659"} ! inborn error of immunity
 relationship: excluded_subClassOf MONDO:0015356 {source="Orphanet:238510", source="https://orcid.org/0000-0001-5208-3432"} ! hereditary neoplastic syndrome
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/6116" xsd:anyURI
@@ -440931,7 +440935,7 @@ consider: MONDO:0002145
 [Term]
 id: MONDO:0017979
 name: hereditary autoimmune lymphoproliferative syndrome
-def: "An inherited autoimmune lymphoproliferative syndrome characterized by non-malignant lymphoproliferation, multilineage cytopenias, and a lifelong increased risk of Hodgkin's and non-Hodgkin's lymphoma." [Orphanet:3261]
+def: "An autoimmune lymphoproliferative syndrome that is inherited. It is characterized by non-malignant lymphoproliferation, multilineage cytopenias, and a lifelong increased risk of Hodgkin's and non-Hodgkin's lymphoma." [Orphanet:3261]
 subset: doid {source="DOID:6688"}
 subset: doid_rare {source="DOID:6688"}
 subset: gard_rare {source="GARD:0008686", source="MONDO:GARD"}
