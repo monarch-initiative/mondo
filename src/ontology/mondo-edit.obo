@@ -120697,7 +120697,7 @@ subset: rare
 synonym: "bladder transitional cell carcinoma" EXACT [DOID:4006, NCIT:C39851]
 synonym: "bladder urothelial cancer" EXACT [NCIT:C39851]
 synonym: "bladder urothelial carcinoma" EXACT [DOID:4006, NCIT:C39851]
-synonym: "BLCA" RELATED ABBREVIATION [ONCOTREE:BLCA]
+synonym: "BLCA" EXACT ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations, ONCOTREE:BLCA, PMID:42010192]
 synonym: "transitional cell carcinoma of the urinary bladder" EXACT [NCIT:C39851]
 synonym: "urinary bladder transitional cell carcinoma" EXACT [MONDO:patterns/location, NCIT:C39851]
 synonym: "urinary bladder urothelial carcinoma" EXACT [DOID:4006, NCIT:C39851]
@@ -120716,6 +120716,7 @@ is_a: MONDO:0040679 {source="NCIT:C39851"} ! urothelial carcinoma
 intersection_of: MONDO:0006474 ! transitional cell carcinoma
 intersection_of: disease_has_location UBERON:0001255 ! urinary bladder
 property_value: curated_content_resource "https://www.malacards.org/card/bladder_urothelial_carcinoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 
 [Term]
 id: MONDO:0005612
@@ -136568,7 +136569,7 @@ name: invasive breast carcinoma
 def: "A carcinoma that infiltrates the breast parenchyma. The vast majority are adenocarcinomas arising from the terminal ductal lobular unit (TDLU). Often, the invasive adenocarcinoma co-exists with ductal or lobular carcinoma in situ. It is the most common carcinoma affecting women." [NCIT:C9245]
 subset: ncit {source="NCIT:C9245"}
 subset: otar {source="MONDO:OTAR"}
-synonym: "BRCA" RELATED ABBREVIATION [ONCOTREE:BRCA]
+synonym: "BRCA" EXACT ABBREVIATION [https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations, ONCOTREE:BRCA, PMID:40225987]
 synonym: "infiltrating breast cancer" EXACT []
 synonym: "infiltrating breast carcinoma" EXACT [NCIT:C9245]
 synonym: "infiltrating carcinoma of breast" EXACT [NCIT:C9245]
@@ -136589,6 +136590,7 @@ is_a: MONDO:0004989 {source="EFO:1000307", source="MONDO:Redundant", source="NCI
 is_a: MONDO:0040677 {source="NCIT:C9245"} ! invasive carcinoma
 intersection_of: MONDO:0004989 ! breast carcinoma
 intersection_of: has_characteristic PATO:0002129 ! neoplastic, invasive
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 
 [Term]
 id: MONDO:0006257
@@ -166551,7 +166553,7 @@ synonym: "cortical Lewy body disease" EXACT [MESH:D020961]
 synonym: "dementia with Lewy bodies" EXACT [DOID:12217, ICD9CM:331.82, ISBN-13:978-1-259-64403-0]
 synonym: "dementia, Lewy body" EXACT [OMIM:127750]
 synonym: "DLB" EXACT ABBREVIATION [OMIM:127750]
-synonym: "LBD" RELATED ABBREVIATION [PMID:39620839]
+synonym: "LBD" EXACT ABBREVIATION [PMID:36601524, PMID:39620839]
 synonym: "Lewy body dementia" EXACT [DOID:12217, ICD10CM:G31.83, NCIT:C84826, OMIM:127750]
 synonym: "lewy body dementia, susceptibility to" EXACT []
 synonym: "Lewy body disease" EXACT [DOID:12217, ICD10CM:G31.83, NCIT:C84826]
@@ -517181,6 +517183,7 @@ subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "benign glioma" EXACT [DOID:0080829, MONDO:0000638, PMID:37452934]
 synonym: "glioma, benign" EXACT [MONDO:patterns/benign]
+synonym: "LGG" EXACT ABBREVIATION [NCIT:C132067]
 synonym: "low grade glioma" EXACT [DOID:0080829, NCIT:C132067]
 synonym: "low-grade glioma" EXACT [NCIT:C132067]
 xref: DOID:0060101 {source="MONDO:equivalentObsolete"}
@@ -517193,6 +517196,7 @@ is_a: MONDO:0021042 {source="MONDO:Redundant", source="NCIT:C132067"} ! glioma
 intersection_of: MONDO:0021042 ! glioma
 intersection_of: has_characteristic MONDO:0024495 ! tumor grade 1 or 2, general grading system
 property_value: curated_content_resource "https://www.malacards.org/card/low_grade_glioma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10839" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4371" xsd:anyURI
 
 [Term]
