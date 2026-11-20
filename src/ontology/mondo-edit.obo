@@ -4966,18 +4966,17 @@ relationship: realized_in_response_to_stimulus CL:0000216 ! Sertoli cell
 [Term]
 id: MONDO:0000379
 name: malignant Sertoli-Leydig cell tumor
-def: "A malignant form of Sertoli-leydig cell tumor." [MONDO:patterns/malignant]
-comment: Reason of obsoletion: out of scope - MONDO:excludeHistoricalDisease. Term to consider: -
+def: "A Sertoli-Leydig cell tumor that is malignant. It occurs in the ovary or the testis." [MONDO:patterns/malignant, PMID:17235570, PMID:32519016]
 subset: nord_rare {source="MONDO:NORD"}
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="PMID:17235570", source="https://orcid.org/0000-0002-7638-4659", source="PMID:32519016", source="PMID:39173553", source="https://github.com/monarch-initiative/mondo/issues/7700"}
 subset: rare
-synonym: "Sertoli-Leydig cell tumor, malignant" EXACT [MONDO:patterns/malignant]
+synonym: "Sertoli-Leydig cell tumor, malignant" EXACT [MONDO:patterns/malignant, PMID:39173553]
 xref: DOID:0050618 {source="MONDO:equivalentObsolete"}
 is_a: MONDO:0002479 {source="MONDO:Redundant", source="https://orcid.org/0000-0002-6601-2165"} ! Sertoli-Leydig cell tumor
 intersection_of: MONDO:0002479 ! Sertoli-Leydig cell tumor
 intersection_of: has_characteristic PATO:0002097 ! neoplastic, malignant
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10624" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7700" xsd:anyURI
-property_value: IAO:0006012 "2024-09-01" xsd:string
 
 [Term]
 id: MONDO:0000380
@@ -14409,32 +14408,27 @@ property_value: curated_content_resource "https://www.malacards.org/card/acute_h
 
 [Term]
 id: MONDO:0000944
-name: cerebral artery occlusion
-comment: This term is scheduled for obsoletion based on the fact that it is a not a disease. After obsoletion, this term will not have a replacement ID, but one could consider the following term: -
+name: obsolete cerebral artery occlusion
 subset: doid {source="DOID:10127"}
-subset: obsoletion_candidate
 subset: otar {source="MONDO:OTAR"}
-xref: DOID:10127 {source="MONDO:equivalentTo"}
+xref: DOID:10127 {source="MONDO:obsoleteEquivalent"}
 xref: ICD9:434 {source="DOID:10127"}
 xref: ICD9:434.9 {source="DOID:10127"}
-xref: ICD9:434.90 {source="MONDO:equivalentTo", source="MONDO:i2s"}
+xref: ICD9:434.90 {source="MONDO:obsoleteEquivalent", source="MONDO:i2s"}
 xref: ICD9:434.91 {source="MONDO:relatedTo", source="MONDO:i2s"}
-xref: MEDGEN:507994 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: MEDGEN:507994 {source="MONDO:obsoleteEquivalent", source="MONDO:MEDGEN"}
 xref: SCTID:155400001 {source="DOID:10127"}
 xref: SCTID:155403004 {source="DOID:10127"}
 xref: SCTID:195188006 {source="DOID:10127"}
-xref: SCTID:20059004 {source="DOID:10127", source="MONDO:equivalentTo"}
+xref: SCTID:20059004 {source="DOID:10127", source="MONDO:obsoleteEquivalent"}
 xref: SCTID:266255008 {source="DOID:10127"}
 xref: SCTID:286956007 {source="DOID:10127"}
-xref: UMLS:C0028790 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:507994"}
-is_a: MONDO:0011057 {source="DOID:10127"} ! cerebrovascular disorder
-is_a: MONDO:1040016 {source="https://orcid.org/0000-0002-0587-4693"} ! cerebral artery stenosis
-intersection_of: MONDO:0020672 ! vascular occlusion disorder
-intersection_of: disease_has_location UBERON:0004449 ! cerebral artery
-relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
+xref: UMLS:C0028790 {source="MONDO:obsoleteEquivalent", source="MONDO:MEDGEN", source="MEDGEN:507994"}
 property_value: curated_content_resource "https://www.malacards.org/card/cerebral_artery_occlusion" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000231 OMO:0001000 {source="MONDO:excludePhenotype"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
-property_value: IAO:0006012 "2026-05-01" xsd:string
+is_obsolete: true
+consider: MONDO:1060198
 
 [Term]
 id: MONDO:0000945
@@ -22729,6 +22723,7 @@ relationship: excluded_subClassOf MONDO:0003117 {source="DOID:11569", source="ht
 relationship: excluded_subClassOf MONDO:0005618 {source="MESH:D009449", source="https://orcid.org/0000-0002-7638-4659"} ! anxiety disorder
 property_value: curated_content_resource "https://www.malacards.org/card/orthostatic_intolerance" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10150" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10509" xsd:anyURI
 
 [Term]
 id: MONDO:0001316
@@ -48182,11 +48177,12 @@ xref: DOID:2997 {source="MONDO:equivalentTo"}
 xref: GARD:0009967 {source="MONDO:GARD"}
 xref: MEDGEN:61669 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D018310 {source="MONDO:equivalentTo", source="DOID:2997"}
-xref: ONCOTREE:SLCT {source="MONDO:equivalentTo"}
 xref: SCTID:34110004 {source="DOID:2997"}
 xref: UMLS:C0206723 {source="MEDGEN:61669", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0003125 {source="DOID:2997"} ! testicular sex cord-stromal neoplasm
+is_a: MONDO:0006055 {source="MESH:D018310", source="PMID:1512847", source="PMID:37907261", source="PMID:39173553"} ! sex cord-stromal tumor
+relationship: excluded_subClassOf MONDO:0003125 {source="DOID:2997", source="https://orcid.org/0000-0002-7638-4659"} ! testicular sex cord-stromal neoplasm
 property_value: curated_content_resource "https://www.malacards.org/card/sertoli_leydig_cell_tumor" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10624" xsd:anyURI
 
 [Term]
 id: MONDO:0002480
@@ -52801,23 +52797,20 @@ property_value: curated_content_resource "https://www.malacards.org/card/childho
 [Term]
 id: MONDO:0002679
 name: cerebral infarction
-def: "An ischemic condition of the brain, producing a persistent focal neurological deficit in the area of distribution of the cerebral arteries." [NCIT:C50486]
+def: "A brain infarction that involves the cerebrum. It is characterized by necrosis in the cerebrum caused by an insufficiency of arterial or venous blood flow, producing a persistent focal neurological deficit in the area of distribution of the cerebral arteries. It is classified by hemisphere, lobe, arterial distribution, and etiology." [MESH:D002544, NCIT:C50486]
 subset: doid {source="DOID:3526"}
 subset: ncit {source="NCIT:C50486"}
 subset: otar {source="MONDO:OTAR"}
 synonym: "brain infarction of telencephalon" EXACT [MONDO:design_pattern]
 synonym: "cerebral infarct" EXACT [DOID:3526, icd11.foundation:1614716959]
-synonym: "cerebral infarction" EXACT [DOID:3526, ICD10CM:I63, ICD10WHO:I63, NCIT:C50486]
-synonym: "cerebral infarction NOS" RELATED EXCLUDE []
+synonym: "cerebral infarction" EXACT [DOID:3526, NCIT:C50486]
 synonym: "cerebral ischemia" RELATED [NCIT:C50486]
-synonym: "cerebral, infarction" EXACT []
-synonym: "CVA - cerebral infarction" EXACT []
-synonym: "infarction, cerebral" EXACT []
+synonym: "infarction, cerebral" EXACT [MESH:D002544]
 synonym: "telencephalon brain infarction" EXACT [MONDO:design_pattern, MONDO:patterns/location]
 xref: DOID:3526 {source="MONDO:equivalentTo"}
-xref: ICD10CM:I63 {source="https://orcid.org/0009-0001-6494-4831", source="MONDO:equivalentTo", source="https://orcid.org/0000-0002-5002-8648", source="DOID:3526"}
-xref: ICD10CM:I63.9 {source="MONDO:equivalentTo", source="DOID:3526"}
-xref: ICD10WHO:I63 {source="https://orcid.org/0000-0002-7941-5545", source="MONDO:equivalentTo", source="https://orcid.org/0000-0001-9439-5346"}
+xref: ICD10CM:I63 {source="MONDO:mondoIsNarrowerThanSource", source="https://orcid.org/0009-0001-6494-4831", source="https://orcid.org/0000-0002-5002-8648", source="DOID:3526"}
+xref: ICD10CM:I63.9 {source="MONDO:mondoIsNarrowerThanSource", source="DOID:3526"}
+xref: ICD10WHO:I63 {source="MONDO:mondoIsNarrowerThanSource", source="https://orcid.org/0000-0002-7941-5545", source="https://orcid.org/0000-0001-9439-5346"}
 xref: icd11.foundation:1614716959 {source="MONDO:equivalentTo"}
 xref: icd11.foundation:636274910 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
 xref: ICD9:433.01 {source="MONDO:relatedTo", source="MONDO:i2s"}
@@ -52844,6 +52837,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/stroke_
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10741" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9097" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9754" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
 
 [Term]
 id: MONDO:0002680
@@ -53986,7 +53980,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0002727
 name: olfactory nerve disorder
-def: "A disease involving the olfactory nerve." [https://orcid.org/0000-0002-6601-2165]
+def: "A disease affecting the olfactory nerve (first cranial nerve). It can be non-neoplastic or neoplastic." [https://orcid.org/0000-0002-6601-2165, NCIT:C27210]
 subset: doid {source="DOID:367"}
 subset: ncit {source="NCIT:C27210"}
 synonym: "disease of olfactory nerve" EXACT [MONDO:patterns/location_top]
@@ -54007,11 +54001,12 @@ xref: NCIT:C27210 {source="MONDO:equivalentTo", source="DOID:367"}
 xref: SCTID:68982002 {source="MONDO:equivalentTo", source="DOID:367"}
 xref: UMLS:C0751937 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:155962"}
 is_a: MONDO:0003569 {source="DOID:367/inferred", source="MESH:D020431", source="MONDO:Redundant", source="NCIT:C27210"} ! cranial nerve neuropathy
-is_a: MONDO:0005560 {source="DOID:367"} ! brain disorder
 intersection_of: MONDO:0000001 ! disease
 intersection_of: disease_has_location UBERON:0001579 ! olfactory nerve
 relationship: excluded_subClassOf MONDO:0002639 {source="DOID:367", source="https://orcid.org/0000-0001-5208-3432"} ! glossopharyngeal nerve disorder
+relationship: excluded_subClassOf MONDO:0005560 {source="DOID:367", source="https://orcid.org/0000-0002-7638-4659"} ! brain disorder
 property_value: curated_content_resource "https://www.malacards.org/card/olfactory_nerve_disease" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10832" xsd:anyURI
 
 [Term]
 id: MONDO:0002728
@@ -57889,7 +57884,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/differe
 [Term]
 id: MONDO:0002900
 name: cerebral neuroblastoma
-def: "A neuroblastoma arising from the cerebral hemispheres." [NCIT:C4826]
+def: "An intracranial primitive neuroectodermal tumor arising from the cerebral hemispheres." [NCIT:C4826, PMID:26919435]
 subset: doid {source="DOID:0080905", source="DOID:4164"}
 subset: gard_rare {source="GARD:0023294", source="MONDO:GARD"}
 subset: rare
@@ -57908,11 +57903,11 @@ xref: NCIT:C4826 {source="MONDO:equivalentObsolete", source="DOID:4164"}
 xref: SCTID:281560004 {source="MONDO:equivalentTo", source="DOID:4164"}
 xref: UMLS:C0559458 {source="MEDGEN:107851", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0002731 {source="DOID:4164", source="NCIT:C4826"} ! cerebral hemisphere cancer
-is_a: MONDO:0005072 {source="DOID:4164", source="MONDO:Redundant", source="NCIT:C4826"} ! neuroblastoma
-intersection_of: MONDO:0005072 ! neuroblastoma
-intersection_of: disease_has_location UBERON:0001893 ! telencephalon
+is_a: MONDO:0003142 {source="PMID:26919435"} ! intracranial primitive neuroectodermal tumor
+relationship: excluded_subClassOf MONDO:0005072 {source="DOID:4164", source="NCIT:C4826", source="PMID:26919435", source="PMID:39495206", source="https://orcid.org/0000-0002-7638-4659"} ! neuroblastoma
 property_value: curated_content_resource "https://www.malacards.org/card/central_nervous_system_neuroblastoma" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: curated_content_resource "https://www.malacards.org/card/cerebral_neuroblastoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10832" xsd:anyURI
 
 [Term]
 id: MONDO:0002901
@@ -102348,17 +102343,15 @@ property_value: curated_content_resource "https://www.malacards.org/card/urethra
 id: MONDO:0004910
 name: mitral valve prolapse
 def: "A fairly common and often benign valvular heart disorder characterized by redundancy or hooding of mitral valve leaflets so that they prolapse into the left atrium, often causing mitral regurgitation. It is often a symptomless condition but may be marked by varied symptoms (e.g. chest pain, fatigue, dizziness, dyspnea, or palpitations) leading in some cases to endocarditis or ventricular tachycardia." [NCIT:P378]
-comment: This term is scheduled to be merged with MONDO:0001315 orthostatic intolerance, based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0001315
 subset: doid {source="DOID:988"}
 subset: ncit {source="NCIT:C50655"}
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/10509"}
 synonym: "barlow's syndrome" EXACT [DOID:988, MTH:097]
 synonym: "floppy mitral valve" EXACT [DOID:988, NCIT:C50655]
 synonym: "mitral valve prolapse" EXACT [DOID:988, icd11.foundation:1085590500, MONDO:ambiguous, NCIT:C50655]
 synonym: "mitral valve prolapse (disease)" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "mitral valve prolapse syndrome" EXACT [NCIT:C50655]
-synonym: "prolapse, mitral valve" EXACT []
-synonym: "valve, prolapse Of mitral" EXACT []
+synonym: "prolapse, mitral valve" EXACT [MESH:D008945]
 xref: DOID:988 {source="MONDO:equivalentTo"}
 xref: HP:0001634 {source="MONDO:otherHierarchy"}
 xref: icd11.foundation:1085590500 {source="MONDO:equivalentTo"}
@@ -102376,7 +102369,6 @@ xref: UMLS:C0026267 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0003767 {source="DOID:988", source="NCIT:C50655"} ! mitral valve disorder
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10509" xsd:anyURI
 property_value: IAO:0000589 "mitral valve prolapse (disease)" xsd:string
-property_value: IAO:0006012 "2026-10-01" xsd:string
 
 [Term]
 id: MONDO:0004911
@@ -112531,7 +112523,7 @@ replaced_by: MONDO:0002009
 [Term]
 id: MONDO:0005264
 name: transient ischemic attack
-def: "A brief attack (from a few minutes to an hour) of cerebral dysfunction of vascular origin, with no persistent neurological deficit." [NCIT:C50781]
+def: "A brain ischemia characterized by a transient episode of neurological dysfunction caused by focal brain, spinal cord, or retinal ischemia, without acute infarction. It is distinguished from ischemic stroke by the absence of infarction. The attack of cerebral dysfunction of vascular origin is brief (from a few minutes to an hour), leaves no persistent neurological deficit, and carries a high risk of early stroke." [NCIT:C50781, PMID:19423857]
 subset: doid {source="DOID:224"}
 subset: ncit {source="NCIT:C50781"}
 subset: otar {source="MONDO:OTAR"}
@@ -112539,6 +112531,7 @@ synonym: "attack, transient ischaemic" EXACT OMO:0003005 []
 synonym: "attack, transient ischemic" EXACT []
 synonym: "ischaemic attack, transient" EXACT OMO:0003005 []
 synonym: "ischemic attack, transient" EXACT []
+synonym: "mini stroke" EXACT [HP:0002326]
 synonym: "TIA" EXACT ABBREVIATION [DOID:224, NCIT:C50781]
 synonym: "TIA - transient ischemic attack" EXACT []
 synonym: "transient cerebral ischaemia NOS" RELATED EXCLUDE []
@@ -112549,7 +112542,7 @@ synonym: "transient ischemic attack" EXACT [DOID:224, MONDO:ambiguous, MTH:NOCOD
 synonym: "transient ischemic attack (disease)" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "transient ischemic attacks" EXACT [DOID:224, NCIT:C50781]
 xref: DOID:224 {source="EFO:0003764", source="MONDO:equivalentTo"}
-xref: EFO:0003764 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+xref: EFO:0003764 {source="MONDO:equivalentObsolete", source="MONDO:EFO"}
 xref: HP:0002326 {source="MONDO:otherHierarchy"}
 xref: ICD10CM:G45.9 {source="DOID:224"}
 xref: icd11.foundation:826335789 {source="MONDO:equivalentTo"}
@@ -112569,11 +112562,12 @@ xref: SCTID:38609002 {source="DOID:224"}
 xref: UMLS:C0007787 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:853"}
 is_a: MONDO:0005299 {source="DOID:224", source="MESH:D002546", source="MONDO:Redundant", source="NCIT:C50781"} ! brain ischemia
 is_a: MONDO:0011057 {source="EFO:0003764", source="MESH:D002546/inferred", source="MONDO:Redundant", source="NCIT:C50781/inferred"} ! cerebrovascular disorder
-is_a: MONDO:1060198 {source="https://orcid.org/0000-0002-1149-7767"} ! ischemic stroke
 intersection_of: MONDO:0005299 ! brain ischemia
 intersection_of: has_characteristic HP:0025153 ! Transient
+relationship: excluded_subClassOf MONDO:1060198 {source="PMID:23652265", source="https://orcid.org/0000-0002-1149-7767", source="https://orcid.org/0000-0002-7638-4659"} ! ischemic stroke
 property_value: curated_content_resource "https://www.malacards.org/card/transient_cerebral_ischemia" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9754" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
 property_value: IAO:0000589 "transient ischemic attack (disease)" xsd:string
 
 [Term]
@@ -113494,11 +113488,10 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0005299
 name: brain ischemia
-def: "Diminished or absent blood supply to the brain caused by obstruction (thrombosis or embolism) of an artery resulting in neurologic damage." [NCIT:C78394]
-comment: This term is scheduled for obsoletion based on the fact that it is a not a disease. After obsoletion, this term will not have a replacement ID, but one could consider the following term: -
+def: "An ischemic disease characterized by a decrease or absence of blood supply to the brain caused by obstruction (thrombosis or embolism) of an artery resulting in neurological damage." [NCIT:C78394]
 subset: doid {source="DOID:2316"}
 subset: ncit {source="NCIT:C78394"}
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/9952"}
 subset: otar {source="MONDO:OTAR"}
 synonym: "brain ischaemic disease" EXACT OMO:0003005 []
 synonym: "brain ischemia" EXACT [DOID:2316, MONDO:patterns/location]
@@ -113525,7 +113518,6 @@ intersection_of: disease_has_location UBERON:0000955 ! brain
 relationship: disease_has_location UBERON:0000955 {source="EFO:0000784"} ! brain
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10741" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
-property_value: IAO:0006012 "2026-05-01" xsd:string
 
 [Term]
 id: MONDO:0005300
@@ -115852,13 +115844,12 @@ property_value: curated_content_resource "https://www.malacards.org/card/gout" x
 [Term]
 id: MONDO:0005394
 name: brain infarction
-def: "Tissue necrosis in any area of the brain, including the cerebral hemispheres, the cerebellum, and the brain stem. Brain infarction is the result of a cascade of events initiated by inadequate blood flow through the brain that is followed by hypoxia and hypoglycemia in brain tissue. Damage may be temporary, permanent, selective or pan-necrosis." [MESH:D020520]
-comment: This term is scheduled for obsoletion based on the fact that it is a not a disease. After obsoletion, this term will not have a replacement ID, but one could consider the following term: -
+def: "A cerebrovascular disorder characterized by tissue necrosis in any area of the brain, including the cerebral hemispheres, the cerebellum, and the brain stem. It is the result of a cascade of events initiated by inadequate blood flow through the brain that is followed by hypoxia and hypoglycemia in brain tissue. Damage may be temporary, permanent, selective or pan-necrosis. It ranges from symptomatic infarction (ischemic stroke) to silent infarction, which causes no known symptoms." [DOID:3454, MESH:D020520, PMID:23652265]
 subset: doid {source="DOID:3454"}
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/9952"}
 subset: otar {source="MONDO:OTAR"}
 xref: DOID:3454 {source="EFO:0004277", source="MONDO:equivalentTo"}
-xref: EFO:0004277 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+xref: EFO:0004277 {source="MONDO:equivalentObsolete", source="MONDO:EFO"}
 xref: MEDGEN:148426 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D020520 {source="EFO:0004277", source="DOID:3454", source="MONDO:equivalentTo"}
 xref: SCTID:230693009 {source="EFO:0004277"}
@@ -115867,7 +115858,6 @@ xref: UMLS:C0751955 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0011057 {source="DOID:3454", source="MESH:D020520/inferred"} ! cerebrovascular disorder
 relationship: disease_has_location UBERON:0003499 {source="EFO:0000784"} ! brain blood vessel
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
-property_value: IAO:0006012 "2026-05-01" xsd:string
 
 [Term]
 id: MONDO:0005395
@@ -116616,7 +116606,7 @@ relationship: disease_has_location UBERON:0000473 {source="EFO:0000784"} ! testi
 [Term]
 id: MONDO:0005438
 name: metastatic malignant neoplasm in the lymph nodes
-def: "The spread of a malignant neoplasm to the lymph nodes." [NCIT:C4904]
+def: "A metastatic malignant neoplasm that has spread to the lymph nodes from another anatomic site." [NCIT:C4904]
 subset: gard_rare {source="GARD:0024186", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C4904"}
 subset: otar {source="MONDO:OTAR"}
@@ -116633,10 +116623,10 @@ xref: MEDGEN:151947 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C4904 {source="MONDO:equivalentTo", source="EFO:0004906"}
 xref: UMLS:C0686619 {source="MEDGEN:151947", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0001082 {source="MONDO:Redundant", source="NCIT:C4904"} ! lymph node cancer
-intersection_of: MONDO:0001082 ! lymph node cancer
-intersection_of: has_characteristic PATO:0002098 ! neoplastic, metastatic
+is_a: MONDO:0024880 {source="NCIT:C4904"} ! metastatic malignant neoplasm
 relationship: disease_has_location UBERON:0000029 {source="EFO:0000784"} ! lymph node
 relationship: excluded_subClassOf MONDO:0004993 {source="EFO:0004906", source="https://orcid.org/0000-0001-5208-3432"} ! carcinoma
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7838" xsd:anyURI
 
 [Term]
 id: MONDO:0005439
@@ -117701,15 +117691,15 @@ property_value: IAO:0000589 "dyslexia (disease)" xsd:string
 [Term]
 id: MONDO:0005490
 name: large artery stroke
-def: "Stroke caused by the blockage of blood flow in one of the large arteries feeding the brain." [EFO:0005524]
-comment: This term is scheduled for obsoletion based on the fact that it is a not a disease. After obsoletion, this term will not have a replacement ID, but one could consider the following term: -
-subset: obsoletion_candidate
+def: "An ischemic stroke caused by the blockage of blood flow in one of the large arteries feeding the brain. It corresponds to the large artery atherosclerosis subtype of the Causative Classification of Stroke System (CCS)." [EFO:0005524, PMID:17901381]
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/9952"}
 subset: otar {source="MONDO:OTAR"}
-xref: EFO:0005524 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+synonym: "LAA" EXACT ABBREVIATION [PMID:38585349]
+xref: EFO:0005524 {source="MONDO:equivalentObsolete", source="MONDO:EFO"}
 is_a: MONDO:0005098 {source="EFO:0005524"} ! stroke disorder
+is_a: MONDO:1060198 {source="PMID:17901381"} ! ischemic stroke
 relationship: disease_has_location UBERON:0001637 ! artery
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
-property_value: IAO:0006012 "2026-05-01" xsd:string
 
 [Term]
 id: MONDO:0005491
@@ -138140,7 +138130,7 @@ is_a: MONDO:0005070 {source="EFO:1000406", source="MESH:D009807/inferred"} ! neo
 [Term]
 id: MONDO:0006329
 name: olfactory neuroblastoma
-def: "An olfactory neuroblastoma arising in the paranasal sinus." [NCIT:P378]
+def: "A malignant cranial nerve neoplasm of the sinonasal cavity, arising from the basal layers of olfactory neuroepithelial cells in the superior nasal vault. It usually occurs in the 5th to 6th decades of life and is characterized clinically by non-specific symptoms such as progressive ipsilateral nasal block, sinusitis, facial pain, intermittent headaches, hyposmia/dysosmia, rhinorrhea and epistaxis as well as proptosis, diplopia and excessive lacrimation due to orbital extension. With early treatment and in the absence of distant metastases, it appears to have a good prognosis (compared to other superior nasal malignancies), despite a high rate of cervical metastases." [NCIT:C3789, Orphanet:1957]
 subset: doid {source="DOID:369"}
 subset: doid_rare {source="DOID:369"}
 subset: gard_rare {source="GARD:0024371", source="MONDO:GARD"}
@@ -138174,10 +138164,11 @@ xref: SCTID:68614005 {source="DOID:369"}
 xref: SCTID:76060004 {source="DOID:369"}
 is_a: MONDO:0002433 {source="DOID:369/inferred", source="MONDO:Redundant", source="NCIT:C3789/inferred"} ! malignant cranial nerve neoplasm
 is_a: MONDO:0002722 {source="DOID:369", source="NCIT:C3789/inferred"} ! olfactory nerve neoplasm
-is_a: MONDO:0002749 {source="NCIT:C3789"} ! extracranial neuroblastoma
-is_a: MONDO:0005072 {source="EFO:1000407", source="MONDO:Redundant", source="NCIT:C3789/inferred"} ! neuroblastoma
-is_a: MONDO:0016713 {source="Orphanet:1957"} ! central nervous system Ewing sarcoma/peripheral primitive neuroectodermal tumor
+relationship: excluded_subClassOf MONDO:0002749 {source="NCIT:C3789", source="PMID:28640941", source="PMID:29730775", source="PMID:38878689", source="https://orcid.org/0000-0002-7638-4659"} ! extracranial neuroblastoma
+relationship: excluded_subClassOf MONDO:0005072 {source="EFO:1000407", source="NCIT:C3789", source="PMID:28640941", source="PMID:29730775", source="PMID:38878689", source="https://orcid.org/0000-0002-7638-4659"} ! neuroblastoma
+relationship: excluded_subClassOf MONDO:0016713 {source="NCIT:C129537", source="NCIT:C3789", source="Orphanet:1957", source="PMID:29730775", source="https://orcid.org/0000-0002-7638-4659"} ! central nervous system Ewing sarcoma/peripheral primitive neuroectodermal tumor
 property_value: curated_content_resource "https://www.malacards.org/card/olfactory_neuroblastoma" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10832" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8583" xsd:anyURI
 
 [Term]
@@ -146175,8 +146166,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/brain_e
 id: MONDO:0006685
 name: brain hypoxia - ischemia
 def: "A disorder characterized by a reduction of oxygen in the blood combined with reduced blood flow (ischemia) to the brain from a localized obstruction of a cerebral artery or from systemic hypoperfusion. Prolonged hypoxia-ischemia is associated with ischemic attack, transient; brain infarction; brain edema; coma; and other conditions." [MESH:D020925]
-comment: This term is scheduled for obsoletion based on the fact that it is a not a disease. After obsoletion, this term will not have a replacement ID, but one could consider the following term: -
-subset: obsoletion_candidate
+subset: obsoletion_protected {source="https://orcid.org/0000-0002-7638-4659", source="https://github.com/monarch-initiative/mondo/issues/9952"}
 xref: MEDGEN:199862 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D020925 {source="MONDO:equivalentTo", source="EFO:1000846"}
 xref: UMLS:C0752308 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:199862"}
@@ -146184,7 +146174,6 @@ is_a: MONDO:0005299 {source="EFO:1000846", source="MESH:68020925", source="https
 relationship: disease_has_feature MONDO:0100035 {source="https://orcid.org/0000-0001-8486-0558"} ! structural epilepsy
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
-property_value: IAO:0006012 "2026-05-01" xsd:string
 
 [Term]
 id: MONDO:0006686
@@ -146196,7 +146185,7 @@ synonym: "brain infarction of brainstem" EXACT [MONDO:design_pattern]
 synonym: "brainstem brain infarction" EXACT [MONDO:design_pattern, MONDO:patterns/location]
 synonym: "brainstem infarction NOS" RELATED EXCLUDE []
 xref: DOID:3523 {source="MONDO:equivalentTo", source="EFO:1000847"}
-xref: EFO:1000847 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+xref: EFO:1000847 {source="MONDO:equivalentObsolete", source="MONDO:EFO"}
 xref: ICD9:434.91 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:101068 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D020526 {source="MONDO:equivalentTo", source="DOID:3523", source="EFO:1000847"}
@@ -146211,6 +146200,7 @@ intersection_of: MONDO:0005394 ! brain infarction
 intersection_of: disease_has_location UBERON:0002298 ! brainstem
 property_value: curated_content_resource "https://www.malacards.org/card/brain_stem_infarction" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9754" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
 
 [Term]
 id: MONDO:0006687
@@ -148856,7 +148846,7 @@ def: "Blocking of a blood vessel in the skull by an embolus which can be a blood
 subset: doid {source="DOID:4372"}
 subset: otar {source="MONDO:OTAR"}
 xref: DOID:4372 {source="EFO:1000991", source="MONDO:equivalentTo"}
-xref: EFO:1000991 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+xref: EFO:1000991 {source="MONDO:equivalentObsolete", source="MONDO:EFO"}
 xref: ICD10CM:I66 {source="DOID:4372"}
 xref: icd11.foundation:816982857 {source="MONDO:equivalentTo"}
 xref: ICD9:434.1 {source="DOID:4372"}
@@ -148870,6 +148860,7 @@ is_a: MONDO:0011057 {source="DOID:4372", source="EFO:1000991", source="MESH:D020
 is_a: MONDO:1060198 {source="https://orcid.org/0000-0002-1149-7767"} ! ischemic stroke
 property_value: curated_content_resource "https://www.malacards.org/card/intracranial_embolism" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9754" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
 
 [Term]
 id: MONDO:0006810
@@ -159303,8 +159294,9 @@ subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "BDB1" EXACT ABBREVIATION [DOID:0110969, OMIM:113000]
 synonym: "brachydactyly type B caused by mutation in ROR2" EXACT [MONDO:design_pattern]
-synonym: "brachydactyly, type B1" RELATED []
+synonym: "brachydactyly, type B1" EXACT [OMIM:113000]
 synonym: "ROR2 brachydactyly type B" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
+synonym: "ROR2-related brachydactyly type B" EXACT [PMID:10700182, PMID:10986040]
 xref: DOID:0110969 {source="MONDO:equivalentTo"}
 xref: GARD:0018009 {source="MONDO:GARD"}
 xref: MEDGEN:349432 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -159317,6 +159309,7 @@ intersection_of: MONDO:0019676 ! brachydactyly type B
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10257 ! ROR2
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10257 {source="OMIM:113000"} ! ROR2
 property_value: curated_content_resource "https://www.malacards.org/card/brachydactyly_type_b1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10795" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 
 [Term]
@@ -166755,17 +166748,16 @@ subset: nord_rare {source="MONDO:NORD", source="NORD:1702"}
 subset: omim {source="OMIM:128230"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "Dopa-responsive dystonia, autosomal dominant" EXACT [DOID:0090043, OMIM:128230]
+synonym: "dopa-responsive dystonia, autosomal dominant" EXACT [DOID:0090043, OMIM:128230]
 synonym: "Dopa-responsive dystonia; Segawa syndrome AD" RELATED [GARD:0012144]
-synonym: "DRD" RELATED ABBREVIATION []
+synonym: "DRD" EXACT ABBREVIATION [OMIM:128230]
 synonym: "dystonia 5" EXACT [DOID:0090043, OMIM:128230] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "dystonia type 5" EXACT []
-synonym: "dystonia, DOPA-responsive" RELATED []
-synonym: "dystonia, Dopa-responsive, autosomal dominant" EXACT [DOID:0090043, OMIM:128230]
-synonym: "dystonia, DOPA-responsive, with or without hyperphenylalaninemia" EXACT []
+synonym: "dystonia, dopa-responsive" EXACT [OMIM:128230]
+synonym: "dystonia, dopa-responsive, autosomal dominant" EXACT [DOID:0090043, OMIM:128230]
 synonym: "dystonia, progressive, with diurnal variation" EXACT [OMIM:128230]
 synonym: "dystonia-Parkinsonism with diurnal fluctuation" EXACT [DOID:0090043, OMIM:128230]
 synonym: "DYT-GCH1" EXACT [https://www.ncbi.nlm.nih.gov/books/NBK1155/]
+synonym: "DYT5" EXACT ABBREVIATION [OMIM:128230]
 synonym: "GTP cyclohydrolase 1-deficient dopa-responsive dystonia" EXACT [https://www.ncbi.nlm.nih.gov/books/NBK1155/]
 synonym: "Segawa Syndrome" EXACT [NORD:1702] {OMO:0002001="https://w3id.org/information-resource-registry/nord"}
 synonym: "Segawa syndrome, autosomal dominant" EXACT [OMIM:128230]
@@ -188870,29 +188862,31 @@ is_obsolete: true
 [Term]
 id: MONDO:0008327
 name: exfoliation syndrome
-def: "An autosomal dominant disorder caused by mutations in the LOXL1 gene, encoding lysyl oxidase homolog 1. The condition is characterized by abnormal fibrillar extracellular material in anterior segment tissues, and may lead to glaucoma." [NCIT:C129025]
+def: "A syndromic disease that is an age-related systemic disorder of the extracellular matrix, characterized by the deposition of abnormal fibrillar material in the anterior segment of the eye. It increases the risk of glaucoma (exfoliation glaucoma) and is associated with cataract progression. Variations in the LOXL1 gene are the major genetic risk factor." [PMID:10749381, PMID:31563608]
+comment: Please do not confuse with MONDO:1060284 exfoliation glaucoma, which is a secondary open-angle glaucoma that develops in only some individuals with exfoliation syndrome.
 subset: doid {source="DOID:13641"}
 subset: gard_rare {source="GARD:0027786", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C129025"}
 subset: ncit_rare {source="NCIT:C129025"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "XFG" RELATED ABBREVIATION [NCIT:C129025]
 synonym: "XFS" EXACT ABBREVIATION [NCIT:C129025]
 xref: DOID:13641 {source="EFO:0004235", source="MONDO:equivalentTo"}
 xref: EFO:0004235 {source="MONDO:equivalentTo", source="MONDO:EFO"}
 xref: GARD:0027786 {source="MONDO:GARD"}
+xref: MEDGEN:60133 {source="MONDO:equivalentTo"}
 xref: MESH:D017889 {source="EFO:0004235", source="MONDO:equivalentTo", source="DOID:13641"}
 xref: NCIT:C129025 {source="MONDO:equivalentTo"}
 xref: Orphanet:529819 {source="MONDO:equivalentObsolete"}
 xref: SCTID:44219007 {source="DOID:13641"}
+xref: UMLS:C0206368 {source="MEDGEN:60133", source="MONDO:equivalentTo"}
 is_a: MONDO:0002254 {source="NCIT:C129025"} ! syndromic disease
 is_a: MONDO:0002289 {source="DOID:13641", source="MESH:D017889"} ! iris disorder
 is_a: MONDO:0003847 {source="MONDO:Redundant"} ! hereditary disease
 relationship: excluded_subClassOf MONDO:0001554 {source="DOID:13641", source="NCIT:C129025", source="https://orcid.org/0000-0002-7638-4659"} ! phacogenic glaucoma
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6665 {source="PMID:31563608"} ! LOXL1
 property_value: curated_content_resource "https://www.malacards.org/card/exfoliation_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10449" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10798" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4882" xsd:anyURI
 
@@ -233808,11 +233802,12 @@ is_a: MONDO:0016543 {source="DC-OMIM:261630", source="Orphanet:226"} ! hyperphen
 intersection_of: MONDO:0000001 ! disease
 intersection_of: disease_has_basis_in_disruption_of GO:0004155 ! 6,7-dihydropteridine reductase activity
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0009862 {source="MONDO:CLINGEN"}
-relationship: disease_has_basis_in_disruption_of GO:0046146 ! tetrahydrobiopterin metabolic process
+relationship: disease_has_basis_in_disruption_of GO:0006729 {source="PMID:21867484", source="https://orcid.org/0000-0003-1813-6857"}
 relationship: disease_shares_features_of MONDO:0009861 {source="MONDO:Redundant", source="NCIT:C138173", source="OMIM:261630"} ! phenylketonuria
 relationship: has_characteristic HP:0000007 {source="MONDO:HPOA", source="OMIM:261630", source="Orphanet:226"} ! Autosomal recessive inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9752 {source="OMIM:261630"} ! QDPR
 property_value: curated_content_resource "https://www.malacards.org/card/hyperphenylalaninemia_bh4_deficient_c" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10744" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/4319/dihydropteridine-reductase-deficiency" xsd:anyURI {source="GARD:0004319"}
 
 [Term]
@@ -237894,33 +237889,26 @@ subset: doid {source="DOID:0060764"}
 subset: doid_rare {source="DOID:0060764"}
 subset: gard_rare {source="GARD:0016568", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
-subset: omim {source="OMIM:268310"}
 subset: ordo_subtype_of_a_disorder {source="Orphanet:1507"}
 subset: orphanet {source="Orphanet:1507"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
-synonym: "costovertebral segmentation defect with mesomelia" RELATED [OMIM:268310]
 synonym: "costovertebral segmentation defect-mesomelia syndrome" EXACT [DOID:0060764, Orphanet:1507]
 synonym: "COVESDEM syndrome" EXACT [DOID:0060764, Orphanet:1507]
-synonym: "Covesdem syndrome" RELATED [OMIM:268310]
 synonym: "Robinow syndrome, autosomal recessive" EXACT [MONDO:patterns/autosomal_recessive]
 synonym: "RRS" EXACT ABBREVIATION [DOID:0060764, Orphanet:1507]
 xref: DOID:0060764 {source="MONDO:equivalentTo"}
 xref: GARD:0016568 {source="MONDO:GARD"}
 xref: ICD10CM:Q87.1 {source="DOID:0060764", source="Orphanet:1507"}
 xref: icd11.foundation:793292660 {source="MONDO:equivalentTo"}
-xref: MEDGEN:1770070 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C535863 {source="Orphanet:1507/e", source="MONDO:equivalentTo", source="Orphanet:1507"}
-xref: OMIM:268310 {source="Orphanet:1507/e", source="MONDO:equivalentTo", source="DOID:0060764", source="Orphanet:1507"}
 xref: Orphanet:1507 {source="OMIM:268310", source="MONDO:equivalentTo", source="DOID:0060764"}
-xref: UMLS:C5399974 {source="MEDGEN:1770070", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0006025 {source="DOID:0060764"} ! autosomal recessive disease
 is_a: MONDO:0019978 {source="DC-OMIM:268310", source="DOID:0060764", source="MONDO:Redundant", source="OMIM:268310", source="Orphanet:1507", source="icd11.foundation:793292660"} ! Robinow syndrome
 intersection_of: MONDO:0019978 ! Robinow syndrome
 intersection_of: has_characteristic HP:0000007 ! Autosomal recessive inheritance
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10257 {source="OMIM:268310"} ! ROR2
 property_value: curated_content_resource "https://www.malacards.org/card/autosomal_recessive_robinow_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
-property_value: curated_content_resource "https://www.malacards.org/card/robinow_syndrome_autosomal_recessive_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10794" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 
 [Term]
@@ -320652,9 +320640,10 @@ is_a: MONDO:0044807 {source="DOID:0111168", source="MONDO:indirect"} ! inherited
 intersection_of: MONDO:0016812 ! dopa-responsive dystonia
 intersection_of: disease_has_basis_in_disruption_of GO:0004757 ! sepiapterin reductase (NADP+) activity
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0012994 {source="MONDO:CLINGEN"}
-relationship: disease_has_basis_in_disruption_of GO:0046146 ! tetrahydrobiopterin metabolic process
+relationship: disease_has_basis_in_disruption_of GO:0006729 {source="PMID:21867484", source="https://orcid.org/0000-0003-1813-6857"}
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11257 {source="OMIM:612716"} ! SPR
 property_value: curated_content_resource "https://www.malacards.org/card/dystonia_dopa_responsive_due_to_sepiapterin_reductase_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10744" xsd:anyURI
 
 [Term]
 id: MONDO:0012995
@@ -324135,51 +324124,45 @@ subset: ncit {source="NCIT:C163755"}
 subset: ncit_rare {source="NCIT:C163755"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:613091"}
-subset: ordo_disorder {source="Orphanet:93270", source="Orphanet:93271"}
-subset: ordo_malformation_syndrome {source="Orphanet:93270", source="Orphanet:93271"}
-subset: orphanet {source="Orphanet:93270", source="Orphanet:93271"}
-subset: orphanet_rare {source="Orphanet:93270", source="Orphanet:93271"}
+subset: ordo_disorder {source="Orphanet:93270"}
+subset: ordo_malformation_syndrome {source="Orphanet:93270"}
+subset: orphanet {source="Orphanet:93270"}
+subset: orphanet_rare {source="Orphanet:93270"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "asphyxiating thoracic dystrophy 3" EXACT [DOID:0110087, OMIM:613091] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-synonym: "asphyxiating thoracic dystrophy type 3" EXACT []
 synonym: "ATD3" EXACT ABBREVIATION [DOID:0110087, OMIM:613091]
 synonym: "DYNC2H1-related short rib thoracic dysplasia" EXACT [https://orcid.org/0009-0009-9147-3105]
-synonym: "polydactyly with neonatal chondrodystrophy type 1" EXACT [GARD:0004834]
-synonym: "polydactyly with neonatal chondrodystrophy type III" EXACT [GARD:0004835]
-synonym: "polydactyly with neonatal chondrodystrophy, type 3" EXACT [OMIM:613091]
-synonym: "Saldino-Noonan syndrome" EXACT [DOID:0110087, OMIM:613091]
-synonym: "short rib polydactyly syndrome Verma Naumoff type" EXACT [GARD:0004835, MONDO:0019664]
-synonym: "short rib-polydactyly syndrome Saldino-Noonan type" EXACT [GARD:0004834, MONDO:0019663]
-synonym: "short rib-polydactyly syndrome type 1" EXACT [Orphanet:93270]
-synonym: "short rib-polydactyly syndrome type 3" EXACT [GARD:0004835, Orphanet:93271]
-synonym: "short rib-polydactyly syndrome type III" EXACT [GARD:0004835]
+synonym: "polydactyly with neonatal chondrodystrophy type 1" EXACT [OMIM:613091]
+synonym: "polydactyly with neonatal chondrodystrophy type III" RELATED [OMIM:613091]
+synonym: "polydactyly with neonatal chondrodystrophy, type 3" RELATED [OMIM:613091]
+synonym: "Saldino-Noonan syndrome" EXACT [DOID:0110087, OMIM:613091, PMID:40339774]
+synonym: "short rib polydactyly syndrome Verma Naumoff type" RELATED [PMID:29458881]
+synonym: "short rib-polydactyly syndrome Saldino-Noonan type" EXACT [Orphanet:93270, PMID:27925158]
+synonym: "short rib-polydactyly syndrome type 1" EXACT [OMIM:613091, Orphanet:93270]
+synonym: "short rib-polydactyly syndrome type 3" RELATED [OMIM:613091]
+synonym: "short rib-polydactyly syndrome type III" RELATED [OMIM:613091]
 synonym: "short rib-polydactyly syndrome, type 2B" EXACT [OMIM:613091]
 synonym: "short-rib thoracic dysplasia 3 with or without polydactyly" EXACT [DOID:0110087, NCIT:C163755, OMIM:613091]
-synonym: "SRPS type 1" EXACT [GARD:0004834]
-synonym: "SRPS type 3" EXACT [GARD:0004835]
 synonym: "SRPS1" EXACT ABBREVIATION [DOID:0110087, OMIM:613091]
 synonym: "SRPS2B" EXACT ABBREVIATION [DOID:0110087, OMIM:613091]
-synonym: "SRPS3" EXACT ABBREVIATION [DOID:0110087, OMIM:613091]
+synonym: "SRPS3" RELATED ABBREVIATION [DOID:0110087, OMIM:613091]
 synonym: "SRTD3" EXACT ABBREVIATION [DOID:0110087, NCIT:C163755, OMIM:613091]
-synonym: "type I short rib polydactyly syndrome" EXACT []
-synonym: "Verma-Naumoff syndrome" EXACT [DOID:0110087, GARD:0004835, OMIM:613091]
+synonym: "Verma-Naumoff syndrome" RELATED [DOID:0110087, OMIM:613091, PMID:40339774]
 xref: DOID:0050549 {source="MONDO:equivalentObsolete"}
 xref: DOID:0110087 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
 xref: GARD:0015613 {source="MONDO:GARD"}
-xref: ICD10CM:Q77.2 {source="DOID:0110087", source="Orphanet:93270", source="Orphanet:93271"}
+xref: ICD10CM:Q77.2 {source="DOID:0110087", source="Orphanet:93270"}
 xref: ICD9:759.89 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:19860 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-xref: MESH:C537602 {source="Orphanet:93271/e", source="MONDO:equivalentTo", source="Orphanet:93271"}
 xref: NCIT:C163755 {source="MONDO:equivalentTo"}
-xref: OMIM:613091 {source="MONDO:equivalentTo", source="Orphanet:93271/btnt", source="DOID:0110087", source="Orphanet:93270", source="Orphanet:93271"}
+xref: OMIM:613091 {source="MONDO:equivalentTo", source="DOID:0110087", source="Orphanet:93270"}
 xref: Orphanet:93270 {source="MONDO:equivalentTo", source="OMIM:613091"}
-xref: Orphanet:93271 {source="MONDO:equivalentTo", source="MONDO:preferredExternal"}
-xref: SCTID:254051008 {source="MONDO:equivalentTo"}
 xref: SCTID:27330009 {source="MONDO:equivalentObsolete"}
+xref: SCTID:726032008 {source="MONDO:equivalentTo"}
 xref: UMLS:C0036069 {source="MEDGEN:19860", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0002254 {source="DOID:0050549", source="MONDO:0019663/inferred", source="MONDO:Redundant"} ! syndromic disease
-is_a: MONDO:0015461 {source="MESH:C537602", source="Orphanet:93270", source="Orphanet:93271"} ! short rib-polydactyly syndrome
+is_a: MONDO:0015461 {source="OMIM:613091", source="PMID:36779427"} ! short rib-polydactyly syndrome
 is_a: MONDO:0018770 {source="DOID:0110087", source="OMIM:613091"} ! Jeune syndrome
 is_a: MONDO:0019691 {source="PMID:31633310"} ! short rib dysplasia
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/2962 {source="OMIM:613091"} ! DYNC2H1
@@ -324188,6 +324171,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/short_r
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4148" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4948" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8405" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9060" xsd:anyURI
 
 [Term]
 id: MONDO:0013128
@@ -375428,11 +375412,10 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0014970
 name: spermatogenic failure 17
-def: "Any spermatogenic failure in which the cause of the disease is a mutation in the PLCZ1 gene. It is a male infertility due to acrosomal defects that lead to oocyte activation deficiency and total fertilization failure" [https://www.clinicalgenome.org/affiliation/40073/, MONDO:patterns/disease_series_by_gene]
+def: "Any spermatogenic failure in which the cause of the disease is a variation in the PLCZ1 gene. It is characterized by male infertility due to acrosomal defects, causing oocyte activation deficiency resulting in total fertilization failure. Fertilization can be rescued by assisted oocyte activation." [https://www.clinicalgenome.org/affiliation/40073/, MONDO:patterns/disease_series_by_gene, OMIM:617214]
 subset: doid {source="DOID:0070174"}
 subset: omim {source="OMIM:617214"}
-synonym: "azoospermia caused by mutation in PLCZ1" EXACT [MONDO:design_pattern]
-synonym: "PLCZ1 azoospermia" EXACT [MONDO:design_pattern, MONDO:patterns/disease_series_by_gene]
+synonym: "male infertility due to oocyte activation failure" EXACT [OMIM:617214]
 synonym: "spermatogenic failure 17" EXACT [DOID:0070174, OMIM:617214]
 synonym: "SPGF17" EXACT ABBREVIATION [DOID:0070174, OMIM:617214]
 xref: DOID:0070174 {source="MONDO:equivalentTo"}
@@ -375440,6 +375423,7 @@ xref: MEDGEN:934633 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:617214 {source="MONDO:equivalentTo"}
 xref: UMLS:C4310666 {source="MEDGEN:934633", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0004983 {source="DC-OMIM:617214", source="DOID:0070174", source="MONDO:Redundant", source="OMIM:617214"} ! spermatogenic failure
+is_a: MONDO:1060328 {source="PMID:40572651", source="https://orcid.org/0000-0003-2745-9965", source="https://orcid.org/0000-0003-3828-8970", source="https://www.clinicalgenome.org/affiliation/40073/"} ! male infertility due to fertilization failure
 intersection_of: MONDO:0004983 ! spermatogenic failure
 intersection_of: disease_has_basis_in_dysfunction_of http://identifiers.org/hgnc/19218 ! PLCZ1
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/19218 ! PLCZ1
@@ -386725,16 +386709,20 @@ xref: ICD10CM:Q77.2 {source="Orphanet:1505"}
 xref: icd11.foundation:960900212 {source="MONDO:equivalentTo", source="Orphanet:1505"}
 xref: ICD9:756.3 {source="MONDO:relatedTo", source="MONDO:i2s"}
 xref: MEDGEN:11412 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: MESH:C537602 {source="MONDO:mondoIsBroaderThanSource"}
 xref: MESH:D012779 {source="Orphanet:1505/e", source="MONDO:equivalentTo", source="Orphanet:1505"}
 xref: NCIT:C85065 {source="MONDO:equivalentTo"}
 xref: Orphanet:1505 {source="MONDO:equivalentTo"}
+xref: Orphanet:93271 {source="MONDO:mondoIsBroaderThanSource"}
 xref: SCTID:205484001 {source="MONDO:equivalentTo"}
+xref: SCTID:254051008 {source="MONDO:mondoIsBroaderThanSource"}
 xref: UMLS:C0036996 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:11412"}
 is_a: MONDO:0002254 {source="NCIT:C85065"} ! syndromic disease
 is_a: MONDO:0005087 {source="MONDO:Entailed"} ! respiratory system disorder
 is_a: MONDO:0015929 {source="Orphanet:1505"} ! thoracic malformation
 is_a: MONDO:0019691 {source="Orphanet:1505"} ! short rib dysplasia
 property_value: curated_content_resource "https://www.malacards.org/card/short_rib_polydactyly_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9060" xsd:anyURI
 
 [Term]
 id: MONDO:0015462
@@ -502228,7 +502216,7 @@ is_a: MONDO:0004245 {source="NCIT:C131611"} ! ependymal tumor of brain
 [Term]
 id: MONDO:0020688
 name: spinal cord ischemia
-def: "Reduced blood flow to the spinal cord which is supplied by the anterior spinal artery and the paired posterior spinal arteries. This condition may be associated with arteriosclerosis, trauma, emboli, diseases of the aorta, and other disorders. Prolonged ischemia may lead to infarction of spinal cord tissue." [MESH:D020760]
+def: "An ischemic disease characterized by reduced blood flow to the spinal cord, which is supplied by the anterior spinal artery and the paired posterior spinal arteries. This condition may be associated with arteriosclerosis, trauma, emboli, diseases of the aorta, and other disorders. Prolonged ischemia may lead to infarction of spinal cord tissue." [MESH:D020760]
 subset: otar {source="MONDO:OTAR"}
 synonym: "cord ischemia, spinal" RELATED [MESH:D020760]
 synonym: "cord Ischemias, spinal" RELATED [MESH:D020760]
@@ -502245,11 +502233,15 @@ synonym: "myelopathy, ischaemic" RELATED OMO:0003005 []
 synonym: "myelopathy, ischemic" RELATED [MESH:D020760]
 synonym: "spinal cord ischemia, experimental" RELATED [MESH:D020760]
 synonym: "spinal cord Ischemias" RELATED [MESH:D020760]
-xref: EFO:1001426 {source="MONDO:equivalentTo", source="MONDO:EFO"}
+xref: EFO:1001426 {source="MONDO:equivalentObsolete", source="MONDO:EFO"}
 xref: MEDGEN:155706 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:D020760 {source="MONDO:equivalentTo"}
 xref: UMLS:C0752130 {source="MEDGEN:155706", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0005098 ! stroke disorder
+is_a: MONDO:0002552 {source="MESH:D020760"} ! vascular myelopathy
+is_a: MONDO:0005053 {source="MESH:D020760"} ! ischemic disease
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
+relationship: excluded_subClassOf MONDO:0005098 {source="PMID:22125530", source="PMID:23652265", source="https://orcid.org/0000-0002-7638-4659"} ! stroke disorder
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
 
 [Term]
 id: MONDO:0020689
@@ -518657,12 +518649,15 @@ is_a: MONDO:0006862 {source="MESH:D013706", source="UMLS:C0039496"} ! myofascial
 [Term]
 id: MONDO:0021896
 name: anterior spinal artery stroke
+def: "An ischemic stroke in which spinal cord infarction occurs in the territory of the anterior spinal artery. It presents with acute onset of severe motor and sensory deficits, often with pain, that reach nadir within hours. Sensory loss selectively affects pain and temperature sensation, with preservation of proprioception and vibratory sensation." [PMID:30264146, PMID:33358345, PMID:40004823]
 xref: MEDGEN:419851 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C537776 {source="MONDO:equivalentTo"}
 xref: UMLS:C2931608 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:419851"}
 is_a: MONDO:0005098 ! stroke disorder
 is_a: MONDO:0020688 {source="MESH:C537776"} ! spinal cord ischemia
+is_a: MONDO:1060198 {source="PMID:23652265", source="PMID:33358345", source="PMID:40004823"} ! ischemic stroke
 relationship: disease_has_location UBERON:0002458 ! spinal artery
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9952" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/9653/anterior-spinal-artery-stroke" xsd:anyURI {source="GARD:0009653"}
 
 [Term]
@@ -538802,10 +538797,10 @@ def: "An autosomal recessive immunologic disorder with variable manifestations. 
 subset: doid {source="DOID:0061051"}
 subset: omim {source="OMIM:619313"}
 synonym: "IMD80" EXACT ABBREVIATION [OMIM:619313]
-synonym: "immunodeficiency 80 with or without cardiomyopathy" EXACT []
 synonym: "immunodeficiency 80 with or without congenital cardiomyopathy" EXACT [OMIM:619313]
 synonym: "immunodeficiency with or without congenital cardiomyopathy" EXACT [https://orcid.org/0000-0002-7371-8158, https://orcid.org/0000-0003-0113-912X]
 synonym: "MCM10 deficiency" EXACT [OMIM:619313]
+synonym: "MCM10-related immunodeficiency with or without congenital cardiomyopathy" EXACT [https://clinicalgenome.org/affiliation/40081/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 xref: DOID:0061051 {source="MONDO:equivalentTo"}
 xref: MEDGEN:1786417 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619313 {source="MONDO:equivalentTo"}
@@ -538813,6 +538808,7 @@ xref: UMLS:C5543344 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0021094 {source="OMIM:619313"} ! immunodeficiency disease
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18043 {source="OMIM:619313"} ! MCM10
 property_value: curated_content_resource "https://www.malacards.org/card/immunodeficiency_80_with_or_without_congenital_cardiomyopathy" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10838" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5261" xsd:anyURI
 
@@ -539239,10 +539235,12 @@ property_value: curated_content_resource "https://www.malacards.org/card/cardiom
 [Term]
 id: MONDO:0030331
 name: Ritscher-Schinzel syndrome 4
+def: "Any Ritscher-Schinzel syndrome in which the cause of the disease is a variation in the DPYSL5 gene. It is characterized by brain malformations, including corpus callosum agenesis and/or posterior fossa abnormalities, associated with variable degrees of intellectual disability." [PMID:33894126]
 subset: gard_rare {source="GARD:0025541", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:619435"}
 subset: rare
+synonym: "DPYSL5-related complex neurodevelopmental disorder" EXACT [PMID:33894126]
 synonym: "Ritscher-Schinzel syndrome 4" EXACT [OMIM:619435]
 synonym: "RTSC4" EXACT ABBREVIATION [OMIM:619435]
 xref: GARD:0025541 {source="MONDO:GARD"}
@@ -539250,8 +539248,12 @@ xref: MEDGEN:1794149 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619435 {source="MONDO:equivalentTo"}
 xref: UMLS:C5561939 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1794149"}
 is_a: MONDO:0019078 {source="OMIM:619435"} ! Ritscher-Schinzel syndrome
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20637 {source="OMIM:619435"} ! DPYSL5
+is_a: MONDO:0100038 {source="PMID:33894126"} ! complex neurodevelopmental disorder
+intersection_of: MONDO:0019078 ! Ritscher-Schinzel syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20637 ! DPYSL5
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/20637 {source="OMIM:619435", source="PMID:33894126"} ! DPYSL5
 property_value: curated_content_resource "https://www.malacards.org/card/ritscher_schinzel_syndrome_4" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10796" xsd:anyURI
 
 [Term]
 id: MONDO:0030332
@@ -544580,6 +544582,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/develop
 [Term]
 id: MONDO:0030989
 name: spermatogenic failure 53
+def: "Any spermatogenic failure in which the cause of the disease is a variation in the ACTL9 gene. It is characterized by oocyte fertilization failure due to lack of oocyte activation, associated with ultrastructural abnormalities of the sperm head." [OMIM:619258, PMID:33626338]
 subset: doid {source="DOID:0112279"}
 subset: omim {source="OMIM:619258"}
 synonym: "spermatogenic failure 53" EXACT [DOID:0112279, OMIM:619258]
@@ -544589,8 +544592,10 @@ xref: MEDGEN:1787013 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619258 {source="MONDO:equivalentTo"}
 xref: UMLS:C5543253 {source="MONDO:equivalentTo", source="MEDGEN:1787013", source="MONDO:MEDGEN"}
 is_a: MONDO:0004983 {source="DOID:0112279", source="OMIM:619258"} ! spermatogenic failure
+is_a: MONDO:1060328 {source="PMID:33626338", source="https://orcid.org/0000-0003-2745-9965", source="https://orcid.org/0000-0003-3828-8970", source="https://www.clinicalgenome.org/affiliation/40073/"} ! male infertility due to fertilization failure
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/28494 {source="OMIM:619258"} ! ACTL9
 property_value: curated_content_resource "https://www.malacards.org/card/spermatogenic_failure_53" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10154" xsd:anyURI
 
 [Term]
 id: MONDO:0030990
@@ -550162,22 +550167,26 @@ property_value: curated_content_resource "https://www.malacards.org/card/mitocho
 
 [Term]
 id: MONDO:0032800
-name: robinow syndrome, autosomal recessive 2
+name: Robinow syndrome, autosomal recessive 2
 subset: doid {source="DOID:0060974"}
 subset: gard_rare {source="GARD:0025750", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:618529"}
 subset: rare
-synonym: "RRS2" RELATED ABBREVIATION []
+synonym: "RRS2" EXACT ABBREVIATION [OMIM:618529]
 xref: DOID:0060974 {source="MONDO:equivalentTo"}
 xref: GARD:0025750 {source="MONDO:GARD"}
 xref: MEDGEN:1676687 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:618529 {source="MONDO:equivalentTo"}
 xref: UMLS:C5193143 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1676687"}
 is_a: MONDO:0003847 {source="OMIM:618529"} ! hereditary disease
+is_a: MONDO:0009999 {source="OMIM:618529"} ! autosomal recessive Robinow syndrome
 is_a: MONDO:0019978 {source="DOID:0060974", source="OMIM:618529"} ! Robinow syndrome
+intersection_of: MONDO:0009999 ! autosomal recessive Robinow syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18008 ! NXN
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18008 {source="OMIM:618529"} ! NXN
 property_value: curated_content_resource "https://www.malacards.org/card/robinow_syndrome_autosomal_recessive_2" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10794" xsd:anyURI
 
 [Term]
 id: MONDO:0032801
@@ -561064,11 +561073,14 @@ synonym: "Sertoli-Leydig neoplasm of the ovary" EXACT [NCIT:C2880]
 xref: GARD:0027954 {source="MONDO:GARD"}
 xref: MEDGEN:2038 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C2880 {source="MONDO:equivalentTo"}
+xref: ONCOTREE:SLCT {source="MONDO:equivalentTo"}
 xref: SCTID:254866007 {source="MONDO:equivalentTo"}
 xref: UMLS:C0003810 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:2038"}
+is_a: MONDO:0002479 {source="PMID:37907261"} ! Sertoli-Leydig cell tumor
 is_a: MONDO:0020807 {source="NCIT:C2880"} ! ovarian sertoli-stromal cell tumor
 relationship: disease_arises_from_structure CL:0000178 ! Leydig cell
 relationship: disease_has_location UBERON:0000992 ! ovary
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10624" xsd:anyURI
 
 [Term]
 id: MONDO:0036688
@@ -573662,7 +573674,7 @@ intersection_of: disease_has_location UBERON:0005631 ! extraembryonic membrane
 [Term]
 id: MONDO:0045014
 name: tetrahydrobiopterin metabolic process disease
-def: "A disease that has its basis in the disruption of tetrahydrobiopterin metabolic process." [MONDO:design_pattern]
+def: "A disease that has its basis in the disruption of tetrahydrobiopterin biosynthetic process." [MONDO:design_pattern]
 subset: gard_rare {source="GARD:0025930", source="MONDO:GARD"}
 subset: otar {source="MONDO:OTAR"}
 subset: rare
@@ -573675,7 +573687,8 @@ xref: SCTID:237913008 {source="MONDO:equivalentTo"}
 xref: UMLS:C0342676 {source="MEDGEN:575174", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0017306 ! disorder of phenylalanine metabolism
 intersection_of: MONDO:0000001 ! disease
-intersection_of: disease_has_basis_in_disruption_of GO:0046146 ! tetrahydrobiopterin metabolic process
+intersection_of: disease_has_basis_in_disruption_of GO:0006729
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10744" xsd:anyURI
 
 [Term]
 id: MONDO:0045015
@@ -581910,11 +581923,12 @@ xref: Orphanet:2102 {source="MONDO:equivalentTo", source="OMIM:233910"}
 xref: SCTID:23447005 {source="MONDO:equivalentTo"}
 is_a: MONDO:0016543 {source="DC-OMIM:233910", source="Orphanet:2102"} ! hyperphenylalaninemia due to tetrahydrobiopterin deficiency
 is_a: MONDO:0100184 {source="https://github.com/monarch-initiative/mondo/issues/1491", source="https://orcid.org/0000-0002-5655-9589"} ! GTP cyclohydrolase I deficiency
-relationship: disease_has_basis_in_disruption_of GO:0046146 ! tetrahydrobiopterin metabolic process
+relationship: disease_has_basis_in_disruption_of GO:0006729 {source="PMID:21867484", source="https://orcid.org/0000-0003-1813-6857"}
 relationship: has_characteristic HP:0000007 {source="MONDO:HPOA", source="OMIM:233910", source="Orphanet:2102"} ! Autosomal recessive inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4193 {source="OMIM:233910"} ! GCH1
 property_value: curated_content_resource "https://www.malacards.org/card/hyperphenylalaninemia_bh4_deficient_b" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10744" xsd:anyURI
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/2844/gtp-cyclohydrolase-i-deficiency" xsd:anyURI {source="GARD:0002844"}
 
 [Term]
@@ -593467,19 +593481,23 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0700250
 name: mitochondrial complex IV deficiency, nuclear type 1
-def: "Any mitochondrial complex IV deficiency in which the cause of the disease is a mutation in the SURF1 gene." [OMIM:220110]
+def: "Any mitochondrial complex IV deficiency in which the cause of the disease is a variation in the SURF1 gene. It is characterized by Leigh syndrome with cytochrome c oxidase deficiency." [OMIM:220110, PMID:10443880]
 subset: doid {source="DOID:0070491"}
 subset: gard_rare {source="GARD:0015158", source="MONDO:GARD"}
 subset: omim {source="OMIM:220110"}
 subset: rare
+synonym: "SURF1-related Leigh syndrome" EXACT [PMID:33134083, PMID:34703839]
 xref: DOID:0070491 {source="MONDO:equivalentTo"}
 xref: GARD:0015158 {source="MONDO:GARD"}
 xref: MEDGEN:1750917 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:220110 {source="MONDO:equivalentTo"}
 xref: UMLS:C5435656 {source="MEDGEN:1750917", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0009723 {source="OMIM:220110", source="PMID:10443880", source="https://orcid.org/0000-0001-6330-7526", source="https://www.clinicalgenome.org/affiliation/40027/"} ! Leigh syndrome
 is_a: MONDO:0033885 {source="OMIM:220110"} ! mitochondrial complex IV deficiency, nuclear-type
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/mondo/qc-omim-subsumption.sparql
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11474 {source="OMIM:220110"} ! SURF1
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-4142-7153
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8215" xsd:anyURI
 
 [Term]
 id: MONDO:0700251
@@ -604668,6 +604686,7 @@ subset: ordo_disorder {source="Orphanet:660017"}
 subset: orphanet {source="Orphanet:660017"}
 subset: orphanet_rare {source="Orphanet:660017"}
 subset: rare
+synonym: "NR4A2-related neurodevelopmental disorder" EXACT [https://orcid.org/0000-0001-9310-0163, PMID:33585677]
 synonym: "NR4A2-related neurodevelopmental syndrome" EXACT [https://orcid.org/0000-0001-9310-0163, Orphanet:660017, PMID:33585677, PMID:41019763]
 xref: GARD:0027148 {source="MONDO:GARD"}
 xref: MEDGEN:1805453 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
@@ -605635,6 +605654,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/combine
 [Term]
 id: MONDO:0859338
 name: spermatogenic failure 78
+def: "Any spermatogenic failure in which the cause of the disease is a variation in the IQCN gene. It is an autosomal recessive disorder characterized by male infertility caused by an abnormal acrosome structure resulting from a manchette assembly defect. The acrosome is detached from the nuclear envelope of affected sperm, resulting in fertilization failure. Defects in sperm flagellar assembly have also been observed." [OMIM:620170, PMID:37140151, PMID:37184908]
 subset: doid {source="DOID:0070577"}
 subset: omim {source="OMIM:620170"}
 xref: DOID:0070577 {source="MONDO:equivalentTo"}
@@ -605642,8 +605662,10 @@ xref: MEDGEN:1824049 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:620170 {source="MONDO:equivalentTo"}
 xref: UMLS:C5774276 {source="MEDGEN:1824049", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0004983 {source="DOID:0070577", source="OMIM:620170"} ! spermatogenic failure
+is_a: MONDO:1060328 {source="PMID:37184908", source="https://orcid.org/0000-0003-2745-9965", source="https://orcid.org/0000-0003-3828-8970", source="https://www.clinicalgenome.org/affiliation/40073/"} ! male infertility due to fertilization failure
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/29350 {source="OMIM:620170"} ! IQCN
 property_value: curated_content_resource "https://www.malacards.org/card/spermatogenic_failure_78" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10154" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7693" xsd:anyURI
 
 [Term]
@@ -606794,7 +606816,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0859597
 name: cns neuroblastoma with FOXR2 activation
-def: "A central nervous system neuroblastoma that is characterized by FOXR2 activation and that is composed of small, round cells with hyperchromatic nuclei surrounded by a clear halo." [DOID:0080906]
+def: "A cerebral neuroblastoma that is characterized by FOXR2 activation and that is composed of small, round cells with hyperchromatic nuclei surrounded by a clear halo." [DOID:0080906]
 subset: doid {source="DOID:0080906"}
 subset: gard_rare {source="GARD:0026755", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C186547"}
@@ -606805,6 +606827,7 @@ xref: NCIT:C186547 {source="MONDO:equivalentTo", source="https://orcid.org/0000-
 is_a: MONDO:0002900 {source="DOID:0080906"} ! cerebral neuroblastoma
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
 property_value: curated_content_resource "https://www.malacards.org/card/cns_neuroblastoma_with_foxr2_activation" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10832" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8567" xsd:anyURI
 
 [Term]
@@ -607805,13 +607828,20 @@ property_value: curated_content_resource "https://www.malacards.org/card/intelle
 [Term]
 id: MONDO:0957229
 name: hatipoglu immunodeficiency syndrome
+def: "Any immunodeficiency disease in which the cause of the disease is a variation in the DPP9 gene and has autosomal recessive inheritance. It is characterized by immune-associated defects, poor growth, pancytopenia, and skin pigmentation abnormalities." [PMID:36112693]
 subset: omim {source="OMIM:620331"}
+synonym: "DPP9-related AR immune deficiency" EXACT [https://www.clinicalgenome.org/affiliation/40145/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 xref: MEDGEN:1841075 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:620331 {source="MONDO:equivalentTo"}
 xref: UMLS:C5830439 {source="MEDGEN:1841075", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0021094 {source="OMIM:620331"} ! immunodeficiency disease
+intersection_of: MONDO:0021094 ! immunodeficiency disease
+intersection_of: has_characteristic HP:0000007 ! Autosomal recessive inheritance
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18648 ! DPP9
+relationship: has_characteristic HP:0000007 {source="PMID:36112693"} ! Autosomal recessive inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18648 {source="OMIM:620331"} ! DPP9
 property_value: curated_content_resource "https://www.malacards.org/card/hatipoglu_immunodeficiency_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10825" xsd:anyURI
 
 [Term]
 id: MONDO:0957230
@@ -609554,6 +609584,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/neurode
 [Term]
 id: MONDO:0957593
 name: spermatogenic failure 86
+def: "Any spermatogenic failure in which the cause of the disease is a variation in the ACTL7A gene. It is characterized by male infertility due to acrosomal defects of the spermatozoa, resulting in oocyte activation deficiency and fertilization failure. Some oocytes exhibit early embryonic arrest after successful fertilization with patient sperm using assisted reproductive technology." [OMIM:620499]
 subset: doid {source="DOID:0070585"}
 subset: omim {source="OMIM:620499"}
 xref: DOID:0070585 {source="MONDO:equivalentTo"}
@@ -609562,8 +609593,10 @@ xref: OMIM:620499 {source="MONDO:equivalentTo"}
 xref: UMLS:C5882755 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1847370"}
 is_a: MONDO:0003847 {source="OMIM:620499"} ! hereditary disease
 is_a: MONDO:0004983 {source="DOID:0070585", source="OMIM:620499"} ! spermatogenic failure
+is_a: MONDO:1060328 {source="PMID:34727571", source="https://orcid.org/0000-0003-2745-9965", source="https://orcid.org/0000-0003-3828-8970", source="https://www.clinicalgenome.org/affiliation/40073/"} ! male infertility due to fertilization failure
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/161 {source="OMIM:620499"} ! ACTL7A
 property_value: curated_content_resource "https://www.malacards.org/card/spermatogenic_failure_86" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10154" xsd:anyURI
 
 [Term]
 id: MONDO:0957594
@@ -614620,7 +614653,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/muscula
 [Term]
 id: MONDO:0971172
 name: neurodevelopmental disorder with hypotonia, brain anomalies, distinctive facies, and absent language
-def: "A syndromic neurodevelopmental disorder in which the cause of the disease is a variation in RNU4-2 gene and is inherited in an autosomal dominant pattern. It is characterized by moderate to severe global developmental delay/intellectual disability, speech anomalies (mostly non-verbal), hypotonia, abnormal brain MRI (reduced white matter volume, hypoplasia of the corpus callosum, ventriculomegaly, and delayed myelination), dysmorphic facial features, short stature, microcephaly, behavioral issues, seizures and feeding difficulties, as well as variable vision, gastrointestinal, endocrine, skeletal, genitourinary, cardiac, and cutaneous anomalies. It has autosomal dominant inheritance." [https://clinicalgenome.org/affiliation/40060/, PMID:38821540, PMID:38991538, PMID:40379786]
+def: "Any neurodevelopmental disorder in which the cause of the disease is a variation in the RNU4-2 gene and has autosomal dominant inheritance, most often due to de novo variants. It is characterized by moderate to severe global developmental delay/intellectual disability, speech anomalies (mostly non-verbal), hypotonia, abnormal brain MRI (reduced white matter volume, hypoplasia of the corpus callosum, ventriculomegaly, and delayed myelination), dysmorphic facial features, short stature, microcephaly, behavioral issues, seizures and feeding difficulties, as well as variable vision, gastrointestinal, endocrine, skeletal, genitourinary, cardiac, and cutaneous anomalies." [https://clinicalgenome.org/affiliation/40060/, PMID:38821540, PMID:38991538, PMID:40379786]
 subset: doid {source="DOID:0061190"}
 subset: gard_rare {source="GARD:0027315", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -614644,8 +614677,10 @@ xref: UMLS:C5935628 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0003847 {source="OMIM:620851", source="https://orcid.org/0000-0002-4142-7153"} ! hereditary disease
 is_a: MONDO:0100500 {source="https://clinicalgenome.org/affiliation/40060/"} ! Mendelian neurodevelopmental disorder
 is_a: MONDO:0700092 {source="OMIM:620851", source="https://orcid.org/0000-0002-4142-7153"} ! neurodevelopmental disorder
+relationship: has_characteristic HP:0000006 {source="PMID:38991538", source="https://clinicalgenome.org/affiliation/40060/"} ! Autosomal dominant inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10193 {source="OMIM:620851"} ! RNU4-2
 property_value: curated_content_resource "https://www.malacards.org/card/renu_syndrome" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10806" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/8496" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9547" xsd:anyURI
 
@@ -702221,14 +702256,16 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 id: MONDO:1060284
 name: exfoliation glaucoma
 def: "A secondary open-angle glaucoma that develops in individuals with exfoliation syndrome. Exfoliation syndrome is associated with raised intraocular pressure in up to 44% of patients, making it the most commonly identifiable cause of secondary open-angle glaucoma." [PMID:34662036, PMID:35074716]
+comment: Please do not confuse with MONDO:0008327 exfoliation syndrome, which is the underlying deposition disorder. Exfoliation glaucoma develops in only some individuals with exfoliation syndrome.
 synonym: "pseudoexfoliation glaucoma" EXACT [PMID:34662036]
 synonym: "XFG" EXACT ABBREVIATION [PMID:35074716, PMID:36278673]
 xref: ICD9:365.52 {source="MONDO:equivalentTo"}
 xref: SCTID:111514006 {source="MONDO:equivalentTo"}
 is_a: MONDO:0005338 {source="PMID:34662036", source="PMID:35074716"} ! open-angle glaucoma
-is_a: MONDO:1060277 {source="PMID:34662036", source="PMID:35074716"} ! secondary glaucoma
+is_a: MONDO:1060277 {source="PMID:10749381", source="PMID:34662036", source="PMID:35074716"} ! secondary glaucoma
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10449" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10798" xsd:anyURI
 
 [Term]
 id: MONDO:1060285
@@ -702798,6 +702835,74 @@ is_a: MONDO:0016537 {source="NCIT:C37864"} ! lymphoproliferative syndrome
 is_a: MONDO:0021058 {source="NCIT:C37864"} ! neoplastic syndrome
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
+
+[Term]
+id: MONDO:1060325
+name: Robinow syndrome, autosomal recessive 1
+def: "Any autosomal recessive Robinow syndrome in which the cause of the disease is a mutation in the ROR2 gene. It is characterized by limb shortening and abnormalities of the head, face and external genitalia. Common features include short stature, characteristic facial features (hypertelorism, midface hypoplasia, large nasal bridge, short upturned nose, and anteverted nares), mesomelic limb shortening, brachydactyly, clinodactyly, gingival hyperplasia, and genital hypoplasia." [PMID:20301418, PMID:35344616]
+subset: omim {source="OMIM:268310"}
+synonym: "costovertebral segmentation defect with mesomelia" EXACT [OMIM:268310]
+synonym: "Covesdem syndrome" EXACT [OMIM:268310]
+synonym: "Robinow syndrome, autosomal recessive 1" EXACT [OMIM:268310]
+synonym: "ROR2-related Robinow syndrome" EXACT [PMID:20301418, PMID:35344616]
+synonym: "RRS1" EXACT ABBREVIATION [OMIM:268310]
+xref: MEDGEN:1770070 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: OMIM:268310 {source="MONDO:equivalentTo"}
+xref: UMLS:C5399974 {source="MEDGEN:1770070", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+is_a: MONDO:0009999 {source="OMIM:268310", source="PMID:20301418"} ! autosomal recessive Robinow syndrome
+intersection_of: MONDO:0009999 ! autosomal recessive Robinow syndrome
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10257 ! ROR2
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10257 {source="OMIM:268310", source="PMID:20301418"} ! ROR2
+property_value: curated_content_resource "https://www.malacards.org/card/robinow_syndrome_autosomal_recessive_1" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10794" xsd:anyURI
+
+[Term]
+id: MONDO:1060326
+name: SCAMP5-related complex neurodevelopmental disorder
+def: "Any complex neurodevelopmental disorder in which the cause of the disease is a variation in the SCAMP5 gene. It is characterized by developmental delay, intellectual disability, seizures, and autistic features. Abnormal neurological findings, including extrapyramidal signs, may be present." [PMID:31439720, PMID:33390987]
+is_a: MONDO:0100038 {source="PMID:31439720", source="PMID:33390987"} ! complex neurodevelopmental disorder
+intersection_of: MONDO:0100038 ! complex neurodevelopmental disorder
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30386
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30386 {source="PMID:31439720", source="PMID:33390987"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10797" xsd:anyURI
+
+[Term]
+id: MONDO:1060327
+name: RNU4-2-related autosomal recessive neurodevelopmental disorder
+def: "Any neurodevelopmental disorder in which the cause of the disease is a variation in the RNU4-2 gene and has autosomal recessive inheritance. It is characterized by mild to severe global developmental delay or intellectual disability, impaired speech development (majority non-verbal), gross motor delay (though majority able to walk by age 5), hypotonia, abnormal brain MRI (dilated perivascular spaces, abnormal cerebral white matter, abnormal corpus callosum, abnormal cerebellum), seizures, dysmorphic facial features, ocular anomalies (strabismus and nystagmus are common), behavioral abnormalities and feeding difficulties, as well as variable microcephaly, short stature, autism, spasticity, movement, skeletal, genitourinary, and endocrine abnormalities." [PMID:41408479, PMID:41951959]
+synonym: "RNU4-2 autosomal recessive neurodevelopmental condition" EXACT [PMID:41951959]
+is_a: MONDO:0100500 {source="PMID:41408479", source="PMID:41951959"} ! Mendelian neurodevelopmental disorder
+is_a: MONDO:0800439 {source="PMID:41951959"} ! syndromic complex neurodevelopmental disorder
+intersection_of: MONDO:0800439 ! syndromic complex neurodevelopmental disorder
+intersection_of: has_characteristic HP:0000007 ! Autosomal recessive inheritance
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10193 ! RNU4-2
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/10193 {source="PMID:41408479", source="PMID:41951959"} ! RNU4-2
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10806" xsd:anyURI
+
+[Term]
+id: MONDO:1060328
+name: male infertility due to fertilization failure
+def: "A form of male infertility characterized by failure or severely reduced efficiency of fertilization resulting from defects in sperm-oocyte interaction, sperm penetration or fusion, oocyte activation, or subsequent events required for normal pronuclear formation." [https://orcid.org/0000-0003-2745-9965, https://orcid.org/0000-0003-3828-8970, https://www.clinicalgenome.org/affiliation/40073/]
+is_a: MONDO:0005372 {source="PMID:40572651", source="https://www.clinicalgenome.org/affiliation/40073/"} ! male infertility
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10154" xsd:anyURI
+
+[Term]
+id: MONDO:1060331
+name: DPP9-related autosomal dominant immune disorder
+def: "Any immunodeficiency disease in which the cause of the disease is a variation in the DPP9 gene and has autosomal dominant inheritance. The variant acts in a dominant-negative manner and leads to constitutive NLRP1 and CARD8 inflammasome activation. It is characterized by severe infancy-onset hyperinflammation with features of hemophagocytic lymphohistiocytosis and pancytopenia." [https://www.clinicalgenome.org/affiliation/40145/, PMID:37544411]
+synonym: "DPP9-related AD immune disorder" EXACT [https://www.clinicalgenome.org/affiliation/40145/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+is_a: MONDO:0021094 {source="PMID:37544411", source="https://www.clinicalgenome.org/affiliation/40145/"} ! immunodeficiency disease
+intersection_of: MONDO:0021094 ! immunodeficiency disease
+intersection_of: has_characteristic HP:0000006 ! Autosomal dominant inheritance
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18648 ! DPP9
+relationship: has_characteristic HP:0000006 {source="PMID:37544411"} ! Autosomal dominant inheritance
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/18648 {source="PMID:37544411", source="https://www.clinicalgenome.org/affiliation/40145/"} ! DPP9
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10826" xsd:anyURI
 
 [Term]
 id: MONDO:1061000
@@ -708475,11 +708580,18 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:8000023
-name: type 3 autoimmune lymphoproliferative syndrome
-def: "A rare, primary immunodeficiency. It is caused by a currently undetermined defect in the Fas-induced apoptosis pathway. No mutations in Fas, FASLG or CASP10 are detectable. Disruption of Fas-induced apoptosis impairs lymphocyte homeostasis and immune tolerance. Characteristic laboratory findings include an increase in circulating, double-negative (CD4-/CD8-) T cells in the setting of immune-mediated anemia, thrombocytopenia and neutropenia. Clinical signs present in childhood include fatigue, pallor, bruising, hepatosplenomegaly and chronic, non-malignant, non-infectious lymphadenopathy. The clinical course is influenced by a strong association with other autoimmune disorders and an increased risk for developing Hodgkin and non-Hodgkin lymphoma." [NCIT:C39577]
+name: autoimmune lymphoproliferative syndrome-unknown underlying mutation
+def: "An autoimmune lymphoproliferative syndrome caused by a currently undetermined defect in the Fas-induced apoptosis pathway. No variations in FAS, FASLG or CASP10 are detectable. Disruption of Fas-induced apoptosis impairs lymphocyte homeostasis and immune tolerance. Characteristic laboratory findings include an increase in circulating, double-negative (CD4-/CD8-) T cells in the setting of immune-mediated anemia, thrombocytopenia and neutropenia. Clinical signs present in childhood include fatigue, pallor, bruising, hepatosplenomegaly and chronic, non-malignant, non-infectious lymphadenopathy. The clinical course is influenced by a strong association with other autoimmune disorders and an increased risk for developing Hodgkin and non-Hodgkin lymphoma." [NCIT:C39577]
+comment: Please do not confuse with MONDO:8000024 'autoimmune lymphoproliferative syndrome, type III caused by mutation in PRKCD', which is caused by variation in the PRKCD gene.
 subset: gard_rare {source="GARD:0027040", source="MONDO:GARD"}
 subset: ncit {source="NCIT:C39577"}
 subset: rare
+synonym: "ALPS-U" EXACT ABBREVIATION [NCIT:C39577]
+synonym: "ALPS-unknown underlying mutation" EXACT [NCIT:C39577]
+synonym: "autoimmune lymphoproliferative syndrome with unknown underlying mutation" EXACT [NCIT:C39577]
+synonym: "autoimmune lymphoproliferative syndrome-undetermined variant" EXACT [NCIT:C39577]
+synonym: "autoimmune lymphoproliferative syndrome-unknown underlying mutation" EXACT [NCIT:C39577]
+synonym: "type 3 autoimmune lymphoproliferative syndrome" EXACT [NCIT:C39577]
 xref: GARD:0027040 {source="MONDO:GARD"}
 xref: MEDGEN:274327 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: NCIT:C39577 {source="MONDO:equivalentTo"}
@@ -708487,11 +708599,13 @@ xref: UMLS:C1519711 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:1060330 {source="NCIT:C39577"} ! autoimmune lymphoproliferative syndrome
 relationship: excluded_subClassOf MONDO:0017979 {source="NCIT:C39577", source="https://orcid.org/0000-0002-7638-4659"} ! hereditary autoimmune lymphoproliferative syndrome
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4098" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9474" xsd:anyURI
 
 [Term]
 id: MONDO:8000024
 name: autoimmune lymphoproliferative syndrome, type III caused by mutation in PRKCD
 def: "Any autoimmune lymphoproliferative syndrome in which the cause of the disease is a mutation in the PRKCD gene." [MONDO:patterns/disease_series_by_gene]
+comment: Please do not confuse with MONDO:8000023 'autoimmune lymphoproliferative syndrome-unknown underlying mutation', which has an undetermined genetic cause.
 subset: doid {source="DOID:0110119"}
 subset: gard_rare {source="GARD:0015987", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -708512,6 +708626,7 @@ intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.o
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9399 {source="OMIM:615559"} ! PRKCD
 property_value: curated_content_resource "https://www.malacards.org/card/autoimmune_lymphoproliferative_syndrome_type_iii" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4098" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9474" xsd:anyURI
 
 [Term]
 id: MONDO:8000030
