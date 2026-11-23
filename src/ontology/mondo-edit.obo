@@ -274384,8 +274384,10 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/6985/marshal
 [Term]
 id: MONDO:0011245
 name: ichthyosis, hystrix-like, with hearing loss
+comment: This term is scheduled to be merged with MONDO:0007850 autosomal dominant keratitis-ichthyosis-hearing loss syndrome', based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0007850
 subset: gard_rare {source="GARD:0015349", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
+subset: obsoletion_candidate
 subset: omim {source="OMIM:602540"}
 subset: rare
 synonym: "HID syndrome" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, OMIM:602540]
@@ -274401,8 +274403,10 @@ is_a: MONDO:1060236 {source="OMIM:602540", source="https://orcid.org/0000-0001-9
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4284 {source="OMIM:602540"} ! GJB2
 property_value: curated_content_resource "https://www.malacards.org/card/ichthyosis_hystrix_like_with_deafness" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10033" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10905" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/551" xsd:anyURI
+property_value: IAO:0006012 "2027-02-01" xsd:string
 
 [Term]
 id: MONDO:0011246
@@ -275860,8 +275864,8 @@ xref: MEDGEN:400438 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C566394 {source="MONDO:equivalentTo"}
 xref: OMIM:603284 {source="DOID:0060670", source="MONDO:equivalentTo"}
 xref: UMLS:C1864041 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:400438"}
-is_a: MONDO:0031037 {source="MONDO:Redundant", source="OMIM:603284", source="Orphanet:221061/btnt"} ! famililal cerebral cavernous malformations
-intersection_of: MONDO:0031037 ! famililal cerebral cavernous malformations
+is_a: MONDO:0031037 {source="MONDO:Redundant", source="OMIM:603284", source="Orphanet:221061/btnt"} ! familial cerebral cavernous malformations
+intersection_of: MONDO:0031037 ! familial cerebral cavernous malformations
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/21708 ! CCM2
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/21708 {source="OMIM:603284"} ! CCM2
 property_value: curated_content_resource "https://www.malacards.org/card/cerebral_cavernous_malformations_2_2" xsd:anyURI {source="MONDO:MalaCards"}
@@ -275892,8 +275896,8 @@ xref: MEDGEN:355121 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: MESH:C566393 {source="MONDO:equivalentTo"}
 xref: OMIM:603285 {source="MONDO:equivalentTo"}
 xref: UMLS:C1864040 {source="MEDGEN:355121", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
-is_a: MONDO:0031037 {source="MONDO:Redundant", source="OMIM:603285", source="Orphanet:221061/btnt"} ! famililal cerebral cavernous malformations
-intersection_of: MONDO:0031037 ! famililal cerebral cavernous malformations
+is_a: MONDO:0031037 {source="MONDO:Redundant", source="OMIM:603285", source="Orphanet:221061/btnt"} ! familial cerebral cavernous malformations
+intersection_of: MONDO:0031037 ! familial cerebral cavernous malformations
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/8761 ! PDCD10
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/8761 {source="OMIM:603285"} ! PDCD10
 property_value: curated_content_resource "https://www.malacards.org/card/cerebral_cavernous_malformations_3" xsd:anyURI {source="MONDO:MalaCards"}
@@ -502987,8 +502991,8 @@ xref: GARD:0025224 {source="MONDO:GARD"}
 xref: MEDGEN:237128 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:116860 {source="Orphanet:221061/e", source="MONDO:equivalentTo", source="Orphanet:221061"}
 xref: UMLS:C1366911 {source="MONDO:equivalentTo", source="MEDGEN:237128", source="MONDO:MEDGEN"}
-is_a: MONDO:0031037 {source="MONDO:prototype", source="OMIM:116860"} ! famililal cerebral cavernous malformations
-intersection_of: MONDO:0031037 ! famililal cerebral cavernous malformations
+is_a: MONDO:0031037 {source="MONDO:prototype", source="OMIM:116860"} ! familial cerebral cavernous malformations
+intersection_of: MONDO:0031037 ! familial cerebral cavernous malformations
 intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1573 ! KRIT1
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1573 {source="OMIM:116860"} ! KRIT1
 property_value: curated_content_resource "https://www.malacards.org/card/cerebral_cavernous_malformation_1" xsd:anyURI {source="MONDO:MalaCards"}
@@ -545226,7 +545230,7 @@ property_value: curated_content_resource "https://www.malacards.org/card/intelle
 
 [Term]
 id: MONDO:0031037
-name: famililal cerebral cavernous malformations
+name: familial cerebral cavernous malformations
 def: "A rare evolutive vascular malformation disorder characterized by closely clustered irregular dilated capillaries that can be asymptomatic or that can cause variable neurological manifestations such as seizures, non-specific headaches, progressive or transient focal neurologic deficits, and/or cerebral hemorrhages." [Orphanet:221061]
 subset: gard_rare {source="GARD:0013641", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
@@ -545243,7 +545247,6 @@ synonym: "familial brain cavernous angioma" EXACT [Orphanet:221061]
 synonym: "familial brain cavernous hemangioma" EXACT []
 synonym: "familial cerebral cavernoma" EXACT [Orphanet:221061]
 synonym: "familial cerebral cavernous malformation" EXACT [MONDO:0007291, Orphanet:221061]
-synonym: "famililal cerebral cavernous malformations" EXACT [] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
 synonym: "hereditary brain cavernous angioma" EXACT [Orphanet:221061]
 synonym: "hereditary brain cavernous hemangioma" EXACT []
 synonym: "hereditary cerebral cavernoma" EXACT [Orphanet:221061]
@@ -545261,6 +545264,7 @@ intersection_of: MONDO:0000820 ! cerebral cavernous malformation
 intersection_of: has_characteristic MONDO:0021152 ! inherited
 relationship: has_characteristic MONDO:0021152 {source="OMIMPS:116860"} ! inherited
 property_value: curated_content_resource "https://www.malacards.org/card/familial_cerebral_cavernous_malformations" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10912" xsd:anyURI
 
 [Term]
 id: MONDO:0031040
@@ -603925,7 +603929,7 @@ xref: GARD:0026665 {source="MONDO:GARD"}
 xref: MEDGEN:1794201 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:619538 {source="MONDO:equivalentTo"}
 xref: UMLS:C5561991 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1794201"}
-is_a: MONDO:0031037 {source="OMIM:619538"} ! famililal cerebral cavernous malformations
+is_a: MONDO:0031037 {source="OMIM:619538"} ! familial cerebral cavernous malformations
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/8975 {source="OMIM:619538"} ! PIK3CA
 property_value: curated_content_resource "https://www.malacards.org/card/cerebral_cavernous_malformations_4" xsd:anyURI {source="MONDO:MalaCards"}
 
@@ -613311,9 +613315,13 @@ property_value: curated_content_resource "https://www.malacards.org/card/spermat
 [Term]
 id: MONDO:0970944
 name: Leigh syndrome, mitochondrial
+comment: This term is scheduled to be merged with MONDO:0016814 maternally-inherited Leigh syndrome, based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0016814
+subset: obsoletion_candidate
 subset: omim {source="OMIM:500017"}
 xref: OMIM:500017 {source="MONDO:equivalentTo"}
 is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-4142-7153"} ! syndromic disease
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10884" xsd:anyURI
+property_value: IAO:0006012 "2027-02-01" xsd:string
 
 [Term]
 id: MONDO:0970945
@@ -616011,15 +616019,16 @@ is_a: MONDO:0003847 {source="OMIM:500018", source="https://orcid.org/0000-0002-4
 
 [Term]
 id: MONDO:0975952
-name: cerebral cavernous malformations 5
+name: cerebral cavernous malformation 5
 subset: gard_rare {source="GARD:0027335", source="MONDO:GARD"}
 subset: omim {source="OMIM:621032"}
 subset: rare
+synonym: "cerebral cavernous malformations 5" EXACT [OMIM:621032]
 xref: GARD:0027335 {source="MONDO:GARD"}
 xref: MEDGEN:1875071 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:621032 {source="MONDO:equivalentTo"}
 xref: UMLS:C5975541 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1875071"}
-is_a: MONDO:0031037 {source="OMIM:621032", source="https://orcid.org/0000-0002-4142-7153"} ! famililal cerebral cavernous malformations
+is_a: MONDO:0031037 {source="OMIM:621032", source="https://orcid.org/0000-0002-4142-7153"} ! familial cerebral cavernous malformations
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/6855 {source="OMIM:621032"} ! MAP3K3
 
 [Term]
