@@ -274384,8 +274384,10 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/6985/marshal
 [Term]
 id: MONDO:0011245
 name: ichthyosis, hystrix-like, with hearing loss
+comment: This term is scheduled to be merged with MONDO:0007850 autosomal dominant keratitis-ichthyosis-hearing loss syndrome', based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0007850
 subset: gard_rare {source="GARD:0015349", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
+subset: obsoletion_candidate
 subset: omim {source="OMIM:602540"}
 subset: rare
 synonym: "HID syndrome" EXACT ABBREVIATION [https://orcid.org/0000-0001-9310-0163, OMIM:602540]
@@ -274401,8 +274403,10 @@ is_a: MONDO:1060236 {source="OMIM:602540", source="https://orcid.org/0000-0001-9
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4284 {source="OMIM:602540"} ! GJB2
 property_value: curated_content_resource "https://www.malacards.org/card/ichthyosis_hystrix_like_with_deafness" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10033" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10905" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/4521" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/551" xsd:anyURI
+property_value: IAO:0006012 "2027-02-01" xsd:string
 
 [Term]
 id: MONDO:0011246
@@ -613311,9 +613315,13 @@ property_value: curated_content_resource "https://www.malacards.org/card/spermat
 [Term]
 id: MONDO:0970944
 name: Leigh syndrome, mitochondrial
+comment: This term is scheduled to be merged with MONDO:0016814 maternally-inherited Leigh syndrome, based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0016814
+subset: obsoletion_candidate
 subset: omim {source="OMIM:500017"}
 xref: OMIM:500017 {source="MONDO:equivalentTo"}
 is_a: MONDO:0002254 {source="https://orcid.org/0000-0002-4142-7153"} ! syndromic disease
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10884" xsd:anyURI
+property_value: IAO:0006012 "2027-02-01" xsd:string
 
 [Term]
 id: MONDO:0970945
