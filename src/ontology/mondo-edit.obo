@@ -703031,6 +703031,26 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10826" xsd:anyURI
 
 [Term]
+id: MONDO:1060332
+name: autoimmune lymphoproliferative syndrome with somatic FAS mutation
+def: "An autoimmune lymphoproliferative syndrome caused by a somatic variation in the FAS gene. The variation arises post-zygotically in a lymphocyte progenitor or a post-thymic T cell and is restricted to the expanded double-negative T cell compartment. It is clinically and biologically very similar to the germline FAS-related form." [NCIT:C201053, PMID:15459302, PMID:41997376]
+synonym: "ALPS type 1A due to somatic mutations in FAS" EXACT [https://orcid.org/0000-0003-2360-2664]
+synonym: "ALPS with somatic FAS mutation" EXACT [NCIT:C201053]
+synonym: "ALPS-sFAS" EXACT ABBREVIATION [PMID:26323380]
+synonym: "autoimmune lymphoproliferative syndrome due to somatic FAS mutation" EXACT [PMID:26323380]
+synonym: "autoimmune lymphoproliferative syndrome with somatic FAS mutation" EXACT [NCIT:C201053]
+synonym: "autoimmune lymphoproliferative syndrome with somatic Fas mutations" EXACT [PMID:15459302]
+xref: MEDGEN:1851432 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
+xref: NCIT:C201053 {source="MONDO:equivalentTo"}
+xref: UMLS:C5856601 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:1851432"}
+is_a: MONDO:1060330 {source="NCIT:C201053", source="PMID:15459302", source="PMID:41997376"} ! autoimmune lymphoproliferative syndrome
+intersection_of: MONDO:1060330 ! autoimmune lymphoproliferative syndrome
+intersection_of: RO:0004004 http://identifiers.org/hgnc/11920 ! has material basis in somatic mutation in FAS
+relationship: RO:0004004 http://identifiers.org/hgnc/11920 {source="PMID:15459302", source="PMID:41997376"} ! has material basis in somatic mutation in FAS
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
+
+[Term]
 id: MONDO:1061000
 name: TUBB-related tubulinopathy
 def: "Any tubulinopathy in which the cause of the disease is a mutation in the TUBB gene. Heterozygous TUBB variants cause two overlapping developmental disorders, complex cortical dysplasia with other brain malformations (CDCBM) and congenital symmetric circumferential skin creases (CSCSC), also known as circumferential skin creases Kunze type. The clinical findings are diverse and include abnormalities of the cortex, basal ganglia, corpus callosum, brain stem and cerebellum, microcephaly, intellectual disability, facial dysmorphism, excess skin folding and growth retardation." [https://www.clinicalgenome.org/affiliation/40020/, PMID:32085672, PMID:34211110]
