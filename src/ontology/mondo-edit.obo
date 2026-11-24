@@ -29150,7 +29150,7 @@ xref: SCTID:47306003 {source="MONDO:equivalentTo", source="DOID:13026"}
 xref: UMLS:C0152066 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:452127"}
 is_a: MONDO:0002040 {source="DOID:13026", source="MESH:D060368"} ! dermatomycosis
 intersection_of: MONDO:0005550 ! infectious disease
-intersection_of: disease_has_infectious_agent NCBITaxon:121752 ! Lacazia loboi
+intersection_of: disease_has_infectious_agent NCBITaxon:121752 ! Paracoccidioides lobogeorgii
 property_value: curated_content_resource "https://www.malacards.org/card/lobomycosis" xsd:anyURI {source="MONDO:MalaCards"}
 
 [Term]
@@ -32937,8 +32937,8 @@ is_a: MONDO:0000314 {source="DOID:13778"} ! primary bacterial infectious disease
 is_a: MONDO:0005323 {source="MESH:D002602", source="MONDO:Entailed", source="MONDO:Redundant"} ! bacterial sexually transmitted disease
 is_a: MONDO:0006926 {source="MESH:D002602", source="MONDO:Redundant"} ! haemophilus infectious disease
 intersection_of: MONDO:0005550 ! infectious disease
-intersection_of: disease_has_infectious_agent NCBITaxon:730 ! [Haemophilus] ducreyi
-relationship: disease_has_infectious_agent NCBITaxon:730 {source="MONDO:Wikidata"} ! [Haemophilus] ducreyi
+intersection_of: disease_has_infectious_agent NCBITaxon:730 ! Pseudactinobacillus ducreyi
+relationship: disease_has_infectious_agent NCBITaxon:730 {source="MONDO:Wikidata"} ! Pseudactinobacillus ducreyi
 property_value: curated_content_resource "https://www.malacards.org/card/chancroid" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/9522/chancroid" xsd:anyURI {source="GARD:0009522"}
 
@@ -233837,7 +233837,7 @@ is_a: MONDO:0016543 {source="DC-OMIM:261630", source="Orphanet:226"} ! hyperphen
 intersection_of: MONDO:0000001 ! disease
 intersection_of: disease_has_basis_in_disruption_of GO:0004155 ! 6,7-dihydropteridine reductase activity
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0009862 {source="MONDO:CLINGEN"}
-relationship: disease_has_basis_in_disruption_of GO:0006729 {source="PMID:21867484", source="https://orcid.org/0000-0003-1813-6857"}
+relationship: disease_has_basis_in_disruption_of GO:0006729 {source="PMID:21867484", source="https://orcid.org/0000-0003-1813-6857"} ! tetrahydrobiopterin biosynthetic process
 relationship: disease_shares_features_of MONDO:0009861 {source="MONDO:Redundant", source="NCIT:C138173", source="OMIM:261630"} ! phenylketonuria
 relationship: has_characteristic HP:0000007 {source="MONDO:HPOA", source="OMIM:261630", source="Orphanet:226"} ! Autosomal recessive inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/9752 {source="OMIM:261630"} ! QDPR
@@ -320685,7 +320685,7 @@ is_a: MONDO:0044807 {source="DOID:0111168", source="MONDO:indirect"} ! inherited
 intersection_of: MONDO:0016812 ! dopa-responsive dystonia
 intersection_of: disease_has_basis_in_disruption_of GO:0004757 ! sepiapterin reductase (NADP+) activity
 relationship: curated_content_resource https://search.clinicalgenome.org/kb/conditions/MONDO:0012994 {source="MONDO:CLINGEN"}
-relationship: disease_has_basis_in_disruption_of GO:0006729 {source="PMID:21867484", source="https://orcid.org/0000-0003-1813-6857"}
+relationship: disease_has_basis_in_disruption_of GO:0006729 {source="PMID:21867484", source="https://orcid.org/0000-0003-1813-6857"} ! tetrahydrobiopterin biosynthetic process
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/11257 {source="OMIM:612716"} ! SPR
 property_value: curated_content_resource "https://www.malacards.org/card/dystonia_dopa_responsive_due_to_sepiapterin_reductase_deficiency" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10744" xsd:anyURI
@@ -573748,7 +573748,7 @@ xref: SCTID:237913008 {source="MONDO:equivalentTo"}
 xref: UMLS:C0342676 {source="MEDGEN:575174", source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 is_a: MONDO:0017306 ! disorder of phenylalanine metabolism
 intersection_of: MONDO:0000001 ! disease
-intersection_of: disease_has_basis_in_disruption_of GO:0006729
+intersection_of: disease_has_basis_in_disruption_of GO:0006729 ! tetrahydrobiopterin biosynthetic process
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10744" xsd:anyURI
 
 [Term]
@@ -581988,7 +581988,7 @@ xref: Orphanet:2102 {source="MONDO:equivalentTo", source="OMIM:233910"}
 xref: SCTID:23447005 {source="MONDO:equivalentTo"}
 is_a: MONDO:0016543 {source="DC-OMIM:233910", source="Orphanet:2102"} ! hyperphenylalaninemia due to tetrahydrobiopterin deficiency
 is_a: MONDO:0100184 {source="https://github.com/monarch-initiative/mondo/issues/1491", source="https://orcid.org/0000-0002-5655-9589"} ! GTP cyclohydrolase I deficiency
-relationship: disease_has_basis_in_disruption_of GO:0006729 {source="PMID:21867484", source="https://orcid.org/0000-0003-1813-6857"}
+relationship: disease_has_basis_in_disruption_of GO:0006729 {source="PMID:21867484", source="https://orcid.org/0000-0003-1813-6857"} ! tetrahydrobiopterin biosynthetic process
 relationship: has_characteristic HP:0000007 {source="MONDO:HPOA", source="OMIM:233910", source="Orphanet:2102"} ! Autosomal recessive inheritance
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/4193 {source="OMIM:233910"} ! GCH1
 property_value: curated_content_resource "https://www.malacards.org/card/hyperphenylalaninemia_bh4_deficient_b" xsd:anyURI {source="MONDO:MalaCards"}
@@ -669919,7 +669919,7 @@ subset: venom_farm_animal {source="VeNom:20925"}
 subset: venom_large_animal {source="VeNom:20925"}
 xref: VeNom:20925 {source="MONDO:equivalentTo"}
 is_a: MONDO:0700050 {source="VeNom:20925"} ! bacterial infectious disease, non-human animal
-relationship: disease_has_infectious_agent NCBITaxon:43767 {source="VeNom:20925"} ! Prescottella equi
+relationship: disease_has_infectious_agent NCBITaxon:43767 {source="VeNom:20925"} ! Rhodococcus (subgen. Prescottella) equi
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
 [Term]
@@ -691753,7 +691753,7 @@ subset: venom_farm_animal {source="VeNom:20926"}
 subset: venom_large_animal {source="VeNom:20926"}
 xref: VeNom:20926 {source="MONDO:equivalentTo"}
 is_a: MONDO:0700110 {source="VeNom:20926"} ! pneumonia, non-human animal
-relationship: disease_has_infectious_agent NCBITaxon:43767 {source="VeNom:20926"} ! Prescottella equi
+relationship: disease_has_infectious_agent NCBITaxon:43767 {source="VeNom:20926"} ! Rhodococcus (subgen. Prescottella) equi
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
 [Term]
@@ -691986,7 +691986,7 @@ subset: venom_farm_animal {source="VeNom:22228"}
 subset: venom_large_animal {source="VeNom:22228"}
 xref: VeNom:22228 {source="MONDO:equivalentTo"}
 is_a: MONDO:0700110 {source="VeNom:22228"} ! pneumonia, non-human animal
-relationship: disease_has_infectious_agent NCBITaxon:43767 {source="VeNom:22228"} ! Prescottella equi
+relationship: disease_has_infectious_agent NCBITaxon:43767 {source="VeNom:22228"} ! Rhodococcus (subgen. Prescottella) equi
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
 [Term]
@@ -702931,8 +702931,8 @@ subset: inferred_rare
 subset: rare
 is_a: MONDO:0100038 {source="PMID:31439720", source="PMID:33390987"} ! complex neurodevelopmental disorder
 intersection_of: MONDO:0100038 ! complex neurodevelopmental disorder
-intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30386
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30386 {source="PMID:31439720", source="PMID:33390987"}
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30386 ! SCAMP5
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/30386 {source="PMID:31439720", source="PMID:33390987"} ! SCAMP5
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10797" xsd:anyURI
 
