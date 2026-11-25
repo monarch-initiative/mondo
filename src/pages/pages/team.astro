@@ -1,0 +1,52 @@
+---
+import Page from "../../layouts/Page.astro";
+import { loadYaml, url } from "../../lib/data";
+
+interface Member { name: string; group: string; title?: string; photo?: string }
+const GROUPS = ["Leadership", "Curation Team", "Technical Team"];
+
+// Sort by first name, skipping a leading initial ("J. Harry Caufield" sorts under Harry).
+const sortName = (n: string) => n.trim().replace(/^[A-Z]\.\s+/, "");
+const team = loadYaml<Member[]>("team.yaml");
+const groups = GROUPS.map((g) => ({
+  name: g,
+  id: g.toLowerCase().replace(/\s+/g, "-"),
+  members: team.filter((m) => m.group === g).sort((a, b) => sortName(a.name).localeCompare(sortName(b.name))),
+}));
+const ungrouped = team.filter((m) => !GROUPS.includes(m.group));
+if (ungrouped.length) throw new Error(`team.yaml: unknown group for ${ungrouped.map((m) => m.name).join(", ")}`);
+
+const initials = (n: string) => n.split(/\s+/).filter((w) => /^[A-Z]/.test(w) && !w.endsWith(".")).map((w) => w[0]).slice(0, 2).join("");
+---
+<Page title="Team" eyebrow="About" intro="The people who build and maintain Mondo." wide>
+  {groups.map((g) => (
+    <section class="group" aria-labelledby={g.id}>
+      <h2 id={g.id}>{g.name}</h2>
+      <ul class="team">
+        {g.members.map((m) => (
+          <li>
+            {m.photo
+              ? <img src={url(`/img/team/${m.photo}`)} alt="" width="160" height="160" />
+              : <span class="initials" aria-hidden="true">{initials(m.name)}</span>}
+            <h3>{m.name}</h3>
+            {m.title && <p>{m.title}</p>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+  <div class="end"></div>
+</Page>
+
+<style>
+  .group { padding: 44px 0 0; }
+  .group h2 { font-size: 1.35rem; margin: 0 0 22px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+  .team { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 36px 24px; }
+  .team li { text-align: center; }
+  .team img, .initials { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 14px; background: var(--teal-wash); }
+  .initials { display: grid; place-items: center; font-size: 2rem; font-weight: 600; color: var(--teal-deep); }
+  .team h3 { font-size: 1.02rem; margin: 0 0 4px; }
+  .team p { margin: 0 auto; font-size: 0.9rem; color: var(--ink-soft); max-width: 22ch; }
+  .end { height: 72px; }
+  @media (max-width: 480px) { .team { grid-template-columns: 1fr 1fr; gap: 28px 16px; } .team img, .initials { width: 112px; height: 112px; } }
+</style>
