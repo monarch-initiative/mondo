@@ -50,15 +50,13 @@ const actions = GOVERNANCE_LIVE ? governance.routes : fallbackActions;
     )}
   </section>
 
-  {GOVERNANCE_LIVE && (
-    <section class="team-band" aria-labelledby="team">
-      <div>
-        <h2 id="team">Meet the Mondo team</h2>
-        <p>The curation, technical and leadership roles behind Mondo are listed in the governance documentation.</p>
-      </div>
-      <a class="btn-team" href={governance.roles}>See project roles <Icon name="external" size={14} /></a>
-    </section>
-  )}
+  <section class="team-band" aria-labelledby="team">
+    <div>
+      <h2 id="team">Meet the Mondo team</h2>
+      <p>The people who build and maintain Mondo.</p>
+    </div>
+    <a class="btn-team" href={url("/pages/team/")}>Meet the team <Icon name="arrow-right" size={14} /></a>
+  </section>
 
   <section class="block" aria-labelledby="community">
     <h2 id="community">Thank you to our contributors</h2>

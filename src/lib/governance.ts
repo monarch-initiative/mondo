@@ -8,7 +8,6 @@ const g = (path: string) => GOVERNANCE_URL + path;
 
 export const governance = {
   home: g(""),
-  roles: g("index.html#project-structure-and-roles"),
   contributing: g("contributing/index.html"),
   codeOfConduct: g("community-guidelines/code-of-conduct/index.html"),
   routes: [
