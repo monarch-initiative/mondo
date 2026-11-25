@@ -26,20 +26,30 @@ grep 'entry/188050>' /tmp/omim.owl | grep -v IAO_0000142
 | Line | Meaning |
 |---|---|
 | `rdfs:label` | Current title |
-| `hasExactSynonym` | Current and alternative titles |
+| `hasExactSynonym` | Current and alternative titles: EXACT |
 | `hasSynonymType ... OMO_0003000` | Abbreviation |
-| `hasRelatedSynonym` with `owl:deprecated` | Former title. Scope in Mondo is still set by "OMIM synonyms" in `CLAUDE.md`, not by this file |
-| `mondo#omim_included` | Included entry, a separate entity |
+| `hasRelatedSynonym` with `owl:deprecated` | Former title: EXACT in Mondo, see below |
+| `mondo#omim_included` | INCLUDED title (`owl:deprecated`: a former one): a separate entity, not a synonym, see below |
 | `RO_0004003` to `hgnc/N` | Causal gene. Has no source itself: read the `RO_0004003` line to `entry/<gene MIM>` for where it comes from |
 | `RO_0004003` with `source` an ORCID | Gene link confirmed or added by a Mondo curator. Evidence (3) is always added to these, so it does not show what OMIM says. A second evidence line, e.g. (1), is OMIM's own |
 | `RO_0003302`, `RO_0003303`, `RO_0003304` | Weaker gene link: several genes, linkage only, contiguous gene syndrome, or excluded by a curator |
 | `SubClassOf ... phenotypicSeries/PSN` | Phenotypic series |
 | `category ... Gene` | Gene entry, never an xref on a Mondo term |
 | `MONDO_excludeTrait` | Entry without a prefix: phenotype not confirmed as Mendelian |
+| `skos:exactMatch` to a Mondo term | Not evidence for `equivalentTo`: curator gene links add these too, also to terms for INCLUDED titles |
 | `IAO_0100001`, `consider` | Moved to another entry |
 | `owl:deprecated` on the entry | Moved or removed |
 
 Gene links are filtered. Provisional (`?`), susceptibility (`{}`), nondisease (`[]`) and most multi-gene associations are missing or weaker. No gene line does not mean OMIM lists no gene: check the API, or leave it to a curator.
+
+### Reporting titles
+
+Always report titles in these two lists, and say "none" when one is empty:
+
+1. **Titles of this entry**: label, alternative and former titles, abbreviations marked. All EXACT in Mondo, also the former titles that `omim.owl` has as RELATED and deprecated ("OMIM synonyms" in `CLAUDE.md` has the details).
+2. **INCLUDED titles**: separate entities. Not synonyms of this entry's Mondo term. If Mondo has its own term for one (an `includedEntryInOMIM` xref to this entry, or a matching label), name it. If that term has the `equivalentTo` xref instead, don't move anything: flag it for a curator.
+
+A title in both lists: report it in both, add nothing, and leave it to a curator.
 
 Titles are normalised: lowercased, some Roman numerals made Arabic ("type II" → "type 2"), some abbreviations untyped. Restore proper nouns and gene symbols, and don't change a Mondo name only to match the numeral.
 
