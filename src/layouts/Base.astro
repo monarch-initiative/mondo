@@ -18,7 +18,7 @@ const year = new Date().getFullYear();
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <meta name="theme-color" content="#008c99" />
-    <link rel="icon" type="image/png" href={url("/img/mondo_logo_black-stacked.png")} />
+    <link rel="icon" type="image/svg+xml" href={url("/img/mondo_logo_black-no-words.svg")} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
@@ -33,7 +33,7 @@ const year = new Date().getFullYear();
     <header class="site-header">
       <div class="container bar">
         <a class="brand" href={url("/")} aria-label="Mondo home">
-          <img src={url("/img/mondo_logo_black-banner.png")} alt="Mondo: the world's disease concepts, unified" width="92" height="38" />
+          <img src={url("/img/mondo_logo_white-banner.svg")} alt="Mondo: the world's disease concepts, unified" width="121" height="50" />
         </a>
         <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
@@ -80,7 +80,7 @@ const year = new Date().getFullYear();
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <img src={url("/img/mondo_logo_black-banner.png")} alt="Mondo" width="106" height="44" />
+            <img src={url("/img/mondo_logo_black-banner.svg")} alt="Mondo" width="121" height="50" />
             <p>Mondo is part of the <a href="https://monarchinitiative.org/">Monarch Initiative</a>. Questions? Email <a href="mailto:info@monarchinitiative.org">info@monarchinitiative.org</a>.</p>
           </div>
           {footerLinks.map((col) => (
