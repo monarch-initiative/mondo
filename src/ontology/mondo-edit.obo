@@ -535027,7 +535027,7 @@ is_obsolete: true
 
 [Term]
 id: MONDO:0025483
-name: mammary neoplasms, animal
+name: mammary neoplasms, non-human animal
 def: "Tumors or cancer of the mammary gland in animals (mammary glands, animal)." [MESH:D015674]
 subset: venom_exotics {source="VeNom:1433"}
 subset: venom_small_animal {source="VeNom:1433"}
@@ -535042,6 +535042,7 @@ synonym: "mammary carcinomas, animal" RELATED [MESH:D015674]
 synonym: "mammary neoplasm" RELATED [MESH:D015674]
 synonym: "mammary neoplasm, animal" RELATED [MESH:D015674]
 synonym: "mammary neoplasms" RELATED [MESH:D015674]
+synonym: "mammary neoplasms, animal" EXACT [MESH:D015674]
 synonym: "neoplasm, animal mammary" RELATED [MESH:D015674]
 synonym: "neoplasm, mammary" RELATED [MESH:D015674]
 synonym: "neoplasms, animal mammary" RELATED [MESH:D015674]
@@ -535053,6 +535054,7 @@ is_a: MONDO:0005583 {source="MESH:D015674", source="OMIA:001777"} ! non-human an
 is_a: MONDO:0700098 ! neoplasm, non-human animal
 is_a: MONDO:1011305 {source="OMIA:001777", source="https://orcid.org/0000-0002-5002-8648"} ! cancer or benign tumor, non-human animal
 relationship: in_taxon NCBITaxon:40674 {source="https://orcid.org/0000-0002-4142-7153", source="https://orcid.org/0000-0002-5002-8648"} ! Mammalia
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7225" xsd:anyURI
 
@@ -592187,7 +592189,7 @@ name: canine mammary carcinoma
 def: "Mammary carcinoma occurring in a dog." [NCIT:C124249]
 subset: ncit {source="NCIT:C124249"}
 xref: NCIT:C124249 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="https://orcid.org/0000-0002-4142-7153"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="https://orcid.org/0000-0002-4142-7153"} ! mammary neoplasms, non-human animal
 is_a: MONDO:0700139 {source="NCIT:C124249"} ! canine neoplasm
 intersection_of: MONDO:0005583 ! non-human animal disease
 intersection_of: in_taxon NCBITaxon:9615 ! Canis lupus familiaris
@@ -592398,7 +592400,7 @@ name: canine mammary adenoma
 def: "An adenoma arising from the mammary gland of a dog." [NCIT:C147073]
 subset: ncit {source="NCIT:C147073"}
 xref: NCIT:C147073 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="https://orcid.org/0000-0002-4142-7153"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="https://orcid.org/0000-0002-4142-7153"} ! mammary neoplasms, non-human animal
 is_a: MONDO:0700133 {source="https://orcid.org/0000-0002-4142-7153"} ! adenoma, non-human
 is_a: MONDO:0700139 {source="NCIT:C147073"} ! canine neoplasm
 relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
@@ -592608,7 +592610,7 @@ name: feline mammary carcinoma
 def: "Mammary carcinoma occurring in a cat." [NCIT:C132274]
 subset: ncit {source="NCIT:C132274"}
 xref: NCIT:C132274 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="https://orcid.org/0000-0002-4142-7153"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="https://orcid.org/0000-0002-4142-7153"} ! mammary neoplasms, non-human animal
 is_a: MONDO:0700175 {source="https://orcid.org/0000-0002-4142-7153"} ! feline neoplasm
 intersection_of: MONDO:0005583 ! non-human animal disease
 intersection_of: in_taxon NCBITaxon:9682 ! Felis
@@ -623504,12 +623506,12 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 id: MONDO:1010456
 name: hypertrophic cardiomyopathy, woolly monkeys
 def: "Hypertrophic cardiomyopathy that occurs in woolly monkeys." [MONDO:patterns/nonhuman_disease]
-xref: OMIA:000515-9518 {source="MONDO:equivalentTo"}
 is_a: MONDO:1010015 {source="OMIA:000515", source="https://orcid.org/0000-0002-5002-8648"} ! hypertrophic cardiomyopathy, non-human animal
 intersection_of: MONDO:0005583 ! non-human animal disease
 intersection_of: in_taxon NCBITaxon:9518 ! Lagothrix
 intersection_of: MONDO:0700097 MONDO:0005045 ! cross-species analog hypertrophic cardiomyopathy
 relationship: in_taxon NCBITaxon:9518 {source="OMIA:000515-9518", source="https://orcid.org/0000-0002-5002-8648"} ! Lagothrix
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7075" xsd:anyURI
 
 [Term]
@@ -624690,12 +624692,12 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 id: MONDO:1010552
 name: patent urachus, mountain zebra
 def: "Patent urachus that occurs in mountain zebra." [MONDO:patterns/nonhuman_disease]
-xref: OMIA:000781-9791 {source="MONDO:equivalentTo"}
 is_a: MONDO:1010046 {source="OMIA:000781", source="https://orcid.org/0000-0002-5002-8648"} ! patent urachus, non-human animal
 intersection_of: MONDO:0005583 ! non-human animal disease
 intersection_of: in_taxon NCBITaxon:9791 ! Equus zebra
 intersection_of: MONDO:0700097 MONDO:0018551 ! cross-species analog patent urachus
 relationship: in_taxon NCBITaxon:9791 {source="OMIA:000781-9791", source="https://orcid.org/0000-0002-5002-8648"} ! Equus zebra
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7075" xsd:anyURI
 
 [Term]
@@ -628479,12 +628481,12 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 id: MONDO:1010859
 name: lysosomal storage disease, kangaroo
 def: "Lysosomal storage disease that occurs in kangaroo." [MONDO:patterns/nonhuman_disease]
-xref: OMIA:000616-9322 {source="MONDO:equivalentTo"}
 is_a: MONDO:1010171 {source="OMIA:000616", source="https://orcid.org/0000-0002-5002-8648"} ! lysosomal storage disease, non-human animal
 intersection_of: MONDO:0005583 ! non-human animal disease
 intersection_of: in_taxon NCBITaxon:9322 ! Macropus sp.
 intersection_of: MONDO:0700097 MONDO:0002561 ! cross-species analog lysosomal storage disease
 relationship: in_taxon NCBITaxon:9322 {source="OMIA:000616-9322", source="https://orcid.org/0000-0002-5002-8648"} ! Macropus sp.
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7075" xsd:anyURI
 
 [Term]
@@ -630995,12 +630997,12 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 id: MONDO:1011076
 name: urolithiasis, kangaroo
 def: "Urolithiasis that occurs in kangaroo." [MONDO:patterns/nonhuman_disease]
-xref: OMIA:001033-9322 {source="MONDO:equivalentTo"}
 is_a: MONDO:1010267 {source="OMIA:001033", source="https://orcid.org/0000-0002-5002-8648"} ! urolithiasis, non-human animal
 intersection_of: MONDO:0005583 ! non-human animal disease
 intersection_of: in_taxon NCBITaxon:9322 ! Macropus sp.
 intersection_of: MONDO:0700097 MONDO:0024647 ! cross-species analog urolithiasis
 relationship: in_taxon NCBITaxon:9322 {source="OMIA:001033-9322", source="https://orcid.org/0000-0002-5002-8648"} ! Macropus sp.
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7075" xsd:anyURI
 
 [Term]
@@ -632044,12 +632046,12 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 id: MONDO:1011164
 name: osteoarthritis, cattle
 def: "Osteoarthritis that occurs in cattle." [MONDO:patterns/nonhuman_disease]
-xref: OMIA:000747-9913 {source="MONDO:equivalentTo"}
 is_a: MONDO:1010297 {source="OMIA:000747", source="https://orcid.org/0000-0002-5002-8648"} ! osteoarthritis, non-human animal
 intersection_of: MONDO:0005583 ! non-human animal disease
 intersection_of: in_taxon NCBITaxon:9913 ! Bos taurus
 intersection_of: MONDO:0700097 MONDO:0005178 ! cross-species analog osteoarthritis
 relationship: in_taxon NCBITaxon:9913 {source="OMIA:000747-9913", source="https://orcid.org/0000-0002-5002-8648"} ! Bos taurus
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7075" xsd:anyURI
 
 [Term]
@@ -634575,14 +634577,14 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:1011435
-name: Becker type muscular dystrophy, non-human animal, DMD-related, domestic cat
+name: Becker type muscular dystrophy, non-human animal
 def: "Becker type muscular dystrophy that occurs in non-human animals." [MONDO:patterns/nonhuman_disease]
 xref: OMIA:001888 {source="MONDO:equivalentTo"}
 is_a: MONDO:0005583 {source="OMIA:001888"} ! non-human animal disease
 intersection_of: MONDO:0005583 ! non-human animal disease
 intersection_of: MONDO:0700097 MONDO:0010311 ! cross-species analog Becker muscular dystrophy
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/ncbigene/101084937 {source="OMIA:001888-9685"} ! DMD
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10159" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7225" xsd:anyURI
 
 [Term]
@@ -635108,7 +635110,7 @@ id: MONDO:1011479
 name: Becker type muscular dystrophy, dog
 def: "Becker type muscular dystrophy that occurs in dog." [MONDO:patterns/nonhuman_disease]
 xref: OMIA:001888-9615 {source="MONDO:equivalentTo"}
-is_a: MONDO:1011435 {source="OMIA:001888", source="https://orcid.org/0000-0002-5002-8648"} ! Becker type muscular dystrophy, non-human animal, DMD-related, domestic cat
+is_a: MONDO:1011435 {source="OMIA:001888", source="https://orcid.org/0000-0002-5002-8648"} ! Becker type muscular dystrophy, non-human animal
 intersection_of: MONDO:0005583 ! non-human animal disease
 intersection_of: in_taxon NCBITaxon:9615 ! Canis lupus familiaris
 intersection_of: MONDO:0700097 MONDO:0010311 ! cross-species analog Becker muscular dystrophy
@@ -635120,7 +635122,7 @@ id: MONDO:1011480
 name: Becker type muscular dystrophy, DMD-related, pig
 def: "Becker type muscular dystrophy that occurs in pig." [MONDO:patterns/nonhuman_disease]
 xref: OMIA:001888-9823 {source="MONDO:equivalentTo"}
-is_a: MONDO:1011435 {source="OMIA:001888", source="https://orcid.org/0000-0002-5002-8648"} ! Becker type muscular dystrophy, non-human animal, DMD-related, domestic cat
+is_a: MONDO:1011435 {source="OMIA:001888", source="https://orcid.org/0000-0002-5002-8648"} ! Becker type muscular dystrophy, non-human animal
 intersection_of: MONDO:0005583 ! non-human animal disease
 intersection_of: in_taxon NCBITaxon:9823 ! Sus scrofa
 intersection_of: MONDO:0700097 MONDO:0010311 ! cross-species analog Becker muscular dystrophy
@@ -644149,7 +644151,7 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 id: MONDO:1012448
 name: mammary tumor, dog
 xref: OMIA:001777-9615 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="OMIA:001777", source="https://orcid.org/0000-0002-5002-8648"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="OMIA:001777", source="https://orcid.org/0000-0002-5002-8648"} ! mammary neoplasms, non-human animal
 relationship: in_taxon NCBITaxon:9615 {source="OMIA:001777-9615", source="https://orcid.org/0000-0002-5002-8648"} ! Canis lupus familiaris
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7225" xsd:anyURI
 
@@ -645467,10 +645469,13 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 id: MONDO:1012588
 name: oculocutaneous albinism, TYR-related, Japanese raccoon dog
 def: "Oculocutaneous albinism that occurs in Japanese raccoon dog due to a mutation in the TYR gene." [MONDO:patterns/nonhuman_disease_series_by_gene]
-synonym: "coat/skin colour, oculocutaneous albinism type I (OCA1), TYR-related in Nyctereutes procyonoides viverrinus (Japanese raccoon dog)" EXACT [OMIA:000202-476259]
-xref: OMIA:000202-476259 {source="MONDO:equivalentTo"}
-is_a: MONDO:1012579 {source="OMIA:000202-476259", source="https://orcid.org/0000-0002-5002-8648"} ! oculocutaneous albinism, non-human animal
-relationship: in_taxon NCBITaxon:476259 {source="OMIA:000202-476259"}
+synonym: "coat/skin colour, oculocutaneous albinism type I (OCA1), TYR-related in Nyctereutes viverrinus (Japanese raccoon dog)" EXACT [OMIA:000202-3370412]
+xref: OMIA:000202-3370412 {source="MONDO:equivalentTo"}
+is_a: MONDO:1012579 {source="OMIA:000202-3370412", source="https://orcid.org/0000-0002-5002-8648"} ! oculocutaneous albinism, non-human animal
+is_a: MONDO:7770118 {source="OMIA:000202-3370412"} ! oculocutaneous albinism, Japanese raccoon dog
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
+relationship: in_taxon NCBITaxon:3370412 {source="OMIA:000202-3370412"} ! Nyctereutes viverrinus
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/7271" xsd:anyURI
 
 [Term]
@@ -689212,7 +689217,7 @@ def: "Breast carcinoma that occurs in non-human animals." [MONDO:patterns/nonhum
 subset: venom_exotics {source="VeNom:16639"}
 subset: venom_small_animal {source="VeNom:16639"}
 xref: VeNom:16639 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:16639"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:16639"} ! mammary neoplasms, non-human animal
 is_a: MONDO:0700101 {source="VeNom:16639"} ! carcinoma, non-human animal
 intersection_of: MONDO:0005583 ! non-human animal disease
 intersection_of: MONDO:0700097 MONDO:0004989 ! cross-species analog breast carcinoma
@@ -689224,7 +689229,7 @@ name: mammary complex carcinoma, non-human animal
 subset: venom_exotics {source="VeNom:16641"}
 subset: venom_small_animal {source="VeNom:16641"}
 xref: VeNom:16641 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:16641"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:16641"} ! mammary neoplasms, non-human animal
 is_a: MONDO:0700101 {source="VeNom:16641"} ! carcinoma, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
@@ -689234,7 +689239,7 @@ name: mammary inflammatory carcinoma, non-human animal
 subset: venom_exotics {source="VeNom:16643"}
 subset: venom_small_animal {source="VeNom:16643"}
 xref: VeNom:16643 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:16643"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:16643"} ! mammary neoplasms, non-human animal
 is_a: MONDO:0700101 {source="VeNom:16643"} ! carcinoma, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
@@ -689244,7 +689249,7 @@ name: mammary simple carcinoma, non-human animal
 subset: venom_exotics {source="VeNom:16645"}
 subset: venom_small_animal {source="VeNom:16645"}
 xref: VeNom:16645 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:16645"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:16645"} ! mammary neoplasms, non-human animal
 is_a: MONDO:0700101 {source="VeNom:16645"} ! carcinoma, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
@@ -689254,7 +689259,7 @@ name: mammary carcinoma in situ, non-human animal
 subset: venom_exotics {source="VeNom:16647"}
 subset: venom_small_animal {source="VeNom:16647"}
 xref: VeNom:16647 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:16647"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:16647"} ! mammary neoplasms, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
 [Term]
@@ -689263,7 +689268,7 @@ name: mammary complex carcinoma in situ, non-human animal
 subset: venom_exotics {source="VeNom:16649"}
 subset: venom_small_animal {source="VeNom:16649"}
 xref: VeNom:16649 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:16649"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:16649"} ! mammary neoplasms, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
 [Term]
@@ -689272,7 +689277,7 @@ name: mammary inflammatory carcinoma in situ, non-human animal
 subset: venom_exotics {source="VeNom:16651"}
 subset: venom_small_animal {source="VeNom:16651"}
 xref: VeNom:16651 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:16651"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:16651"} ! mammary neoplasms, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
 [Term]
@@ -689281,7 +689286,7 @@ name: mammary simple carcinoma in situ, non-human animal
 subset: venom_exotics {source="VeNom:16653"}
 subset: venom_small_animal {source="VeNom:16653"}
 xref: VeNom:16653 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:16653"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:16653"} ! mammary neoplasms, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
 [Term]
@@ -689312,7 +689317,7 @@ name: mammary adenoma, non-human animal
 subset: venom_exotics {source="VeNom:16739"}
 subset: venom_small_animal {source="VeNom:16739"}
 xref: VeNom:16739 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:16739"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:16739"} ! mammary neoplasms, non-human animal
 is_a: MONDO:1013110 {source="VeNom:16739"} ! benign neoplasm, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
@@ -689322,7 +689327,7 @@ name: mammary basaloid adenoma, non-human animal
 subset: venom_exotics {source="VeNom:16741"}
 subset: venom_small_animal {source="VeNom:16741"}
 xref: VeNom:16741 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:16741"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:16741"} ! mammary neoplasms, non-human animal
 is_a: MONDO:1013110 {source="VeNom:16741"} ! benign neoplasm, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
@@ -689332,7 +689337,7 @@ name: mammary complex adenoma, non-human animal
 subset: venom_exotics {source="VeNom:16743"}
 subset: venom_small_animal {source="VeNom:16743"}
 xref: VeNom:16743 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:16743"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:16743"} ! mammary neoplasms, non-human animal
 is_a: MONDO:1013110 {source="VeNom:16743"} ! benign neoplasm, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
@@ -689342,7 +689347,7 @@ name: mammary simple adenoma, non-human animal
 subset: venom_exotics {source="VeNom:16745"}
 subset: venom_small_animal {source="VeNom:16745"}
 xref: VeNom:16745 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:16745"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:16745"} ! mammary neoplasms, non-human animal
 is_a: MONDO:1013110 {source="VeNom:16745"} ! benign neoplasm, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
@@ -689362,7 +689367,7 @@ name: mammary extraskeletal osteosarcoma, non-human animal
 subset: venom_exotics {source="VeNom:16874"}
 subset: venom_small_animal {source="VeNom:16874"}
 xref: VeNom:16874 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:16874"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:16874"} ! mammary neoplasms, non-human animal
 is_a: MONDO:1010212 {source="VeNom:16874"} ! osteosarcoma, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
@@ -689372,7 +689377,7 @@ name: mammary fibroadenoma, non-human animal
 subset: venom_exotics {source="VeNom:17016"}
 subset: venom_small_animal {source="VeNom:17016"}
 xref: VeNom:17016 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:17016"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:17016"} ! mammary neoplasms, non-human animal
 is_a: MONDO:1013110 {source="VeNom:17016"} ! benign neoplasm, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
@@ -689382,7 +689387,7 @@ name: mammary fibrosarcoma, non-human animal
 subset: venom_exotics {source="VeNom:17048"}
 subset: venom_small_animal {source="VeNom:17048"}
 xref: VeNom:17048 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:17048"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:17048"} ! mammary neoplasms, non-human animal
 is_a: MONDO:0700098 {source="VeNom:17048"} ! neoplasm, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
@@ -689392,7 +689397,7 @@ name: mammary papilloma, non-human animal
 subset: venom_exotics {source="VeNom:17299"}
 subset: venom_small_animal {source="VeNom:17299"}
 xref: VeNom:17299 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:17299"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:17299"} ! mammary neoplasms, non-human animal
 is_a: MONDO:1013110 {source="VeNom:17299"} ! benign neoplasm, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
@@ -689402,7 +689407,7 @@ name: multiple mammary papillomas, non-human animal
 subset: venom_exotics {source="VeNom:17302"}
 subset: venom_small_animal {source="VeNom:17302"}
 xref: VeNom:17302 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:17302"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:17302"} ! mammary neoplasms, non-human animal
 is_a: MONDO:1013110 {source="VeNom:17302"} ! benign neoplasm, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
@@ -689412,7 +689417,7 @@ name: mammary squamous cell carcinoma, non-human animal
 subset: venom_exotics {source="VeNom:17332"}
 subset: venom_small_animal {source="VeNom:17332"}
 xref: VeNom:17332 {source="MONDO:equivalentTo"}
-is_a: MONDO:0025483 {source="VeNom:17332"} ! mammary neoplasms, animal
+is_a: MONDO:0025483 {source="VeNom:17332"} ! mammary neoplasms, non-human animal
 is_a: MONDO:1013268 {source="VeNom:17332"} ! squamous cell carcinoma, non-human animal
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5726" xsd:anyURI
 
@@ -703058,6 +703063,87 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-763
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9630" xsd:anyURI
 
 [Term]
+id: MONDO:1060333
+name: hypertrophic cardiomyopathy, brown woolly monkey
+def: "Hypertrophic cardiomyopathy that occurs in brown woolly monkey." [MONDO:patterns/nonhuman_disease]
+xref: OMIA:000515-9519 {source="MONDO:equivalentTo"}
+is_a: MONDO:1010456 {source="OMIA:000515-9519"} ! hypertrophic cardiomyopathy, woolly monkeys
+intersection_of: MONDO:0005583 ! non-human animal disease
+intersection_of: in_taxon NCBITaxon:9519
+intersection_of: MONDO:0700097 MONDO:0005045 ! cross-species analog hypertrophic cardiomyopathy
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
+relationship: in_taxon NCBITaxon:9519 {source="OMIA:000515-9519"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
+
+[Term]
+id: MONDO:1060334
+name: lysosomal storage disease, eastern gray kangaroo
+def: "Lysosomal storage disease that occurs in eastern gray kangaroo." [MONDO:patterns/nonhuman_disease]
+xref: OMIA:000616-9317 {source="MONDO:equivalentTo"}
+is_a: MONDO:1010859 {source="OMIA:000616-9317"} ! lysosomal storage disease, kangaroo
+intersection_of: MONDO:0005583 ! non-human animal disease
+intersection_of: in_taxon NCBITaxon:9317 ! Macropus giganteus
+intersection_of: MONDO:0700097 MONDO:0002561 ! cross-species analog lysosomal storage disease
+relationship: in_taxon NCBITaxon:9317 {source="OMIA:000616-9317"} ! Macropus giganteus
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
+
+[Term]
+id: MONDO:1060335
+name: lysosomal storage disease, red kangaroo
+def: "Lysosomal storage disease that occurs in red kangaroo." [MONDO:patterns/nonhuman_disease]
+xref: OMIA:000616-9321 {source="MONDO:equivalentTo"}
+is_a: MONDO:1010859 {source="OMIA:000616-9321"} ! lysosomal storage disease, kangaroo
+intersection_of: MONDO:0005583 ! non-human animal disease
+intersection_of: in_taxon NCBITaxon:9321 ! Osphranter rufus
+intersection_of: MONDO:0700097 MONDO:0002561 ! cross-species analog lysosomal storage disease
+relationship: in_taxon NCBITaxon:9321 {source="OMIA:000616-9321"} ! Osphranter rufus
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
+
+[Term]
+id: MONDO:1060336
+name: urolithiasis, western gray kangaroo
+def: "Urolithiasis that occurs in western gray kangaroo." [MONDO:patterns/nonhuman_disease]
+xref: OMIA:001033-9316 {source="MONDO:equivalentTo"}
+is_a: MONDO:1011076 {source="OMIA:001033-9316"} ! urolithiasis, kangaroo
+intersection_of: MONDO:0005583 ! non-human animal disease
+intersection_of: in_taxon NCBITaxon:9316
+intersection_of: MONDO:0700097 MONDO:0024647 ! cross-species analog urolithiasis
+relationship: excluded_from_qc_check http://purl.obolibrary.org/obo/mondo/sparql/qc/general/qc-single-child.sparql
+relationship: in_taxon NCBITaxon:9316 {source="OMIA:001033-9316"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
+
+[Term]
+id: MONDO:1060337
+name: patent urachus, Grevy's zebra
+def: "Patent urachus that occurs in Grevy's zebra." [MONDO:patterns/nonhuman_disease]
+xref: OMIA:000781-9792 {source="MONDO:equivalentTo"}
+is_a: MONDO:1010046 {source="OMIA:000781-9792"} ! patent urachus, non-human animal
+intersection_of: MONDO:0005583 ! non-human animal disease
+intersection_of: in_taxon NCBITaxon:9792
+intersection_of: MONDO:0700097 MONDO:0018551 ! cross-species analog patent urachus
+relationship: in_taxon NCBITaxon:9792 {source="OMIA:000781-9792"}
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
+
+[Term]
+id: MONDO:1060338
+name: Becker type muscular dystrophy, DMD-related, domestic cat
+def: "Becker type muscular dystrophy that occurs in domestic cat." [MONDO:patterns/nonhuman_disease]
+xref: OMIA:001888-9685 {source="MONDO:equivalentTo"}
+is_a: MONDO:1011435 {source="OMIA:001888-9685"} ! Becker type muscular dystrophy, non-human animal
+intersection_of: MONDO:0005583 ! non-human animal disease
+intersection_of: in_taxon NCBITaxon:9685 ! Felis catus
+intersection_of: MONDO:0700097 MONDO:0010311 ! cross-species analog Becker muscular dystrophy
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/ncbigene/101084937 {source="OMIA:001888-9685"} ! DMD
+relationship: in_taxon NCBITaxon:9685 {source="OMIA:001888-9685"} ! Felis catus
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-7638-4659
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
+
+[Term]
 id: MONDO:1061000
 name: TUBB-related tubulinopathy
 def: "Any tubulinopathy in which the cause of the disease is a mutation in the TUBB gene. Heterozygous TUBB variants cause two overlapping developmental disorders, complex cortical dysplasia with other brain malformations (CDCBM) and congenital symmetric circumferential skin creases (CSCSC), also known as circumferential skin creases Kunze type. The clinical findings are diverse and include abnormalities of the cortex, basal ganglia, corpus callosum, brain stem and cerebellum, microcephaly, intellectual disability, facial dysmorphism, excess skin folding and growth retardation." [https://www.clinicalgenome.org/affiliation/40020/, PMID:32085672, PMID:34211110]
@@ -703521,10 +703607,10 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 id: MONDO:7770118
 name: oculocutaneous albinism, Japanese raccoon dog
 def: "Oculocutaneous albinism that occurs in Japanese raccoon dog." [MONDO:patterns/nonhuman_disease]
-xref: OMIA:000202-3370412 {source="MONDO:equivalentTo"}
 is_a: MONDO:1012579 {source="https://orcid.org/0000-0002-5002-8648"} ! oculocutaneous albinism, non-human animal
 relationship: in_taxon NCBITaxon:3370412 {source="OMIA:000202-3370412"} ! Nyctereutes viverrinus
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10159" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
 
 [Term]
 id: MONDO:7770134
@@ -707528,18 +707614,18 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:7770657
 name: duplication chromosomal structural anomaly, cattle
-xref: OMIA:002999-9913 {source="MONDO:equivalentTo"}
 is_a: MONDO:1011307 {source="https://orcid.org/0000-0002-5002-8648"} ! chromosomal disorder, non-human animal
 relationship: in_taxon NCBITaxon:9913 {source="OMIA:002999-9913"} ! Bos taurus
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10159" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
 
 [Term]
 id: MONDO:7770658
 name: duplication chromosomal structural anomaly, horse
-xref: OMIA:002999-9796 {source="MONDO:equivalentTo"}
 is_a: MONDO:1011307 {source="https://orcid.org/0000-0002-5002-8648"} ! chromosomal disorder, non-human animal
 relationship: in_taxon NCBITaxon:9796 {source="OMIA:002999-9796"} ! Equus caballus
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10159" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10922" xsd:anyURI
 
 [Term]
 id: MONDO:7770659
