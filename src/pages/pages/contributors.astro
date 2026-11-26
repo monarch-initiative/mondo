@@ -11,6 +11,8 @@ const sortKey = (p: Person) => (p.name ?? p.github?.[0] ?? "").toLowerCase();
 const people = [...data.people].sort((a, b) => Number(!a.name) - Number(!b.name) || sortKey(a).localeCompare(sortKey(b)));
 
 
+// "More than N": the largest multiple of ten below the count, so the claim stays true as people are added.
+const moreThan = Math.floor((people.length - 1) / 10) * 10;
 const confirmed = data.last_confirmed
   ? new Date(String(data.last_confirmed) + "T12:00:00").toLocaleDateString("en-US", { month: "long", year: "numeric" })
   : null;
@@ -58,7 +60,7 @@ const actions = GOVERNANCE_LIVE ? governance.routes : fallbackActions;
   <section class="block" aria-labelledby="community">
     <h2 id="community">Thank you to our contributors</h2>
     <div class="headline">
-      <p class="count"><strong>{people.length}</strong> people have contributed to Mondo{confirmed && <span class="confirmed"> · List last confirmed {confirmed}</span>}</p>
+      <p class="count">Join the more than <strong>{moreThan}</strong> people who have contributed to Mondo{confirmed && <span class="confirmed"> · List last confirmed {confirmed}</span>}</p>
     </div>
 
 
