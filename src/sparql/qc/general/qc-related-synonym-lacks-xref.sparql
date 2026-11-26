@@ -1,0 +1,21 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT ?entity ?property ?value WHERE
+{
+  ?entity oboInOwl:hasRelatedSynonym ?value ;
+    a owl:Class .
+
+  ?anno a owl:Axiom ;
+    owl:annotatedSource ?entity ;
+    owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+    owl:annotatedTarget ?value .
+
+  FILTER NOT EXISTS {
+    ?anno oboInOwl:hasDbXref ?x .
+  }
+
+  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/MONDO_"))
+  BIND(oboInOwl:hasRelatedSynonym as ?property)
+}
+ORDER BY ?entity
