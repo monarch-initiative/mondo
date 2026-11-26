@@ -17,7 +17,7 @@ const kind = (t: any) => (/poster/i.test(t.type) ? "Poster" : /keynote/i.test(t.
   {years.map((y) => (
     <section class="year-block" data-year={y}>
       <h2>{y}</h2>
-      <div class="grid grid-2">
+      <div class="grid talks">
         {talks.filter((t) => t.year === y).map((t) => (
           <article class="card talk" data-kind={kind(t)}>
             <span class="pill alt">{t.type}</span>
@@ -41,6 +41,10 @@ const kind = (t: any) => (/poster/i.test(t.type) ? "Poster" : /keynote/i.test(t.
   .chip:hover { border-color: var(--teal); }
   .chip.active { background: var(--teal-deep); border-color: var(--teal-deep); color: #fff; }
   .year-block { padding: 28px 0 0; }
+  /* Fixed columns so cards keep the same width even when a year has fewer than three. */
+  .talks { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  @media (max-width: 900px) { .talks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .talks { grid-template-columns: 1fr; } }
   .year-block h2 { font-size: 1.3rem; color: var(--teal-deep); margin: 0 0 14px; }
   .talk h3 { font-size: 1.02rem; margin: 10px 0 6px; font-weight: 500; }
   .talk h3 a { color: var(--ink); text-decoration: none; }
