@@ -17,7 +17,7 @@ const pubs = loadYaml<any>("publications.yaml");
 const journal = String(pubs.cite.venue).split(",")[0];
 const callouts = [
   {
-    title: workshop.title,
+    title: `${workshop.title} ${String(workshop.date).slice(0, 4)}`,
     text: `${workshop.summary} See the workshop page for dates, the agenda and how to join.`,
     href: url(`/pages/workshop/#${workshop.id}`),
     wide: true,
@@ -63,12 +63,11 @@ const callouts = [
       </div>
     </div>
 
-    <div class="container now" aria-labelledby="now-title">
-      <h2 id="now-title" class="now-title">Happening now</h2>
+    <div class="container now" role="region" aria-label="Happening now">
       <ul class="callouts">
         {callouts.map((c) => (
           <li class={c.full ? "full" : c.wide ? "wide" : ""}>
-            <h3><a href={c.href}>{c.title}</a></h3>
+            <h2><a href={c.href}>{c.title}</a></h2>
             <p>{c.text}</p>
           </li>
         ))}
@@ -130,14 +129,13 @@ const callouts = [
   @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-visual { max-width: 360px; } }
 
   .now { position: relative; margin-top: 48px; }
-  .now-title { color: #fff; font-size: 1.3rem; margin: 0 0 14px; }
   .callouts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; }
   .callouts li { background: #fff; color: var(--ink); border-radius: 4px; padding: 16px 18px; }
   .callouts li.full { grid-column: 1 / -1; }
-  .callouts h3 { font-size: 1.05rem; margin: 0 0 6px; line-height: 1.3; }
-  .callouts h3 a { color: var(--teal-deep); text-decoration: none; }
-  .callouts h3 a:hover { text-decoration: underline; }
-  .callouts h3 a:focus-visible { outline-color: var(--teal-deep); }
+  .callouts h2 { font-size: 1.05rem; margin: 0 0 6px; line-height: 1.3; }
+  .callouts h2 a { color: var(--teal-deep); text-decoration: none; }
+  .callouts h2 a:hover { text-decoration: underline; }
+  .callouts h2 a:focus-visible { outline-color: var(--teal-deep); }
   .callouts p { margin: 0; font-size: 0.93rem; }
   @media (max-width: 860px) { .callouts { grid-template-columns: 1fr 1fr; } .callouts li.wide { grid-column: 1 / -1; } }
   @media (max-width: 560px) { .callouts { grid-template-columns: 1fr; } }
