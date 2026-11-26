@@ -382010,8 +382010,10 @@ xref: UMLS:C0006272 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source=
 is_a: MONDO:0002465 {source="NCIT:C62580"} ! bronchiolitis
 is_a: MONDO:0005087 {source="Orphanet:1303", source="https://orcid.org/0000-0001-5208-3432"} ! respiratory system disorder
 is_a: MONDO:0015925 {source="DOID:2799", source="EFO:0007183"} ! interstitial lung disease
+is_a: MONDO:1061003 {source="PMID:25359357", source="https://orcid.org/0000-0002-3293-5463"} ! chronic bronchiolitis
 relationship: excluded_subClassOf MONDO:0005249 {source="https://orcid.org/0000-0001-5208-3432"} ! pneumonia
 property_value: curated_content_resource "https://www.malacards.org/card/bronchiolitis_obliterans" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10685" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/5260" xsd:anyURI
 
 [Term]
@@ -703103,6 +703105,20 @@ is_a: MONDO:0004970 {source="PMID:33526217", source="https://orcid.org/0000-0001
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-6757-4744
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10492" xsd:anyURI
 property_value: seeAlso "https://rarediseases.org/rare-diseases/polymorphous-low-grade-adenocarcinoma/" xsd:anyURI
+
+[Term]
+id: MONDO:1061003
+name: chronic bronchiolitis
+def: "Chronic form of bronchiolitis, characterized by persistent inflammation and injury of the bronchioles." [https://orcid.org/0000-0002-3293-5463, MONDO:patterns/chronic, PMID:11147167, PMID:23734650]
+synonym: "bronchiolitis, chronic" EXACT [MONDO:patterns/chronic]
+xref: ICD10CM:J44.89 {source="https://orcid.org/0000-0001-6757-4744", source="MONDO:relatedTo"}
+xref: icd11.foundation:1067593741 {source="https://orcid.org/0000-0001-6757-4744", source="MONDO:equivalentTo"}
+xref: SCTID:737180005 {source="https://orcid.org/0000-0001-6757-4744", source="MONDO:equivalentTo"}
+is_a: MONDO:0002465 {source="PMID:23734650", source="https://orcid.org/0000-0002-3293-5463"} ! bronchiolitis
+intersection_of: MONDO:0002465 ! bronchiolitis
+intersection_of: has_characteristic PATO:0001863 ! chronic
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-6757-4744
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10685" xsd:anyURI
 
 [Term]
 id: MONDO:7770001
