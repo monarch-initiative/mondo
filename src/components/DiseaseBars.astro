@@ -1,6 +1,6 @@
 ---
 // Single-series horizontal bars of disease classes by type, from src/data/stats.md.
-import { loadStats, fmt } from "../lib/data";
+import { loadStats, fmt, url } from "../lib/data";
 const { types } = loadStats();
 
 // Group rows under their depth-1 parent (Human / Non-human diseases).
@@ -39,7 +39,7 @@ const max = Math.max(...groups.flatMap((g) => g.rows.map((r) => r.count)));
     </tbody>
   </table>
 </details>
-<p class="note">Categories overlap (a disease can be both rare and Mendelian). Susceptibilities are not included in these counts.</p>
+<p class="note">Categories overlap (a disease can be both rare and Mendelian). Susceptibilities are not included in these counts. Learn more about <a href={url("/pages/rare-disease/")}>rare diseases in Mondo</a>.</p>
 
 <style>
   .bars-wrap { position: relative; display: grid; gap: 28px; }
@@ -59,6 +59,7 @@ const max = Math.max(...groups.flatMap((g) => g.rows.map((r) => r.count)));
   .table-view { margin-top: 20px; }
   .table-view summary { cursor: pointer; color: var(--teal-deep); font-weight: 500; font-size: 0.92rem; }
   .table-view .table { margin-top: 12px; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .note a { color: var(--teal-deep); }
   .note { font-size: 0.82rem; color: var(--ink-muted); margin: 12px 0 0; }
 </style>
 
