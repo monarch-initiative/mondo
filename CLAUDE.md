@@ -28,8 +28,7 @@ This includes instructions for editing the npso ontology.
 
 ## OMIM
 - NEVER fetch omim.org web pages (WebFetch, curl, browser tools). OMIM's terms of use cover automated access; the website is for people.
-- Check OMIM content through the OMIM API only, and only if a key is configured (`OMIM_API_KEY`).
-- No key: do not work around it (no mirrors, no web search for entry text). Use what `mondo-edit.obo` already says about the OMIM xref, and list in your summary the OMIM checks a curator needs to do by hand.
+- For anything you need from OMIM (titles, synonyms, gene-disease associations, entry type, entry text), use the `omim` skill (`.claude/skills/omim/SKILL.md`), also when reviewing.
 
 ## Edits
 - IMPORTANT: Do not edit the edit file directly, it's large
@@ -275,7 +274,7 @@ Synonym with `[]`: look for a source in OMIM, Orphanet, MedGen or other database
 - Current and former titles: `EXACT [OMIM:N]`, not DEPRECATED. Abbreviations: `EXACT ABBREVIATION [OMIM:N]`.
 - Exception: keep DEPRECATED on outdated wording ("mental retardation"). Never remove an existing DEPRECATED tag.
 - `..., INCLUDED` titles are separate entities. Never add them as synonyms on the main-entry term.
-- Check names in MedGen: `esearch db=medgen term=<MIM>[MIM]` gives one concept per entity, with `SAB="OMIM"` names.
+- Check names in `omim.owl` (see the `omim` skill).
 - Check what the title actually means before choosing EXACT. MedGen filing an OMIM title under a separate concept is a hint to look closer, not proof of anything. Sometimes the title names a different disease and takes RELATED [OMIM:N] (e.g. "venous thrombosis" on OMIM:188050 thrombophilia due to thrombin defect, which `omim.owl` also shows as a `skos:exactMatch` to UMLS:C0042487). Sometimes MedGen has only split a main OMIM title into a second concept, and EXACT is still right.
 
 ### ClinGen Label Handling
