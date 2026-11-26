@@ -4,6 +4,11 @@ import Authors from "../../components/Authors.astro";
 import { loadYaml } from "../../lib/data";
 
 const pubs = loadYaml<any>("publications.yaml");
+// Newest first. Manuscripts only record a year, so same-year items keep their order in the data file.
+// Blogs sort by full date; undated posts go last.
+const manuscripts = [...pubs.manuscripts].sort((a: any, b: any) => (b.year ?? 0) - (a.year ?? 0));
+const blogTime = (d?: string) => (d ? Date.parse(d) || 0 : 0);
+const blogs = [...pubs.blogs].sort((a: any, b: any) => blogTime(b.date) - blogTime(a.date));
 const c = pubs.cite;
 const citation = `${c.authors}. ${c.title}. ${c.venue}. ${c.year}. https://doi.org/${c.doi}`;
 ---
@@ -21,41 +26,32 @@ const citation = `${c.authors}. ${c.title}. ${c.venue}. ${c.year}. https://doi.o
     </div>
   </section>
 
-  <section class="block">
-    <h2>Manuscripts</h2>
-    <ol class="pubs">
-      {pubs.manuscripts.map((p: any) => (
-        <li>
-          <span class="year">{p.year}</span>
-          <div>
-            <h3><a href={p.url}>{p.title}</a></h3>
-            <p class="venue"><em>{p.venue}</em></p>
-            <Authors authors={p.authors} />
-          </div>
-        </li>
-      ))}
-    </ol>
-  </section>
+  <section class="tabs-wrap" aria-label="Publications and blogs">
+    <div class="tabs" role="tablist" aria-label="Publication types" hidden>
+      <button type="button" role="tab" id="tab-manuscripts" aria-controls="manuscripts" aria-selected="true">Manuscripts <span class="n">{manuscripts.length}</span></button>
+      <button type="button" role="tab" id="tab-blogs" aria-controls="blogs" aria-selected="false" tabindex="-1">Blogs <span class="n">{blogs.length}</span></button>
+    </div>
 
-  <section class="block two">
-    <div>
-      <h2>Related publications</h2>
+    <div class="panel" id="manuscripts" role="tabpanel" aria-labelledby="tab-manuscripts">
+      <h2 class="panel-title">Manuscripts</h2>
       <ol class="pubs">
-        {pubs.related.map((p: any) => (
+        {manuscripts.map((p: any) => (
           <li>
-            <span class="year">{p.year ?? ""}</span>
+            <span class="year">{p.year}</span>
             <div>
               <h3><a href={p.url}>{p.title}</a></h3>
-              {p.authors && <p class="authors">{p.authors}</p>}
+              <p class="venue"><em>{p.venue}</em></p>
+              <Authors authors={p.authors} />
             </div>
           </li>
         ))}
       </ol>
     </div>
-    <div>
-      <h2>Blogs</h2>
+
+    <div class="panel" id="blogs" role="tabpanel" aria-labelledby="tab-blogs">
+      <h2 class="panel-title">Blogs</h2>
       <ul class="blogs">
-        {pubs.blogs.map((b: any) => (
+        {blogs.map((b: any) => (
           <li>
             <a href={b.url}>{b.title}</a>
             <span>{b.authors}{b.date ? ` · ${b.date}` : ""}</span>
@@ -75,11 +71,19 @@ const citation = `${c.authors}. ${c.title}. ${c.venue}. ${c.year}. https://doi.o
   .cite-actions button { font: inherit; cursor: pointer; background: none; }
   @media (max-width: 760px) { .cite { grid-template-columns: 1fr; } .cite-actions { flex-direction: row; flex-wrap: wrap; } }
   .venue { margin: 2px 0 0; font-size: 0.92rem; }
-  .block { padding: 48px 0 0; }
-  .block:last-of-type { padding-bottom: 72px; }
-  .block h2 { font-size: 1.5rem; }
-  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-  @media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+  .tabs-wrap { padding: 44px 0 72px; }
+  .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+  .tabs [role="tab"] { font: inherit; font-weight: 600; font-size: 1.05rem; color: var(--ink-soft); background: none; border: 0; border-bottom: 3px solid transparent; margin-bottom: -1px; padding: 10px 16px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+  .tabs [role="tab"]:hover { color: var(--ink); }
+  .tabs [role="tab"][aria-selected="true"] { color: var(--teal-deep); border-bottom-color: var(--teal-deep); }
+  .tabs [role="tab"]:focus-visible { outline: 3px solid var(--teal-deep); outline-offset: -3px; border-radius: 4px 4px 0 0; }
+  .tabs .n { font-size: 0.8rem; font-weight: 500; background: var(--teal-wash); color: var(--teal-deep); border-radius: 999px; padding: 1px 8px; }
+  .panel-title { font-size: 1.5rem; margin: 0 0 4px; }
+  .panel + .panel { margin-top: 40px; }
+  /* With tabs active, the tab label replaces the visible panel heading. */
+  .tabs-ready .panel-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .tabs-ready .panel + .panel { margin-top: 0; }
+  .panel:focus-visible { outline: 3px solid var(--teal-deep); outline-offset: 4px; }
   .pubs { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
   .pubs li { display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
   .pubs .year { font-weight: 600; color: var(--teal-deep); }
@@ -100,4 +104,35 @@ const citation = `${c.authors}. ${c.title}. ${c.venue}. ${c.year}. https://doi.o
     catch { b.textContent = "Copy failed"; }
     setTimeout(() => (b.textContent = "Copy citation"), 2000);
   });
+
+  // Turn the stacked Manuscripts and Blogs lists into tabs. Without JavaScript they stay stacked.
+  const wrap = document.querySelector<HTMLElement>(".tabs-wrap");
+  const tablist = wrap?.querySelector<HTMLElement>('[role="tablist"]');
+  if (wrap && tablist) {
+    const tabs = [...tablist.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
+    const select = (tab: HTMLButtonElement, focus = false) => {
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute("aria-selected", String(on));
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute("aria-controls")!)!.hidden = !on;
+      });
+      if (focus) tab.focus();
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener("click", () => { select(t); history.replaceState(null, "", "#" + t.getAttribute("aria-controls")); });
+      t.addEventListener("keydown", (e) => {
+        const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+        if (next === undefined) return;
+        e.preventDefault();
+        select(tabs[(next + tabs.length) % tabs.length], true);
+      });
+    });
+    document.querySelectorAll<HTMLElement>('[role="tabpanel"]').forEach((p) => (p.tabIndex = 0));
+    tablist.hidden = false;
+    wrap.classList.add("tabs-ready");
+    const fromHash = () => tabs.find((t) => "#" + t.getAttribute("aria-controls") === location.hash);
+    select(fromHash() ?? tabs[0]);
+    window.addEventListener("hashchange", () => { const t = fromHash(); if (t) select(t); });
+  }
 </script>
