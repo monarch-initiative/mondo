@@ -346632,25 +346632,34 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 [Term]
 id: MONDO:0013945
 name: peroxisome biogenesis disorder 9B
+def: "An adult Refsum disease in which the cause of the disease is a variation in the PEX7 gene." [https://www.clinicalgenome.org/affiliation/40049/, PMID:12522768]
 subset: doid {source="DOID:0081438"}
-subset: gard_rare {source="GARD:0015871", source="MONDO:GARD"}
+subset: gard_rare {source="GARD:0026136", source="GARD:0015871", source="MONDO:GARD"}
 subset: nord_rare {source="MONDO:NORD"}
 subset: omim {source="OMIM:614879"}
 subset: rare
-synonym: "PBD9B" RELATED ABBREVIATION []
+synonym: "adult Refsum disease due to PEX7 defect" EXACT [https://www.clinicalgenome.org/affiliation/40049/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "PBD9B" EXACT ABBREVIATION [OMIM:614879]
 synonym: "peroxisome biogenesis disorder 9B" EXACT [DOID:0081438, OMIM:614879]
+synonym: "peroxisome biogenesis disorder, PEX7-related, atypical" EXACT [OMIM:614879]
+synonym: "Refsum disease, adult, 2" EXACT [OMIM:614879]
 xref: DOID:0081438 {source="MONDO:equivalentTo"}
 xref: GARD:0015871 {source="MONDO:GARD"}
+xref: GARD:0026136 {source="MONDO:GARD"}
 xref: MEDGEN:440765 {source="MONDO:equivalentTo", source="MONDO:MEDGEN"}
 xref: OMIM:614879 {source="MONDO:equivalentTo"}
 xref: UMLS:C2749346 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:440765"}
+is_a: MONDO:0009958 {source="PMID:20301527", source="https://orcid.org/0000-0001-5493-2602"} ! adult Refsum disease
 is_a: MONDO:0019234 {source="OMIM:614879"} ! peroxisome biogenesis disorder
-is_a: MONDO:0100272 {source="OMIM:614879", source="PMID:20301621", source="https://orcid.org/0000-0002-7638-4659"} ! peroxisome biogenesis disorder due to PEX7 defect
+is_a: MONDO:0100272 {source="OMIM:614879", source="PMID:20301621", source="https://orcid.org/0000-0002-7638-4659", source="https://www.clinicalgenome.org/affiliation/40049/"} ! peroxisome biogenesis disorder due to PEX7 defect
+intersection_of: MONDO:0009958 ! adult Refsum disease
+intersection_of: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/8860 ! PEX7
 relationship: excluded_subClassOf MONDO:0019609 {source="DC-OMIM:614879", source="PMID:20301621", source="https://orcid.org/0000-0002-7638-4659"} ! Zellweger spectrum disorders
 relationship: has_characteristic MONDO:0100357 {source="https://www.clinicalgenome.org/affiliation/40049/"} ! non-classic presentation
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/8860 {source="OMIM:614879"} ! PEX7
+relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/8860 {source="OMIM:614879", source="https://www.clinicalgenome.org/affiliation/40049/"} ! PEX7
 property_value: curated_content_resource "https://www.malacards.org/card/peroxisome_biogenesis_disorder_9b" xsd:anyURI {source="MONDO:MalaCards"}
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10377" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10604" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10711" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/2632" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9285" xsd:anyURI
@@ -584308,21 +584317,13 @@ property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/
 
 [Term]
 id: MONDO:0100307
-name: adult Refsum disease due to PEX7 defect
-def: "An adult Refsum disease in which the cause of the disease is a mutation in the PEX7 gene." [https://www.clinicalgenome.org/affiliation/40049/, PMID:12522768]
-comment: This term is scheduled to be merged with MONDO:0013945 peroxisome biogenesis disorder 9B, based on the fact that the concept of these 2 terms are the same. This ID will therefore be obsoleted and replaced with MONDO:0013945
-subset: gard_rare {source="GARD:0026136", source="MONDO:GARD"}
-subset: obsoletion_candidate
-subset: rare
-synonym: "adult Refsum disease due to PEX7 defect" EXACT [https://www.clinicalgenome.org/affiliation/40049/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
-xref: GARD:0026136 {source="MONDO:GARD"}
-is_a: MONDO:0009958 {source="PMID:20301527", source="https://orcid.org/0000-0001-5493-2602"} ! adult Refsum disease
-is_a: MONDO:0100272 {source="https://www.clinicalgenome.org/affiliation/40049/"} ! peroxisome biogenesis disorder due to PEX7 defect
-relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/8860 {source="https://www.clinicalgenome.org/affiliation/40049/"} ! PEX7
-property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-5208-3432
+name: obsolete adult Refsum disease due to PEX7 defect
+property_value: IAO:0000231 MONDO:TermsMerged
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10377" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10604" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/2632" xsd:anyURI
-property_value: IAO:0006012 "2026-11-01" xsd:string
+is_obsolete: true
+replaced_by: MONDO:0013945
 
 [Term]
 id: MONDO:0100308
