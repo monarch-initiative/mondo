@@ -1,0 +1,32 @@
+---
+// Layout for inner pages, including Markdown pages (set `layout:` in frontmatter).
+import Base from "./Base.astro";
+import NetBg from "../components/NetBg.astro";
+
+const fm = Astro.props.frontmatter ?? Astro.props;
+const { title, eyebrow, intro, wide = false } = fm;
+---
+<Base title={title} description={intro}>
+  <section class="page-hero">
+    <NetBg seed={title?.length ?? 3} nodes={30} />
+    <div class="container" style="position:relative">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{title}</h1>
+      {intro && <p>{intro}</p>}
+    </div>
+  </section>
+  <div class={wide ? "container page-body" : "prose"}>
+    <slot />
+  </div>
+</Base>
+
+<script>
+  // Wrap Markdown tables so wide ones scroll horizontally on phones.
+  document.querySelectorAll(".prose table").forEach((t) => {
+    if (t.parentElement?.classList.contains("table-wrap")) return;
+    const w = document.createElement("div");
+    w.className = "table-wrap";
+    t.replaceWith(w);
+    w.appendChild(t);
+  });
+</script>

@@ -1,0 +1,26 @@
+---
+// Decorative node-and-edge network, echoing the monarchinitiative.org hero background.
+// Deterministic (seeded) so builds are stable.
+interface Props { seed?: number; nodes?: number; class?: string }
+const { seed = 7, nodes = 46, class: cls = "net-bg" } = Astro.props;
+let s = seed;
+const rand = () => ((s = (s * 16807) % 2147483647) / 2147483647);
+const W = 1200, H = 520;
+const pts = Array.from({ length: nodes }, () => ({ x: rand() * W, y: rand() * H, r: 1.5 + rand() * 2.5 }));
+const edges: [number, number][] = [];
+pts.forEach((p, i) => {
+  pts
+    .map((q, j) => ({ j, d: Math.hypot(p.x - q.x, p.y - q.y) }))
+    .filter((o) => o.j > i && o.d < 190)
+    .slice(0, 3)
+    .forEach((o) => edges.push([i, o.j]));
+});
+---
+<svg class={cls} viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <g stroke="#fff" stroke-width="1" fill="none">
+    {edges.map(([a, b]) => <line x1={pts[a].x} y1={pts[a].y} x2={pts[b].x} y2={pts[b].y} />)}
+  </g>
+  <g fill="#fff">
+    {pts.map((p) => <circle cx={p.x} cy={p.y} r={p.r} />)}
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+---
+// Schematic of many disease resources connecting into Mondo. Deliberately unlabeled:
+// the set of sources changes over time, so the graphic shows the idea, not a list.
+import { url } from "../lib/data";
+
+const S = 520, C = S / 2;
+let seed = 23;
+const rand = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+const ring = (n: number, r: number, offset: number, size: [number, number]) =>
+  Array.from({ length: n }, (_, i) => {
+    const a = (i / n) * Math.PI * 2 + offset;
+    const rr = r + (rand() - 0.5) * 22;
+    return { x: C + Math.cos(a) * rr, y: C + Math.sin(a) * rr, r: size[0] + rand() * (size[1] - size[0]) };
+  });
+const inner = ring(7, 150, -Math.PI / 2, [9, 13]);
+const outer = ring(16, 226, -Math.PI / 2 + Math.PI / 16, [5, 9]);
+// Each outer node also links to its nearest inner node, so the picture reads as a network, not a wheel.
+const nearest = (p: { x: number; y: number }) =>
+  inner.reduce((b, q) => (Math.hypot(p.x - q.x, p.y - q.y) < Math.hypot(p.x - b.x, p.y - b.y) ? q : b), inner[0]);
+---
+<figure class="schematic">
+  <svg viewBox={`0 0 ${S} ${S}`} role="img" aria-label="Many disease resources connecting into Mondo">
+    <g class="links">
+      {outer.map((p) => { const q = nearest(p); return <line x1={p.x} y1={p.y} x2={q.x} y2={q.y} class="faint" />; })}
+      {outer.map((p) => <line x1={C} y1={C} x2={p.x} y2={p.y} class="faint dashed" />)}
+      {inner.map((p) => <line x1={C} y1={C} x2={p.x} y2={p.y} class="strong" />)}
+    </g>
+    {outer.map((p, i) => <circle cx={p.x} cy={p.y} r={p.r} class="node outer" style={`--d:${(i % 8) * 0.4}s`} />)}
+    {inner.map((p, i) => <circle cx={p.x} cy={p.y} r={p.r} class="node inner" style={`--d:${i * 0.5}s`} />)}
+    <circle cx={C} cy={C} r="96" class="core" />
+    <image href={url("/img/mondo_logo_black-stacked.svg")} x={C - 62} y={C - 68} width="124" height="136" />
+  </svg>
+</figure>
+
+<style>
+  .schematic { margin: 0; }
+  .schematic svg { width: 100%; height: auto; display: block; }
+  .links line { stroke-linecap: round; }
+  .faint { stroke: rgba(255, 255, 255, 0.28); stroke-width: 1; }
+  .dashed { stroke-dasharray: 3 6; }
+  .strong { stroke: #a6ecf2; stroke-width: 2; opacity: 0.85; }
+  .node.inner { fill: #a6ecf2; }
+  .node.outer { fill: #003d43; stroke: rgba(255, 255, 255, 0.75); stroke-width: 1.5; }
+  .core { fill: #fff; }
+  .node { animation: breathe 5s ease-in-out infinite; animation-delay: var(--d); transform-box: fill-box; transform-origin: center; }
+  @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+</style>

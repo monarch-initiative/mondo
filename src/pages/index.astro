@@ -1,0 +1,162 @@
+---
+import Base from "../layouts/Base.astro";
+import NetBg from "../components/NetBg.astro";
+import SchematicHub from "../components/SchematicHub.astro";
+import DiseaseBars from "../components/DiseaseBars.astro";
+import { loadStats, loadYaml, fmt, url } from "../lib/data";
+
+const { metrics } = loadStats();
+const get = (label: string) => metrics.find((r) => r.label.toLowerCase() === label.toLowerCase())?.count ?? 0;
+const synRows = metrics.filter((m) => /synonyms$/i.test(m.label));
+const synonyms = synRows.reduce((a, m) => a + m.count, 0);
+const defs = get("Term definitions");
+
+// "Happening now" callouts. The workshop and paper come from the data files, so they stay current.
+const workshop = loadYaml<any[]>("workshops.yaml")[0];
+const pubs = loadYaml<any>("publications.yaml");
+const journal = String(pubs.cite.venue).split(",")[0];
+const callouts = [
+  {
+    tag: "Workshop",
+    title: `${workshop.title} ${String(workshop.date).slice(0, 4)}`,
+    text: `${workshop.summary} See the workshop page for dates, the agenda and how to join.`,
+    href: url(`/pages/workshop/#${workshop.id}`),
+    wide: true,
+  },
+  {
+    tag: "Publication",
+    title: pubs.cite.title,
+    text: `Our ${pubs.cite.year} paper in ${journal}. Read it, and find out how to cite Mondo.`,
+    href: url("/pages/publications/"),
+  },
+  {
+    tag: "Resource",
+    title: "Sources",
+    text: "See the resources Mondo integrates and aligns with.",
+    href: url("/pages/sources/"),
+  },
+  {
+    tag: "Get involved",
+    title: "Contribute to Mondo",
+    text: "Request a term, report an issue or lend your expertise. Everyone is welcome to contribute.",
+    href: url("/pages/contributors/"),
+    full: true,
+  },
+];
+---
+<Base>
+  <section class="hero">
+    <NetBg seed={11} nodes={60} />
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Mondo Disease Ontology</p>
+        <h1>The world's disease concepts, <span>unified.</span></h1>
+        <p class="hero-lede">
+          Mondo aims to harmonize disease definitions across the world. The name comes from the Latin <em>mundus</em>, "for the world."
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href={url("/pages/download/")}>Get Mondo</a>
+          <a class="btn btn-ghost" href="https://monarchinitiative.org/disease/MONDO:0000001">Browse in the Monarch Knowledge Graph</a>
+        </div>
+        <p class="hero-meta">
+          Also on the <a href="https://www.ebi.ac.uk/ols4/ontologies/mondo">Ontology Lookup Service</a> · Free and open under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+        </p>
+      </div>
+      <div class="hero-visual">
+        <SchematicHub />
+      </div>
+    </div>
+
+    <div class="container now" role="region" aria-label="Happening now">
+      <ul class="callouts">
+        {callouts.map((c) => (
+          <li class={c.full ? "full" : c.wide ? "wide" : ""}>
+            <span class="pill alt">{c.tag}</span>
+            <h2><a href={c.href}>{c.title}</a></h2>
+            <p>{c.text}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="stats">
+    <div class="container">
+      <p class="eyebrow">What's inside</p>
+      <h2>Disease coverage</h2>
+      <p class="lede">Counts from the latest release. See every release and its statistics on <a href="https://github.com/monarch-initiative/mondo/releases/latest">GitHub</a>.</p>
+      <div class="coverage">
+        <div class="panel"><DiseaseBars /></div>
+        <div class="panel richness">
+          <h3>Definitions and synonyms</h3>
+          <p class="big"><strong>{fmt(defs)}</strong> term definitions</p>
+          <p class="big"><strong>{fmt(synonyms)}</strong> synonyms, typed by scope:</p>
+          <ul class="syn">
+            {synRows.map((r) => <li><span>{r.label.replace(/ synonyms$/i, "")}</span><strong>{fmt(r.count)}</strong></li>)}
+          </ul>
+          <details class="syn-help">
+            <summary>What do the synonym scopes mean?</summary>
+            <dl>
+              <dt>Exact</dt><dd>Means exactly the same as the primary label, e.g. <em>hereditary Wilms tumor</em> = "familial Wilms tumor".</dd>
+              <dt>Narrow</dt><dd>More specific than the primary label, e.g. <em>asthma</em> has narrow synonym "exercise-induced asthma".</dd>
+              <dt>Broad</dt><dd>May encompass other concepts too, e.g. <em>autoimmune hepatitis</em> has broad synonym "autoimmune liver disease".</dd>
+              <dt>Related</dt><dd>Used synonymously in the literature, though not strictly correct, e.g. <em>Brugada syndrome</em> and "sudden unexpected nocturnal death syndrome".</dd>
+            </dl>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--band) 0%, var(--band-deep) 100%); color: #fff; padding: 56px 0 64px; }
+  /* Fade the background network out before it reaches the schematic, so the two don't compete. */
+  .hero :global(.net-bg) {
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 28%, transparent 55%);
+    mask-image: linear-gradient(90deg, #000 0%, #000 28%, transparent 55%);
+  }
+  @media (max-width: 900px) {
+    .hero :global(.net-bg) {
+      -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 22%, transparent 40%);
+      mask-image: linear-gradient(180deg, #000 0%, #000 22%, transparent 40%);
+    }
+  }
+  .hero-grid { position: relative; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+  .hero h1 { color: #fff; font-size: clamp(2.2rem, 5vw, 3.5rem); margin: 0 0 18px; letter-spacing: -0.01em; text-wrap: balance; }
+  .hero h1 span { color: var(--on-band-accent); }
+  .hero .eyebrow { color: var(--on-band-accent); }
+  .hero-lede { font-size: 1.15rem; color: var(--on-band); max-width: 34em; margin: 0 0 28px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero-meta { margin: 20px 0 0; font-size: 0.9rem; color: var(--on-band); }
+  .hero-meta a { color: #fff; }
+  .hero-visual { max-width: 460px; justify-self: center; width: 100%; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-visual { max-width: 360px; } }
+
+  .now { position: relative; margin-top: 48px; }
+  .callouts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; }
+  .callouts li { background: #fff; color: var(--ink); border-radius: 4px; padding: 16px 18px; }
+  .callouts li.full { grid-column: 1 / -1; }
+  .callouts .pill { margin-bottom: 8px; }
+  .callouts h2 { font-size: 1.05rem; margin: 0 0 6px; line-height: 1.3; }
+  .callouts h2 a { color: var(--teal-deep); text-decoration: none; }
+  .callouts h2 a:hover { text-decoration: underline; }
+  .callouts h2 a:focus-visible { outline-color: var(--teal-deep); }
+  .callouts p { margin: 0; font-size: 0.93rem; }
+  @media (max-width: 860px) { .callouts { grid-template-columns: 1fr 1fr; } .callouts li.wide { grid-column: 1 / -1; } }
+  @media (max-width: 560px) { .callouts { grid-template-columns: 1fr; } }
+
+  .coverage { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; align-items: start; }
+  @media (max-width: 900px) { .coverage { grid-template-columns: 1fr; } }
+  .panel { background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 24px; }
+  .richness h3 { margin: 0 0 8px; font-size: 1.1rem; }
+  .richness .big { font-size: 1rem; margin: 10px 0; }
+  .richness .big strong { color: var(--teal-deep); font-size: 1.5rem; margin-right: 4px; }
+  .syn { list-style: none; padding: 0; margin: 8px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .syn li { display: flex; justify-content: space-between; background: var(--pink-wash); border-radius: 4px; padding: 8px 12px; font-size: 0.9rem; }
+  .syn li span { color: var(--pink); font-weight: 500; }
+  .syn-help { margin-top: 16px; font-size: 0.88rem; }
+  .syn-help summary { cursor: pointer; color: var(--teal-deep); font-weight: 500; }
+  .syn-help dt { font-weight: 600; margin-top: 10px; color: var(--ink); }
+  .syn-help dd { margin: 2px 0 0; }
+</style>
