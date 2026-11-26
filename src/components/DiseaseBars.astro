@@ -9,9 +9,21 @@ for (const r of types) {
   if (r.depth === 1) groups.push({ name: r.label, total: r.count, rows: [] });
   else if (r.depth === 2 && groups.length) groups.at(-1)!.rows.push({ label: r.label, count: r.count });
 }
-const max = Math.max(...groups.flatMap((g) => g.rows.map((r) => r.count)));
+// The overall total (depth 0) gets its own bar, and sets the scale so every bar is comparable.
+const total = types.find((r) => r.depth === 0)!;
+const max = Math.max(total.count, ...groups.flatMap((g) => g.rows.map((r) => r.count)));
 ---
 <div class="bars-wrap">
+  <div class="bar-group">
+    <h3>All diseases</h3>
+    <ul class="bars" role="list">
+      <li tabindex="0" data-tip={`Total diseases: ${fmt(total.count)} classes`}>
+        <span class="lbl">Total</span>
+        <span class="track"><span class="fill" style={`--w:${(total.count / max) * 100}%`}></span></span>
+        <span class="val">{fmt(total.count)}</span>
+      </li>
+    </ul>
+  </div>
   {groups.map((g) => (
     <div class="bar-group">
       <h3>{g.name} <span>{fmt(g.total)} classes</span></h3>
