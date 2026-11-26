@@ -10,7 +10,7 @@ const label: Record<string, string> = { Source: "Sources merged into Mondo", "xr
   {roles.map((r) => (
     <section class="role">
       <h2>{label[r]} <span>{sources.filter((s) => s.role === r).length}</span></h2>
-      <div class="grid grid-3">
+      <div class="grid grid-cols-4">
         {sources.filter((s) => s.role === r).map((s) => (
           <a class="card src" href={s.url}>
             <h3>{s.name}</h3>

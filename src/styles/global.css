@@ -160,9 +160,11 @@ pre code { background: none; padding: 0; color: inherit; }
 .center .lede { margin-left: auto; margin-right: auto; }
 
 .grid { display: grid; gap: 20px; }
-.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-.grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.grid-4 { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+/* Four fixed columns: cards keep the same width even when the last row isn't full. */
+.grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1024px) { .grid-cols-4 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .grid-cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .grid-cols-4 { grid-template-columns: 1fr; } }
 
 .card {
   background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg);
