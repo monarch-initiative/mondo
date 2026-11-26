@@ -1,0 +1,48 @@
+---
+import Page from "../../layouts/Page.astro";
+import Icon from "../../components/Icon.astro";
+import { loadYaml } from "../../lib/data";
+
+interface Grant { title: string; url?: string; funder: string; grant_id: string; past?: boolean }
+const grants = loadYaml<Grant[]>("funding.yaml");
+const current = grants.filter((g) => !g.past);
+const past = grants.filter((g) => g.past);
+const sections = [
+  { id: "current", heading: "Current funding", items: current },
+  { id: "past", heading: "Past funding", items: past },
+].filter((s) => s.items.length);
+---
+<Page title="Funding" eyebrow="About" intro="Mondo's research and infrastructure development are supported by the following grants." wide>
+  {sections.map((s) => (
+    <section class="block" aria-labelledby={s.id}>
+      <h2 id={s.id}>{s.heading}</h2>
+      <ul class="grants">
+        {s.items.map((g) => (
+          <li>
+            <h3>{g.url
+              ? <a href={g.url}>{g.title.split(" ").slice(0, -1).join(" ")} <span class="nowrap">{g.title.split(" ").at(-1)} <Icon name="external" size={14} /></span></a>
+              : g.title}</h3>
+            <p class="funder">{g.funder}</p>
+            <p class="id">Grant ID: <span>{g.grant_id}</span></p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+  <div class="end"></div>
+</Page>
+
+<style>
+  .block { padding: 44px 0 0; }
+  .block h2 { font-size: 1.35rem; margin: 0 0 6px; }
+  .grants { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .grants li { padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .grants h3 { font-size: 1.05rem; margin: 0 0 4px; max-width: 70ch; }
+  .grants h3 a { color: var(--teal-deep); }
+  .grants h3 a .ico { vertical-align: -0.1em; }
+  .nowrap { white-space: nowrap; }
+  .funder { margin: 0; color: var(--ink); }
+  .id { margin: 2px 0 0; font-size: 0.9rem; color: var(--ink-soft); }
+  .id span { font-family: var(--mono); color: var(--ink); }
+  .end { height: 72px; }
+</style>

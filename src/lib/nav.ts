@@ -14,6 +14,7 @@ export const nav: NavItem[] = [
       { label: "Sources", href: "/pages/sources/", blurb: "Resources Mondo integrates and aligns with" },
       { label: "Who Uses Mondo", href: "/pages/users/", blurb: "Organizations building on Mondo" },
       { label: "Team", href: "/pages/team/", blurb: "The people who build and maintain Mondo" },
+      { label: "Funding", href: "/pages/funding/", blurb: "Grants that support Mondo" },
       // Hidden until the governance site is published (see src/lib/governance.ts).
       ...(GOVERNANCE_LIVE
         ? [{ label: "Governance and Operations", href: governance.home, blurb: "How Mondo is run, and how decisions are made (external site)" }]
