@@ -19,6 +19,7 @@ const sections = [
       <ul class="grants">
         {s.items.map((g) => (
           <li>
+            <span class="pill alt">{g.past ? "Past" : "Current"}</span>
             <h3>{g.url
               ? <a href={g.url}>{g.title.split(" ").slice(0, -1).join(" ")} <span class="nowrap">{g.title.split(" ").at(-1)} <Icon name="external" size={14} /></span></a>
               : g.title}</h3>
@@ -37,7 +38,7 @@ const sections = [
   .block h2 { font-size: 1.35rem; margin: 0 0 6px; }
   .grants { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
   .grants li { padding: 18px 0; border-bottom: 1px solid var(--line); }
-  .grants h3 { font-size: 1.05rem; margin: 0 0 4px; max-width: 70ch; }
+  .grants h3 { font-size: 1.05rem; margin: 8px 0 4px; max-width: 70ch; }
   .grants h3 a { color: var(--teal-deep); }
   .grants h3 a .ico { vertical-align: -0.1em; }
   .nowrap { white-space: nowrap; }

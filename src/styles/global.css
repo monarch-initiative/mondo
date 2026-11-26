@@ -12,6 +12,9 @@
   --teal-mist: #d3e6eb;
   --teal-wash: #eef7f9;
   --accent: #fe3e5e;
+  /* Pink highlight: "what kind of thing this is" tags, and disease emphasis. 8:1+ on white and on --pink-wash. */
+  --pink: #8f1530;
+  --pink-wash: #fff0f3;
   --ink: #333333;
   --ink-soft: #404040;
   --ink-muted: #474b4b;
@@ -187,7 +190,7 @@ a.card:hover .ico-arrow-right, a.more:hover .ico-arrow-right { transform: transl
 .ico-arrow-right { transition: transform 0.15s; }
 
 .pill { display: inline-block; font-size: 0.75rem; font-weight: 500; padding: 2px 10px; border-radius: 999px; background: var(--teal-wash); color: var(--teal-deep); }
-.pill.alt { background: #fff0f3; color: #8f1530; }
+.pill.alt { background: var(--pink-wash); color: var(--pink); }
 
 /* ---------- Prose (markdown pages) ---------- */
 .prose { max-width: 860px; padding: 48px 20px 72px; margin: 0 auto; }

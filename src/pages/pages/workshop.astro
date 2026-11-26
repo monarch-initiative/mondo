@@ -38,7 +38,7 @@ const inline = (s: string) => md(s).replace(/^<p>|<\/p>$/g, "");
           <span class="y">{d(w.date).getFullYear()}</span>
         </div>
         <article class="card ws" aria-labelledby={`${w.id}-title`}>
-          <span class="pill">{w.type}</span>
+          <span class="pill alt">{w.type}</span>
           <h2 id={`${w.id}-title`}>{w.title}</h2>
           <p class="summary">{w.summary}</p>
 

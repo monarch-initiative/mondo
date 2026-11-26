@@ -40,7 +40,8 @@ const initials = (n: string) => n.split(/\s+/).filter((w) => /^[A-Z]/.test(w) &&
 
 <style>
   .group { padding: 44px 0 0; }
-  .group h2 { font-size: 1.35rem; margin: 0 0 22px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+  .group h2 { font-size: 1.35rem; margin: 0 0 22px; padding-bottom: 10px; border-bottom: 1px solid var(--line); position: relative; }
+  .group h2::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 56px; height: 3px; border-radius: 2px; background: var(--pink); }
   .team { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 36px 24px; }
   .team li { text-align: center; }
   .team img, .initials { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 14px; background: var(--teal-wash); }

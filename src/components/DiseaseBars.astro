@@ -19,7 +19,7 @@ const max = Math.max(...groups.flatMap((g) => g.rows.map((r) => r.count)));
         {g.rows.map((r) => (
           <li tabindex="0" data-tip={`${g.name}: ${r.label}, ${fmt(r.count)} classes (${Math.round((r.count / g.total) * 100)}% of ${g.name.toLowerCase()})`}>
             <span class="lbl">{r.label}</span>
-            <span class="track"><span class="fill" style={`--w:${(r.count / max) * 100}%`}></span></span>
+            <span class="track"><span class={`fill${r.label === "Rare" ? " highlight" : ""}`} style={`--w:${(r.count / max) * 100}%`}></span></span>
             <span class="val">{fmt(r.count)}</span>
           </li>
         ))}
@@ -52,6 +52,8 @@ const max = Math.max(...groups.flatMap((g) => g.rows.map((r) => r.count)));
   .val { font-size: 0.92rem; text-align: right; font-variant-numeric: tabular-nums; color: var(--ink); }
   .track { height: 14px; }
   .fill { display: block; height: 100%; width: var(--w); background: var(--teal); border-radius: 0 4px 4px 0; transform-origin: left; animation: grow 1s cubic-bezier(.2,.8,.2,1) both; }
+  /* Rare diseases are highlighted in the site's pink. */
+  .fill.highlight { background: var(--pink); }
   @keyframes grow { from { transform: scaleX(0); } }
   .tip { position: absolute; pointer-events: none; background: #1f2d30; color: #fff; font-size: 0.82rem; padding: 6px 10px; border-radius: 6px; white-space: nowrap; transform: translate(-50%, -120%); z-index: 2; }
   .table-view { margin-top: 20px; }

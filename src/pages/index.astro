@@ -17,22 +17,26 @@ const pubs = loadYaml<any>("publications.yaml");
 const journal = String(pubs.cite.venue).split(",")[0];
 const callouts = [
   {
+    tag: "Workshop",
     title: `${workshop.title} ${String(workshop.date).slice(0, 4)}`,
     text: `${workshop.summary} See the workshop page for dates, the agenda and how to join.`,
     href: url(`/pages/workshop/#${workshop.id}`),
     wide: true,
   },
   {
+    tag: "Publication",
     title: pubs.cite.title,
     text: `Our ${pubs.cite.year} paper in ${journal}. Read it, and find out how to cite Mondo.`,
     href: url("/pages/publications/"),
   },
   {
+    tag: "Resource",
     title: "Sources",
     text: "See the resources Mondo integrates and aligns with.",
     href: url("/pages/sources/"),
   },
   {
+    tag: "Get involved",
     title: "Contribute to Mondo",
     text: "Request a term, report an issue or lend your expertise. Everyone is welcome to contribute.",
     href: url("/pages/contributors/"),
@@ -67,6 +71,7 @@ const callouts = [
       <ul class="callouts">
         {callouts.map((c) => (
           <li class={c.full ? "full" : c.wide ? "wide" : ""}>
+            <span class="pill alt">{c.tag}</span>
             <h2><a href={c.href}>{c.title}</a></h2>
             <p>{c.text}</p>
           </li>
@@ -132,6 +137,7 @@ const callouts = [
   .callouts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; }
   .callouts li { background: #fff; color: var(--ink); border-radius: 4px; padding: 16px 18px; }
   .callouts li.full { grid-column: 1 / -1; }
+  .callouts .pill { margin-bottom: 8px; }
   .callouts h2 { font-size: 1.05rem; margin: 0 0 6px; line-height: 1.3; }
   .callouts h2 a { color: var(--teal-deep); text-decoration: none; }
   .callouts h2 a:hover { text-decoration: underline; }
@@ -147,7 +153,8 @@ const callouts = [
   .richness .big { font-size: 1rem; margin: 10px 0; }
   .richness .big strong { color: var(--teal-deep); font-size: 1.5rem; margin-right: 4px; }
   .syn { list-style: none; padding: 0; margin: 8px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .syn li { display: flex; justify-content: space-between; background: var(--teal-wash); border-radius: 4px; padding: 8px 12px; font-size: 0.9rem; }
+  .syn li { display: flex; justify-content: space-between; background: var(--pink-wash); border-radius: 4px; padding: 8px 12px; font-size: 0.9rem; }
+  .syn li span { color: var(--pink); font-weight: 500; }
   .syn-help { margin-top: 16px; font-size: 0.88rem; }
   .syn-help summary { cursor: pointer; color: var(--teal-deep); font-weight: 500; }
   .syn-help dt { font-weight: 600; margin-top: 10px; color: var(--ink); }
