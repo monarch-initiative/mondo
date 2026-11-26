@@ -184,15 +184,6 @@ a.card:hover { transform: translateY(-3px); border-color: var(--teal); color: in
 a.card:hover .ico-arrow-right, a.more:hover .ico-arrow-right { transform: translateX(3px); }
 .ico-arrow-right { transition: transform 0.15s; }
 
-/* Check-mark list for Markdown pages (the icon is a CSS mask so it takes the text color) */
-.checklist { list-style: none; padding-left: 0; }
-.checklist li { position: relative; padding-left: 2em; }
-.checklist li::before {
-  content: ""; position: absolute; left: 0; top: 0.2em; width: 1.25em; height: 1.25em; background: var(--teal-deep);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m8 12.5 2.8 2.8L16.5 9.5'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m8 12.5 2.8 2.8L16.5 9.5'/%3E%3C/svg%3E") center / contain no-repeat;
-}
-
 .pill { display: inline-block; font-size: 0.75rem; font-weight: 500; padding: 2px 10px; border-radius: 999px; background: var(--teal-wash); color: var(--teal-deep); }
 .pill.alt { background: #fff0f3; color: #8f1530; }
 

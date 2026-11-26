@@ -11,7 +11,7 @@ An estimated **300 million people worldwide** (nearly 4% of the global populatio
 
 Consider fibrodysplasia ossificans progressiva (FOP), also known as "Stoneman syndrome" ([MONDO:0007606](https://monarchinitiative.org/disease/MONDO:0007606)): with an estimated prevalence of 1 in 2 million and only about 700 reported cases worldwide, FOP patients endure a high rate of initial misdiagnosis (87%), with many undergoing unnecessary biopsies (67%) and receiving inappropriate therapies (68%) ([PMID:31785620](https://pubmed.ncbi.nlm.nih.gov/31785620/), [PMID:16230464](https://pubmed.ncbi.nlm.nih.gov/16230464/)).
 
-**Mondo brings together the world's rare disease resources to help shorten the diagnostic odysseys.**
+> **Mondo brings together the world's rare disease resources to help shorten the diagnostic odysseys.**
 
 ---
 
@@ -32,10 +32,10 @@ Some organizations also require additional criteria, such as the disease being "
 ### Why This Matters
 
 These differences have real consequences:
-- **Research funding**: Programs like the FDA's Orphan Drug Designation provide incentives only for diseases classified as "rare"
 - **Insurance coverage**: Whether a disease is designated "rare" can affect treatment coverage
 - **Clinical trials**: Rare disease status influences eligibility for specialized trial pathways
 - **Patient advocacy**: Organizations focus resources based on rare disease classifications
+- **Research funding**: Programs like the FDA's Orphan Drug Designation provide incentives only for diseases classified as "rare"
 
 ---
 
@@ -46,11 +46,10 @@ Rather than imposing a single definition of "rare," Mondo takes a pragmatic, inc
 > **Mondo integrates rare disease information from multiple authoritative sources and transparently tracks which sources consider each disease to be rare.**
 
 This means:
-<ul class="checklist">
-  <li>You can access <strong>all</strong> diseases considered rare by <strong>any</strong> major authority</li>
-  <li>You can filter to diseases considered rare by <strong>specific</strong> authorities relevant to your region or use case</li>
-  <li>You always know the <strong>provenance</strong> of the "rare" designation</li>
-</ul>
+
+- You can access **all** diseases considered rare by **any** major authority
+- You can filter to diseases considered rare by **specific** authorities relevant to your region or use case
+- You always know the **provenance** of the "rare" designation
 
 ### Sources of Rare Disease Information in Mondo
 
@@ -69,7 +68,7 @@ Not all sources agree on which diseases are rare. Our analysis shows:
 - ~40% are recognized by Orphanet
 - Different sources use different criteria for what counts as a distinct "rare disease" (e.g., Orphanet counts only "disorders," while NORD and GARD also count disease subtypes)
 
-This reflects genuine scientific and policy disagreement. It is not a problem to solve, but a reality to represent accurately.
+> **This reflects genuine scientific and policy disagreement. It is not a problem to solve, but a reality to represent accurately.**
 
 ---
 
@@ -119,27 +118,6 @@ Each rare disease term in Mondo has:
 
 ---
 
-## Real-World Applications
-
-### COVID-19 and Rare Disease Research
-
-The National COVID Cohort Collaborative (N3C) used Mondo to study outcomes for rare disease patients during the pandemic:
-
-1. Imported Mondo's KGX format into the N3C research enclave
-2. Selected terms with the "rare" designation
-3. Leveraged Mondo's mappings to clinical codes (SNOMED, ICD-10, MeSH) to identify patients
-4. Created a rare disease dashboard enabling researchers to explore rare disease cohorts
-
-### Diagnostic Tools
-
-Tools like Exomiser use Mondo's rare disease classifications alongside phenotype data to help clinicians navigate diagnostic odysseys and identify potentially pathogenic variants.
-
-### Drug Repurposing
-
-Mondo's integration of rare diseases with broader disease classifications enables researchers to identify common biological pathways between rare and common diseases, opening opportunities for drug repurposing. [Every Cure](https://everycure.org/), for example, is [using Mondo as the backbone for their drug-disease research](https://docs.dev.everycure.org/releases/attribution/#mondo).
-
----
-
 ## How Rare Disease Data is Maintained
 
 Mondo maintains rare disease annotations through automated pipelines that synchronize monthly with authoritative sources:
@@ -161,19 +139,6 @@ This curation flows into Mondo and helps ensure that rare genetic diseases are r
 
 MedGen, NCBI's portal for medical genetics, supplies a large share of Mondo's mappings to UMLS and other clinical vocabularies, anchoring rare disease terms in the broader biomedical terminology landscape.
 MedGen curators also contribute hundreds of expert suggestions directly to Mondo, refining definitions, synonyms, and classifications for genetic and rare disease entries.
-
----
-
-## When Terms Change
-
-### If a Mondo term is obsoleted
-The term will not appear in the rare disease subset. The relevant authoritative source(s) will be notified.
-
-### If a source removes a disease from their rare list
-Only that source's annotation is removed (e.g., `gard_rare`). Other source annotations remain unchanged.
-
-### If two Mondo terms are merged
-Rare disease annotations will be transferred to the surviving term as soon as the update is made at the authoritative source.
 
 ---
 
@@ -199,14 +164,3 @@ Join us in recognizing [Rare Disease Day](https://www.rarediseaseday.org/) on th
 | Get rare diseases for a specific region | Filter by `orphanet_rare` (Europe), `gard_rare` or `nord_rare` (US) |
 | Report a missing rare disease | [Open a GitHub issue](https://github.com/monarch-initiative/mondo/issues) |
 | Learn more about a specific rare disease | Follow cross-references to OMIM, Orphanet, GARD, or NORD |
-
----
-
-## Further Reading
-
-- [Mondo Disease Ontology Documentation](https://mondo.readthedocs.io/)
-- [Mondo: Integrating Disease Terminology Across Communities (Genetics, 2025)](https://doi.org/10.1093/genetics/iyaf215)
-- [Orphanet - The portal for rare diseases](https://www.orpha.net/)
-- [GARD - Genetic and Rare Diseases Information Center](https://rarediseases.info.nih.gov/)
-- [NORD - National Organization for Rare Disorders](https://rarediseases.org/)
-- [Rare Diseases International](https://www.rarediseasesinternational.org/)
