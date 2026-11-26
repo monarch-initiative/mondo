@@ -27,6 +27,9 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+        env:
+          # Raises the GitHub API rate limit for pulling repo contributors onto the Contribute page.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-pages-artifact@v5
         with:
           path: dist

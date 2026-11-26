@@ -3,13 +3,29 @@ import Page from "../../layouts/Page.astro";
 import Icon from "../../components/Icon.astro";
 import { loadYaml, url } from "../../lib/data";
 import { GOVERNANCE_LIVE, governance } from "../../lib/governance";
+import { githubContributors, githubName } from "../../lib/github-contributors";
 
 interface Person { name?: string; affiliation?: string; github?: string[] }
 const data = loadYaml<{ last_confirmed?: string; people: Person[] }>("contributors.yaml");
+
+// Add people who have committed to the Mondo repo on GitHub but aren't in the hand-kept list yet.
+// A GitHub account whose display name matches someone already listed is merged into that entry.
+const merged: Person[] = data.people.map((p) => ({ ...p, github: [...(p.github ?? [])] }));
+const norm = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, " ").trim();
+const knownHandles = new Set(merged.flatMap((p) => p.github!.map((h) => h.toLowerCase())));
+const byName = new Map(merged.filter((p) => p.name).map((p) => [norm(p.name!), p]));
+for (const { login } of await githubContributors()) {
+  if (knownHandles.has(login.toLowerCase())) continue;
+  const name = await githubName(login);
+  const match = name ? byName.get(norm(name)) : undefined;
+  if (match) match.github!.unshift(login);
+  else merged.push({ name, github: [login] });
+  knownHandles.add(login.toLowerCase());
+}
+
 // Named people first (A to Z), then people known only by GitHub handle.
 const sortKey = (p: Person) => (p.name ?? p.github?.[0] ?? "").toLowerCase();
-const people = [...data.people].sort((a, b) => Number(!a.name) - Number(!b.name) || sortKey(a).localeCompare(sortKey(b)));
-
+const people = merged.sort((a, b) => Number(!a.name) - Number(!b.name) || sortKey(a).localeCompare(sortKey(b)));
 
 // "More than N": the largest multiple of ten below the count, so the claim stays true as people are added.
 const moreThan = Math.floor((people.length - 1) / 10) * 10;

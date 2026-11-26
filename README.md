@@ -28,6 +28,15 @@ Most updates are a single entry in a YAML (a plain-text data format) file. No HT
 | Rare Diseases | `src/pages/pages/rare-disease.md` |
 | Top navigation and footer links | `src/lib/nav.ts` |
 | Contributor acknowledgement list | `src/data/contributors.yaml` (set `last_confirmed` after the yearly review) |
+
+## Contributor List
+
+The Contribute page combines two sources:
+
+1. **`src/data/contributors.yaml`**, the hand-kept list (name, affiliation, GitHub handle). Add people here who contribute outside of code, such as issue reporters and workshop participants, and set `last_confirmed` after the yearly review.
+2. **GitHub**, pulled when the site builds: everyone who has committed to `monarch-initiative/mondo`. Bots and automation accounts are skipped (see `src/lib/github-contributors.ts`). A GitHub account whose display name matches someone already listed is merged into that entry instead of being added twice.
+
+The list refreshes each time the site deploys. To refresh it without other changes, run the "Deploy Mondo website" workflow manually from the Actions tab. If GitHub can't be reached during a build, the page falls back to the hand-kept list.
 | Governance site links | `src/lib/governance.ts` (set `GOVERNANCE_LIVE = true` when it launches) |
 
 ## Summary Statistics
