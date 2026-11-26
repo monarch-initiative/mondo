@@ -198580,7 +198580,7 @@ property_value: seeAlso "https://rarediseases.info.nih.gov/diseases/415/pseudopr
 
 [Term]
 id: MONDO:0008695
-name: VPS13A-related neurodegenerative disease
+name: VPS13A-related chorea-acanthocytosis
 def: "A form of neuroacanthocytosis and is characterized clinically by a Huntington disease-like phenotype with progressive neurological symptoms including movement disorders, psychiatric manifestations and cognitive disturbances, and caused by a variation in the VPS13A gene." [https://orcid.org/0000-0002-4142-7153, OMIM:200150, Orphanet:2388]
 subset: doid {source="DOID:0050766"}
 subset: doid_rare {source="DOID:0050766"}
@@ -198594,10 +198594,12 @@ subset: otar {source="MONDO:OTAR"}
 subset: rare
 synonym: "CHAC" EXACT ABBREVIATION [OMIM:200150, Orphanet:2388]
 synonym: "Chac" EXACT ABBREVIATION [OMIM:200150, Orphanet:2388]
-synonym: "chorea-acanthocytosis" EXACT [OMIM:200150, Orphanet:2388] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "chorea-acanthocytosis" EXACT [OMIM:200150, Orphanet:2388]
 synonym: "choreoacanthocytosis" EXACT [OMIM:200150, Orphanet:2388]
 synonym: "Levine-Critchley syndrome" EXACT [DOID:0050766, Orphanet:2388]
 synonym: "VPS13A disease" EXACT [PMID:33510935, PMID:40661849]
+synonym: "VPS13A-related chorea-acanthocytosis" EXACT [https://clinicalgenome.org/affiliation/40005/] {OMO:0002001="https://w3id.org/information-resource-registry/clingen"}
+synonym: "VPS13A-related neurodegenerative disease" EXACT [https://clinicalgenome.org/affiliation/40005/, PMID:33510935, PMID:40661849]
 xref: DOID:0050766 {source="MONDO:equivalentTo"}
 xref: GARD:0003956 {source="MONDO:GARD"}
 xref: ICD10CM:E78.6 {source="Orphanet:2388", source="DOID:0050766"}
@@ -198608,13 +198610,14 @@ xref: OMIM:200150 {source="Orphanet:2388", source="DOID:0050766", source="MONDO:
 xref: Orphanet:2388 {source="OMIM:200150", source="DOID:0050766", source="MONDO:equivalentTo"}
 xref: SCTID:66881004 {source="MONDO:equivalentTo"}
 xref: UMLS:C0393576 {source="MONDO:equivalentTo", source="MONDO:MEDGEN", source="MEDGEN:98277"}
-is_a: MONDO:0005093 {source="MONDO:0019275-obsoleted"} ! skin disorder
 is_a: MONDO:0016987 {source="DOID:0050766", source="Orphanet:2388", source="PMID:33510935", source="PMID:40661849"} ! neuroacanthocytosis
-is_a: MONDO:0019268 {source="MONDO:0019274-obsoleted"} ! epidermal disease
-is_a: MONDO:0020127 {source="MONDO:0016133-obsoleted"} ! hereditary peripheral neuropathy
+is_a: MONDO:0020127 {source="MONDO:0016133-obsoleted", source="Orphanet:2388", source="PMID:41030128"} ! hereditary peripheral neuropathy
 relationship: disease_has_feature HP:0002072 ! Chorea
+relationship: excluded_subClassOf MONDO:0005093 {source="MONDO:0019275-obsoleted", source="https://orcid.org/0000-0002-7638-4659"} ! skin disorder
+relationship: excluded_subClassOf MONDO:0019268 {source="MONDO:0019274-obsoleted", source="https://orcid.org/0000-0002-7638-4659"} ! epidermal disease
 relationship: has_material_basis_in_germline_mutation_in http://identifiers.org/hgnc/1908 {source="OMIM:200150"} ! VPS13A
 property_value: curated_content_resource "https://www.malacards.org/card/choreoacanthocytosis" xsd:anyURI {source="MONDO:MalaCards"}
+property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/10852" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/monarch-initiative/mondo/issues/9825" xsd:anyURI
 
 [Term]
