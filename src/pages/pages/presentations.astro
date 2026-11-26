@@ -20,7 +20,7 @@ const kind = (t: any) => (/poster/i.test(t.type) ? "Poster" : /keynote/i.test(t.
       <div class="grid grid-2">
         {talks.filter((t) => t.year === y).map((t) => (
           <article class="card talk" data-kind={kind(t)}>
-            <span class={`pill${kind(t) === "Poster" ? " alt" : ""}`}>{t.type}</span>
+            <span class="pill alt">{t.type}</span>
             <h3>{t.url ? <a href={t.url}>{t.title}</a> : t.title}</h3>
             <p class="who">{t.who}</p>
             <p class="event">{t.event}{t.date ? ` · ${t.date}` : ""}</p>
