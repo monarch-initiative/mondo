@@ -10,9 +10,6 @@ const data = loadYaml<{ last_confirmed?: string; people: Person[] }>("contributo
 const sortKey = (p: Person) => (p.name ?? p.github?.[0] ?? "").toLowerCase();
 const people = [...data.people].sort((a, b) => Number(!a.name) - Number(!b.name) || sortKey(a).localeCompare(sortKey(b)));
 
-const byOrg = new Map<string, number>();
-people.forEach((p) => p.affiliation && byOrg.set(p.affiliation, (byOrg.get(p.affiliation) ?? 0) + 1));
-const topOrgs = [...byOrg.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 8);
 
 const confirmed = data.last_confirmed
   ? new Date(String(data.last_confirmed) + "T12:00:00").toLocaleDateString("en-US", { month: "long", year: "numeric" })
@@ -64,12 +61,6 @@ const actions = GOVERNANCE_LIVE ? governance.routes : fallbackActions;
       <p class="count"><strong>{people.length}</strong> people have contributed to Mondo{confirmed && <span class="confirmed"> · List last confirmed {confirmed}</span>}</p>
     </div>
 
-    <div class="orgs" role="group" aria-label="Filter by organization">
-      <span class="orgs-label">Top organizations:</span>
-      {topOrgs.map(([org, n]) => (
-        <button type="button" class="org" data-org={org} aria-pressed="false">{org} <span class="n">{n}</span></button>
-      ))}
-    </div>
 
     <div class="search">
       <label for="people-q">Search contributors</label>
@@ -82,7 +73,7 @@ const actions = GOVERNANCE_LIVE ? governance.routes : fallbackActions;
         const handle = p.github?.[0];
         const label = p.name ?? `@${handle}`;
         return (
-          <li data-text={`${p.name ?? ""} ${p.affiliation ?? ""} ${(p.github ?? []).join(" ")}`.toLowerCase()} data-org={p.affiliation ?? ""}>
+          <li data-text={`${p.name ?? ""} ${p.affiliation ?? ""} ${(p.github ?? []).join(" ")}`.toLowerCase()}>
             {handle ? (
               <a href={`https://github.com/${handle}`}>
                 {label}<span class="sr"> on GitHub</span>
@@ -124,14 +115,6 @@ const actions = GOVERNANCE_LIVE ? governance.routes : fallbackActions;
   .count strong { font-size: 1.6rem; color: var(--teal-deep); margin-right: 4px; }
   .confirmed { color: var(--ink-soft); font-size: 0.9rem; }
 
-  .orgs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 18px; }
-  .orgs-label { font-size: 0.9rem; color: var(--ink-soft); margin-right: 4px; }
-  .org { font: inherit; font-size: 0.86rem; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
-  .org .n { font-variant-numeric: tabular-nums; color: var(--ink-soft); }
-  .org:hover { border-color: var(--teal-deep); }
-  .org[aria-pressed="true"] { background: var(--teal-deep); border-color: var(--teal-deep); color: #fff; }
-  .org[aria-pressed="true"] .n { color: #fff; }
-  .org:focus-visible { outline: 3px solid var(--teal-deep); outline-offset: 2px; }
 
   .search { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-bottom: 18px; }
   .search label { font-weight: 600; font-size: 0.92rem; color: var(--ink); }
@@ -154,14 +137,12 @@ const actions = GOVERNANCE_LIVE ? governance.routes : fallbackActions;
   const results = document.getElementById("people-results")!;
   const none = document.getElementById("people-none")!;
   const items = [...document.querySelectorAll<HTMLElement>(".people li")];
-  const orgButtons = [...document.querySelectorAll<HTMLButtonElement>(".org")];
-  let org = "";
 
   const apply = () => {
     const q = input.value.trim().toLowerCase();
     let shown = 0;
     items.forEach((li) => {
-      const ok = (!q || li.dataset.text!.includes(q)) && (!org || li.dataset.org === org);
+      const ok = !q || li.dataset.text!.includes(q);
       li.hidden = !ok;
       if (ok) shown++;
     });
@@ -170,9 +151,4 @@ const actions = GOVERNANCE_LIVE ? governance.routes : fallbackActions;
   };
 
   input.addEventListener("input", apply);
-  orgButtons.forEach((b) => b.addEventListener("click", () => {
-    org = org === b.dataset.org ? "" : b.dataset.org!;
-    orgButtons.forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.org === org)));
-    apply();
-  }));
 </script>
