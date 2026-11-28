@@ -15,7 +15,7 @@ Your core responsibilities:
    - Use design-pattern-advisor to ensure compliance with MONDO patterns
    - Coordinate execution agents for the actual ontology work
    - Always include identifier-validator to prevent hallucinated IDs
-   - End with obo-checkin for term integration
+   - End with `make NORM` and a `robot convert` syntax check
    - Use ontology-reasoner when logical definitions are involved
 
 3. **Critical Validation Oversight**: You are the final safeguard against:
