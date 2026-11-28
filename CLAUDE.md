@@ -1,10 +1,9 @@
 # MONDO Ontology Project Guide
 
-This includes instructions for editing the npso ontology. 
+This includes instructions for editing the Mondo ontology.
 
 ## Project Layout
 - Main development file is `src/ontology/mondo-edit.obo`
-- individual terms checked out in `terms`
 
 ## Querying ontology
 
@@ -14,7 +13,9 @@ This includes instructions for editing the npso ontology.
     - `obo-grep.pl --noheader -r 'MONDO:0004177' src/ontology/mondo-edit.obo`
 - Regexes; all mentions of hand or foot:
     - `obo-grep.pl --noheader -r '(hand|foot)' src/ontology/mondo-edit.obo`
-- Note that `obo-grep.pl` is in your PATH, no need to search for it    
+- Line number of a stanza, before editing it:
+    - `grep -n '^id: MONDO:0004177$' src/ontology/mondo-edit.obo`
+- Note that `obo-grep.pl` is in your PATH, no need to search for it
 - Only search over `src/ontology/mondo-edit.obo`
 - DO NOT bother doing your own greps over the file, or looking for other files, unless otherwise asked, you will just waste time.
 - ONLY use the methods above for searching the ontology
@@ -31,18 +32,16 @@ This includes instructions for editing the npso ontology.
 - For anything you need from OMIM (titles, synonyms, gene-disease associations, entry type, entry text), use the `omim` skill (`.claude/skills/omim/SKILL.md`), also when reviewing.
 
 ## Edits
-- IMPORTANT: Do not edit the edit file directly, it's large
-- Add edits should be made in the `terms/` folder
-- check out a term into `terms/`: `obo-checkout.pl src/ontology/mondo-edit.obo MONDO:1234567 [OTHER IDS]`
-- This will create a single stanza obo files `terms/npso_1234567.obo` which you can easily edit
-     - (note the colon is replaced with an underscore)
-- You can go ahead and edit the smallers files in the `terms/` folder
-- After edits, check back in: `obo-checkin.pl src/ontology/mondo-edit.obo MONDO:1234567 [OTHER IDS]`
-- if you like you can edit multiple terms in one batch, e.g. `terms/my_batch.obo`
-     - `obo-checkout.pl src/ontology/mondo-edit.obo terms/my_batch.obo`
-- checking in will update the edit file and remove the file from `terms/`
-- Commits are then made on src/ontology/mondo-edit.obo as appropriate
-- Note that `obo-checkin.pl` and `obo-checkin.pl` are in your PATH, no need to search for it    
+- Edit `src/ontology/mondo-edit.obo` directly, one stanza at a time. The file is about 46 MB (700k lines), so:
+    - NEVER Read or Write the whole file. The Read tool refuses it anyway.
+    - Find the stanza's line number with `grep -n '^id: MONDO:NNNNNNN$' src/ontology/mondo-edit.obo`.
+    - Read only that stanza, with offset/limit (e.g. offset = line number, limit = 60).
+    - Edit with an `old_string` that is unique in the whole file. Many lines repeat across stanzas (e.g. `is_a: MONDO:0019501 ... ! Usher syndrome`), so include a stanza-specific line next to the one you change (the `id:` or `name:` line, or a specific xref). If Edit reports the string is not unique, add context; never use `replace_all` on this file.
+    - New terms: insert the new stanza after the stanza with the next-lower ID. NORM fixes the order anyway.
+- After the edits, normalise and check the syntax before committing:
+    - `make NORM && mv NORM mondo-edit.obo` in `src/ontology/` (via the `odk` skill in non-TTY contexts)
+    - `robot convert` (see "Syntax Checking" below)
+- Commits are then made on `src/ontology/mondo-edit.obo` as appropriate
 
 ## Specific Guidelines for MONDO Curation
 - When processing a request to add a more specific parent (is_a, subclass) to a term, do not remove existing parents unless _explicitly instructed_ to do so.

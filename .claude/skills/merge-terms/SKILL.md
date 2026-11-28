@@ -49,11 +49,15 @@ Then `mv NORM mondo-edit.obo`. This deduplicates source qualifiers on identical 
 
 NORM does **not** dedupe synonyms across different scopes (e.g. an EXACT and a RELATED with the same text both stay) — handle in Step 5.
 
-## Step 3 — Checkout both terms
+## Step 3 — Locate both stanzas
+
+Steps 4 to 6 edit `src/ontology/mondo-edit.obo` directly, one stanza at a time (see "Edits" in `CLAUDE.md`). Get the line numbers:
 
 ```bash
-obo-checkout.pl src/ontology/mondo-edit.obo MONDO:XXXXXXX MONDO:YYYYYYY
+grep -n -E '^id: MONDO:(XXXXXXX|YYYYYYY)$' src/ontology/mondo-edit.obo
 ```
+
+Read each stanza with offset/limit, never the whole file. Line numbers move after every edit, so grep again before the next Read.
 
 ## Step 4 — Clean up the OBSOLETED term
 
@@ -95,22 +99,17 @@ owltools usually rewires `is_a` children, but does **not** touch references in `
 obo-grep.pl --noheader -r 'MONDO:XXXXXXX' src/ontology/mondo-edit.obo
 ```
 
-For each hit outside the obsoleted stanza itself, checkout that term, repoint the axiom to `MONDO:YYYYYYY`, and check it back in.
+For each hit outside the obsoleted stanza itself, repoint the axiom to `MONDO:YYYYYYY` in that stanza (locate it with `grep -n`, Read with offset/limit, Edit).
 
-## Step 7 — Check in, normalize, run QC
+## Step 7 — Normalize, run QC
 
-1. Check in:
-   ```bash
-   obo-checkin.pl src/ontology/mondo-edit.obo MONDO:XXXXXXX MONDO:YYYYYYY [any rewired children]
-   ```
-
-2. Normalize:
+1. Normalize:
    ```
    make NORM
    ```
    then `mv NORM mondo-edit.obo`.
 
-3. Run targeted QC. The merge-relevant SPARQL checks live under `src/sparql/qc/general/` and `src/sparql/qc/mondo/`. Run them via `robot verify` (this is a body — wrap with `sh run.sh` or docker per the warning at the top of the skill):
+2. Run targeted QC. The merge-relevant SPARQL checks live under `src/sparql/qc/general/` and `src/sparql/qc/mondo/`. Run them via `robot verify` (this is a body — wrap with `sh run.sh` or docker per the warning at the top of the skill):
 
    ```
    robot verify --catalog catalog-v001.xml -i mondo-edit.obo \
